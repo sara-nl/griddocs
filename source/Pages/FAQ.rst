@@ -4,7 +4,7 @@
 FAQ
 ***
 
-Check out in this page the most commonly asked questions about Grid. If you still don't find an answer, please contact us at helpdesk@surfsara.nl:
+Check out in this page the most commonly asked questions about Grid. If you still have questions, please contact us at helpdesk@surfsara.nl:
 
 .. contents:: 
     :depth: 4  
