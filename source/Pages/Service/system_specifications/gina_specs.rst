@@ -1,0 +1,112 @@
+.. warning:: Page under construction
+
+.. _specs-gina:
+
+*******************
+Gina Specifications
+*******************
+
+Gina is the Grid cluster at SURFsara; currently all the servers are located at the Vancis B.V. datacenter divide into two rooms. After different tenders these servers belong to different brands (Dell & Fujitsu). Three service nodes are used to host the  virtual machines for different purposes (creamces, monitoring, installation, dns servers...). All the worker nodes are installed on physical nodes.
+
+This page describes the specifications for the Gina Grid cluster at SURFsara:
+
+.. contents:: 
+    :depth: 4
+
+If you have any questions concerning the technical specifications below, please contact us at helpdesk@surfsara.nl.
+
+
+.. _gina-specs-summary:
+
+=============
+Quick summary
+=============
+
+============================ =====================================================
+Gina cluster                 Capacity                                             
+============================ =====================================================
+Operating system             Linux CentOS 6.x 64bit                              
+Total number of cores        5600 Xeon cores at 2.2 to 2.6 GHz                   
+Total memory                 41TB                                                 
+Total scratch space          2100TB                                              
+Network backbone             160Gbit/s Ethernet connection with the Grid storage 
+============================ =====================================================
+
+``Last update: spring 2015``
+
+
+Worker nodes
+============
+
+am90-01 t/m am94-33:
+
+  Dell R630
+  2x Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz (24 cores)
+  192GB RAM
+  ~8000GB scratch
+  Type: Haswell architecture /w Haswell-EP cores (2014)
+  Number of nodes: 100
+  Total cores of this type: 2400
+  Scratch per core: ~300GB
+  RAM per core: 8GB
+
+
+am95-01 t/m am95-48 & v33-17 t/m v33-48:
+
+  Dell R630
+  2x Intel(R) Xeon(R) CPU           E5649  @ 2.53GHz (12 cores)
+  48GB RAM
+  ~850 GB scratch
+  Type: Nehalem architecture /w Westmere-EP cores (2011)
+  Number of nodes: 80
+  Total cores of this type: 960
+  Scratch per core: ~70GB
+  RAM per core: 4GB
+
+v35-01 t/m v35-12 en v33-01 t/m v33-06:
+
+  Dell R820
+  4x Intel(R) Xeon(R) CPU E5-4620 0 @ 2.20GHz (32 cores)
+  256GB RAM
+  6.8TiB scratch
+  Type: Sandy Bridge architecture /w Sandy Bridge-EP cores (2012)
+  Number of nodes: 18
+  Total cores of this type: 576
+  Scratch per core: ~200GB
+  RAM per core: 8GB
+
+ar90-01 t/m ar91-52:
+
+  Fujitsu CX250
+  2x Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz (16 cores)
+  128GB RAM
+  ~11TB scratch
+  Type: Ivy Bridge architecture /w Ivy Bridge-EP cores (2013)
+  Number of nodes: 104
+  Total cores of this type: 1664
+  Scratch per core: ~680GB
+  RAM per core: 8GB
+ 
+
+Service Nodes
+=============
+
+Service01 t/m Service03:
+
+  Dell R420
+  2xIntel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz (12 cores)
+  96GB RAM
+  Number of nodes: 3
+  RAM per core: 8GB
+
+
+CreamCEs
+========
+
+Monitoring
+==========
+
+Queues
+======
+ 
+<Add detailed info>

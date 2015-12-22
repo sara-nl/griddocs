@@ -1,0 +1,121 @@
+.. warning:: Page under construction
+
+.. _job-requirements:
+
+
+Grid job Requirements
+*********************
+
+By telling what your job needs, you help the scheduler in finding the
+right place to run your jobs, and it also helps using the different
+compute nodes in the grid efficiently.
+
+This chapter describes how to write the requirements, how the
+requirements determine where your jobs will run, and what they tell the
+scheduler.
+
+
+Requirement syntax
+==================
+
+Job requirments are written as an optional statement in the JDL file::
+
+  Requirements = <expression>;
+
+Job requirements follow the JDL syntax. This also means that you
+
+can have multiple requirements using boolean operators ``&&`` for
+*requirement 1 AND requirement 2*, and ``||`` for *requirement 1 OR
+requirement 2*. You can also use parentheses ``(...)`` for an even more
+fine-grained control over requirements.
+
+
+Requirements
+============
+
+
+
+Specifying Wall Clock time
+--------------------------
+
+**Parameter: ``other.GlueCEPolicyMaxWallClockTime``**
+
+Synopsis::
+
+    # make sure that the job can run for at least 3 days (3 x 24 x 60 = 4320)
+    Requirements = other.GlueCEPolicyMaxWallClockTime >= 4320;
+
+By specifiying the wall clock time requirement, the scheduler picks a
+queue which is long enough for running the job. The parameter is
+``other.GlueCEPolicyMaxWallClockTime``, the value is in minutes. Make
+sure that your requirement uses the 'greater than or equal to' syntax
+(``>=``).
+
+
+Jobs in short queues tend to get a higher priority, jobs in long queues
+tend to get a lower priority. You can use the following guideline for
+determining in which queue your job will run:
+
+   +------------+-------------------------+
+   | queue      |   job length in minutes |
+   +============+=========================+
+   | express    | 10                      |
+   +------------+-------------------------+
+   | medium     | 2160 (= 36 hours)       |
+   +------------+-------------------------+
+   | long       | 4320 (= 72 hours)       |
+   +------------+-------------------------+
+
+
+Requesting a number of CPU cores
+--------------------------------
+
+**Parameter: ``other.GlueHostArchitectureSMPSize``**
+
+Synopsis::
+
+    # request a machine with at least 6 cpu cores on one node
+    Requirements = (other.GlueHostArchitectureSMPSize >= 6);
+    
+    # job uses 6 cores
+    SMPGranularity = 6;
+
+With this requirement you request a number of CPU cores on one compute
+node. You should set this to the number of CPU cores that your program
+actually uses, and you should also set the number of CPU cores in the JDL
+file with the ``SMPGranulari1ty`` directive. The default value is 1 core.
+
+.. warning:: If you are running a multi-core process in your job, and
+             you do not set the correct number of CPU cores, **you will 
+             oversubscribe a compute node, slowing down your own analysis,
+             as well as others'**.
+
+
+Selecting particular compute elements
+-------------------------------------
+
+Parameter: ``other.GlueCEInfoHostName``
+
+Synopsis::
+
+    # Only run on the AMC cluster
+    Requirements = (
+      other.GlueCEInfoHostName == "gb-ce-amc.amc.nl"
+    );
+
+    # Run on the WUR or on the LUMC cluster
+    Requirements = (
+      other.GlueCEInfoHostName == "gb-ce-amc.amc.nl"     ||
+      other.GlueCEInfoHostName == "gb-ce-lumc.lumc.nl"
+    );
+
+    # Avoid one of SURFsara's Gina compute elements
+    Requirements = (other.GlueCEInfoHostName != "creamce2.gina.sara.nl");
+
+With the ``other.GlueCEInfoHostName`` criterium you can specify on which
+compute element your jobs will be scheduled. Or even on which CE your
+jobs will *not* be scheduled. This is convenient in cases where you know
+jobs will fail on particular systems, for some reason.
+   
+	
+.. vim: set wm=7 expandtab :

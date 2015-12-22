@@ -1,0 +1,344 @@
+.. warning:: Page under construction
+
+.. _grid-storage:
+
+************
+Grid Storage
+************
+
+In this page we will talk about the Grid storage facilities, the tools to interact with it and the method to process data that is stored on tape (Staging):
+
+.. contents:: 
+    :depth: 4
+    
+
+====================
+About Grid Storage
+====================
+
+Each cluster on the Grid is equipped with a Storage Element or SE where data is stored. The Grid storage is useful for applications 
+
+You can interact with the Grid storage from the UI or within your running job. The scripts that can access the Grid Storage can be submitted from:
+
+* :ref:`The UI <get-ui-account>`
+* :ref:`Any local LSG cluster <lsg-clusters>`
+* :ref:`The Dutch Grid <dutch-grid>` 
+
+To use the Grid storage you must already have:
+
+* :ref:`A personal grid certificate <get-grid-certificate>`
+* :ref:`A VO membership <join-vo>`
+
+In general we do not support direct interaction with the Grid storage. However,
+dCache and DPM support srm and gridftp interfaces, which offer a lot of unix-like commands, like listing, copying, deleting files and so on.
+
+
+.. _storage-types:
+
+=============
+Storage types
+=============
+
+There are two storage types available on the Dutch Grid sites: 
+
+* The :ref:`dCache` storage element located at SURFsara and accessible from *any* Grid site.
+* The :ref:`DPM` storage elements located at each :ref:`LSG cluster <lsg-clusters>` and accessible *only* by the :ref:`lsg` users.
+
+
+.. _dCache:
+
+dCache
+======
+
+The storage element located at SURFsara is accessible from *any* Grid cluster or UI. It uses the `dCache system`_ for storing and retrieving huge amounts of data, distributed among a large number of server nodes. It consists of magnetic tape storage and hard disk storage and both are addressed by a common file system.
+
+.. _dpm:
+
+DPM
+===
+
+The storage elements located at the various ref:`lsg-clusters` are accessible *only* by the LSG users. The LSG clusters have local storage that uses DPM (short for Disk Pool Manager).
+
+
+.. note:: The DPM storage is only disk storage and does not support tape behind. In opposite, the dCache central storage has both disk and tape.
+
+
+.. _file-id:
+
+=====================
+Grid file identifiers
+=====================
+
+You can refer to your files on the Grid with different ways depending on which of the available :ref:`storage-clients` you use to manage your files: 
+
+* Transport URL or **TURL**, e.g.:
+
+.. code-block:: bash
+
+	# lsgrid user homer stores the file zap.tar on dCache storage
+	gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+	
+	# lsgrid user homer stores the file zap.tar on DPM storage at lumc cluster
+	gsiftp://gb-se-lumc.lumc.nl.nl:2811/dpm/lumc.nl/home/lsgrid/homer/
+	
+.. topic:: Supported clients
+
+	* uberftp
+	* globus
+	* gfal
+	* fts
+	* globusonline
+
+* Storage URL or **SURL**, e.g.:
+
+.. code-block:: bash
+
+	# lsgrid user homer stores the file zap.tar on dCache storage
+	srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+	
+	# lsgrid user homer stores the file zap.tar on DPM storage at ams cluster
+	srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar 
+	
+.. topic:: Supported clients
+
+	* srm
+	* gfal
+	* fts
+	* lcg-lfn-lfc	
+
+
+* Logical File Name (LFN) and Grid Unique Identifier (GUID). These identifiers correspond to logical filename such as ``lfn:/grid/lsgrid/homer/zap.tar``
+
+
+.. note:: The SURLs and TURLs contain information about where a ``physical`` file is located. While the GUIDs and LFNs identify a ``logical`` filename irrespective of its location. You only need to use these if you work with :ref:`large-data-lfc-practice` on multiple LSG sites.
+
+
+.. _storage-ports:
+
+Default ports
+=============
+
+SRM ports
+------------
+
+* The default ``dCache`` srm port is **8443**::
+
+	srm://srm.grid.sara.nl:8443/...
+  
+* The default ``DPM`` srm port is **8446**::
+
+	srm://srm.grid.sara.nl:8446/... 
+  
+ 
+gridftp ports
+-------------
+
+* The default ``dCache`` gridftp port is **2811**::
+
+	gsiftp://gridftp.grid.sara.nl:2811/...
+
+* The default ``DPM`` gridftp port is **2811**::
+
+	gsiftp://gb-se-ams.els.sara.nl:2811/
+
+
+.. _storage-clients:
+
+===============
+Storage clients
+===============
+
+The InputSandbox and OutputSandbox attributes in the :ref:`JDL <JDL>` file are the basic way to move files to and from the User Interface (UI) and the Worker Node (WN). However, when you have large files (from about 100 MB and larger) then you should not use these Sandboxes to move data around. Instead you should use the :ref:`storage-types` and work with several :ref:`storage-clients`. 
+
+In this section we will show the common commands to use the various storage clients. 
+
+.. note:: For working with the Grid storage, we highly recommend you to use :ref:`uberftp` and :ref:`globus`. Both tools have a clean interface, and their speed is much better on our systems compared with their srm-* equivalents.
+
+.. toctree::
+   :maxdepth: 1
+
+   storage_clients/uberftp
+   storage_clients/globus
+   storage_clients/srm
+   storage_clients/gfal
+   storage_clients/lcg-lfn-lfc
+   storage_clients/fts
+   storage_clients/globusonline
+   storage_clients/webdav
+
+
+
+.. _replicating_files:
+
+=================
+Replicating files
+=================
+
+File replication means that you copy the same file to multiple storage
+elements. If you then start a grid job which uses that file, and the job
+lands on one of the compute elements of Life Science Grid, you
+then use the file which is nearest to the compute element. This reduces
+the time needed to copy the file, and reduces network traffic.
+
+You can replicate a file and use the replicas with the following steps:
+
+1. Copy your file to one of the storage elements, while registering the
+   file in the *logical file catalog*
+
+2. Replicate the file to other storage elements, and register the copies
+   under the same entry in the *logical file catalog*
+
+3. In your job description, tell the scheduler where to run jobs by
+   specifying a *Data requirement*
+
+
+This section describes the steps.
+
+
+Copying files and registering files in the *logical file catalog*
+-----------------------------------------------------------------
+
+To copy a file from a user interface to one of the storage elements, and
+register the file in the logical file catalog:
+
+* determine the full path of the file; for example, using the ``pwd``
+  command::
+  
+.. code-block:: bash
+
+  > pwd
+  /home/homer/Projects/input.dat
+
+* determine the full path of the target file, on *dCache* or *DPM*; see
+  :ref:`file-id` about how to refer to the target file.
+
+* use ``lcg-cr`` and the fulls path to the file to store the first copy of your
+  file on one of the storage elements, and register the file in the *logical
+  file catalog*::
+
+    lcg-cr --vo lsgrid 
+      -d srm://gb-se-kun.els.sara.nl/dpm/els.sara.nl/home/lsgrid/homer/input.dat
+      -l lfn:/grid/lsgrid/homer/input.dat
+      file:///home/homer/Projects/input.dat
+
+  In this example, the file ``input.dat`` is copied from the ``Projects``
+  directory on the local user interface, to a storage element on the Life
+  Science Cluster in Nijmegen, and registered in the LFC, with the credentials
+  from the VO *lsgrid*. Note that this requires membership of the *lsgrid* VO.
+
+* use ``lcg-rep`` to create a replica of the file, and register the replica
+  with the LFC::
+
+    lcg-rep 
+      -d srm://gb-se-amc.amc.nl/dpm/amc.nl/home/lsgrid/homer/input.dat
+      lfn:/grid/lsgrid/homer/input.dat
+
+  Note that the LFC location is the same as in the ``lcg-cr``-command.
+
+* verify that there are two copies of the file, registered under the same
+  LFC entry::
+
+   > lcg-lr lfn:/grid/lsgrid/homer/input.dat
+   srm://gb-se-kun.els.sara.nl/dpm/els.sara.nl/home/lsgrid/homer/input.dat
+   srm://gb-se-amc.amc.nl/dpm/amc.nl/home/lsgrid/homer/input.dat
+
+
+.. _staging:
+
+=============
+Staging files
+=============
+
+The :ref:`dCache` storage at SURFsara consists of magnetic tape storage and hard disk storage. If your :ref:`quota allocation <quotas>` includes tape storage, then the data stored on magnetic tape has to be copied to a hard drive before it can be used. This action is called :ref:`staging`. 
+
+.. topic:: Staging terms
+	
+	**ONLINE** means that the file is only on disk
+	
+	**NEARLINE** means that the file in only on tape
+	
+	**ONLINE_AND_NEARLINE** means that the file in on disk and tape
+
+
+.. _pin-file:
+
+File pinning example
+====================
+
+The example below shows how to stage a list of files with known SURLs.
+
+.. note:: To run the example below you need to have a valid proxy, see :ref:`startgridsession`. 
+
+* Copy and untar the tarball :download:`staging scripts </Scripts/staging.tar>` to your UI directory.
+
+* Create a proxy on UI:
+
+.. code-block:: bash
+  
+	startGridSession lsgrid  
+
+* The file paths should be listed in a file called ``files`` with the following format:
+
+.. code-block:: bash
+
+	/pnfs/grid.sara.nl/data/...
+
+Let's say that you have a list of SURLs that you want to stage. Convert the list of SURLs in the datasets/example.txt file to the desired ``/pnfs`` format: 
+
+.. code-block:: bash
+
+	sed -e "s/srm:\/\/srm.grid.sara.nl:8443//" datasets/example.txt > files
+
+* Test the status of the files with:
+
+.. code-block:: bash
+
+	python state.py
+
+
+* Stage the files:  
+
+.. code-block:: bash
+
+	python stage.py
+
+This script stages a number of files from tape. You can change the pin lifetime in the stage.py script by changing the ``srmv2_desiredpintime`` attribute in seconds.
+
+
+.. monitor-staging:
+
+Monitor staging activity
+------------------------
+
+Once you submit your stage requests, you can use the gfal scripts to monitor the status or check the webpage below that lists all the current staging requests:
+
+	http://dcmain.grid.sara.nl:2288/poolInfo/restoreHandler/lazy
+
+
+.. _unpin-file:
+
+Unpin a file
+------------
+
+Your files may remain ``ONLINE`` as long as there is free space on the disk pools and then they will be purged for new coming staging requests.
+
+The disk pool where your files are staged has limited capacity and is only meant for data that a user wants to process on a Grid site. When you :ref:`pin a file <pin-file>` you set a `pin lifetime` that once is expired the data is automatically released, i.e. go ``OFFLINE``. In other words, the data may be purged from disk, as soon as the space is required for stage requests. 
+
+Once the data is unpinned, it will remain of course on tape and has to be staged again in order to be processed on a Worker Node. 
+
+When you are done with your processing, we recommend you release (or unpin) all the files that you don't need any more. In order to unpin a file, run from the UI:
+
+.. code-block:: bash
+
+	srm-release-files srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar # replace with your SURL
+
+This command will initiate unpinning of file "zap.tar" (even if you submitted multiple pin requests) and the file will remain cached but purgeable until new requests will claim the available space. It is an optional action, but helps a lot with the effective system usage.
+
+.. warning:: At the moment neither the srm-bring-online or the python gfal scripts result to an effective release of the file if there are multiple pin requests. Please use ``srm-release-files``.
+
+
+.. Links:
+
+.. _`dCache system`: https://www.dcache.org/
+
+.. vim: set wm=7 :
