@@ -76,6 +76,13 @@ def visit_youtube_node(self, node):
 def depart_youtube_node(self, node):
     pass
 
+def visit_latex(self,node):
+    'Show hyperlinnk in centered box for in LaTeX'
+    self.body.append(r'\begin{quote}\begin{center}\fbox{\url{https://youtu.be/%s}}\end{center}\end{quote}' % node["id"])
+
+def depart_latex(self,node):
+    pass
+
 class YouTube(Directive):
     has_content = True
     required_arguments = 1
@@ -101,5 +108,8 @@ class YouTube(Directive):
         return [youtube(id=self.arguments[0], aspect=aspect, width=width, height=height)]
 
 def setup(app):
-    app.add_node(youtube, html=(visit_youtube_node, depart_youtube_node))
+    app.add_node(youtube,
+        html=(visit_youtube_node, depart_youtube_node),
+        latex=(visit_latex, depart_latex)
+        )
     app.add_directive("youtube", YouTube)
