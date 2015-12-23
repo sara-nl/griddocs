@@ -1,7 +1,7 @@
 # Documentation HOW-TO
 
 This directory contains the source code of documenation maintained with
-the Spinx documentation system. The README you are reading now contains
+the Sphinx documentation system. The README you are reading now contains
 instructions for setting up your environment for building the
 documentation.
 
@@ -24,8 +24,8 @@ documenation, use the command
 ```
     make html
 ```
-which will generate static pages in the ```build```-directory using the
-software called Sphinx.
+which will generate static pages in the ```build```-directory as long as you have the
+software Sphinx installed locally.
 
 ### Extensions
 
@@ -40,8 +40,14 @@ as described above. However, to be sure it is processed correctly by
 readthedocs.org, or if you do not want to install the necessary tools locally,
 you can use their Docker image. The Dockerfile for this image can be found in
 their GitHub repository: https://github.com/rtfd/readthedocs-docker-images
+It is also added as a submodule. 
 
-I have also added it as a submodule. So to build the image in Linux, run:
+Before you start with the Docker image, make sure that:
+* you have [Docker Engine installed](https://docs.docker.com/engine/installation/) 
+* Docker is running on your host
+* you have cloned the `griddocs` repository
+
+To build the image in Linux, run:
 
 ```bash
 git submodule init
@@ -50,8 +56,8 @@ cd readthedocs-docker-images
 sudo docker build -t rtfd-build:base base/
 ```
 
-In Mac OS X (with boot2docker or docker-machine), you can probably use the same
-command, except you do not need to prefix the build line with 'sudo'.
+In Mac OS X (with boot2docker or docker-machine), you can use the same
+command (`docker build`), except you do not need to prefix the build line with 'sudo'.
 
 Once build, you can use it to build your documentation in the same build
 environment as used by their production server:
@@ -60,11 +66,12 @@ environment as used by their production server:
 ./build.sh
 ```
 
+> Note:  For Mac OS X, please use `./build_mac.sh` instead.
+
+
 Optionally you can provide an output location (default: ./build) and the docker
 image name (default: rtfd-build:base):
 
 ```bash
 ./build.sh /alternative/output/path/ docker_image_alternative_name
 ```
-
-For Mac OS X, you can use ./build_mac.sh instead.
