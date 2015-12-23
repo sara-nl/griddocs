@@ -5,8 +5,12 @@ the Sphinx documentation system. The README you are reading now contains
 instructions for setting up your environment for building the
 documentation.
 
+* The Grid documentation page is: http://doc.grid.surfsara.nl/
+* The readthedocs overview page is: https://readthedocs.org/projects/grid-documentation/
+
 When changes are commited using Git and pushed to the correct GitHub repository,
 the documentation is automatically rebuild and published by readthedocs.org.
+
 
 ## Overview
 
