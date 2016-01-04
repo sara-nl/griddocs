@@ -17,6 +17,7 @@ About
 
 The :ref:`Life Science grid <LSG>` is a group of local clusters which can be used locally only, or as one big cluster. Accounts on the user interface machines are managed via a central system at SURFsara, upon approval from the `local site` contact.
 
+.. _lsg-dsa:
 
 ============================
 Locations and local contacts
