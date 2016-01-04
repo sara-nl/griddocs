@@ -12,6 +12,7 @@ In this page you will find general information about getting access to the Life 
 
 .. _access-local-lsg:
 
+========================
 Access local LSG cluster
 ========================
 
@@ -27,6 +28,7 @@ To get an account on a local user interface, please send a request to your Desig
 
 .. _access-grid:
 
+=========================================
 Access the National Dutch Grid or any LSG
 =========================================
 
@@ -43,7 +45,8 @@ Please contact us at helpdesk@surfsara.nl for any inquiry on our possibilities.
 .. _quotas:
 
 Estimate your quotas
---------------------
+====================
+
 When you come to use the Grid you do so in the context of a project. A project is set to solve a problem, defined as some goals that you want to achieve. You must also have a plan on how you think you are going to tackle the problem to achieve those goals. You can work together with several people in a project. And every project gets a quota assigned.
 
 A quota is a budget is set so that it gives an idea of the project requirements, and it involves:

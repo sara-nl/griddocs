@@ -28,6 +28,7 @@ The LSG infrastructure is tailored specifically for applications within the life
 
 .. _lsg-clusters:
 
+============
 LSG clusters 
 ============
 
