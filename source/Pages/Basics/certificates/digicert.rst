@@ -4,6 +4,11 @@
 Digicert certificate
 ********************
 
+This section describes how to obtain and install a Digicert Grid certificate. This is a prerequisite to get started on the Grid:
+
+.. contents:: 
+    :depth: 4
+    
 ===============================
 Obtain a *Digicert* certificate
 ===============================
@@ -30,19 +35,19 @@ Once finished, you will have a Grid certificate automatically stored in your bro
 Install a *Digicert* certificate on the UI
 ==========================================
 
-In order to install the *Digicert* certificate on the UI, you need to export it first from your browser and copy it to your :ref:`UI account <get-ui-account>`. This section shows you hoe to do this.
+In order to install the *Digicert* certificate on the UI, you need to export it first from your browser and copy it to your :ref:`UI account <get-ui-account>`. This section shows you how to do this.
 
 Export certificate from browser
 ===============================
 
-You can export the certificate vary from the browser that you stored your certificate in the previous step:
+You can export the certificate from the browser that you stored your certificate in the previous step:
 
-  * Open the Firefox browser where the certificate is stored
-  * Select: ``Preferences -> Advanced (left pane) -> Certificates (tab) -> View Certificates (button)``
-  * Select the certificate (.p12 file) that you stored in the previous step
-  * Press ``Backup``
-  * Give it a name, e.g. ``browsercert``
-  * Give a safe password and press ``Ok``
+* Open the Firefox browser where the certificate is stored
+* Select: ``Preferences -> Advanced (left pane) -> Certificates (tab) -> View Certificates (button)``
+* Select the certificate (.p12 file) that you stored in the previous step
+* Press ``Backup``
+* Give it a name, e.g. ``browsercert``
+* Give a safe password and press ``Ok``
   
 
 Convert pkcs12 to PEM
@@ -66,10 +71,12 @@ Convert pkcs12 to PEM
 .. code-block:: bash
 
     laptop$ scp /PATH-TO-P12-FILE/browsercert.p12 homer@ui.grid.sara.nl:~/.globus  # replace "homer" with your username!
+    
+If you exported your certificate from the UI browser, you can omit this step.
 	
-* Convert the ``.p12`` file to the PEM format. For this you need two commands; one to extract the key, and one to extract your certificate.
+* Convert the ``.p12`` file to the PEM format. For this you need two commands; a) one to extract the key, and b) one to extract your certificate.
 
-To extract your key, run:
+a) Extract your key, run:
 
 .. code-block:: bash
 
@@ -78,7 +85,7 @@ To extract your key, run:
 
 Note that you will first need to enter the password that was used to *create* the browsercert.p12 file. Next, you need to enter a password to protect the exported key. Enter that password again to verify. Note that you must enter a password and the password must be at least 12 characters; if the password is too short, ``openssl`` will fail without error. Using the same password as for the p12 file is fine. 
 
-To extract your certificate, run:
+b) Extract your certificate, run:
 
 .. code-block:: bash
 
@@ -111,8 +118,22 @@ The certificate and private key file should now be present in the .globus direct
 ================================================
 Install a *Digicert* certificate in your browser
 ================================================
+In order to apply for a :ref:`VO membership <join-vo>` you will have to install your certificate in your browser. If everything worked gracefully when you :ref:`obtained the Digicert certificate <digicert>` then your certificate was *automatically* stored in your browser.
 
-If everything worked gracefully when you :ref:`obtained the Digicert certificate <digicert>` then your certificate was automatically stored in your browser.
+* Verify that your certificate is valid and properly installed in your browser by accessing this website from the browser that you have your certificate installed: 
+
+	https://voms.grid.sara.nl:8443/vomses/
+
+If you receive an SSL authentication error, then try repeating the steps carefully as they come. If you managed to access the page above, your certificate is successfully installed!
+	
+.. topic:: See also:
+	
+    :ref:`key-match`	
+
+    :ref:`expiry-date` 	
+
+    :ref:`cert-subject`
+
 
 ..
 

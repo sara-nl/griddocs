@@ -9,7 +9,7 @@ This section summarises all the steps to submit your first job on the Grid, chec
 .. contents:: 
     :depth: 4
 
-.. warning:: You can continue with this guide *only* when you have completed the :ref:`preparations <preparation>` for Grid. If you skipped that, go back to the :ref:`prerequisites` section. Still need help with obtaining or installing your certificate? We can help! Contact us at helpdesk@surfsara.nl.
+.. warning:: You can continue with this guide *only after* you have completed the :ref:`preparations <preparation>` for Grid. If you skipped that, go back to the :ref:`prerequisites` section. Still need help with obtaining or installing your certificate? We can help! Contact us at helpdesk@surfsara.nl.
 	 
 Once you finish with the :ref:`first-grid-job`, you can continue with more :ref:`advanced` topics and also :ref:`best-practices`, the section that contains guidelines for porting real complex simulations on the Grid. 
 
@@ -63,31 +63,10 @@ This section will show you how to create a valid proxy:
 	* It generates a ``local proxy`` in the UI /tmp directory
 	* It uploads this proxy to ``Myproxy server``
 	* It ``delegates`` the proxy to the WMS with your user name as the delegation ID
-
-.. sidebar:: More about creating proxies?
-
-		.. seealso:: For more detailed information about the proxies, have a look to our mooc video :ref:`mooc-startgridsession`.
-
-You are ready now to submit a Grid job. The next section explains the startGridSession operations step-by-step. You can go directly to the next step: :ref:`jdl`.
-
-
-.. _startgridsession-explained:
-
-Operations explained
-====================
-
-Instead of ``startGridSession``, you can run separately the following commands with the same results:
-
-.. code-block:: bash
-
-	#  creates a proxy with additional VOMS extensions that enables you to access the Grid for *12 hours*
-	voms-proxy-init --voms lsgrid  
 	
-	# stores a *week* long proxy certificate in the Myproxy server; useful for jobs that are running for more than 12 hours
-	myproxy-init -d -n 
-	
-	# delegates your credentials to the WMS
-	glite-wms-job-delegate-proxy -d $USER
+	If you want to know more , see the advanced section about :ref:`grid-authentication`.
+
+And now you are ready to submit jobs to the Grid! Or copy data from and to the grid.
 	
 
 .. _jdl:

@@ -29,6 +29,10 @@ Starting a gridsession
 The easiest way to start a session on the LifeScience Grid is to use the
 script ``startGridSession <VO Name>``. 
 
+.. sidebar:: More about creating proxies?
+
+		.. seealso:: For more detailed information about the proxies, have a look to our mooc video :ref:`mooc-startgridsession`.
+
 This script:
 
 * generates a proxy certificate, 
@@ -41,40 +45,29 @@ jobs every 12 hours automatically, for one week. This means that your
 jobs must finish before one week from starting the grid session. However,
 running again gives your jobs more time.
 
+The next section explains the startGridSession operations step-by-step. 
 
-Operations run by this script
------------------------------
+.. _startgridsession-explained:
 
-The first step in this script is to create a proxy certicate with *VOMS
-extensions*, by running::
+Operations explained
+====================
 
-  voms-proxy-init -voms lsgrid
+Instead of ``startGridSession``, you can run separately the following commands with the same results:
 
-The command contacts the VOMS server, and if you are a member of the
-requested VO, you get a proxy certificate which enables you to
-access the Grid for 12 hours. The compute and storage elements you are
-able to access depends on the VO.
+.. code-block:: bash
 
-Next, the script stores a week-long proxy certificate in the Myproxy
-server by running::
-
- myproxy-init -d -n
-
-This is useful for jobs that are running for more than 12 hours; the
-glite middleware uses this server to re-obtain your credentials when they
-are expired.
-
-
-The last step in ``startGridSession`` is to delegate your credentials to
-the *WMS*, by running::
-
-  glite-wms-job-delegate-proxy -d $USER
+	#  creates a proxy with additional VOMS extensions that enables you to access the Grid for *12 hours*
+	voms-proxy-init --voms lsgrid  
+	
+	# stores a *week* long proxy certificate in the Myproxy server; useful for jobs that are running for more than 12 hours
+	myproxy-init -d -n 
+	
+	# delegates your credentials to the WMS
+	glite-wms-job-delegate-proxy -d $USER
 
 The ``-d $USER`` flag acts as pointer which you can use in your job
 submissions to avoid repeating delegation.
 
-And now you are ready to submit jobs to the Grid! Or copy data from and
-to the grid.
 
 Commands for viewing your proxy information
 -------------------------------------------

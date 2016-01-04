@@ -5,6 +5,11 @@
 DutchGrid certificate
 *********************
 
+This section describes how to obtain and install a DutchGrid Grid certificate. This is a prerequisite to get started on the Grid:
+
+.. contents:: 
+    :depth: 4
+
 ================================	
 Obtain a *DutchGrid* certificate
 ================================
@@ -44,10 +49,7 @@ Request a *DutchGrid* certificate
 
 * Once your form is signed by the RA, send a scanned copy to the DutchGrid CA via email or fax. The contact details can be found in the printed form, but you can contact also helpdesk@surfsara.nl if you are in doubt.  
 
-* The CA will finally send your certificate via email within ~a week. Once you have a received your  a certificate you will need to install it both on:
-
-  * your :ref:`UI account <get-ui-account>` 
-  * your browser (UI or laptop)
+* The CA will finally send your certificate via email within ~a week. Once you have a received your  a certificate you will need to install it both on your :ref:`UI account <get-ui-account>` and your browser (UI or laptop). We'll see this next.
 
 .. note::  If you need help to obtain your DutchGrid certificate, please read the `JGridstart guide`_  or contact us at helpdesk@surfsara.nl. 
 
@@ -140,7 +142,7 @@ In order to apply for a :ref:`VO membership <join-vo>` you will have to install 
 Convert PEM to pkcs12
 =====================
 
-* To convert a PEM file to the pkcs12 format, you need the following command, run::
+* To convert a PEM file to the pkcs12 format, run on the UI:
 
 .. code-block:: bash
 
@@ -152,10 +154,10 @@ This will ask you for a password three times: the first is to unlock your privat
 Import the certificate to the browser
 =====================================
 
-* To import the .p12 files in your browser, open a Firefox window (``$ firefox &``) and apply the following steps (Note that you may have to copy the p12 file to a directory accessible from your browser):
+* To import the ``.p12`` file in your browser, open a Firefox window (``$ firefox &``) on the UI and apply the following steps (Note that you may have to copy the p12 file to a directory accessible from your browser):
 
   * From the Firefox Menu bar select: ``Edit > Preferences > Encryption > View Certificates > Import``
-  * Select the ``browsercert.p12`` file
+  * Select the ``browsercert.p12`` file from the UI local directory
   * Give the password you set in the previous step.
   * You should now see the certificate listed. Close the window.
 	

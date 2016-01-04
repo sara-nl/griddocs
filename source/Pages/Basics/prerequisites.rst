@@ -101,8 +101,7 @@ This section describes how to get a VO membership.
 
 .. warning:: At this point you must have the certificate successfully installed in your browser. If you don’t have that, go back the :ref:`previous step <get-grid-certificate>`.
 
-* Open the link here from the browser where your certificate is installed (UI or laptop):   https://voms.grid.sara.nl:8443/vomses/
-  *  The page will ask you to confirm with your installed browser certificate.
+* Open the link below from the browser where your certificate is installed (UI or laptop). The page will ask you to confirm with your installed browser certificate:   https://voms.grid.sara.nl:8443/vomses/  
 * Select the VO that you are interested for e.g. ``lsgrid``, from the front page listing all the available VOs. If it is unclear to you for which VO you should register, please contact us at helpdesk@surfsara.nl. 
 * Fill in some of your personal details (name, email, etc.), then read and accept the AUP.
 * Check that you have received a verification email titled “Your membership request for VO ...” and confirm with the URL, as described in the email.  
