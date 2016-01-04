@@ -7,9 +7,9 @@
 
 .. _contents:
 
-******************************
-Welcome to Grid documentation! 
-******************************
+******************
+Grid documentation
+******************
 
 This wiki collects the documentation for using the ``Grid services`` at `SURFsara`_. The information in this tutorial will help you get started with the Grid, learn best techniques to successfully port your application to the Grid infrastructure and stay up-to-date with our system developments. 
 
@@ -20,6 +20,21 @@ This wiki collects the documentation for using the ``Grid services`` at `SURFsar
 
 .. _basics:
 
+
+=======
+General
+=======
+
+.. toctree::
+   :maxdepth: 1
+   
+   Pages/General/about_the_grid
+   Pages/General/national_grid
+   Pages/General/life_science_grid
+   Pages/General/grid_services
+   Pages/General/grant_access.rst
+   
+
 ======        
 Basics
 ======
@@ -27,7 +42,6 @@ Basics
 .. toctree::
    :maxdepth: 2
 
-   Pages/Basics/about_the_grid
    Pages/Basics/prerequisites
    Pages/Basics/first_grid_job
    
