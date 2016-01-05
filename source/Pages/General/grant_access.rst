@@ -28,16 +28,16 @@ To get an account on a local user interface, please send a request to your Desig
 
 .. _access-grid:
 
-=========================================
-Access the National Dutch Grid or any LSG
-=========================================
+=====================================
+Access the National Dutch Grid or LSG
+=====================================
 
-Granting access to the Dutch Grid or *all* of the LSG clusters enables you:
+Granting access to the Dutch Grid or the LSG clusters (including non-local clusters) enables you:
 
 * submitting :ref:`Grid jobs <first-grid-job>` to multiple clusters via the Grid middleware
-* store data to the :ref:`grid-storage`
+* storing data to the :ref:`grid-storage`
 
-Researchers at SURF-affiliated institutes can apply for compute and storage capacity on the Grid. For scientists not affiliated to SURF, rates are based on tailor made packages (e.g. the chosen bundle size). Specific details on obtaining accounts and on our rates can be found in the `Access Grid`_ section of our website. 
+Researchers at SURF-affiliated institutes can apply for compute and storage capacity on the Grid by submitting the SURFsara application form`_. For scientists not affiliated to SURF, rates are based on tailor made packages (e.g. the chosen bundle size). Specific details on obtaining accounts and on our rates can be found in the `Access Grid`_ section of our website. 
 
 Please contact us at helpdesk@surfsara.nl for any inquiry on our possibilities.
 
@@ -61,11 +61,12 @@ In order to allocate a project, thus, we need to establish a quota for it. And w
 	
 	Contact us at helpdesk@surfsara.nl and we can work together on estimating the resources for running your computation. 
 
-We always recommend that you have run several tests of your programs somewhere else (e.g.: your laptop) before you request access to the Grid. It would be ideal if you could try running several representative (input) samples. That way you can see (and know in advance):
+We always recommend that you have run several tests of your programs somewhere else (e.g.: your laptop) before you request access to the grid. It would be ideal if you could try running several representative (input) samples. That way you can see (and know in advance):
 
 * how long it takes to run a few input scenarios
 * how much space you need to store input, output and intermediate data
 * what are the software requirements (required software tools, libraries, compilers, etc)
+* how many scenarios (jobs) you need to submit for a complete analysis
 
 ..
 
@@ -78,3 +79,5 @@ We always recommend that you have run several tests of your programs somewhere e
 .. _`SURFsara helpdesk`: https://www.surf.nl/en/about-surf/contact/helpdesk-surfsara-services/index.html
 
 .. _`Access Grid`: https://www.surf.nl/en/services-and-products/grid/access/index.html
+
+.. _`SURFsara application form`: https://e-infra.surfsara.nl/
