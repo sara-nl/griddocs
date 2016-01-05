@@ -4,7 +4,7 @@
 First Grid Job
 **************
 
-This section summarises all the steps to submit your first job on the Grid, check its status and retrieve the output:
+This section summarises all the steps to submit your first job on the grid, check its status and retrieve the output:
 
 .. contents:: 
     :depth: 4
@@ -28,13 +28,14 @@ To run your application on the Grid you need to describe its requirements in a s
 
 Except for the application requirements, you also need to specify in the JDL the content of the in/out- put ``sandboxes``. These sandboxes allow you to transfer data to or from the Grid. The input sandbox contains all the files that you want to send with your job to the worker node, like e.g. a script that you want executed. The output sandbox contains all the files that you want to have transferred back to the UI. 
 
-.. note:: The amount of data that you can transfer using the sandboxes is very limited, in the order of a few mega bytes. This means that you should normally limit the input sandbox to a few script files and the output sandbox to the stderr and stdout files.	
+.. note:: The amount of data that you can transfer using the sandboxes is very limited, in the order of a few mega bytes (less than **100MB**). This means that you should normally limit the input sandbox to a few script files and the output sandbox to the stderr and stdout files.	
 
-Once you have the jdl ready, you can submit it to the Workload Management System (WMS) and your job will be scheduled on a Grid worker node. This is what the WMS does for you. The purpose of WMS is to distribute and manage tasks across computing resources. More specifically, the WMS will accept your job, assign it to the most appropriate Computing Element (CE), record the job status and retrieve the output. 
+Once you have the jdl ready, you can submit it to multiple clusters with glite-* commands. The Workload Management System (WMS) will schedule your job on a grid worker node. The purpose of WMS is to distribute and manage tasks across computing resources. More specifically, the WMS will accept your job, assign it to the most appropriate Computing Element (CE), record the job status and retrieve the output. 
 
-.. image:: /Images/job_lifecycle.png
-	:align: center
+The following animations illustrate the grid lifecycle as described above:
 
+* `Grid WMS animation`_
+* `Grid job status animation`_
 
 .. _startgridsession:
 
@@ -238,17 +239,27 @@ mind that if the ``/scratch``-directory becomes too full, the
 administrators remove the older files until enough space is available
 again.
 
-===============
-Conclusion
-===============
 
+Recap
+=====
         
 Congratulations! You have just executed your first job to the Grid!
 
+Let's summarise what we've seen so far.
+
+You interact with the Grid via the UI machine ui.grid.sara.nl. You describe each job in a JDL (Job Description Language) file where you list which program should be executed and what are the worker node requirements. From the UI, you create first a proxy of your grid certificate and submit your job with glite-* commands. The resource broker, called WMS (short for Workload Management System), accepts your jobs, assigns them to the most appropriate CE (Computing Element), records the jobs statuses and retrieves the output. 
 
 .. seealso:: Try now to port your own application to the Grid. Checkout the :ref:`best-practices` section and run the example that suits your use case. The section :ref:`advanced` topics will help your understanding for several Grid modules used in the  :ref:`best-practices`. 
 
 	Done with the :ref:`basics`, but not sure how to proceed? We can help! Contact us at helpdesk@surfsara.nl.
 
+..
 
- 
+..
+
+..
+
+.. Links:
+
+.. _`Grid WMS animation`: https://mooc-inst.gridmooc-surfsara.vm.surfsara.nl/mooc/animations/wms.html
+.. _`Grid job status animation`: https://mooc-inst.gridmooc-surfsara.vm.surfsara.nl/mooc/animations/wms_with_status.html 
