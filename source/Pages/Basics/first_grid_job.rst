@@ -138,6 +138,11 @@ Alternatively, use your delegation ID:
 
 Your job is now ready. Continue to the next step to submit it to the Grid!
 
+To submit your first Grid job and get an understanding of the job lifecycle, we will perform these steps:
+
+* :ref:`Job submission <job-submit>`
+* :ref:`Status tracking <job-status>`
+* :ref:`Output retrieval <job-output>`
 
 .. _job-submit:
 
@@ -151,13 +156,8 @@ You should have your simple.jdl file ready in your UI up to this point. When you
 
 		.. seealso:: For more detailed information about submitting a simple Grid job, have a look to our mooc video :ref:`mooc-submit-job`.
 
-To submit your first Grid job and get an understanding of the job lifecycle, we will perform these steps:
 
-* :ref:`Job submission <job-submit>`
-* :ref:`Status tracking <job-status>`
-* :ref:`Output retrieval <job-output>`
-
-Submit the simple job by typing in your UI Terminal this command:
+Submit the simple job by typing in your UI terminal this command:
 
 .. code-block:: bash
 
@@ -213,7 +213,7 @@ To check the current job status from the command line, apply the following comma
 
 	https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
 
-Note that the URL can only be accessed by you as you are authenticated to the server with the certificate installed in this browser. If your certificate is not installed in this browser, you will see an authentication error.
+Note that the URL can only be accessed by you as you are authenticated to the server with the certificate installed in this browser. If your certificate is not installed in this browser, you will get an authentication error.
 
 
 .. _job-cancel:
@@ -282,8 +282,7 @@ Check job output
 	# -rw-rw-r-- 1 homer homer  0 Jan  5 18:06 simple.err
 	# -rw-rw-r-- 1 homer homer 20 Jan  5 18:06 simple.out
 
-	cat /home/homer/homer_JIVYfkMxtnRFWweGsx0XAA/simple.out # displays the hostname of the worker node where the job lands
-	
+	cat /home/homer/homer_JIVYfkMxtnRFWweGsx0XAA/simple.out # displays the hostname of the grid worker node where the job landed
 	# wn01.lsg.bcbr.uu.nl
 
 =====
