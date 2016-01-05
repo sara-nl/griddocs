@@ -30,7 +30,7 @@ Except for the application requirements, you also need to specify in the JDL the
 
 .. note:: The amount of data that you can transfer using the sandboxes is very limited, in the order of a few mega bytes (less than **100MB**). This means that you should normally limit the input sandbox to a few script files and the output sandbox to the stderr and stdout files.	
 
-Once you have the jdl ready, you can submit it to multiple clusters with glite-* commands. The Workload Management System (WMS) will schedule your job on a grid worker node. The purpose of WMS is to distribute and manage tasks across computing resources. More specifically, the WMS will accept your job, assign it to the most appropriate Computing Element (CE), record the job status and retrieve the output. 
+Once you have the jdl ready, you can submit it to multiple clusters with ``glite-*`` commands. The Workload Management System (WMS) will schedule your job on a grid worker node. The purpose of WMS is to distribute and manage tasks across computing resources. More specifically, the WMS will accept your job, assign it to the most appropriate Computing Element (CE), record the job status and retrieve the output. 
 
 The following animations illustrate the grid lifecycle as described above:
 
@@ -53,15 +53,35 @@ This section will show you how to create a valid proxy:
 
 	ssh homer@ui.grid.sara.nl # replace "homer" with your username
 
-* Create a proxy with the following command, run:
+* Create a proxy with the following command, run on the UI the following command and provide your grid certificate password when prompted:
 
 .. code-block:: bash
  
 	startGridSession lsgrid  #replace lsgrid with your VO
+
+You should see a similar output displayed in your terminal:
+
+.. code-block:: bash
+
+	# Now starting...
+	# Please enter your GRID password:
+	# voms-proxy-init -voms lsgrid --valid 168:00 -pwstdin
+	# Contacting voms.grid.sara.nl:30018 [/O=dutchgrid/O=hosts/OU=sara.nl/CN=voms.grid.sara.nl] "lsgrid"...
+	# Remote VOMS server contacted succesfully.
+
+	# Created proxy in /tmp/x509up_u39111.
+
+	# Your proxy is valid until Tue Jan 11 09:31:56 CET 2016
+	# Your identity: /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
+	# Creating proxy ..................................................... Done
+	# Proxy Verify OK
+	# Your proxy is valid until: Tue Jan 11 09:31:56 2016
+	# A proxy valid for 168 hours (7.0 days) for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson now exists on px.grid.sara.nl.
+	# Your delegation ID is: homer
 	
 .. note:: What does the startGridSession script actually do?
 
-	* It generates a ``local proxy`` in the UI /tmp directory
+	* It generates a ``local proxy`` (x509up_uXXX) in the UI ``/tmp/`` directory
 	* It uploads this proxy to ``Myproxy server``
 	* It ``delegates`` the proxy to the WMS with your user name as the delegation ID
 	
@@ -112,7 +132,7 @@ Alternatively, use your delegation ID:
 
 .. code-block:: bash
 
-	glite-wms-job-list-match -d homer simple.jdl # replace homer with your delegation id, in this case the your login name 
+	glite-wms-job-list-match -d homer simple.jdl # replace homer with your delegation id, in this case your login name 
 	
 .. note:: The '-a' option should not be used frequently. It creates a proxy of your certificate 'on-the-fly' when the job is submitted; therefore '-a' is quite inefficient when submitting hundreds of jobs.
 
@@ -125,7 +145,7 @@ Your job is now ready. Continue to the next step to submit it to the Grid!
 Submit the job to the Grid
 ==========================
 
-You should have your simple.jdl file ready in your UI up to this point. When you submit this simple Grid job to the WMS, a job will be created and sent to a remote Worker Node. There it will execute the command ``/bin/hostname -f`` and write its standard output and its standard error.
+You should have your simple.jdl file ready in your UI up to this point. When you submit this simple Grid job to the WMS, a job will be created and sent to a remote Worker Node. There it will execute the command ``/bin/hostname -f`` and write its standard output and its standard error in the simple.out and simple.err respectively.
 
 .. sidebar:: First Job explained
 
@@ -137,11 +157,22 @@ To submit your first Grid job and get an understanding of the job lifecycle, we 
 * :ref:`Status tracking <job-status>`
 * :ref:`Output retrieval <job-output>`
 
-A job can be submitted by typing in your UI Terminal this command:
+Submit the simple job by typing in your UI Terminal this command:
 
 .. code-block:: bash
 
 	glite-wms-job-submit -d $USER -o jobIds simple.jdl
+	
+	# Connecting to the service https://wms2.grid.sara.nl:7443/glite_wms_wmproxy_server
+	# ====================== glite-wms-job-submit Success ======================
+	# The job has been successfully submitted to the WMProxy
+	# Your job identifier is:
+	#
+	# https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA
+	#
+	# The job identifier has been saved in the following file:
+	# /home/homer/jobIds
+	# ==========================================================================
 	
 	
 The option '-o' allows you to specify a file (in this case ``jobIDs``) to store the unique job identifier:
@@ -155,7 +186,7 @@ The option '-o' allows you to specify a file (in this case ``jobIDs``) to store 
 	cat jobIds
 
 	# ###Submitted Job Ids### 
-	# https://wms2.grid.sara.nl:9000/6swP5FEfGVZ69tVB3PwnDQ
+	# https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA
 
 
 .. _job-status:
@@ -170,7 +201,7 @@ To check the current job status from the command line, apply the following comma
 
 .. code-block:: bash
 
-	glite-wms-job-status https://wms2.grid.sara.nl:9000/6swP5FEfGVZ69tVB3PwnDQ #replace with your jobID
+	glite-wms-job-status https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
 
 * Alternatively, if you have saved your jobIds into a file you can use the '-i' option and the filename as argument:
 
@@ -178,11 +209,11 @@ To check the current job status from the command line, apply the following comma
 
 	glite-wms-job-status -i jobIds
 
-* Finally, a third way to check the job status is within the web browser that :ref:`you installed your certificate <install-cert-browser>`. Copy the link:
+* Finally, a third (optional) way to check the job status is within the web browser that :ref:`you installed your certificate <install-cert-browser>`. In this browser open the jobID link:
 
-	https://wms2.grid.sara.nl:9000/6swP5FEfGVZ69tVB3PwnDQ
+	https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
 
-and paste it in your browser. Note that the URL can only be accessed by you as you are authenticated to the server with the certificate installed in this browser.
+Note that the URL can only be accessed by you as you are authenticated to the server with the certificate installed in this browser. If your certificate is not installed in this browser, you will see an authentication error.
 
 
 .. _job-cancel:
@@ -194,7 +225,7 @@ If you realize that you need to cancel a submitted job, use the following comman
 
 .. code-block:: bash
 
-	glite-wms-job-cancel https://wms2.grid.sara.nl:9000/6swP5FEfGVZ69tVB3PwnDQ #replace with your jobID
+	glite-wms-job-cancel https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
 
 Alternatively, you can use the jobIDs file:
 
@@ -212,7 +243,7 @@ Retrieve the output
 The output consists of the files included in the OutputSandbox. You can
 retrieve the job output once it is successfully completed, in other words the
 job status has changed from ``RUNNING`` to ``DONE``. The files in the
-OutputSandbox can be downloaded for one week after the job finishes.
+OutputSandbox can be downloaded for approx. one week after the job finishes.
 
 .. note:: 
         You can choose the output directory with the ``--dir`` option. If you do not use this option then the output will be copied under the UI ``/scratch`` directory with a name based on the ID of the job.  
@@ -221,7 +252,7 @@ OutputSandbox can be downloaded for one week after the job finishes.
 
 .. code-block:: bash
 
-	glite-wms-job-output https://wms2.grid.sara.nl:9000/6swP5FEfGVZ69tVB3PwnDQ
+	glite-wms-job-output https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
 	
 Alternatively, you can use the jobIDs file:
 	
@@ -239,7 +270,23 @@ mind that if the ``/scratch``-directory becomes too full, the
 administrators remove the older files until enough space is available
 again.
 
+Check job output
+================
 
+* To check your job output, browse into the downloaded output directory. This includes the "simple.out", "simple.err" files specified in the OutputSandbox:
+
+.. code-block:: bash
+
+	ls -l /home/homer/homer_JIVYfkMxtnRFWweGsx0XAA/
+
+	# -rw-rw-r-- 1 homer homer  0 Jan  5 18:06 simple.err
+	# -rw-rw-r-- 1 homer homer 20 Jan  5 18:06 simple.out
+
+	cat /home/homer/homer_JIVYfkMxtnRFWweGsx0XAA/simple.out # displays the hostname of the worker node where the job lands
+	
+	# wn01.lsg.bcbr.uu.nl
+
+=====
 Recap
 =====
         
