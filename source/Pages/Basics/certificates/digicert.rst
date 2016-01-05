@@ -35,23 +35,24 @@ Once finished, you will have a Grid certificate automatically stored in your bro
 Install a *Digicert* certificate on the UI
 ==========================================
 
-In order to install the *Digicert* certificate on the UI, you need to export it first from your browser and copy it to your :ref:`UI account <get-ui-account>`. This section shows you how to do this.
+In order to install the *Digicert* certificate on the UI, you need to export it first from your browser, copy it to your :ref:`UI account <get-ui-account>` and convert it to .pem format. This section shows you how to do this.
 
 Export certificate from browser
 ===============================
 
 You can export the certificate from the browser that you stored your certificate in the previous step:
 
-* Open the Firefox browser where the certificate is stored
+* Open the Firefox browser where the certificate is stored. This is the browser you used to access the `DigiCert portal`_
 * Select: ``Preferences -> Advanced (left pane) -> Certificates (tab) -> View Certificates (button)``
 * Select the certificate (.p12 file) that you stored in the previous step
 * Press ``Backup``
-* Give it a name, e.g. ``browsercert``
+* Give it a name, e.g. ``browsercert`` and select the location to store it
 * Give a safe password and press ``Ok``
   
+The file ``browsercert.p12`` is now stored locally. Next, we will store it on the UI.
 
-Convert pkcs12 to PEM
-=====================
+Copy certificate *.p12* file to the UI
+======================================
 
 * Open a terminal and connect to the UI machine with your personal :ref:`UI account <get-ui-account>`:
 
@@ -66,17 +67,19 @@ Convert pkcs12 to PEM
 
  	mkdir $HOME/.globus
  
-* If you exported the certificate to your laptop, copy it from your local machine to your ``.globus`` ui directory: 
+* If you exported the certificate to your laptop, copy it from your local machine to your ``.globus`` ui directory. If you exported your certificate from the UI browser, you can skip this step: 
  
 .. code-block:: bash
 
     laptop$ scp /PATH-TO-P12-FILE/browsercert.p12 homer@ui.grid.sara.nl:~/.globus  # replace "homer" with your username!
-    
-If you exported your certificate from the UI browser, you can omit this step.
-	
-* Convert the ``.p12`` file to the PEM format. For this you need two commands; a) one to extract the key, and b) one to extract your certificate.
 
-a) Extract your key, run:
+
+Convert pkcs12 to PEM
+=====================
+    
+* Convert the ``.p12`` file to the PEM format. For this you need *two* commands; a) one to extract the key, and b) one to extract your certificate.
+
+a) Extract your key, run on the UI:
 
 .. code-block:: bash
 
@@ -85,7 +88,7 @@ a) Extract your key, run:
 
 Note that you will first need to enter the password that was used to *create* the browsercert.p12 file. Next, you need to enter a password to protect the exported key. Enter that password again to verify. Note that you must enter a password and the password must be at least 12 characters; if the password is too short, ``openssl`` will fail without error. Using the same password as for the p12 file is fine. 
 
-b) Extract your certificate, run:
+b) Extract your certificate, run on the UI:
 
 .. code-block:: bash
 
