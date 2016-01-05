@@ -10,6 +10,9 @@ This section describes how to obtain and install a DutchGrid Grid certificate. T
 .. contents:: 
     :depth: 4
 
+
+.. _obtain-dutchgrid:
+
 ================================	
 Obtain a *DutchGrid* certificate
 ================================
@@ -53,6 +56,8 @@ Request a *DutchGrid* certificate
 
 .. note::  If you need help to obtain your DutchGrid certificate, please read the `JGridstart guide`_  or contact us at helpdesk@surfsara.nl. 
 
+
+.. _retrieve-dutchgrid:
   
 Retrieve your *DutchGrid* certificate
 =====================================
