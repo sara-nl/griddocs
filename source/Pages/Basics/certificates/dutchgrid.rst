@@ -45,7 +45,7 @@ Request a *DutchGrid* certificate
   * Fill in and print the verification form by pressing the ``display form`` button. Once you fill in the form, save it locally.
   * Close the wizard   
   
-* Print the form and contact your institution's ``Registration Authority`` (RA) in person. The RA person will check your identity (id or passport or driving licence) and sign the printed form.
+* Check your details in the printed form and contact your institution's ``Registration Authority`` (RA) in person. The RA person will check your identity (id or passport or driving licence) and sign the printed form.
 
 * Once your form is signed by the RA, send a scanned copy to the DutchGrid CA via email or fax. The contact details can be found in the printed form, but you can contact also helpdesk@surfsara.nl if you are in doubt.  
 
@@ -57,7 +57,7 @@ Request a *DutchGrid* certificate
 Retrieve your *DutchGrid* certificate
 =====================================
 
-Once your request is approved, you will receive an email titled "DutchGrid CA certificate ...". Now you need to retrieve the new certificate:
+Once your request is approved, you will receive an email titled *"DutchGrid CA certificate ..."*. Now you need to retrieve the new certificate:
  
 * Login to your :ref:`UI account <get-ui-account>` with X forward enabled, e.g.: 
 
@@ -79,7 +79,7 @@ Then a window pops up similar to the following:
 
 * Click on **retrieve your certificate**. This will automatically create a file ``usercert.pem`` in your ``~/.globus`` directory (check with ``$ ls ~/.globus``).
 
-* You may skip the step “install in browser” because the X session on the UI is slow and will probably be interrupted. Just click ``Next`
+* You may skip the step “install in browser” because the X session on the UI is slow and will probably be interrupted. Just click "Next"
 
 * Close the wizard.
 
@@ -133,10 +133,10 @@ In order to apply for a :ref:`VO membership <join-vo>` you will have to install 
 
 .. code-block:: bash
 
-    cd $HOME/.globus
     ssh homer@ui.grid.sara.nl # replace "homer" with your username!  
+    cd $HOME/.globus
 
-.. warning:: You can import a certificate in your browser only when it is in the format p12. This means that you need to convert the ``usercert.pem`` and ``userkey.pem`` files to a single  ``.p12`` file. 	
+.. warning:: You can import a certificate in your browser only when it is in the **pkcs12** format. This means that you need to convert the ``usercert.pem`` and ``userkey.pem`` files to a single  ``.p12`` file. 	
 
 
 Convert PEM to pkcs12
