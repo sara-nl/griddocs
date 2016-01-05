@@ -192,3 +192,35 @@ CPU efficiency is an important factor to detect if the jobs run smoothly on the 
 	CPU efficiency = CPU time / WallClock time
 
 If the CPU was efficiently being used during the job runtime, then a single core job will have efficiency close to 100%. For multicore jobs the efficiency is higher than 100%.
+
+
+.. _change-cert-pwd:
+
+How can I change my grid certificate password?
+==============================================
+
+Before you create a new private key file with a new password, we recommend you to make a backup of the old userkey.pem file.
+
+* To change your grid certificate password, type:
+
+.. code-block:: bash
+
+    openssl rsa -in ~/.globus/userkey.pem -des3 -out ~/.globus/new_private_key_file
+    mv ~/.globus/new_private_key_file ~/.globus/userkey.pem # this will replace your old key file with the old password!
+
+Note: this only changes the password you use for your certificate. If you think your certificate is compromised, you HAVE to revoke your certificate!
+
+
+.. _unable-load-cert:
+
+Unable to load certificate error
+================================
+
+If you get the following error:
+
+.. code-block:: bash
+
+    unable to load certificate 17714:error:0906D064:PEM routines:PEM_read_bio:bad base64
+    decode:pem_lib.c:781:
+
+when you use the command ``openssl x509 -text -noout -in usercert.pem``, it means that the email with the certificate wasn't saved properly as plain text (it included the Mime type for formatting). Repeat carerefully the steps as described in :ref:`Retrieve your DutchGrid certificate <retrieve-dutchgrid>` section. 
