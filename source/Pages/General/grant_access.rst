@@ -37,7 +37,7 @@ Granting access to the Dutch Grid or the LSG clusters (including non-local clust
 * submitting :ref:`Grid jobs <first-grid-job>` to multiple clusters via the Grid middleware
 * storing data to the :ref:`grid-storage`
 
-Researchers at SURF-affiliated institutes can apply for compute and storage capacity on the Grid by submitting the SURFsara application form`_. For scientists not affiliated to SURF, rates are based on tailor made packages (e.g. the chosen bundle size). Specific details on obtaining accounts and on our rates can be found in the `Access Grid`_ section of our website. 
+Researchers at SURF-affiliated institutes can apply for compute and storage capacity on the grid by submitting the `SURFsara application form`_. For scientists not affiliated to SURF, rates are based on tailor made packages (e.g. the chosen bundle size). Specific details on obtaining accounts and on our rates can be found in the `Access Grid`_ section of our website. 
 
 Please contact us at helpdesk@surfsara.nl for any inquiry on our possibilities.
 
@@ -47,7 +47,7 @@ Please contact us at helpdesk@surfsara.nl for any inquiry on our possibilities.
 Estimate your quotas
 ====================
 
-When you come to use the Grid you do so in the context of a project. A project is set to solve a problem, defined as some goals that you want to achieve. You must also have a plan on how you think you are going to tackle the problem to achieve those goals. You can work together with several people in a project. And every project gets a quota assigned.
+When you come to use the grid you do so in the context of a project. A project is set to solve a problem, defined as some goals that you want to achieve. You must also have a plan on how you think you are going to tackle the problem to achieve those goals. You can work together with several people in a project. And every project gets a quota assigned.
 
 A quota is a budget is set so that it gives an idea of the project requirements, and it involves:
 
