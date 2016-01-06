@@ -115,6 +115,8 @@ Tutorials
    :maxdepth: 1
    
    Pages/Tutorials/MOOC/mooc
+   
+* `gLite tutorial 2008`_
 
 
 ==========================
