@@ -269,7 +269,7 @@ The permissions on your installed certificate are probably wrong. Set the :ref:`
 Get non-vomsified proxy locally
 ===============================
 
-* To download locally the proxy stored on :ref:`MyProxy* server <myproxy-server>` you need to set a passphrase upon creation. To do this, protect your proxy with a MyProxy pass phrase by omitting option "-n"::
+* To download locally the proxy stored on :ref:`MyProxy server <myproxy-server>` you need to set a passphrase upon creation. To do this, protect your proxy with a MyProxy pass phrase by omitting option "-n"::
 
     myproxy-init -d
     
@@ -294,4 +294,11 @@ Here is an example of the displayed output::
 Here is an example of the displayed output::
     
     # Enter MyProxy pass phrase:
-    # A credential has been received for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson in /tmp/x509up_u39111. 	
+    # A credential has been received for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson in /tmp/x509up_u39111. 
+    
+Note that the downloaded proxy will not include the voms attributes.
+
+..
+..
+..
+  	
