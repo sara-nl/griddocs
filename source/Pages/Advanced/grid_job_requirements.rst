@@ -1,8 +1,7 @@
-.. warning:: Page under construction
 
 .. _job-requirements:
 
-
+*********************
 Grid job Requirements
 *********************
 
@@ -14,7 +13,13 @@ This chapter describes how to write the requirements, how the
 requirements determine where your jobs will run, and what they tell the
 scheduler.
 
+.. contents:: 
+    :depth: 4
+    
 
+.. _req-syntax:
+
+==================
 Requirement syntax
 ==================
 
@@ -22,23 +27,23 @@ Job requirments are written as an optional statement in the JDL file::
 
   Requirements = <expression>;
 
-Job requirements follow the JDL syntax. This also means that you
-
-can have multiple requirements using boolean operators ``&&`` for
+Job requirements follow the JDL syntax. This also means that you can have multiple requirements using boolean operators ``&&`` for
 *requirement 1 AND requirement 2*, and ``||`` for *requirement 1 OR
 requirement 2*. You can also use parentheses ``(...)`` for an even more
 fine-grained control over requirements.
 
 
+============
 Requirements
 ============
 
 
+.. _req-wallclock:
 
 Specifying Wall Clock time
---------------------------
+==========================
 
-**Parameter: ``other.GlueCEPolicyMaxWallClockTime``**
+**Parameter: other.GlueCEPolicyMaxWallClockTime**
 
 Synopsis::
 
@@ -47,7 +52,7 @@ Synopsis::
 
 By specifiying the wall clock time requirement, the scheduler picks a
 queue which is long enough for running the job. The parameter is
-``other.GlueCEPolicyMaxWallClockTime``, the value is in minutes. Make
+``other.GlueCEPolicyMaxWallClockTime``, the value is **in minutes**. Make
 sure that your requirement uses the 'greater than or equal to' syntax
 (``>=``).
 
@@ -61,16 +66,55 @@ determining in which queue your job will run:
    +============+=========================+
    | express    | 10                      |
    +------------+-------------------------+
+   | short      | 240 (= 4 hours)         |
+   +------------+-------------------------+
    | medium     | 2160 (= 36 hours)       |
    +------------+-------------------------+
    | long       | 4320 (= 72 hours)       |
    +------------+-------------------------+
 
 
-Requesting a number of CPU cores
---------------------------------
+.. _req-ce:
 
-**Parameter: ``other.GlueHostArchitectureSMPSize``**
+Selecting particular compute elements
+=====================================
+
+**Parameter: other.GlueCEInfoHostName**
+
+Synopsis::
+
+    # Only run on the AMC cluster
+    Requirements = (
+      other.GlueCEInfoHostName == "gb-ce-amc.amc.nl"
+    );
+
+    # Run on the WUR or on the LUMC cluster
+    Requirements = (
+      other.GlueCEInfoHostName == "gb-ce-amc.amc.nl"     ||
+      other.GlueCEInfoHostName == "gb-ce-lumc.lumc.nl"
+    );
+
+    # Avoid one of SURFsara's Gina compute elements
+    Requirements = (other.GlueCEInfoHostName != "creamce2.gina.sara.nl");
+    
+    # Exclude a specific site, e.g. iihe.ac.be
+    Requirements=(!RegExp("iihe.ac.be", other.GlueCEUniqueID));
+
+    # Schedule the jobs on a specific site, e.g. gina
+    Requirements=(RegExp("gina", other.GlueCEUniqueID));
+
+With the ``other.GlueCEInfoHostName`` criterium you can specify on which
+compute element your jobs will be scheduled. Or even on which CE your
+jobs will *not* be scheduled. This is convenient in cases where you know
+jobs will fail on particular systems, for some reason.
+
+
+.. _req-cores:
+
+Requesting a number of CPU cores
+================================
+
+**Parameter: other.GlueHostArchitectureSMPSize**
 
 Synopsis::
 
@@ -88,34 +132,21 @@ file with the ``SMPGranulari1ty`` directive. The default value is 1 core.
 .. warning:: If you are running a multi-core process in your job, and
              you do not set the correct number of CPU cores, **you will 
              oversubscribe a compute node, slowing down your own analysis,
-             as well as others'**.
-
-
-Selecting particular compute elements
--------------------------------------
-
-Parameter: ``other.GlueCEInfoHostName``
+             as well as others**.
+   
+   
+.. _req-multicore:   
+   
+Multicore jobs
+==============   
+**Parameters: SmpGranularity, CPUNumber**
 
 Synopsis::
 
-    # Only run on the AMC cluster
-    Requirements = (
-      other.GlueCEInfoHostName == "gb-ce-amc.amc.nl"
-    );
-
-    # Run on the WUR or on the LUMC cluster
-    Requirements = (
-      other.GlueCEInfoHostName == "gb-ce-amc.amc.nl"     ||
-      other.GlueCEInfoHostName == "gb-ce-lumc.lumc.nl"
-    );
-
-    # Avoid one of SURFsara's Gina compute elements
-    Requirements = (other.GlueCEInfoHostName != "creamce2.gina.sara.nl");
-
-With the ``other.GlueCEInfoHostName`` criterium you can specify on which
-compute element your jobs will be scheduled. Or even on which CE your
-jobs will *not* be scheduled. This is convenient in cases where you know
-jobs will fail on particular systems, for some reason.
-   
+    # Request just 4 cores on a single node 
+    SmpGranularity = 2;
+    CPUNumber = 2;   
+	
+Note that if you do not specify SmpGranularity the requested number of cores (CPUNumber) can be distributed over different nodes, which is only useful for MPI (or likewise) applications. 
 	
 .. vim: set wm=7 expandtab :
