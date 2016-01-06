@@ -104,6 +104,13 @@ You will see the following output in your terminal::
 
 This proxy is your "username" for the Grid. The last line in the example shows the expiration time of the proxy. 
 
+Non standard location
+`````````````````````
+To store your local proxy in a non standard location, use the `-out` option::
+
+    voms-proxy-init -voms lsgrid --valid 168:00 -out /home/homer/my_proxy_cert
+
+See ``voms-proxy-init -h`` for more options. 
 
 Inspecting your proxy certificate
 ---------------------------------
