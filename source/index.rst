@@ -104,6 +104,7 @@ Service implementation
    
    Pages/Service/system_specs
    Pages/Service/downtimes_maintenances
+   Pages/Service/monitoring
       
 
 =========
@@ -134,4 +135,12 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
+..
+
+..
+
+.. Links:
+
 .. _`SURFsara`: https://surfsara.nl/
+
+.. _`gLite tutorial 2008`: http://www.dutchgrid.nl/events/tutorial08/agenda/Tutorial2008Handout.pdf
