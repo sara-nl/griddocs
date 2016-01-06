@@ -1,4 +1,3 @@
-.. warning:: Page under construction
 
 .. _grid-certificates:
 
@@ -6,7 +5,7 @@
 Grid Certificates
 *****************
 
-This pages describes obtaining a grid certificate in more detail, how to
+In this page we discuss the grid certificate in more detail; how to
 convert certificates, and to find out the details of your grid
 certificate.
 
@@ -15,21 +14,19 @@ certificate.
 
 
 
-Obtaining a legacy certificate
-==============================
-
-<TODO: add more documentation>
+Once you have obtained and installed a :ref:`legacy certificate <get-grid-certificate>` there are some ``openssl`` commands that can help you inspect the information stored in your certificate. This section will show you how to do this.
 
 
 .. _grid-certificate-inspection:
 
+===================================
 Certificate and key file inspection
 ===================================
 
 Sometimes you want to know the details of your key, your certificate
 file; like:
 
-* do the key file and the certificate file belong to eachother?
+* do the key file and the certificate file belong to each other?
 * when does the certificate expire?
 * what is the DN of the certificate?
 
@@ -38,7 +35,7 @@ certificates and keys.
 
 
 Using the modulus to see whether a key and a certificate match
---------------------------------------------------------------
+==============================================================
 
 The modulus is a short message which can be used to identify a private
 key and the key which was signed with the certificate. If they match, the
@@ -59,7 +56,7 @@ cannot use that combination to identify yourself.
 
 
 Finding the expiry date of your certificate
--------------------------------------------
+===========================================
 
 To find out when your certificate is valid, use::
 
@@ -71,7 +68,7 @@ Note that a key does not have a validity period.
 
 
 Finding the subject of your certificate
----------------------------------------
+=======================================
 
 The subject of a certificate is the human-readable identification of who
 the certificate belongs to. It usually contains your name, country,
@@ -84,6 +81,7 @@ To find out who the certificate belongs to, use::
 
 .. _certificate-file-conversion:
 
+=========================================
 Conversion of key and certificate formats
 =========================================
 
@@ -96,24 +94,23 @@ different systems use different formats. The two important formats are:
 * pkcs12, which stores keys and certificates in one binary file; this
   format is used by browsers.
 
-TERENA creates pkcs12 files, whereas Dutchgrid creates PEM files.
+:ref:`Digicert <digicert>` creates pkcs12 files, whereas :ref:`Dutchgrid <dutchgrid>` creates PEM files.
 
 
 Converting from pkcs12 to PEM
------------------------------
+=============================
 
 To convert a pkcs12 file to the PEM format, you need two commands; one to
 extract the key, and one to extract your certificate.
 
 To extract your key, run::
 
-  openssl pkcs12 -in user.p12 -out userkey.pem -nocerts
+  openssl pkcs12 -in browsercert.p12 -out userkey.pem -nocerts
 
 Note that you will first need to enter the password that was used to
 *create* the pkcs12 file. Next, you need to enter a password to protect
 the exported key. Enter that password again to verify. Note that you must
-enter a password and the password must be at least N characters; if the
-password is too short, ``openssl`` will fail without error. Using the same
+enter a password and the password must be at least 12 characters and include non-alphanumerics; if the password is too short, ``openssl`` will fail without error. Using the same
 password as for the pkcs12 file is fine. 
 
 To extract your certificate, run::
@@ -122,11 +119,11 @@ To extract your certificate, run::
 
 
 Converting from PEM to pkcs12
------------------------------
+=============================
 
 To convert your certificate in PEM format to the PKCS12-format, use::
 
-  openssl pkcs12 -export -inkey userkey.pem -in usercert.pem -out user.p12
+  openssl pkcs12 -export -inkey userkey.pem -in usercert.pem -out browsercert.p12
 
 This will ask you for a password three times: the first is to unlock your
 private key stored in the file ``userkey.pem``. The pkcs12-file
