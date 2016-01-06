@@ -224,3 +224,74 @@ If you get the following error:
     decode:pem_lib.c:781:
 
 when you use the command ``openssl x509 -text -noout -in usercert.pem``, it means that the email with the certificate wasn't saved properly as plain text (it included the Mime type for formatting). Repeat carerefully the steps as described in :ref:`Retrieve your DutchGrid certificate <retrieve-dutchgrid>` section. 
+
+
+.. _grid-cert-permissions:
+
+What are the correct permissions for my certificate files?
+==========================================================
+
+* Set the proper permissions to your certificate files:
+
+.. code-block:: bash
+
+	chmod 644 usercert.pem
+	chmod 400 userkey.pem
+
+* Verify the correct permissions:
+
+.. code-block:: bash
+
+	cd $HOME/.globus
+	ls -l
+	
+	# -rw -r --r --    1 homer    homer            4499  May 10 13:47  usercert.pem
+ 	# -r --------      1 homer    homer             963  May 10 13:43  userkey.pem
+ 	
+Note that the private key file should be **read-only** and only readable to you.
+
+
+.. _valid-cred-error:
+
+Couldn't find valid credentials error
+=====================================
+
+If you get the following error when creating a new proxy::
+
+   ERROR: Couldn't find valid credentials to generate a proxy.
+   Use --debug for further information.
+
+The permissions on your installed certificate are probably wrong. Set the :ref:`correct permissions <grid-cert-permissions>` and try creating a proxy again.
+
+
+.. _get-non-voms-proxy:
+
+Get non-vomsified proxy locally
+===============================
+
+* To download locally the proxy stored on :ref:`MyProxy* server <myproxy-server>` you need to set a passphrase upon creation. To do this, protect your proxy with a MyProxy pass phrase by omitting option "-n"::
+
+    myproxy-init -d
+    
+It will first ask your grid certificate password and then prompt you to enter a MyProxy passphrase twice. You will use the latter passphrase to download your proxy. 
+
+Here is an example of the displayed output::
+    
+    # Your identity: /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
+    # Enter GRID pass phrase for this identity:
+    # Creating proxy .......................... Done
+    # Proxy Verify OK
+    # Your proxy is valid until: Wed Jan 13 14:35:00 2016
+    # Enter MyProxy pass phrase:
+    # Verifying - Enter MyProxy pass phrase:
+    # A proxy valid for 168 hours (7.0 days) for user /O=dutchgrid/O=users/O=sara/CN=Anatoli Danezi now exists on px.grid.sara.nl.
+
+
+* Now use the MyProxy pass phrase to get this proxy locally on the UI::
+
+    myproxy-get-delegation -d
+
+Here is an example of the displayed output::
+    
+    # Enter MyProxy pass phrase:
+    # A credential has been received for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson in /tmp/x509up_u39111. 	

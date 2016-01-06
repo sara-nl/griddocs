@@ -51,20 +51,19 @@ Basics
 ===============
 Advanced Topics 
 ===============
+   
+.. toctree::
+   :maxdepth: 2
+   
+   Pages/Advanced/grid_software
+   Pages/Advanced/grid_storage
 
 .. toctree::
    :maxdepth: 1
 
    Pages/Advanced/grid_authentication
    Pages/Advanced/grid_job_requirements
-   Pages/Advanced/grid_certificates   
-  
-.. toctree::
-   :maxdepth: 2
- 
-   
-   Pages/Advanced/grid_software
-   Pages/Advanced/grid_storage
+   Pages/Advanced/grid_certificates  
 
 
 .. _local-lsg:

@@ -83,7 +83,7 @@ You should see a similar output displayed in your terminal:
 
 	* It generates a ``local proxy`` (x509up_uXXX) in the UI ``/tmp/`` directory
 	* It uploads this proxy to ``Myproxy server``
-	* It ``delegates`` the proxy to the WMS with your user name as the delegation ID
+	* It ``delegates`` the proxy to the WMS with your user name as the delegation ID (DID)
 	
 	If you want to know more , see the advanced section about :ref:`grid-authentication`.
 
@@ -173,7 +173,8 @@ You should have your simple.jdl file ready in your UI up to this point. When you
 	# The job identifier has been saved in the following file:
 	# /home/homer/jobIds
 	# ==========================================================================
-	
+
+Note the use of ``-d $USER`` to tell your job that it should use your delegated proxy certificate.	
 	
 The option '-o' allows you to specify a file (in this case ``jobIDs``) to store the unique job identifier:
 
