@@ -157,7 +157,7 @@ You should have your simple.jdl file ready in your UI up to this point. When you
 		.. seealso:: For more detailed information about submitting a simple Grid job, have a look to our mooc video :ref:`mooc-submit-job`.
 
 
-Submit the simple job by typing in your UI terminal this command:
+* Submit the simple job by typing in your UI terminal this command:
 
 .. code-block:: bash
 
@@ -179,7 +179,8 @@ The option '-o' allows you to specify a file (in this case ``jobIDs``) to store 
 
 * You can use this URL identifier to monitor your job from the command line or your browser and to get the job output.
 * Note that omitting the -o option means that the jobID is not saved in a file. When you do not save this id you will effectively loose the output of your job!
-* The jobID string looks like this:
+
+The jobID string looks like this:
 
 .. code-block:: bash
 
@@ -221,13 +222,13 @@ Note that the URL can only be accessed by you as you are authenticated to the se
 Cancel job
 ==========
 
-If you realize that you need to cancel a submitted job, use the following command:
+* If you realize that you need to cancel a submitted job, use the following command:
 
 .. code-block:: bash
 
 	glite-wms-job-cancel https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
 
-Alternatively, you can use the jobIDs file:
+* Alternatively, you can use the jobIDs file:
 
 .. code-block:: bash
 
@@ -254,7 +255,7 @@ OutputSandbox can be downloaded for approx. one week after the job finishes.
 
 	glite-wms-job-output https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
 	
-Alternatively, you can use the jobIDs file:
+* Alternatively, you can use the jobIDs file:
 	
 .. code-block:: bash
 
@@ -285,9 +286,9 @@ Check job output
 	cat /home/homer/homer_JIVYfkMxtnRFWweGsx0XAA/simple.out # displays the hostname of the grid worker node where the job landed
 	# wn01.lsg.bcbr.uu.nl
 
-=====
-Recap
-=====
+==================
+Recap & Next Steps
+==================
         
 Congratulations! You have just executed your first job to the Grid!
 
