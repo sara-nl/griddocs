@@ -51,46 +51,57 @@ After you have been added to the ``softdrive`` group, you can log in on the soft
 
 	ssh homer@softdrive.grid.sara.nl # replace homer with your username
 
-In your home-directory, you will find:
+In your home-directory (e.g. ``/home/homer``), you will find:
 
-* a directory ``cvmfs.tree``, where you will store your files for distribution
-* a file ``cvmfs.modified``, which you have to ``touch`` to start the distribution of your files.
+* a *README* file with detailed information about the *Softdrive* usage.
 
 
 Distributing an example file
 ----------------------------
 
-To demonstrate distributing files to all grid nodes, create a file and a directory within the ``cvmfs.tree`` directory:
+To demonstrate distributing files to all grid nodes, create a file and a directory within your home directory:
 
 .. code-block:: bash
 
-  	# a test file
-  	cat "Hello world" > cvmfs.tree/hello.txt
-  
-  	# directory and a file
-  	mkdir -p cvmfs.tree/some_dir
-  	cat "In a directory" > cvmfs.tree/some_dir/some_file.txt
+    # a test directory and a file
+    softdrive.grid.sara.nl:/home/homer$ mkdir -p test_dir
+    softdrive.grid.sara.nl:/home/homer$ echo "Hello world" > test_dir/hello.txt
 
-These commands create two files and one directory.
-
-To make these files available on all nodes on the grid, you have to ``touch`` the file ``cvmfs.modified``, which will force the update everywhere:
+To make this directory file available on all nodes on the grid, you have to copy the ``test_dir`` under ``/cvmfs/softdrive.nl/$USER``:
 
 .. code-block:: bash
 
-  	touch cvmfs.modified
+    softdrive.grid.sara.nl:/home/homer$ cp -r test_dir /cvmfs/softdrive.nl/homer # replace homer with your username
 
-Updating on all nodes can take up to two hours.
+* To force the update everywhere in the grid, trigger publication by executing command:
+
+.. code-block:: bash
+
+    publish-my-softdrive
+    
+Updating on all grid nodes can take up to two hours.
+
+.. note:: You need to run the command ``publish-my-softdrive`` each time you make a change in your ``/cvmfs/softdrive.nl/$USER`` directory in order to take effect on the grid sites.
 
  
 Finding your files on the grid nodes
 ------------------------------------
 
-On nodes, your files in the ``cvmfs.tree`` directory will be available under:
+On nodes, your Softdrive files will be available under:
 
 .. code-block:: bash
 
-	/cvmfs/softdrive.nl/homer/cvmfs.tree # replace homer with your username
+	/cvmfs/softdrive.nl/homer/ # replace homer with your username
   
+Login to your :ref:`UI account <get-ui-account>` and check whether your files are there:
+
+.. code-block:: bash  
+  
+    ui.grid.sara.nl:/home/homer$ ls /cvmfs/softdrive.nl/homer/ 
+    # drwxr-xr-x 17 cvmfs cvmfs 4096 Dec 16 12:11 test_dir
+    
+
+.. note:: If your software is statically compiled, then copying the executables from your home directory to ``/cvmfs/softdrive.nl/$USER/`` should work. Just remember to export the ``/cvmfs/softdrive.nl/$USER`` software paths into your grid scripts or UI bashrc. In other cases with library path dependencies, we advice you to install your software directly under ``/cvmfs/softdrive.nl/$USER`` or use a ``prefix``. An example of software installation in Softdrive can be found in section :ref:`anaconda on grid <softdrive-anaconda>`.
   
   
 .. _python-grid:
@@ -99,8 +110,61 @@ On nodes, your files in the ``cvmfs.tree`` directory will be available under:
 Python on Grid
 ============== 
  
-.. warning:: Section under construction
+On the local grid clusters the python version installed is *Python 2.6.6*. If you need a different python version or additional packages, we recommend you to intall `Anaconda python`_ in your UI or :ref:`Softdrive <softdrive>` account.
+
+Next is an example of installing the *Anaconda* python distribution in *Softdrive*.
+
+.. _softdrive-anaconda:
  
+Softdrive anaconda 
+================== 
+ 
+* Login to Softdrive with your account:
+
+.. code-block:: bash  
+ 
+	ssh homer@softdrive.grid.sara.nl # replace homer with your username
+
+* Download in your home account the latest version of Anaconda installer for linux, e.g.:
+
+.. code-block:: bash  
+
+    wget https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda2-2.4.0-Linux-x86_64.sh 
+
+* Run the installer (read and approve the license terms) in Softdrive:
+
+.. code-block:: bash  
+
+    bash Anaconda2-2.4.0-Linux-x86_64.sh
+
+Note here! The installer will ask you to which location to install the software. Do not accept the default but change it to: **/cvmfs/softdrive.nl/$USER/anaconda-2-2.4.0/**:
+
+.. code-block:: bash  
+    
+    # Anaconda2 will now be installed into this location:
+    # /home/homer/anaconda2
+    # - Press ENTER to confirm the location
+    # - Press CTRL-C to abort the installation
+    # - Or specify a different location below
+
+    # [/home/homer/anaconda2] >>> /cvmfs/softdrive.nl/homer/anaconda-2-2.4.0/
+    # ...
+
+That was it! You can now publish the software that is installed in your /cvmfs/softdrive.nl/homer/anaconda-2-2.4.0 directory. To do so, run this command in Softdrive:
+
+.. code-block:: bash  
+
+    publish-my-softdrive
+
+Then check after 1-2 hours from the UI if the ``/cvmfs/softdrive.nl/homer/anaconda-2-2.4.0`` exists.
+
+Finally, remember to include the installation path in your scripts as:
+
+.. code-block:: bash  
+
+    export PATH=/cvmfs/softdrive.nl/homer/anaconda-2-2.4.0/bin:$PATH # replace homer with your username
+  
+  
   
 .. _docker:
 
@@ -108,5 +172,12 @@ Python on Grid
 Docker
 ====== 
 
-At the moment it is not possible to run Docker containers on the :ref:`dutch-grid` or :ref:`lsg`. Contact us at helpdesk@surfsara.nl to discuss about the available options.
+At the moment it is not possible to run Docker containers on the :ref:`dutch-grid` or :ref:`lsg`. We are currently investigating different possibilities. Please contact us at helpdesk@surfsara.nl to discuss about the available options.
 
+..
+
+..
+
+.. Links:
+
+.. _`Anaconda python`: https://www.continuum.io/downloads
