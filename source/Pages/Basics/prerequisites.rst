@@ -50,7 +50,9 @@ Get a User Interface account
 
 *In this section we will describe how to get a User Interface account.*
 
-The User Interface (UI) account will provide you with the environment to interact with the Grid. You have to login to a UI) machine in order to submit your jobs to the grid. To get this account, there are two options:
+The User Interface (UI) account will provide you with the environment to interact with the grid. It is your access point to the grid.  You login to a UI machine via SSH. On this computer you can, amongst others, do the following things: access Grid resources, create proxies, submit jobs, compile programs or prototype your application. For debugging purposes it is good to know that the environment of a user interface is similar to a grid worker node thus if your code runs on the user interface it will most likely run on a grid worker node.
+
+To get this UI account, there are two options:
 
 * If you work in Life Sciences sector and your local institutional cluster is part of the :ref:`lsg` (see :ref:`lsg-clusters`), then you can get an account to the local user interface. Please send your request to your Designated Site Admin (see :ref:`local contacts <lsg-dsa>`) or contact us at helpdesk@surfsara.nl.
 
@@ -94,8 +96,9 @@ Join a Virtual Organisation
 
 		.. seealso:: Need to know more about VOs and how to get a membership? Checkout our mooc video :ref:`mooc-vo`.
 	
+A Virtual Organisation or VO is a group of geographically distributed people that have common objectives and that are using shared grid resources to achieve them. Every Grid user is a member of one or more Virtual Organizations. 
 
-Your VO will determine which resources you can use. You are eligible to register for a VO only once you :ref:`get a valid certificate <get-grid-certificate>`. The VO that is most suitable for you depends on the specific research area you are in. For example, if you are active in a field associated with the life sciences the ``lsgrid VO`` might be most suitable for you. If you still not sure which VO is best for you, then contact us at helpdesk@surfsara.nl to guide you on this.
+In practice your  VOmembership determines to which resources (compute and storage) you have access to. You are eligible to register for a VO only once you :ref:`get a valid certificate <get-grid-certificate>`. The VO that is most suitable for you depends on the specific research area you are in. For example, if you are active in a field associated with the life sciences the ``lsgrid VO`` might be most suitable for you. If you still not sure which VO is best for you, then contact us at helpdesk@surfsara.nl to guide you on this.
 
 This section describes how to get a VO membership.
 
