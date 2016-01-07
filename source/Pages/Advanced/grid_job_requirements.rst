@@ -32,6 +32,8 @@ Job requirements follow the JDL syntax. This also means that you can have multip
 requirement 2*. You can also use parentheses ``(...)`` for an even more
 fine-grained control over requirements.
 
+.. seealso:: For detailed information about ``JDL`` attributes supported by the gLite Workload Management System, have a look in the `EGEE JDL guide`_.
+
 
 ============
 Requirements
@@ -148,5 +150,14 @@ Synopsis::
     CPUNumber = 2;   
 	
 Note that if you do not specify SmpGranularity the requested number of cores (CPUNumber) can be distributed over different nodes, which is only useful for MPI (or likewise) applications. 
+
+
+..
+
+..
+
+.. Links:
+
+.. _`EGEE JDL guide`: https://edms.cern.ch/ui/file/590869/1/WMS-JDL.pdf
 	
 .. vim: set wm=7 expandtab :
