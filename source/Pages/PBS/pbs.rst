@@ -246,7 +246,7 @@ Therefore, to interact with the Grid storage, you need:
 
 .. code-block:: bash
 
-  cp /tmp/x509up_u39111 /home/homer/ # replace x509up_u39111 with your own proxy file, here "41697" is your unix user-id
+  cp /tmp/x509up_u39111 /home/homer/ # replace x509up_u39111 with your own proxy file, here "39111" is your unix user-id
   
 * Set the rights of this file to 600 and treat it as confidential:
 
