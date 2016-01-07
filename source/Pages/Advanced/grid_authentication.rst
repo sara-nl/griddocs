@@ -68,7 +68,7 @@ Instead of ``startGridSession``, you can run separately the following three comm
 	# 3. Credential delegation: delegates your credentials to the WMS
 	glite-wms-job-delegate-proxy -d $USER
 
-The next section explains the startGridSession operations step-by-step. 
+The next section explains the startGridSession operations step-by-step. See also ``startGridSession -h``.
 
 
 .. _voms-proxies:
