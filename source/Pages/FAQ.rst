@@ -313,11 +313,12 @@ The personal grid certificates are valid for a year. This means that every year 
   * When your certificate has already expired, you *have* to request a new certificate from scratch with the jGridstart tool. Follow this guide to :ref:`obtain a Dutchgrid certificate <dutchgrid>`.
   * If your current certificate has *not* expired yet, you can *renew* your certificate. This is a faster procedure because you avoid revisiting your RA for your id verification. What you need to do: 
   
-    1. Start the jGridstart tool on the UI (assuming that your current certificate is installed there).
-    2. Select ``Actions -> Renew`` from the menu bar.
-    3. Generate a new request by entering your details (name, surname, email, organisation). At this stage you will provide a new password for your new grid certificate - make sure you keep this safe!
-    4. Submit the request. This will create a new private ``userkey.pem`` file in your ``~/.globus`` directory. Click "Next".
-    5. You will receive your new certificate within few days via email. Once received, follow the instructions to :ref:`install it on the UI <retrieve-dutchgrid>`.
+    1. Login to the UI  with X session enabled.
+    2. Start the jGridstart tool on the UI (assuming that your current certificate is installed there): ``java -jar jgridstart-wrapper-XX.jar``
+    3. Select ``Actions -> Renew`` from the menu bar.
+    4. Generate a new request by verifying your details (name, surname, email, organisation). At this stage you will provide a new password for your new grid certificate - make sure you keep this safe! Click "Next".
+    5. Submit the request. This will create a new private ``userkey.pem`` file in your ``~/.globus`` directory. Click "Next".
+    6. You will receive your new certificate within few days via email. Once received, follow the instructions to :ref:`install it on the UI <retrieve-dutchgrid>`.
   
 Keep in mind that when you renew your certificate the certificate key will change too. To avoid mixing up the old and new certificate files, check whether your new certificate and key :ref:`match each other <key-match>`.
     
