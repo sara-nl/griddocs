@@ -112,8 +112,8 @@ The certificate and private key file should now be present in the .globus direct
 	cd $HOME/.globus
 	ls -l
 	
-	# -rw -r --r --    1 homer    homer            4499  May 10 13:47  usercert.pem
- 	# -r --------      1 homer    homer             963  May 10 13:43  userkey.pem
+	# -rw-r--r--      1 homer    homer            4499  May 10 13:47  usercert.pem
+ 	# -r--------      1 homer    homer             963  May 10 13:43  userkey.pem
 
 
 .. _digicert_browser_install:
