@@ -40,3 +40,9 @@ To change it permanently:
 2. go to the tab 'advanced'
 3. uncheck "Set locale environment variables on startup"
 
+### Extensions
+
+To use additional extensions in your ```.rst``` files _e.g. embed youtube videos_, 
+you need install the extension from [sphinx-contrib](http://sphinx-doc.org/develop.html) 
+repository.  
+
