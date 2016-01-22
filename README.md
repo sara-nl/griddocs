@@ -1,7 +1,7 @@
 # Documentation HOW-TO
 
 This directory contains the source code of documenation maintained with
-the Sphinx documentation system. The README you are reading now explains how to installe the software, how to build the documentation and generate HTML documentation from the source. 
+the Sphinx documentation system. The README you are reading now explains how to install the software, how to build the documentation and generate HTML documentation from the source. The information here applies to members of the github group `sara-nl`.
 
 * The Grid documentation page is: http://doc.grid.surfsara.nl/
 * The source code of documenation is here: https://github.com/sara-nl/griddocs/tree/master/source/
@@ -20,23 +20,28 @@ grammar, text can be styled. The document is structured using special
 tags; using these tags, documentation can be split into multiple files,
 and you can cross-reference between files, build indexes. 
 
+
+## Editing / preview
+
 Because the syntax of the files human readable, you edit the files using
 your favourite text editor. Once you are done editing, you can generate
-documentation in various formats, such as HTML or epub. To generate HTML
+documentation in various formats, such as HTML or epub. 
+
+There are different was to generate the HTML documentation from source and apply your changes:
+
+* Sphinx local installation
+* Docker image
+* Github edit/preview
+
+
+
+To generate HTML
 documenation, use the command
 ```
     make html
 ```
 which will generate static pages in the ```build```-directory as long as you have the
 software Sphinx installed locally.
-
-### Extensions
-
-To use additional extensions in your ```.rst``` files _e.g. embed youtube videos_, 
-you need install the extension from [sphinx-contrib](http://sphinx-doc.org/develop.html) 
-repository.  
-
-## Testing / preview
 
 To test/preview your changes, you can build the documentation using 'make html'
 as described above. However, to be sure it is processed correctly by
@@ -78,3 +83,9 @@ image name (default: rtfd-build:base):
 ```bash
 ./build.sh /alternative/output/path/ docker_image_alternative_name
 ```
+
+
+
+
+
+
