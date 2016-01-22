@@ -1,11 +1,10 @@
 # Documentation HOW-TO
 
 This directory contains the source code of documenation maintained with
-the Sphinx documentation system. The README you are reading now contains
-instructions for setting up your environment for building the
-documentation.
+the Sphinx documentation system. The README you are reading now explains how to installe the software, how to build the documentation and generate HTML documentation from the source. 
 
 * The Grid documentation page is: http://doc.grid.surfsara.nl/
+* The source code of documenation is here: https://github.com/sara-nl/griddocs/tree/master/source/
 * The readthedocs overview page is: https://readthedocs.org/projects/grid-documentation/
 
 When changes are commited using Git and pushed to the correct GitHub repository,
