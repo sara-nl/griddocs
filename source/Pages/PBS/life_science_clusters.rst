@@ -4,7 +4,7 @@
 Life Science Clusters
 *********************
 
-This page provides information about the Life Science Grid clusters and the local contacts for each cluster:
+The current page provides information about the Life Science Grid clusters and the local contacts for each cluster:
 
 .. contents:: 
     :depth: 4
