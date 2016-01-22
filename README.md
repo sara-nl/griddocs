@@ -1,7 +1,10 @@
 # Documentation HOW-TO
 
 This directory contains the source code of documenation maintained with
-the Sphinx documentation system. The README you are reading now explains how to install the software, how to build the documentation and generate HTML documentation from the source. The information here applies to members of the github group `sara-nl`.
+the Sphinx documentation system. The README you are reading now explains 
+how to install the software, how to build the documentation and generate 
+HTML documentation from the source. The information here applies to 
+members of the github group `sara-nl`.
 
 * The Grid documentation page is: http://doc.grid.surfsara.nl/
 * The source code of documenation is here: https://github.com/sara-nl/griddocs/tree/master/source/
@@ -33,41 +36,29 @@ There are different was to generate the HTML documentation from source and apply
 * Docker image
 * Github edit/preview
 
+### Sphinx local installation
 
+For the Sphinx documentation setup locally you will need to:
 
-To generate HTML
-documenation, use the command
+* Install Sphinx to your laptop. The instructions for different OS are [here](https://github.com/sara-nl/griddocs/blob/master/sphinx-install.md)
+* `Clone` the current repo locally if to fetch the source code or `pull` to incorporates changes.
+* To generate HTML documenation, use the command:
+
 ```
     make html
 ```
 which will generate static pages in the ```build```-directory as long as you have the
 software Sphinx installed locally.
 
+### Docker image
+
 To test/preview your changes, you can build the documentation using 'make html'
 as described above. However, to be sure it is processed correctly by
 readthedocs.org, or if you do not want to install the necessary tools locally,
-you can use their Docker image. The Dockerfile for this image can be found in
-their GitHub repository: https://github.com/rtfd/readthedocs-docker-images
-It is also added as a submodule. 
+you can use their Docker image. 
 
-Before you start with the Docker image, make sure that:
-* you have [Docker Engine installed](https://docs.docker.com/engine/installation/) 
-* Docker is running on your host
-* you have cloned the `griddocs` repository
-
-To build the image in Linux, run:
-
-```bash
-git submodule init
-git submodule update
-cd readthedocs-docker-images
-sudo docker build -t rtfd-build:base base/
-```
-
-In Mac OS X (with boot2docker or docker-machine), you can use the same
-command (`docker build`), except you do not need to prefix the build line with 'sudo'.
-
-Once build, you can use it to build your documentation in the same build
+* Setup the Docker image. The instructions for different OS are [here](https://github.com/sara-nl/griddocs/blob/master/readdocs-docker-install.md)
+* Once build, you can use it to build your documentation in the same build
 environment as used by their production server:
 
 ```bash
@@ -76,7 +67,6 @@ environment as used by their production server:
 
 > Note:  For Mac OS X, please use `./build_mac.sh` instead.
 
-
 Optionally you can provide an output location (default: ./build) and the docker
 image name (default: rtfd-build:base):
 
@@ -84,7 +74,15 @@ image name (default: rtfd-build:base):
 ./build.sh /alternative/output/path/ docker_image_alternative_name
 ```
 
+### Github edit/preview
 
+For small changes you can edit a page directly from the Github repo. The `preview` button 
+does not give a fully compatible `rst` overview, but is sufficient for text changes.
+
+## Publish changes
+
+When you are done with your changes, commit and push to this repo. Is automatically published 
+by readthedocs.org on the production server.
 
 
 
