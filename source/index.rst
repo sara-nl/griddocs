@@ -11,7 +11,7 @@
 Grid documentation
 ******************
 
-This wiki collects the documentation for using the ``Grid services`` at `SURFsara`_. The information in this tutorial will help you get started with the Grid, learn best techniques to successfully port your application to the Grid infrastructure and stay up-to-date with our system developments. 
+The Grid wiki collects the documentation for using the ``Grid services`` at `SURFsara`_. The information in this tutorial will help you get started with the Grid, learn best techniques to successfully port your application to the Grid infrastructure and stay up-to-date with our system developments. 
 
 .. sidebar:: Need help?
 
