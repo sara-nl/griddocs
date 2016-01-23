@@ -1,0 +1,281 @@
+#!/bin/bash
+USAGE='
+################################################################################
+#                                                                              #
+# USAGE: ./topos [ command ] [ arguments ]                                     #
+#                                                                              #
+# Where the combination command and arguments is one of:                       #
+#     newPool                                                                  #
+#     createTokensFromLinesInFile [POOLNAME] [FILENAME]                        #
+#     uploadFileAsToken [POOLNAME] [FILENAME]                                  #
+#     uploadFilesInDirAsTokens [POOLNAME] [DIRNAME]                            #
+#     nextToken [POOLNAME]                                                     #
+#     nextTokenWithLock [POOLNAME] [TIMEOUT]                                   #
+#     getToken [POOLNAME] [TOKENNAME]                                          #
+#     refreshLock [POOLNAME] [LOCKNAME] [TIMEOUT]                              #
+#     deleteLock [POOLNAME] [LOCKNAME]                                         #
+#     deleteToken [POOLNAME] [TOKENNAME]                                       #
+#                                                                              #
+# Created by: Evert Lammerts <evert.lammerts@sara.nl>                          #
+#                                                                              #
+################################################################################
+'
+
+TOPOS_URL="https://topos.grid.sara.nl/4.1/"
+CURL="curl --silent --fail --insecure --sslv3"
+
+EXIT_NOCOMMAND=-1
+EXIT_MISSINGPARAM=1
+EXIT_FILENOTFOUND=2
+EXIT_CURLERROR=3
+
+################################################################################
+#                                                                              #
+# Returns a new, unused pool name                                              #
+#                                                                              #
+# Usage: newPool                                                               #
+# Returns the unique new pool name                                             #
+#                                                                              #
+################################################################################
+function newPool {
+  URL=$( ${CURL} --header 'Accept: text/plain' "${TOPOS_URL}newPool" )
+  if [ "$?" != "0" ]; then
+    exit $EXIT_CURLERROR
+  fi
+  URL=( $( echo -n $URL | tr '/' ' ' ) )
+  echo -n ${URL[$[ ${#URL[@]}-1 ]]}
+}
+
+################################################################################
+#                                                                              #
+# Creates a token for each line in a text file                                 #
+#                                                                              #
+# Usage: createTokensFromLinesInFile [POOLNAME] [FILENAME]                     #
+# Returns nothing                                                              #
+#                                                                              #
+################################################################################
+function createTokensFromLinesInFile {
+  local poolName="$1"
+  local fileName="$2"
+  if [ -z $fileName ]; then
+    exit $EXIT_MISSINGPARAM
+  fi
+  if [ -z $poolName ]; then
+    exit $EXIT_MISSINGPARAM
+  fi
+  if [ ! -e $fileName ]; then
+    exit $EXIT_FILENOTFOUND
+  fi
+  $CURL --data-binary "@${fileName}" --header 'Content-Type: text/plain; charset="UTF-8"' "${TOPOS_URL}pools/${poolName}/tokens/"
+  if [ "$?" != "0" ]; then
+    exit $EXIT_CURLERROR
+  fi
+}
+
+################################################################################
+#                                                                              #
+# Creates a token with the contents of a file                                  #
+#                                                                              #
+# Usage: uploadFileAsToken [POOLNAME] [FILENAME]                               #
+# Returns the token name                                                       #
+#                                                                              #
+################################################################################
+function uploadFileAsToken {
+  local poolName="$1"
+  local fileName="$2"
+  if [ -z $fileName ]; then
+    exit $EXIT_MISSINGPARAM
+  fi
+  if [ -z $poolName ]; then
+    exit $EXIT_MISSINGPARAM
+  fi
+  if [ ! -e $fileName ]; then
+    exit $EXIT_FILENOTFOUND
+  fi
+  URL=$( $CURL --upload-file "${fileName}" --header "Content-Disposition: attachment; filename=\"${fileName}\"" --header 'Accept: text/plain' "${TOPOS_URL}pools/${poolName}/nextToken" )
+  if [ "$?" != "0" ]; then
+    echo "Unable to upload file" >&2
+    exit $EXIT_CURLERROR
+  fi
+  URL=( $( echo -n $URL | tr '/' ' ' ) )
+  echo -n ${URL[$[ ${#URL[@]}-1 ]]}
+}
+
+################################################################################
+#                                                                              #
+# Creates tokens for each file in a directory                                  #
+#                                                                              #
+# Usage: uploadFilesInDirAsTokens [POOLNAME] [DIRNAME]                         #
+# Returns nothing                                                              #
+#                                                                              #
+################################################################################
+function uploadFilesInDirAsTokens {
+  local poolName="$1"
+  local dirName="$2"
+  if [ -z $dirName ]; then
+    exit $EXIT_MISSINGPARAM
+  fi
+  if [ -z $poolName ]; then
+    exit $EXIT_MISSINGPARAM
+  fi
+  if [ ! -d $dirName ]; then
+    exit $EXIT_FILENOTFOUND
+  fi
+  dirName=$( echo ${dirName} | sed -e "s/\/*$//" )
+  local filelist=""
+  for f in ${dirName}/*; do
+    filelist="${filelist} -F \"file[]=@${f}\""
+  done
+  $CURL --header 'Accept: text/plain' ${filelist} "${TOPOS_URL}pools/${poolName}/tokens/"
+  if [ "$?" != "0" ]; then
+    exit $EXIT_CURLERROR
+  fi
+}
+
+################################################################################
+#                                                                              #
+# Fetches the next token                                                       #
+#                                                                              #
+# Usage: nextToken [POOLNAME]                                                  #
+# Returns the token name (NOT its contents!)                                   #
+#                                                                              #
+################################################################################
+function nextToken {
+  local poolName="$1"
+  if [ -z $poolName ]; then
+    exit $EXIT_MISSINGPARAM
+  fi
+  TOKEN=$( ${CURL} --header 'Accept: text/plain' "${TOPOS_URL}pools/${poolName}/nextToken" )
+  if [ "$?" != "0" ]; then
+    exit $EXIT_CURLERROR
+  fi
+  echo -n ${TOKEN} | tr '/' ' ' | awk '{print $NF}'
+}
+
+################################################################################
+#                                                                              #
+# Fetches the next token and puts a lock on it. The lock description is the    #
+# hostname                                                                     #
+#                                                                              #
+# Usage: nextTokenWithLock [POOLNAME] [TIMEOUT]                                #
+# Returns the token name (NOT its content!) and on the next line the lock name #
+#                                                                              #
+################################################################################
+function nextTokenWithLock {
+  local poolName="$1"
+  local timeout="$2"
+  if [ -z $poolName ]; then
+    exit $EXIT_MISSINGPARAM
+  fi
+  if [ -z $timeout ]; then
+    exit $EXIT_MISSINGPARAM
+  fi
+  local headerFile="$( mktemp )"
+  TOKEN=$( ${CURL} --header 'Accept: text/plain' --dump-header ${headerFile} "${TOPOS_URL}pools/${poolName}/nextToken?timeout=${timeout}&description=$(hostname -f)" )
+  if [ "$?" != "0" ]; then
+    exit $EXIT_CURLERROR
+  fi
+  echo ${TOKEN} | tr '/' ' ' | awk '{print $NF}'
+  LOCK=$( grep 'X-Topos-LockURL' <${headerFile} | grep -oP 'http\S+' )
+  #LOCK=$( cat ${headerFile} | grep X-Topos-LockURL )
+  echo -n ${LOCK#* } | tr '/' ' ' | awk '{print $NF}'
+  rm $headerFile
+}
+
+################################################################################
+#                                                                              #
+# Fetches the content of a token                                               #
+#                                                                              #
+# Usage: getToken [POOLNAME] [TOKENNAME]                                       #
+# Returns the content of the token                                             #
+#                                                                              #
+################################################################################
+function getToken {
+  local poolName="$1"
+  local tokenName="$2"
+  if [ -z $poolName ]; then
+    exit $EXIT_MISSINGPARAM
+  fi
+  if [ -z $tokenName ]; then
+    exit $EXIT_MISSINGPARAM
+  fi
+  ${CURL} --header 'Accept: text/plain' "${TOPOS_URL}pools/${poolName}/tokens/${tokenName}"
+}
+
+################################################################################
+#                                                                              #
+# Refreshes a lock so it doesn't time out                                      #
+#                                                                              #
+# Usage: refreshLock [POOLNAME] [LOCKNAME] [TIMEOUT]                           #
+# Returns nothing                                                              #
+#                                                                              #
+################################################################################
+function refreshLock {
+  local poolName="$1"
+  local lockName="$2"
+  local timeout="$3"
+  if [ -z $poolName ]; then
+    exit $EXIT_MISSINGPARAM
+  fi
+  if [ -z $lockName ]; then
+    exit $EXIT_MISSINGPARAM
+  fi
+  if [ -z $timeout ]; then
+    exit $EXIT_MISSINGPARAM
+  fi
+  ${CURL} --request HEAD "${TOPOS_URL}pools/${poolName}/locks/${lockName}?timeout=${timeout}"
+  if [ "$?" != "0" ]; then
+    exit $EXIT_CURLERROR
+  fi
+}
+
+################################################################################
+#                                                                              #
+# Deletes a lock so the associated token becomes available again               #
+#                                                                              #
+# Usage: deleteLock [POOLNAME] [LOCKNAME]                                      #
+# Returns nothing                                                              #
+#                                                                              #
+################################################################################
+function deleteLock {
+  local poolName="$1"
+  local lockName="$2"
+  if [ -z $poolName ]; then
+    exit $EXIT_MISSINGPARAM
+  fi
+  if [ -z $lockName ]; then
+    exit $EXIT_MISSINGPARAM
+  fi
+  ${CURL} --request DELETE "${TOPOS_URL}pools/${poolName}/locks/${lockName}" > /dev/null
+  if [ "$?" != "0" ]; then
+    exit $EXIT_CURLERROR
+  fi
+}
+
+################################################################################
+#                                                                              #
+# Deletes a token                                                              #
+#                                                                              #
+# Usage: deleteToken [POOLNAME] [TOKENNAME]                                    #
+# Returns nothing                                                              #
+#                                                                              #
+################################################################################
+function deleteToken {
+  local poolName="$1"
+  local tokenName="$2"
+  if [ -z $poolName ]; then
+    exit $EXIT_MISSINGPARAM
+  fi
+  if [ -z $tokenName ]; then
+    exit $EXIT_MISSINGPARAM
+  fi
+  ${CURL} --request DELETE --header 'Accept: text/plain' "${TOPOS_URL}pools/${poolName}/tokens/${tokenName}" > /dev/null
+}
+
+COMMAND="$1"
+if [ -z $COMMAND ]; then
+  echo "${USAGE}"
+  exit $EXIT_NOCOMMAND
+fi
+shift
+$COMMAND $1 $2 $3 $4
