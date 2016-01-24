@@ -90,7 +90,7 @@ Best practices
    
    Pages/Practices/bootstrap
    Pages/Practices/pilot_jobs
-   Pages/Practices/large_data_processing
+   Pages/Practices/data_replication
 
  
 .. _service-implementation:
