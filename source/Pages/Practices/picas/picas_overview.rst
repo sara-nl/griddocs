@@ -10,6 +10,12 @@ This page is about the PiCaS pilot framework:
     :depth: 4
 
 
+.. _about-picas:
+
+===========
+About PiCaS
+===========
+
 Let's say that you have a number of *tasks* to be processed on the Grid Worker Nodes. Each task requires a set of parameters to run. The parameters of each task (run id, input files, etc) construct an individual piece of work, called ``token``, which is just a description not the task itself.  
 
 The central repository for the tasks is PiCaS, a Token Pool Server. The pilot jobs request the next free token for processing from PiCaS. As said, the content of the tokens is opaque to PiCaS and can be anything your application needs.
@@ -17,6 +23,11 @@ The central repository for the tasks is PiCaS, a Token Pool Server. The pilot jo
 PiCaS works as a queue, providing a mechanism to step through the work one token at a time. It is also a pilot job system, indicating that the client communicates with the PiCaS server to fetch work, instead of having that work specified in a jdl (or similar) file.  
 
 The server is based on `CouchDB`_ (see `CouchDB book`_),a NoSQL database, and the client side is written in Python.  
+
+Source Code
+============
+
+The source code of Topos is on `Github Picas Client`_.
 
 
 .. _picas-server:
@@ -80,4 +91,5 @@ Any user with a Grid project and allocated :ref:`quotas <quotas>` can get a PiCa
 
 .. _`CouchDB`: http://couchdb.apache.org/
 .. _`CouchDB book`: http://guide.couchdb.org/
+.. _`Github Picas Client`: https://github.com/jjbot/picasclient/
 

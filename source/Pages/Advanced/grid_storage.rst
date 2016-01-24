@@ -1,4 +1,3 @@
-.. warning:: Page under construction
 
 .. _grid-storage:
 
@@ -16,9 +15,9 @@ In this page we will talk about the Grid storage facilities, the tools to intera
 About Grid Storage
 ====================
 
-Each cluster on the Grid is equipped with a Storage Element or SE where data is stored. The Grid storage is useful for applications 
+Each cluster on the Grid is equipped with a Storage Element or SE where data is stored. The Grid storage is useful for applications that handle large amount of data that can not be sent with the :ref:`job Sandbox <job-lifecycle>` or stored in a :ref:`pilot job database <pilotjob-db>`.
 
-You can interact with the Grid storage from the UI or within your running job. The scripts that can access the Grid Storage can be submitted from:
+You can interact with the Grid storage from the UI or from the worker node, within your running job. The scripts that can access the Grid Storage can be submitted from:
 
 * :ref:`The UI <get-ui-account>`
 * :ref:`Any local LSG cluster <lsg-clusters>`
@@ -57,7 +56,7 @@ The storage element located at SURFsara is accessible from *any* Grid cluster or
 DPM
 ===
 
-The storage elements located at the various ref:`lsg-clusters` are accessible *only* by the LSG users. The LSG clusters have local storage that uses DPM (short for Disk Pool Manager).
+The storage elements located at the various :ref:`LSG clusters <life-science-clusters>` are accessible *only* by the LSG users. The LSG clusters have local storage that uses DPM (short for Disk Pool Manager).
 
 
 .. note:: The DPM storage is only disk storage and does not support tape behind. In opposite, the dCache central storage has both disk and tape.
@@ -79,9 +78,9 @@ You can refer to your files on the Grid with different ways depending on which o
 	gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 	
 	# lsgrid user homer stores the file zap.tar on DPM storage at lumc cluster
-	gsiftp://gb-se-lumc.lumc.nl.nl:2811/dpm/lumc.nl/home/lsgrid/homer/
+	gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar
 	
-.. topic:: Supported clients
+.. topic:: Clients for TURLs
 
 	* uberftp
 	* globus
@@ -96,10 +95,10 @@ You can refer to your files on the Grid with different ways depending on which o
 	# lsgrid user homer stores the file zap.tar on dCache storage
 	srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 	
-	# lsgrid user homer stores the file zap.tar on DPM storage at ams cluster
+	# lsgrid user homer stores the file zap.tar on DPM storage at lumc cluster
 	srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar 
 	
-.. topic:: Supported clients
+.. topic:: Clients for SURLs
 
 	* srm
 	* gfal
@@ -127,7 +126,7 @@ SRM ports
   
 * The default ``DPM`` srm port is **8446**::
 
-	srm://srm.grid.sara.nl:8446/... 
+    srm://gb-se-lumc.lumc.nl:8446/...
   
  
 gridftp ports
@@ -139,7 +138,7 @@ gridftp ports
 
 * The default ``DPM`` gridftp port is **2811**::
 
-	gsiftp://gb-se-ams.els.sara.nl:2811/
+    gsiftp://gb-se-lumc.lumc.nl:2811/...
 
 
 .. _storage-clients:
@@ -152,7 +151,7 @@ The InputSandbox and OutputSandbox attributes in the :ref:`JDL <JDL>` file are t
 
 In this section we will show the common commands to use the various storage clients. 
 
-.. note:: For working with the Grid storage, we highly recommend you to use :ref:`uberftp` and :ref:`globus`. Both tools have a clean interface, and their speed is much better on our systems compared with their srm-* equivalents.
+.. note:: From the many Grid storage clients, we recommend you to use :ref:`uberftp` and :ref:`globus` or :ref:`gfal`. These tools have a clean interface, and their speed is much better on our systems compared with their srm-* equivalents.
 
 .. toctree::
    :maxdepth: 1
@@ -161,86 +160,10 @@ In this section we will show the common commands to use the various storage clie
    storage_clients/globus
    storage_clients/srm
    storage_clients/gfal
-   storage_clients/lcg-lfn-lfc
    storage_clients/fts
-   storage_clients/globusonline
    storage_clients/webdav
-
-
-
-.. _replicating_files:
-
-=================
-Replicating files
-=================
-
-File replication means that you copy the same file to multiple storage
-elements. If you then start a grid job which uses that file, and the job
-lands on one of the compute elements of Life Science Grid, you
-then use the file which is nearest to the compute element. This reduces
-the time needed to copy the file, and reduces network traffic.
-
-You can replicate a file and use the replicas with the following steps:
-
-1. Copy your file to one of the storage elements, while registering the
-   file in the *logical file catalog*
-
-2. Replicate the file to other storage elements, and register the copies
-   under the same entry in the *logical file catalog*
-
-3. In your job description, tell the scheduler where to run jobs by
-   specifying a *Data requirement*
-
-
-This section describes the steps.
-
-
-Copying files and registering files in the *logical file catalog*
------------------------------------------------------------------
-
-To copy a file from a user interface to one of the storage elements, and
-register the file in the logical file catalog:
-
-* determine the full path of the file; for example, using the ``pwd``
-  command::
-  
-.. code-block:: bash
-
-  > pwd
-  /home/homer/Projects/input.dat
-
-* determine the full path of the target file, on *dCache* or *DPM*; see
-  :ref:`file-id` about how to refer to the target file.
-
-* use ``lcg-cr`` and the fulls path to the file to store the first copy of your
-  file on one of the storage elements, and register the file in the *logical
-  file catalog*::
-
-    lcg-cr --vo lsgrid 
-      -d srm://gb-se-kun.els.sara.nl/dpm/els.sara.nl/home/lsgrid/homer/input.dat
-      -l lfn:/grid/lsgrid/homer/input.dat
-      file:///home/homer/Projects/input.dat
-
-  In this example, the file ``input.dat`` is copied from the ``Projects``
-  directory on the local user interface, to a storage element on the Life
-  Science Cluster in Nijmegen, and registered in the LFC, with the credentials
-  from the VO *lsgrid*. Note that this requires membership of the *lsgrid* VO.
-
-* use ``lcg-rep`` to create a replica of the file, and register the replica
-  with the LFC::
-
-    lcg-rep 
-      -d srm://gb-se-amc.amc.nl/dpm/amc.nl/home/lsgrid/homer/input.dat
-      lfn:/grid/lsgrid/homer/input.dat
-
-  Note that the LFC location is the same as in the ``lcg-cr``-command.
-
-* verify that there are two copies of the file, registered under the same
-  LFC entry::
-
-   > lcg-lr lfn:/grid/lsgrid/homer/input.dat
-   srm://gb-se-kun.els.sara.nl/dpm/els.sara.nl/home/lsgrid/homer/input.dat
-   srm://gb-se-amc.amc.nl/dpm/amc.nl/home/lsgrid/homer/input.dat
+   storage_clients/globusonline
+   storage_clients/lcg-lfn-lfc
 
 
 .. _staging:
