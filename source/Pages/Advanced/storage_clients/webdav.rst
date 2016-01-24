@@ -13,23 +13,29 @@ This page includes the basic commands to use ``webdav``:
 Webdav
 ======
  
-Webdav interface is supported on dCache upon request for your VO group. Please contact helpdesk@surfsara.nl if you want to enable it for your project's storage. 
+Webdav interface is supported on dCache (not DPM) upon request for your VO group. Please contact helpdesk@surfsara.nl if you want to enable it for your project's storage. 
 
 For the examples below we will use ``curl`` and ``wget`` commands to inderact with Webdav.
 
 .. note:: To run the examples below you need to have a UI (or ``CUA``) account that is mapped and configured with your webdav pool.
 
+Creating/listing 
+================
 
-Copy a file from your local machine to dCache
-=============================================
+Information not available yet.
+
+
+Transferring data
+=================
+
+* Copy a file from your local machine to dCache
 
 .. code-block:: bash
 
   curl -k -f -u homer -p -L https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/ -T /home/homer/zap.tar # replace homer with your username, lsgrid with your VO and zap.tar with your local file
   
   
-Copy a file from dCache to your local machine
-=============================================
+* Copy a file from dCache to your local machine
 
 .. code-block:: bash
   
@@ -42,8 +48,16 @@ Or with wget:
   wget --user=homer --no-check-certificate https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
   
 
-Delete a file from dCache
-=========================
+Parallel streams
+----------------
+
+Information not available yet.
+  
+
+Removing data
+=============
+
+* Delete a file from dCache:
 
 .. code-block:: bash
 

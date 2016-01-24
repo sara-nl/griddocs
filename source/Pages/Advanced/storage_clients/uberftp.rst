@@ -15,6 +15,9 @@ This page includes the basic commands to use ``uberftp``:
 Uberftp
 =======
 
+Creating/listing 
+================
+
 .. note:: To run the examples below you need to have a valid proxy, see :ref:`startgridsession`. 
 
 * Listing directories on dCache:
@@ -27,7 +30,7 @@ Uberftp
 
 .. code-block:: bash
 
-  uberftp -ls gsiftp://gb-se-lumc.lumc.nl.nl:2811/dpm/lumc.nl/home/lsgrid/
+  uberftp -ls gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid
   
 * Create a new directory on dCache:
 
@@ -39,33 +42,59 @@ Uberftp
  
 .. code-block:: bash
 
-  uberftp -mkdir gsiftp://gb-se-lumc.lumc.nl.nl:2811/dpm/lumc.nl/home/lsgrid/homer/newdir 
+  uberftp -mkdir gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/newdir 
 
+
+Transferring data
+=================
 
 * Copy file from local machine to dCache:
 
 .. code-block:: bash
 
-  uberftp -cksum on file:///home/homer/zap.tar gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+  uberftp file:///home/homer/zap.tar gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 
 * Copy file from local machine to DPM:
 
 .. code-block:: bash
 
-  uberftp -cksum on file:///home/homer/zap.tar gsiftp://gb-se-lumc.lumc.nl.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar 
+  uberftp file:///home/homer/zap.tar gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar 
 
 
-* Remove whole directory with all content from dCache:
+Parallel streams
+----------------
+
+Information not available yet.
+
+
+Removing data
+=============
+
+* Remove a file from dCache:
+
+.. code-block:: bash
+
+    uberftp -rm gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+
+* Remove a file from DPM:
+
+.. code-block:: bash
+
+    uberftp -rm gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar
+
+* Remove whole (non-empty) directory with all content from dCache:
 
 .. code-block:: bash
 
 	uberftp -rm -r gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/testdir/
 	
 	
-* Remove whole directory with all content from DPM:
+* Remove whole (non-empty) directory with all content from DPM:
 
 .. code-block:: bash
 
-	uberftp -rm -r gsiftp://gb-se-lumc.lumc.nl.nl:2811/dpm/lumc.nl/home/lsgrid/homer/testdir/	
+	uberftp -rm -r gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/testdir/	
+
+		
 
 		

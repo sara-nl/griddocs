@@ -1,5 +1,3 @@
-.. warning:: Page under construction
-
 
 .. _gfal:
 
@@ -14,7 +12,7 @@ This page includes the basic commands to use ``gfal``:
 
 ====
 gFAL
-====
+==== 
 
 .. note:: To run the examples below you need to have a valid proxy, see :ref:`startgridsession`. 
  
@@ -26,25 +24,102 @@ Mandatory environment settings:
   # export LCG_GFAL_INFOSYS=bdii.grid.sara.nl:2170
 
 
-List ``ls``
-===============
-
-* List dCache directories::
-
-	gfal-ls srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid
-
-* List DPM directories::
-
-	gfal-ls srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/
+.. note:: The examples below will work both with :ref:`TURLs and SURLs <file-id>`.
 
 
-Transfer files
-==============
+Creating/listing 
+================
 
-* Copy file from local machine to dCache::
+* Listing directories on dCache:
 
-	gfal-copy file:`pwd`/zap.tar srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+.. code-block:: bash
 
-* Copy file from local machine to DPM::
+  gfal-ls -l gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/
+  
+* Listing directories on DPM:
 
-	gfal-copy file:`pwd`/zap.tar srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar
+.. code-block:: bash
+
+  gfal-ls -l gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid
+  
+  
+* Create a new directory on dCache:
+
+.. code-block:: bash
+
+  gfal-mkdir gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/newdir/ 
+
+* Create a new directory on DPM:
+ 
+.. code-block:: bash
+
+  gfal-mkdir gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/newdir/ 
+
+
+Transferring data
+=================
+
+* Copy file from dCache to local machine:
+
+.. code-block:: bash
+
+    gfal-copy gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar file:///`pwd`/zap.tar 
+
+* Copy file from DPM to local machine:
+
+.. code-block:: bash
+
+    gfal-copy gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar file:///`pwd`/zap.tar 
+
+* Copy file from local machine to dCache:
+
+.. code-block:: bash
+
+    gfal-copy file:///`pwd`/zap.tar gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+
+* Copy file from local machine to DPM:
+ 
+.. code-block:: bash
+
+    gfal-copy file:///`pwd`/zap.tar gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar
+
+Recursive transfer
+------------------
+
+Recursive transfer of files is not supported with the ``gfal-copy`` command.
+
+
+Parallel streams
+----------------
+
+Information not available yet.
+
+
+Removing data
+=============
+
+* Remove a file from dCache:
+
+.. code-block:: bash
+
+    gfal-rm gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+
+* Remove a file from DPM:
+
+.. code-block:: bash
+
+    gfal-rm gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar
+
+* Remove whole (non-empty) directory with all content from dCache:
+
+.. code-block:: bash
+
+    gfal-rm -r gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/testdir/
+	
+	
+* Remove whole (non-empty) directory with all content from DPM:
+
+.. code-block:: bash
+
+	gfal-rm -r gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/testdir/	
+

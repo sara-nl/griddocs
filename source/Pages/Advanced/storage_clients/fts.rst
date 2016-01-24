@@ -77,7 +77,7 @@ Monitor Status
 
 Command line
 ------------
- 
+  
 The ``fts-transfer-submit`` command will return instantly an ID for the specific job. This ID can be used to trace the status of the transfer:
 
 .. code-block:: bash
