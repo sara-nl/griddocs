@@ -159,7 +159,7 @@ To copy a file from a user interface to one of the storage elements, and
 register the file in the logical file catalog:
 
 * determine the full path of the file; for example, using the ``pwd``
-  command::
+  command:
   
 .. code-block:: bash
 
