@@ -59,7 +59,7 @@ DPM
 The storage elements located at the various :ref:`LSG clusters <life-science-clusters>` are accessible *only* by the LSG users. The LSG clusters have local storage that uses DPM (short for Disk Pool Manager).
 
 
-.. note:: The DPM storage is only disk storage and does not support tape behind. In opposite, the dCache central storage has both disk and tape.
+.. note:: The DPM storage is only disk storage and does not support tape back-end. In opposite, the dCache central storage has both disk and tape.
 
 
 .. _file-id:
