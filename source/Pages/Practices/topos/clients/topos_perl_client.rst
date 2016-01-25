@@ -5,10 +5,10 @@
 Topos Example
 *************
 
-This page contains information about ``PerlToPoS``, a perl client for Topos:
+This page contains information about ``PerlToPoS``, a perl client for ToPoS:
 
 
-.. contents:: 
+.. contents::
     :depth: 4
 
 
@@ -18,7 +18,7 @@ This page contains information about ``PerlToPoS``, a perl client for Topos:
 Introduction
 ============
 
-PerlToPoS is a ToPoS client library written in Perl. The library has no dependencies other than those found on all grid nodes, so including the two modules 'ToposPool.pm' and 'ToposToken.pm' is enough to run pilot jobs using PerlToPoS. 
+PerlToPoS is a ToPoS client library written in Perl. The library has no dependencies other than those found on all grid nodes, so including the two modules 'ToposPool.pm' and 'ToposToken.pm' is enough to run pilot jobs using PerlToPoS.
 
 As an introduction, the following example shows a simple, but functional PerlToPoS client:
 
@@ -51,7 +51,7 @@ While the example seems simple and uses no advanced feature like locking tokens,
 Obtaining PerlToPoS
 ===================
 
-The PerlToPoS client libraries can be downloaded from `Github PerlTopos`_.
+The PerlToPoS client libraries can be downloaded from `GitHub PerlTopos`_.
 
 
 .. _perltopos-structure:
@@ -176,7 +176,7 @@ The 'save' method has an optional argument which stores the file under the given
 Renewing token locks
 ====================
 
-Locks on tokens can be renewed usign the 'renew_lock' method, which has an optional timeout. If no timeout is specified, the timeout of the previous lock is reused::
+Locks on tokens can be renewed using the 'renew_lock' method, which has an optional timeout. If no timeout is specified, the timeout of the previous lock is reused::
 
     $token_object -> renew_lock;       # same timeout as previous lock
     $token_object -> renew_lock(600);  # 600 second / 10 minute lock renewal
@@ -356,13 +356,13 @@ We used a pool named "input_pool" for storing the data which must be processed. 
 
 Save the script as 'example_pilotjob.pl'.
 
-Note that the timeout for a task is set to 3 seconds. It is expected that each task, so processing and storing data, should take no longer than 1 second; the largest delay is in the network traffic to and from ToPoS, and even 1 second is pessimistic. If however some task fails in the processing (in this case very unlikely, but not unlikely in real-world cases) or in the storing phase (real possibility, due to network hickups), the token is unlocked and available to other pilot jobs.
+Note that the timeout for a task is set to 3 seconds. It is expected that each task, so processing and storing data, should take no longer than 1 second; the largest delay is in the network traffic to and from ToPoS, and even 1 second is pessimistic. If however some task fails in the processing (in this case very unlikely, but not unlikely in real-world cases) or in the storing phase (real possibility, due to network hiccups), the token is unlocked and available to other pilot jobs.
 
 
 Creating a job submission file
 ===============================
 
-The job submission file is a regular jdl file with the following properties:
+The job submission file is a regular JDL file with the following properties:
 
 * the job type must be "Parametric"
 * the number of parameters is the number of machines that should be used per job submit
@@ -416,5 +416,4 @@ Note that each pilot job will process the available work. This means that you ca
 
 .. Links:
 
-.. _`Github PerlTopos`: https://github.com/sara-nl/ToPoS
- 
+.. _`GitHub PerlTopos`: https://github.com/sara-nl/PerlTopos

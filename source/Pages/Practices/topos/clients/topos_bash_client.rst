@@ -2,13 +2,13 @@
 .. _topos-bash-client:
 
 *****************
-Topos Bash client
+ToPoS Bash client
 *****************
 
-This page contains information about ``BashTopos``, a bash client for Topos:
+This page contains information about ``BashTopos``, a bash client for ToPoS:
 
 
-.. contents:: 
+.. contents::
     :depth: 4
 
 
@@ -125,4 +125,4 @@ Deletes a token
 
 Usage: deleteToken [POOLNAME] [TOKENNAME]
 
-Returns nothing 
+Returns nothing

@@ -32,7 +32,7 @@ The pipeline of the job is as follows. We upload the file that contains our para
 Quick overview of ToPoS
 =======================
 
-ToPoS, however, does not work with the notion of lines but rather with a notion of a set (called a "pool") and items within that set (called "tokens"). ToPoS is a RESTful webservice, and in order to use it, it is helpful to have a notion of the REST-style of software architecture. You can find the reference document for the 4.1 version of ToPoS at `Topos Reference Manual`_.
+ToPoS, however, does not work with the notion of lines but rather with a notion of a set (called a "pool") and items within that set (called "tokens"). ToPoS is a RESTful webservice, and in order to use it, it is helpful to have a notion of the REST-style of software architecture. You can find the reference document for the 4.1 version of ToPoS at `ToPoS Reference Manual`_.
 
 In short, you upload (a set of) information to the ToPoS service, which it makes available for download under a unique token URL. Each token URI exists only in the namespace of a certain pool URI - in other words, each token is part of a pool. The system allows you to ask for the next available token in a certain pool, and optionally lock that token for a certain time. If a token is locked, it means it will not be given out by the service for the specified amount of time. A lock in itself can also be managed through a unique lock URL, meaning you can delete or prolong the lock, if that should be needed.
 
@@ -43,7 +43,7 @@ ToPoS sample client
 
 This example requires a ToPoS library implementing a subset of ToPoS' features. It is written in bash script and requires curl and awk to be present. It has been tested on Scientific Linux 5.0 and Ubuntu 9.10. You can find the documentation (including download location) on this library at the :ref:`ToPoS library <topos-bash-client>` for BASH page.
 
-The ToPoS service offers the possibility to upload a textfile of which each line will be made a token. We will use this functionality to make a single token of each line in our file with parameters. This way, each token represents a task that needs to be executed on the grid.
+The ToPoS service offers the possibility to upload a text file of which each line will be made a token. We will use this functionality to make a single token of each line in our file with parameters. This way, each token represents a task that needs to be executed on the grid.
 
 ===================
 Running the example
@@ -114,7 +114,4 @@ To check if the output is ready you can have a look at your pool by querying the
 
 .. Links:
 
-.. _`Topos Reference Manual`: https://topos.grid.sara.nl/4.1/reference_manual
-
-
- 
+.. _`ToPoS Reference Manual`: https://topos.grid.sara.nl/4.1/reference_manual
