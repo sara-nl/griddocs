@@ -245,7 +245,7 @@ Unpin a file
 
 Your files may remain ``ONLINE`` as long as there is free space on the disk pools and then they will be purged for new coming staging requests.
 
-The disk pool where your files are staged has limited capacity and is only meant for data that a user wants to process on a Grid site. When you :ref:`pin a file <pin-file>` you set a `pin lifetime` that once is expired the data is automatically released, i.e. go ``OFFLINE``. In other words, the data may be purged from disk, as soon as the space is required for stage requests. 
+The disk pool where your files are staged has limited capacity and is only meant for data that a user wants to process on a Grid site. When you :ref:`pin a file <pin-file>` you set a `pin lifetime` that, when it expires, causes the data to be released automatically. Then the data may be purged from disk, as soon as the space is required for stage requests.
 
 Once the data is unpinned, it will remain of course on tape and has to be staged again in order to be processed on a Worker Node. 
 
@@ -257,7 +257,7 @@ When you are done with your processing, we recommend you release (or unpin) all 
 
 This command will initiate unpinning of file "zap.tar" (even if you submitted multiple pin requests) and the file will remain cached but purgeable until new requests will claim the available space. It is an optional action, but helps a lot with the effective system usage.
 
-.. warning:: At the moment neither the srm-bring-online or the python gfal scripts result to an effective release of the file if there are multiple pin requests. Please use ``srm-release-files``.
+.. warning:: At the moment neither the srm-bring-online nor the python gfal scripts can effectively release a file if there are multiple pin requests. Please use ``srm-release-files``.
 
 
 .. Links:
