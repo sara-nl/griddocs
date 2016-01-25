@@ -9,6 +9,7 @@ dCache Specifications
 This page describes the technical specifications for dCache. If you have any questions concerning the technical specifications below, please contact us at helpdesk@surfsara.nl.
 
 dCache has the following concepts:
+
  * A pool is a location on a server that can contain files.
  * A poolgroup is a group of similar pools, assigned to a user group. Usually the pools are on different nodes to distribute the load.
  * Our ~60 pool nodes are also configured as doors.
@@ -21,6 +22,7 @@ dCache has the following concepts:
  * The namespace contains a list of all files and their metadata. The files are structured in a virtual directory structure, starting with /pnfs/grid.sara.nl/. Each directory can be mapped onto a pool group. Subdirectories inherit this mapping from their parent directory.
 
 Here's a list of accessible dCache nodes:
+
  * srm.grid.sara.nl
  * `dcmain.grid.sara.nl:2288 <http://dcmain.grid.sara.nl:2288>`_ (a dCache web interface showing detailed configuration information)
  * fly{1..10}.grid.sara.nl
@@ -32,6 +34,7 @@ Here's a list of accessible dCache nodes:
  * v40-{8..10}.grid.sara.nl
 
 We have these DNS round robin aliases pointing to our doors:
+
  * gridftp.grid.sara.nl
  * webdav.grid.sara.nl
 
