@@ -116,5 +116,5 @@ Removing data
 Recursive delete
 ----------------
 
-Recursive transfer of files is not supported with the ``srm-*`` client commands. It is possible to remove a directory as long as it is empty, i.e. content files have been removed.
+Recursive deletion of files is not supported with the ``srm-*`` client commands. It is possible to remove a directory as long as it is empty, i.e. content files have been removed.
 
