@@ -127,13 +127,13 @@ dCache
 +------------+--------------------------------------+-------------------------------------------+
 | gridftp    | gsiftp://gridftp.grid.sara.nl:2811   | Data channel port range: 20000-25000      |
 +------------+--------------------------------------+-------------------------------------------+
-| webdav     | https://webdav.grid.sara.nl:443      | Redirect on read                          |
+| webdav     | https://webdav.grid.sara.nl:443      | Redirects on read;                        |
 |            |                                      | Authentication with username/password     |
 +            +--------------------------------------+-------------------------------------------+
-|            | https://webdav.grid.sara.nl:2880     | No redirects                              |
+|            | https://webdav.grid.sara.nl:2880     | No redirects;                             |
 |            |                                      | Authentication with username/password     |
 +            +--------------------------------------+-------------------------------------------+
-|            | https://webdav.grid.sara.nl:2881     | Redirects                                 |
+|            | https://webdav.grid.sara.nl:2881     | Redirects;                                |
 |            |                                      | Authentication with user certificate      |
 +------------+--------------------------------------+-------------------------------------------+
 | gsidcap    | gsidcap://gsidcap.grid.sara.nl:22128 |                                           |
