@@ -59,7 +59,7 @@ Transfer performance
 Bandwidth
 +++++++++
 
-With dCache, we have reached bandwidths up to 22 gigabyte/s, and dCache is probably capable of much more, depending on the circumstances. This bandwidth was reached between the Gina compute cluster and the dCache cluster. One, during an internal data migration operation, we have transferred 1 petabyte in 24 hours. With external endpoints however, bandwith is most likely limited by the network connection.
+With dCache, we have reached bandwidths up to 22 gigabyte/s, and dCache is probably capable of much more, depending on the circumstances. This bandwidth was reached between the Gina compute cluster and the dCache cluster. Once, during an internal data migration operation, we have transferred 1 petabyte in 24 hours. With external endpoints however, bandwith is most likely limited by the network connection.
 
 Limits
 ++++++
