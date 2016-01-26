@@ -32,7 +32,7 @@ Total scratch space          2100TB
 Network backbone             160Gbit/s Ethernet connection with the Grid storage 
 ============================ =====================================================
 
-``Last update: spring 2015``
+``Last update: January 2016``
 
 
 Worker nodes
@@ -103,10 +103,23 @@ Service{01,02,03}:
 CreamCEs
 ========
 
-Monitoring
-==========
+All 3 CreamCEs are virtualized and distribuited among the 3 Service Nodes. Every CreamCE has 4 cores and 9GB RAM in total.
+
 
 Queues
 ======
  
-<Add detailed info>
+=============== =========================== ==========================
+Queue           Max. CPU Time (hh:mm:ss)    Max. Walltime (hh:mm:ss)
+=============== =========================== ==========================
+mediumc         n/a                         72:00:00
+tutor           00:40:00                    00:10:00
+extreme         120:00:00                   120:00:00
+mc_test         n/a                         36:00:00
+medium_8gb      36:00:00                    36:00:00
+test_atlas_wn   36:00:00                    36:00:00
+short           04:00:00                    04:00:00
+long            96:00:00                    96:00:00
+medium          36:00:00                    36:00:00
+infra           02:00:00                    00:30:000
+================ ========================== ==========================
