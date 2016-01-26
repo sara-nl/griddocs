@@ -178,9 +178,9 @@ The :ref:`dCache` storage at SURFsara consists of magnetic tape storage and hard
 	
 	**ONLINE** means that the file is only on disk
 	
-	**NEARLINE** means that the file in only on tape
+	**NEARLINE** means that the file is only on tape
 	
-	**ONLINE_AND_NEARLINE** means that the file in on disk and tape
+	**ONLINE_AND_NEARLINE** means that the file is on disk and tape
 
 
 .. _pin-file:
