@@ -129,11 +129,11 @@ dCache
 +------------+--------------------------------------+-------------------------------------------+
 | webdav     | https://webdav.grid.sara.nl:443      | Redirect on read                          |
 |            |                                      | Authentication with username/password     |
-+------------+--------------------------------------+-------------------------------------------+
-| webdav     | https://webdav.grid.sara.nl:2880     | No redirects                              |
++            +--------------------------------------+-------------------------------------------+
+|            | https://webdav.grid.sara.nl:2880     | No redirects                              |
 |            |                                      | Authentication with username/password     |
-+------------+--------------------------------------+-------------------------------------------+
-| webdav     | https://webdav.grid.sara.nl:2881     | Redirects                                 |
++            +--------------------------------------+-------------------------------------------+
+|            | https://webdav.grid.sara.nl:2881     | Redirects                                 |
 |            |                                      | Authentication with user certificate      |
 +------------+--------------------------------------+-------------------------------------------+
 | gsidcap    | gsidcap://gsidcap.grid.sara.nl:22128 |                                           |
