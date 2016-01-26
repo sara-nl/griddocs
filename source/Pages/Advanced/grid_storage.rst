@@ -117,25 +117,39 @@ You can refer to your files on the Grid with different ways depending on which o
 Default ports
 =============
 
-SRM ports
-------------
+dCache
+------
 
-* The default ``dCache`` srm port is **8443**::
++------------+--------------------------------------+-------------------------------------------+
+| Protocol   | Host(s) and port(s)                  | Remark                                    |
++============+======================================+===========================================+
+| SRM        | srm://srm.grid.sara.nl:8443          |                                           |
++------------+--------------------------------------+-------------------------------------------+
+| gridftp    | gsiftp://gridftp.grid.sara.nl:2811   | Data channel port range: 20000-25000      |
++------------+--------------------------------------+-------------------------------------------+
+| webdav     | https://webdav.grid.sara.nl:443      | Redirect on read                          |
+|            |                                      | Authentication with username/password     |
++------------+--------------------------------------+-------------------------------------------+
+| webdav     | https://webdav.grid.sara.nl:2880     | No redirects                              |
+|            |                                      | Authentication with username/password     |
++------------+--------------------------------------+-------------------------------------------+
+| webdav     | https://webdav.grid.sara.nl:2881     | Redirects                                 |
+|            |                                      | Authentication with user certificate      |
++------------+--------------------------------------+-------------------------------------------+
+| gsidcap    | gsidcap://gsidcap.grid.sara.nl:22128 |                                           |
++------------+--------------------------------------+-------------------------------------------+
+| xroot      | xrootd.grid.sara.nl:1094             | Used by CERN only                         |
++------------+--------------------------------------+-------------------------------------------+
 
-	srm://srm.grid.sara.nl:8443/...
-  
+
+DPM
+---
+
 * The default ``DPM`` srm port is **8446**::
 
     srm://gb-se-lumc.lumc.nl:8446/...
   
  
-gridftp ports
--------------
-
-* The default ``dCache`` gridftp port is **2811**::
-
-	gsiftp://gridftp.grid.sara.nl:2811/...
-
 * The default ``DPM`` gridftp port is **2811**::
 
     gsiftp://gb-se-lumc.lumc.nl:2811/...
