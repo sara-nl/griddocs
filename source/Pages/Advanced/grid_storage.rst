@@ -178,9 +178,9 @@ The :ref:`dCache` storage at SURFsara consists of magnetic tape storage and hard
 	
 	**ONLINE** means that the file is only on disk
 	
-	**NEARLINE** means that the file in only on tape
+	**NEARLINE** means that the file is only on tape
 	
-	**ONLINE_AND_NEARLINE** means that the file in on disk and tape
+	**ONLINE_AND_NEARLINE** means that the file is on disk and tape
 
 
 .. _pin-file:
@@ -265,3 +265,10 @@ This command will initiate unpinning of file "zap.tar" (even if you submitted mu
 .. _`dCache system`: https://www.dcache.org/
 
 .. vim: set wm=7 :
+
+
+===============================
+Importing large amounts of data
+===============================
+
+The `Data Ingest Service <https://www.surf.nl/en/services-and-products/data-ingest-service/index.html>`_ is a SURFsara service for researchers who want to store or analyse large amounts of data at SURFsara. The service is convenient for users who lack sufficient bandwidth or who have stored their data on a number of external hard disks.
