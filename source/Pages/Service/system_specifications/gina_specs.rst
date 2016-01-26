@@ -18,7 +18,7 @@ If you have any questions concerning the technical specifications below, please 
 
 .. _gina-specs-summary:
 
-=============
+
 Quick summary
 =============
 
