@@ -40,21 +40,21 @@ Preamble
 
 .. code-block:: bash
 
-    ssh -X homer@gb-ui-ams.els.sara.nl # replace homer with your username and the ui address of your local cluster
+    $ ssh -X homer@gb-ui-ams.els.sara.nl # replace homer with your username and the ui address of your local cluster
 
 * Copy the tarball :download:`pbsp_fractals.tar </Scripts/pbs_fractals.tar>` to your UI directory:
 
 .. code-block:: bash
 
-    wget http://doc.grid.surfsara.nl/en/latest/_downloads/pbs_fractals.tar
+    $ wget http://doc.grid.surfsara.nl/en/latest/_downloads/pbs_fractals.tar
 
 * Untar the example and check the files::
 
 .. code-block:: bash
 
-    tar -xzvf pbs_fractals.tar
-    cd pbs_fractals/
-    ls -l
+    $ tar -xzvf pbs_fractals.tar
+    $ cd pbs_fractals/
+    $ ls -l
 
     # -rwxrwxr-x 1 homer homer fractals
     # -rw-r--r-- 1 homer homer fractals.c
@@ -64,7 +64,7 @@ Preamble
 
 .. code-block:: bash
 
-    cc fractals.c -o fractals -lm
+    $ cc fractals.c -o fractals -lm
 
 
 .. _pbs-submit:
@@ -76,7 +76,7 @@ Submit a pbs job
 
 .. code-block:: bash
 
-	qsub wrapper.sh
+	$ qsub wrapper.sh
 
 	# 6401.gb-ce-ams.els.sara.nl
 
@@ -86,24 +86,24 @@ This command returns a jobID (6401) that can be used to monitor the progress of 
 
 .. code-block:: bash
 
-	qstat -f 6401 # replace 6401 with your jobID
+	$ qstat -f 6401 # replace 6401 with your jobID
 
 Optionally, when the job finishes, display the job output image::
 
-    convert output "output.png"
-    display output.png
+    $ convert output "output.png"
+    $ display output.png
 
 * List your own jobs:
 
 .. code-block:: bash
 
-    qstat -u homer # replace homer with your username
+    $ qstat -u homer # replace homer with your username
 
 * Cancel the job you submitted:
 
 .. code-block:: bash
 
-    qstat 6401 # replace 6401 with your jobID
+    $ qstat 6401 # replace 6401 with your jobID
 
 
 
@@ -151,25 +151,25 @@ System status commands
 
 .. code-block:: bash
 
-    qstat
+    $ qstat
 
 * Get details for all jobs in a queue, e.g. "long":
 
 .. code-block:: bash
 
-	qstat -f long
+	$ qstat -f long
 
 * Show all the running jobs in the system and the occupied cores on the two worker nodes. The very last number in each row (after ‘/‘) shows the rank of corresponding core:
 
 .. code-block:: bash
 
-	qstat -an1
+	$ qstat -an1
 
 * List all running jobs per worker node and core:
 
 .. code-block:: bash
 
-	pbsnodes
+	$ pbsnodes
 
 
 
@@ -187,7 +187,7 @@ If you don’t specify a particular queue, then your jobs will be scheduled by d
 
 .. code-block:: bash
 
-    qsub -q long wrapper.sh # allow job to run for 72hours
+    $ qsub -q long wrapper.sh # allow job to run for 72hours
 
 
 .. seealso:: :ref:`How to run PBS jobs with wallclock greater than 36 hours on LSG? <pbs-walltime>`
@@ -215,13 +215,13 @@ Example with $TMPDIR
 
 .. code-block:: bash
 
-	cd $TMPDIR
-	cp -r ${PBS_O_WORKDIR}/<your scripts,files> . # note the dot at the end of `cp` command.
+	$ cd $TMPDIR
+	$ cp -r ${PBS_O_WORKDIR}/<your scripts,files> . # note the dot at the end of `cp` command.
 	# ...
 	# Run the executables
 	# ...
 	# When done, copy the output to your home directory:
-	cp -r $TMPDIR/results ${PBS_O_WORKDIR}/
+	$ cp -r $TMPDIR/results ${PBS_O_WORKDIR}/
 
 * Submit the script with ``qsub``.
 
@@ -249,13 +249,13 @@ Therefore, to interact with the Grid storage, you need:
 
 .. code-block:: bash
 
-  cp /tmp/x509up_u39111 /home/homer/ # replace x509up_u39111 with your own proxy file, here "39111" is your unix user-id
+  $ cp /tmp/x509up_u39111 /home/homer/ # replace x509up_u39111 with your own proxy file, here "39111" is your unix user-id
 
 * Set the rights of this file to 600 and treat it as confidential:
 
 .. code-block:: bash
 
-	chmod 600 /home/homer/x509up_u39111
+	$ chmod 600 /home/homer/x509up_u39111
 
 Because your home-directory is shared across the cluster, your proxy will
 also be available on all nodes within the cluster.
@@ -266,7 +266,7 @@ You also need to do this step once every week, and not for each job.
 
 .. code-block:: bash
 
-	export X509_USER_PROXY=/home/homer/x509up_u39111
+	$ export X509_USER_PROXY=/home/homer/x509up_u39111
 
 Now within the job, your :ref:`storage-clients` commands will work.
 
