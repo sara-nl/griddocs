@@ -12,17 +12,15 @@ This page includes the basic commands to use ``webdav``:
 ======
 Webdav
 ======
- 
-Webdav interface is supported on dCache (not DPM) upon request for your VO group. Please contact helpdesk@surfsara.nl if you want to enable it for your project's storage. 
 
-For the examples below we will use ``curl`` and ``wget`` commands to inderact with Webdav.
+.. note:: To run the examples below you need to have a UI (or ``CUA``) account that is configured within dCache and authorized to the data you want to access. Contact us if you need assistance with that.
 
-.. note:: To run the examples below you need to have a UI (or ``CUA``) account that is mapped and configured with your webdav pool.
 
-Creating/listing 
-================
+Listing
+=======
 
-Information not available yet.
+To list directories, you can point a browser like Firefox to https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/. When the browser asks for a username and password, you can provide your CUA username and password. When you click on a listed file, it will be downloaded, when you're authorized to do so. When you're not authorized to access a URL, you may see some unexpected behaviour.
+You can also use text browsers like curl to list directories.
 
 
 Transferring data
@@ -53,6 +51,12 @@ Parallel streams
 
 Information not available yet.
   
+
+Renaming
+========
+
+This section is not finished.
+
 
 Removing data
 =============
