@@ -20,10 +20,10 @@ Problem description
 
 In this example we will implement the following pilot job workflow:
  
-* First we define and generate the application tokens with all the necessary parameters.  
-* Then we define and create a master shell script (*master.sh*) that will be send with the job using the input sandbox. This contains some boiler plate code to e.g. setup the environment, download software or data from the Grid storage, run the application etc. This doesn’t have to be a shell script, however, setting up environment variables is easiest when using a shell script, and this way setup scripts are separated from the application code.  
-* We also define and create a python script to handle all the communication with the token pool server, call the master script, catch errors and do the reporting.   
-* Finally we define the jdl on the user interface machine to specify some general properties of our jobs. This is required to submit a batch of pilot jobs to the Grid that will in turn initiate the python script as defined in the previous step.  
+* First we define and generate the application tokens with all the necessary parameters.
+* Then we define and create a shell script to process one task (*process_task.sh*) that will be sent with the job using the input sandbox. This contains some boiler plate code to e.g. setup the environment, download software or data from the Grid storage, run the application etc. This doesn’t have to be a shell script, however, setting up environment variables is easiest when using a shell script, and this way setup scripts are separated from the application code.
+* We also define and create a python script to handle all the communication with the token pool server, call the process_task,sh script, catch errors and do the reporting.
+* Finally we define the jdl on the user interface machine to specify some general properties of our jobs. This is required to submit a batch of pilot jobs to the Grid that will in turn initiate the python script as defined in the previous step.
 
 
 Prerequisites
@@ -31,14 +31,14 @@ Prerequisites
 To be able to run the example you must have:
 
 * All the three Grid :ref:`prerequisites` (User Interface machine, Grid certificate, VO membership) 
-* An account on PiCaS server (send your request to <helpdesk@surfsara.nl>)  
+* An account on PiCaS server (send your request to <helpdesk@surfsara.nl>)
 
 
 ====================
 Picas sample example
 ====================
 
-* Login to the ui and download the :download:`pilot_picas_fractals.tar </Scripts/pilot_picas_fractals.tar>` example.
+* Login to the ui and download the :download:`pilot_picas_fractals.tgz </Scripts/pilot_picas_fractals.tgz>` example.
 
 * Untar the example scripts and inspect the content:
 
@@ -49,10 +49,10 @@ Picas sample example
     # drwxrwxr-x 2 homer homer  6 Jan 5 16:10 Application
     # drwxrwxr-x 4 homer homer 75 Jan 5 16:11 Tokens
 
-Detailed information regarding the operations performed in each of the scripts below is embedded to the comments inside each of the scripts individually.     
+Detailed information regarding the operations performed in each of the scripts below is embedded to the comments inside each of the scripts individually.
    
    
-Prepare your Tokens     
+Prepare your Tokens
 ===================
 
 
@@ -71,10 +71,11 @@ Create the Tokens
 
     ls -l
     # drwxr-xr-x 4 homer homer 4096 Jan 4 16:11 couchdb
-    # -rwxr-xr-x 1 homer homer 1247 Jan 4 16:25 createTokens
+    # -rwxr-xr-x 1 homer homer 1247 Jan 4 16:11 createTokens
     # -rw-rw-r-- 1 homer homer 1193 Jan 4 16:11 createTokens.py
     # -rw-rw-r-- 1 homer homer 2855 Jan 4 16:11 createViews.py
     # drwxr-xr-x 2 homer homer 4096 Jan 4 16:11 picas
+    # -rw------- 1 homer homer  105 Jan 4 16:11 picasconfig.py
 
 
 This example includes a bash script (./createTokens) that generates a sensible parameter file, with each line representing a set of parameters that the fractals program can be called with. Without arguments it creates a fairly sensible set of 24 lines of parameters. You can generate different sets of parameters by calling the program with a combination of -q, -d and -m arguments, but at the moment no documentation exists on these. We recommend not to use them for the moment.
@@ -91,21 +92,25 @@ This example includes a bash script (./createTokens) that generates a sensible p
 Upload your Tokens to the PiCas server
 --------------------------------------
 
+* Edit picasconfig.py and set the PiCaS host URL, database name, username and password.
+
 * Upload the tokens:
 
 .. code-block:: bash
 
-	python createTokens.py /tmp/tmp.fZ33Kd8wXK $PICAS_DB $PICAS_USR $PICAS_USR_PWD  
+	python createTokens.py /tmp/tmp.fZ33Kd8wXK
 	
 * Check your database in this link:
 
-    https://nosql01.grid.sara.nl:6984/_utils/homerdb/ # replace homerdb with your Picas database name
+    https://nosql01.grid.sara.nl:6984/_utils/homerdb/
+    
+    replace homerdb with your Picas database name
 
 * Create the Views (pools) - independent to the tokens (should be created only once): 
 
 .. code-block:: bash
  
-	python createViews.py $PICAS_DB $PICAS_USR $PICAS_USR_PWD
+	python createViews.py
 
 
 Run the example
@@ -122,18 +127,20 @@ Run the example
 .. code-block:: bash
 
     ls -l
-    # fractals.jdl  
+    # fractals.jdl
     # sandbox/
 
     ls -l sandbox/
     # -rw-rw-r-- 1 homer homer 307200 Jan 4 17:37 couchdb.tar
-    # -rwxrwxr-x 1 homer homer   9735 Jan 4 17:41 fractals
-    # -rw-r--r-- 1 homer homer   2593 Jan 4 17:41 fractals.c
-    # -rwxrw-r-- 1 homer homer    944 Jan 4 17:37 master.sh
+    # -rwxrwxr-x 1 homer homer   9735 Jan 4 17:37 fractals
+    # -rw-rw-r-- 1 homer homer   2593 Jan 4 17:37 fractals.c
+    # -rwxrwxr-x 1 homer homer    944 Jan 4 17:37 process_task.sh
+    # -rw------- 1 homer homer    105 jan 4 17:37 picasconfig.py
     # -rw-rw-r-- 1 homer homer  71680 Jan 4 17:37 picas.tar
     # -rw-rw-r-- 1 homer homer   3046 Jan 4 17:37 pilot.py
-    # -rwxrw-r-- 1 homer homer    681 Jan 4 17:37 startpilot.sh	
-    
+    # -rwxrwxr-x 1 homer homer    681 Jan 4 17:37 startpilot.sh
+
+* Edit picasconfig.py and set the PiCaS host URL, database name, username and password.
 
 Run the example locally
 -----------------------
@@ -143,7 +150,7 @@ Run the example locally
 .. code-block:: bash
 
     cd sandbox/
-    . startpilot.sh PICAS_DB PICAS_USR PICAS_USR_PWD # replace PICAS_DB PICAS_USR PICAS_USR_PWD with your database name, username and password on Picas
+    ./startpilot.sh
     
     # Connected to the database homerdb sucessfully. Now starting work...
     # -----------------------
@@ -159,15 +166,17 @@ Run the example locally
     # _id token_2
     # type token
     # -----------------------
-    # /usr/bin/time -v ./master.sh "-q 0.100 -d 256 -m 8400" token_2 2> logs_token_2.err 1> logs_token_2.out
+    # /usr/bin/time -v ./process_task.sh "-q 0.100 -d 256 -m 8400" token_2 2> logs_token_2.err 1> logs_token_2.out
     # -----------------------
     # Working on token: token_6
-    # lock 1453570589    
+    # lock 1453570589
     # ...
     
 You can monitor the progress for the Tokens that are waiting, running, finished or in error state, from the PiCaS website here:
 
-    https://nosql01.grid.sara.nl:6984/_utils/homerdb/ # replace homerdb with your Picas database name
+    https://nosql01.grid.sara.nl:6984/_utils/homerdb/
+    
+    replace homerdb with your Picas database name
     	
 While the UI has started processing tokens, submit the pilot jobs to the Grid. Continue to the next section ...
 	 
@@ -175,15 +184,13 @@ While the UI has started processing tokens, submit the pilot jobs to the Grid. C
 Run the example on the Grid
 ---------------------------
     
-* Create a proxy:  
+* Create a proxy:
 
 .. code-block:: bash
 
-	startGridSession lsgrid # replace lsgrid with your VO  
+	startGridSession lsgrid # replace lsgrid with your VO
 
-* Modify the ``fractals.jdl`` by replacing [$PICAS_DB] [$PICAS_USR] [$PICAS_USR_PWD] with your credentials (hard-coded). 
-
-* Submit the pilot jobs:  
+* Submit the pilot jobs:
 
 .. code-block:: bash
 
