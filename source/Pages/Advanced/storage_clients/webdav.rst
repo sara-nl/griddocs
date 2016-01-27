@@ -13,6 +13,22 @@ This page includes the basic commands to use ``webdav``:
 Webdav
 ======
 
+Webdav has the advantage that it supports username & password authentication. It is not a high performance transfer protocol; if this is a requirement, use gridftp instead.
+
+dCache has the following webdav doors:
+
++------------------------------------+-----------------------------+---------------------------------+
+| URL including port                 | Athentication method        | Redirection behaviour           |
++====================================+=============================+=================================+
+| https://webdav.grid.sara.nl:443    | Username/password           | Redirects on read               |
++------------------------------------+-----------------------------+---------------------------------+
+| https://webdav.grid.sara.nl:2880   | Username/password           | No redirects                    |
++------------------------------------+-----------------------------+---------------------------------+
+| https://webdav.grid.sara.nl:2881   | User certificate or proxy   | Redirects on read and write     |
++------------------------------------+-----------------------------+---------------------------------+
+
+If you don't know which one you should use, choose the first. It has a good load balancing. The second, on port 2880, may be useful for certain webdav clients that don't support redirects. Use the third one only if you need to use webdav with a certificate or proxy.
+
 .. note:: To run the examples below you need to have a UI (or ``CUA``) account that is configured within dCache and authorized to the data you want to access. Contact us if you need assistance with that.
 
 
