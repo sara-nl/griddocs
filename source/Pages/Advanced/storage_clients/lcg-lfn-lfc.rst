@@ -249,9 +249,3 @@ If the physical storage is removed or lost, and you don't have any other replica
 Or shorter command doing exactly the same::
 
     f=lfn:/grid/lsgrid/tomv/demo/testfile lcg-uf $(lcg-lg $f) $(lcg-lr $f)
-
-
-
-
-
-

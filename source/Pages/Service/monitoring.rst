@@ -1,5 +1,5 @@
 
-.. _grid-authentication:
+.. _monitoring-pages:
 
 ***********************
 Statistics & Monitoring

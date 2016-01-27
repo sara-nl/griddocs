@@ -98,7 +98,7 @@ Graphical access
   
 To work with Webdav on a windows-based environment, you can install Cyberduck (for Windows and Mac) from here: http://cyberduck.ch/
 
-* Open a Webdav (HTTP/SSL) connection and connect to the server with your ui account username and password::
+* Open a Webdav (HTTP/SSL) connection and connect to the server with your ui account username and password:
 
 .. code-block:: bash
 

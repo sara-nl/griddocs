@@ -43,6 +43,7 @@ Globus Connect
 
 * Create an account here: https://www.globus.org/ by following the instructions.
 * To transfer data one needs to define the endpoints. On servers or computers that do not run gridFTP you will first have to install the Globus Connect client software. Below we show an example on how to define your home folder on a grid User Interface machine as endpoint:
+
  * Click on the button ”Manage endpoints” followed by ”add Globus Connect personal”.
  * Provide a name for your endpoint e.g. ui.grid.sara.nl and press ”Generate Key”
  * Download the linux package for Globus Connect Personal
@@ -64,6 +65,7 @@ Globus Connect
 .. note:: These steps work for any personal (non gridFTP-enabled) server. 
 
 * Define other endpoints:
+
 By clicking the button ”Manage endpoints” followed by ”all” one will be directed to a list with all endpoints, e.g. the ``surfsara#dCache`` gridftp endpoint which points at the Grid Front End storage.
 
 * To register a gridFTP-enabled enpoint click on ”add an endpoint” and follow the instructions there. You will need to provide a URL and a URI. In case of the SURFsara grid you will need to set URL = px.grid.sara.nl and URI = gsiftp://gridftp.grid.sara.nl:2811
@@ -83,7 +85,7 @@ Data transfer workflow
 Activating endpoints
 =====================
 
-Globus Online executes data transfers on behalf of a user. To this end it employs a grid proxy that is provided by the user and instantiated with his/her grid credentials/certficates. Independent from using the python API or the web interface one first has to activate the endpoints from/to which data should be transfered.
+Globus Online executes data transfers on behalf of a user. To this end it employs a grid proxy that is provided by the user and instantiated with his/her grid credentials/certificates. Independent from using the python API or the web interface one first has to activate the endpoints from/to which data should be transfered.
 
 * The non gridFTP-enabled endpoints like personal workstations or the home of the grid user interface machines are activated by running::
 
@@ -103,7 +105,7 @@ Data transfers employing the web interface
 
 Data transfers can be easily started employing the web interface. One has to provide the names of the endpoints from and to which the data is transferred. Data to be transferred is selected by marking it and then clicking one of the arrows to determine sink and source.
 
-The current stae of data transfers can be monitored in the ”Activity” screen.
+The current state of data transfers can be monitored in the ”Activity” screen.
 
 Data transfers employing the python API
 =======================================

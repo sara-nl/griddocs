@@ -49,7 +49,7 @@ Function description
 
 **newPool**
 
-Returns a new, unused pool name::
+Returns a new, unused pool name
 
 Usage: newPool
 

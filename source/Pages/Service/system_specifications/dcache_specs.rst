@@ -14,11 +14,13 @@ dCache has the following concepts:
  * A poolgroup is a group of similar pools, assigned to a user group. Usually the pools are on different nodes to distribute the load.
  * Our ~60 pool nodes are also configured as doors.
  * A door is a service that can you can contact to send, receive or delete files or restore files from tape using a specific protocol. Protocols are:
+
    * gridftp (port range 20000-25000)
    * webdav
    * xroot
    * gsidcap
    * dCache also offers NFS doors, so the protocol list could be extended on demand for specific purposes.
+
  * The namespace contains a list of all files and their metadata. The files are structured in a virtual directory structure, starting with /pnfs/grid.sara.nl/. Each directory can be mapped onto a pool group. Subdirectories inherit this mapping from their parent directory.
 
 Here's a list of accessible dCache nodes:
@@ -45,8 +47,7 @@ The subnet is 145.100.32.0/22. You may need to change your firewall to access th
 Disk storage
 ------------
 
-We currently (January 2016) have 8 petabyte of disk storage. This space is devided over several pool groups. These pool groups are for disk only data, t1d1 data (disk data with a tape replica) and for online caching of tape only data.
-
+We currently (January 2016) have 8 petabyte of disk storage. This space is divided over several pool groups. These pool groups are for disk only data, t1d1 data (disk data with a tape replica) and for online caching of tape only data.
 
 Tape storage
 ------------
@@ -59,7 +60,7 @@ Transfer performance
 Bandwidth
 +++++++++
 
-With dCache, we have reached bandwidths up to 25 gigabyte/s, and dCache is probably capable of much more, depending on the circumstances. This bandwidth was reached between the Gina compute cluster and the dCache cluster. Once, during an internal data migration operation, we have transferred 1 petabyte in 24 hours. With external endpoints however, bandwith is most likely limited by the network connection.
+With dCache, we have reached bandwidths up to 25 gigabyte/s, and dCache is probably capable of much more, depending on the circumstances. This bandwidth was reached between the Gina compute cluster and the dCache cluster. Once, during an internal data migration operation, we have transferred 1 petabyte in 24 hours. With external endpoints however, bandwidth is most likely limited by the network connection.
 
 Limits
 ++++++
