@@ -17,7 +17,7 @@ Webdav has the advantage that it supports username & password authentication. It
 
 dCache has the following webdav doors:
 
-+====================================+=============================+=============================+
++------------------------------------+-----------------------------+-----------------------------+
 | URL including port                 | Athentication method        | Redirection behaviour       |
 +====================================+=============================+=============================+
 | https://webdav.grid.sara.nl:443    | Username/password           | Redirects on read           |
