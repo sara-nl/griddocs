@@ -12,10 +12,6 @@ This page includes the basic commands to use ``webdav``:
 ======
 Webdav
 ======
- 
-Webdav interface is supported on dCache (not DPM) upon request for your VO group. Please contact helpdesk@surfsara.nl if you want to enable it for your project's storage. 
-
-For the examples below we will use ``curl`` and ``wget`` commands to inderact with Webdav.
 
 .. note:: To run the examples below you need to have a UI (or ``CUA``) account that is configured within dCache and authorized to the data you want to access. Contact us if you need assistance with that.
 
