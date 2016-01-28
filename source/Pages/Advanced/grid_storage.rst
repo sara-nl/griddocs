@@ -169,8 +169,7 @@ In this section we will show the common commands to use the various storage clie
 
 .. table:: Storage clients
     :column-alignment: left center center center center center center
-+----------------------+------+----------+----------+--------+-----------+-------+
-|                      |              Protocols              |           |       |
+
 +----------------------+------+----------+----------+--------+-----------+-------+
 | Client               | SRM  | GridFTP  | GSIdCap  | WebDAV | 3rd party | Speed |
 +======================+======+==========+==========+========+===========+=======+
