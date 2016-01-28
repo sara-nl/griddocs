@@ -48,7 +48,7 @@ Preamble
 
     $ wget http://doc.grid.surfsara.nl/en/latest/_downloads/pbs_fractals.tar
 
-* Untar the example and check the files::
+* Untar the example and check the files:
 
 .. code-block:: bash
 

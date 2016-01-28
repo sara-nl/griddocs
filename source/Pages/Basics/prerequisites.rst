@@ -27,7 +27,7 @@ Your digital identity starts with a private key. **Only you** are allowed to kno
 Now this is your identity. Big international cooperations do not want to deal with every user individually. Instead, users become part of ``Virtual Organisations`` (VOs). Individual clusters give access and compute time to certain VOs, and if you are a member of a VO, you can run your jobs on that cluster.
 
 
-.. sidebar:: More about Grid Secutity?
+.. sidebar:: More about Grid Security?
 
 		.. seealso:: Checkout our mooc video :ref:`mooc-about-certificate`.
 
@@ -98,7 +98,7 @@ Join a Virtual Organisation
 	
 A Virtual Organisation or VO is a group of geographically distributed people that have common objectives and that are using shared grid resources to achieve them. Every Grid user is a member of one or more Virtual Organizations. 
 
-In practice your  VOmembership determines to which resources (compute and storage) you have access to. You are eligible to register for a VO only once you :ref:`get a valid certificate <get-grid-certificate>`. The VO that is most suitable for you depends on the specific research area you are in. For example, if you are active in a field associated with the life sciences the ``lsgrid VO`` might be most suitable for you. If you still not sure which VO is best for you, then contact us at helpdesk@surfsara.nl to guide you on this.
+In practice your  VO membership determines to which resources (compute and storage) you have access to. You are eligible to register for a VO only once you :ref:`get a valid certificate <get-grid-certificate>`. The VO that is most suitable for you depends on the specific research area you are in. For example, if you are active in a field associated with the life sciences the ``lsgrid VO`` might be most suitable for you. If you still not sure which VO is best for you, then contact us at helpdesk@surfsara.nl to guide you on this.
 
 This section describes how to get a VO membership.
 
@@ -111,6 +111,3 @@ This section describes how to get a VO membership.
 * You will receive an approval email titled “Your vo membership request for VO lsgrid has been approved” when the VO administrator finally sings your request.
 
 Once you finish this page instructions successfully, you are set to go and run your :ref:`first-grid-job`!
-
-
-

@@ -103,7 +103,7 @@ Service{01,02,03}:
 CreamCEs
 ========
 
-All 3 CreamCEs are virtualized and distribuited among the 3 Service Nodes. Every CreamCE has 4 cores and 9GB RAM in total.
+All 3 CreamCEs are virtualized and distributed among the 3 Service Nodes. Every CreamCE has 4 cores and 9GB RAM in total.
 
 
 Queues

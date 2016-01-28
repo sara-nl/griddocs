@@ -44,7 +44,7 @@ The presence of the DataRequirements attribute causes the job to run on a Comput
 This is what you have to do: First, register a file on a SE and to the LFC Catalog. We do this by copy and register (lcg-cr)::
 
     lcg-cr --vo lsgrid -d gb-se-ams.els.sara.nl -l lfn:/grid/lsgrid/homer/test.txt file:/home/homer/local_test.txt 
-guid:522350d4-a28a-48aa-939b-d85c9ab5443f
+    guid:522350d4-a28a-48aa-939b-d85c9ab5443f
 
 Note that the guid part is what we get as return value from the command. It identifies the file uniquely in the Grid storage. You can save this id for emergencies. The part which starts with lfn: identifies the logical file name of our uploaded file.
 
