@@ -208,4 +208,14 @@ It will recursively generate an image based on parameters received from PiCas. A
 For the tokens that are processed on grid, you can send the output to the :ref:`Grid Storage <grid-storage>` or some other remote location.
 
 
-	
+Checking failed jobs
+--------------------
+
+While your pilot jobs process tasks, you can keep track of their progress through the CouchDB web interface. There are views installed to see:
+
+ * all the tasks that still need to be done (Monitor/todo)
+ * the tasks that are locked (Monitor/locked)
+ * tasks that encountered errors (Monitor/error)
+ * tasks that are finished (Monitor/done)
+
+When all your pilot jobs are finished, ideally, you'd want all tasks to be 'done'. However, often you will find that not all jobs finished successfully and some are still in a 'locked' or 'error' state. If this happens, you should investigate what went wrong with these jobs. Incidentally, this will be due to errors with the grid middleware, network or storage. In those cases, you can remove the locks and submitting some new pilot jobs to try again. In other cases, there could be errors with your task: maybe you've sent the wrong parameters or forgot to download all necessary input files. Reviewing these failed tasks gives you the possibility to correct them and improve your submission scripts. After that, you could run those tasks again, either by removing their locks or by creating new tokens if needed and then submitting new pilot jobs.
