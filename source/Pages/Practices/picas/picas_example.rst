@@ -38,7 +38,7 @@ To be able to run the example you must have:
 Picas sample example
 ====================
 
-* Login to the ui and download the :download:`pilot_picas_fractals.tgz </Scripts/pilot_picas_fractals.tgz>` example and the :download:`couchdb package for Python </Scripts/couchdb.tgz>`.
+* Login to the ui and download the :download:`pilot_picas_fractals.tgz </Scripts/pilot_picas_fractals.tgz>` example, the couchdb package for Python :download:`couchdb.tgz </Scripts/couchdb.tgz>` and the fractals source code :download:`fractals.c </Scripts/fractals.c>`.
 
 * Untar pilot_picas_fractals.tgz and inspect the content:
 
@@ -62,6 +62,12 @@ Detailed information regarding the operations performed in each of the scripts b
     cd sandbox
     curl --location https://github.com/sara-nl/picasclient/archive/master.zip > picas.zip
     mv ../../couchdb.tgz ./
+
+* And finally compile the fractals program (and put it in the sandbox directory) and move one directory up again:
+
+.. code-block:: bash
+
+    cc ../../fractals.c -o fractals -lm
     cd ..
 
 The sandbox directory now holds everything we need to send to the grid worker nodes.

@@ -40,16 +40,18 @@ Preamble
     ssh homer@ui.grid.sara.nl # replace homer with your username
     
 * Copy the tarball :download:`bootstrap_fractals.tar </Scripts/bootstrap_fractals.tar>` to your UI directory.
+
+* Copy the fractals source code :download:`fractals.c </Scripts/fractals.c>` to your UI directory.
     
 * Untar the example and check the files::
 
 .. code-block:: bash
 
-    tar -xzvf bootstrap_fractals.tar
+    tar -xvf bootstrap_fractals.tar
     cd bootstrap_fractals/
+    mv ../fractals.c ./
     ls -l
 
-    # -rwxrwxr-x 1 homer homer fractals
     # -rw-r--r-- 1 homer homer fractals.c
     # -rw-rw-r-- 1 homer homer fractals.jdl
     # -rw-rw-r-- 1 homer homer wrapper.sh

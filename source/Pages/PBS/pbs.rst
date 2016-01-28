@@ -44,15 +44,17 @@ Preamble
     
 * Copy the tarball :download:`pbsp_fractals.tar </Scripts/pbs_fractals.tar>` to your UI directory.
     
+* Copy the fractals source code :download:`fractals.c </Scripts/fractals.c>` to your UI directory.
+    
 * Untar the example and check the files::
 
 .. code-block:: bash
 
-    tar -xzvf pbs_fractals.tar
+    tar -xvf pbs_fractals.tar
     cd pbs_fractals/
+    mv ../fractals.c ./
     ls -l
 
-    # -rwxrwxr-x 1 homer homer fractals
     # -rw-r--r-- 1 homer homer fractals.c
     # -rw-rw-r-- 1 homer homer wrapper.sh
 
