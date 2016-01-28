@@ -167,17 +167,14 @@ In this section we will show the common commands to use the various storage clie
 
 .. note:: From the many Grid storage clients, we recommend you to use :ref:`uberftp` and :ref:`globus` or :ref:`gfal`. These tools have a clean interface, and their speed is much better on our systems compared with their srm-* equivalents.
 
-.. toctree::
-   :maxdepth: 1
-
-   storage_clients/uberftp
-   storage_clients/globus
-   storage_clients/srm
-   storage_clients/gfal
-   storage_clients/fts
-   storage_clients/webdav
-   storage_clients/globusonline
-   storage_clients/lcg-lfn-lfc
+* :ref:`uberftp`
+* :ref:`globus`
+* :ref:`srm`
+* :ref:`gfal`
+* :ref:`fts`
+* :ref:`webdav`
+* :ref:`globusonline`
+* :ref:`lcg-lfn-lfc`
 
 
 .. _staging:
