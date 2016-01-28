@@ -117,25 +117,39 @@ You can refer to your files on the Grid with different ways depending on which o
 Default ports
 =============
 
-SRM ports
-------------
+dCache
+------
 
-* The default ``dCache`` srm port is **8443**::
++------------+--------------------------------------+-------------------------------------------+
+| Protocol   | Host(s) and port(s)                  | Remark                                    |
++============+======================================+===========================================+
+| SRM        | srm://srm.grid.sara.nl:8443          |                                           |
++------------+--------------------------------------+-------------------------------------------+
+| gridftp    | gsiftp://gridftp.grid.sara.nl:2811   | Data channel port range: 20000-25000      |
++------------+--------------------------------------+-------------------------------------------+
+| webdav     | https://webdav.grid.sara.nl:443      | Redirects on read;                        |
+|            |                                      | Authentication with username/password     |
++            +--------------------------------------+-------------------------------------------+
+|            | https://webdav.grid.sara.nl:2880     | No redirects;                             |
+|            |                                      | Authentication with username/password     |
++            +--------------------------------------+-------------------------------------------+
+|            | https://webdav.grid.sara.nl:2881     | Redirects;                                |
+|            |                                      | Authentication with user certificate      |
++------------+--------------------------------------+-------------------------------------------+
+| gsidcap    | gsidcap://gsidcap.grid.sara.nl:22128 |                                           |
++------------+--------------------------------------+-------------------------------------------+
+| xroot      | xrootd.grid.sara.nl:1094             | Used by CERN only                         |
++------------+--------------------------------------+-------------------------------------------+
 
-	srm://srm.grid.sara.nl:8443/...
-  
+
+DPM
+---
+
 * The default ``DPM`` srm port is **8446**::
 
     srm://gb-se-lumc.lumc.nl:8446/...
   
  
-gridftp ports
--------------
-
-* The default ``dCache`` gridftp port is **2811**::
-
-	gsiftp://gridftp.grid.sara.nl:2811/...
-
 * The default ``DPM`` gridftp port is **2811**::
 
     gsiftp://gb-se-lumc.lumc.nl:2811/...
@@ -153,17 +167,28 @@ In this section we will show the common commands to use the various storage clie
 
 .. note:: From the many Grid storage clients, we recommend you to use :ref:`uberftp` and :ref:`globus` or :ref:`gfal`. These tools have a clean interface, and their speed is much better on our systems compared with their srm-* equivalents.
 
-.. toctree::
-   :maxdepth: 1
+.. table:: Storage clients
+    :column-alignment: left center center center center center center
 
-   storage_clients/uberftp
-   storage_clients/globus
-   storage_clients/srm
-   storage_clients/gfal
-   storage_clients/fts
-   storage_clients/webdav
-   storage_clients/globusonline
-   storage_clients/lcg-lfn-lfc
++----------------------+------+----------+----------+--------+-----------+-------+
+| Client               | SRM  | GridFTP  | GSIdCap  | WebDAV | 3rd party | Speed |
++======================+======+==========+==========+========+===========+=======+
+| :ref:`uberftp`       | --   | yes      | --       | --     | --        | high  |
++----------------------+------+----------+----------+--------+-----------+-------+
+| :ref:`globus`        | --   | yes      | --       | --     | --        | high  |
++----------------------+------+----------+----------+--------+-----------+-------+
+| :ref:`srm`           | yes  | indirect | indirect | ?      | --        |       |
++----------------------+------+----------+----------+--------+-----------+-------+
+| :ref:`gfal`          | yes  | yes      | ?        | ?      | --        |       |
++----------------------+------+----------+----------+--------+-----------+-------+
+| :ref:`webdav`        | --   | --       | --       | yes    | --        |       |
++----------------------+------+----------+----------+--------+-----------+-------+
+| :ref:`fts`           | yes  | ?        | ?        | ?      | yes       |       |
++----------------------+------+----------+----------+--------+-----------+-------+
+| :ref:`globusonline`  | yes  | yes      | ?        | ?      | yes       |       |
++----------------------+------+----------+----------+--------+-----------+-------+
+| :ref:`lcg-lfn-lfc`   | yes  | indirect | ?        | ?      | --        |       |
++----------------------+------+----------+----------+--------+-----------+-------+
 
 
 .. _staging:
@@ -178,9 +203,9 @@ The :ref:`dCache` storage at SURFsara consists of magnetic tape storage and hard
 	
 	**ONLINE** means that the file is only on disk
 	
-	**NEARLINE** means that the file in only on tape
+	**NEARLINE** means that the file is only on tape
 	
-	**ONLINE_AND_NEARLINE** means that the file in on disk and tape
+	**ONLINE_AND_NEARLINE** means that the file is on disk and tape
 
 
 .. _pin-file:
@@ -265,3 +290,10 @@ This command will initiate unpinning of file "zap.tar" (even if you submitted mu
 .. _`dCache system`: https://www.dcache.org/
 
 .. vim: set wm=7 :
+
+
+===============================
+Importing large amounts of data
+===============================
+
+The `Data Ingest Service <https://www.surf.nl/en/services-and-products/data-ingest-service/index.html>`_ is a SURFsara service for researchers who want to store or analyse large amounts of data at SURFsara. The service is convenient for users who lack sufficient bandwidth or who have stored their data on a number of external hard disks.

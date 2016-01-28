@@ -23,10 +23,11 @@ The pipeline of the job is as follows. We upload the file that contains our para
 * asks ToPoS for the next line
 * tells ToPoS not to give that line to anybody else as long as it works on it
 * calls the fractals program with that line of parameters
+
  * if successful, tells ToPoS to delete that line
  * otherwise, tells ToPoS it can give out that same line again
-* continues at the beginning of the loop
 
+* continues at the beginning of the loop
 
 =======================
 Quick overview of ToPoS

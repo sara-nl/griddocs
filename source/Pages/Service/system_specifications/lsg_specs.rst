@@ -16,7 +16,7 @@ If you have any questions concerning the technical specifications below, please 
 
 .. _dcache-lsg-summary:
 
-=============
+
 Quick summary
 ============= 
 
@@ -30,3 +30,30 @@ Total scratch space          10TB
 Disk storage                 40TB of staging area                             
 Network backbone             10Gbit/s local switch, 1Gbit/s external connectivity
 ============================ =====================================================
+
+
+Service Nodes
+=============
+* PowerEdge R420 2xIntel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+* Type: 
+* Cores: 24
+* RAM: 96 GB
+* Number of nodes: 2
+
+
+Worker Nodes
+============
+* PowerEdge R815 4xAMD Opteron(tm) Processor 6376
+* Type: 
+* Cores: 64
+* RAM: 256GB
+* Number of nodes: 2
+
+
+Storage Node
+============
+* PowerEdge R515 2xAMD Opteron(tm) Processor 4280
+* Type: 
+* Cores: 16
+* RAM: 128 GB
+* Number of nodes: 1

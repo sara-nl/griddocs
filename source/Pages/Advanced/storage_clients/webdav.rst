@@ -12,17 +12,39 @@ This page includes the basic commands to use ``webdav``:
 ======
 Webdav
 ======
- 
-Webdav interface is supported on dCache (not DPM) upon request for your VO group. Please contact helpdesk@surfsara.nl if you want to enable it for your project's storage. 
 
-For the examples below we will use ``curl`` and ``wget`` commands to inderact with Webdav.
+The webdav protocol has the following advantages:
 
-.. note:: To run the examples below you need to have a UI (or ``CUA``) account that is mapped and configured with your webdav pool.
+* It supports username & password authentication
+* It uses the common port 443. Some overly strict firewalls may block outgoing traffic, but port 443 is so common that it is seldom blocked. However, using webdav to bypass firewalls should be seen as a temporary solution; a better solution would be to open up your institute's firewall to allow access to the dCache subnet.
 
-Creating/listing 
-================
+It also has a disadvantage:
 
-Information not available yet.
+* It is not a high performance transfer protocol. If this is important, use gridftp instead.
+
+dCache has the following webdav doors:
+
++------------------------------------+-----------------------------+---------------------------------+
+| URL including port                 | Athentication method        | Redirection behaviour           |
++====================================+=============================+=================================+
+| https://webdav.grid.sara.nl:443    | Username/password           | Redirects on read               |
++------------------------------------+-----------------------------+---------------------------------+
+| https://webdav.grid.sara.nl:2880   | Username/password           | No redirects                    |
++------------------------------------+-----------------------------+---------------------------------+
+| https://webdav.grid.sara.nl:2881   | User certificate or proxy   | Redirects on read and write     |
++------------------------------------+-----------------------------+---------------------------------+
+
+If you don't know which one you should use, choose the first. It has a good load balancing. The second, on port 2880, may be useful for certain webdav clients that don't support redirects. Use the third one only if you need to use webdav with a certificate or proxy.
+
+.. note:: To run the examples below you need to have a UI (or ``CUA``) account that is configured within dCache and authorized to the data you want to access. Contact us if you need assistance with that.
+
+
+Listing
+=======
+
+To list directories, you can point a browser like Firefox to https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/. When the browser asks for a username and password, you can provide your CUA username and password. When you click on a listed file, it will be downloaded, when you're authorized to do so. When you're not authorized to access a URL, you may see some unexpected behaviour.
+
+You can also use text browsers like curl to list directories.
 
 
 Transferring data
@@ -54,6 +76,12 @@ Parallel streams
 Information not available yet.
   
 
+Renaming
+========
+
+This section is not finished.
+
+
 Removing data
 =============
 
@@ -70,7 +98,7 @@ Graphical access
   
 To work with Webdav on a windows-based environment, you can install Cyberduck (for Windows and Mac) from here: http://cyberduck.ch/
 
-* Open a Webdav (HTTP/SSL) connection and connect to the server with your ui account username and password::
+* Open a Webdav (HTTP/SSL) connection and connect to the server with your ui account username and password:
 
 .. code-block:: bash
 

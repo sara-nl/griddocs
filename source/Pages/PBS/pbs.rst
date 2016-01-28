@@ -7,17 +7,17 @@ PBS local jobs
 
 In this page we will talk about job submission to the local LSG cluster. The information here applies to :ref:`LSG users <lsg>` who own an account on their :ref:`local LSG cluster <lsg-clusters>`:
 
-.. contents:: 
+.. contents::
     :depth: 4
-    
+
 
 ============
 Introduction
 ============
 
-The LSG is a group of clusters which can be used locally only, or as one big cluster (Grid). Each :ref:`local LSG cluster <lsg-clusters>` is part of the Life Science Grid that has its own user interface (UI) and two worker nodes of 64cores (see :ref:`LSG specifications <specs-lsg>`). You can use the local UI for submitting both local :ref:`pbs jobs <pbs-submit>` or :ref:`Grid jobs <first-grid-job>`. 
+The LSG is a group of clusters which can be used locally only, or as one big cluster (Grid). Each :ref:`local LSG cluster <lsg-clusters>` is part of the Life Science Grid that has its own user interface (UI) and two worker nodes of 64cores (see :ref:`LSG specifications <specs-lsg>`). You can use the local UI for submitting both local :ref:`pbs jobs <pbs-submit>` or :ref:`Grid jobs <first-grid-job>`.
 
-In this section we will focus on the usage of local LSG cluster as a common batch system. The local job submission can be useful when: 
+In this section we will focus on the usage of local LSG cluster as a common batch system. The local job submission can be useful when:
 
 * prototyping your Grid application
 * running multicore jobs with high number of cores (e.g. more than 8 cores)
@@ -30,30 +30,38 @@ In this section we will focus on the usage of local LSG cluster as a common batc
 Quickstart example
 ==================
 
-In this example we will submit a simple pbs job to the local LSG cluster using the fractals example. 
+In this example we will submit a simple pbs job to the local LSG cluster using the fractals example.
 
 
 Preamble
 ========
 
-* Login to the LSG UI, e.g. "ams" cluster: 
+* Login to the LSG UI, e.g. "ams" cluster:
 
 .. code-block:: bash
 
-    ssh -X homer@gb-ui-ams.els.sara.nl # replace homer with your username and the ui address of your local cluster
-    
-* Copy the tarball :download:`pbsp_fractals.tar </Scripts/pbs_fractals.tar>` to your UI directory.
+    $ ssh -X homer@gb-ui-ams.els.sara.nl # replace homer with your username and the ui address of your local cluster
+
+* Copy the tarball :download:`pbsp_fractals.tar </Scripts/pbs_fractals.tar>` to your UI directory:
+
+.. code-block:: bash
+
+    $ wget http://doc.grid.surfsara.nl/en/latest/_downloads/pbs_fractals.tar
     
 * Copy the fractals source code :download:`fractals.c </Scripts/fractals.c>` to your UI directory.
-    
-* Untar the example and check the files::
 
 .. code-block:: bash
 
-    tar -xvf pbs_fractals.tar
-    cd pbs_fractals/
-    mv ../fractals.c ./
-    ls -l
+    $ wget http://doc.grid.surfsara.nl/en/latest/_downloads/fractals.c
+    
+* Untar the example and check the files:
+
+.. code-block:: bash
+
+    $ tar -xvf pbs_fractals.tar
+    $ cd pbs_fractals/
+    $ mv ../fractals.c ./
+    $ ls -l
 
     # -rw-r--r-- 1 homer homer fractals.c
     # -rw-rw-r-- 1 homer homer wrapper.sh
@@ -62,7 +70,7 @@ Preamble
 
 .. code-block:: bash
 
-    cc fractals.c -o fractals -lm
+    $ cc fractals.c -o fractals -lm
 
 
 .. _pbs-submit:
@@ -74,35 +82,34 @@ Submit a pbs job
 
 .. code-block:: bash
 
-	qsub wrapper.sh	
-	
+	$ qsub wrapper.sh
+
 	# 6401.gb-ce-ams.els.sara.nl
 
 This command returns a jobID (6401) that can be used to monitor the progress of the job.
 
-* Monitor the progress of your job
+* Monitor the progress of your job:
 
 .. code-block:: bash
 
-	qstat -f 6401 # replace 6401 with your jobID
+	$ qstat -f 6401 # replace 6401 with your jobID
 
-Optionally, when the job finishes, display the output image::
+Optionally, when the job finishes, display the job output image::
 
-    convert output "output.png"
-    display output.png
-
+    $ convert output "output.png"
+    $ display output.png
 
 * List your own jobs:
 
 .. code-block:: bash
-    
-    qstat -u homer # replace homer with your username
-    
+
+    $ qstat -u homer # replace homer with your username
+
 * Cancel the job you submitted:
 
 .. code-block:: bash
 
-    qstat 6401 # replace 6401 with your jobID
+    $ qstat 6401 # replace 6401 with your jobID
 
 
 
@@ -150,27 +157,27 @@ System status commands
 
 .. code-block:: bash
 
-    qstat
-    
-* Get details for all jobs in a queue, e.g. "long":	
+    $ qstat
 
-.. code-block:: bash	
-	
-	qstat -f long     
+* Get details for all jobs in a queue, e.g. "long":
+
+.. code-block:: bash
+
+	$ qstat -f long
 
 * Show all the running jobs in the system and the occupied cores on the two worker nodes. The very last number in each row (after ‘/‘) shows the rank of corresponding core:
 
 .. code-block:: bash
 
-	qstat -an1
-	
+	$ qstat -an1
+
 * List all running jobs per worker node and core:
 
 .. code-block:: bash
 
-	pbsnodes	
+	$ pbsnodes
 
-	
+
 
 ============
 Local queues
@@ -178,15 +185,15 @@ Local queues
 
 We recommend you to estimate the walltime of your jobs and specify the queue to send your job. This can be done with the '-q’ option in your ``qsub`` command. On the LSG clusters you can find three queue types:
 
-* short - 4 hours walltime limit 
-* medium - 36 hours walltime limit 
+* short - 4 hours walltime limit
+* medium - 36 hours walltime limit
 * long - 72 hours walltime limit
- 
+
 If you don’t specify a particular queue, then your jobs will be scheduled by default on the medium queue.  When the queue walltime is reached, the job will be killed. For example, if you want to run a job for 72 hours, you need to specify the queue "long" or else your job will land on the default (medium) queue and will be killed after 36hours:
 
 .. code-block:: bash
 
-    qsub -q long wrapper.sh # allow job to run for 72hours
+    $ qsub -q long wrapper.sh # allow job to run for 72hours
 
 
 .. seealso:: :ref:`How to run PBS jobs with wallclock greater than 36 hours on LSG? <pbs-walltime>`
@@ -204,31 +211,31 @@ When you submit a local job, it will land on one of the cluster nodes. This mean
 The home UI directory is mounted on the worker node via NFS. For better I/O performance, copy files, computation to the worker node's ``/scratch``.
 
 .. note:: There is an environment variable set on the worker nodes called ``$TMPDIR`` that points to your job directory, e.g. ``/scratch/<jobID>.gb-ui-ams.els.sara.nl/``.
-	
-	Use ``$TMPDIR`` in your scripts to locate the ``/scratch`` directory. The ``$TMPDIR`` directory also makes sure that any created data is cleaned up properly when the job has finished. 
-	
+
+	Use ``$TMPDIR`` in your scripts to locate the ``/scratch`` directory. The ``$TMPDIR`` directory also makes sure that any created data is cleaned up properly when the job has finished.
+
 Example with $TMPDIR
 ====================
- 
+
 * Use the ``{PBS_O_WORKDIR}`` variable to locate your scripts and make sure that your code does not contain any hardcoded paths pointing to your home directory. This variable points to the directory from where you submit the job. Edit the script that you submit with qsub as:
 
 .. code-block:: bash
 
-	cd $TMPDIR
-	cp -r ${PBS_O_WORKDIR}/<your scripts,files> . # note the dot at the end of `cp` command.
+	$ cd $TMPDIR
+	$ cp -r ${PBS_O_WORKDIR}/<your scripts,files> . # note the dot at the end of `cp` command.
 	# ...
 	# Run the executables
 	# ...
 	# When done, copy the output to your home directory:
-	cp -r $TMPDIR/results ${PBS_O_WORKDIR}/
+	$ cp -r $TMPDIR/results ${PBS_O_WORKDIR}/
 
 * Submit the script with ``qsub``.
 
 
 
-.. _pbs-grid-storage:	
-	
-==============================================	
+.. _pbs-grid-storage:
+
+==============================================
 How to use Grid Storage from the local cluster
 ==============================================
 
@@ -237,7 +244,7 @@ There are many cases that the data that your program needs to run can not be ava
 Any interaction with the Grid, compute nodes or storage element, requires a `proxy` for your authentication. Even if you run your compute on a local cluster worker node but need to use data from the Grid storage, you will have to :ref:`get-grid-certificate` and :ref:`join-vo`.
 
 To access the Grid storage from jobs submitted locally through qsub, you need
-a valid proxy certificate.  However, for local jobs submitted using qsub this proxy certificate is not copied automatically. 
+a valid proxy certificate.  However, for local jobs submitted using qsub this proxy certificate is not copied automatically.
 
 Therefore, to interact with the Grid storage, you need:
 
@@ -248,13 +255,13 @@ Therefore, to interact with the Grid storage, you need:
 
 .. code-block:: bash
 
-  cp /tmp/x509up_u39111 /home/homer/ # replace x509up_u39111 with your own proxy file, here "39111" is your unix user-id
-  
+  $ cp /tmp/x509up_u39111 /home/homer/ # replace x509up_u39111 with your own proxy file, here "39111" is your unix user-id
+
 * Set the rights of this file to 600 and treat it as confidential:
 
 .. code-block:: bash
 
-	chmod 600 /home/homer/x509up_u39111
+	$ chmod 600 /home/homer/x509up_u39111
 
 Because your home-directory is shared across the cluster, your proxy will
 also be available on all nodes within the cluster.
@@ -265,10 +272,10 @@ You also need to do this step once every week, and not for each job.
 
 .. code-block:: bash
 
-	export X509_USER_PROXY=/home/homer/x509up_u39111
+	$ export X509_USER_PROXY=/home/homer/x509up_u39111
 
 Now within the job, your :ref:`storage-clients` commands will work.
-	
+
 
 .. seealso:: This section covers the basic usage of pbs jobs particularly on the LSG. For advanced usage of a pbs cluster you may checkout the `Lisa batch usage`_ guide or the `NYU Cluster usage`_ guide.
 
