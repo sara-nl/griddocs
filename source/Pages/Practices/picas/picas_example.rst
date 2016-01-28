@@ -38,45 +38,40 @@ To be able to run the example you must have:
 Picas sample example
 ====================
 
-* Login to the ui and download the :download:`pilot_picas_fractals.tgz </Scripts/pilot_picas_fractals.tgz>` example.
+* Login to the ui and download the :download:`pilot_picas_fractals.tgz </Scripts/pilot_picas_fractals.tgz>` example and the :download:`couchdb package for Python </Scripts/couchdb.tgz>`.
 
-* Untar the example scripts and inspect the content:
+* Untar pilot_picas_fractals.tgz and inspect the content:
 
 .. code-block:: bash
 
+    tar -zxf pilot_picas_fractals.tgz
     cd pilot_picas_fractals/
     ls -l
-    # drwxrwxr-x 2 homer homer  6 Jan 5 16:10 Application
-    # drwxrwxr-x 4 homer homer 75 Jan 5 16:11 Tokens
+    # -rwxrwxr-x 1 homer homer 1247 Jan 28 15:40 createTokens
+    # -rw-rw-r-- 1 homer homer 1202 Jan 28 15:40 createTokens.py
+    # -rw-rw-r-- 1 homer homer 2827 Jan 28 15:40 createViews.py
+    # -rw-rw-r-- 1 homer homer  462 Jan 28 15:40 fractals.jdl
+    # drwxrwxr-x 2 homer homer  116 Jan 28 15:40 sandbox
 
 Detailed information regarding the operations performed in each of the scripts below is embedded to the comments inside each of the scripts individually.
-   
-   
+
+* Also download the current PiCaS version as picas.zip from GitHub and put both PiCaS and the couchdb.tgz file in the 'sandbox' directory:
+
+.. code-block:: bash
+
+    cd sandbox
+    curl --location https://github.com/sara-nl/picasclient/archive/master.zip > picas.zip
+    mv ../../couchdb.tgz ./
+    cd ..
+
+The sandbox directory now holds everything we need to send to the grid worker nodes.
+
 Prepare your Tokens
 ===================
 
 
 Create the Tokens
 -----------------
-
-* Move to the Tokens directory:
-
-.. code-block:: bash
-
-    cd Tokens
-
-* List the files in Tokens directory:
-
-.. code-block:: bash
-
-    ls -l
-    # drwxr-xr-x 4 homer homer 4096 Jan 4 16:11 couchdb
-    # -rwxr-xr-x 1 homer homer 1247 Jan 4 16:11 createTokens
-    # -rw-rw-r-- 1 homer homer 1193 Jan 4 16:11 createTokens.py
-    # -rw-rw-r-- 1 homer homer 2855 Jan 4 16:11 createViews.py
-    # drwxr-xr-x 2 homer homer 4096 Jan 4 16:11 picas
-    # -rw------- 1 homer homer  105 Jan 4 16:11 picasconfig.py
-
 
 This example includes a bash script (./createTokens) that generates a sensible parameter file, with each line representing a set of parameters that the fractals program can be called with. Without arguments it creates a fairly sensible set of 24 lines of parameters. You can generate different sets of parameters by calling the program with a combination of -q, -d and -m arguments, but at the moment no documentation exists on these. We recommend not to use them for the moment.
 
@@ -86,13 +81,27 @@ This example includes a bash script (./createTokens) that generates a sensible p
 
     ./createTokens 
     # /tmp/tmp.fZ33Kd8wXK
-    # cat /tmp/tmp.fZ33Kd8wXK
+    cat /tmp/tmp.fZ33Kd8wXK
 
 
-Upload your Tokens to the PiCas server
+Upload your Tokens to the PiCaS server
 --------------------------------------
 
-* Edit picasconfig.py and set the PiCaS host URL, database name, username and password.
+Now we will start using PiCaS. For this we need the downloaded CouchDB and PiCaS packages for Python and set the hostname, database name and our credentials for the CouchDB server:
+
+* Edit sandbox/picasconfig.py and set the PiCaS host URL, database name, username and password.
+
+* Link the picasconfig.py file in the current directory. This makes it available for the scripts that need to upload the tokens to CouchDB:
+
+.. code-block:: bash
+
+  ln sandbox/picasconfig.py
+
+* Make the CouchDB package locally available:
+
+.. code-block:: bash
+
+  tar -zxf sandbox/couchdb.tgz
 
 * Upload the tokens:
 
@@ -102,7 +111,7 @@ Upload your Tokens to the PiCas server
 	
 * Check your database in this link:
 
-    https://nosql01.grid.sara.nl:6984/_utils/homerdb/
+    https://nosql01.grid.sara.nl:6984/_utils/database.html?homerdb
     
     replace homerdb with your Picas database name
 
@@ -112,35 +121,6 @@ Upload your Tokens to the PiCas server
  
 	python createViews.py
 
-
-Run the example
-===============
-	
-* Move to the Application directory:
-
-.. code-block:: bash
-
-    cd Application/
-
-* List the files in Application directory:
-
-.. code-block:: bash
-
-    ls -l
-    # fractals.jdl
-    # sandbox/
-
-    ls -l sandbox/
-    # -rw-rw-r-- 1 homer homer 307200 Jan 4 17:37 couchdb.tar
-    # -rwxrwxr-x 1 homer homer   9735 Jan 4 17:37 fractals
-    # -rw-rw-r-- 1 homer homer   2593 Jan 4 17:37 fractals.c
-    # -rwxrwxr-x 1 homer homer    944 Jan 4 17:37 process_task.sh
-    # -rw------- 1 homer homer    105 jan 4 17:37 picasconfig.py
-    # -rw-rw-r-- 1 homer homer  71680 Jan 4 17:37 picas.tar
-    # -rw-rw-r-- 1 homer homer   3046 Jan 4 17:37 pilot.py
-    # -rwxrwxr-x 1 homer homer    681 Jan 4 17:37 startpilot.sh
-
-* Edit picasconfig.py and set the PiCaS host URL, database name, username and password.
 
 Run the example locally
 -----------------------
@@ -174,7 +154,7 @@ Run the example locally
     
 You can monitor the progress for the Tokens that are waiting, running, finished or in error state, from the PiCaS website here:
 
-    https://nosql01.grid.sara.nl:6984/_utils/homerdb/
+    https://nosql01.grid.sara.nl:6984/_utils/database.html?homerdb
     
     replace homerdb with your Picas database name
     	
