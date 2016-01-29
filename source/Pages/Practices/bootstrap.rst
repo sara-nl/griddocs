@@ -23,7 +23,7 @@ You want to execute your own binary program on the grid. When you have a binary 
 
 To send such an executable along we will use the InputSandBox in the job description. The program itself will be executed by a simple shell script ("wrapper.sh"). There are several reasons to wrap the call to your executable with a script. One important one is that the executable file might not have executable permissions after it is copied to the grid worker node. A second is that it is more flexible in the use of input parameters and also to redirect the output. In short, this script provides the correct environment for the execution of the binary.
 
-In this page we will demonstrate a simple bootstap application using the fractals example.
+In this page we will demonstrate a simple bootstrap application using the fractals example.
 
 ==================
 Quickstart example
@@ -40,16 +40,18 @@ Preamble
     ssh homer@ui.grid.sara.nl # replace homer with your username
     
 * Copy the tarball :download:`bootstrap_fractals.tar </Scripts/bootstrap_fractals.tar>` to your UI directory.
+
+* Copy the fractals source code :download:`fractals.c </Scripts/fractals.c>` to your UI directory.
     
-* Untar the example and check the files::
+* Untar the example and check the files:
 
 .. code-block:: bash
 
-    tar -xzvf bootstrap_fractals.tar
+    tar -xvf bootstrap_fractals.tar
     cd bootstrap_fractals/
+    mv ../fractals.c ./
     ls -l
 
-    # -rwxrwxr-x 1 homer homer fractals
     # -rw-r--r-- 1 homer homer fractals.c
     # -rw-rw-r-- 1 homer homer fractals.jdl
     # -rw-rw-r-- 1 homer homer wrapper.sh
@@ -137,7 +139,7 @@ Once this jobs lands on the Grid, it will execute the ``wrapper.sh`` script whic
     #or
     glite-wms-job-status -i jobIds
 
-* Once the job is finished, get the job output to the UI::
+* Once the job is finished, get the job output to the UI:
 
 .. code-block:: bash
 
@@ -149,6 +151,3 @@ Once this jobs lands on the Grid, it will execute the ``wrapper.sh`` script whic
 
     convert homer_6swP5FEfGVZ69tVB3PwnDQ/output "output.png" # replace with your job output directory
     display output.png    
-    
-    
-    

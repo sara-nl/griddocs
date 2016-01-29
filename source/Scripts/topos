@@ -16,13 +16,14 @@ USAGE='
 #     deleteLock [POOLNAME] [LOCKNAME]                                         #
 #     deleteToken [POOLNAME] [TOKENNAME]                                       #
 #                                                                              #
-# Created by: Evert Lammerts <evert.lammerts@sara.nl>                          #
+# Created by: Evert Lammerts                                                   #
+# Updated by: Niek Bosch <code@niekbosch.nl>, 2016                             #
 #                                                                              #
 ################################################################################
 '
 
 TOPOS_URL="https://topos.grid.sara.nl/4.1/"
-CURL="curl --silent --fail --insecure --sslv3"
+CURL="curl --silent --fail"
 
 EXIT_NOCOMMAND=-1
 EXIT_MISSINGPARAM=1
@@ -124,9 +125,12 @@ function uploadFilesInDirAsTokens {
   dirName=$( echo ${dirName} | sed -e "s/\/*$//" )
   local filelist=""
   for f in ${dirName}/*; do
-    filelist="${filelist} -F \"file[]=@${f}\""
+    if [[ -f ${f} ]]; then
+      filelist="${filelist} -F 'file[]=@${f}'"
+    fi
   done
-  $CURL --header 'Accept: text/plain' ${filelist} "${TOPOS_URL}pools/${poolName}/tokens/"
+  local COMMAND="$CURL --header 'Accept: text/plain' ${filelist} ${TOPOS_URL}pools/${poolName}/tokens/"
+  eval $COMMAND
   if [ "$?" != "0" ]; then
     exit $EXIT_CURLERROR
   fi

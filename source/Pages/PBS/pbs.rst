@@ -21,7 +21,7 @@ In this section we will focus on the usage of local LSG cluster as a common batc
 
 * prototyping your Grid application
 * running multicore jobs with high number of cores (e.g. more than 8 cores)
-* running applications that require just a few jobs to complete. For a large-scale applications that require thousands of analyses to complete, the best option is Grid due to its large compute and storage capacity.
+* running applications that require just a few jobs to complete. For a large-scale applications that require thousands of analysiss to complete, the best option is Grid due to its large compute and storage capacity.
 
 
 .. _pbs-quickstart:
@@ -47,16 +47,22 @@ Preamble
 .. code-block:: bash
 
     $ wget http://doc.grid.surfsara.nl/en/latest/_downloads/pbs_fractals.tar
-
-* Untar the example and check the files::
+    
+* Copy the fractals source code :download:`fractals.c </Scripts/fractals.c>` to your UI directory.
 
 .. code-block:: bash
 
-    $ tar -xzvf pbs_fractals.tar
+    $ wget http://doc.grid.surfsara.nl/en/latest/_downloads/fractals.c
+    
+* Untar the example and check the files:
+
+.. code-block:: bash
+
+    $ tar -xvf pbs_fractals.tar
     $ cd pbs_fractals/
+    $ mv ../fractals.c ./
     $ ls -l
 
-    # -rwxrwxr-x 1 homer homer fractals
     # -rw-r--r-- 1 homer homer fractals.c
     # -rw-rw-r-- 1 homer homer wrapper.sh
 
@@ -211,7 +217,7 @@ The home UI directory is mounted on the worker node via NFS. For better I/O perf
 Example with $TMPDIR
 ====================
 
-* Use the ``{PBS_O_WORKDIR}`` variable to locate your scripts and make sure that your code does not contain any hardcoded paths pointing to your home directory. This variable points to the directory from where you submit the job. Edit the script that you submit with qsub as:
+* Use the ``{PBS_O_WORKDIR}`` variable to locate your scripts and make sure that your code does not contain any hard-coded paths pointing to your home directory. This variable points to the directory from where you submit the job. Edit the script that you submit with qsub as:
 
 .. code-block:: bash
 

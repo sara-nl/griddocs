@@ -1,4 +1,3 @@
-
 .. _grid-authentication:
 
 *******************
@@ -16,7 +15,7 @@ Introduction: delegation of authentication
 ==========================================
 
 Because of its decentralized nature, authentication on the grid uses
-private keys and certificates to authenticate users. Posession of a
+private keys and certificates to authenticate users. Possession of a
 private key authenticates a person, and as such, you should **never share
 your private key** with anyone else, or with any service. At the same time,
 however, your jobs will typically run on systems you may not trust, so
@@ -98,7 +97,7 @@ You will see the following output in your terminal::
 
     # Enter GRID pass phrase for this identity:
     # Contacting voms.grid.sara.nl:30018  [/O=dutchgrid/O=hosts/OU=sara.nl/CN=voms.grid.sara.nl] "lsgrid"...
-    # Remote VOMS server contacted succesfully.
+    # Remote VOMS server contacted successfully.
     # Created proxy in /tmp/x509up_u39111.
     # Your proxy is valid until Thu Jan 05 02:07:29 CET 2016
 

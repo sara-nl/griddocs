@@ -18,7 +18,7 @@ This page contains information about ``BashTopos``, a bash client for ToPoS:
 Introduction
 ============
 
-There is a bash 'library' available to ease the communication with ToPoS. It is written in bash script and requires curl and awk to be present. It has been tested on Scientific Linux 5.0 and Ubuntu 9.10. You can find it :download:`here </Scripts/topos>`.
+There is a bash 'library' available to ease the communication with ToPoS. It is written in bash script and requires curl and awk to be present. It has been tested on CentOS 6.7 and Ubuntu 14.04. You can find it :download:`here </Scripts/topos>`.
 
 To use it, you need to make the file executable::
 
@@ -49,7 +49,7 @@ Function description
 
 **newPool**
 
-Returns a new, unused pool name::
+Returns a new, unused pool name
 
 Usage: newPool
 

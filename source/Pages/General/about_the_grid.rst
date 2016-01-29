@@ -24,7 +24,7 @@ The ``Grid`` is a loosely coupled collection of heterogeneous resources with a l
 
 In addition, grid clusters are not exclusively connected to their own storage facilities but can be accessed transparently from all grid compute clusters, and as such form a virtual supercluster. Grid systems and their applications are more scalable than classic clusters.  
 
-The Grid is especially suited, therefore, to applications that cannot be solved in a single cluster within a reasonable timeframe. Common examples are the Large Hadron Collider (LHC) experiments, large-scale DNA analyses and Monte-Carlo simulations.
+The Grid is especially suited, therefore, to applications that cannot be solved in a single cluster within a reasonable timeframe. Common examples are the Large Hadron Collider (LHC) experiments, large-scale DNA analysiss and Monte-Carlo simulations.
 
 
 .. _how-it-works:

@@ -30,7 +30,7 @@ The taught material consists of:
 Animations
 ==========
 
-We have prepared a set of animations to dispay the basic usage of Grid Infrastructure. The animations were presented 
+We have prepared a set of animations to display the basic usage of Grid Infrastructure. The animations were presented 
 during the lectures, but they are still accessible to try out freely in this link: `Mooc Animations`_.
 
 

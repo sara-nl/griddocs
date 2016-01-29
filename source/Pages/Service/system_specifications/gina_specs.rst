@@ -6,7 +6,7 @@
 Gina Specifications
 *******************
 
-Gina is the Grid cluster at SURFsara; currently all the servers are located at the Vancis B.V. datacenter divide into two rooms. After different tenders these servers belong to different brands (Dell & Fujitsu). Three service nodes are used to host the  virtual machines for different purposes (creamces, monitoring, installation, dns servers...). All the worker nodes are installed on physical nodes.
+Gina is the Grid cluster at SURFsara; currently all the servers are located at the Vancis B.V. datacenter divided over two rooms. After different tenders these servers belong to different brands (Dell & Fujitsu). Three service nodes are used to host virtual machines for different purposes (creamces, monitoring, installation, dns servers...). All the worker nodes are installed on physical nodes.
 
 This page describes the specifications for the Gina Grid cluster at SURFsara:
 
@@ -29,11 +29,15 @@ Operating system             Linux CentOS 6.x 64bit
 Total number of cores        5600 Xeon cores at 2.2 to 2.6 GHz                   
 Total memory                 41TB                                                 
 Total scratch space          2100TB                                              
-Network backbone             160Gbit/s Ethernet connection with the Grid storage 
+Network backbone             Juniper Q-Fabric Network Fabric which also connects the Grid storage 
 ============================ =====================================================
 
 ``Last update: January 2016``
 
+Network
+============
+GinA is connected to a Juniper Q-Fabric network fabric. On this fabric also the Grid Storage is connected and makes high throughput possible. Currently we have seen over 20GB/sec (~170-200Gbit/sec) of peak network traffic to the Grid Storage.
+All workernodes are connected with a single 10Gbit ethernet connection.
 
 Worker nodes
 ============
@@ -53,7 +57,7 @@ am90-{01-33}, am91-{01-33}, am94-{01-33}:
 
 am95-{01-48}, v33-{17-48}:
 
-*  Dell R630
+*  Dell M610
 *  2x Intel(R) Xeon(R) CPU           E5649  @ 2.53GHz (12 cores)
 *  48GB RAM
 *  ~850 GB scratch
@@ -103,7 +107,7 @@ Service{01,02,03}:
 CreamCEs
 ========
 
-All 3 CreamCEs are virtualized and distribuited among the 3 Service Nodes. Every CreamCE has 4 cores and 9GB RAM in total.
+All 3 CreamCEs are virtualized and distributed among the 3 Service Nodes. Every CreamCE has 4 cores and 9GB RAM in total.
 
 
 Queues

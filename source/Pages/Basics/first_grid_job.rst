@@ -67,7 +67,7 @@ You should see a similar output displayed in your terminal:
 	# Please enter your GRID password:
 	# voms-proxy-init -voms lsgrid --valid 168:00 -pwstdin
 	# Contacting voms.grid.sara.nl:30018 [/O=dutchgrid/O=hosts/OU=sara.nl/CN=voms.grid.sara.nl] "lsgrid"...
-	# Remote VOMS server contacted succesfully.
+	# Remote VOMS server contacted successfully.
 
 	# Created proxy in /tmp/x509up_u39111.
 
@@ -211,7 +211,7 @@ To check the current job status from the command line, apply the following comma
 
 	glite-wms-job-status -i jobIds
 
-* Finally, a third (optional) way to check the job status is within the web browser that :ref:`you installed your certificate <install-cert-browser>`. In this browser open the jobID link:
+* Finally, a third (optional) way to check the job status is within the web browser that :ref:`you installed your certificate <digicert_browser_install>`. In this browser open the jobID link:
 
 	https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
 

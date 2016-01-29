@@ -167,17 +167,28 @@ In this section we will show the common commands to use the various storage clie
 
 .. note:: From the many Grid storage clients, we recommend you to use :ref:`uberftp` and :ref:`globus` or :ref:`gfal`. These tools have a clean interface, and their speed is much better on our systems compared with their srm-* equivalents.
 
-.. toctree::
-   :maxdepth: 1
+.. table:: Storage clients
+    :column-alignment: left center center center center center center
 
-   storage_clients/uberftp
-   storage_clients/globus
-   storage_clients/srm
-   storage_clients/gfal
-   storage_clients/fts
-   storage_clients/webdav
-   storage_clients/globusonline
-   storage_clients/lcg-lfn-lfc
++----------------------+------+----------+----------+--------+-----------+-------+
+| Client               | SRM  | GridFTP  | GSIdCap  | WebDAV | 3rd party | Speed |
++======================+======+==========+==========+========+===========+=======+
+| :ref:`uberftp`       | --   | yes      | --       | --     | --        | high  |
++----------------------+------+----------+----------+--------+-----------+-------+
+| :ref:`globus`        | --   | yes      | --       | --     | --        | high  |
++----------------------+------+----------+----------+--------+-----------+-------+
+| :ref:`srm`           | yes  | indirect | indirect | ?      | --        |       |
++----------------------+------+----------+----------+--------+-----------+-------+
+| :ref:`gfal`          | yes  | yes      | ?        | ?      | --        |       |
++----------------------+------+----------+----------+--------+-----------+-------+
+| :ref:`webdav`        | --   | --       | --       | yes    | --        |       |
++----------------------+------+----------+----------+--------+-----------+-------+
+| :ref:`fts`           | yes  | ?        | ?        | ?      | yes       |       |
++----------------------+------+----------+----------+--------+-----------+-------+
+| :ref:`globusonline`  | yes  | yes      | ?        | ?      | yes       |       |
++----------------------+------+----------+----------+--------+-----------+-------+
+| :ref:`lcg-lfn-lfc`   | yes  | indirect | ?        | ?      | --        |       |
++----------------------+------+----------+----------+--------+-----------+-------+
 
 
 .. _staging:
@@ -285,4 +296,4 @@ This command will initiate unpinning of file "zap.tar" (even if you submitted mu
 Importing large amounts of data
 ===============================
 
-The `Data Ingest Service <https://www.surf.nl/en/services-and-products/data-ingest-service/index.html>`_ is a SURFsara service for researchers who want to store or analyse large amounts of data at SURFsara. The service is convenient for users who lack sufficient bandwidth or who have stored their data on a number of external hard disks.
+The `Data Ingest Service <https://www.surf.nl/en/services-and-products/data-ingest-service/index.html>`_ is a SURFsara service for researchers who want to store or analysis large amounts of data at SURFsara. The service is convenient for users who lack sufficient bandwidth or who have stored their data on a number of external hard disks.

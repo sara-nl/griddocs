@@ -6,7 +6,7 @@
 User Interface machines
 ***********************
 
-This page describes the specifications for the the LSG and *grid-ui* user interface machines:
+This page describes the specifications for the LSG and *grid-ui* user interface machines:
 
 .. contents:: 
     :depth: 4
