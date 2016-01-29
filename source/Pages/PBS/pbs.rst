@@ -15,7 +15,7 @@ In this page we will talk about job submission to the local LSG cluster. The inf
 Introduction
 ============
 
-The LSG is a group of clusters which can be used locally only, or as one big cluster (Grid). Each :ref:`local LSG cluster <lsg-clusters>` is part of the Life Science Grid that has its own user interface (UI) and two worker nodes of 64cores (see :ref:`LSG specifications <specs-lsg>`). You can use the local UI for submitting both local :ref:`pbs jobs <pbs-submit>` or :ref:`Grid jobs <first-grid-job>`.
+The LSG is a group of clusters which can be used locally only, or as one big cluster (Grid). Each :ref:`local LSG cluster <lsg-clusters>` is part of the Life Science Grid that has its own user interface (UI) and two worker nodes of 64 cores (see :ref:`LSG specifications <specs-lsg>`). You can use the local UI for submitting both local :ref:`pbs jobs <pbs-submit>` or :ref:`Grid jobs <first-grid-job>`.
 
 In this section we will focus on the usage of local LSG cluster as a common batch system. The local job submission can be useful when:
 
@@ -109,7 +109,7 @@ Optionally, when the job finishes, display the job output image::
 
 .. code-block:: bash
 
-    qstat 6401 # replace 6401 with your jobID
+    qdel 6401 # replace 6401 with your jobID
 
 
 
@@ -185,15 +185,15 @@ Local queues
 
 We recommend you to estimate the walltime of your jobs and specify the queue to send your job. This can be done with the '-q’ option in your ``qsub`` command. On the LSG clusters you can find three queue types:
 
-* short - 4 hours walltime limit
+* short  -  4 hours walltime limit
 * medium - 36 hours walltime limit
-* long - 72 hours walltime limit
+* long   - 72 hours walltime limit
 
 If you don’t specify a particular queue, then your jobs will be scheduled by default on the medium queue.  When the queue walltime is reached, the job will be killed. For example, if you want to run a job for 72 hours, you need to specify the queue "long" or else your job will land on the default (medium) queue and will be killed after 36hours:
 
 .. code-block:: bash
 
-    qsub -q long wrapper.sh # allow job to run for 72hours
+    qsub -q long wrapper.sh # allow job to run for 72 hours
 
 
 .. seealso:: :ref:`How to run PBS jobs with wallclock greater than 36 hours on LSG? <pbs-walltime>`
@@ -222,8 +222,8 @@ Example with $TMPDIR
 .. code-block:: bash
 
 	cd $TMPDIR
-	cp -r ${PBS_O_WORKDIR}/<your scripts,files> . # note the dot at the end of `cp` command.
-  # ...
+	cp -r ${PBS_O_WORKDIR}/<your scripts,files> .  # note the dot at the end of `cp` command
+   # ...
 	# Run the executables
 	# ...
 	# When done, copy the output to your home directory:
