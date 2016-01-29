@@ -88,7 +88,7 @@ First create the remote directory, e.g. ``targetdir``.
 
     globus-url-copy -cd -r gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/sourcetdir/ gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/penelope/targetdir/   # note: you must include the trailing slash!
 
-.. seealso:: For dCache 3rd party tranfers see also :ref:`fts client <fts>`. 
+.. seealso:: For dCache 3rd party transfers see also :ref:`fts client <fts>`. 
 
 * Third party transfer (between DPM sites):
 

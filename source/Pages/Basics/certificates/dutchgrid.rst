@@ -48,7 +48,7 @@ Request a *DutchGrid* certificate
   * Fill in and print the verification form by pressing the ``display form`` button. Once you fill in the form, save it locally.
   * Close the wizard   
   
-* Check your details in the printed form and contact your institution's ``Registration Authority`` (RA) in person. The RA person will check your identity (id or passport or driving licence) and sign the printed form.
+* Check your details in the printed form and contact your institution's ``Registration Authority`` (RA) in person. The RA person will check your identity (id or passport or driving license) and sign the printed form.
 
 * Once your form is signed by the RA, send a scanned copy to the DutchGrid CA via email or fax. The contact details can be found in the printed form, but you can contact also helpdesk@surfsara.nl if you are in doubt.  
 

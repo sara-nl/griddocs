@@ -67,7 +67,7 @@ You should see a similar output displayed in your terminal:
 	# Please enter your GRID password:
 	# voms-proxy-init -voms lsgrid --valid 168:00 -pwstdin
 	# Contacting voms.grid.sara.nl:30018 [/O=dutchgrid/O=hosts/OU=sara.nl/CN=voms.grid.sara.nl] "lsgrid"...
-	# Remote VOMS server contacted succesfully.
+	# Remote VOMS server contacted successfully.
 
 	# Created proxy in /tmp/x509up_u39111.
 

@@ -21,7 +21,7 @@ In this section we will focus on the usage of local LSG cluster as a common batc
 
 * prototyping your Grid application
 * running multicore jobs with high number of cores (e.g. more than 8 cores)
-* running applications that require just a few jobs to complete. For a large-scale applications that require thousands of analyses to complete, the best option is Grid due to its large compute and storage capacity.
+* running applications that require just a few jobs to complete. For a large-scale applications that require thousands of analysiss to complete, the best option is Grid due to its large compute and storage capacity.
 
 
 .. _pbs-quickstart:
@@ -217,7 +217,7 @@ The home UI directory is mounted on the worker node via NFS. For better I/O perf
 Example with $TMPDIR
 ====================
 
-* Use the ``{PBS_O_WORKDIR}`` variable to locate your scripts and make sure that your code does not contain any hardcoded paths pointing to your home directory. This variable points to the directory from where you submit the job. Edit the script that you submit with qsub as:
+* Use the ``{PBS_O_WORKDIR}`` variable to locate your scripts and make sure that your code does not contain any hard-coded paths pointing to your home directory. This variable points to the directory from where you submit the job. Edit the script that you submit with qsub as:
 
 .. code-block:: bash
 

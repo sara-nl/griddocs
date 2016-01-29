@@ -71,7 +71,7 @@ In the Netherlands NGI_NL infrastructure the transfer speed between grid storage
 How can I calculate the total CPU time I consumed?
 ==================================================
 
-The total CPU time depends on the amount of cores that your application is using and the wallclock time that the corresponding job takes to finalise::
+The total CPU time depends on the amount of cores that your application is using and the wallclock time that the corresponding job takes to finish::
 
 	CPU time = #cores x wallclock(per job) x #jobs	
 

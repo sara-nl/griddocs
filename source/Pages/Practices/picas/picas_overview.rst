@@ -96,7 +96,7 @@ Background: CouchDB
 
 PiCaS server is based on CouchDB. CouchDB stores documents which are self-contained pieces of information. These documents support a dynamic data model, so unlike traditional databases, CouchDB allows storing and retrieving any piece of information as long as it can be defined as key-value pairs. This feature is used to store all the information needed to keep track of the job stages and all of the required in- and outputs.
 
-CouchDB also provides a Restful HTTP API, which means that we can easily access information with an HTTP client. This can be a browser, a commandline application like curl or a complete client library. It is also possible to interact with the CouchDB database behind PiCaS using the web-interface.
+CouchDB also provides a Restful HTTP API, which means that we can easily access information with an HTTP client. This can be a browser, a command-line application like curl or a complete client library. It is also possible to interact with the CouchDB database behind PiCaS using the web-interface.
 
 Picas views
 ===========

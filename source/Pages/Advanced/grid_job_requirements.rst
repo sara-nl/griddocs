@@ -23,7 +23,7 @@ scheduler.
 Requirement syntax
 ==================
 
-Job requirments are written as an optional statement in the JDL file::
+Job requirements are written as an optional statement in the JDL file::
 
   Requirements = <expression>;
 
@@ -52,7 +52,7 @@ Synopsis::
     # make sure that the job can run for at least 3 days (3 x 24 x 60 = 4320)
     Requirements = other.GlueCEPolicyMaxWallClockTime >= 4320;
 
-By specifiying the wall clock time requirement, the scheduler picks a
+By specifying the wall clock time requirement, the scheduler picks a
 queue which is long enough for running the job. The parameter is
 ``other.GlueCEPolicyMaxWallClockTime``, the value is **in minutes**. Make
 sure that your requirement uses the 'greater than or equal to' syntax
@@ -105,7 +105,7 @@ Synopsis::
     # Schedule the jobs on a specific site, e.g. gina
     Requirements=(RegExp("gina", other.GlueCEUniqueID));
 
-With the ``other.GlueCEInfoHostName`` criterium you can specify on which
+With the ``other.GlueCEInfoHostName`` criterion you can specify on which
 compute element your jobs will be scheduled. Or even on which CE your
 jobs will *not* be scheduled. This is convenient in cases where you know
 jobs will fail on particular systems, for some reason.

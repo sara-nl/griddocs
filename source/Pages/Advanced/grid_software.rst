@@ -110,7 +110,7 @@ Login to your :ref:`UI account <get-ui-account>` and check whether your files ar
 Python on Grid
 ============== 
  
-On the local grid clusters the python version installed is *Python 2.6.6*. If you need a different python version or additional packages, we recommend you to intall `Anaconda python`_ in your UI or :ref:`Softdrive <softdrive>` account.
+On the local grid clusters the python version installed is *Python 2.6.6*. If you need a different python version or additional packages, we recommend you to install `Anaconda python`_ in your UI or :ref:`Softdrive <softdrive>` account.
 
 Next is an example of installing the *Anaconda* python distribution in *Softdrive*.
 

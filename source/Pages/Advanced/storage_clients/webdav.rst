@@ -25,7 +25,7 @@ It also has a disadvantage:
 dCache has the following webdav doors:
 
 +------------------------------------+-----------------------------+---------------------------------+
-| URL including port                 | Athentication method        | Redirection behaviour           |
+| URL including port                 | Authentication method        | Redirection behaviour           |
 +====================================+=============================+=================================+
 | https://webdav.grid.sara.nl:443    | Username/password           | Redirects on read               |
 +------------------------------------+-----------------------------+---------------------------------+

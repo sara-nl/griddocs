@@ -36,7 +36,7 @@ Network backbone             Juniper Q-Fabric Network Fabric which also connects
 
 Network
 ============
-GinA is connected to a Juniper Q-Fabric network fabric. On this fabric also the Grid Storage is connected and makes high troughput possible. Currently we have seen over 20GB/sec (~170-200Gbit/sec) of peak network traffic to the Grid Storage.
+GinA is connected to a Juniper Q-Fabric network fabric. On this fabric also the Grid Storage is connected and makes high throughput possible. Currently we have seen over 20GB/sec (~170-200Gbit/sec) of peak network traffic to the Grid Storage.
 All workernodes are connected with a single 10Gbit ethernet connection.
 
 Worker nodes

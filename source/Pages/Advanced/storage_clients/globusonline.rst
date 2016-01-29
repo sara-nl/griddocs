@@ -68,7 +68,7 @@ Globus Connect
 
 By clicking the button ”Manage endpoints” followed by ”all” one will be directed to a list with all endpoints, e.g. the ``surfsara#dCache`` gridftp endpoint which points at the Grid Front End storage.
 
-* To register a gridFTP-enabled enpoint click on ”add an endpoint” and follow the instructions there. You will need to provide a URL and a URI. In case of the SURFsara grid you will need to set URL = px.grid.sara.nl and URI = gsiftp://gridftp.grid.sara.nl:2811
+* To register a gridFTP-enabled endpoint click on ”add an endpoint” and follow the instructions there. You will need to provide a URL and a URI. In case of the SURFsara grid you will need to set URL = px.grid.sara.nl and URI = gsiftp://gridftp.grid.sara.nl:2811
 
 .. note:: Before data can be transfered you need to register endpoints with Globus Online. This also holds true when working with another client than the web interface.
 
