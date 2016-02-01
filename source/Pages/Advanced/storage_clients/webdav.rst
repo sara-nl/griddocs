@@ -31,7 +31,7 @@ dCache has the following webdav doors:
 +------------------------------------+-----------------------------+---------------------------------+
 | https://webdav.grid.sara.nl:2880   | Username/password           | No redirects                    |
 +------------------------------------+-----------------------------+---------------------------------+
-| https://webdav.grid.sara.nl:2881   | User certificate or proxy   | Redirects on read and write     |
+| https://webdav.grid.sara.nl:2882   | User certificate or proxy   | Redirects on read and write     |
 +------------------------------------+-----------------------------+---------------------------------+
 
 If you don't know which one you should use, choose the first. It has a good load balancing. The second, on port 2880, may be useful for certain webdav clients that don't support redirects. Use the third one only if you need to use webdav with a certificate or proxy.
