@@ -36,6 +36,8 @@ dCache has the following webdav doors:
 
 If you don't know which one you should use, choose the first. It has a good load balancing. The second, on port 2880, may be useful for certain webdav clients that don't support redirects. Use the third one only if you need to use webdav with a certificate or proxy.
 
+webdav.grid.sara.nl is a DNS round robin that will direct you to a (more or less) random host in a pool of webdav servers.
+
 .. note:: To run the examples below you need to have a UI (or ``CUA``) account that is configured within dCache and authorized to the data you want to access. Contact us if you need assistance with that.
 
 
@@ -54,14 +56,17 @@ Transferring data
 
 .. code-block:: bash
 
-  curl --insecure -f -u homer -p -L https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/ -T /home/homer/zap.tar # replace homer with your username, lsgrid with your VO and zap.tar with your local file
-  
-  
+  curl --capath /etc/grid-security/certificates/ -f -u homer -p -L https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/ -T /home/homer/zap.tar 
+  # replace homer with your username, lsgrid with your VO and zap.tar with your local file
+
+If on your system there are no grid CA certificates available in /etc/grid-security/certificates/, you can install them by following these instructions: https://dist.eugridpma.info/distribution/igtf/, or you can specify --insecure to skip certificate checking (not reccommended).
+
+
 * Copy a file from dCache to your local machine
 
 .. code-block:: bash
   
-  curl --insecure -u homer -p -L https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar -o zap.tar
+  curl --capath /etc/grid-security/certificates/ -u homer -p -L https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar -o zap.tar
   
 Or with wget:
   
@@ -89,7 +94,7 @@ Removing data
 
 .. code-block:: bash
 
-  curl --insecure -u <username> -p -L -X DELETE https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+  curl --capath /etc/grid-security/certificates/ -u <username> -p -L -X DELETE https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 
 
 ================
