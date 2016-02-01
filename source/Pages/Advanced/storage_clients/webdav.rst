@@ -103,7 +103,8 @@ Removing data
 
 .. code-block:: bash
 
-  curl --capath /etc/grid-security/certificates/ -u <username> -p -L -X DELETE https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+  curl --capath /etc/grid-security/certificates/ --user homer --location \
+      --request DELETE https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 
 
 ================
