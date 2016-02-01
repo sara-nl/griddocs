@@ -126,7 +126,8 @@ Frequently Asked Questions
 .. toctree::
    :maxdepth: 1
    
-   Pages/FAQ 
+   Pages/FAQ
+   Pages/documentation/index
 
 
 ==================
