@@ -68,6 +68,12 @@ The source code of ToPoS is on `GitHub ToPos`_.
 ToPoS clients
 =============
 
+.. toctree::
+   :hidden:
+   
+   clients/topos_bash_client
+   clients/topos_perl_client
+
 * Bash wrapper: :ref:`topos-bash-client`
 
 * Perl client: :ref:`PerlToPoS <topos-perl-client>`

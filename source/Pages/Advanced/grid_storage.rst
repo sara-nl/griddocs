@@ -189,6 +189,17 @@ In this section we will show the common commands to use the various storage clie
   | :ref:`lcg-lfn-lfc`   | yes  | indirect | ?        | ?      | --        |       |
   +----------------------+------+----------+----------+--------+-----------+-------+
 
+.. toctree::
+   :hidden:
+   
+   storage_clients/uberftp
+   storage_clients/globus
+   storage_clients/srm
+   storage_clients/gfal
+   storage_clients/webdav
+   storage_clients/fts
+   storage_clients/globusonline
+   storage_clients/lcg-lfn-lfc
 
 .. _staging:
 

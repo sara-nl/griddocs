@@ -1,4 +1,12 @@
+.. toctree::
+   :hidden:
 
+   parametric/parametric
+   topos/topos_overview
+   topos/topos_example
+   picas/picas_overview
+   picas/picas_example
+   
 .. _pilot-jobs:
 
 **********
@@ -76,10 +84,7 @@ Pilot Job Frameworks
 
 There are several pilot frameworks for the Grid. At SURFsara we support two of them, ``PiCaS`` and ``ToPoS``:
 
-.. toctree::
-   :maxdepth: 1
-
-   topos/topos_overview
-   topos/topos_example
-   picas/picas_overview
-   picas/picas_example
+ * :ref:`topos-overview`
+ * :ref:`topos-example`
+ * :ref:`picas-overview`
+ * :ref:`picas-example`
