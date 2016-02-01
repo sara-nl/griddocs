@@ -1,3 +1,19 @@
+..
+    This page contains links to youtube videos. There are at least 2 ways to embed them into sphinx documentation, namely using youtube:: and raw:: directives. Examples:
+
+    ..  youtube:: XAcXOxLRNjI
+        :width: 600
+        :height: 400
+
+    .. raw:: html
+        <iframe
+            width="600" height="400"
+            src="http://www.youtube.com/embed/XAcXOxLRNjI?controls=2">
+        </iframe>
+
+    The youtube directive does not provide many options to control the video parameters (width, height and aspect). The raw directive allows to embed html code and is more flexible regarding the usage of parameters to control the video display. For the purposes of this documentation page it is a requirement for the page to load without delays irrespective of the number of youtube videos being displayed, and thus the ``controls`` parameters is rather important. W3C recommendations can be found @ http://www.w3schools.com/html/html_youtube.asp
+
+
 .. _mooc:
 
 *************************************
@@ -18,10 +34,10 @@ As of 18 November 2013, SURFsara offered the Massive Open Online Course (MOOC) `
 The taught material consists of:
 
 * a set of ``video lectures``.
-* a set of quizzes, assignments and exercises.
+* a set of ``quizzes, assignments and exercises``.
 * real world examples of ``use cases`` on Grid.
 
-.. note::  The mooc participants were provided with student accounts and a preconfigured Virtual Machine (VM) with all the necessary Grid tools installed. If you want to run the examples presented in the video lectures below you will have to request your personal Grid accounts, see :ref:`prerequisites`. Please contact helpdesk@surfsara.nl if you need help with this.
+.. note::  The mooc participants were provided with student accounts and a preconfigured Virtual Machine (VM) with all the necessary Grid tools installed. If you want to run the examples presented in the video lectures below you will have to request your personal Grid account, see :ref:`prerequisites`. Please contact helpdesk@surfsara.nl if you need help with this.
 
 
 .. _mooc-animations:
@@ -46,15 +62,12 @@ Lectures
 Course Overview
 ===============
 
-.. youtube directive does not provide a lot of flexibility regarding video parameters
-.. raw directive seems more flexible; using html according with W3C recommendations @ http://www.w3schools.com/html/html_youtube.asp
-
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/XAcXOxLRNjI?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/XAcXOxLRNjI?controls=2">
+    </iframe>
 
 Course Overview slides :download:`pdf </Pages/Tutorials/MOOC/slides/L1_W1_Course_Overview.pdf>`
 
@@ -66,10 +79,10 @@ Introduction to Parallel and Distributed Computing
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/h-hka-3fcCA?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/h-hka-3fcCA?controls=2">
+    </iframe>
 
 Intro to Parallel and Distributed Computing :download:`pdf </Pages/Tutorials/MOOC/slides/L2_W1_Intro_to_Parallel_and_Distributed_Computing.pdf>`
 
@@ -81,10 +94,10 @@ Cluster Computing
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/WdZmkSlFQcU?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/WdZmkSlFQcU?controls=2">
+    </iframe>
 
 Cluster Computing :download:`pdf </Pages/Tutorials/MOOC/slides/L3_W1_Cluster_Computing.pdf>`
 
@@ -96,10 +109,10 @@ Grid Computing Overview
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/LPNKxOpkn_Y?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/LPNKxOpkn_Y?controls=2">
+    </iframe>
 
 Grid Computing Overview :download:`pdf </Pages/Tutorials/MOOC/slides/L4_W1_Grid_Computing_Overview.pdf>`
 
@@ -127,10 +140,10 @@ Working Environment - Grid prerequisites
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/SGHgjIuc0lU?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/SGHgjIuc0lU?controls=2">
+    </iframe>
 
 Working Environment_I Grid prerequisites :download:`pdf </Pages/Tutorials/MOOC/slides/L6_W2_Working_Environment_I_Grid_prerequisites.pdf>`
 
@@ -142,10 +155,10 @@ Working Environment - Remote access
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/L0tqno4du9Q?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/L0tqno4du9Q?controls=2">
+    </iframe>
 
 Working Environment II Remote access :download:`pdf </Pages/Tutorials/MOOC/slides/L7_W2_Working_Environment_II_Remote_access.pdf>`
 
@@ -159,10 +172,10 @@ Grid Certificate - Security
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/8EiO42caAcE?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/8EiO42caAcE?controls=2">
+    </iframe>
 
 Grid Certificate I (security) :download:`pdf </Pages/Tutorials/MOOC/slides/L8_W2_Grid_Certificate_I_Security.pdf>`
 
@@ -180,10 +193,10 @@ Obtain a Grid Certificate
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/HJRJp02pi_g?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/HJRJp02pi_g?controls=2">
+    </iframe>
 
 Grid Certificate II (Obtaining a certificate) :download:`pdf </Pages/Tutorials/MOOC/slides/L9_W2_Grid_Certificate_II_Obtaining_a_certificate.pdf>`
 
@@ -195,10 +208,10 @@ User Interface machine
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/68vQIl6OCE0?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/68vQIl6OCE0?controls=2">
+    </iframe>
 
 User Interface machine :download:`pdf </Pages/Tutorials/MOOC/slides/L10_W2_User_Interface_machine.pdf>`
 
@@ -210,10 +223,10 @@ Virtual Organisations
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/uqUORgYn648?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/uqUORgYn648?controls=2">
+    </iframe>
 
 Virtual Organisations :download:`pdf </Pages/Tutorials/MOOC/slides/L11_W2_Virtual_Organizations.pdf>`
 
@@ -233,10 +246,10 @@ Grid job Lifecycle
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/mpGu7q9WFNQ?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/mpGu7q9WFNQ?controls=2">
+    </iframe>
 
 Grid job Lifecycle :download:`pdf </Pages/Tutorials/MOOC/slides/L12_W3_Grid_job_Lifecycle.pdf>`
 
@@ -248,10 +261,10 @@ Start a Grid_Session
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/Fgkhkw8vEkE?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/Fgkhkw8vEkE?controls=2">
+    </iframe>
 
 Start a Grid Session :download:`pdf </Pages/Tutorials/MOOC/slides/L13_W3_Start_a_Grid_Session.pdf>`
 
@@ -261,12 +274,12 @@ Start a Grid Session :download:`pdf </Pages/Tutorials/MOOC/slides/L13_W3_Start_a
 My First Grid job
 =================
 
-.. raw:: html
+..  raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/mHSKB0KCBEc?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/mHSKB0KCBEc?controls=2">
+    </iframe>
 
 My First Grid job :download:`pdf </Pages/Tutorials/MOOC/slides/L14_W3_My_First_Grid_job.pdf>`
 
@@ -278,12 +291,12 @@ Code MyFirstJob :download:`tar </Pages/Tutorials/MOOC/scripts/W3_L14_MyFirstJob.
 Grid Toolkit
 ============
 
-.. raw:: html
+..  raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/usNfdR91LG4?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/usNfdR91LG4?controls=2">
+    </iframe>
 
 Grid Toolkit :download:`pdf </Pages/Tutorials/MOOC/slides/L15_W3_Grid_Toolkit.pdf>`
 
@@ -303,12 +316,12 @@ Quiz_First Grid job :download:`pdf </Pages/Tutorials/MOOC/slides/W3_Quiz_First_G
 Application_submission to Grid I
 ================================
 
-.. raw:: html
+..  raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/nJewGFKcVA8?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/nJewGFKcVA8?controls=2">
+    </iframe>
 
 Application submission to Grid I script :download:`pdf </Pages/Tutorials/MOOC/slides/L17_W4_Application_submission_to_Grid_I_script.pdf>`
 
@@ -322,10 +335,10 @@ Application_submission to Grid II
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/T3j-9GPoSx0?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/T3j-9GPoSx0?controls=2">
+    </iframe>
 
 Application submission to Grid II executable :download:`pdf </Pages/Tutorials/MOOC/slides/L18_W4_Application_submission_to_Grid_II_executable.pdf>`
 
@@ -337,12 +350,12 @@ Code compiled :download:`tar <scripts/W4_L18_compiled.tar>`
 Advanced Grid jobs I
 ====================
 
-.. raw:: html
+..  raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/6d25ayK_YCI?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/6d25ayK_YCI?controls=2">
+        </iframe>
 
 Advanced Grid jobs I Collections & Parametric :download:`pdf </Pages/Tutorials/MOOC/slides/L19_W4_Advanced_Grid_jobs_I_Collections_Parametric.pdf>`
 
@@ -356,10 +369,10 @@ Advanced Grid jobs II
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/Up-OOWYl8qY?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/Up-OOWYl8qY?controls=2">
+    </iframe>
 
 Advanced Grid jobs II Multicore :download:`pdf </Pages/Tutorials/MOOC/slides/L20_W4_Advanced_Grid_jobs_II_Multicore.pdf>`
 
@@ -371,12 +384,12 @@ Code multicore :download:`tar </Pages/Tutorials/MOOC/scripts/W4_L20_multicore.ta
 Data parallel processing Hadoop
 ===============================
 
-.. raw:: html
+..   raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/4pL_CIePhKM?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/4pL_CIePhKM?controls=2">
+    </iframe>
 
 Data parallel processing Hadoop :download:`pdf </Pages/Tutorials/MOOC/slides/L21_W4_Data_parallel_processing_Hadoop.pdf>`
 
@@ -399,12 +412,12 @@ Quiz Advanced Jobs :download:`pdf </Pages/Tutorials/MOOC/slides/W4_Quiz_Advanced
 Data Management on the Grid I
 =============================
 
-.. raw:: html
+..   raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/Xob0US5fIH4?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/Xob0US5fIH4?controls=2">
+    </iframe>
 
 Data Management on the Grid I :download:`pdf </Pages/Tutorials/MOOC/slides/L22_W5_Data_Management_on_the_Grid.pdf>`
 
@@ -414,12 +427,12 @@ Data Management on the Grid I :download:`pdf </Pages/Tutorials/MOOC/slides/L22_W
 Data Management on the Grid II
 ==============================
 
-.. raw:: html
+..  raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/yNshGZ4hbD0?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/yNshGZ4hbD0?controls=2">
+    </iframe>
 
 Data Management on the Grid II :download:`pdf </Pages/Tutorials/MOOC/slides/L23_W5_Data_Management_on_the_Grid_II.pdf>`
 
@@ -431,10 +444,10 @@ Data Management on the Grid III
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/Jl33o6pAgeE?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/Jl33o6pAgeE?controls=2">
+    </iframe>
 
 Data Management on the Grid III :download:`pdf </Pages/Tutorials/MOOC/slides/L24_W5_Data_Management_on_the_Grid_III.pdf>`
 
@@ -448,10 +461,10 @@ Storage Resource Manager
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/ls5bHq0eq_M?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/ls5bHq0eq_M?controls=2">
+    </iframe>
 
 Storage Resource manager :download:`pdf </Pages/Tutorials/MOOC/slides/L25_W5_Storage_Resource_manager.pdf>`
 
@@ -473,10 +486,10 @@ Introduction to Workflows I
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/lTz2DzITrKw?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/lTz2DzITrKw?controls=2">
+    </iframe>
 
 Introduction to Workflows I :download:`pdf </Pages/Tutorials/MOOC/slides/L26_W6_Introduction_to_Workflows_I.pdf>`
 
@@ -488,10 +501,10 @@ Introduction to Workflows II
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/JLXF_H6J7kI?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/JLXF_H6J7kI?controls=2">
+    </iframe>
 
 Introduction to Workflows II :download:`pdf </Pages/Tutorials/MOOC/slides/L27_W6_Introduction_to_Workflows_II.pdf>`
 
@@ -503,10 +516,10 @@ WS-Pgrade I
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/vilSO4ruETo?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/vilSO4ruETo?controls=2">
+    </iframe>
 
 WSpgrade I :download:`pdf </Pages/Tutorials/MOOC/slides/L28_W6_WSpgrade_I.pdf>`
 
@@ -518,10 +531,10 @@ WS-Pgrade II
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/nN5H8vmkpZs?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/nN5H8vmkpZs?controls=2">
+    </iframe>
 
 WSpgrade II :download:`pdf </Pages/Tutorials/MOOC/slides/L29_W6_WSpgrade_II.pdf>`
 
@@ -533,10 +546,10 @@ Science Gateways
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/1kBZ9HdWPVU?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/1kBZ9HdWPVU?controls=2">
+    </iframe>
 
 Science Gateways :download:`pdf </Pages/Tutorials/MOOC/slides/L30_W6_Science_Gateways.pdf>`
 
@@ -560,10 +573,10 @@ Pilot Job Frameworks
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/uHSsKJ6xPcs?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/uHSsKJ6xPcs?controls=2">
+    </iframe>
 
 Pilot job frameworks :download:`pdf </Pages/Tutorials/MOOC/slides/L31_W7_Pilot_job_frameworks.pdf>`
 
@@ -575,10 +588,10 @@ Picas Server side I
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/PDRe7i0SGlE?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/PDRe7i0SGlE?controls=2">
+    </iframe>
 
 Picas server side I :download:`pdf </Pages/Tutorials/MOOC/slides/L32_W7_Picas_server_side_I.pdf>`
 
@@ -590,10 +603,10 @@ Picas Server side II
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/uiHTG3Cr0zM?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/uiHTG3Cr0zM?controls=2">
+    </iframe>
 
 Picas server side II :download:`pdf </Pages/Tutorials/MOOC/slides/L33_W7_Picas_server_side_II.pdf>`
 
@@ -605,10 +618,10 @@ Picas client side
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/c6ETyoKWjw4?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/c6ETyoKWjw4?controls=2">
+    </iframe>
 
 Picas client side :download:`pdf </Pages/Tutorials/MOOC/slides/L34_W7_Picas_client_side.pdf>`
 
@@ -620,10 +633,10 @@ Picas practise I
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/PwDpplql9EA?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/PwDpplql9EA?controls=2">
+    </iframe>
 
 Code Picas :download:`tar </Pages/Tutorials/MOOC/scripts/W7_L35_picas.tar>`
 
@@ -635,10 +648,10 @@ Picas practise II
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/DJ6vHERy-qY?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/DJ6vHERy-qY?controls=2">
+    </iframe>
 
 Code Picas :download:`tar </Pages/Tutorials/MOOC/scripts/W7_L36_picas.tar>`
 
@@ -648,10 +661,10 @@ Course Summary
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/fhY4V7Rj5Vw?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/fhY4V7Rj5Vw?controls=2">
+    </iframe>
 
 Course summary :download:`pdf </Pages/Tutorials/MOOC/slides/L37_W9_Course_summary.pdf>`
 
@@ -665,10 +678,10 @@ Use case: EGI overview
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/RoSPOQwd_x8?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/RoSPOQwd_x8?controls=2">
+    </iframe>
 
 EGI overview :download:`pdf </Pages/Tutorials/MOOC/slides/Use_case1_EGI_overview.pdf>`
 
@@ -678,10 +691,10 @@ Use case: LOFAR
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/jIgiAmtBN58?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/jIgiAmtBN58?controls=2">
+    </iframe>
 
 Extreme physics in space :download:`pdf </Pages/Tutorials/MOOC/slides/Use_case2_Extreme_physics_in_space.pdf>`
 
@@ -691,10 +704,10 @@ Use case: Climate change over Europe
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/KoIt3nRP4g0?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/KoIt3nRP4g0?controls=2">
+    </iframe>
 
 Climate change :download:`pdf </Pages/Tutorials/MOOC/slides/Use_case3_Climate_change.pdf>`
 
@@ -704,10 +717,10 @@ Use case: VisIVO Science Gateway
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/KoIt3nRP4g0?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/KoIt3nRP4g0?controls=2">
+    </iframe>
 
 VisIVO Science Gateway :download:`pdf </Pages/Tutorials/MOOC/slides/Use_case4_VisIVO_astrophysics.pdf>`
 
@@ -717,10 +730,10 @@ Use case: Picas
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/ozsCqEHLzAI?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/ozsCqEHLzAI?controls=2">
+    </iframe>
 
 Picas :download:`pdf </Pages/Tutorials/MOOC/slides/Use_case5_Picas.pdf>`
 
@@ -730,24 +743,24 @@ Use case: Molecular Biology
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/CMshKWmQ3eQ?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/CMshKWmQ3eQ?controls=2">
+    </iframe>
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/eBVkSox-5JM?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/eBVkSox-5JM?controls=2">
+    </iframe>
 
 .. raw:: html
 
-  <iframe
-    width="600" height="400"
-    src="http://www.youtube.com/embed/PcCJ7aXlGYg?controls=2">
-  </iframe>
+    <iframe
+        width="600" height="400"
+        src="http://www.youtube.com/embed/PcCJ7aXlGYg?controls=2">
+    </iframe>
 
 Molecular Biology :download:`pdf </Pages/Tutorials/MOOC/slides/Use_case6_Molecular_Biology.pdf>`
 
