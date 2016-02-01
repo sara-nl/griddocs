@@ -64,9 +64,9 @@ Start by downloading and unpacking the necessary files.
 
 * Copy the topos bash client :download:`topos </Scripts/topos>` to your UI directory.
     
-* Untar the example and check the files::
+* Untar the example and check the files:
 
-.. code-block:: bash
+  .. code-block:: bash
 
     tar -xvf pilot_topos_fractals.tar
     cd pilot_topos_fractals/
@@ -83,10 +83,9 @@ Start by downloading and unpacking the necessary files.
     # -rw-r--r-- 1 homer homer  README
     # -rwxrwxr-x 1 homer homer  topos
 
-
 * Compile the example:
 
-.. code-block:: bash
+  .. code-block:: bash
 
     cc fractals.c -o fractals -lm
 

@@ -153,7 +153,7 @@ This section describes the steps.
 
 
 Copying files and registering files in the *logical file catalog*
------------------------------------------------------------------
+=================================================================
 
 To copy a file from a user interface to one of the storage elements, and
 register the file in the logical file catalog:
@@ -211,7 +211,7 @@ The logical file catalog is a place where you register files, so you can find th
 
 If the physical storage is removed or lost, and you don't have any other replica's, you end up with only a registration in the lfc.
 
-.. code-block:: bash
+.. code-block:: none
 
     ------------------------------------------------
     Setting up a testfile to reproduce the situation:
