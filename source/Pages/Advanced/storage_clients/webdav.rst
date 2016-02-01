@@ -56,24 +56,33 @@ Transferring data
 
 .. code-block:: bash
 
-  curl --capath /etc/grid-security/certificates/ -f -u homer -p -L https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/ -T /home/homer/zap.tar 
+  curl --capath /etc/grid-security/certificates/ --fail --user homer \
+      -L https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/ \
+      -T /home/homer/zap.tar
   # replace homer with your username, lsgrid with your VO and zap.tar with your local file
 
-If on your system there are no grid CA certificates available in /etc/grid-security/certificates/, you can install them by following these instructions: https://dist.eugridpma.info/distribution/igtf/, or you can specify --insecure to skip certificate checking (not reccommended).
+The command will ask for the password of 'homer' on the command line. If you don't want to type the password each time, specify --netrc and store the password in the .netrc file in your home dir. Make sure it is not readable by others (chmod 600 .netrc). See 'man curl' for more details.
 
+It is possible to specify the password on the command line like this: --user homer:password. However, this should be avoided because it allows other local users to read the password with the 'ps' command.
+
+If on your system there are no grid CA certificates available in /etc/grid-security/certificates/, you can install them by following these instructions: https://dist.eugridpma.info/distribution/igtf/, or you can specify --insecure to skip certificate checking (not reccommended).
 
 * Copy a file from dCache to your local machine
 
 .. code-block:: bash
   
-  curl --capath /etc/grid-security/certificates/ -u homer -p -L https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar -o zap.tar
+  curl --capath /etc/grid-security/certificates/ --user homer \
+      -L https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
+      -o zap.tar
   
 Or with wget:
   
 .. code-block:: bash
 
-  wget --user=homer --no-check-certificate https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
-  
+  wget --user=homer --ask-password --ca-directory=/etc/grid-security/certificates \
+      https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+
+If you don't have an /etc/grid-security/certificates directory, you could specify --no-check-certificate, but we don't reccommend this.
 
 Parallel streams
 ----------------
