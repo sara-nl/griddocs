@@ -54,14 +54,14 @@ Transferring data
 
 .. code-block:: bash
 
-  curl -k -f -u homer -p -L https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/ -T /home/homer/zap.tar # replace homer with your username, lsgrid with your VO and zap.tar with your local file
+  curl --insecure -f -u homer -p -L https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/ -T /home/homer/zap.tar # replace homer with your username, lsgrid with your VO and zap.tar with your local file
   
   
 * Copy a file from dCache to your local machine
 
 .. code-block:: bash
   
-  curl -k -u homer -p -L https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar -o zap.tar
+  curl --insecure -u homer -p -L https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar -o zap.tar
   
 Or with wget:
   
@@ -89,7 +89,7 @@ Removing data
 
 .. code-block:: bash
 
-  curl -k -u <username> -p -L -X DELETE https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+  curl --insecure -u <username> -p -L -X DELETE https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 
 
 ================
