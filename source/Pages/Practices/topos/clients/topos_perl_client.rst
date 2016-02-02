@@ -1,9 +1,9 @@
 
 .. _topos-perl-client:
 
-*************
-Topos Example
-*************
+**********
+Perl ToPoS
+**********
 
 This page contains information about ``PerlToPoS``, a perl client for ToPoS:
 
@@ -88,11 +88,13 @@ If tokens are to be exclusive, tokens must be locked and optionally renewed whil
     3. while there are more tokens:
         1. get the next token, locking it
         2. while not finished:
+        
            1. process the token contents
            2. renew the lock
+           
         3. store the results
         4. if the token was successfully processed and the results stored:
-           * delete the token
+            * delete the token
 
 Opening an existing pool
 ========================
@@ -108,7 +110,9 @@ If the pool name was saved in a file (see saving the pool name to a file), the '
     my $pool = ToposPool -> load('my_pool_file.txt');
 
 If no pool file is specified, the file is assumed to be 'pool_id.txt', which is also the default for saving pools, see populating pools.
+
 Getting the next token
+======================
 
 After opening an existing pool, tokens objects can be retrieved from that pool with the 'next_token' method::
 
