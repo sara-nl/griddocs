@@ -85,6 +85,19 @@ Or with wget:
 If you don't have an /etc/grid-security/certificates directory, you could specify --no-check-certificate, but we don't reccommend this.
 
 
+* Downloading a file by using a proxy
+
+To authenticate with your proxy, you first have to create your proxy, see :ref:`startgridsession`.
+
+Then use a command like this:
+
+-- code-block:: bash
+
+  curl --capath /etc/grid-security/certificates/ \
+      --cert $X509_USER_PROXY --cacert $X509_USER_PROXY \
+      https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+
+
 Renaming
 ========
 
