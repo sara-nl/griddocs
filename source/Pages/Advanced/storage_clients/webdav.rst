@@ -52,7 +52,11 @@ You can also use text browsers like curl to list directories.
 Transferring data
 =================
 
-* Copy a file from your local machine to dCache
+
+Uploading
+---------
+
+To copy a file from your local machine to dCache
 
 .. code-block:: bash
 
@@ -67,7 +71,11 @@ It is possible to specify the password on the command line like this: --user hom
 
 If on your system there are no grid CA certificates available in /etc/grid-security/certificates/, you can install them by following these instructions: https://dist.eugridpma.info/distribution/igtf/, or you can specify --insecure to skip certificate checking (not reccommended).
 
-* Copy a file from dCache to your local machine
+
+Downloading
+-----------
+
+To copy a file from dCache to your local machine
 
 .. code-block:: bash
   
@@ -85,9 +93,10 @@ Or with wget:
 If you don't have an /etc/grid-security/certificates directory, you could specify --no-check-certificate, but we don't reccommend this.
 
 
-* Downloading a file by using a proxy
+Downloading with proxy authentication
+-------------------------------------
 
-To authenticate with your proxy, you first have to create your proxy, see :ref:`startgridsession`.
+To download a file while using a proxy to authenticate, you first have to create your proxy, see :ref:`startgridsession`.
 
 Then use a command like this:
 
