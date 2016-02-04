@@ -84,11 +84,6 @@ Or with wget:
 
 If you don't have an /etc/grid-security/certificates directory, you could specify --no-check-certificate, but we don't reccommend this.
 
-Parallel streams
-----------------
-
-Information not available yet.
-  
 
 Renaming
 ========
