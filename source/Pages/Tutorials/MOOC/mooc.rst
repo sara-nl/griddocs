@@ -1,19 +1,3 @@
-..
-    This page contains links to youtube videos. There are at least 2 ways to embed them into sphinx documentation, namely using youtube:: and raw:: directives. Examples:
-
-    ..  youtube:: XAcXOxLRNjI
-        :width: 600
-        :height: 400
-
-    .. raw:: html
-        <iframe
-            width="600" height="400"
-            src="http://www.youtube.com/embed/XAcXOxLRNjI?controls=2">
-        </iframe>
-
-    The youtube directive does not provide many options to control the video parameters (width, height and aspect). The raw directive allows to embed html code and is more flexible regarding the usage of parameters to control the video display. For the purposes of this documentation page it is a requirement for the page to load without delays irrespective of the number of youtube videos being displayed, and thus the ``controls`` parameters is rather important. W3C recommendations can be found @ http://www.w3schools.com/html/html_youtube.asp
-
-
 .. _mooc:
 
 *************************************
