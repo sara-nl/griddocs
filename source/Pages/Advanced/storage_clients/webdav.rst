@@ -56,7 +56,7 @@ Transferring data
 Uploading
 ---------
 
-To copy a file from your local machine to dCache
+To copy a file from your local machine to dCache:
 
 .. code-block:: bash
 
@@ -75,7 +75,7 @@ If on your system there are no grid CA certificates available in /etc/grid-secur
 Downloading
 -----------
 
-To copy a file from dCache to your local machine
+To copy a file from dCache to your local machine:
 
 .. code-block:: bash
   
@@ -89,6 +89,8 @@ Or with wget:
 
   wget --user=homer --ask-password --ca-directory=/etc/grid-security/certificates \
       https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+
+Note: wget does not support certificate/proxy authentication.
 
 If you don't have an /etc/grid-security/certificates directory, you could specify --no-check-certificate, but we don't recommend this.
 
