@@ -91,7 +91,7 @@ To authenticate with your proxy, you first have to create your proxy, see :ref:`
 
 Then use a command like this:
 
--- code-block:: bash
+.. code-block:: bash
 
   curl --capath /etc/grid-security/certificates/ \
       --cert $X509_USER_PROXY --cacert $X509_USER_PROXY \
