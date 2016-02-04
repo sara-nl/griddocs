@@ -108,7 +108,7 @@ Then use a command like this:
       --cert $X509_USER_PROXY --cacert $X509_USER_PROXY \
       https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
-.. note:: It is possible that your proxy DN is mapped to another user account than your own CUA user account. If you get authentication errors with either username or proxy and not the other, contact us to check the user mapping.
+.. note:: It is possible that your proxy DN is mapped to another user account than your own CUA user account. If you have permission issues with either username or proxy and not the other, contact us to check the user mapping.
 
 
 Renaming
