@@ -112,7 +112,19 @@ Then use a command like this:
 Renaming
 ========
 
-This section is not finished.
+Curl can rename files if proxy authentication is used.
+
+.. code-block:: bash
+
+  curl --capath /etc/grid-security/certificates/  --fail --location \
+      --cert $X509_USER_PROXY --cacert $X509_USER_PROXY \
+      --request MOVE \
+      https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/oldfile \
+      --header "Destination:https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/newfile"
+
+File properties and locality are not changed. A file that is stored on tape (nearline) will stay on tape, even if it is moved to a directory for disk-only files.
+
+As far as we know, renaming does not work when username/password authentication is used.
 
 
 Removing data
