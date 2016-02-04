@@ -69,7 +69,7 @@ The command will ask for the password of 'homer' on the command line. If you don
 
 It is possible to specify the password on the command line like this: --user homer:password. However, this should be avoided because it allows other local users to read the password with the 'ps' command.
 
-If on your system there are no grid CA certificates available in /etc/grid-security/certificates/, you can install them by following these instructions: https://dist.eugridpma.info/distribution/igtf/, or you can specify --insecure to skip certificate checking (not reccommended).
+If on your system there are no grid CA certificates available in /etc/grid-security/certificates/, you can install them by following these instructions: https://dist.eugridpma.info/distribution/igtf/, or you can specify --insecure to skip certificate checking (not recommended).
 
 
 Downloading
@@ -90,7 +90,7 @@ Or with wget:
   wget --user=homer --ask-password --ca-directory=/etc/grid-security/certificates \
       https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 
-If you don't have an /etc/grid-security/certificates directory, you could specify --no-check-certificate, but we don't reccommend this.
+If you don't have an /etc/grid-security/certificates directory, you could specify --no-check-certificate, but we don't recommend this.
 
 
 Downloading with proxy authentication
