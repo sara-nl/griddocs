@@ -91,7 +91,7 @@ To copy a file from dCache to your local machine:
 
 .. code-block:: bash
   
-  curl --capath /etc/grid-security/certificates/ --location --user homer \
+  curl --capath /etc/grid-security/certificates/ --fail --location --user homer \
        https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
        --output zap.tar
   
