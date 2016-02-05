@@ -21,7 +21,7 @@ The webdav protocol has the following advantages:
 It also has disadvantages:
 
 * It is not a high performance transfer protocol. If this is important, use gridftp instead.
-* Support by webdav clients varies widely. Some operations (like modifying or renaming a file) may not work in certain clients and circumstances.
+* Support by webdav clients varies widely. Some operations (like renaming a file) may not work in certain clients and circumstances. Modifying/overwriting a file, although the webdav protocol supports it, doesn't work on dCache; you'll need to delete the old file and upload the new file instead.
 
 dCache has the following webdav doors:
 
@@ -48,6 +48,17 @@ Listing
 To list directories, you can point a browser like Firefox to https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/. When the browser asks for a username and password, you can provide your CUA username and password. When you click on a listed file, it will be downloaded, when you're authorized to do so. When you're not authorized to access a URL, you may see some unexpected behaviour.
 
 You can also use text browsers like curl to list directories.
+
+
+Creating directories
+====================
+
+To create a directory with curl:
+
+.. code-block:: bash
+
+  curl --capath /etc/grid-security/certificates/ --fail --user homer \
+       --request MKCOL https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/directory
 
 
 Transferring data
