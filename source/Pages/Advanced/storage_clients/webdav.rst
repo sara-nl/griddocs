@@ -145,8 +145,9 @@ Removing data
 Graphical access
 ================
   
-To work with Webdav on a windows-based environment, you can install Cyberduck (for Windows and Mac) from here: https://cyberduck.io/
+To work with Webdav on Windows or Mac OS X, you can install Cyberduck from here: https://cyberduck.io/. Please note that the App store package costs money; the download from the website is free, but will ask for a donation.
 
+* Download the .zip file, open it, and drag the .app file into your Applications folder to install it. 
 * Open a Webdav (HTTP/SSL) connection and connect to the server with your ui account username and password:
 
 .. code-block:: bash
