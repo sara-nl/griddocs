@@ -153,3 +153,6 @@ To work with Webdav on Windows or Mac OS X, you can install Cyberduck from here:
 .. code-block:: bash
 
 	https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/ # replace lsgrid with your VO
+
+.. image:: /Images/cyberduck.png
+	:align: center
