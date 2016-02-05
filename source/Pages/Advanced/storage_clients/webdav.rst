@@ -21,6 +21,7 @@ The webdav protocol has the following advantages:
 It also has a disadvantage:
 
 * It is not a high performance transfer protocol. If this is important, use gridftp instead.
+* Support by webdav clients varies widely. Some operations (like modifying or renaming a file) may not work in certain clients and circumstances.
 
 dCache has the following webdav doors:
 
