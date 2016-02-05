@@ -18,7 +18,7 @@ The webdav protocol has the following advantages:
 * It supports username & password authentication
 * It uses the common port 443. Some overly strict firewalls may block outgoing traffic, but port 443 is so common that it is seldom blocked. However, using webdav to bypass firewalls should be seen as a temporary solution; it would be better to open up your institute's firewall to allow access to the dCache subnet.
 
-It also has a disadvantage:
+It also has disadvantages:
 
 * It is not a high performance transfer protocol. If this is important, use gridftp instead.
 * Support by webdav clients varies widely. Some operations (like modifying or renaming a file) may not work in certain clients and circumstances.
