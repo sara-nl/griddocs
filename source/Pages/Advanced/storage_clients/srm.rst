@@ -22,7 +22,7 @@ SRM
 
 The Storage Resource Manager (short SRM) has been designed to be a single interface for the management of both disk and tape storage resources. It provides options for copying files to/from the Grid storage, :ref:`staging` from tape, creating or removing files and so on. It uses :ref:`SURLs <file-id>` as the physical filename to reference a file.
 
-The :ref:`srm` is one of the most popular :ref:`storage-clients`. However, srm- commands are using Java which has the tendency to allocate big amounts of memory and sometimes be slow. 
+The :ref:`srm` is one of the most popular :ref:`storage-clients`. However, srm- commands are using Java which has the tendency to allocate big amounts of memory and sometimes be slow, also because of the SRM protocol overhead. If transfer speed is important, use :ref:`uberftp`, :ref:`globus` or :ref:`gfal` instead.
 
 .. note:: To run the examples below you need to have a valid proxy, see :ref:`startgridsession`. 
 
