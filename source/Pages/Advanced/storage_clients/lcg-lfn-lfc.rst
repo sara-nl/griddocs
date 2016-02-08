@@ -7,7 +7,7 @@
 *lcg-lfn-lfc* clients
 *********************
 
-This page includes the basic commands to use ``lcg-lfn-lfc``:
+This page includes the basic commands to use ``lcg-lfn-lfc``. For an overview of storage clients, see :ref:`storage-clients`.
 
 .. contents:: 
     :depth: 4
