@@ -5,7 +5,7 @@
 *uberftp* client
 ****************
  
-This page includes the basic commands to use ``uberftp``:
+This page includes the basic commands to use ``uberftp``. For an overview of storage clients, see :ref:`storage-clients`.
 
 .. contents:: 
     :depth: 4
