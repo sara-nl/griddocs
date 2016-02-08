@@ -5,7 +5,7 @@
 *gfal* client
 *************
 
-This page includes the basic commands to use ``gfal``:
+This page includes the basic commands to use ``gfal``. For an overview of storage clients, see :ref:`storage-clients`.
 
 .. contents:: 
     :depth: 4
