@@ -318,6 +318,15 @@ table.docutils .caption-text {
     line-height: 2em;
 }
 
+table.docutils {
+    margin-bottom: 20px  !important;
+}
+
+table.docutils.footnote {
+    border: 0;
+    margin-bottom: 0px  !important;
+}
+
 a em.std-term {
    color: #007f00;
 }
