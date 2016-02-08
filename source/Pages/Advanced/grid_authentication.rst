@@ -30,9 +30,9 @@ one go.
 
 .. _startgridsession-explained:
 
-======================
-Starting a gridsession
-======================
+=======================
+Starting a grid session
+=======================
 
 The easiest way to start a session on the grid is to use the ``startGridSession <VO Name>`` command (see :ref:`example <startgridsession>`). 
 
