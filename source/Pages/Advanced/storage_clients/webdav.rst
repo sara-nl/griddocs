@@ -18,10 +18,10 @@ The webdav protocol has the following advantages:
 * It supports username & password authentication
 * It uses the common port 443. Some overly strict firewalls may block outgoing traffic, but port 443 is so common that it is seldom blocked. However, using webdav to bypass firewalls should be seen as a temporary solution; it would be better to open up your institute's firewall to allow access to the dCache subnet.
 
-It also has a disadvantage:
+It also has disadvantages:
 
 * It is not a high performance transfer protocol. If this is important, use gridftp instead.
-* Support by webdav clients varies widely. Some operations (like modifying or renaming a file) may not work in certain clients and circumstances.
+* Support by webdav clients varies widely. Some operations (like renaming a file) may not work in certain clients and circumstances. Modifying/overwriting a file, although the webdav protocol supports it, doesn't work on dCache; you'll need to delete the old file and upload the new file instead.
 
 dCache has the following webdav doors:
 
@@ -50,6 +50,17 @@ To list directories, you can point a browser like Firefox to https://webdav.grid
 You can also use text browsers like curl to list directories.
 
 
+Creating directories
+====================
+
+To create a directory with curl:
+
+.. code-block:: bash
+
+  curl --capath /etc/grid-security/certificates/ --fail --user homer \
+       --request MKCOL https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/directory
+
+
 Transferring data
 =================
 
@@ -62,8 +73,8 @@ To copy a file from your local machine to dCache:
 .. code-block:: bash
 
   curl --capath /etc/grid-security/certificates/ --fail --location --user homer \
-      --upload-file zap.tar \
-      https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/
+       --upload-file zap.tar \
+       https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/
   # replace homer with your username, lsgrid with your VO and zap.tar with your local file
 
 The command will ask for the password of 'homer' on the command line. If you don't want to type the password each time, specify --netrc and store the password in the .netrc file in your home dir. Make sure it is not readable by others (chmod 600 .netrc). See 'man curl' for more details.
@@ -80,16 +91,16 @@ To copy a file from dCache to your local machine:
 
 .. code-block:: bash
   
-  curl --capath /etc/grid-security/certificates/ --location --user homer \
-      https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
-      -o zap.tar
+  curl --capath /etc/grid-security/certificates/ --fail --location --user homer \
+       https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
+       --output zap.tar
   
 Or with wget:
   
 .. code-block:: bash
 
   wget --user=homer --ask-password --ca-directory=/etc/grid-security/certificates \
-      https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+       https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 
 Note: wget does not support certificate/proxy authentication.
 
@@ -106,8 +117,8 @@ Then use a command like this:
 .. code-block:: bash
 
   curl --capath /etc/grid-security/certificates/ \
-      --cert $X509_USER_PROXY --cacert $X509_USER_PROXY \
-      https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+       --cert $X509_USER_PROXY --cacert $X509_USER_PROXY \
+       https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
 .. note:: It is possible that your proxy DN is mapped to another user account than your own CUA user account. If you have permission issues with either username or proxy and not the other, contact us to check the user mapping.
 
@@ -120,10 +131,10 @@ Curl can rename files if proxy authentication is used.
 .. code-block:: bash
 
   curl --capath /etc/grid-security/certificates/  --fail --location \
-      --cert $X509_USER_PROXY --cacert $X509_USER_PROXY \
-      --request MOVE \
-      https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/oldfile \
-      --header "Destination:https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/newfile"
+       --cert $X509_USER_PROXY --cacert $X509_USER_PROXY \
+       --request MOVE \
+       https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/oldfile \
+       --header "Destination:https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/newfile"
 
 File properties and locality are not changed. A file that is stored on tape (nearline) will stay on tape, even if it is moved to a directory for disk-only files.
 
@@ -138,7 +149,7 @@ Removing data
 .. code-block:: bash
 
   curl --capath /etc/grid-security/certificates/ --user homer --location \
-      --request DELETE https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+       --request DELETE https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 
 
 ================
