@@ -170,6 +170,8 @@ In this section we will show the common commands to use the various storage clie
 .. table:: Storage clients
 
   +----------------------+------+----------+----------+--------+-----------+-------+
+  |                      |              protocols              |                   |
+  +----------------------+------+----------+----------+--------+-----------+-------+
   | Client               | SRM  | GridFTP  | GSIdCap  | WebDAV | 3rd party | Speed |
   +======================+======+==========+==========+========+===========+=======+
   | :ref:`uberftp`       | --   | yes      | --       | --     | --        | high  |
