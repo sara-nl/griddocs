@@ -5,7 +5,7 @@
 *srm* client
 ************
 
-This page includes the basic commands to use ``srm``:
+This page explains the use of the ``srm`` client. For an overview of storage clients, see :ref:`storage-clients`.
 
 .. contents:: 
     :depth: 4
