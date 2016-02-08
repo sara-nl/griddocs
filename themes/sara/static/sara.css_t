@@ -323,7 +323,7 @@ table.docutils {
 }
 
 table.docutils.footnote {
-    border: 0;
+    border: 0  !important;
     margin-bottom: 0px  !important;
 }
 
