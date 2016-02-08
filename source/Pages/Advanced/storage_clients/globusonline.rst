@@ -7,7 +7,7 @@
 *globusonline* client
 *********************
 
-This page includes the basic commands to use ``fts``:
+This page includes the basic commands to use ``fts``. For an overview of storage clients, see :ref:`storage-clients`.
 
 .. contents:: 
     :depth: 4
