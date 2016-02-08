@@ -172,7 +172,7 @@ In this section we will show the common commands to use the various storage clie
   +----------------------+------+---------------+---------------+--------+-----------+-------+----------------------+
   |                      |                  protocols                    |                                          |
   +----------------------+------+---------------+---------------+--------+-----------+-------+----------------------+
-  | Client               | SRM  | GridFTP       | GSIdCap       | WebDAV | 3rd party | Speed | Tape management [1]_ |
+  | Client               | SRM  | GridFTP       | GSIdCap       | WebDAV | 3rd party | Speed | Tape control [1]_    |
   +======================+======+===============+===============+========+===========+=======+======================+
   | :ref:`uberftp`       | --   | yes           | --            | --     | --        | high  | --                   |
   +----------------------+------+---------------+---------------+--------+-----------+-------+----------------------+
@@ -188,10 +188,10 @@ In this section we will show the common commands to use the various storage clie
   +----------------------+------+---------------+---------------+--------+-----------+-------+----------------------+
   | :ref:`globusonline`  | yes  | yes           | ?             | ?      | yes       |       | --                   |
   +----------------------+------+---------------+---------------+--------+-----------+-------+----------------------+
-  | :ref:`lcg-lfn-lfc`   | yes  | indirect      | ?             | ?      | --        |       | --                   |
+  | :ref:`lcg-lfn-lfc`   | yes  | indirect [2]_ | ?             | ?      | --        |       | --                   |
   +----------------------+------+---------------+---------------+--------+-----------+-------+----------------------+
 
-.. [1] Examples of tape management: staging a file from tape to disk, get the locality (tape or disk).
+.. [1] Examples of tape control: staging a file from tape to disk, or get its locality (tape or disk).
 .. [2] SRM commands use the SRM protocol for metadata level operations and other protocols like gridftp for file transfers.
 
 .. toctree::
