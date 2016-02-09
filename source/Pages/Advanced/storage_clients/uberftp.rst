@@ -22,27 +22,27 @@ Creating/listing
 
 * Listing directories on dCache:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-  uberftp -ls gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/
-  
+    $ uberftp -ls gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/
+
 * Listing directories on DPM:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-  uberftp -ls gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid
-  
+    $ uberftp -ls gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid
+
 * Create a new directory on dCache:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-  uberftp -mkdir gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/newdir 
+    $ uberftp -mkdir gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/newdir 
 
 * Create a new directory on DPM:
- 
-.. code-block:: bash
 
-  uberftp -mkdir gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/newdir 
+  .. code-block:: bash
+
+    $ uberftp -mkdir gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/newdir 
 
 
 Transferring data
@@ -50,15 +50,15 @@ Transferring data
 
 * Copy file from local machine to dCache:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-  uberftp file:///home/homer/zap.tar gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+    $ uberftp file:///home/homer/zap.tar gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 
 * Copy file from local machine to DPM:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-  uberftp file:///home/homer/zap.tar gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar 
+    $ uberftp file:///home/homer/zap.tar gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar 
 
 
 Parallel streams
@@ -72,29 +72,25 @@ Removing data
 
 * Remove a file from dCache:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    uberftp -rm gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+    $ uberftp -rm gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
 * Remove a file from DPM:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    uberftp -rm gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar
+    $ uberftp -rm gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar
 
 * Remove whole (non-empty) directory with all content from dCache:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-	uberftp -rm -r gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/testdir/
-	
-	
+    $ uberftp -rm -r gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/testdir/
+
+
 * Remove whole (non-empty) directory with all content from DPM:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-	uberftp -rm -r gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/testdir/	
-
-		
-
-		
+    $ uberftp -rm -r gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/testdir/	
