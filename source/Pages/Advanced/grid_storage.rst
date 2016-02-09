@@ -271,13 +271,27 @@ Let's say that you have a list of SURLs that you want to stage. Convert the list
 
 This script stages a number of files from tape. You can change the pin lifetime in the stage.py script by changing the ``srmv2_desiredpintime`` attribute in seconds.
 
-* Display the locality of a single file:
+
+.. staging-single-file:
+
+Staging a single file
+---------------------
+
+Please note, that this method is less efficient than the stage.py examples above.
+
+Here is an example of how to stage a single file:
+
+.. code-block:: bash
+
+	$ srm-bring-online srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test
+	srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test brought online, use request id 424966221 to release
+
+How to display the locality:
 
 .. code-block:: bash
 
 	$ srmls -l srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test | grep locality
 	  locality:ONLINE_AND_NEARLINE
-
 
 
 .. monitor-staging:
