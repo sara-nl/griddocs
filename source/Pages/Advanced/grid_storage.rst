@@ -263,13 +263,13 @@ The example below shows how to stage a list of files with known SURLs.
 
 * Create a proxy on UI:
 
-.. code-block:: bash
+  .. code-block:: bash
   
 	$ startGridSession lsgrid  
 
 * The file paths should be listed in a file called ``files`` with the following format:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	/pnfs/grid.sara.nl/data/...
 
@@ -281,14 +281,14 @@ Let's say that you have a list of SURLs that you want to stage. Convert the list
 
 * Display the locality of the files with:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	$ python state.py
 
 
 * Stage the files:  
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	$ python stage.py
 
