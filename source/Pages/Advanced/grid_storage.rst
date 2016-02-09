@@ -273,9 +273,10 @@ The example below shows how to stage a list of files with known SURLs.
 
 	/pnfs/grid.sara.nl/data/...
 
-Let's say that you have a list of SURLs that you want to stage. Convert the list of SURLs in the datasets/example.txt file to the desired ``/pnfs`` format: 
+  Let's say that you have a list of SURLs that you want to stage. Convert the list of SURLs
+  in the datasets/example.txt file to the desired ``/pnfs`` format: 
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	$ grep --only-matching '/pnfs/grid.sara.nl.*' datasets/example.txt > files
 
