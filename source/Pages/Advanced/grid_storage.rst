@@ -72,7 +72,7 @@ You can refer to your files on the Grid with different ways depending on which o
 
 * Transport URL or **TURL**, e.g.:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	# lsgrid user homer stores the file zap.tar on dCache storage
 	gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
@@ -90,7 +90,7 @@ You can refer to your files on the Grid with different ways depending on which o
 
 * Storage URL or **SURL**, e.g.:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	# lsgrid user homer stores the file zap.tar on dCache storage
 	srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
@@ -103,7 +103,7 @@ You can refer to your files on the Grid with different ways depending on which o
 	* srm
 	* gfal
 	* fts
-	* lcg-lfn-lfc	
+	* lcg-lfn-lfc
 
 
 * Logical File Name (LFN) and Grid Unique Identifier (GUID). These identifiers correspond to logical filename such as ``lfn:/grid/lsgrid/homer/zap.tar``
