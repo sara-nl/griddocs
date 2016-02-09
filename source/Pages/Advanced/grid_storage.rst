@@ -70,9 +70,12 @@ Grid file identifiers
 
 You can refer to your files on the Grid with different ways depending on which of the available :ref:`storage-clients` you use to manage your files: 
 
-* Transport URL or **TURL**, e.g.:
+Transport URL or **TURL**
+=========================
 
-  .. code-block:: bash
+Examples:
+
+.. code-block:: bash
 
 	# lsgrid user homer stores the file zap.tar on dCache storage
 	gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
@@ -88,9 +91,12 @@ You can refer to your files on the Grid with different ways depending on which o
 	* fts
 	* globusonline
 
-* Storage URL or **SURL**, e.g.:
+Storage URL or **SURL**
+=======================
 
-  .. code-block:: bash
+Examples:
+
+.. code-block:: bash
 
 	# lsgrid user homer stores the file zap.tar on dCache storage
 	srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
