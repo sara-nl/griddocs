@@ -227,10 +227,33 @@ The :ref:`dCache` storage at SURFsara consists of magnetic tape storage and hard
   +---------------------+-----------------------------------------------------------------+
 
 
-.. _pin-file:
+.. _staging-single-file:
 
-File pinning example
-====================
+Staging a single file
+=====================
+
+Here is an example of how to stage a single file:
+
+.. code-block:: bash
+
+	$ srm-bring-online srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test
+	srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test brought online, use request id 424966221 to release
+
+Don't use this method to stage multiple files. Use the stage.py example below instead, because it is much more efficient.
+
+How to display the locality:
+
+.. code-block:: bash
+
+	$ srmls -l srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test | grep locality
+	  locality:ONLINE_AND_NEARLINE
+
+
+
+.. _staging-group-of-files:
+
+Staging groups of files
+=======================
 
 The example below shows how to stage a list of files with known SURLs.
 
@@ -272,32 +295,11 @@ Let's say that you have a list of SURLs that you want to stage. Convert the list
 This script stages a number of files from tape. You can change the pin lifetime in the stage.py script by changing the ``srmv2_desiredpintime`` attribute in seconds.
 
 
-.. staging-single-file:
 
-Staging a single file
----------------------
-
-Please note, that this method is less efficient than the stage.py examples above.
-
-Here is an example of how to stage a single file:
-
-.. code-block:: bash
-
-	$ srm-bring-online srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test
-	srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test brought online, use request id 424966221 to release
-
-How to display the locality:
-
-.. code-block:: bash
-
-	$ srmls -l srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test | grep locality
-	  locality:ONLINE_AND_NEARLINE
-
-
-.. monitor-staging:
+.. _monitor-staging:
 
 Monitor staging activity
-------------------------
+========================
 
 Once you submit your stage requests, you can use the gfal scripts to monitor the status or check the webpage below that lists all the current staging requests:
 
@@ -307,7 +309,7 @@ Once you submit your stage requests, you can use the gfal scripts to monitor the
 .. _unpin-file:
 
 Unpin a file
-------------
+============
 
 Your files may remain ``ONLINE`` as long as there is free space on the disk pools and then they will be purged for new coming staging requests.
 
