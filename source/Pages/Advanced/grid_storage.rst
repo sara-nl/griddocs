@@ -254,7 +254,7 @@ Let's say that you have a list of SURLs that you want to stage. Convert the list
 
 .. code-block:: bash
 
-	$ sed -e "s/srm:\/\/srm.grid.sara.nl:8443//" datasets/example.txt > files
+	$ grep --only-matching '/pnfs/grid.sara.nl.*' datasets/example.txt > files
 
 * Display the locality of the files with:
 
