@@ -23,17 +23,14 @@ The logical file catalog (LFC) allows you to give more descriptive names to your
 
 You can manipulate your data with a set of command line tools. Some of these commands start with lfc-..., while others start with lcg-..., which can be confusing at first.
 
-* lcg-...
+lcg-...
+    All these commands operate on the data itself. Additionally, some of these commands have "side effects" in the LFC: e.g. the lcg-cr command uploads a file to an SE and registers this file in the LFC under a certain name.
 
-All these commands operate on the data itself. Additionally, some of these commands have "side effects" in the LFC: e.g. the lcg-cr command uploads a file to an SE and registers this file in the LFC under a certain name.
+lfc-...
+    These commands only operate on the LFC, and don't manipulate data. E.g. the command lfc-mkdir creates a new directory in the LFC.
 
-* lfc-...
-
-These commands only operate on the LFC, and don't manipulate data. E.g. the command lfc-mkdir creates a new directory in the LFC.
-    
-* lfn-...
-
-The ``lfn`` commands allow you interact with the LFC logical names.    
+lfn-...
+    The ``lfn`` commands allow you interact with the LFC logical names.    
 
 .. note:: To run the examples below you need to have a valid proxy, see :ref:`startgridsession`. 
 
@@ -45,25 +42,33 @@ lcg tools
 Creating/listing 
 ================
 
-* List dCache directories::
+* List dCache directories:
 
-	lcg-ls  srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/
+  .. code-block:: bash
 
-* List DPM directories::
+	$ lcg-ls  srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/
 
-	lcg-ls  srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/
+* List DPM directories:
+
+  .. code-block:: bash
+
+	$ lcg-ls  srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/
 
 
 Transferring data
 =================
 
-* Copy file from local machine to dCache::
+* Copy file from local machine to dCache:
 
-	lcg-cp file:`pwd`/zap.tar srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+  .. code-block:: bash
 
-* Copy file from local machine to DPM::
+	$ lcg-cp file:`pwd`/zap.tar srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
-	lcg-cp file:`pwd`/zap.tar srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar
+* Copy file from local machine to DPM:
+
+  .. code-block:: bash
+
+	$ lcg-cp file:`pwd`/zap.tar srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar
 
 
 Parallel streams
@@ -77,9 +82,9 @@ Removing data
 
 * Remove a file from dCache:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    lcg-del -l srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/testfile
+    $ lcg-del -l srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/testfile
 
 
 ============================
@@ -109,20 +114,20 @@ Rather than having to type an absolute path for every file and directory you use
 
 * Creating a new directory:
 
-Before you can register any file of your own, you must create a new directory in the file catalog:
+  Before you can register any file of your own, you must create a new directory in the file catalog:
 
-.. code-block:: bash
+  .. code-block:: bash
 
     $ lfc-mkdir /grid/your_vo/your_username
 
 * To check that you have created your directory type:
 
-.. code-block:: bash
+  .. code-block:: bash
 
     $ export LFC_HOME=/grid/your_vo
     $ lfc-ls -l 
 
-and you should see your directory (plus possibly those of others). 
+  and you should see your directory (plus possibly those of others). 
 
 
 .. _replicating_files:
@@ -160,10 +165,10 @@ register the file in the logical file catalog:
 
 * determine the full path of the file; for example, using the ``pwd``
   command:
-  
-.. code-block:: bash
 
-    pwd
+  .. code-block:: bash
+
+    $ pwd
     # /home/homer/Projects/input.dat
 
 * determine the full path of the target file, on *dCache* or *DPM*; see
@@ -171,12 +176,14 @@ register the file in the logical file catalog:
 
 * use ``lcg-cr`` and the fulls path to the file to store the first copy of your
   file on one of the storage elements, and register the file in the *logical
-  file catalog*::
- 
-    lcg-cr --vo lsgrid 
-      -d srm://gb-se-kun.els.sara.nl/dpm/els.sara.nl/home/lsgrid/homer/input.dat
-      -l lfn:/grid/lsgrid/homer/input.dat
-      file:///home/homer/Projects/input.dat
+  file catalog*:
+  
+  .. code-block:: bash
+  
+    $ lcg-cr --vo lsgrid 
+          -d srm://gb-se-kun.els.sara.nl/dpm/els.sara.nl/home/lsgrid/homer/input.dat
+          -l lfn:/grid/lsgrid/homer/input.dat
+          file:///home/homer/Projects/input.dat
 
   In this example, the file ``input.dat`` is copied from the ``Projects``
   directory on the local user interface, to a storage element on the Life
@@ -184,20 +191,24 @@ register the file in the logical file catalog:
   from the VO *lsgrid*. Note that this requires membership of the *lsgrid* VO.
 
 * use ``lcg-rep`` to create a replica of the file, and register the replica
-  with the LFC::
+  with the LFC:
 
-    lcg-rep 
-      -d srm://gb-se-amc.amc.nl/dpm/amc.nl/home/lsgrid/homer/input.dat
-      lfn:/grid/lsgrid/homer/input.dat
+  .. code-block:: bash
+
+    $ lcg-rep 
+          -d srm://gb-se-amc.amc.nl/dpm/amc.nl/home/lsgrid/homer/input.dat
+          lfn:/grid/lsgrid/homer/input.dat
 
   Note that the LFC location is the same as in the ``lcg-cr``-command.
 
 * verify that there are two copies of the file, registered under the same
-  LFC entry::
+  LFC entry:
 
-   > lcg-lr lfn:/grid/lsgrid/homer/input.dat
-   srm://gb-se-kun.els.sara.nl/dpm/els.sara.nl/home/lsgrid/homer/input.dat
-   srm://gb-se-amc.amc.nl/dpm/amc.nl/home/lsgrid/homer/input.dat
+  .. code-block:: bash
+
+    $ lcg-lr lfn:/grid/lsgrid/homer/input.dat
+    srm://gb-se-kun.els.sara.nl/dpm/els.sara.nl/home/lsgrid/homer/input.dat
+    srm://gb-se-amc.amc.nl/dpm/amc.nl/home/lsgrid/homer/input.dat
 
 
 
