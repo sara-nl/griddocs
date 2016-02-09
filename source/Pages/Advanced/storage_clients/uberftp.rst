@@ -64,7 +64,15 @@ Transferring data
 Parallel streams
 ----------------
 
-Information not available yet.
+The GridFTP protocol allows for parallel streaming of data transfers. This makes transfers more efficient and less susceptible to network congestion, especially over long distances. If you have a lot of parallel transfers running anyway, increasing the number of streams per transfer will not make a big difference, because the network bandwidth may limit the results.
+
+.. code-block:: bash
+
+  $ uberftp -parallel 4 \
+        gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar \
+        file:zap.tar
+
+Results may vary based on circumstances. We suggest a number of 4 streams as a start.
 
 
 Removing data
