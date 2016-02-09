@@ -225,7 +225,7 @@ The :ref:`dCache` storage at SURFsara consists of magnetic tape storage and hard
   +---------------------+-----------------------------------------------------------------+
   | ONLINE_AND_NEARLINE | The file is both on disk and on tape                            |
   +---------------------+-----------------------------------------------------------------+
- 
+
 
 .. _pin-file:
 
@@ -242,7 +242,7 @@ The example below shows how to stage a list of files with known SURLs.
 
 .. code-block:: bash
   
-	startGridSession lsgrid  
+	$ startGridSession lsgrid  
 
 * The file paths should be listed in a file called ``files`` with the following format:
 
@@ -254,22 +254,30 @@ Let's say that you have a list of SURLs that you want to stage. Convert the list
 
 .. code-block:: bash
 
-	sed -e "s/srm:\/\/srm.grid.sara.nl:8443//" datasets/example.txt > files
+	$ sed -e "s/srm:\/\/srm.grid.sara.nl:8443//" datasets/example.txt > files
 
-* Test the status of the files with:
+* Display the locality of the files with:
 
 .. code-block:: bash
 
-	python state.py
+	$ python state.py
 
 
 * Stage the files:  
 
 .. code-block:: bash
 
-	python stage.py
+	$ python stage.py
 
 This script stages a number of files from tape. You can change the pin lifetime in the stage.py script by changing the ``srmv2_desiredpintime`` attribute in seconds.
+
+* Display the locality of a single file:
+
+.. code-block:: bash
+
+	$ srmls -l srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test | grep locality
+	  locality:ONLINE_AND_NEARLINE
+
 
 
 .. monitor-staging:
@@ -297,7 +305,7 @@ When you are done with your processing, we recommend you release (or unpin) all 
 
 .. code-block:: bash
 
-	srm-release-files srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar # replace with your SURL
+	$ srm-release-files srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar # replace with your SURL
 
 This command will initiate unpinning of file "zap.tar" (even if you submitted multiple pin requests) and the file will remain cached but purgeable until new requests will claim the available space. It is an optional action, but helps a lot with the effective system usage.
 
