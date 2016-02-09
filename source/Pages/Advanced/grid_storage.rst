@@ -78,7 +78,10 @@ Examples:
 .. code-block:: bash
 
 	# lsgrid user homer stores the file zap.tar on dCache storage
-	gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+	gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+	
+	# same, but with a webdav TURL
+	https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 	
 	# lsgrid user homer stores the file zap.tar on DPM storage at lumc cluster
 	gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar
