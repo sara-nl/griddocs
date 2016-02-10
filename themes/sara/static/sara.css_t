@@ -189,7 +189,7 @@ div.body h5,
 div.body h6 {
     font-family: sans-serif;
     background-color: #ffffff;
-    font-weight: normal;
+    font-weight: bold;
     color: #373839;
     margin: 30px 0px 10px 0px;
     padding: 5px 0;
