@@ -178,9 +178,14 @@ a, a .pre {
     text-decoration: none;
 }
 
-/* Underline links, but only in the body, not in the TOC */
+/* Underline links, but only in the body, not in the sidebar TOC */
 div.body a {
     text-decoration: underline;
+}
+
+/* Don't underline links in Contents section */
+div.contents a {
+    text-decoration: none;
 }
 
 /* Color for headers in body */
