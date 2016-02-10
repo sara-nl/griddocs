@@ -321,11 +321,11 @@ Once you submit your stage requests, you can use the gfal scripts to monitor the
 Unpin a file
 ============
 
-Your files may remain ``ONLINE`` as long as there is free space on the disk pools and then they will be purged for new coming staging requests.
+Your files may remain ``ONLINE`` as long as there is free space on the disk pools. When a pool group is full and free space is needed, dCache will purge the least recently used cached files. The tape replica will remain on tape.
 
-The disk pool where your files are staged has limited capacity and is only meant for data that a user wants to process on a Grid site. When you :ref:`pin a file <pin-file>` you set a `pin lifetime` that, when it expires, causes the data to be released automatically. Then the data may be purged from disk, as soon as the space is required for stage requests.
+The disk pool where your files are staged has limited capacity and is only meant for data that a user wants to process on a Grid site. When you :ref:`pin a file <pin-file>` you set a `pin lifetime`. The file will not be purged until the pin lifetime has expired. Then the data may be purged from disk, as soon as the space is required for new stage requests. When the disk copy has been purged, it has to be staged again in order to be processed on a Worker Node.
 
-Once the data is unpinned, it will remain of course on tape and has to be staged again in order to be processed on a Worker Node. 
+When a pool group is full with pinned files, staging is paused. Stage requests will just wait until pin lifetimes for other files expire. dCache will then use the released space to stage more files until the pool group is full again. When this takes too long, stage requests will time out. So pinning should be used moderately.
 
 When you are done with your processing, we recommend you release (or unpin) all the files that you don't need any more. In order to unpin a file, run from the UI:
 
