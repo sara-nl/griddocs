@@ -171,16 +171,29 @@ p.sidebar-title {
 }
 
 /* -- body styles ----------------------------------------------------------- */
- 
+
+/* General link color */
 a, a .pre {
-    color: #494;
+    color: #373;
     text-decoration: none;
 }
- 
-a:hover, a:hover .pre {
+
+/* Underline links, but only in the body, not in the TOC */
+div.body a {
     text-decoration: underline;
 }
- 
+
+/* Color for headers in body */
+div.body h1 a,
+div.body h2 a,
+div.body h3 a,
+div.body h4 a,
+div.body h5 a,
+div.body h6 a {
+    color: #4a4;
+    text-decoration: none;
+}
+
 div.body h1,
 div.body h2,
 div.body h3,
