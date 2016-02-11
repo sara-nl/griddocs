@@ -14,15 +14,17 @@ This section explains concepts and operations regarding the grid authentication 
 Introduction: delegation of authentication
 ==========================================
 
-Because of its decentralized nature, authentication on the grid uses
-private keys and certificates to authenticate users. Possession of a
-private key authenticates a person, and as such, you should **never share
+Grid is, by its very nature, decentralized. This means that users must
+authenticate themself to grid services they want to use. This is accomplished 
+by means of a personal certificate and accompanying private key that 
+every grid user must have. The combinbation of an user certificate and private key
+uniquely identifies an user, and as such, you should **never share
 your private key** with anyone else, or with any service. At the same time,
-however, your jobs will typically run on systems you may not trust, so
-you must somehow identify yourself with those systems. This is what
-*delegation* is for: identifying yourself with a system you don't trust,
-by creating a new private key and a certificate with a limited validity.
-This chapter describes how you can delegate your credentials.
+however, your jobs will typically run on systems you may not trust, but
+you are required to identify yourself with those systems to be able to use them.
+This is where *delegation* comes in: identifying yourself with a system you don't trust
+by creating a new private key and a certificate pair, called a proxy, with a time 
+limited validity. This chapter describes how you can delegate your credentials.
 
 The easiest is to use a *grid session*, which does everything for you in
 one go.
