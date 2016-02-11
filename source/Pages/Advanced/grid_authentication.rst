@@ -141,7 +141,7 @@ Here is an example::
 	key usage : Digital Signature, Key Encipherment, Data Encipherment
 	=== VO lsgrid extension information ===
 	VO        : lsgrid
-	ubject   : /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
+	subject   : /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
 	issuer    : /O=dutchgrid/O=hosts/OU=sara.nl/CN=voms.grid.sara.nl
 	attribute : /lsgrid/Role=NULL/Capability=NULL
 	attribute : /lsgrid/SARA/Role=NULL/Capability=NULL
