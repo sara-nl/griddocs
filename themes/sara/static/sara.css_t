@@ -163,13 +163,11 @@ div.sphinxsidebar input[type=text]{
 
 div.sidebar {
     margin: 0 0 0.5em 1em;
-    border: 2px solid #c6d880;
-    background-color: #e6efc2;
+    border: 1px solid #ddb;
+    padding: 10px 20px;
+    background-color: #ffe;
     width: 40%;
     float: right;
-    border-right-style: none;
-    border-left-style: none;
-    padding: 10px 20px;
 }
 
 p.sidebar-title {
