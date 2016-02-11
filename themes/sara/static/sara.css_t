@@ -83,8 +83,8 @@ div.footer a:hover {
 div.contents,
 div.topic,
 div.contents.topic {
-    background: #E0F3E0;
-    border: 1px solid #D0E4D0 !important;
+    background: #EAF8EA;
+    border: 1px solid #DAEEDA !important;
 }
 
 div.related {
