@@ -274,19 +274,17 @@ p.admonition-title {
 p.admonition-title:after {
     content: ":";
 }
- 
+
+/* Style for bash code boxes */
 pre {
-    padding: 10px;
-    background-color: #fafafa;
-    color: #222;
-    line-height: 1.2em;
-    border: 2px solid #C6C9CB;
+    padding: 12px 20px;
+    background-color: #E0F4E0;
+    border: 1px solid #D0E4D0;
+    border-left: 10px solid #D0E4D0;
+    line-height: 1.5em;
     font-size: 1.1em;
-    margin: 1.5em 0 1.5em 0;
-    border-right-style: none;
-    border-left-style: none;
 }
- 
+
 tt {
     background-color: transparent;
     color: #222;
