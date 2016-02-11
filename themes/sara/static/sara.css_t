@@ -107,7 +107,7 @@ div.sphinxsidebarwrapper{
  
 div.sphinxsidebar h3,
 div.sphinxsidebar h4 {
-    font-family: "Neuton", sans-serif;
+    font-family: sans-serif;
     color: #373839;
     font-size: 1.4em;
     font-weight: normal;
