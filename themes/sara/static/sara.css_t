@@ -246,19 +246,19 @@ div.highlight{
 div.note {
     border: 1px solid #79e;
     background: #def url(dialog-note.png) no-repeat 12px 10px;
-    padding: 10px 20px 10px 60px;
+    padding: 20px 20px 20px 60px;
 }
  
 div.seealso {
     background: #fff6bf url(dialog-seealso.png) no-repeat 12px 10px;
     border: 1px solid #ffd324;
-    padding: 10px 20px 10px 60px;
+    padding: 20px 20px 20px 60px;
 }
 
 div.warning {
     border: 1px solid #fbc2c4;
     background: #fbe3e4 url(dialog-warning.png) no-repeat 12px 10px;
-    padding: 10px 20px 10px 60px;
+    padding: 20px 20px 20px 60px;
 }
 
 p.admonition-title {
