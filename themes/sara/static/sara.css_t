@@ -194,31 +194,25 @@ div.body h2 a,
 div.body h3 a,
 div.body h4 a,
 div.body h5 a,
-div.body h6 a {
-    color: #4a4;
-    text-decoration: none;
-}
-
+div.body h6 a, 
 div.body h1,
 div.body h2,
 div.body h3,
 div.body h4,
 div.body h5,
 div.body h6 {
-    font-family: sans-serif;
+    color: #4a4;
+    text-decoration: none;
     background-color: #ffffff;
     font-weight: bold;
-    color: #373839;
-    margin: 30px 0px 10px 0px;
-    padding: 5px 0;
 }
 
-div.body h1 { border-top: 20px solid white; margin-top: 0; font-size: 300%; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
-div.body h2 { font-size: 220%; background-color: #ffffff; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
-div.body h3 { font-size: 150%; background-color: #ffffff; }
-div.body h4 { font-size: 120%; background-color: #ffffff; }
-div.body h5 { font-size: 110%; background-color: #ffffff; }
-div.body h6 { font-size: 100%; background-color: #ffffff; }
+div.body h1 { font-size: 300%; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; margin-top: 20; }
+div.body h2 { font-size: 220%; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
+div.body h3 { font-size: 150%; }
+div.body h4 { font-size: 120%; }
+div.body h5 { font-size: 110%; }
+div.body h6 { font-size: 100%; }
  
 a.headerlink {
     color: #1b61d6;
