@@ -45,7 +45,7 @@ The easiest way to start a session on the grid is to use the ``startGridSession 
 The ``startGridSession`` command:
 
 * generates a ``local proxy`` of your certificate and private key;
-* uploads the proxy to the ``Myproxy server``;
+* delegated the proxy to the ``Myproxy server``;
 * delegates this proxy WMS with your user name as the ``delegation ID`` (DID). 
 
 Your jobs will now be able to run for week. The WMS, who is responsible for
@@ -61,13 +61,13 @@ Instead of ``startGridSession``, you can run the following three commands separa
 .. code-block:: bash
 
 	# 1. VOMS server: create a voms proxy with voms extensions that enables you to access the Grid for *12 hours*.
-	voms-proxy-init --voms lsgrid  #replace lsgrid with your VO
+	$ voms-proxy-init --voms lsgrid  #replace lsgrid with your VO
 	
 	# 2. MyProxy server: store a *week* long proxy certificate in the Myproxy server; useful for jobs that are running for more than 12 hours.
-	myproxy-init -d -n 
+	$ myproxy-init -d -n 
 	
 	# 3. WMS: delegate your credentials to the WMS
-	glite-wms-job-delegate-proxy -d $USER
+	$ glite-wms-job-delegate-proxy -d $USER
 
 The next section explains the startGridSession operations step-by-step. See also ``startGridSession -h``.
 
@@ -92,17 +92,17 @@ Make sure you have installed your certificate and private on the grid user inter
 They should be place in the ``.globus`` directory under your home directory and should be named ``usercert.pem``
 and `userkey.pem``. They must have the following ownerships and permissions::
 	
-	ls -l $HOME/.globus/usercert.pem
-	-rw-r--r-- 1 homers homers 1956 Nov 16 12:20 /home/homers/.globus/usercert.pem
+	$ ls -l $HOME/.globus/usercert.pem
+	-rw-r--r-- 1 homer homer 1956 Nov 16 12:20 /home/homer/.globus/usercert.pem
 		
-	ls -l $HOME/.globus/userkey.pem
-	-r-------- 1 homers homers 1956 Nov 16 12:20 /home/homers/.globus/usercert.pem
+	$ ls -l $HOME/.globus/userkey.pem
+	-r-------- 1 homer homer 1956 Nov 16 12:20 /home/homer/.globus/usercert.pem
 	
-where ``homers`` should be replace with your username.
+where ``homer`` should be replace with your username.
 
 * Now issue the following command to create a *local* proxy. The pass phrase is the grid certificate password::
 
-    voms-proxy-init --voms lsgrid
+    $ voms-proxy-init --voms lsgrid
 
 You will see the following output in your terminal::
 
@@ -127,25 +127,25 @@ Inspecting your proxy certificate
 
 * You can inspect your local proxy with the command::
 
-    voms-proxy-info -all
+    $ voms-proxy-info -all
 
 Here is an example::
 
-    # subject   : /O=dutchgrid/O=users/O=sara/CN=Homer Simpson/CN=proxy
-    # issuer    : /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
-    # identity  : /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
-    # type      : full legacy globus proxy
-    # strength  : 1024
-    # path      : /tmp/x509up_u39111
-    # timeleft  : 11:48:24
-    # key usage : Digital Signature, Key Encipherment, Data Encipherment
-    # === VO lsgrid extension information ===
-    # VO        : lsgrid
-    # subject   : /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
-    # issuer    : /O=dutchgrid/O=hosts/OU=sara.nl/CN=voms.grid.sara.nl
-    # attribute : /lsgrid/Role=NULL/Capability=NULL
-    # attribute : /lsgrid/SARA/Role=NULL/Capability=NULL
-    # timeleft  : 11:48:24
+	subject   : /O=dutchgrid/O=users/O=sara/CN=Homer Simpson/CN=proxy
+	issuer    : /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
+	identity  : /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
+	type      : full legacy globus proxy
+	strength  : 1024
+	path      : /tmp/x509up_u39111
+	timeleft  : 11:48:24
+	key usage : Digital Signature, Key Encipherment, Data Encipherment
+	=== VO lsgrid extension information ===
+	VO        : lsgrid
+	ubject   : /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
+	issuer    : /O=dutchgrid/O=hosts/OU=sara.nl/CN=voms.grid.sara.nl
+	attribute : /lsgrid/Role=NULL/Capability=NULL
+	attribute : /lsgrid/SARA/Role=NULL/Capability=NULL
+	timeleft  : 11:48:24
     
 You can see that a proxy certificate has a limited lifetime and is stored
 in the ``/tmp`` directory. It also has attributes which mention the VO
@@ -173,7 +173,7 @@ This is necessary for jobs that need more than 12 hours to run.
 
 * Issue this command on the UI::
 
-    myproxy-init -d -n
+    $ myproxy-init -d -n
 
 You should get something like this::
 
@@ -192,7 +192,7 @@ Inspecting the *myproxy* certificate
 
 * You can inspect the the *myproxy* certificate with the command::
 
-    myproxy-info -d
+    $ myproxy-info -d
 
 Here is an example of the displayed output::
 
@@ -220,8 +220,8 @@ local proxy. If not, please see :ref:`voms-proxy-init command <voms-proxies>`.
 
 * To delegate your proxy to the WMS, run on the UI::
 
-    echo $USER
-    glite-wms-job-delegate-proxy -d $USER  # the $USER is the delegation id
+    $ echo $USER
+    $ glite-wms-job-delegate-proxy -d $USER  # the $USER is the delegation id
 
 The variable ``$USER`` is the delegation id (in this case your login name from the system). This string is needed in other commands to identify your session. In general, you can use any string you like after the ``-d`` option.
 
@@ -253,23 +253,23 @@ Commands for viewing your proxy information
 
 * To start your Grid session::
  
-	startGridSession lsgrid  # replace lsgrid with your VO
+	$ startGridSession lsgrid  # replace lsgrid with your VO
 
 * To see how much time there is left on your Grid session::
   
-    myproxy-info -d
+  	$ myproxy-info -d
 
 * To renew your Grid session::
 
-   startGridSession lsgrid  #replace lsgrid with your VO
+	$ startGridSession lsgrid  #replace lsgrid with your VO
    
 * To end your session::
  
-    myproxy-destroy -d
+ 	$ myproxy-destroy -d
 
 * To remove your local ``/tmp/x509up_uXXX`` proxy::
 
-    voms-proxy-destroy
+	$ voms-proxy-destroy
 
 .. note:: ``myproxy-destroy`` will not terminate any job. Jobs will continue
   to run and will fail when the the proxy certificate that was used at the
