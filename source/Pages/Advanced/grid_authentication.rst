@@ -42,11 +42,11 @@ The easiest way to start a session on the grid is to use the ``startGridSession 
 
 		.. seealso:: For more detailed information about the proxies, have a look to our mooc video :ref:`mooc-startgridsession`.
 
-This command:
+The ``startGridSession`` command:
 
-* generates a ``local proxy`` of your certificate and private key, 
-* uploads this proxy to the ``Myproxy server``
-* delegates this proxy to the WMS with your user name as the ``delegation ID`` (DID). 
+* generates a ``local proxy`` of your certificate and private key;
+* uploads the proxy to the ``Myproxy server``;
+* delegates this proxy WMS with your user name as the ``delegation ID`` (DID). 
 
 Your jobs will now be able to run for week. The WMS, who is responsible for
 the scheduling of your job, will renew the proxy certificate of running
@@ -78,18 +78,27 @@ Using VOMS Proxies
 ==================
 
 In order to use Grid facilities, you have to create a proxy. A proxy is a
-short-lived short-lived key/certificate combination which is used to
-perform actions on the Grid on your behalf, without using passwords.  You
+short-lived certificate/private key combination which is used to
+perform actions on the Grid on your behalf without using passwords.  You
 can read more in this `paper <http://toolkit.globus.org/alliance/publications/papers/pki04-welch-proxy-cert-final.pdf>`_ from Globus Alliance Members.
-Services having access to your proxy can act on your behalf. This proxy
+Services that have been provided with a copy of your proxy can act on your behalf. This proxy
 is a file owned by you and placed in the ``/tmp`` directory of the UI. You only deal
-with this file in exceptional cases. 
+with this file directly in exceptional cases. 
 
 Creating a VOMS proxy
 ---------------------
 
-Make sure you first installed your key and 
-certificate on the grid user interface that you are working on. 
+Make sure you have installed your certificate and private on the grid user interface that you are working on. 
+They should be place in the ``.globus`` directory under your home directory and should be named ``usercert.pem``
+and `userkey.pem``. They must have the following ownerships and permissions::
+	
+	ls -l $HOME/.globus/usercert.pem
+	-rw-r--r-- 1 homers homers 1956 Nov 16 12:20 /home/homers/.globus/usercert.pem
+		
+	ls -l $HOME/.globus/userkey.pem
+	-r-------- 1 homers homers 1956 Nov 16 12:20 /home/homers/.globus/usercert.pem
+	
+where ``homers`` should be replace with your username.
 
 * Now issue the following command to create a *local* proxy. The pass phrase is the grid certificate password::
 
@@ -97,11 +106,11 @@ certificate on the grid user interface that you are working on.
 
 You will see the following output in your terminal::
 
-    # Enter GRID pass phrase for this identity:
-    # Contacting voms.grid.sara.nl:30018  [/O=dutchgrid/O=hosts/OU=sara.nl/CN=voms.grid.sara.nl] "lsgrid"...
-    # Remote VOMS server contacted successfully.
-    # Created proxy in /tmp/x509up_u39111.
-    # Your proxy is valid until Thu Jan 05 02:07:29 CET 2016
+	Enter GRID pass phrase for this identity:
+	Contacting voms.grid.sara.nl:30018  [/O=dutchgrid/O=hosts/OU=sara.nl/CN=voms.grid.sara.nl] "lsgrid"...
+	Remote VOMS server contacted successfully.
+	Created proxy in /tmp/x509up_u39111.
+	Your proxy is valid until Thu Jan 05 02:07:29 CET 2016
 
 This proxy is your "username" for the Grid. The last line in the example shows the expiration time of the proxy. 
 
@@ -139,9 +148,10 @@ Here is an example::
     # timeleft  : 11:48:24
     
 You can see that a proxy certificate has a limited lifetime and is stored
-in the ``/tmp`` directory. It also has an extension which mentions the VO
-information. By using this information and based on your :ref:`VO membership <join-vo>`,
-the VOMS system can authorize you to certain resources on the Grid.
+in the ``/tmp`` directory. It also has attributes which mention the VO
+information. A grid service who has been provided with a copy of your proxy, 
+will contact the VOMS service for authorisation information and subsequently
+grant or deny you access.
 
 .. note:: In the :ref:`next step <myproxy-server>`, you will delegate your proxy
     certificate to the proxy server and there it will be valid by default for
@@ -158,7 +168,7 @@ Using the MyProxy Server
 ========================
 
 The following command stores a proxy certificate in the proxy server
-where it will issue new proxy certificates on your behalf of you for a week.
+where it will issue new proxy certificates on your behalfcfor a week.
 This is necessary for jobs that need more than 12 hours to run.
 
 * Issue this command on the UI::
@@ -167,15 +177,14 @@ This is necessary for jobs that need more than 12 hours to run.
 
 You should get something like this::
 
-    # Your identity: /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
-    # Enter GRID pass phrase for this identity:
-    # Creating proxy ................................................. Done
-    # Proxy Verify OK
-    # Your proxy is valid until: Wed Jan 13 14:25:06 2016
-    # A proxy valid for 168 hours (7.0 days) for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson now exists on px.grid.sara.nl.
+	Your identity: /O=dutchgrid/O=users/O=sara/CN=Homer Simpson	
+	Enter GRID pass phrase for this identity:
+	Creating proxy ................................................. Done
+	Proxy Verify OK
+	Your proxy is valid until: Wed Jan 13 14:25:06 2016	
+	A proxy valid for 168 hours (7.0 days) for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson now exists on px.grid.sara.nl.
 
-The delegated proxy can be received locally from other authorized Grid
-machines. 
+The delegated proxy can be received locally from other authorized Grid machines. 
 
 
 Inspecting the *myproxy* certificate
@@ -187,9 +196,9 @@ Inspecting the *myproxy* certificate
 
 Here is an example of the displayed output::
 
-    # username: /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
-    # owner: /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
-    # timeleft: 167:56:36  (7.0 days)
+	username: /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
+	owner: /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
+	timeleft: 167:56:36  (7.0 days)
 
 
 .. _credential-delegation:
@@ -221,18 +230,19 @@ This causes a delegated proxy to be established automatically. In this
 case you do not need to remember a delegation identifier. However,
 repeated use of this option is not recommended, since it delegates a new
 proxy each time the commands are issued. Delegation is a time-consuming
-operation, so it's better to use the -d ``$USER`` when submitting your jobs.
+operation, so it's better to use the -d ``$USER`` when submitting a large
+number of jobs one after the other.
 
 Here is an example of the displayed output::
 
-    # Connecting to the service https://wms2.grid.sara.nl:7443/glite_wms_wmproxy_server
-    # ================== glite-wms-job-delegate-proxy Success ==================
-    #
-    # Your proxy has been successfully delegated to the WMProxy(s):
-    # https://wms2.grid.sara.nl:7443/glite_wms_wmproxy_server
-    # with the delegation identifier: homer
-    #
-    # ==========================================================================
+	Connecting to the service https://wms2.grid.sara.nl:7443/glite_wms_wmproxy_server
+	================== glite-wms-job-delegate-proxy Success ==================	
+	
+	Your proxy has been successfully delegated to the WMProxy(s):
+	https://wms2.grid.sara.nl:7443/glite_wms_wmproxy_server
+	with the delegation identifier: homer
+	
+	==========================================================================
 
 
 .. _proxy-info-commands:
@@ -243,7 +253,7 @@ Commands for viewing your proxy information
 
 * To start your Grid session::
  
-	startGridSession lsgrid  #replace lsgrid with your VO
+	startGridSession lsgrid  # replace lsgrid with your VO
 
 * To see how much time there is left on your Grid session::
   
