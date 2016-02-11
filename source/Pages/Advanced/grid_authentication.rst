@@ -45,7 +45,7 @@ The easiest way to start a session on the grid is to use the ``startGridSession 
 The ``startGridSession`` command:
 
 * generates a ``local proxy`` of your certificate and private key;
-* delegated the proxy to the ``Myproxy server``;
+* delegates the proxy to the ``Myproxy server``;
 * delegates this proxy WMS with your user name as the ``delegation ID`` (DID). 
 
 Your jobs will now be able to run for week. The WMS, who is responsible for
