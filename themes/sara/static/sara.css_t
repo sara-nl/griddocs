@@ -79,7 +79,13 @@ div.footer a:hover {
     color: #e88f00;
     text-decoration: underline;
 }
- 
+
+div.contents,
+div.contents.topic {
+    background: #E0F3E0;
+    border: 1px solid #D0E4D0;
+}
+
 div.related {
     line-height: 30px;
     color: #fff;
