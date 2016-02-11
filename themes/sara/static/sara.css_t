@@ -213,8 +213,8 @@ div.body h6 {
     padding: 5px 0;
 }
 
-div.body h1 { border-top: 20px solid white; margin-top: 0; font-size: 350%; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
-div.body h2 { font-size: 250%; background-color: #ffffff; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
+div.body h1 { border-top: 20px solid white; margin-top: 0; font-size: 300%; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
+div.body h2 { font-size: 220%; background-color: #ffffff; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
 div.body h3 { font-size: 150%; background-color: #ffffff; }
 div.body h4 { font-size: 120%; background-color: #ffffff; }
 div.body h5 { font-size: 110%; background-color: #ffffff; }
