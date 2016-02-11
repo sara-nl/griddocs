@@ -215,7 +215,7 @@ div.body h6 {
 
 div.body h1 { font-size: 300%; margin-left: -40px; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; margin-top: 20; }
 div.body h2 { font-size: 220%; margin-left: -40px; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
-div.body h3 { font-size: 150%; margin-left: -40px; }
+div.body h3 { font-size: 150%; margin-left: -30px; }
 div.body h4 { font-size: 120%; margin-left: -20px; }
 div.body h5 { font-size: 110%; margin-left: 0px; }
 div.body h6 { font-size: 100%; margin-left: 0px; }
