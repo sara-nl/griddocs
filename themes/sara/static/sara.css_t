@@ -244,11 +244,8 @@ div.highlight{
 }
 
 div.note {
-    border: 2px solid #7a9eec;
-    border-right-style: none;
-    border-left-style: none;
-    padding: 10px 20px 10px 60px;
-    background: #e1ecfe url(dialog-note.png) no-repeat 10px 8px;
+    border: 1px solid #79e;
+    background: #def url(dialog-note.png) no-repeat 12px 10px;
 }
  
 div.seealso {
@@ -260,13 +257,10 @@ div.seealso {
 }
 
 div.warning {
-    background: #fbe3e4 url(dialog-warning.png) no-repeat 10px 8px;
-    border: 2px solid #fbc2c4;
-    border-right-style: none;
-    border-left-style: none;
-    padding: 10px 20px 10px 60px;
+    border: 1px solid #fbc2c4;
+    background: #fbe3e4 url(dialog-warning.png) no-repeat 12px 10px;
 }
- 
+
 p.admonition-title {
     display: none;
 }
