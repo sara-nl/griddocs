@@ -14,17 +14,17 @@ This section explains concepts and operations regarding the grid authentication 
 Introduction: delegation of authentication
 ==========================================
 
-Grid is, by its very nature, decentralized. This means that users must
-authenticate themself to grid services they want to use. This is accomplished 
+Grid, by its very nature, is decentralized. This means that users must
+authenticate themself to the grid services they want to use. This is accomplished 
 by means of a personal certificate and accompanying private key that 
-every grid user must have. The combinbation of an user certificate and private key
-uniquely identifies an user, and as such, you should **never share
-your private key** with anyone else, or with any service. At the same time,
-however, your jobs will typically run on systems you may not trust, but
-you are required to identify yourself with those systems to be able to use them.
+every grid user must have. The combinbation of a certificate and private key
+uniquely identifies an user. Therefore, you should **never share
+your private key** with anyone else or with any service. At the same time,
+however, your jobs will typically run on systems you may not trust. However,
+to be able use those systems you mustidentify yourself with those systems.
 This is where *delegation* comes in: identifying yourself with a system you don't trust
-by creating a new private key and a certificate pair, called a proxy, with a time 
-limited validity. This chapter describes how you can delegate your credentials.
+by creating a new certificat/private key pair, called a proxy, with a limited 
+time validity. This chapter describes how you can delegate your credentials.
 
 The easiest is to use a *grid session*, which does everything for you in
 one go.
@@ -36,7 +36,7 @@ one go.
 Starting a grid session
 =======================
 
-The easiest way to start a session on the grid is to use the ``startGridSession <VO Name>`` command (see :ref:`example <startgridsession>`). 
+The easiest way to start a session on the grid is to use the ``startGridSession <VO Name>`` command (see :ref:`example <startgridsession>`) on a user interface (UI) machine.
 
 .. sidebar:: More about creating proxies?
 
@@ -44,11 +44,11 @@ The easiest way to start a session on the grid is to use the ``startGridSession 
 
 This command:
 
-* generates a ``local proxy`` of your certificate, 
-* uploads this proxy to ``Myproxy server``
+* generates a ``local proxy`` of your certificate and private key, 
+* uploads this proxy to the ``Myproxy server``
 * delegates this proxy to the WMS with your user name as the ``delegation ID`` (DID). 
 
-Your jobs will now be able to run for week. The WMS, responsible for
+Your jobs will now be able to run for week. The WMS, who is responsible for
 the scheduling of your job, will renew the proxy certificate of running
 jobs *every 12 hours* automatically, for one week. This means that your
 jobs must finish within a week from starting the grid session. However,
@@ -56,17 +56,17 @@ running the command again gives your jobs more time.
 
 .. note:: Every time you submit the ``startGridSession`` command it renews your grid session for an additional a week.
 
-Instead of ``startGridSession``, you can run separately the following three commands with the same results:
+Instead of ``startGridSession``, you can run the following three commands separately with the same results:
 
 .. code-block:: bash
 
-	# 1. Using VOMS Proxies: creates a proxy with additional VOMS extensions that enables you to access the Grid for *12 hours*
+	# 1. VOMS server: create a voms proxy with voms extensions that enables you to access the Grid for *12 hours*.
 	voms-proxy-init --voms lsgrid  #replace lsgrid with your VO
 	
-	# 2. Using the MyProxy Server: stores a *week* long proxy certificate in the Myproxy server; useful for jobs that are running for more than 12 hours
+	# 2. MyProxy server: store a *week* long proxy certificate in the Myproxy server; useful for jobs that are running for more than 12 hours.
 	myproxy-init -d -n 
 	
-	# 3. Credential delegation: delegates your credentials to the WMS
+	# 3. WMS: delegate your credentials to the WMS
 	glite-wms-job-delegate-proxy -d $USER
 
 The next section explains the startGridSession operations step-by-step. See also ``startGridSession -h``.
