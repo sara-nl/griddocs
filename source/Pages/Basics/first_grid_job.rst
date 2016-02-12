@@ -49,19 +49,19 @@ This section will show you how to create a valid proxy:
 
 * Login to your UI account:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	ssh homer@ui.grid.sara.nl # replace "homer" with your username
 
 * Create a proxy with the following command, run on the UI the following command and provide your grid certificate password when prompted:
 
-.. code-block:: bash
+  .. code-block:: bash
  
 	startGridSession lsgrid  #replace lsgrid with your VO
 
-You should see a similar output displayed in your terminal:
+  You should see a similar output displayed in your terminal:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	# Now starting...
 	# Please enter your GRID password:
