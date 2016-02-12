@@ -93,7 +93,7 @@ b) Extract your certificate, run on the UI:
 .. code-block:: bash
 
     cd $HOME/.globus 
-    openssl pkcs12 -in browsercert.p12 -out usercert.pem -nokeys
+    openssl pkcs12 -in browsercert.p12 -out usercert.pem -nokeys -clcerts
 
 
 * Set the proper permissions to your certificate files:
