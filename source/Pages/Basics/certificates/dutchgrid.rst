@@ -24,19 +24,19 @@ Request a *DutchGrid* certificate
 
 * Login to your :ref:`UI account <get-ui-account>` with X forward enabled, e.g.: 
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    ssh -X homer@ui.grid.sara.nl # replace "homer" with your username!    
-    
+    ssh -X homer@ui.grid.sara.nl # replace "homer" with your username!
+
 * Download the the jGridstart tool:
 
-.. code-block:: bash
- 
-    $ wget http://ca.dutchgrid.nl/start/jgridstart-wrapper-1.16.jar
-    
-* Run the wizard: 
+  .. code-block:: bash
 
-.. code-block:: bash
+    $ wget http://ca.dutchgrid.nl/start/jgridstart-wrapper-1.16.jar
+
+* Run the wizard:
+
+  .. code-block:: bash
 
     $ java -jar jgridstart-wrapper-1.16.jar
 
@@ -63,20 +63,20 @@ Retrieve your *DutchGrid* certificate
 =====================================
 
 Once your request is approved, you will receive an email titled *"DutchGrid CA certificate ..."*. Now you need to retrieve the new certificate:
- 
+
 * Login to your :ref:`UI account <get-ui-account>` with X forward enabled, e.g.: 
 
-.. code-block:: bash
+  .. code-block:: bash
 
     ssh -X homer@ui.grid.sara.nl # replace "homer" with your username!   
 
 
 * Run the wizard again: 
 
-.. code-block:: bash
+  .. code-block:: bash
 
     $ java -jar jgridstart-wrapper-1.16.jar
-    
+
 Then a window pops up similar to the following:
 
 .. image:: /Images/dutchgrid_retrieve_cert.png
@@ -101,13 +101,13 @@ If you followed the steps above properly, then your *DutchGrid* certificate and 
 
 * Login to your :ref:`UI account <get-ui-account>`: 
 
-.. code-block:: bash
+  .. code-block:: bash
 
     ssh homer@ui.grid.sara.nl # replace "homer" with your username!  
 
 * Set the proper permissions to your certificate files:
 
-.. code-block:: bash
+  .. code-block:: bash
 
     cd $HOME/.globus
     chmod 644 usercert.pem
@@ -117,7 +117,7 @@ Note that the private key file should be **read-only** and only readable to you.
 
 * Verify the correct permissions:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	cd $HOME/.globus
 	ls -l
@@ -136,7 +136,7 @@ In order to apply for a :ref:`VO membership <join-vo>` you will have to install 
 
 * Login to your :ref:`UI account <get-ui-account>`: 
 
-.. code-block:: bash
+  .. code-block:: bash
 
     ssh homer@ui.grid.sara.nl # replace "homer" with your username!  
     cd $HOME/.globus
@@ -149,7 +149,7 @@ Convert PEM to pkcs12
 
 * To convert a PEM file to the pkcs12 format, run on the UI:
 
-.. code-block:: bash
+  .. code-block:: bash
 
     openssl pkcs12 -export -inkey userkey.pem -in usercert.pem -out browsercert.p12
 
@@ -184,11 +184,6 @@ If you receive an SSL authentication error, then try repeating the steps careful
 
     :ref:`cert-subject`
 
-..
-
-..
-
-..
 
 .. Links:
 
