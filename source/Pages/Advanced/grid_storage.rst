@@ -5,7 +5,7 @@
 Grid Storage
 ************
 
-In this page we will talk about the Grid storage facilities, the tools to interact with it and the method to process data that is stored on tape (Staging):
+In this page we will talk about the Grid storage facilities, the tools to interact with it and the method to handle data that is stored on tape.
 
 .. contents:: 
     :depth: 4
@@ -28,8 +28,13 @@ To use the Grid storage you must already have:
 * :ref:`A personal grid certificate <get-grid-certificate>`
 * :ref:`A VO membership <join-vo>`
 
-In general we do not support direct interaction with the Grid storage. However,
-dCache and DPM support srm and gridftp interfaces, which offer a lot of unix-like commands, like listing, copying, deleting files and so on.
+You can access the Grid storage with grid :ref:`storage clients`, through interfaces that speak protocols like SRM, gridftp, GSIdCap or webdav. With these storage clients you can:
+
+* list directories and files
+* read (download) files
+* write (upload) files
+* delete files or directories
+* :ref:`stage` files (copy them from tape to disk for faster reading)
 
 
 .. _storage-types:
