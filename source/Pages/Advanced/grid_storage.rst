@@ -28,7 +28,7 @@ To use the Grid storage you must already have:
 * :ref:`A personal grid certificate <get-grid-certificate>`
 * :ref:`A VO membership <join-vo>`
 
-You can access the Grid storage with grid :ref:`storage clients`, through interfaces that speak protocols like SRM, gridftp, GSIdCap or webdav. With these storage clients you can:
+You can access the Grid storage with grid :ref:`storage-clients`, through interfaces that speak protocols like SRM, gridftp, GSIdCap or webdav. With these storage clients you can:
 
 * list directories and files
 * read (download) files
