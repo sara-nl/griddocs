@@ -201,7 +201,7 @@ In this section we will show the common commands to use the various storage clie
   +----------------------+------+---------------+---------------+--------+-----------+-------+-------------------+
 
 .. [1] Examples of tape control: staging a file from tape to disk, or get its locality (tape or disk).
-.. [2] SRM commands use the SRM protocol for metadata level operations and switches to other protocols like gridftp for file transfers.
+.. [2] SRM and LCG commands use the SRM protocol for metadata level operations and switch to other protocols like GridFTP for file transfers.
 
 .. toctree::
    :hidden:
