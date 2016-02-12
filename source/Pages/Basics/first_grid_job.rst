@@ -159,7 +159,7 @@ You should have your simple.jdl file ready in your UI up to this point. When you
 
 * Submit the simple job by typing in your UI terminal this command:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	glite-wms-job-submit -d $USER -o jobIds simple.jdl
 	
@@ -201,13 +201,13 @@ To check the current job status from the command line, apply the following comma
 
 * After submitting the job, type:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	glite-wms-job-status https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
 
 * Alternatively, if you have saved your jobIds into a file you can use the '-i' option and the filename as argument:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	glite-wms-job-status -i jobIds
 
@@ -225,13 +225,13 @@ Cancel job
 
 * If you realize that you need to cancel a submitted job, use the following command:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	glite-wms-job-cancel https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
 
 * Alternatively, you can use the jobIDs file:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	glite-wms-job-cancel -i jobIds
 
@@ -252,13 +252,13 @@ OutputSandbox can be downloaded for approx. one week after the job finishes.
 
 * To get the output, type:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	glite-wms-job-output https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
 	
 * Alternatively, you can use the jobIDs file:
 	
-.. code-block:: bash
+  .. code-block:: bash
 
 	glite-wms-job-output --dir . -i jobIds
 
@@ -277,7 +277,7 @@ Check job output
 
 * To check your job output, browse into the downloaded output directory. This includes the "simple.out", "simple.err" files specified in the OutputSandbox:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	ls -l /home/homer/homer_JIVYfkMxtnRFWweGsx0XAA/
 
@@ -300,7 +300,7 @@ You interact with the Grid via the UI machine ui.grid.sara.nl. You describe each
 This is a short overview of the commands needed to handle simple jobs: 
 
 +---------------------+--------------------------------------------------------+
-| startGridSession    |  ``startGridSession lsgrid``                           |
+| startGridSession    | ``startGridSession lsgrid``                            |
 +---------------------+--------------------------------------------------------+
 | submit job          | ``glite-wms-job-submit -d $USER -o jobIds simple.jdl`` |	    
 +---------------------+--------------------------------------------------------+
