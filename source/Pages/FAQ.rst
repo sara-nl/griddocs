@@ -143,8 +143,8 @@ What are the correct permissions for my certificate files?
 	cd $HOME/.globus
 	ls -l
 	
-	# -rw -r --r --    1 homer    homer            4499  May 10 13:47  usercert.pem
- 	# -r --------      1 homer    homer             963  May 10 13:43  userkey.pem
+	# -rw-r--r--      1 homer    homer            4499  May 10 13:47  usercert.pem
+ 	# -r--------      1 homer    homer             963  May 10 13:43  userkey.pem
  	
 Note that the private key file should be **read-only** and only readable to you.
 
