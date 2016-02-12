@@ -4,7 +4,7 @@
 Grid Authentication
 *******************
 
-This section explains concepts and operations regarding the grid authentication mechanisms:
+This section explains the concepts and operations regarding grid authentication mechanisms:
 
 .. contents:: 
     :depth: 4
@@ -21,12 +21,12 @@ every grid user must have. The combinbation of a certificate and private key
 uniquely identifies an user. Therefore, you should **never share
 your private key** with anyone else or with any service. At the same time,
 however, your jobs will typically run on systems you may not trust. However,
-to be able use those systems you mustidentify yourself with those systems.
+to be able to use those systems you must identify yourself with those systems.
 This is where *delegation* comes in: identifying yourself with a system you don't trust
-by creating a new certificat/private key pair, called a proxy, with a limited 
-time validity. This chapter describes how you can delegate your credentials.
+by creating a new certificate/private key pair, called a proxy, with a limited 
+validity. This chapter describes how you can delegate your credentials.
 
-The easiest is to use a *grid session*, which does everything for you in
+The easiest way is to use a *grid session*, which does everything for you in
 one go.
 
 
@@ -36,7 +36,7 @@ one go.
 Starting a grid session
 =======================
 
-The easiest way to start a session on the grid is to use the ``startGridSession <VO Name>`` command (see :ref:`example <startgridsession>`) on a user interface (UI) machine.
+The easiest way to start a session on the grid is to use the ``startGridSession <VO Name>`` command (see also :ref:`here <startgridsession>`) on a user interface (UI) machine.
 
 .. sidebar:: More about creating proxies?
 
@@ -45,16 +45,16 @@ The easiest way to start a session on the grid is to use the ``startGridSession 
 The ``startGridSession`` command:
 
 * generates a ``local proxy`` of your certificate and private key;
-* delegates the proxy to the ``Myproxy server``;
-* delegates this proxy WMS with your user name as the ``delegation ID`` (DID). 
+* delegates this local proxy to the ``Myproxy server``;
+* delegates this local proxy to the WMS with your user name as the ``delegation ID`` (DID). 
 
 Your jobs will now be able to run for week. The WMS, who is responsible for
-the scheduling of your job, will renew the proxy certificate of running
+scheduling your jobs, will renew the proxy certificate of running
 jobs *every 12 hours* automatically, for one week. This means that your
-jobs must finish within a week from starting the grid session. However,
-running the command again gives your jobs more time.
+jobs must finish within a week from starting the grid session . However,
+running the command again will extend your jobs with a week of run time.
 
-.. note:: Every time you submit the ``startGridSession`` command it renews your grid session for an additional a week.
+.. note:: Every time you submit the ``startGridSession`` command it renews your grid session for an additional week.
 
 Instead of ``startGridSession``, you can run the following three commands separately with the same results:
 
@@ -63,10 +63,11 @@ Instead of ``startGridSession``, you can run the following three commands separa
 	# 1. VOMS server: create a voms proxy with voms extensions that enables you to access the Grid for *12 hours*.
 	$ voms-proxy-init --voms lsgrid  #replace lsgrid with your VO
 	
-	# 2. MyProxy server: store a *week* long proxy certificate in the Myproxy server; useful for jobs that are running for more than 12 hours.
+	# 2. MyProxy server: store a *week* long proxy certificate in the Myproxy server; useful for jobs that are 
+	# running for more than 12 hours.
 	$ myproxy-init -d -n 
 	
-	# 3. WMS: delegate your credentials to the WMS
+	# 3. WMS: delegate your credentials to the WMS.
 	$ glite-wms-job-delegate-proxy -d $USER
 
 The next section explains the startGridSession operations step-by-step. See also ``startGridSession -h``.
@@ -77,12 +78,14 @@ The next section explains the startGridSession operations step-by-step. See also
 Using VOMS Proxies
 ==================
 
-In order to use Grid facilities, you have to create a proxy. A proxy is a
+In order to use the Grid facilities, you have to create a proxy. A proxy is a
 short-lived certificate/private key combination which is used to
 perform actions on the Grid on your behalf without using passwords.  You
-can read more in this `paper <http://toolkit.globus.org/alliance/publications/papers/pki04-welch-proxy-cert-final.pdf>`_ from Globus Alliance Members.
-Services that have been provided with a copy of your proxy can act on your behalf. This proxy
-is a file owned by you and placed in the ``/tmp`` directory of the UI. You only deal
+can read more in this `paper <http://toolkit.globus.org/alliance/publications/papers/pki04-welch-proxy-cert-final.pdf>`_ from Globus Alliance Members. 
+Proxies contain both a certificate and private key and, therefore, should never leave the system. Instead, proxies are
+delegated to other systems: a new proxy is created on a remote system using the local proxy as authentication.
+Services that have been provided with a delegation of your proxy can act on your behalf. The proxy
+file on the UI is owned by you and placed in the ``/tmp`` directory. You only deal
 with this file directly in exceptional cases. 
 
 Creating a VOMS proxy
@@ -90,7 +93,7 @@ Creating a VOMS proxy
 
 Make sure you have installed your certificate and private on the grid user interface that you are working on. 
 They should be place in the ``.globus`` directory under your home directory and should be named ``usercert.pem``
-and `userkey.pem``. They must have the following ownerships and permissions::
+and ``userkey.pem``. They must have the following ownerships and permissions::
 	
 	$ ls -l $HOME/.globus/usercert.pem
 	-rw-r--r-- 1 homer homer 1956 Nov 16 12:20 /home/homer/.globus/usercert.pem
@@ -98,9 +101,9 @@ and `userkey.pem``. They must have the following ownerships and permissions::
 	$ ls -l $HOME/.globus/userkey.pem
 	-r-------- 1 homer homer 1956 Nov 16 12:20 /home/homer/.globus/usercert.pem
 	
-where ``homer`` should be replace with your username.
+where ``homer`` should be replaced with your username.
 
-* Now issue the following command to create a *local* proxy. The pass phrase is the grid certificate password::
+* Now issue the following command to create a *local* proxy. The pass phrase you are asked for, is your grid certificate password::
 
     $ voms-proxy-init --voms lsgrid
 
@@ -112,7 +115,7 @@ You will see the following output in your terminal::
 	Created proxy in /tmp/x509up_u39111.
 	Your proxy is valid until Thu Jan 05 02:07:29 CET 2016
 
-This proxy is your "username" for the Grid. The last line in the example shows the expiration time of the proxy. 
+This proxy is your "username" for the grid. The last line in the example shows the expiration time of the proxy. 
 
 Non standard location
 `````````````````````
@@ -148,15 +151,16 @@ Here is an example::
 	timeleft  : 11:48:24
     
 You can see that a proxy certificate has a limited lifetime and is stored
-in the ``/tmp`` directory. It also has attributes which mention the VO
-information. A grid service who has been provided with a copy of your proxy, 
-will contact the VOMS service for authorisation information and subsequently
+in the ``/tmp`` directory. VO extension information is also shown and
+is used to verify if you are indeed a member of this VO and group:
+A grid service who has been provided with a delegation of your proxy 
+can contact the VOMS service for membership information and subsequently
 grant or deny you access.
 
 .. note:: In the :ref:`next step <myproxy-server>`, you will delegate your proxy
     certificate to the proxy server and there it will be valid by default for
-    a week. So it will be possible that long running jobs and jobs that
-    started running only after a few days can continue to run. However, the
+    a week. So it will be possible for long running jobs and jobs that
+    started running only after a few days to continue to run. However, the
     proxy certificate that you use locally is only valid for 12 hours. So
     remember that after 12 hours you have to create a new proxy certificate
     to interact with the Grid (and your long running jobs).
@@ -168,7 +172,7 @@ Using the MyProxy Server
 ========================
 
 The following command stores a proxy certificate in the proxy server
-where it will issue new proxy certificates on your behalfcfor a week.
+where it will issue new proxy certificates on your behalf for a week.
 This is necessary for jobs that need more than 12 hours to run.
 
 * Issue this command on the UI::
