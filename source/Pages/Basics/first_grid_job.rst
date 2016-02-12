@@ -134,7 +134,7 @@ Alternatively, use your delegation ID:
 
 	glite-wms-job-list-match -d homer simple.jdl # replace homer with your delegation id, in this case your login name 
 	
-.. note:: The '-a' option should not be used frequently. It creates a proxy of your certificate 'on-the-fly' when the job is submitted; therefore '-a' is quite inefficient when submitting hundreds of jobs.
+.. note:: The ``-a`` option should not be used frequently. It creates a proxy of your certificate 'on-the-fly' when the job is submitted; therefore ``-a`` is quite inefficient when submitting hundreds of jobs.
 
 Your job is now ready. Continue to the next step to submit it to the Grid!
 
@@ -176,10 +176,10 @@ You should have your simple.jdl file ready in your UI up to this point. When you
 
 Note the use of ``-d $USER`` to tell your job that it should use your delegated proxy certificate.	
 	
-The option '-o' allows you to specify a file (in this case ``jobIDs``) to store the unique job identifier:
+The option ``-o`` allows you to specify a file (in this case ``jobIDs``) to store the unique job identifier:
 
 * You can use this URL identifier to monitor your job from the command line or your browser and to get the job output.
-* Note that omitting the -o option means that the jobID is not saved in a file. When you do not save this id you will effectively loose the output of your job!
+* Note that omitting the ``-o`` option means that the jobID is not saved in a file. When you do not save this id you will effectively loose the output of your job!
 
 The jobID string looks like this:
 
@@ -205,7 +205,7 @@ To check the current job status from the command line, apply the following comma
 
 	glite-wms-job-status https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
 
-* Alternatively, if you have saved your jobIds into a file you can use the '-i' option and the filename as argument:
+* Alternatively, if you have saved your jobIds into a file you can use the ``-i`` option and the filename as argument:
 
   .. code-block:: bash
 
@@ -275,7 +275,7 @@ again.
 Check job output
 ================
 
-* To check your job output, browse into the downloaded output directory. This includes the "simple.out", "simple.err" files specified in the OutputSandbox:
+* To check your job output, browse into the downloaded output directory. This includes the ``simple.out``, ``simple.err`` files specified in the OutputSandbox:
 
   .. code-block:: bash
 
@@ -316,11 +316,6 @@ This is a short overview of the commands needed to handle simple jobs:
 
 	Done with the :ref:`basics`, but not sure how to proceed? We can help! Contact us at helpdesk@surfsara.nl.
 
-..
-
-..
-
-..
 
 .. Links:
 
