@@ -103,7 +103,7 @@ To submit a Grid job you must describe this in a plain text file, called JDL. Op
 * Login to your User Interface. 
 * Create a file with the following content describing the job requirements. Save it as ``simple.jdl``: 
 
-.. code-block:: bash
+  .. code-block:: bash
 	:linenos:
 	
 	Type = "Job";
