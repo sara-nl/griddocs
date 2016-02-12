@@ -243,6 +243,8 @@ The :ref:`dCache` storage at SURFsara consists of magnetic tape storage and hard
 Staging a single file
 =====================
 
+.. note:: For all staging operations you need to have a valid proxy, see :ref:`startgridsession`. 
+
 Here is an example of how to stage a single file:
 
 .. code-block:: bash
@@ -267,8 +269,6 @@ Staging groups of files
 =======================
 
 The example below shows how to stage a list of files with known SURLs.
-
-.. note:: To run the example below you need to have a valid proxy, see :ref:`startgridsession`. 
 
 * Copy and untar the tarball :download:`staging scripts </Scripts/staging.tar>` to your UI directory.
 
