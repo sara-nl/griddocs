@@ -5,10 +5,8 @@
 Grid User Interface machine
 ***************************
 
-This page describes the specifications for Grid UI user interface machine:
-
-The Grid UI is a virtual machine. Its specs are give below. The specs of the host machine (on which the virtual machine rus)
-are also give.
+The Grid User Interface (UI) machine is a virtual machine. Its specifications are given below. 
+The hardware specifications of the host machine are also included.
 
 Grid UI machine:
 
@@ -26,4 +24,4 @@ Host machine:
 * RAM: 48 GB
 * Network: 10 Gb/s
 
-If you have any questions concerning these technical specifications, please contact us at helpdesk@surfsara.nl
+If you have any questions concerning these technical specifications, please contact us at helpdesk@surfsara.nl.
