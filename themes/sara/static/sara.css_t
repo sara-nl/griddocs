@@ -285,6 +285,13 @@ code.docutils.literal {
     padding: 0.1em 0.5em 0em 0.5em;
 }
 
+/* Inline code text, when inside a note or warning box */
+div.admonition code.docutils.literal {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
 tt {
     background-color: transparent;
     color: #222;
