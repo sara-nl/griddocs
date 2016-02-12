@@ -277,6 +277,14 @@ pre {
     font-size: 1.1em;
 }
 
+/* Inline code text */
+code.docutils.literal {
+    background-color: #E0F4E0;
+    border: 1px solid #D0E4D0;
+    font-size: 1.2em;
+    padding: 0.1em 0.5em 0em 0.5em;
+}
+
 tt {
     background-color: transparent;
     color: #222;
@@ -349,7 +357,6 @@ a:hover em.std-term {
 }
 
 .download {
-    font-family: "Nobile", sans-serif;
     font-weight: normal;
     font-style: normal;
 }
