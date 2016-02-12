@@ -347,6 +347,11 @@ table.docutils.footnote td {
     border: 0  !important;
 }
 
+/* If line block is inside a cell, remove weird empty line below it. */
+table.docutils div.line-block {
+    margin-bottom: 0;
+}
+
 table.footnote {
     border: 0  !important;
     margin-bottom: 0px  !important;
