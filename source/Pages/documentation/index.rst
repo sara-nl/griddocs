@@ -33,7 +33,7 @@ You are welcome to add and improve the documentation directly to the repository.
 4. Create a `pull request <https://help.github.com/articles/proposing-changes-to-a-project-with-pull-requests/>`_ to inform us of your changes
 5. After we’ve reviewed and accepted your work, we will merge your commits and the documentation will be updated automatically
 
-All documentation is written in Sphinx *restructed text*. Behind the scenes we use ReadTheDocs.org to automatically publish the documentation.s Below are some useful links to documentation on these techniques and systems:
+All documentation is written in Sphinx *restructed text*. Behind the scenes we use ReadTheDocs.org to automatically publish the documentation. Below are some useful links to documentation on these techniques and systems:
 
  * A simple Sphinx cheatsheet: :ref:`cheatsheet`
  * `GitHub’s git cheat sheet <https://help.github.com/articles/git-cheatsheet/>`_
