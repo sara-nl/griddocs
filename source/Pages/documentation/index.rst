@@ -38,7 +38,7 @@ All documentation is written in Sphinx *restructed text*. Behind the scenes we u
  * A simple Sphinx cheatsheet: :ref:`cheatsheet`
  * `GitHub’s git cheat sheet <https://help.github.com/articles/git-cheatsheet/>`_
 
-However, don’t worry to much about all this new information. You’ll see that Sphinx is quit intuitive. Besides, we will check your changes too. If you find it all too overwhelming anyway, or if you just don’t feel like going through all this hussle, you are always free to just send us an e-mail with your remarks and we will change the documentation ourselves: helpdesk@surfsara.nl
+However, don’t worry to much about all this new information. You’ll see that Sphinx is quite intuitive. Besides, we will check your changes too. If you find it all too overwhelming anyway, or if you just don’t feel like going through all this hussle, you are always free to just send us an e-mail with your remarks and we will change the documentation ourselves: helpdesk@surfsara.nl
 
 .. _overview:
 
