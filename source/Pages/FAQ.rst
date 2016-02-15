@@ -131,14 +131,14 @@ What are the correct permissions for my certificate files?
 
 * Set the proper permissions to your certificate files:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	chmod 644 usercert.pem
 	chmod 400 userkey.pem
 
 * Verify the correct permissions:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	cd $HOME/.globus
 	ls -l
@@ -173,7 +173,9 @@ Get non-vomsified proxy locally
     
 It will first ask your grid certificate password and then prompt you to enter a MyProxy passphrase twice. You will use the latter passphrase to download your proxy. 
 
-Here is an example of the displayed output::
+Here is an example of the displayed output:
+
+.. code-block:: bash
     
     # Your identity: /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
     # Enter GRID pass phrase for this identity:
@@ -184,12 +186,16 @@ Here is an example of the displayed output::
     # Verifying - Enter MyProxy pass phrase:
     # A proxy valid for 168 hours (7.0 days) for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson now exists on px.grid.sara.nl.
 
-* Now use the MyProxy pass phrase to get this proxy locally on the UI::
+* Now use the MyProxy pass phrase to get this proxy locally on the UI:
+
+  .. code-block:: bash
 
     myproxy-get-delegation -d
 
-Here is an example of the displayed output::
-    
+Here is an example of the displayed output:
+
+.. code-block:: bash
+
     # Enter MyProxy pass phrase:
     # A credential has been received for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson in /tmp/x509up_u39111. 
     
@@ -227,14 +233,18 @@ Does my key match the certificate?
 
 Using the modulus you can  see whether a key and a certificate match. The modulus is a short message which can be used to identify a private key and the key which was signed with the certificate. If they match, the certificate signs that private key. If not, you may have mixed up different key or certificate files.
 
-To find the modulus of your key, use::
+To find the modulus of your key, use:
 
-  openssl rsa -in userkey.pem -noout -modulus
+.. code-block:: bash
+
+   openssl rsa -in userkey.pem -noout -modulus
 
 which requires the key which you used to protect your key file.
-To find the modulus of your certificate, use::
+To find the modulus of your certificate, use:
 
-  openssl x509 -in usercert.pem -noout -modulus
+.. code-block:: bash
+
+   openssl x509 -in usercert.pem -noout -modulus
 
 If the moduli of the key file and the certificate file do not match, you
 cannot use that combination to identify yourself.
@@ -245,9 +255,11 @@ cannot use that combination to identify yourself.
 What is the expiry date of my certificate?
 ===========================================
 
-To find out when your certificate is valid, use::
+To find out when your certificate is valid, use:
 
-  openssl x509 -in usercert.pem -noout -dates
+.. code-block:: bash
+
+   openssl x509 -in usercert.pem -noout -dates
 
 This will tell you when your certificate is valid. 
 
@@ -261,9 +273,11 @@ How can I see the subject of my certificate?
 
 The subject of a certificate is the human-readable identification of who the certificate belongs to. It usually contains your name, country, organization and your e-mail address.
 
-To find out who the certificate belongs to, use::
+To find out who the certificate belongs to, use:
 
-  openssl x509 -in usercert.pem -noout -subject
+.. code-block:: bash
+
+   openssl x509 -in usercert.pem -noout -subject
 
 
 .. _available-se:
@@ -273,19 +287,19 @@ How can I find all the available LSG Storage Elements and get their SURLS?
 
 * To find out the available SEs for a certain VO, type:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	lcg-infosites --vo lsgrid ce 
 	
 * To specify a specific SURL (srm URL), use the following syntax:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	srm://gb-se-amc.amc.nl:8446/dpm/amc.nl/home/lsgrid/ # storage element at AMC
 
 * A complete list of the LSG SURLs:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	srm://gb-se-amc.amc.nl:8446/dpm/amc.nl/home/lsgrid/
 	srm://gb-se-ams.els.sara.nl:8446/dpm/els.sara.nl/home/lsgrid
@@ -306,7 +320,7 @@ How can I find all the available LSG Compute Elements and use in my JDL?
 
 * To find out the available CEs for a certain VO, type:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	lcg-infosites --vo lsgrid ce 
 	
@@ -314,7 +328,7 @@ Note here that the Total, Running and Waiting numbers are per queue, and the CPU
 
 * To specify a specific cluster in your JDL, use the following syntax:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	Requirements = (RegExp("rug",other.GlueCEUniqueID)); # this requires the job to land on the "rug" site
 	
@@ -356,12 +370,7 @@ And if you use a file to store your jobs, run:
 .. code-block:: bash
 
 	glite-wms-job-logging-info -v 2 -i jobIds # replace jobIds with your file
-    
-..
-..
-..
-..
-..
+
 
 .. Links:
 .. _`DigiCert portal`: https://digicert.com/sso
