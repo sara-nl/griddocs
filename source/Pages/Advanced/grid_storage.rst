@@ -36,7 +36,7 @@ You can access the Grid storage with grid :ref:`storage-clients`, through interf
 * delete files or directories
 * :ref:`stage` files (copy them from tape to disk for faster reading)
 
-.. [1] It is technically possible to access grid storage without certificate, by using webdav with username/password authentication. We don't recommend this: authentication with username/password is less secure, and webdav is slower than gridftp.
+.. [1] It is technically possible to access the dCache grid storage without certificate, by using webdav with username/password authentication. We don't recommend this: authentication with username/password is less secure, and webdav is slower than gridftp.
 
 
 .. _storage-types:
