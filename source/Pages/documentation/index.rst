@@ -19,7 +19,7 @@ This page explains how you can edit the documentation, how to generate HTML docu
 
 When changes are committed using Git and pushed to the SURFsara GitHub repository, the documentation is automatically rebuild and published by readthedocs.org.
 
-We have some style guidelines to encourage a consistent style: :ref:`doc-style`. But don't worry too much about that: any contribution is welcome.
+We have some :ref:`style guidelines <doc-style>` to encourage a consistent style. But don't worry too much about that: any contribution is welcome.
 
 
 .. _contribute-github:
