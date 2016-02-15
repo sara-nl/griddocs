@@ -176,7 +176,7 @@ The InputSandbox and OutputSandbox attributes in the :ref:`JDL <JDL>` file are t
 
 In this section we will show the common commands to use the various storage clients. 
 
-.. note:: From the many Grid storage clients, we recommend you to use :ref:`uberftp` and :ref:`globus` or :ref:`gfal`. These tools have a clean interface, and their speed is much better on our systems compared with their srm-* equivalents.
+.. note:: From the many Grid storage clients, we recommend you to use the :ref:`uberftp`, :ref:`globus` or :ref:`gfal`. These tools have a clean interface, and their speed is much better on our systems compared with their srm-* equivalents.
 
 .. table:: Storage clients
 
