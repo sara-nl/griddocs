@@ -23,10 +23,10 @@ You can interact with the Grid storage from the UI or from the worker node, with
 * :ref:`Any local LSG cluster <lsg-clusters>`
 * :ref:`The Dutch Grid <dutch-grid>` 
 
-To use the Grid storage you must already have:
+To use the Grid storage you must:
 
-* :ref:`A personal grid certificate <get-grid-certificate>`
-* :ref:`A VO membership <join-vo>`
+* Have :ref:`a personal grid certificate <get-grid-certificate>` [1]_
+* Be member of :ref:`a VO <join-vo>` for which we have allocated storage space.
 
 You can access the Grid storage with grid :ref:`storage-clients`, through interfaces that speak protocols like SRM, gridftp, GSIdCap or webdav. With these storage clients you can:
 
@@ -35,6 +35,8 @@ You can access the Grid storage with grid :ref:`storage-clients`, through interf
 * write (upload) files
 * delete files or directories
 * :ref:`stage` files (copy them from tape to disk for faster reading)
+
+.. [1] It is technically possible to access grid storage over webdav with username/password authentication. 
 
 
 .. _storage-types:
