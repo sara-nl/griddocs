@@ -158,14 +158,15 @@ dCache
 DPM
 ---
 
-* The default ``DPM`` srm port is **8446**::
++------------+--------------------------------------+--------------------------------------+
+| Protocol   | Host(s) and port(s) (examples)       | Remark                               |
++============+======================================+======================================+
+| SRM        | srm://gb-se-lumc.lumc.nl:8446        |                                      |
++------------+--------------------------------------+--------------------------------------+
+| gridftp    | gsiftp://gb-se-lumc.lumc.nl:2811     | Data channel port range: 20000-25000 |
++------------+--------------------------------------+--------------------------------------+
 
-    srm://gb-se-lumc.lumc.nl:8446/...
-  
- 
-* The default ``DPM`` gridftp port is **2811**::
-
-    gsiftp://gb-se-lumc.lumc.nl:2811/...
+For an overview of all life science clusters and their DPM storage elements, see :ref:`lsg-hostnames`
 
 
 .. _storage-clients:
