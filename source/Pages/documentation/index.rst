@@ -25,7 +25,7 @@ When changes are committed using Git and pushed to the SURFsara GitHub repositor
 Contributing through GitHub
 ===========================
 
-You are welcome to add and improve the documentation directly to the repository. For this, you’ll need a GitHub account and a little knowledge on git:
+You are welcome to add and improve the documentation directly to the repository. For this, you’ll need a GitHub account and a little knowledge of git:
 
 1. `Fork <https://help.github.com/articles/fork-a-repo/>`_ our repository
 2. Git pull your fork
