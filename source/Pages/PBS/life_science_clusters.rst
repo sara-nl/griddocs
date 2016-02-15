@@ -83,5 +83,6 @@ Cluster details
 | Wageningen University                | ``gb-ui-wur.els.sara.nl``           | ``gb-se-wur.els.sara.nl``                    |
 +--------------------------------------+-------------------------------------+----------------------------------------------+
 
+To learn how to access the storage elements, see :ref:`grid-storage`
 
 .. vim: set wm=7 :
