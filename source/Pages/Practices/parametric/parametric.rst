@@ -29,7 +29,7 @@ In the example below, the parametric job will create 3 child jobs (see line 4) t
 * Login to your User Interface. 
 * Create a file with the following content describing the job requirements. Save it as ``parametric.jdl``: 
 
-.. code-block:: bash
+  .. code-block:: bash
 	:linenos:
 	
 	JobType = "Parametric";
@@ -46,7 +46,7 @@ In the example below, the parametric job will create 3 child jobs (see line 4) t
 
 * You can submit the parametric job as any grid job:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	glite-wms-job-submit -d $USER -o jobIds parametric.jdl
 	
@@ -54,43 +54,40 @@ In this case, 3 child jobs will be generated. Each job will generate two files: 
 
 * Monitor the job status to see the the parent job URL and the 3 child jobs URLs with their status:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    glite-wms-job-status -i jobIds
+     glite-wms-job-status -i jobIds
 
 
-    ======================= glite-wms-job-status Success =====================
-    BOOKKEEPING INFORMATION:
+     ======================= glite-wms-job-status Success =====================
+     BOOKKEEPING INFORMATION:
+     
+     Status info for the Job : https://wms2.grid.sara.nl:9000/3ii77P1aSSTKue-MkT_y9g
+     Current Status:     Running
+     Submitted:          Sat Jan 4 12:54:56 2016 CET
+     ==========================================================================
     
-    Status info for the Job : https://wms2.grid.sara.nl:9000/3ii77P1aSSTKue-MkT_y9g
-    Current Status:     Running
-    Submitted:          Sat Jan 4 12:54:56 2016 CET
-    ==========================================================================
-    
-    - Nodes information for:
-        Status info for the Job : https://wms2.grid.sara.nl:9000/0OZYR142AXspdm807L6YWA
-        Current Status:     Running
-        Status Reason:      unavailable
-        Destination:        ce.lsg.bcbr.uu.nl:8443/cream-pbs-express
-        Submitted:          Sat Jan 4 12:54:56 2016 CET
-    ==========================================================================
-    
-        Status info for the Job : https://wms2.grid.sara.nl:9000/9uO8Hp6H3qCBAK3abx7G4A
-        Current Status:     Running
-        Status Reason:      unavailable
-        Destination:        gb-ce-amc.amc.nl:8443/cream-pbs-express
-        Submitted:          Sat Jan 4 12:54:56 2016 CET
-    ==========================================================================
-    
-        Status info for the Job : https://wms2.grid.sara.nl:9000/CVYq7F6lqokBvJvsfU4ELw
-        Current Status:     Running
-        Status Reason:      unavailable
-        Destination:        gb-ce-lumc.lumc.nl:8443/cream-pbs-express
-        Submitted:          Sat Jan 4 12:54:56 2016 CET
-    ==========================================================================
+     - Nodes information for:
+         Status info for the Job : https://wms2.grid.sara.nl:9000/0OZYR142AXspdm807L6YWA
+         Current Status:     Running
+         Status Reason:      unavailable
+         Destination:        ce.lsg.bcbr.uu.nl:8443/cream-pbs-express
+         Submitted:          Sat Jan 4 12:54:56 2016 CET
+     ==========================================================================
+     
+         Status info for the Job : https://wms2.grid.sara.nl:9000/9uO8Hp6H3qCBAK3abx7G4A
+         Current Status:     Running
+         Status Reason:      unavailable
+         Destination:        gb-ce-amc.amc.nl:8443/cream-pbs-express
+         Submitted:          Sat Jan 4 12:54:56 2016 CET
+     ==========================================================================
+     
+         Status info for the Job : https://wms2.grid.sara.nl:9000/CVYq7F6lqokBvJvsfU4ELw
+         Current Status:     Running
+         Status Reason:      unavailable
+         Destination:        gb-ce-lumc.lumc.nl:8443/cream-pbs-express
+         Submitted:          Sat Jan 4 12:54:56 2016 CET
+     ==========================================================================
     
 This is just an example. In practice you shouldn't send more than **50** jobs this way (Parameters=50). The parametric jobs is the technology used for submitting the pilot jobs. There is no need to monitor their status or retrieve the job output through the WMS as the :ref:`pilot frameworks <pilot-frameworks>` will take care of this. 	
-
-
-
 
