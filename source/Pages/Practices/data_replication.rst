@@ -19,7 +19,7 @@ In this page we will show an example for running applications on multiple LSG cl
 Problem description
 ===================
 
-The InputSandbox and OutputSandbox attributes in the JDL file are the basic way to move files to and from the User Interface (UI) and the Worker Node (WN). However, large files (from about 100 MB and larger) are involved you should not use these Sandboxes to move data around. Instead you can use the Storage Elements and work with the lfc and lcg commands. These commands, and the storage system in general, are explained in the section :ref:`lcg-lfn-lfc clients <lcg-lfn-lfc>`. 
+The InputSandbox and OutputSandbox attributes in the JDL file are the basic way to move files to and from the User Interface (UI) and the Worker Node (WN). However, if large files (from about 100 MB and larger) are involved you should not use these Sandboxes to move data around. Instead you can use the :ref:`Storage Elements <grid-storage>` and work with the lfc and lcg commands. These commands, and the storage system in general, are explained in the section :ref:`lcg-lfn-lfc clients <lcg-lfn-lfc>`. 
 
 Here we give an example of how to use large input and output files which are needed by a job. We will use replicas to avoid transferring e.g. a database to multiple clusters every time.
 
@@ -41,9 +41,11 @@ These represent respectively:
 
 The presence of the DataRequirements attribute causes the job to run on a Computing Element (CE) which is next to the Storage Element (SE) where the requested file is stored. Note that this attribute doesn't perform the actual copy of the file from the SE to the WN; as we will see, this has to be done by the user.
 
-This is what you have to do: First, register a file on a SE and to the LFC Catalog. We do this by copy and register (lcg-cr)::
+To do this, first register a file on a SE and to the LFC Catalog. We do this by copy and register (lcg-cr):
 
-    lcg-cr --vo lsgrid -d gb-se-ams.els.sara.nl -l lfn:/grid/lsgrid/homer/test.txt file:/home/homer/local_test.txt 
+.. code-block:: bash
+
+    $ lcg-cr --vo lsgrid -d gb-se-ams.els.sara.nl -l lfn:/grid/lsgrid/homer/test.txt file:/home/homer/local_test.txt 
     guid:522350d4-a28a-48aa-939b-d85c9ab5443f
 
 Note that the guid part is what we get as return value from the command. It identifies the file uniquely in the Grid storage. You can save this id for emergencies. The part which starts with lfn: identifies the logical file name of our uploaded file.
@@ -77,11 +79,11 @@ Second, create a JDL file that describes your job. It will contain the LFN of th
         RetryCount = 3;
     ]
 
-This jdl mentions the script scriptInputData.sh (as value of Arguments) which will be submitted to the WMS, and run on a worker node. This script needs an inputfile, and expects an LFN as argument. We will use the file that we copied to an SE earlier. In the DataRequirements section, we mention the LFN of this file as value of InputData. Notice that the DataCatalogType and DataCatalog are also described. You can copy these values.
+This jdl mentions the script ``scriptInputData.sh`` (as value of Arguments) which will be submitted to the WMS, and run on a worker node. This script needs an inputfile, and expects an LFN as argument. We will use the file that we copied to an SE earlier. In the ``DataRequirements`` section, we mention the LFN of this file as value of ``InputData``. Notice that the ``DataCatalogType`` and ``DataCatalog`` are also described. You can copy these values.
 
-Note that this in itself is not enough for the script to use the file. It still needs to be copied to the worker node where the job lands. All that is achieved by this JDL description is that the job will land close to an SE which contains the needed data. The copying is done by the script itself. To actually copy the file associated with this LFN from the SE to the WN, the script uses an lcg-cp command. The script "scriptInputData.sh" is shown below.
+Note that this in itself is not enough for the script to use the file. It still needs to be copied to the worker node where the job lands. All that is achieved by this JDL description is that the job will land close to an SE which contains the needed data. The copying is done by the script itself. To actually copy the file associated with this LFN from the SE to the WN, the script uses an ``lcg-cp`` command. The script ``scriptInputData.sh`` is shown below.
 
-The script gets the file, performs the ls command and shows the content of the file to stdout.
+The script gets the file, performs the ``ls`` command and shows the content of the file to ``stdout``.
 
 .. code-block:: bash
 
@@ -109,7 +111,7 @@ Now the actual submission, status checking, output retrieval and inspection can 
 Moving output data from the job to the SE
 ==========================================
 
-What do you do when you have to move data from a running job on the Worker Node to a Storage Element? The answer is: the job has to do it by copying the data in a script. We give an example. Assume that the following script code is executed by a running job.
+What do you do when you have to move data from a running job on the Worker Node to a Storage Element? The answer is: the job has to do it by having a script copy the data. We give an example. Assume that the following script code is executed by a running job.
 
 .. code-block:: bash
 
@@ -146,9 +148,11 @@ This script is in charge of copying the output of your job. The simplest thing i
     
     # greetings 
     echo "All done correctly (I hope). Bye bye"
-    
-    This could be a starting point for your jdl :
-    
+
+This could be a starting point for your jdl:
+
+.. code-block:: bash
+
     $ cat  JobWritingToSE.jdl
     [
         Executable = "/bin/sh";
@@ -157,13 +161,9 @@ This script is in charge of copying the output of your job. The simplest thing i
         StdOutput = "std.out";
         StdError = "std.err";
 
-    # carry out also the script which registers the file  
+        # carry out also the script which registers the file  
         InputSandbox = {"scriptWhichDoesSomething.sh","registeringfile-script.sh"};
         OutputSandbox = {"std.out","std.err"};
     ]
 
-Alternatively, you can just append the content of registeringfile-script.sh to your main script. 
-
-
-
-
+Alternatively, you can just append the content of ``registeringfile-script.sh`` to your main script. 
