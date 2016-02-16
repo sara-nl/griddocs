@@ -19,7 +19,7 @@ In this page we will show an example for running applications on multiple LSG cl
 Problem description
 ===================
 
-The InputSandbox and OutputSandbox attributes in the JDL file are the basic way to move files to and from the User Interface (UI) and the Worker Node (WN). However, if large files (from about 100 MB and larger) are involved you should not use these Sandboxes to move data around. Instead you can use the :ref:`Storage Elements <grid-storage>` and work with the lfc and lcg commands. These commands, and the storage system in general, are explained in the section :ref:`lcg-lfn-lfc clients <lcg-lfn-lfc>`. 
+The InputSandbox and OutputSandbox attributes in the JDL file are the basic way to move files to and from the User Interface (UI) and the Worker Node (WN). However, if large files (from about 100 MB and larger) are involved you should not use these Sandboxes to move data around. Instead you can use the :ref:`Storage Elements <grid-storage>` and work with the ``lfc`` and ``lcg`` commands. These commands, and the storage system in general, are explained in the section :ref:`lcg-lfn-lfc clients <lcg-lfn-lfc>`. 
 
 Here we give an example of how to use large input and output files which are needed by a job. We will use replicas to avoid transferring e.g. a database to multiple clusters every time.
 
