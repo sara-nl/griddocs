@@ -134,7 +134,7 @@ Tokens can contain plain text or a file, depending on what was stored in the tok
 
 .. code-block:: bash
 	
-	if ($token_object -> is_file) {
+    if ($token_object -> is_file) {
         # token is a file
         ...
     }
@@ -297,7 +297,7 @@ The first script populates a new pool with tokens, each of which contains a numb
 	
     #!/usr/bin/perl
 	
-	use ToposPool;
+    use ToposPool;
     use ToposToken;
     use strict;
     use warnings;
@@ -325,8 +325,8 @@ We used a pool named "input_pool" for storing the data which must be processed. 
 
 
 .. code-block:: bash
-	
-	#!/usr/bin/perl
+
+    #!/usr/bin/perl
     
     use ToposPool;
     use ToposToken;
@@ -341,19 +341,19 @@ We used a pool named "input_pool" for storing the data which must be processed. 
     # lock the token for 3 seconds
     while ( my $token = $input_pool -> next_token(3) ) {
     
-    # get the text contained in the token
-    my $n = $token -> content;
+        # get the text contained in the token
+        my $n = $token -> content;
      
-    # 'process' the input data
-    my $n_squared = $n * $n;
+        # 'process' the input data
+        my $n_squared = $n * $n;
      
-    # store the results
-    my $result = sprintf("The square of %d is %d", $n, $n_squared);
+        # store the results
+        my $result = sprintf("The square of %d is %d", $n, $n_squared);
     
-    $output_pool -> create_token ($result);
+        $output_pool -> create_token ($result);
     
-    # delete the token
-    $token -> delete;
+        # delete the token
+        $token -> delete;
     }
     
     # done
@@ -378,7 +378,7 @@ We create a job submission file which will start the processing on 5 nodes. Repl
 
 .. code-block:: bash
 	
-	# example JDL file for the square computation
+    # example JDL file for the square computation
     Type                         = "Job";
     JobType                      = "Parametric";
     VirtualOrganisation          = "<your VO name>";
@@ -412,11 +412,8 @@ You can submit the job to start the processing. The results are stored back in T
 Each token contains a result, which you can verify by browsing the tokens.
 
 Note that each pilot job will process the available work. This means that you can submit the job multiple times, each time requesting 5 cores. If more cores are available, this speeds up the processing. When all work is done, the jobs simply quit. This is useful for tasks with longer processing. 
- 
- 
-..
 
-..
+
 
 .. Links:
 
