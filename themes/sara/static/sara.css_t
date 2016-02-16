@@ -287,6 +287,7 @@ code.docutils.literal {
 
 /* Inline code text, when inside a note, warning box or table */
 table code.docutils.literal,
+div.sidebar code.docutils.literal,
 div.admonition code.docutils.literal {
     background-color: transparent;
     border: none;
