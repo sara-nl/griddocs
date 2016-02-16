@@ -123,7 +123,7 @@ This proxy is your "username" for the grid. The last line in the example shows t
 
 Non standard location
 `````````````````````
-To store your local proxy in a non standard location, use the `-out` option::
+To store your local proxy in a non standard location, use the `-out` option:
 
 .. code-block:: bash
 
