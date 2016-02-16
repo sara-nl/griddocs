@@ -48,7 +48,7 @@ Function description
 ====================
 
 **newPool**
-  | Returns a new, unused pool name
+  | Returns a new, unused pool name.
   | Usage: ``newPool``
   | Returns the unique new pool name
 
@@ -58,41 +58,41 @@ Function description
   | Returns nothing
 
 **uploadFileAsToken**
-  | Creates a token with the contents of a file
+  | Creates a token with the contents of a file.
   | Usage: ``uploadFileAsToken [POOLNAME] [FILENAME]``
   | Returns the token name
 
 **uploadFilesInDirAsTokens**
-  | Creates tokens for each file in a directory
+  | Creates tokens for each file in a directory.
   | Usage: ``uploadFilesInDirAsTokens [POOLNAME] [DIRNAME]``
   | Returns nothing
 
 **nextToken**
-  | Fetches the next token
+  | Fetches the next token.
   | Usage: ``nextToken [POOLNAME]``
   | Returns the token name (NOT its contents!)
 
 **nextTokenWithLock**
-  | Fetches the next token and puts a lock on it. The lock description is the hostname
+  | Fetches the next token and puts a lock on it. The lock description is the hostname.
   | Usage: ``nextTokenWithLock [POOLNAME] [TIMEOUT]``
   | Returns the token name (NOT its content!) and on the next line the lock name
 
 **getToken**
-  | Fetches the content of a token
+  | Fetches the content of a token.
   | Usage: ``getToken [POOLNAME] [TOKENNAME]``
   | Returns the content of the token
 
 **refreshLock**
-  | Refreshes a lock so it doesn't time out
+  | Refreshes a lock so it doesn't time out.
   | Usage: ``refreshLock [POOLNAME] [LOCKNAME] [TIMEOUT]``
   | Returns nothing
 
 **deleteLock**
-  | Deletes a lock so the associated token becomes available again
+  | Deletes a lock so the associated token becomes available again.
   | Usage: ``deleteLock [POOLNAME] [LOCKNAME]``
   | Returns nothing
 
 **deleteToken**
-  | Deletes a token
+  | Deletes a token.
   | Usage: ``deleteToken [POOLNAME] [TOKENNAME]``
   | Returns nothing
