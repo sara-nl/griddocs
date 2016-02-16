@@ -47,21 +47,16 @@ Where the combination command and arguments is one of:
 Function description
 ====================
 
-**newPool**
-
-Returns a new, unused pool name
-
-Usage: newPool
-
-Returns the unique new pool name
+newPool
+  | Returns a new, unused pool name
+  | Usage: newPool
+  | Returns the unique new pool name
 
 **createTokensFromLinesInFile**
 
-Creates a token for each line in a text file
-
-Usage: createTokensFromLinesInFile [POOLNAME] [FILENAME]
-
-Returns nothing
+  | Creates a token for each line in a text file.
+  | Usage: createTokensFromLinesInFile [POOLNAME] [FILENAME]
+  | Returns nothing
 
 **uploadFileAsToken**
 
