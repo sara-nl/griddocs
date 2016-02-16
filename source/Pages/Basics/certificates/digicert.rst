@@ -9,6 +9,8 @@ This section describes how to obtain and install a Digicert Grid certificate. Th
 .. contents:: 
     :depth: 4
 
+.. note::  If you need help to obtain your Digicert certificate, please have a look to this `User Guide`_  or contact us at helpdesk@surfsara.nl.  
+
 
 ===============================
 Obtain a *Digicert* certificate
@@ -24,8 +26,6 @@ DigiCert CA allows you to get your Grid certificate *instantly* from the GEANT T
 
 .. image:: /Images/digicert_install_cert.png
 	:align: center
-
-.. note::  If you need help to obtain your Digicert certificate, please have a look to this `User Guide`_  or contact us at helpdesk@surfsara.nl.  
 
 Once finished, you will have a Grid certificate automatically stored in your browser.
 
