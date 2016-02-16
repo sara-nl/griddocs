@@ -9,7 +9,6 @@ This section describes how to obtain and install a Digicert Grid certificate. Th
 .. contents:: 
     :depth: 4
 
-Additional information can be found at this SURFnet wiki page: https://wiki.surfnet.nl/display/SCERTS/Request+Grid+Certificates
 
 ===============================
 Obtain a *Digicert* certificate
