@@ -11,7 +11,7 @@ This section summarises all the steps to submit your first job on the grid, chec
 
 .. warning:: You can continue with this guide *only after* you have completed the :ref:`preparations <preparation>` for Grid. If you skipped that, go back to the :ref:`prerequisites` section. Still need help with obtaining or installing your certificate? We can help! Contact us at helpdesk@surfsara.nl.
 	 
-Once you finish with the :ref:`first-grid-job`, you can continue with more :ref:`advanced` topics and also :ref:`best-practices`, the section that contains guidelines for porting real complex simulations on the Grid. 
+Once you finish with the :ref:`first-grid-job`, you can continue with more :ref:`advanced topics <advanced>` and also :ref:`best-practices`, the section that contains guidelines for porting real complex simulations on the Grid. 
 
 
 .. _job-lifecycle:
