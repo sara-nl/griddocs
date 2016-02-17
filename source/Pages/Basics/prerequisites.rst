@@ -22,7 +22,7 @@ The grid is a cooperation of many different clusters and research organisations,
 
 		.. seealso:: Checkout our mooc video :ref:`mooc-grid-prerequisites`.
 
-Your digital identity starts with a private key. **Only you** are allowed to know the contents of this key. Next, you need a ``Grid Certificate``, which is issued by a ``Certificate Authority`` (CA). The grid certificate contains your name and your organisation, and it says that the person who owns the private key is really the person mentioned, and that this is certified by the Certificate Authority.
+Your digital identity starts with a private key. **Only you** are allowed to know the contents of this key. Next, you need a ``Grid certificate``, which is issued by a ``Certificate Authority`` (CA). The grid certificate contains your name and your organisation, and it says that the person who owns the private key is really the person mentioned, and that this is certified by the Certificate Authority.
 
 Now this is your identity. Big international cooperations do not want to deal with every user individually. Instead, users become part of ``Virtual Organisations`` (VOs). Individual clusters give access and compute time to certain VOs, and if you are a member of a VO, you can run your jobs on that cluster.
 
@@ -67,7 +67,7 @@ Please note that the UI is simply a Linux machine and working on it requires som
 Get a Grid Certificate
 ======================
 
-*In this section we will describe how to get a personal Grid Certificate.*
+*In this section we will describe how to get a personal Grid certificate.*
 
 Grid certificates are supplied by a Certificate Authority (CA). Users affiliated with Dutch institutes can request a digital certificate either by ``Digicert CA`` or ``DutchGrid CA``.
 
