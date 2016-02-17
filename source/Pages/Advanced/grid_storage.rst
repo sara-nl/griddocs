@@ -350,6 +350,19 @@ This command will initiate unpinning of file "zap.tar" (even if you submitted mu
 .. vim: set wm=7 :
 
 
+.. _SRM-interaction-diagram:
+
+===============================
+SRM interaction example diagram
+===============================
+
+Here is a sequence diagram that illustrates how the SRM commands interact with the grid storage.
+
+.. image:: /Images/Using_SRM.png
+	:align: left
+
+As you can see from this diagram, there can be a lot of overhead per file. For this reason, grid storage performs best with large files. We recommend to store files of several megabytes to gigabytes. Some users have files of more than 2 terabytes, but that may be impractical on other systems with limited space like worker nodes.
+
 ===============================
 Importing large amounts of data
 ===============================
