@@ -20,7 +20,7 @@ The grid is a cooperation of many different clusters and research organisations,
  
 .. sidebar:: More about Grid prerequisites?
 
-		.. seealso:: Checkout our mooc video :ref:`mooc-grid-prerequisites`.
+		.. seealso:: Check out our mooc video :ref:`mooc-grid-prerequisites`.
 
 Your digital identity starts with a private key. **Only you** are allowed to know the contents of this key. Next, you need a ``Grid certificate``, which is issued by a ``Certificate Authority`` (CA). The grid certificate contains your name and your organisation, and it says that the person who owns the private key is really the person mentioned, and that this is certified by the Certificate Authority.
 
@@ -29,7 +29,7 @@ Now this is your identity. Big international cooperations do not want to deal wi
 
 .. sidebar:: More about Grid Security?
 
-		.. seealso:: Checkout our mooc video :ref:`mooc-about-certificate`.
+		.. seealso:: Check out our mooc video :ref:`mooc-about-certificate`.
 
 In order to run your work on the grid, you have to make three essential steps:
 
@@ -58,7 +58,7 @@ To get this UI account, there are two options:
 
 * At any other case, we will give you an account on the ``SURFsara grid-ui`` (server name: ``ui.grid.sara.nl``). For this, you need to contact us at helpdesk@surfsara.nl.
 
-Please note that the UI is simply a Linux machine and working on it requires some familiarity with linux commands and remote access methods. If you need help with this, checkout our mooc video :ref:`remote-access`.
+Please note that the UI is simply a Linux machine and working on it requires some familiarity with linux commands and remote access methods. If you need help with this, check out our mooc video :ref:`remote-access`.
 
 
 .. _get-grid-certificate:
@@ -94,7 +94,7 @@ Join a Virtual Organisation
 
 .. sidebar:: More about VOs?
 
-		.. seealso:: Need to know more about VOs and how to get a membership? Checkout our mooc video :ref:`mooc-vo`.
+		.. seealso:: Need to know more about VOs and how to get a membership? Check out our mooc video :ref:`mooc-vo`.
 	
 A Virtual Organisation or VO is a group of geographically distributed people that have common objectives and that are using shared grid resources to achieve them. Every Grid user is a member of one or more Virtual Organizations. 
 
