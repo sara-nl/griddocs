@@ -40,7 +40,7 @@ The easiest way to start a session on the grid is to use the ``startGridSession 
 
 .. sidebar:: More about creating proxies?
 
-		.. seealso:: For more detailed information about the proxies, have a look to our mooc video :ref:`mooc-startgridsession`.
+		.. seealso:: For more detailed information about the proxies, have a look at our mooc video :ref:`mooc-startgridsession`.
 
 The ``startGridSession`` command:
 

@@ -19,7 +19,7 @@ You want to execute your own binary program on the grid. When you have a binary 
 
 .. sidebar:: Bootstrap basics
 
-		.. seealso:: Have a look to our mooc video :ref:`Executables on Grid <mooc-bootstrap>` for a simple example to get started.
+		.. seealso:: Have a look at our mooc video :ref:`Executables on Grid <mooc-bootstrap>` for a simple example to get started.
 
 To send such an executable along we will use the InputSandBox in the job description. The program itself will be executed by a simple shell script ("wrapper.sh"). There are several reasons to wrap the call to your executable with a script. One important one is that the executable file might not have executable permissions after it is copied to the grid worker node. A second is that it is more flexible in the use of input parameters and also to redirect the output. In short, this script provides the correct environment for the execution of the binary.
 
