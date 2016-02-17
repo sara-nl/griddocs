@@ -360,6 +360,8 @@ Here is a sequence diagram that illustrates how the SRM commands interact with t
 
 .. image:: /Images/Using_SRM.png
 
+.. comment: Image source at https://www.websequencediagrams.com/?lz=dGl0bGUgVXNpbmcgU1JNCgpzcm0tYnJpbmctb25saW5lXG5jb21tYW5kIC0-IFNSTVxuZG9vcjogUHJveHkgY2VydGlmaWNhdGUKbm90ZSBvdmVyABsMQXV0aGVudGljYXRpbmcgXG4mIHVzZXIgbWFwcGluZwoASQkgLT4gAGMZOiBZb3UncmUgYQBFCmVkAIEDKXNybUJyaW5nTwCBTQUgPFNVUkw-AIEaFlF1ZXVpbmcgcmVzdG9yZSBvcGVyYXRpb24AgQEpU3RhZ2luZwBfBywgY2hlY2sgYmFjayBsYXRlcgCCHQsAgVUbV2FpdGluZwCCPxZSAIEYBWluZyBmaWxlAIMKKUlzAIF0ByAAg1UGPwCCVCplcywANAhpcwA4BwCEJwVjcACDMm8AZgsAg3waAHwac3JtR2V0AIN7CABAHVVzZSA8VACCKwVmb3IgZG93bmxvYQBMFEdyaWRGVFAAhXckABwPAIV_IABNDQCBbhQAhlULAIFmFQCBDA8AgXcFAIFPBQA5IkZpbGUgdHJhbnNmZXIKCg&s=roundgreen
+
 As you can see from this diagram, there can be a lot of overhead per file. For this reason, grid storage performs best with large files. We recommend to store files of several megabytes to gigabytes. Some users have files of more than 2 terabytes, but that may be impractical on other systems with limited space like worker nodes.
 
 ===============================
