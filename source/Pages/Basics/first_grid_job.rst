@@ -22,7 +22,7 @@ Grid job lifecycle
 		
 .. sidebar:: Grid Job lifecycle
 
-                .. seealso:: Have a look to our mooc video that describes the :ref:`mooc-job-lifecycle` step by step.
+                .. seealso:: Have a look at our mooc video that describes the :ref:`mooc-job-lifecycle` step by step.
 	
 To run your application on the Grid you need to describe its requirements in a specific language called ``job description language`` (JDL). This is similar to the information that we need to specify when we run jobs using a batch scheduling system like :ref:`pbs`, although it is slightly more complex as we are now scheduling jobs across multiple sites.
 
@@ -154,7 +154,7 @@ You should have your simple.jdl file ready in your UI up to this point. When you
 
 .. sidebar:: First Job explained
 
-		.. seealso:: For more detailed information about submitting a simple Grid job, have a look to our mooc video :ref:`mooc-submit-job`.
+		.. seealso:: For more detailed information about submitting a simple Grid job, have a look at our mooc video :ref:`mooc-submit-job`.
 
 
 * Submit the simple job by typing in your UI terminal this command:

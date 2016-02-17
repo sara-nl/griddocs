@@ -14,7 +14,7 @@ This page explains the use of the ``srm`` client. For an overview of storage cli
 
 .. sidebar:: SRM basics
 
-		.. seealso:: Have a look to our mooc video :ref:`mooc-srm` for additional examples.
+		.. seealso:: Have a look at our mooc video :ref:`mooc-srm` for additional examples.
 
 ===
 SRM
