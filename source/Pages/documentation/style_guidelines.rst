@@ -28,6 +28,11 @@ Use of capitals
 * Life Science Grid?
 * Virtual Organisations?
 * GridFTP, gridFTP or gridftp? GSIdCap?
+* OutputSandbox or output sandbox?
+
+  * OutputSandbox is the statement in the JDL. Better: ``OutputSandbox`` statement.
+  * output sandbox is the location where the output files are returned.
+
 * dCache
 
 
