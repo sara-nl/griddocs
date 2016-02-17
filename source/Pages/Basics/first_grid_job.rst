@@ -114,7 +114,7 @@ To submit a Grid job you must describe this in a plain text file, called JDL. Op
 	StdError = "simple.err";
 	OutputSandbox = {"simple.out","simple.err"}; 
 
-This job involves no large input or output files. It will return to the user the hostname of the Worker Node that the job will land on. This is specified as the ``StdOutput`` file “simple.out” declared in the OutputSandbox.
+This job involves no large input or output files. It will return to the user the hostname of the Worker Node that the job will land on. This is specified as the ``StdOutput`` file “simple.out” declared in the ``OutputSandbox`` statement.
 
 
 .. _job-match:
@@ -242,10 +242,10 @@ Cancel job
 Retrieve the output
 ===================
 
-The output consists of the files included in the OutputSandbox. You can
+The output consists of the files included in the ``OutputSandbox`` statement. You can
 retrieve the job output once it is successfully completed, in other words the
 job status has changed from ``RUNNING`` to ``DONE``. The files in the
-OutputSandbox can be downloaded for approx. one week after the job finishes.
+output sandbox can be downloaded for approx. one week after the job finishes.
 
 .. note:: 
         You can choose the output directory with the ``--dir`` option. If you do not use this option then the output will be copied under the UI ``/scratch`` directory with a name based on the ID of the job.  
@@ -275,7 +275,7 @@ again.
 Check job output
 ================
 
-* To check your job output, browse into the downloaded output directory. This includes the ``simple.out``, ``simple.err`` files specified in the OutputSandbox:
+* To check your job output, browse into the downloaded output directory. This includes the ``simple.out``, ``simple.err`` files specified in the ``OutputSandbox`` statement:
 
   .. code-block:: bash
 
