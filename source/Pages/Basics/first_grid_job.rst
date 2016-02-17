@@ -26,7 +26,7 @@ Grid job lifecycle
 	
 To run your application on the Grid you need to describe its requirements in a specific language called ``job description language`` (JDL). This is similar to the information that we need to specify when we run jobs using a batch scheduling system like :ref:`pbs`, although it is slightly more complex as we are now scheduling jobs across multiple sites.
 
-Except for the application requirements, you also need to specify in the JDL the content of the in/out- put ``sandboxes``. These sandboxes allow you to transfer data to or from the Grid. The input sandbox contains all the files that you want to send with your job to the worker node, like e.g. a script that you want executed. The output sandbox contains all the files that you want to have transferred back to the UI. 
+Except for the application requirements, you also need to specify in the JDL the content of the input/output ``sandboxes``. These sandboxes allow you to transfer data to or from the Grid. The input sandbox contains all the files that you want to send with your job to the worker node, like e.g. a script that you want executed. The output sandbox contains all the files that you want to have transferred back to the UI. 
 
 .. note:: The amount of data that you can transfer using the sandboxes is very limited, in the order of a few mega bytes (less than **100MB**). This means that you should normally limit the input sandbox to a few script files and the output sandbox to the stderr and stdout files.	
 
