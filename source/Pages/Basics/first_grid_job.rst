@@ -295,7 +295,7 @@ Congratulations! You have just executed your first job to the Grid!
 
 Let's summarise what we've seen so far.
 
-You interact with the Grid via the UI machine ui.grid.sara.nl. You describe each job in a JDL (Job Description Language) file where you list which program should be executed and what are the worker node requirements. From the UI, you create first a proxy of your grid certificate and submit your job with glite-* commands. The resource broker, called WMS (short for Workload Management System), accepts your jobs, assigns them to the most appropriate CE (Computing Element), records the jobs statuses and retrieves the output. 
+You interact with the Grid via the UI machine ``ui.grid.sara.nl``. You describe each job in a ``JDL`` (Job Description Language) file where you list which program should be executed and what are the worker node requirements. From the UI, you create first a proxy of your grid certificate and submit your job with ``glite-*`` commands. The resource broker, called ``WMS`` (short for Workload Management System), accepts your jobs, assigns them to the most appropriate ``CE`` (Computing Element), records the jobs statuses and retrieves the output. 
 
 This is a short overview of the commands needed to handle simple jobs: 
 
@@ -312,7 +312,7 @@ This is a short overview of the commands needed to handle simple jobs:
 +---------------------+--------------------------------------------------------+
 
 
-.. seealso:: Try now to port your own application to the Grid. Checkout the :ref:`best-practices` section and run the example that suits your use case. The section :ref:`advanced` topics will help your understanding for several Grid modules used in the  :ref:`best-practices`. 
+.. seealso:: Try now to port your own application to the Grid. Checkout the :ref:`best-practices` section and run the example that suits your use case. The section :ref:`advanced` will help your understanding for several Grid modules used in the :ref:`best-practices`. 
 
 	Done with the :ref:`basics`, but not sure how to proceed? We can help! Contact us at helpdesk@surfsara.nl.
 
