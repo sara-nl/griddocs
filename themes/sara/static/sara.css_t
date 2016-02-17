@@ -282,11 +282,12 @@ code.docutils.literal {
     background-color: #E0F4E0;
     border: 1px solid #D0E4D0;
     font-size: 1.2em;
-    padding: 0.1em 0.4em 0em 0.4em;
+    padding: 0.1em 0.2em 0em 0.2em;
 }
 
 /* Inline code text, when inside a note, warning box or table */
 table code.docutils.literal,
+div.sidebar code.docutils.literal,
 div.admonition code.docutils.literal {
     background-color: transparent;
     border: none;

@@ -35,9 +35,9 @@ Preamble
 
 * Login to the UI: 
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    ssh homer@ui.grid.sara.nl # replace homer with your username
+     ssh homer@ui.grid.sara.nl # replace homer with your username
     
 * Copy the tarball :download:`bootstrap_fractals.tar </Scripts/bootstrap_fractals.tar>` to your UI directory.
 
@@ -45,22 +45,22 @@ Preamble
     
 * Untar the example and check the files:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    tar -xvf bootstrap_fractals.tar
-    cd bootstrap_fractals/
-    mv ../fractals.c ./
-    ls -l
+     tar -xvf bootstrap_fractals.tar
+     cd bootstrap_fractals/
+     mv ../fractals.c ./
+     ls -l
 
-    # -rw-r--r-- 1 homer homer fractals.c
-    # -rw-rw-r-- 1 homer homer fractals.jdl
-    # -rw-rw-r-- 1 homer homer wrapper.sh
+     # -rw-r--r-- 1 homer homer fractals.c
+     # -rw-rw-r-- 1 homer homer fractals.jdl
+     # -rw-rw-r-- 1 homer homer wrapper.sh
 
 * Compile the example:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    cc fractals.c -o fractals -lm
+     cc fractals.c -o fractals -lm
 
 
 .. warning:: It is advisable to compile your programs on the User Interface (UI) Machine. The grid nodes have similar environments and the chance of your job to run successfully on a remote worker node is larger when your program is able to run on the UI. 
@@ -69,20 +69,20 @@ Preamble
 Run locally
 ===========
 
-*  Run the example locally on the UI with a set of parameters to understand the program:
+* Run the example locally on the UI with a set of parameters to understand the program:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    ./fractals -o output -q 0.184 -d 2280 -m 4400 # try different parameters, e.g. -q 0.184 -d 2280 -m 4400
+     ./fractals -o output -q 0.184 -d 2280 -m 4400 # try different parameters, e.g. -q 0.184 -d 2280 -m 4400
     
 This will take a while, depending on the input parameters you selected. Once finished, it will create the "output" file.
 
 * Convert the output file to .png format and display the picture:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    convert output "output.png"
-    display output.png
+     convert output "output.png"
+     display output.png
     
     
 Run on the Grid
@@ -90,64 +90,64 @@ Run on the Grid
 
 * Create a proxy valid for a week:  
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    startGridSession lsgrid # replace lsgrid with your VO
+     startGridSession lsgrid # replace lsgrid with your VO
 
 * Inspect the ``JDL`` file:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    cat fractals.jdl
+     cat fractals.jdl
  
-    # Type = "Job";
-    # JobType = "Normal";
-    # Executable = "/bin/sh";
-    # Arguments = "wrapper.sh";
-    # StdOutput = "stdout";
-    # StdError = "stderr";
-    # InputSandbox = {"wrapper.sh","fractals"};
-    # OutputSandbox = {"stdout","stderr","output"}; 
+     # Type = "Job";
+     # JobType = "Normal";
+     # Executable = "/bin/sh";
+     # Arguments = "wrapper.sh";
+     # StdOutput = "stdout";
+     # StdError = "stderr";
+     # InputSandbox = {"wrapper.sh","fractals"};
+     # OutputSandbox = {"stdout","stderr","output"}; 
 
 In the JDL we specify the content of the in- and output sandboxes. These sandboxes allow you to transfer small files to or from the Grid. The input sandbox contains all the files that you want to send with your job to the worker node, like e.g. the fractals script that you want executed. The output sandbox contains all the files that you want to have transferred back to the UI, e.g. the output fractals image.   
 
 * Inspect the contents of the ``wrapper.sh`` script:
 
-.. code-block:: bash
+  .. code-block:: bash
     
-    cat wrapper.sh
+     cat wrapper.sh
  
-    # #!/bin/bash
-    # chmod u+x fractals
-    # ./fractals -o output -q 0.184 -d 2280 -m 4400
-    # ...
+     # #!/bin/bash
+     # chmod u+x fractals
+     # ./fractals -o output -q 0.184 -d 2280 -m 4400
+     # ...
     
 Once this jobs lands on the Grid, it will execute the ``wrapper.sh`` script which is a master script to set the program environment and initiate the program execution. In the ``wrapper.sh`` script you may include also the commands to retrieve input from a grid storage location or transfer the output results to a grid storage location.
 
 * Submit the job to the Grid:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    glite-wms-job-submit -d $USER -o jobIds fractals.jdl
+     glite-wms-job-submit -d $USER -o jobIds fractals.jdl
 
 * Check the job status from command line on the UI:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    glite-wms-job-status https://wms2.grid.sara.nl:9000/6swP5FEfGVZ69tVB3PwnDQ #replace with your jobID
+     glite-wms-job-status https://wms2.grid.sara.nl:9000/6swP5FEfGVZ69tVB3PwnDQ #replace with your jobID
   
-    #or
-    glite-wms-job-status -i jobIds
+     #or
+     glite-wms-job-status -i jobIds
 
 * Once the job is finished, get the job output to the UI:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    glite-wms-job-output --dir . -i jobIds    
+     glite-wms-job-output --dir . -i jobIds    
     
 * Convert the output file to .png format and display the picture:
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    convert homer_6swP5FEfGVZ69tVB3PwnDQ/output "output.png" # replace with your job output directory
-    display output.png    
+     convert homer_6swP5FEfGVZ69tVB3PwnDQ/output "output.png" # replace with your job output directory
+     display output.png    

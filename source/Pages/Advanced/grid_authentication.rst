@@ -93,8 +93,10 @@ Creating a VOMS proxy
 
 Make sure you have installed your certificate and private on the grid user interface that you are working on. 
 They should be place in the ``.globus`` directory under your home directory and should be named ``usercert.pem``
-and ``userkey.pem``. They must have the following ownerships and permissions::
+and ``userkey.pem``. They must have the following ownerships and permissions:
 	
+.. code-block:: bash
+
 	$ ls -l $HOME/.globus/usercert.pem
 	-rw-r--r-- 1 homer homer 1956 Nov 16 12:20 /home/homer/.globus/usercert.pem
 		
@@ -103,7 +105,9 @@ and ``userkey.pem``. They must have the following ownerships and permissions::
 	
 where ``homer`` should be replaced with your username.
 
-* Now issue the following command to create a *local* proxy. The pass phrase you are asked for, is your grid certificate password::
+Now issue the following command to create a *local* proxy. The pass phrase you are asked for, is your grid certificate password:
+
+.. code-block:: bash
 
     $ voms-proxy-init --voms lsgrid
 
@@ -119,16 +123,20 @@ This proxy is your "username" for the grid. The last line in the example shows t
 
 Non standard location
 `````````````````````
-To store your local proxy in a non standard location, use the `-out` option::
+To store your local proxy in a non standard location, use the `-out` option:
 
-    voms-proxy-init -voms lsgrid --valid 168:00 -out /home/homer/my_proxy_cert
+.. code-block:: bash
+
+    $ voms-proxy-init -voms lsgrid --valid 168:00 -out /home/homer/my_proxy_cert
 
 See ``voms-proxy-init -h`` for more options. 
 
 Inspecting your proxy certificate
 ---------------------------------
 
-* You can inspect your local proxy with the command::
+You can inspect your local proxy with the command:
+
+.. code-block:: bash
 
     $ voms-proxy-info -all
 
@@ -175,7 +183,9 @@ The following command stores a proxy certificate in the proxy server
 where it will issue new proxy certificates on your behalf for a week.
 This is necessary for jobs that need more than 12 hours to run.
 
-* Issue this command on the UI::
+Issue this command on the UI:
+
+.. code-block:: bash
 
     $ myproxy-init -d -n
 
@@ -194,7 +204,9 @@ The delegated proxy can be received locally from other authorized Grid machines.
 Inspecting the *myproxy* certificate
 ------------------------------------
 
-* You can inspect the the *myproxy* certificate with the command::
+You can inspect the the *myproxy* certificate with the command:
+
+.. code-block:: bash
 
     $ myproxy-info -d
 
@@ -222,7 +234,9 @@ Credential delegation solves the following problem: when the grid is busy or whe
 We assume that you have issued the ``voms-proxy-init command`` and have a valid
 local proxy. If not, please see :ref:`voms-proxy-init command <voms-proxies>`.
 
-* To delegate your proxy to the WMS, run on the UI::
+To delegate your proxy to the WMS, run on the UI:
+
+.. code-block:: bash
 
     $ echo $USER
     $ glite-wms-job-delegate-proxy -d $USER  # the $USER is the delegation id
@@ -255,23 +269,33 @@ Here is an example of the displayed output::
 Commands for viewing your proxy information
 ===========================================
 
-* To start your Grid session::
- 
+* To start your Grid session:
+
+  .. code-block:: bash
+
 	$ startGridSession lsgrid  # replace lsgrid with your VO
 
-* To see how much time there is left on your Grid session::
-  
+* To see how much time there is left on your Grid session:
+
+  .. code-block:: bash
+
   	$ myproxy-info -d
 
-* To renew your Grid session::
+* To renew your Grid session:
+
+  .. code-block:: bash
 
 	$ startGridSession lsgrid  #replace lsgrid with your VO
    
-* To end your session::
- 
+* To end your session:
+
+  .. code-block:: bash
+
  	$ myproxy-destroy -d
 
-* To remove your local ``/tmp/x509up_uXXX`` proxy::
+* To remove your local ``/tmp/x509up_uXXX`` proxy:
+
+  .. code-block:: bash
 
 	$ voms-proxy-destroy
 
@@ -280,11 +304,6 @@ Commands for viewing your proxy information
   time of submission, expires. Use :ref:`glite-wms-job-cancel <job-cancel>` to cancel
   running jobs.
 
-..
-
-..
-
-..
 
 .. Links:
 

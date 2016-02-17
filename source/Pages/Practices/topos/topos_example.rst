@@ -54,9 +54,9 @@ Start by downloading and unpacking the necessary files.
 
 * Login to the UI: 
 
-.. code-block:: bash
+  .. code-block:: bash
 
-    ssh homer@ui.grid.sara.nl # replace homer with your username
+     ssh homer@ui.grid.sara.nl # replace homer with your username
     
 * Copy the tarball :download:`pilot_topos_fractals.tar </Scripts/pilot_topos_fractals.tar>` to your UI directory.
 

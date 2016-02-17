@@ -5,7 +5,7 @@
 Grid Certificates
 *****************
 
-In this section we discuss grid certificates in more detail; how to
+In this section we discuss grid user certificates in more detail; how to
 convert certificates, and how to find out the details of your grid
 certificate.
 
