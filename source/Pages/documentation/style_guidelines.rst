@@ -33,7 +33,7 @@ Use of capitals
   * OutputSandbox is the statement in the JDL. Better: ``OutputSandbox`` statement.
   * output sandbox is the location where the output files are returned.
 
-* dCache
+* dCache (name), startGridSession (command): no capital even at start of sentence?
 
 
 Acronyms
