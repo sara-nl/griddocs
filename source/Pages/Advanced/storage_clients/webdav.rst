@@ -130,11 +130,11 @@ Curl can rename files if proxy authentication is used.
 
 .. code-block:: bash
 
-  curl --capath /etc/grid-security/certificates/  --fail --location \
-       --cert $X509_USER_PROXY --cacert $X509_USER_PROXY \
-       --request MOVE \
-       https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/oldfile \
-       --header "Destination:https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/newfile"
+     curl --capath /etc/grid-security/certificates/  --fail --location \
+          --cert $X509_USER_PROXY --cacert $X509_USER_PROXY \
+          --request MOVE \
+          https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/oldfile \
+          --header "Destination:https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/newfile"
 
 File properties and locality are not changed. A file that is stored on tape (nearline) will stay on tape, even if it is moved to a directory for disk-only files.
 
@@ -144,12 +144,12 @@ As far as we know, renaming does not work when username/password authentication 
 Removing data
 =============
 
-* Delete a file from dCache:
+Deleting a file from dCache:
 
 .. code-block:: bash
 
-  curl --capath /etc/grid-security/certificates/ --user homer --location \
-       --request DELETE https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+     curl --capath /etc/grid-security/certificates/ --user homer --location \
+          --request DELETE https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 
 
 ================
@@ -161,7 +161,7 @@ To work with Webdav on Windows or Mac OS X, you can install Cyberduck from here:
 * Download the .zip file, open it, and drag the .app file into your Applications folder to install it. 
 * Open a Webdav (HTTP/SSL) connection and connect to the server with your ui account username and password:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/ # replace lsgrid with your VO
 
