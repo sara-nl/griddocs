@@ -10,9 +10,9 @@ Check out in this page the most commonly asked questions about Grid. If you stil
     :depth: 4  
 
 
-=========
-Questions
-=========
+===============
+Getting started
+===============
 
 .. _where-to-start:
 
@@ -30,65 +30,9 @@ Where can I lookup up Grid terms?
 Check out the file Grid Glossary :download:`pdf <Tutorials/MOOC/slides/L5_W1_Grid_Glossary.pdf>` that contains most of the basic Grid terminology and abbreviations.
 
 
-.. _how-many-cpus:
-
-How many cpu's, nodes does the grid offer?
-===========================================
-
-The grid infrastructure is interconnected clusters in Netherlands and abroad. The users can get access to multiple of these clusters based on their :ref:`Virtual Organisation <join-vo>`.
-
-* Global picture: 170 datacenters in 36 countries: in total more than 330000 compute cores, 500 PB disk, 500 PB tape.
-* In the Netherlands NGI_NL infrastructure: 14 datacenters (3 large grid clusters, 11 smaller ones): in total approx 10000 compute cores, 12 PB disk, tape capacity up to 170 PB.
-
-
-.. _how-many-ch:
-
-How many cpu hours are available?
-=================================
-
-The available core hours and storage depend on the funding models. We make tailored agreements to incorporate the user requirements and grant resources based on the applicable funding scheme.
-
-
-.. _how-much-memory:
-
-What is the average amount of memory available per node?
-========================================================
-
-The average memory per node depends on number of cores per node. It is typically 8GB per core, but the nodes vary between 12 and 64 cores per node (48 to 256GB RAM per node).
-
-
-.. _transfer-speed:
-
-What is the data transfer speed between grid locations?
-=======================================================
-
-In the Netherlands NGI_NL infrastructure the transfer speed between grid storage and grid processing cluster (at SURFsara) is up to 500Gbit/s. The transfer speed between nodes is 10Gbit/s and between sites it is typically 10 to 20 Gbit/s.
-
-
-.. _cpu-time:
-
-How can I calculate the total CPU time I consumed?
-==================================================
-
-The total CPU time depends on the amount of cores that your application is using and the wallclock time that the corresponding job takes to finish::
-
-	CPU time = #cores x wallclock(per job) x #jobs	
-
-For example, let's say that a single job takes 12 h to finish on a 4-core machine and we submitted 10,000 of those. The total CPU time spent is::
-
-	CPU time = 4cores x 12h x 10,000 = 480,000 CPU hours ~ 55 CPU years 
-
-
-.. _cpu-efficiency:
-
-System usage and CPU efficiency
-===============================
-
-CPU efficiency is an important factor to detect if the jobs run smoothly on the infrastructure. The CPU efficiency depends on the real CPU usage and the WallClock time for the job to finish::
-
-	CPU efficiency = CPU time / WallClock time
-
-If the CPU was efficiently being used during the job runtime, then a single core job will have efficiency close to 100%. For multicore jobs the efficiency is higher than 100%.
+============
+Certificates
+============
 
 
 .. _change-cert-pwd:
@@ -211,7 +155,7 @@ How can I renew my certificate?
 
 The personal grid certificates are valid for a year. This means that every year you need to renew your personal grid certificate. The procedure for renewing your certificate depends on your CA, either Digicert or Dutchgrid.
 
-* For *Digicert* grid certificate, you can request a new certificate anytime from the `DigiCert portal`_. Follow this guide to :ref:`obtain and install a Digicert grid certificate <digicert>`.
+* For *Digicert* grid certificate, you can request a new certificate anytime from the `DigiCert portal <https://digicert.com/sso>`_. Follow this guide to :ref:`obtain and install a Digicert grid certificate <digicert>`.
 
 * For *Dutchgrid* grid certificate, you have two options:
 
@@ -280,6 +224,73 @@ To find out who the certificate belongs to, use:
 .. code-block:: bash
 
    openssl x509 -in usercert.pem -noout -subject
+
+
+
+===============
+Using resources 
+===============
+
+
+.. _how-many-cpus:
+
+How many cpu's, nodes does the grid offer?
+===========================================
+
+The grid infrastructure is interconnected clusters in Netherlands and abroad. The users can get access to multiple of these clusters based on their :ref:`Virtual Organisation <join-vo>`.
+
+* Global picture: 170 datacenters in 36 countries: in total more than 330000 compute cores, 500 PB disk, 500 PB tape.
+* In the Netherlands NGI_NL infrastructure: 14 datacenters (3 large grid clusters, 11 smaller ones): in total approx 10000 compute cores, 12 PB disk, tape capacity up to 170 PB.
+
+
+.. _how-many-ch:
+
+How many cpu hours are available?
+=================================
+
+The available core hours and storage depend on the funding models. We make tailored agreements to incorporate the user requirements and grant resources based on the applicable funding scheme.
+
+
+.. _how-much-memory:
+
+What is the average amount of memory available per node?
+========================================================
+
+The average memory per node depends on number of cores per node. It is typically 8GB per core, but the nodes vary between 12 and 64 cores per node (48 to 256GB RAM per node).
+
+
+.. _transfer-speed:
+
+What is the data transfer speed between grid locations?
+=======================================================
+
+In the Netherlands NGI_NL infrastructure the transfer speed between grid storage and grid processing cluster (at SURFsara) is up to 500Gbit/s. The transfer speed between nodes is 10Gbit/s and between sites it is typically 10 to 20 Gbit/s.
+
+
+.. _cpu-time:
+
+How can I calculate the total CPU time I consumed?
+==================================================
+
+The total CPU time depends on the amount of cores that your application is using and the wallclock time that the corresponding job takes to finish::
+
+	CPU time = #cores x wallclock(per job) x #jobs	
+
+For example, let's say that a single job takes 12 h to finish on a 4-core machine and we submitted 10,000 of those. The total CPU time spent is::
+
+	CPU time = 4cores x 12h x 10,000 = 480,000 CPU hours ~ 55 CPU years 
+
+
+.. _cpu-efficiency:
+
+System usage and CPU efficiency
+===============================
+
+CPU efficiency is an important factor to detect if the jobs run smoothly on the infrastructure. The CPU efficiency depends on the real CPU usage and the WallClock time for the job to finish::
+
+	CPU efficiency = CPU time / WallClock time
+
+If the CPU was efficiently being used during the job runtime, then a single core job will have efficiency close to 100%. For multicore jobs the efficiency is higher than 100%.
 
 
 .. _available-se:
@@ -359,6 +370,12 @@ In order to run pbs jobs on LSG that last more than 36 hours, you need to use ``
 * If you specify a queue (``-q`` flag) it is sufficient to get your jobs run for 72 hours.
 
 
+
+===============
+Troubleshooting
+===============
+
+
 .. _get-log:
 
 How can I get more logging info for my job?
@@ -376,7 +393,3 @@ And if you use a file to store your jobs, run:
 
 	glite-wms-job-logging-info -v 2 -i jobIds # replace jobIds with your file
 
-
-.. Links:
-.. _`DigiCert portal`: https://digicert.com/sso
-  	
