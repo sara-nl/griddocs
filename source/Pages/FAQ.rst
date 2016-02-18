@@ -399,7 +399,7 @@ And if you use a file to store your jobs, run:
 Transfers don't start
 =====================
 
-Sometimes, it can happen that transfers seem to be stuck at 0 bytes transferred. These are common causes for stalling transfers.
+Sometimes, it can happen that transfers seem to be stuck at 0 bytes transferred. There are some common causes for stalling transfers.
 
 * A firewall blocks the ports for the data channel. If you use srmcp, specify passive mode (``srmcp --server_mode=passive``). Check whether your firewall allows outgoing ports 20000 to 25000 (gridFTP data channel).
 
