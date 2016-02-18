@@ -56,7 +56,7 @@ There are two storage types available on the Dutch Grid sites:
 dCache
 ======
 
-The storage element located at SURFsara is accessible from *any* Grid cluster or UI. It uses the `dCache system`_ for storing and retrieving huge amounts of data, distributed among a large number of server nodes. It consists of magnetic tape storage and hard disk storage and both are addressed by a common file system.
+The storage element located at SURFsara is accessible from *any* Grid cluster or UI. It uses the `dCache system`_ for storing and retrieving huge amounts of data, distributed among a large number of server nodes. It consists of magnetic tape storage and hard disk storage and both are addressed by a common file system. See :ref:`dCache-specs` for details about our dCache instance.
 
 .. _dpm:
 
