@@ -209,7 +209,7 @@ Note that the downloaded proxy will not include the voms attributes.
 How can I renew my certificate?
 ===============================
 
-The personal grid certificates are valid for a year. This means that every year you need to renew your personal grid certificate. The procedure for renewing your certificate depends on your CA, Digicert or Dutchgrid.
+The personal grid certificates are valid for a year. This means that every year you need to renew your personal grid certificate. The procedure for renewing your certificate depends on your CA, either Digicert or Dutchgrid.
 
 * For *Digicert* grid certificate, you can request a new certificate anytime from the `DigiCert portal`_. Follow this guide to :ref:`obtain and install a Digicert grid certificate <digicert>`.
 
