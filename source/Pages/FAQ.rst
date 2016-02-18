@@ -38,7 +38,6 @@ How many cpu's, nodes does the grid offer?
 The grid infrastructure is interconnected clusters in Netherlands and abroad. The users can get access to multiple of these clusters based on their :ref:`Virtual Organisation <join-vo>`.
 
 * Global picture: 170 datacenters in 36 countries: in total more than 330000 compute cores, 500 PB disk, 500 PB tape.
-
 * In the Netherlands NGI_NL infrastructure: 14 datacenters (3 large grid clusters, 11 smaller ones): in total approx 10000 compute cores, 12 PB disk, tape capacity up to 170 PB.
 
 
@@ -99,7 +98,7 @@ How can I change my grid certificate password?
 
 Before you create a new private key file with a new password, we recommend you to make a backup of the old userkey.pem file.
 
-* To change your grid certificate password, type:
+To change your grid certificate password, type:
 
 .. code-block:: bash
 
@@ -167,15 +166,18 @@ The permissions on your installed certificate are probably wrong. Set the :ref:`
 Get non-vomsified proxy locally
 ===============================
 
-* To download locally the proxy stored on :ref:`MyProxy server <myproxy-server>` you need to set a passphrase upon creation. To do this, protect your proxy with a MyProxy pass phrase by omitting option "-n"::
+* To download locally the proxy stored on :ref:`MyProxy server <myproxy-server>` you need to set a passphrase upon creation. To do this, protect your proxy with a MyProxy pass phrase by omitting option "-n":
 
-    myproxy-init -d
+  .. code-block:: bash
+
+     myproxy-init -d
     
-It will first ask your grid certificate password and then prompt you to enter a MyProxy passphrase twice. You will use the latter passphrase to download your proxy. 
+  It will first ask your grid certificate password and then prompt you to enter a MyProxy 
+  passphrase twice. You will use the latter passphrase to download your proxy. 
 
-Here is an example of the displayed output:
+  Here is an example of the displayed output:
 
-.. code-block:: bash
+  .. code-block:: bash
     
     # Your identity: /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
     # Enter GRID pass phrase for this identity:
@@ -192,9 +194,9 @@ Here is an example of the displayed output:
 
     myproxy-get-delegation -d
 
-Here is an example of the displayed output:
+  Here is an example of the displayed output:
 
-.. code-block:: bash
+  .. code-block:: bash
 
     # Enter MyProxy pass phrase:
     # A credential has been received for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson in /tmp/x509up_u39111. 
