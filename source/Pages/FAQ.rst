@@ -289,7 +289,7 @@ How can I find all the available LSG Storage Elements and get their SURLS?
 
   .. code-block:: bash
 
-	lcg-infosites --vo lsgrid ce 
+	lcg-infosites --vo lsgrid se 
 	
 * To specify a specific SURL (srm URL), use the following syntax:
 
@@ -306,11 +306,14 @@ How can I find all the available LSG Storage Elements and get their SURLS?
 	srm://gb-se-emc.erasmusmc.nl:8446/dpm/erasmusmc.nl/home/lsgrid
 	srm://gb-se-kun.els.sara.nl:8446/dpm/els.sara.nl/home/lsgrid
 	srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid
-	srm://gb-se-nki.els.sara.nl:8446/dpm/els.sara.nl/home/lsgrid
-	srm://gb-se-rug.sara.usor.nl:8446/dpm/sara.usor.nl/home/lsgrid
 	srm://gb-se-tud.ewi.tudelft.nl:8446/dpm/ewi.tudelft.nl/home/lsgrid	
 	srm://gb-se-wur.els.sara.nl:8446/dpm/els.sara.nl/home/lsgrid
 	srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid
+        srm://se.lsg.bcbr.uu.nl:8446/dpm/lsg.bcbr.uu.nl/home/lsgrid
+        srm://se.lsg.maastrichtuniversity.nl:8446/dpm/lsg.maastrichtuniversity.nl/home/lsgrid
+        srm://se.lsg.psy.vu.nl:8446/dpm/lsg.psy.vu.nl/home/lsgrid
+	srm://gb-se-rug.sara.usor.nl:8446/dpm/sara.usor.nl/home/lsgrid
+
 
 
 .. _available-ce:
