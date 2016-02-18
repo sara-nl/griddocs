@@ -72,11 +72,11 @@ Limits
 Number of transfers per pool
 ----------------------------
 
-Each pool support up to a certain number of concurrent transfers. The specific number for a certain pool group can be looked up in the `dCache web interface <http://dcmain.grid.sara.nl:2288/webadmin/poolgroups>`_. If the limit is reached, transfers will be queued, and they will appear as being stalled. After some time, transfers may time out. But even if they don't, your job may waste valuable computing time waiting for input files that don't arrive.
+Each pool supports up to a certain number of concurrent transfers. The specific number for a certain pool group can be looked up in the `dCache web interface <http://dcmain.grid.sara.nl:2288/webadmin/poolgroups>`_. If the limit is reached, transfers will be queued, and they will seem stalled. After some time, transfers may time out. But even if they don't, your job may waste valuable computing time waiting for input files that don't arrive.
 
-If that happens, you should limit your number of concurrent transfers, or ask us whether the limit can be increased. We can not increase the limit endlessly because this would make our systems unstable.
+If that happens, you should reduce your number of concurrent transfers, or ask us whether the limit can be increased. We can not increase the limit endlessly because this would make our systems unstable.
 
 A single SRM door
 -----------------
 
-Also the SRM door has some limitations. There's only one of that kind, so it may be wise to bypass the SRM door and use gridftp and webdav doors directly when possible. If in doubt, feel free to contact us for advice.
+Also the SRM door has some limitations. There's only one of that kind, and sometimes it might be a performance bottleneck. It may be wise to bypass the SRM door and use gridftp and webdav doors directly when possible. If in doubt, feel free to contact us for advice.
