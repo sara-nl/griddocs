@@ -1,5 +1,3 @@
-.. warning:: Page under construction
-
 .. _dCache-specs:
 
 *********************
