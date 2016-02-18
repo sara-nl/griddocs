@@ -401,7 +401,7 @@ File transfers don't start
 
 Occasionally, transfers are stuck when 0 bytes have been transferred. There are some common causes for stalled transfers.
 
-* A firewall blocks the ports for the data channel. If you use ``srmcp``, specify ``--server_mode=passive``. Check whether your firewall allows outgoing ports 20000 to 25000 (gridFTP data channel range).
+* A firewall blocks the ports for the data channel. If you use ``srmcp``, specify ``--server_mode=passive``. If that doesn't help, check whether your firewall allows outgoing traffic to ports 20000 to 25000 (gridFTP data channel range).
 
 * You've reached the maximum number of transfers for the storage pools that have been allocated to you. All transfers beyond the maximum will be queued, until previous transfers finish to make 'transfer slots' available. This could mean that some of your jobs are wasting CPU time while they wait for input files. This is not efficient. It's better to reduce the number of concurrent transfers so that you don't reach the maximum.
 
