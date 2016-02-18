@@ -393,3 +393,37 @@ And if you use a file to store your jobs, run:
 
 	glite-wms-job-logging-info -v 2 -i jobIds # replace jobIds with your file
 
+
+.. _stalling-transfers:
+
+Transfers don't start
+=====================
+
+Sometimes, it can happen that transfers seem to be stuck at 0 bytes transferred. These are common causes for stalling transfers.
+
+* A firewall blocks the ports for the data channel. If you use srmcp, specify passive mode (``srmcp --server_mode=passive``). Check whether your firewall allows outgoing ports 20000 to 25000 (gridFTP data channel).
+
+* You've reached the maximum number of transfers for the storage pools that have been allocated to you. All transfers beyond the maximum will be queued, until previous transfers finish to make 'transfer slots' available. This could mean that some of your jobs are wasting CPU time while they wait for input files. This is not efficient. It's better to limit the number of concurrent transfers so that you don't reach the maximum.
+
+  You can see whether this happens at `these graphs <http://web.grid.sara.nl/dcache.php?r=hour#transfers>`_. A red color ('Movers queued') means that there are stalling transfers.
+
+* You're transferring files from/to outside SURFsara, and your endpoint support a MTU (network packet) size of 9000, but the network path doesn't. Control traffic passes through because it consists of small packets. But data traffic consists of large packets and these are blocked.
+
+  Some tools to test this:
+
+  .. code-block:: bash
+
+     # Run this from your endpoint of the transfer; adjust the value to find the limit.
+     # Check first whether your system supports a MTU of 9000.
+     ping -M do -s 8972 gridftp.grid.sara.nl
+     
+     # This command tells you what the supported MTU value is.
+     tracepath gridftp.grid.sara.nl
+
+  Another good tool for testing the network is iperf. We'll start an iperf server at your request so that you can test against it.
+  
+  .. code-block:: bash
+  
+     iperf -c rabbit1.grid.sara.nl --port 24000 --parallel 4
+
+  A fix for Linux servers is to enable mtu_probing. This enables the Linux kernel to select the best MTU value for a certain network route.
