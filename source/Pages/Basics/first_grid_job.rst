@@ -85,7 +85,7 @@ This section will show you how to create a valid proxy:
 	* It uploads this proxy to ``Myproxy server``
 	* It ``delegates`` the proxy to the WMS with your user name as the delegation ID (DID)
 	
-	If you want to know more , see the advanced section about :ref:`grid-authentication`.
+	If you want to know more, see the advanced section about :ref:`grid-authentication`.
 
 And now you are ready to submit jobs to the Grid! Or copy data from and to the grid.
 	
@@ -150,12 +150,11 @@ To submit your first Grid job and get an understanding of the job lifecycle, we 
 Submit the job to the Grid
 ==========================
 
-You should have your simple.jdl file ready in your UI up to this point. When you submit this simple Grid job to the WMS, a job will be created and sent to a remote Worker Node. There it will execute the command ``/bin/hostname -f`` and write its standard output and its standard error in the simple.out and simple.err respectively.
-
 .. sidebar:: First Job explained
 
 		.. seealso:: For more detailed information about submitting a simple Grid job, have a look at our mooc video :ref:`mooc-submit-job`.
 
+You should have your simple.jdl file ready in your UI up to this point. When you submit this simple Grid job to the WMS, a job will be created and sent to a remote Worker Node. There it will execute the command ``/bin/hostname -f`` and write its standard output and its standard error in the simple.out and simple.err respectively.
 
 * Submit the simple job by typing in your UI terminal this command:
 
