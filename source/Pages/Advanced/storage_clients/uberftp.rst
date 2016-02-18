@@ -64,7 +64,7 @@ Transferring data
 Parallel streams
 ----------------
 
-The GridFTP protocol allows for parallel streaming of data transfers. This makes transfers more efficient and less susceptible to network congestion, especially over long distances. If you have a lot of parallel transfers running anyway, increasing the number of streams per transfer will not make a big difference, because the network bandwidth may limit the results.
+The GridFTP protocol allows for parallel streaming of data transfers. This makes a transfer more efficient and less susceptible to network errors, especially over long distances. If you have a lot of simultaneous transfers running anyway, increasing the number of streams per transfer will not make a big difference, because the network bandwidth may limit the results.
 
 .. code-block:: bash
 
