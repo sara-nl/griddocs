@@ -40,7 +40,7 @@ Acronyms
 ========
 
 * In general: avoid acronyms. When you want to use them, the first occurrance on a page explain them: ``CA (Certificate Authority)``.
-* Sphinx supports a :abbr: tag, see http://www.sphinx-doc.org/en/stable/markup/inline.html#other-semantic-markup
+* Sphinx supports a :abbr: tag, see http://www.sphinx-doc.org/en/stable/markup/inline.html#other-semantic-markup. Here's a test: :abbr:`CA (Certificate Authority)`
 * LSG or Life Science Grid?
 * UI or User Interface?
 
