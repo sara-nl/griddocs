@@ -39,6 +39,7 @@ Here's a list of accessible dCache nodes:
   * by32-{1..9}.grid.sara.nl
   * rabbit{1..3}.grid.sara.nl
   * v40-{8..10}.grid.sara.nl
+  * whale{1..6}.grid.sara.nl
 
 We have these DNS round robin aliases pointing to our doors:
 
@@ -50,26 +51,34 @@ Here are some metrics per user group: `http://web.grid.sara.nl/dcache.php`
 The subnet is 145.100.32.0/22. You may need to change your firewall to access this subnet.
 
 Disk storage
-------------
+============
 
-We currently (January 2016) have 8 petabyte of disk storage. This space is divided over several pool groups. These pool groups are for disk only data, t1d1 data (disk data with a tape replica) and for online caching of tape only data.
+We currently (January 2016) have ~8 petabyte of disk storage capacity. This space is divided over several pool groups. These pool groups are for disk only data, t1d1 data (disk data with a tape replica) and for online caching of tape only data.
 
 Tape storage
-------------
+============
 
 The grid tape storage back-end contains ~22 petabyte of data (January 2016). There are two tape libraries: one in Almere and one in the Vancis datacenter in Amsterdam Science Park. Some data only has a single copy, but smaller projects typically have a double copy of their tape data.
 
 Transfer performance
---------------------
+====================
 
 Bandwidth
 +++++++++
 
-With dCache, we have reached bandwidths up to 25 gigabyte/s, and dCache is probably capable of much more, depending on the circumstances. This bandwidth was reached between the Gina compute cluster and the dCache cluster. Once, during an internal data migration operation, we have transferred 1 petabyte in 24 hours. With external endpoints however, bandwidth is most likely limited by the network connection.
+With dCache, we have reached bandwidths up to 25 gigabyte/s, and dCache is probably capable of much more, depending on the circumstances. This bandwidth was reached between the Gina compute cluster and the dCache cluster. Once, during an internal data migration operation, we have transferred 1 petabyte in 24 hours. With external endpoints however, bandwidth is most likely limited by the network path.
 
 Limits
 ++++++
 
-Each pool support up to a certain number of concurrent transfers. The specific number for a certain pool group can be looked up in the `dCache web interface <http://dcmain.grid.sara.nl:2288/webadmin/poolgroups?1>`_. If the limit is reached, transfers will be queued, and they will appear as being stalled. If that happens, you should limit your number of concurrent transfers, or ask us if the limit can be increased. We can not increase the limit endlessly because this would make our systems unstable.
+Number of transfers per pool
+----------------------------
+
+Each pool support up to a certain number of concurrent transfers. The specific number for a certain pool group can be looked up in the `dCache web interface <http://dcmain.grid.sara.nl:2288/webadmin/poolgroups>`_. If the limit is reached, transfers will be queued, and they will appear as being stalled. After some time, transfers may time out. But even if they don't, your job may waste valuable computing time waiting for input files that don't arrive.
+
+If that happens, you should limit your number of concurrent transfers, or ask us whether the limit can be increased. We can not increase the limit endlessly because this would make our systems unstable.
+
+A single SRM door
+-----------------
 
 Also the SRM door has some limitations. There's only one of that kind, so it may be wise to bypass the SRM door and use gridftp and webdav doors directly when possible. If in doubt, feel free to contact us for advice.
