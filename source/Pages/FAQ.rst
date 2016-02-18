@@ -1,8 +1,8 @@
 .. _FAQ:
 
-***
-FAQ
-***
+**************************
+Frequently asked questions
+**************************
 
 Check out in this page the most commonly asked questions about Grid. If you still have questions, please contact us at helpdesk@surfsara.nl:
 
