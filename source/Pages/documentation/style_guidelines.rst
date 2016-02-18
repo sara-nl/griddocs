@@ -55,5 +55,5 @@ Markup
 ======
 
 * When to use ``literal markup``?
-* When to use **bold**?
+* When to use **bold**? Example: "**Only you** are allowed to know the contents of this key."
 * When to use *italic*?
