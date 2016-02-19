@@ -370,10 +370,28 @@ In order to run pbs jobs on LSG that last more than 36 hours, you need to use ``
 * If you specify a queue (``-q`` flag) it is sufficient to get your jobs run for 72 hours.
 
 
+.. _troubleshooting:
 
 ===============
 Troubleshooting
 ===============
+
+*Don't hesitate to contact us when things go wrong!* We're happy to help you overcome the difficulties that every grid user faces.
+
+In order to assist you better, we have a few troubleshooting steps that may already get you going and otherwise may help us to help you.
+
+* Check the output of ``voms-proxy-info -all``. Is your proxy still valid? Does it have the correct attributes for the work you're doing?
+* Try running your command with higher debugging level or verbosity.
+
+  .. code-block:: bash
+
+     $ glite-wms-job-submit --debug ...
+     $ srmcp -debug ...
+     $ gfal-copy --verbose ...
+     $ globus-url-copy -debugftp -verbose-perf -verbose ...
+     $ curl --verbose ...
+  
+* Is the resource you're using in downtime? Downtimes are announced in the :ref:`GOCDB (Grid Operations Center Database) <https://goc.egi.eu/portal/>` (certificate in your browser required). There is also a :ref:`list of downtimes of the Dutch grid sites <http://web.grid.sara.nl/cgi-bin/eInfra.py>`.
 
 
 .. _get-log:
