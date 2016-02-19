@@ -391,7 +391,7 @@ In order to assist you better, we have a few troubleshooting steps that may alre
      $ globus-url-copy -debugftp -verbose-perf -verbose ...
      $ curl --verbose ...
   
-* Is the resource you're using in downtime? Downtimes are announced in the :ref:`GOCDB (Grid Operations Center Database) <https://goc.egi.eu/portal/>` (certificate in your browser required). There is also a :ref:`list of downtimes of the Dutch grid sites <http://web.grid.sara.nl/cgi-bin/eInfra.py>`.
+* Is the resource you're using in downtime? Downtimes are announced in the `GOCDB (Grid Operations Center Database) <https://goc.egi.eu/portal/>`_ (certificate in your browser required). There is also a `list of downtimes of the Dutch grid sites <http://web.grid.sara.nl/cgi-bin/eInfra.py>`_.
 
 
 .. _get-log:
