@@ -459,6 +459,8 @@ Occasionally, transfers are stuck when 0 bytes have been transferred. There are 
 
   .. image:: /Images/Black_hole_connection.png
 
+  .. comment: Image source is at https://www.websequencediagrams.com/?lz=dGl0bGUgQmxhY2sgaG9sZSBjb25uZWN0aW9uCgpwYXJ0aWNpcGFudCBjbGllbnQABg1yb3V0ZXIxAAETMgAuDXNlcnZlcgoKAD0GIC0-AAsHOiBzbWFsbCByZXF1ZXN0IHBhY2tldAoAKQYgLT4AbQcAHQpwbHkAHQgAQgsAbAc6IGxhcmdlIGRhdGEAQwhub3RlIG92ZXIAGwp0b28AIwYKAIEkBwA5CjE6IElDTVAgZXJyb3IgdG8AgWwIADYQMTogYmxvY2tpbmcALAUK&s=roundgreen
+
   Some tools to test this:
 
   .. code-block:: bash
