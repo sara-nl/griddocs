@@ -398,6 +398,29 @@ In order to assist you better, we have a few troubleshooting steps that may alre
   
 * Is the resource you're using in downtime? Downtimes are announced in the `GOCDB (Grid Operations Center Database) <https://goc.egi.eu/portal/>`_ (certificate in your browser required). There is also a `list of downtimes of the Dutch grid sites <http://web.grid.sara.nl/cgi-bin/eInfra.py>`_.
 
+* Can you connect to the service?
+
+  .. code-block:: bash
+
+     # A basic firewall check: can you connect to the port?
+     $ telnet srm.grid.sara.nl 8443
+
+     # Testing the SSL layer of a connection to the dCache SRM door
+     $ echo 'QUIT' | openssl s_client -connect srm.grid.sara.nl:8443 \
+                         -CApath /etc/grid-security/certificates
+     # One of the last lines should be: 'Verify return code: 0 (ok)'
+
+     # Testing a gridFTP door
+     $ telnet rabbit1.grid.sara.nl 2811
+
+     # GridFTP data channels are more difficult to test, because the port opens only after a transfer is initiated.
+     # But when we have started an iperf service, you can try to telnet to it.
+     $ telnet rabbit1.grid.sara.nl 24000
+     
+     # Or just test with iperf:
+     $ iperf3 -c rabbit1.grid.sara.nl -p 24000
+     # Keep in mind that we have to start iperf first!
+
 
 .. _get-log:
 
