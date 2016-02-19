@@ -313,7 +313,9 @@ How can I find all the available LSG Storage Elements and get their SURLS?
 * A complete list of the LSG SURLs:
 
   .. code-block:: bash
-
+	
+	srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid
+	srm://srm.target.rug.nl:8444/lsgrid
 	srm://gb-se-amc.amc.nl:8446/dpm/amc.nl/home/lsgrid/
 	srm://gb-se-ams.els.sara.nl:8446/dpm/els.sara.nl/home/lsgrid
 	srm://gb-se-emc.erasmusmc.nl:8446/dpm/erasmusmc.nl/home/lsgrid
@@ -321,11 +323,11 @@ How can I find all the available LSG Storage Elements and get their SURLS?
 	srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid
 	srm://gb-se-tud.ewi.tudelft.nl:8446/dpm/ewi.tudelft.nl/home/lsgrid	
 	srm://gb-se-wur.els.sara.nl:8446/dpm/els.sara.nl/home/lsgrid
-	srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid
-        srm://se.lsg.bcbr.uu.nl:8446/dpm/lsg.bcbr.uu.nl/home/lsgrid
+	srm://gb-se-rug.sara.usor.nl:8446/dpm/sara.usor.nl/home/lsgrid
+	srm://se.lsg.bcbr.uu.nl:8446/dpm/lsg.bcbr.uu.nl/home/lsgrid
         srm://se.lsg.maastrichtuniversity.nl:8446/dpm/lsg.maastrichtuniversity.nl/home/lsgrid
         srm://se.lsg.psy.vu.nl:8446/dpm/lsg.psy.vu.nl/home/lsgrid
-	srm://gb-se-rug.sara.usor.nl:8446/dpm/sara.usor.nl/home/lsgrid
+	
 
 
 
