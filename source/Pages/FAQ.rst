@@ -376,6 +376,11 @@ In order to run pbs jobs on LSG that last more than 36 hours, you need to use ``
 Troubleshooting
 ===============
 
+.. _general-troubleshooting-steps:
+
+General troubleshooting steps
+=============================
+
 *Don't hesitate to contact us when things go wrong!* We're happy to help you overcome the difficulties that every grid user faces.
 
 In order to assist you better, we have a few troubleshooting steps that may already get you going and otherwise may help us to help you.
