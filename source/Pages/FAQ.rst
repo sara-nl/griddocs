@@ -455,7 +455,9 @@ Occasionally, transfers are stuck when 0 bytes have been transferred. There are 
 
   You can see whether this happens at `these graphs <http://web.grid.sara.nl/dcache.php?r=hour#transfers>`_. A red color ('Movers queued') means that there are stalling transfers.
 
-* You're transferring files from/to outside SURFsara, and your endpoint support a MTU (network packet) size of 9000, but the network path doesn't. Control traffic passes through because it consists of small packets. But data traffic consists of large packets and these are blocked.
+* You're transferring files from/to outside SURFsara, and your endpoint support a MTU (network packet) size of 9000, but the network path doesn't. Control traffic passes through because it consists of small packets. But data traffic consists of large packets and these are blocked. The image below illustrates this:
+
+  .. image:: /Images/Black_hole_connection.png
 
   Some tools to test this:
 
