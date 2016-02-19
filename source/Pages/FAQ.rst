@@ -410,11 +410,11 @@ In order to assist you better, we have a few troubleshooting steps that may alre
                          -CApath /etc/grid-security/certificates
      # One of the last lines should be: 'Verify return code: 0 (ok)'
 
-     # Testing a gridFTP door
+     # Testing a gridFTP door, control channel
      $ telnet rabbit1.grid.sara.nl 2811
 
      # GridFTP data channels are more difficult to test, because the port opens only after a transfer is initiated.
-     # But when we have started an iperf service, you can try to telnet to it.
+     # But after we start an iperf service, you can try to telnet to it.
      $ telnet rabbit1.grid.sara.nl 24000
      
      # Or just test with iperf:
