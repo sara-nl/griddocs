@@ -4,7 +4,7 @@
 Life Science Grid
 *****************
 
-In this page you will find general information about the Life Science Grid, the LSG users and available clusters:
+On this page you will find general information about the Life Science Grid (LSG), the users of the LSG infrastructure, and the available LSG clusters:
 
 .. contents:: 
     :depth: 4
@@ -36,33 +36,29 @@ LSG clusters
 .. image:: /Images/LSG_700px.png
 	:align: right
 
-Currently, twelve clusters are in place at the following sites:    
+Currently, ten LSG clusters are in place at the following sites:    
     
-+---------+-----------+
-|**BCBR** |  Utrecht  |
-+---------+-----------+         
-|**AMC**  | Amsterdam |	    
-+---------+-----------+         
-|**EMC**  | Rotterdam |	   
-+---------+-----------+         
-|**KUN**  | Nijmegen  |
-+---------+-----------+         
-|**LUMC** | Leiden    |
-+---------+-----------+         
-|**NKI**  | Amsterdam |
-+---------+-----------+         
-|**RUG**  | Groningen |
-+---------+-----------+         
-|**TUD**  | Delft     |
-+---------+-----------+         
-|**UM**   | Maastricht| 
-+---------+-----------+         
-|**VU**   | Amsterdam |
-+---------+-----------+         
-|**WUR**  | Wageningen|
-+---------+-----------+         
-|**UU**   | Utrecht   |
-+---------+-----------+
++-------------+-----------+
+|**LSG_BCBR** | Utrecht   |
++-------------+-----------+         
+|**LSG_AMC**  | Amsterdam |	    
++-------------+-----------+         
+|**LSG_EMC**  | Rotterdam |	   
++-------------+-----------+         
+|**LSG_KUN**  | Nijmegen  |
++-------------+-----------+         
+|**LSG_LUMC** | Leiden    |
++-------------+-----------+         
+|**LSG_RUG**  | Groningen |
++-------------+-----------+         
+|**LSG_TUD**  | Delft     |
++-------------+-----------+         
+|**LSG_UM**   | Maastricht| 
++-------------+-----------+         
+|**LSG_VU**   | Amsterdam |
++-------------+-----------+         
+|**LSG_WUR**  | Wageningen|
++-------------+-----------+         
 
 The technical specifications of a single LSG cluster are described in :ref:`specs-lsg`. 
 

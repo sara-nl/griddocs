@@ -4,7 +4,7 @@
 Dutch National Grid
 *******************
 
-In this page you will find information about the Dutch National Grid:
+In this page you will find information about the Dutch National Grid Infrastructure:
 
 .. contents:: 
     :depth: 4
@@ -13,15 +13,17 @@ In this page you will find information about the Dutch National Grid:
 About
 =====
 
-The Grid consists of a large number of various clusters which are distributed all over the Netherlands and even abroad. SURFsara offers Grid services in cooperation with ``Nikhef`` and ``RUG-CIT``. All together form the **Dutch National Grid Initiative** (NGI_NL) offered to scientists affiliated with Dutch universities and institutes. 
+The Grid in general consists of a large number and variety of clusters which are distributed all over the Netherlands and abroad. Grid infrastructures in European member states are organised by means of their own **National Grid Initiatives** (NGIs). SURFsara offers Grid services in collaboration with ``Nikhef`` and ``RUG-CIT``, and together we form the **Dutch National Grid Initiative** (NGI_NL). 
 
-The Grid can be used for a variety of purposes, however a single grid can be dedicated for a specific purpose. As for example our `Dutch Grid`_ infrastructure, which consists of a small number of tightly interconnected clusters, operated in a collaboration between SUFRsara, NIKHEF and RUG-CIT, is very potent in enabling ``high-throughput`` processing of ``large datasets`` in a minimum amount of time.
+The Dutch National Grid Initiative provides the Grid infrastructure to scientists affiliated with Dutch universities and other research institutes, and to international research projects that have established agreements with us. 
+
+Grid technology can be used for a variety of purposes and application types, however a subset of the worldwide Grid infrastructure can be dedicated for a specific purpose. For example our `Dutch Grid`_ infrastructure, which consists of a small number of tightly interconnected clusters, operated under the umbrella of NGI_NL, is very potent in enabling ``high-throughput processing of large datasets`` in a minimum amount of time.
 
 =====================
 National and European
 =====================
 
-The Dutch portion of the Grid is connected to `EGI`_, the European Grid Initiative. This allows Grid users in the Netherlands and abroad easy access to one another's resources. EGI also supplies central monitoring and ensures the homogeneity of participating clusters.
+The Dutch National Grid Infrastructure is connected to `EGI`_, the European Grid Initiative, which allows Grid users in the Netherlands and abroad easy access to one another's resources. EGI also supplies central monitoring and security and ensures smooth interoperability of all connected clusters.
 
 
 

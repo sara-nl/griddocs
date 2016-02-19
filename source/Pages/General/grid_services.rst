@@ -13,11 +13,11 @@ In this page you will find general information about the SURFsara grid services 
 About
 =====
 
-To deploy your production runs smoothly on the Grid, our services can be of great value. Our standard services are indispensable for using the Grid, while additional services are available as an option. For additional services a separate offer can be made.
+To deploy your production runs smoothly on the Grid, our services can be of great value. Our standard Grid services like the Workload Management System, Compute Elements, Storage Elements, a Logical File Catalog, Virtual Organisation Management Services, and User Interface machines are indispensable for generic use of the Grid infrastructure. Apart from those we have additional services available as an option, that may be beneficial for your type of application. 
 
-Standard services:
+Our Grid services:
 
-* ``High-throughput`` processing nodes for jobs execution
+* ``High-throughput`` processing nodes for job execution
 * Access to scalable :ref:`grid-storage` facilities, disk and tape
 * Standard Grid Services like User Interfaces, Brokers, and Virtual Organisation management services
 * ``Token Pool`` Services (:ref:`topos-overview` and :ref:`picas-overview`) for production run logistics, job collection management, monitoring and control
@@ -32,9 +32,10 @@ Standard services:
 Support
 =======
 
-You may request support for our Grid services by contacting us by phone or email. Our dedicated team at `SURFsara helpdesk`_ is more than willing to assist you for any questions or complaints and listen carefully to your remarks for further improvement of our services.
+You may request support for our Grid services by contacting us by phone or email. Our dedicated team at `SURFsara helpdesk`_ is more than willing to assist you for any questions or complaints and carefully take note of your remarks for further improvement of our services.
 
-Checkout the detailed information about `SURFsara helpdesk`_ and don't hesitate to contact us!
+Checkout the detailed information about `SURFsara helpdesk`_. 
+Please don't hesitate to contact us!
 
 ..
 

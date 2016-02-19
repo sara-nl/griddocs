@@ -1,19 +1,20 @@
 
 .. _monitoring-pages:
 
-***********************
-Statistics & Monitoring
-***********************
+*************************
+Statistics and Monitoring
+*************************
 
 In this section you will find information about the grid systems status and usage statistics:
 
 .. contents:: 
     :depth: 4
+
  
 .. _monitoring-pages-surfsara:
  
 ================ 
-SURFsara systems 
+SURFsara systems
 ================
 
 The webpage below contains monitoring information about the usage of various systems at SURFsara:
@@ -25,11 +26,21 @@ More specific monitoring information about the grid systems can be found in the 
 * `SURFsara Grid systems`_
 
  
+.. _monitoring-pages-nikhef:
+
+===============
+NIKHEF facility
+===============
+
+The webpage below contains Nikhef facility statistics and status overview: 
+
+* `Statistics NIKHEF facility`_
+
 .. _monitoring-pages-egi: 
 
-==================== 
-EGI monitoring pages
-====================
+=====================================
+EGI accounting and operations portals
+=====================================
  
 The portal below provides information about accounting statistics for sites, regions, VOs:
 
@@ -39,16 +50,6 @@ The following site provides grid sites info updated by participating NGIs:
 
 * `GOCDB NGIs info`_
 
-
-.. _monitoring-pages-nikhef:
-
-===============
-NIKHEF facility
-===============
-
-The webpage below contains monitoring information about the Nikhef facility statistics overview: 
-
-* `Statistics NIKHEF facility`_
 
 
 ..

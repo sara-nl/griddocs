@@ -16,7 +16,7 @@ Ongoing maintenances
 
 You can lookup announcements for the current status of the Grid systems, including all ``ongoing`` downtimes and maintenances on `our website user info <https://userinfo.surfsara.nl/>`_ under:
 
-    ``Systems > System status > Grid: National e-Infrastructure Grid Maintenances``
+    ``Systems > System status > National e-Infrastructure Grid Maintenances``
 
 Direct link: http://web.grid.sara.nl/cgi-bin/eInfra.py 
 
