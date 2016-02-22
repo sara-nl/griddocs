@@ -270,9 +270,9 @@ p.admonition-title:after {
 /* Style for bash code boxes */
 pre {
     padding: 12px 20px;
-    background-color: #E0F4E0;
-    border: 1px solid #D0E4D0;
-    border-left: 10px solid #D0E4D0;
+    background-color: #F5F5F5;
+    border: 1px solid #DDD;
+    border-left: 10px solid #DDD;
     line-height: 1.5em;
     font-size: 1.1em;
 }
