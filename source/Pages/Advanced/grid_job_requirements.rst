@@ -146,8 +146,8 @@ Multicore jobs
 Synopsis::
 
     # Request just 4 cores on a single node 
-    SmpGranularity = 2;
-    CPUNumber = 2;   
+    SmpGranularity = 4;
+    CPUNumber = 4;   
 	
 Note that if you do not specify SmpGranularity the requested number of cores (CPUNumber) can be distributed over different nodes, which is only useful for MPI (or likewise) applications. 
 
