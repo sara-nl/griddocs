@@ -230,7 +230,7 @@ div.body p, div.body dd, div.body li {
 
 div.contents,
 div.contents.topic {
-    background: #e4efdc;
+    background: #f1f7ee;
     border: 1px solid #DED !important;
 }
 
