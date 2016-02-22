@@ -265,9 +265,9 @@ where you should substitute jobIds with the file that you used to store the
 job ids.
 
 If you omitted the ``--dir`` option, your output stored on the
-``/scratch``-directory on the UI. Please remove your files from the
-``/scratch``-directory when they are no longer necessary. Also keep in
-mind that if the ``/scratch``-directory becomes too full, the
+``/scratch`` directory on the UI. Please remove your files from the
+``/scratch`` directory when they are no longer necessary. Also keep in
+mind that if the ``/scratch`` directory becomes too full, the
 administrators remove the older files until enough space is available
 again.
 
