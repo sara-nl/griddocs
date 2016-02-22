@@ -210,7 +210,7 @@ To check the current job status from the command line, apply the following comma
 
 	glite-wms-job-status -i jobIds
 
-* Finally, a third (optional) way to check the job status is within the web browser that :ref:`you installed your certificate <digicert_browser_install>`. In this browser open the jobID link:
+* Finally, a third (optional) way to check the job status is with the web browser in which :ref:`you installed your certificate <digicert_browser_install>`. In this browser open the jobID link:
 
 	https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
 
