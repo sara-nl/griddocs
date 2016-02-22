@@ -478,4 +478,4 @@ Occasionally, transfers are stuck when 0 bytes have been transferred. There are 
   
      iperf -c rabbit1.grid.sara.nl --port 24000 --parallel 4
 
-  A fix for Linux servers is to enable mtu_probing. This enables the Linux kernel to select the best MTU value for a certain network route.
+  A fix for Linux servers is to enable ``tcp_mtu_probing`` in ``sysctl.conf``. This enables the Linux kernel to select the best MTU value for a certain network route.
