@@ -5,8 +5,8 @@
 Grid Certificates
 *****************
 
-In this section we discuss grid user certificates in more detail; how to
-convert certificates, and how to find out the details of your grid
+In this section we discuss Grid user certificates in more detail; how to
+convert certificates, and how to find out the details of your Grid
 certificate.
 
 .. contents:: 
@@ -88,7 +88,7 @@ Private keys and certificates can be stored in different formats.
 Different systems use different formats. The two important formats are:
 
 * PEM: stores keys and certificates in separate ascii-files; this
-  format is used by the grid middleware and storage programs;
+  format is used by the Grid middleware and storage programs;
 
 * pkcs12: stores keys and certificates in one binary file; this
   format is used by browsers.

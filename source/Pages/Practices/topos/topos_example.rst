@@ -16,9 +16,9 @@ Overview of the example
 
 An application called "fractals" needs to be executed in parallel a certain amount of times. Each time, the program is called with a different set of parameters. The parameters for all of these tasks are saved in a file in which a single line contains parameters for a single task.
 
-Using the combination Grid, pilot jobs and the ToPoS service allows the user to run and finish all tasks without having to bother with failures and re-submissions, and make more efficient use of the grid while doing so. 
+Using the combination Grid, pilot jobs and the ToPoS service allows the user to run and finish all tasks without having to bother with failures and re-submissions, and make more efficient use of the Grid while doing so. 
 
-The pipeline of the job is as follows. We upload the file that contains our parameters to the ToPoS service. After that we submit a parametric grid job that, in an endless loop:
+The pipeline of the job is as follows. We upload the file that contains our parameters to the ToPoS service. After that we submit a parametric Grid job that, in an endless loop:
 
 * asks ToPoS for the next line
 * tells ToPoS not to give that line to anybody else as long as it works on it
@@ -44,7 +44,7 @@ ToPoS sample client
 
 This example requires a ToPoS library implementing a subset of ToPoS' features. It is written in bash script and requires curl and awk to be present. It has been tested on CentOS 6.7 and Ubuntu 14.04. You can find the documentation (including download location) on this library at the :ref:`ToPoS library <topos-bash-client>` for BASH page.
 
-The ToPoS service offers the possibility to upload a text file of which each line will be made a token. We will use this functionality to make a single token of each line in our file with parameters. This way, each token represents a task that needs to be executed on the grid.
+The ToPoS service offers the possibility to upload a text file of which each line will be made a token. We will use this functionality to make a single token of each line in our file with parameters. This way, each token represents a task that needs to be executed on the Grid.
 
 ===================
 Running the example
@@ -90,7 +90,7 @@ Start by downloading and unpacking the necessary files.
     cc fractals.c -o fractals -lm
 
 
-.. warning:: It is advisable to compile your programs on the User Interface (UI) Machine. The grid nodes have similar environments and the chance of your job to run successfully on a remote worker node is larger when your program is able to run on the UI. 
+.. warning:: It is advisable to compile your programs on the User Interface (UI) Machine. The Grid nodes have similar environments and the chance of your job to run successfully on a remote worker node is larger when your program is able to run on the UI. 
 
 
 Creating a parameter file for the fractals program
@@ -128,7 +128,7 @@ You might see some HTML output that you can ignore. To check if the request went
 Running the example
 ===================
 
-Now that the tokens are uploaded we can submit a grid job. A sample JDL, submitting 10 jobs at once, is included. You still need to fill in the poolname you use in this file by replacing the placeholder [POOLNAME]. It will call the ./createFractalsFromTokens script, which is the implementation of a simple pilot job that implements the pipeline as described above.
+Now that the tokens are uploaded we can submit a Grid job. A sample JDL, submitting 10 jobs at once, is included. You still need to fill in the poolname you use in this file by replacing the placeholder [POOLNAME]. It will call the ./createFractalsFromTokens script, which is the implementation of a simple pilot job that implements the pipeline as described above.
 
 This script calls the fractals program. You can compile it by simply running::
 
@@ -140,7 +140,7 @@ To have an impression of how ./createFractalsFromTokens works you can call it on
 
 It will recursively generate an image based on parameters received from the specified ToPoS pool, and output the path to the generated image.
 
-You can also submit the JDL file (don't forget to edit it to include your poolname!) to the grid and have all tokens processed in parallel. You will be able to see the progress by querying ToPoS through your browser and checking the amount of locks that exist, as well as the amount of tokens that are left.
+You can also submit the JDL file (don't forget to edit it to include your poolname!) to the Grid and have all tokens processed in parallel. You will be able to see the progress by querying ToPoS through your browser and checking the amount of locks that exist, as well as the amount of tokens that are left.
 
 
 Retrieve the output

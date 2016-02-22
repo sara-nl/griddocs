@@ -4,7 +4,7 @@
 Grid Authentication
 *******************
 
-This section explains the concepts and operations regarding grid authentication mechanisms:
+This section explains the concepts and operations regarding Grid authentication mechanisms:
 
 .. contents:: 
     :depth: 4
@@ -15,9 +15,9 @@ Introduction: delegation of authentication
 ==========================================
 
 Grid, by its very nature, is decentralized. This means that users must
-authenticate themself to the grid services they want to use. This is accomplished 
+authenticate themself to the Grid services they want to use. This is accomplished 
 by means of a personal certificate and accompanying private key that 
-every grid user must have. The combinbation of a certificate and private key
+every Grid user must have. The combinbation of a certificate and private key
 uniquely identifies an user. Therefore, you should **never share
 your private key** with anyone else or with any service. At the same time,
 however, your jobs will typically run on systems you may not trust. However,
@@ -26,17 +26,17 @@ This is where *delegation* comes in: identifying yourself with a system you don'
 by creating a new certificate/private key pair, called a proxy, with a limited 
 validity. This chapter describes how you can delegate your credentials.
 
-The easiest way is to use a *grid session*, which does everything for you in
+The easiest way is to use a *Grid session*, which does everything for you in
 one go.
 
 
 .. _startgridsession-explained:
 
 =======================
-Starting a grid session
+Starting a Grid session
 =======================
 
-The easiest way to start a session on the grid is to use the ``startGridSession <VO Name>`` command (see also :ref:`here <startgridsession>`) on a user interface (UI) machine.
+The easiest way to start a session on the Grid is to use the ``startGridSession <VO Name>`` command (see also :ref:`here <startgridsession>`) on a user interface (UI) machine.
 
 .. sidebar:: More about creating proxies?
 
@@ -51,10 +51,10 @@ The ``startGridSession`` command:
 Your jobs will now be able to run for week. The WMS, who is responsible for
 scheduling your jobs, will renew the proxy certificate of running
 jobs *every 12 hours* automatically, for one week. This means that your
-jobs must finish within a week from starting the grid session . However,
+jobs must finish within a week from starting the Grid session . However,
 running the command again will extend your jobs with a week of run time.
 
-.. note:: Every time you submit the ``startGridSession`` command it renews your grid session for an additional week.
+.. note:: Every time you submit the ``startGridSession`` command it renews your Grid session for an additional week.
 
 Instead of ``startGridSession``, you can run the following three commands separately with the same results:
 
@@ -75,7 +75,7 @@ The next section explains the startGridSession operations step-by-step. See also
 
 .. _voms-proxies:
 
-Using VOMS Proxies
+Using VOMS proxies
 ==================
 
 In order to use the Grid facilities, you have to create a proxy. A proxy is a
@@ -91,7 +91,7 @@ with this file directly in exceptional cases.
 Creating a VOMS proxy
 ---------------------
 
-Make sure you have installed your certificate and private on the grid user interface that you are working on. 
+Make sure you have installed your certificate and private on the Grid user interface that you are working on. 
 They should be place in the ``.globus`` directory under your home directory and should be named ``usercert.pem``
 and ``userkey.pem``. They must have the following ownerships and permissions:
 	
@@ -105,7 +105,7 @@ and ``userkey.pem``. They must have the following ownerships and permissions:
 	
 where ``homer`` should be replaced with your username.
 
-Now issue the following command to create a *local* proxy. The pass phrase you are asked for, is your grid certificate password:
+Now issue the following command to create a *local* proxy. The pass phrase you are asked for, is your Grid certificate password:
 
 .. code-block:: bash
 
@@ -119,7 +119,7 @@ You will see the following output in your terminal::
 	Created proxy in /tmp/x509up_u39111.
 	Your proxy is valid until Thu Jan 05 02:07:29 CET 2016
 
-This proxy is your "username" for the grid. The last line in the example shows the expiration time of the proxy. 
+This proxy is your "username" for the Grid. The last line in the example shows the expiration time of the proxy. 
 
 Non standard location
 `````````````````````
@@ -161,7 +161,7 @@ Here is an example::
 You can see that a proxy certificate has a limited lifetime and is stored
 in the ``/tmp`` directory. VO extension information is also shown and
 is used to verify if you are indeed a member of this VO and group:
-A grid service who has been provided with a delegation of your proxy 
+A Grid service who has been provided with a delegation of your proxy 
 can contact the VOMS service for membership information and subsequently
 grant or deny you access.
 
@@ -176,7 +176,7 @@ grant or deny you access.
 
 .. _myproxy-server:
 
-Using the MyProxy Server
+Using the MyProxy server
 ========================
 
 The following command stores a proxy certificate in the proxy server
@@ -224,12 +224,12 @@ Credential delegation
 
 This section explains the usage of the command ``glite-wms-job-delegate-proxy``, which is also executed when running the :ref:`startGridSession <startgridsession-explained>`.
 
-When you submit a job to the grid it will be sent to the Workload
+When you submit a job to the Grid it will be sent to the Workload
 Management System (WMS). This system will then schedule your job and send
-it to a worker node somewhere on the grid. The job will be run on your
+it to a worker node somewhere on the Grid. The job will be run on your
 behalf, therefore, you should delegate your credentials to the WMS. 
 
-Credential delegation solves the following problem: when the grid is busy or when you submit a large number of jobs, it can take more then the standard 12 hours for the jobs to start than your local proxy certificate is valid. The solution is to use *proxy delegation* before submitting jobs.
+Credential delegation solves the following problem: when the Grid is busy or when you submit a large number of jobs, it can take more then the standard 12 hours for the jobs to start than your local proxy certificate is valid. The solution is to use *proxy delegation* before submitting jobs.
 
 We assume that you have issued the ``voms-proxy-init command`` and have a valid
 local proxy. If not, please see :ref:`voms-proxy-init command <voms-proxies>`.

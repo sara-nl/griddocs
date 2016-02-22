@@ -5,7 +5,7 @@
 Statistics and Monitoring
 *************************
 
-In this section you will find information about the grid systems status and usage statistics:
+In this section you will find information about the Grid systems status and usage statistics:
 
 .. contents:: 
     :depth: 4
@@ -21,7 +21,7 @@ The webpage below contains monitoring information about the usage of various sys
  
 * `SURFsara systems usage`_
  
-More specific monitoring information about the grid systems can be found in the following website:
+More specific monitoring information about the Grid systems can be found in the following website:
 
 * `SURFsara Grid systems`_
 
@@ -46,7 +46,7 @@ The portal below provides information about accounting statistics for sites, reg
 
 * `EGI Accounting portal`_
  
-The following site provides grid sites info updated by participating NGIs:
+The following site provides Grid sites info updated by participating NGIs:
 
 * `GOCDB NGIs info`_
 

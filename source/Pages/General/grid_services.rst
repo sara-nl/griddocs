@@ -1,10 +1,10 @@
 .. _our-services:
 
 *************
-Grid Services
+Grid services
 *************
 
-In this page you will find general information about the SURFsara grid services and support:
+In this page you will find general information about the SURFsara Grid services and support:
 
 .. contents:: 
     :depth: 4
@@ -23,7 +23,7 @@ Our Grid services:
 * ``Token Pool`` Services (:ref:`topos-overview` and :ref:`picas-overview`) for production run logistics, job collection management, monitoring and control
 * Virtual filesystem service :ref:`softdrive` for centralized software deployment on distributed systems
 * Dedicated ``light-paths``: we offer support bridging the last mile between the end points and your data sources.
-* ``Consultancy``: advice and support on getting access, working with grid certificates, basic job submission, data access methods, best practices, advice on design and optimization of applications for performance improvements, integration with large-scale job-submission frameworks, and international upscaling.
+* ``Consultancy``: advice and support on getting access, working with Grid certificates, basic job submission, data access methods, best practices, advice on design and optimization of applications for performance improvements, integration with large-scale job-submission frameworks, and international upscaling.
 
 
 .. _support:

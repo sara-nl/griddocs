@@ -1,4 +1,4 @@
-
+Grid
 .. _topos-perl-client:
 
 **********
@@ -18,7 +18,7 @@ This page contains information about ``PerlToPoS``, a perl client for ToPoS:
 Introduction
 ============
 
-PerlToPoS is a ToPoS client library written in Perl. The library has no dependencies other than those found on all grid nodes, so including the two modules 'ToposPool.pm' and 'ToposToken.pm' is enough to run pilot jobs using PerlToPoS.
+PerlToPoS is a ToPoS client library written in Perl. The library has no dependencies other than those found on all Grid nodes, so including the two modules 'ToposPool.pm' and 'ToposToken.pm' is enough to run pilot jobs using PerlToPoS.
 
 As an introduction, the following example shows a simple, but functional PerlToPoS client:
 
@@ -224,7 +224,7 @@ The pool can be opened again using the 'load' method, again with an optional fil
     my $pool = ToposPool -> load("my_pool_id.txt");
     my $pool = ToposPool -> load;  # loads the pool from 'pool_id.txt'
 
-The file containing the pool name can be used in the InputSandbox in grid jobs, making it easy to reopen the ToPoS pool from a pilot job.
+The file containing the pool name can be used in the InputSandbox in Grid jobs, making it easy to reopen the ToPoS pool from a pilot job.
 
 
 Populating a pool with tokens

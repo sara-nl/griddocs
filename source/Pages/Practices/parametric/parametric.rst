@@ -5,7 +5,7 @@
 Parametric jobs
 ***************
 
-The :ref:`pilot jobs <pilot-jobs>` use the technique of parametric jobs for the job submission to the grid. In this page we give an example of parametric jobs:
+The :ref:`pilot jobs <pilot-jobs>` use the technique of parametric jobs for the job submission to the Grid. In this page we give an example of parametric jobs:
 
 .. contents:: 
     :depth: 4
@@ -14,7 +14,7 @@ The :ref:`pilot jobs <pilot-jobs>` use the technique of parametric jobs for the 
 About
 =====
 
-Pilot jobs are submitted to the grid with a specific :ref:`JDL <jdl>` type called ``Parametric``. A parametric job causes a set of jobs to be generated from one JDL file. 
+Pilot jobs are submitted to the Grid with a specific :ref:`JDL <jdl>` type called ``Parametric``. A parametric job causes a set of jobs to be generated from one JDL file. 
 
 
 =======
@@ -44,7 +44,7 @@ In the example below, the parametric job will create 3 child jobs (see line 4) t
 	OutputSandbox = {"std_PARAM_.out","std_PARAM_.err"}; 
 
 
-* You can submit the parametric job as any grid job:
+* You can submit the parametric job as any Grid job:
 
   .. code-block:: bash
 

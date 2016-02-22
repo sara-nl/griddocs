@@ -137,8 +137,8 @@ Replicating files
 =================
 
 File replication means that you copy the same file to multiple storage
-elements. If you then start a grid job which uses that file, and the job
-lands on one of the compute elements of Life Science Grid, you
+elements. If you then start a Grid job which uses that file, and the job
+lands on one of the compute elements of the Life Science Grid, you
 then use the file which is nearest to the compute element. This reduces
 the time needed to copy the file, and reduces network traffic.
 
