@@ -187,8 +187,9 @@ div.body a {
     text-decoration: underline;
 }
 
-/* Don't underline links in Contents section */
-div.contents a {
+/* Don't underline links in Contents section or on frontpage index */
+div.contents a,
+div.toctree-wrapper a {
     text-decoration: none;
 }
 
