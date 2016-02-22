@@ -16,12 +16,12 @@ In this page you will find general information about getting access to the Life 
 Local access to an LSG cluster
 ==============================
 
-Granting local access to an LSG cluster enables you:
+Granting local access to a Life Science Grid (LSG) cluster enables you:
 
 * submitting :ref:`pbs` jobs directly to your local cluster
 * the possibility to scale up to other LSG clusters (see :ref:`access-grid`) 
 
-If your research applies to one of the Life Science disciplines and your institute hosts a LSG cluster (see :ref:`lsg-clusters`), you are eligible to obtain an account on your local LSG cluster.
+If your research applies to one of the life science disciplines and your institute hosts a LSG cluster (see :ref:`lsg-clusters`), you are eligible to obtain an account on your local LSG cluster.
 
 To get an account on a local user interface, please send a request to your Designated Site Admin (see :ref:`lsg-dsa`) or contact us at helpdesk@surfsara.nl.
 
@@ -37,7 +37,7 @@ Access to the Dutch Grid or the LSG clusters (including non-local access) allows
 * submitting :ref:`Grid jobs <first-grid-job>` to multiple clusters via the Grid middleware
 * storing data to the :ref:`grid-storage`
 
-Researchers at SURF-affiliated institutes can apply for compute and storage capacity on the grid by submitting the `SURFsara application form`_. For scientists not affiliated to SURF, rates are based on tailor made packages. Specific details on obtaining accounts can be found in the `Access Grid`_ section of our website. 
+Researchers at SURF-affiliated institutes can apply for compute and storage capacity on the Grid by submitting the `SURFsara application form`_. For scientists not affiliated to SURF, rates are based on tailor made packages. Specific details on obtaining accounts can be found in the `Access Grid`_ section of our website. 
 
 Please contact us at helpdesk@surfsara.nl for any inquiry on our possibilities.
 
@@ -47,7 +47,7 @@ Please contact us at helpdesk@surfsara.nl for any inquiry on our possibilities.
 Estimate your resource needs
 ============================
 
-When you request to use the grid you do so in the context of a project. A project is set to solve a problem, defined as some goals that you want to achieve, which includes a plan on how you will achieve those goals. For each project a suitable amount of resources will be allocated. You can work together with several people in the same project and using the same resource allocation. 
+When you request to use the Grid you do so in the context of a project. A project is set to solve a problem, defined as some goals that you want to achieve, which includes a plan on how you will achieve those goals. For each project a suitable amount of resources will be allocated. You can work together with several people in the same project and using the same resource allocation. 
 
 In general, each project resource allocation involves: 
 
@@ -70,11 +70,6 @@ For a proper estimation of resources requirements it is best to start with a few
 
 In case you don't know how to prepare such an inventory, we would be happy to assist you with that. 
 
-..
-
-..
-
-..
 
 .. Links:
 

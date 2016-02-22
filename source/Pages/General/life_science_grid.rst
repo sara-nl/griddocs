@@ -16,7 +16,7 @@ About
 
 The `Life Science Grid`_ (LSG) is a network of compute clusters intended specifically for researchers in the life sciences. The LSG infrastructure consists of a series of connected computer clusters which are placed within the working environment of Life Scientists while being fully managed remotely by experts at SURFsara.
  
-Since 2007, SURFsara has placed several powerful computer clusters at the local sites of interested universities. Research institutions in the Netherlands house clusters that are embedded in the international grid infrastructure. 
+Since 2007, SURFsara has placed several powerful computer clusters at the local sites of interested universities. Research institutions in the Netherlands house clusters that are embedded in the international Grid infrastructure. 
 
 ========
 For whom

@@ -5,7 +5,7 @@
 PBS local jobs
 **************
 
-In this page we will talk about job submission to the local LSG cluster. The information here applies to :ref:`LSG users <lsg>` who own an account on their :ref:`local LSG cluster <lsg-clusters>`:
+In this page we will talk about job submission to the local Life Science Grid (LSG) cluster. The information here applies to :ref:`LSG users <lsg>` who own an account on their :ref:`local LSG cluster <lsg-clusters>`:
 
 .. contents::
     :depth: 4
@@ -15,7 +15,7 @@ In this page we will talk about job submission to the local LSG cluster. The inf
 Introduction
 ============
 
-The LSG is a group of clusters which can be used locally only, or as one big cluster (Grid). Each :ref:`local LSG cluster <lsg-clusters>` is part of the Life Science Grid that has its own user interface (UI) and two worker nodes of 64 cores (see :ref:`LSG specifications <specs-lsg>`). You can use the local UI for submitting both local :ref:`pbs jobs <pbs-submit>` or :ref:`Grid jobs <first-grid-job>`.
+The Life Science Grid or LSG is a group of clusters which can be used locally only, or as one big cluster (Grid). Each :ref:`local LSG cluster <lsg-clusters>` is part of the Life Science Grid that has its own user interface (UI) and two worker nodes of 64 cores (see :ref:`LSG specifications <specs-lsg>`). You can use the local UI for submitting both local :ref:`pbs jobs <pbs-submit>` or :ref:`Grid jobs <first-grid-job>`.
 
 In this section we will focus on the usage of local LSG cluster as a common batch system. The local job submission can be useful when:
 

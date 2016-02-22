@@ -2,7 +2,7 @@
 .. _grid-storage:
 
 ************
-Grid Storage
+Grid storage
 ************
 
 In this page we will talk about the Grid storage facilities, the tools to interact with it and the method to handle data that is stored on tape.
@@ -25,10 +25,10 @@ You can interact with the Grid storage from the UI or from the worker node, with
 
 To use the Grid storage you must:
 
-* Have :ref:`a personal grid certificate <get-grid-certificate>` [1]_
+* Have :ref:`a personal Grid certificate <get-grid-certificate>` [1]_
 * Be member of :ref:`a VO <join-vo>` for which we have allocated storage space.
 
-You can access the Grid storage with grid :ref:`storage-clients`, through interfaces that speak protocols like SRM, gridftp, GSIdCap or webdav. With these storage clients you can:
+You can access the Grid storage with Grid :ref:`storage-clients`, through interfaces that speak protocols like SRM, GridFTP, GSIdCap or webdav. With these storage clients you can:
 
 * list directories and files
 * read (download) files
@@ -36,7 +36,7 @@ You can access the Grid storage with grid :ref:`storage-clients`, through interf
 * delete files or directories
 * :ref:`stage` files (copy them from tape to disk for faster reading)
 
-.. [1] It is technically possible to access the dCache grid storage without certificate, by using webdav with username/password authentication. We don't recommend this: authentication with username/password is less secure, and webdav is slower than gridftp.
+.. [1] It is technically possible to access the dCache Grid storage without certificate, by using webdav with username/password authentication. We don't recommend this: authentication with username/password is less secure, and webdav is slower than GridFTP.
 
 
 .. _storage-types:
@@ -56,7 +56,7 @@ There are two storage types available on the Dutch Grid sites:
 dCache
 ======
 
-The storage element located at SURFsara is accessible from *any* Grid cluster or UI. It uses the `dCache system`_ for storing and retrieving huge amounts of data, distributed among a large number of server nodes. It consists of magnetic tape storage and hard disk storage and both are addressed by a common file system. See :ref:`dCache-specs` for details about our dCache instance.
+The storage element located at SURFsara is accessible from *any* Grid cluster or :abbr:`UI (User Interface)`. It uses the `dCache system`_ for storing and retrieving huge amounts of data, distributed among a large number of server nodes. It consists of magnetic tape storage and hard disk storage and both are addressed by a common file system. See :ref:`dCache-specs` for details about our dCache instance.
 
 .. _dpm:
 
@@ -141,7 +141,7 @@ dCache
 +============+======================================+======================================+
 | SRM        | srm://srm.grid.sara.nl:8443          |                                      |
 +------------+--------------------------------------+--------------------------------------+
-| gridftp    | gsiftp://gridftp.grid.sara.nl:2811   | Data channel port range: 20000-25000 |
+| GridFTP    | gsiftp://gridftp.grid.sara.nl:2811   | Data channel port range: 20000-25000 |
 +------------+--------------------------------------+--------------------------------------+
 |            | https://webdav.grid.sara.nl:443      |                                      |
 +            +--------------------------------------+                                      +
@@ -149,7 +149,7 @@ dCache
 +            +--------------------------------------+                                      +
 |            | https://webdav.grid.sara.nl:2881     |                                      |
 +------------+--------------------------------------+--------------------------------------+
-| gsidcap    | gsidcap://gsidcap.grid.sara.nl:22128 |                                      |
+| GSIdCap    | gsidcap://gsidcap.grid.sara.nl:22128 |                                      |
 +------------+--------------------------------------+--------------------------------------+
 | xroot      | xrootd.grid.sara.nl:1094             | Used by CERN only                    |
 +------------+--------------------------------------+--------------------------------------+
@@ -163,7 +163,7 @@ DPM
 +============+======================================+======================================+
 | SRM        | srm://gb-se-lumc.lumc.nl:8446        |                                      |
 +------------+--------------------------------------+--------------------------------------+
-| gridftp    | gsiftp://gb-se-lumc.lumc.nl:2811     | Data channel port range: 20000-25000 |
+| GridFTP    | gsiftp://gb-se-lumc.lumc.nl:2811     | Data channel port range: 20000-25000 |
 +------------+--------------------------------------+--------------------------------------+
 
 For an overview of all life science clusters and their DPM storage elements, see :ref:`lsg-hostnames`
@@ -356,13 +356,13 @@ This command will initiate unpinning of file "zap.tar" (even if you submitted mu
 SRM interaction example diagram
 ===============================
 
-Here is a sequence diagram that illustrates how the SRM commands interact with the grid storage.
+Here is a sequence diagram that illustrates how the SRM commands interact with the Grid storage.
 
 .. image:: /Images/Using_SRM.png
 
 .. comment: Image source at https://www.websequencediagrams.com/?lz=dGl0bGUgVXNpbmcgU1JNCgpzcm0tYnJpbmctb25saW5lXG5jb21tYW5kIC0-IFNSTVxuZG9vcjogUHJveHkgY2VydGlmaWNhdGUKbm90ZSBvdmVyABsMQXV0aGVudGljYXRpbmcgXG4mIHVzZXIgbWFwcGluZwoASQkgLT4gAGMZOiBZb3UncmUgYQBFCmVkAIEDKXNybUJyaW5nTwCBTQUgPFNVUkw-AIEWGm9yaXplZD8AgTsWUXVldWluZyByZXN0b3JlIG9wZXJhdGlvbgCBIilTdGFnaW5nAIEABywgY2hlY2sgYmFjayBsYXRlcgCCPgsAgXYbV2FpdGluZwCCYBZSAIEYBWluZyBmaWxlAIMrKUlzAIIVByAAg3YGPwCCdSplcywANAhpcwA4BwCESAVjcACDU28AZgsAhB0aAHwac3JtR2V0AIN7KQBhHVVzZSA8VACCTAVmb3IgZG93bmxvYQBtFEdyaWRGVFAAhjkkABwPAIZBIABNDQCCDxQAhxcLAIIHFQCBDA8AghgFAIFPBQB2HgCGPQgAXyFGaWxlIHRyYW5zZmVyCgo&s=roundgreen
 
-As you can see from this diagram, there can be a lot of overhead per file. For this reason, grid storage performs best with large files. We recommend to store files of several megabytes to gigabytes. Some users have files of more than 2 terabytes, but that may be impractical on other systems with limited space like worker nodes.
+As you can see from this diagram, there can be a lot of overhead per file. For this reason, Grid storage performs best with large files. We recommend to store files of several megabytes to gigabytes. Some users have files of more than 2 terabytes, but that may be impractical on other systems with limited space like worker nodes.
 
 ===============================
 Importing large amounts of data

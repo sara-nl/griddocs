@@ -41,7 +41,7 @@ A pilot job will not die after it has successfully completed a task, but immedia
 Pilot Job Workflow
 ==================
 
-The picture below illustrates the workflow of pilot job systems: (1), the user uploads work to the central database. This could be a list of parameter settings that need to be executed using some application on a computational resource. The user then (2) submits jobs just containing the application to the grid, which handles retrieving from (3) and updating of (4) the job database. This process continues until all the work present in the database has been done, the application has crashed or the job has run out of time on the computational resource. When all work has been done, the user retrieves (5) the results from the database.
+The picture below illustrates the workflow of pilot job systems: (1), the user uploads work to the central database. This could be a list of parameter settings that need to be executed using some application on a computational resource. The user then (2) submits jobs just containing the application to the Grid, which handles retrieving from (3) and updating of (4) the job database. This process continues until all the work present in the database has been done, the application has crashed or the job has run out of time on the computational resource. When all work has been done, the user retrieves (5) the results from the database.
 
 .. image:: /Images/parametric_jobs.png
 	:align: right
@@ -73,7 +73,7 @@ A second advantage of using pilot jobs is the reduced overhead of job submission
 Pilot job submission
 ====================
 
-To be able to submit multiple pilot jobs at once, they are submitted to the grid with a specific :ref:`JDL <jdl>` type called ``Parametric``. Learn more about this technique in :ref:`parametric jobs <parametric-jobs>` section. 
+To be able to submit multiple pilot jobs at once, they are submitted to the Grid with a specific :ref:`JDL <jdl>` type called ``Parametric``. Learn more about this technique in :ref:`parametric jobs <parametric-jobs>` section. 
   
   
 .. _pilot-frameworks:  

@@ -14,10 +14,10 @@ dCache has the following concepts:
 * A door is a service that can you can contact to send, receive or delete 
   files or restore files from tape using a specific protocol. Protocols are:
   
-  * gridftp (port range 20000-25000)
+  * GridFTP (port range 20000-25000)
   * webdav
   * xroot
-  * gsidcap
+  * GSIdCap
   * dCache also offers NFS doors, so the protocol list could be extended on demand for specific purposes.
   
 * The namespace contains a list of all files and their metadata. The files are structured 
@@ -56,7 +56,7 @@ We currently (January 2016) have ~8 petabyte of disk storage capacity. This spac
 Tape storage
 ============
 
-The grid tape storage back-end contains ~22 petabyte of data (January 2016). There are two tape libraries: one in Almere and one in the Vancis datacenter in Amsterdam Science Park. Some data only has a single copy, but smaller projects typically have a double copy of their tape data.
+The Grid tape storage back-end contains ~22 petabyte of data (January 2016). There are two tape libraries: one in Almere and one in the Vancis datacenter in Amsterdam Science Park. Some data only has a single copy, but smaller projects typically have a double copy of their tape data.
 
 Transfer performance
 ====================
@@ -79,4 +79,4 @@ If that happens, you should reduce your number of concurrent transfers, or ask u
 A single SRM door
 -----------------
 
-Also the SRM door has some limitations. There's only one of that kind, and sometimes it might be a performance bottleneck. It may be wise to bypass the SRM door and use gridftp and webdav doors directly when possible. If in doubt, feel free to contact us for advice.
+Also the SRM door has some limitations. There's only one of that kind, and sometimes it might be a performance bottleneck. It may be wise to bypass the SRM door and use GridFTP and webdav doors directly when possible. If in doubt, feel free to contact us for advice.

@@ -1,7 +1,7 @@
 .. _grid-software:
 
 *************
-Grid Software
+Grid software
 *************
 
 
@@ -45,7 +45,7 @@ To distribute your files using Softdrive, you must be a member of the group ``cv
 Logging in on the softdrive 
 ---------------------------
 
-After you have been added to the ``softdrive`` group, you can log in on the software distribution node, using your grid username and password:
+After you have been added to the ``softdrive`` group, you can log in on the software distribution node, using your Grid username and password:
 
 .. code-block:: bash
 
@@ -59,7 +59,7 @@ In your home-directory (e.g. ``/home/homer``), you will find:
 Distributing an example file
 ----------------------------
 
-To demonstrate distributing files to all grid nodes, create a file and a directory within your home directory:
+To demonstrate distributing files to all Grid nodes, create a file and a directory within your home directory:
 
 .. code-block:: bash
 
@@ -67,24 +67,24 @@ To demonstrate distributing files to all grid nodes, create a file and a directo
     softdrive.grid.sara.nl:/home/homer$ mkdir -p test_dir
     softdrive.grid.sara.nl:/home/homer$ echo "Hello world" > test_dir/hello.txt
 
-To make this directory file available on all nodes on the grid, you have to copy the ``test_dir`` under ``/cvmfs/softdrive.nl/$USER``:
+To make this directory file available on all nodes on the Grid, you have to copy the ``test_dir`` under ``/cvmfs/softdrive.nl/$USER``:
 
 .. code-block:: bash
 
     softdrive.grid.sara.nl:/home/homer$ cp -r test_dir /cvmfs/softdrive.nl/homer # replace homer with your username
 
-* To force the update everywhere in the grid, trigger publication by executing command:
+* To force the update everywhere in the Grid, trigger publication by executing command:
 
 .. code-block:: bash
 
     publish-my-softdrive
     
-Updating on all grid nodes can take up to two hours.
+Updating on all Grid nodes can take up to two hours.
 
-.. note:: You need to run the command ``publish-my-softdrive`` each time you make a change in your ``/cvmfs/softdrive.nl/$USER`` directory in order to take effect on the grid sites.
+.. note:: You need to run the command ``publish-my-softdrive`` each time you make a change in your ``/cvmfs/softdrive.nl/$USER`` directory in order to take effect on the Grid sites.
 
  
-Finding your files on the grid nodes
+Finding your files on the Grid nodes
 ------------------------------------
 
 On nodes, your Softdrive files will be available under:
@@ -101,16 +101,16 @@ Login to your :ref:`UI account <get-ui-account>` and check whether your files ar
     # drwxr-xr-x 17 cvmfs cvmfs 4096 Dec 16 12:11 test_dir
     
 
-.. note:: If your software is statically compiled, then copying the executables from your home directory to ``/cvmfs/softdrive.nl/$USER/`` should work. Just remember to export the ``/cvmfs/softdrive.nl/$USER`` software paths into your grid scripts or UI bashrc. In other cases with library path dependencies, we advice you to install your software directly under ``/cvmfs/softdrive.nl/$USER`` or use a ``prefix``. An example of software installation in Softdrive can be found in section :ref:`anaconda on grid <softdrive-anaconda>`.
+.. note:: If your software is statically compiled, then copying the executables from your home directory to ``/cvmfs/softdrive.nl/$USER/`` should work. Just remember to export the ``/cvmfs/softdrive.nl/$USER`` software paths into your Grid scripts or UI bashrc. In other cases with library path dependencies, we advice you to install your software directly under ``/cvmfs/softdrive.nl/$USER`` or use a ``prefix``. An example of software installation in Softdrive can be found in section :ref:`anaconda on Grid <softdrive-anaconda>`.
   
   
 .. _python-grid:
   
-==============
-Python on Grid
-============== 
- 
-On the local grid clusters the python version installed is *Python 2.6.6*. If you need a different python version or additional packages, we recommend you to install `Anaconda python`_ in your UI or :ref:`Softdrive <softdrive>` account.
+==================
+Python on the Grid
+==================
+
+On the local Grid clusters the python version installed is *Python 2.6.6*. If you need a different python version or additional packages, we recommend you to install `Anaconda python`_ in your UI or :ref:`Softdrive <softdrive>` account.
 
 Next is an example of installing the *Anaconda* python distribution in *Softdrive*.
 

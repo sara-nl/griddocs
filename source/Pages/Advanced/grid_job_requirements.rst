@@ -2,12 +2,12 @@
 .. _job-requirements:
 
 *********************
-Grid job Requirements
+Grid job requirements
 *********************
 
 By telling what your job needs, you help the scheduler in finding the
 right place to run your jobs, and it also helps using the different
-compute nodes in the grid efficiently.
+compute nodes in the Grid efficiently.
 
 This chapter describes how to write the requirements, how the
 requirements determine where your jobs will run, and what they tell the
@@ -140,7 +140,8 @@ file with the ``SMPGranulari1ty`` directive. The default value is 1 core.
 .. _req-multicore:   
    
 Multicore jobs
-==============   
+==============
+
 **Parameters: SmpGranularity, CPUNumber**
 
 Synopsis::
@@ -152,9 +153,6 @@ Synopsis::
 Note that if you do not specify SmpGranularity the requested number of cores (CPUNumber) can be distributed over different nodes, which is only useful for MPI (or likewise) applications. 
 
 
-..
-
-..
 
 .. Links:
 

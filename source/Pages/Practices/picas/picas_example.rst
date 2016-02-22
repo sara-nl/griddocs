@@ -70,7 +70,7 @@ Detailed information regarding the operations performed in each of the scripts b
     cc ../../fractals.c -o fractals -lm
     cd ..
 
-The sandbox directory now holds everything we need to send to the grid worker nodes.
+The sandbox directory now holds everything we need to send to the Grid worker nodes.
 
 Prepare your Tokens
 ===================
@@ -183,7 +183,7 @@ Run the example on the Grid
 	glite-wms-job-submit -d $USER -o jobIDs fractals.jdl
 	
 
-It will recursively generate an image based on parameters received from PiCas. At this point, some of your tokens are processed on the grid worker nodes and some of the tokens are already processed on the UI. Note that the UI is not meant for production runs, but only for testing few runs before submitting the pilot jobs to the grid.
+It will recursively generate an image based on parameters received from PiCas. At this point, some of your tokens are processed on the Grid worker nodes and some of the tokens are already processed on the UI. Note that the UI is not meant for production runs, but only for testing few runs before submitting the pilot jobs to the Grid.
 
 * Convert the UI output file to .png format and display the picture:
 
@@ -191,7 +191,7 @@ It will recursively generate an image based on parameters received from PiCas. A
 
     convert output_token_6 output_token_6.png # replace with your output filename
     
-For the tokens that are processed on grid, you can send the output to the :ref:`Grid Storage <grid-storage>` or some other remote location.
+For the tokens that are processed on Grid, you can send the output to the :ref:`Grid Storage <grid-storage>` or some other remote location.
 
 
 Checking failed jobs
@@ -204,4 +204,4 @@ While your pilot jobs process tasks, you can keep track of their progress throug
  * tasks that encountered errors (Monitor/error)
  * tasks that are finished (Monitor/done)
 
-When all your pilot jobs are finished, ideally, you'd want all tasks to be 'done'. However, often you will find that not all jobs finished successfully and some are still in a 'locked' or 'error' state. If this happens, you should investigate what went wrong with these jobs. Incidentally, this will be due to errors with the grid middleware, network or storage. In those cases, you can remove the locks and submitting some new pilot jobs to try again. In other cases, there could be errors with your task: maybe you've sent the wrong parameters or forgot to download all necessary input files. Reviewing these failed tasks gives you the possibility to correct them and improve your submission scripts. After that, you could run those tasks again, either by removing their locks or by creating new tokens if needed and then submitting new pilot jobs.
+When all your pilot jobs are finished, ideally, you'd want all tasks to be 'done'. However, often you will find that not all jobs finished successfully and some are still in a 'locked' or 'error' state. If this happens, you should investigate what went wrong with these jobs. Incidentally, this will be due to errors with the Grid middleware, network or storage. In those cases, you can remove the locks and submitting some new pilot jobs to try again. In other cases, there could be errors with your task: maybe you've sent the wrong parameters or forgot to download all necessary input files. Reviewing these failed tasks gives you the possibility to correct them and improve your submission scripts. After that, you could run those tasks again, either by removing their locks or by creating new tokens if needed and then submitting new pilot jobs.

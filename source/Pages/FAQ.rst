@@ -37,12 +37,12 @@ Certificates
 
 .. _change-cert-pwd:
 
-How can I change my grid certificate password?
+How can I change my Grid certificate password?
 ==============================================
 
 Before you create a new private key file with a new password, we recommend you to make a backup of the old userkey.pem file.
 
-To change your grid certificate password, type:
+To change your Grid certificate password, type:
 
 .. code-block:: bash
 
@@ -116,7 +116,7 @@ Get non-vomsified proxy locally
 
      myproxy-init -d
     
-  It will first ask your grid certificate password and then prompt you to enter a MyProxy 
+  It will first ask your Grid certificate password and then prompt you to enter a MyProxy 
   passphrase twice. You will use the latter passphrase to download your proxy. 
 
   Here is an example of the displayed output:
@@ -153,11 +153,11 @@ Note that the downloaded proxy will not include the voms attributes.
 How can I renew my certificate?
 ===============================
 
-The personal grid certificates are valid for a year. This means that every year you need to renew your personal grid certificate. The procedure for renewing your certificate depends on your CA, either Digicert or Dutchgrid.
+The personal Grid certificates are valid for a year. This means that every year you need to renew your personal Grid certificate. The procedure for renewing your certificate depends on your CA, either Digicert or Dutchgrid.
 
-* For *Digicert* grid certificate, you can request a new certificate anytime from the `DigiCert portal <https://digicert.com/sso>`_. Follow this guide to :ref:`obtain and install a Digicert grid certificate <digicert>`.
+* For *Digicert* Grid certificate, you can request a new certificate anytime from the `DigiCert portal <https://digicert.com/sso>`_. Follow this guide to :ref:`obtain and install a Digicert Grid certificate <digicert>`.
 
-* For *Dutchgrid* grid certificate, you have two options:
+* For *DutchGrid* Grid certificate, you have two options:
 
   * When your certificate has already expired, you *have* to request a new certificate from scratch with the jGridstart tool. Follow this guide to :ref:`obtain a Dutchgrid certificate <dutchgrid>`.
   * If your current certificate has *not* expired yet, you can *renew* your certificate. This is a faster procedure because you avoid revisiting your RA for your id verification. What you need to do: 
@@ -165,7 +165,7 @@ The personal grid certificates are valid for a year. This means that every year 
     1. Login to the UI  with X session enabled.
     2. Start the jGridstart tool on the UI (assuming that your current certificate is installed there): ``java -jar jgridstart-wrapper-XX.jar``
     3. Select ``Actions -> Renew`` from the menu bar.
-    4. Generate a new request by verifying your details (name, surname, email, organisation). At this stage you will provide a new password for your new grid certificate - make sure you keep this safe! Click "Next".
+    4. Generate a new request by verifying your details (name, surname, email, organisation). At this stage you will provide a new password for your new Grid certificate - make sure you keep this safe! Click "Next".
     5. Submit the request. This will create a new private ``userkey.pem`` file in your ``~/.globus`` directory. Click "Next".
     6. You will receive your new certificate within few days via email. Once received, follow the instructions to :ref:`install it on the UI <retrieve-dutchgrid>`.
   
@@ -234,13 +234,13 @@ Using resources
 
 .. _how-many-cpus:
 
-How many cpu's, nodes does the grid offer?
+How many cpu's, nodes does the Grid offer?
 ===========================================
 
-The grid infrastructure is interconnected clusters in Netherlands and abroad. The users can get access to multiple of these clusters based on their :ref:`Virtual Organisation <join-vo>`.
+The Grid infrastructure is interconnected clusters in Netherlands and abroad. The users can get access to multiple of these clusters based on their :ref:`Virtual Organisation <join-vo>`.
 
 * Global picture: 170 datacenters in 36 countries: in total more than 330000 compute cores, 500 PB disk, 500 PB tape.
-* In the Netherlands NGI_NL infrastructure: 14 datacenters (3 large grid clusters, 11 smaller ones): in total approx 10000 compute cores, 12 PB disk, tape capacity up to 170 PB.
+* In the Netherlands NGI_NL infrastructure: 14 datacenters (3 large Grid clusters, 11 smaller ones): in total approx 10000 compute cores, 12 PB disk, tape capacity up to 170 PB.
 
 
 .. _how-many-ch:
@@ -261,10 +261,10 @@ The average memory per node depends on number of cores per node. It is typically
 
 .. _transfer-speed:
 
-What is the data transfer speed between grid locations?
+What is the data transfer speed between Grid locations?
 =======================================================
 
-In the Netherlands NGI_NL infrastructure the transfer speed between grid storage and grid processing cluster (at SURFsara) is up to 500Gbit/s. The transfer speed between nodes is 10Gbit/s and between sites it is typically 10 to 20 Gbit/s.
+In the Netherlands NGI_NL infrastructure the transfer speed between Grid storage and Grid processing cluster (at SURFsara) is up to 500Gbit/s. The transfer speed between nodes is 10Gbit/s and between sites it is typically 10 to 20 Gbit/s.
 
 
 .. _cpu-time:
@@ -358,13 +358,15 @@ Note here that the Total, Running and Waiting numbers are per queue, and the CPU
 
 Do I need to switch from my local LSG cluster to Grid?
 ======================================================
-If your local cluster is too busy to get a priority or if you want to run hundreds of jobs at the same time, then we advise you to submit through the grid middleware instead of submitting to the queue directly. There is obviously more capacity when you scale out to multiple clusters and even if there is maintenance on one cluster, your jobs will then be scheduled on other clusters.  
+
+If your local cluster is too busy to get a priority or if you want to run hundreds of jobs at the same time, then we advise you to submit through the Grid middleware instead of submitting to the queue directly. There is obviously more capacity when you scale out to multiple clusters and even if there is maintenance on one cluster, your jobs will then be scheduled on other clusters.  
 
 
 .. _pbs-walltime:
 
 How to run PBS jobs with wallclock greater than 36 hours on LSG?
 ================================================================ 
+
 In order to run pbs jobs on LSG that last more than 36 hours, you need to use ``-q long`` flag in your ``qsub`` command when submitting the job:
  
 * If you do not specify a queue (``-q`` flag) or lwalltime, then the medium queue is picked and jobs lasting more than 36 hours will be killed.
@@ -383,7 +385,7 @@ Troubleshooting
 General troubleshooting steps
 =============================
 
-*Don't hesitate to contact us when things go wrong!* We're happy to help you overcome the difficulties that every grid user faces.
+*Don't hesitate to contact us when things go wrong!* We're happy to help you overcome the difficulties that every Grid user faces.
 
 In order to assist you better, we have a few troubleshooting steps that may already get you going and otherwise may help us to help you.
 
@@ -398,7 +400,7 @@ In order to assist you better, we have a few troubleshooting steps that may alre
      $ globus-url-copy -debugftp -verbose-perf -verbose ...
      $ curl --verbose ...
   
-* Is the resource you're using in downtime? Downtimes are announced in the `GOCDB (Grid Operations Center Database) <https://goc.egi.eu/portal/>`_ (certificate in your browser required). There is also a `list of downtimes of the Dutch grid sites <http://web.grid.sara.nl/cgi-bin/eInfra.py>`_.
+* Is the resource you're using in downtime? Downtimes are announced in the `GOCDB (Grid Operations Center Database) <https://goc.egi.eu/portal/>`_ (certificate in your browser required). There is also a `list of downtimes of the Dutch Grid sites <http://web.grid.sara.nl/cgi-bin/eInfra.py>`_.
 
 * Can you connect to the service?
 
@@ -449,7 +451,7 @@ File transfers don't start
 
 Occasionally, transfers are stuck when 0 bytes have been transferred. There are some common causes for stalled transfers.
 
-* A firewall blocks the ports for the data channel. If you use ``srmcp``, specify ``--server_mode=passive``. If that doesn't help, check whether your firewall allows outgoing traffic to ports 20000 to 25000 (gridFTP data channel range).
+* A firewall blocks the ports for the data channel. If you use ``srmcp``, specify ``--server_mode=passive``. If that doesn't help, check whether your firewall allows outgoing traffic to ports 20000 to 25000 (GridFTP data channel range).
 
 * You've reached the maximum number of transfers for the storage pools that have been allocated to you. All transfers beyond the maximum will be queued, until previous transfers finish to make 'transfer slots' available. This could mean that some of your jobs are wasting CPU time while they wait for input files. This is not efficient. It's better to reduce the number of concurrent transfers so that you don't reach the maximum.
 

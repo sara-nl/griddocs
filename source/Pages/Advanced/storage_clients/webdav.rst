@@ -20,7 +20,7 @@ The webdav protocol has the following advantages:
 
 It also has disadvantages:
 
-* It is not a high performance transfer protocol. If this is important, use gridftp instead.
+* It is not a high performance transfer protocol. If this is important, use GridFTP instead.
 * Support by webdav clients varies widely. Some operations (like renaming a file) may not work in certain clients and circumstances. Modifying/overwriting a file, although the webdav protocol supports it, doesn't work on dCache; you'll need to delete the old file and upload the new file instead.
 
 dCache has the following webdav doors:
@@ -81,7 +81,7 @@ The command will ask for the password of 'homer' on the command line. If you don
 
 It is possible to specify the password on the command line like this: --user homer:password. However, this should be avoided because it allows other local users to read the password with the 'ps' command.
 
-If on your system there are no grid CA certificates available in /etc/grid-security/certificates/, you can install them by following these instructions: https://dist.eugridpma.info/distribution/igtf/, or you can specify --insecure to skip certificate checking (not recommended).
+If on your system there are no Grid :abbr:`CA (Certificate Authority)` certificates available in /etc/grid-security/certificates/, you can install them by following these instructions: https://dist.eugridpma.info/distribution/igtf/, or you can specify --insecure to skip certificate checking (not recommended).
 
 
 Downloading

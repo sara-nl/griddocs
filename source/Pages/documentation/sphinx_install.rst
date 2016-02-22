@@ -8,7 +8,7 @@ Sphinx-install
 Introduction
 ============
 
-The grid documentation itself is written in *restructured text*. The HTML documentation is generated using *Sphinx*.  This page explains how to install the Sphinx software.
+The Grid documentation itself is written in *restructured text*. The HTML documentation is generated using *Sphinx*.  This page explains how to install the Sphinx software.
 
 =================
 Installing Sphinx

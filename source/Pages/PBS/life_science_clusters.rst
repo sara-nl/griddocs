@@ -1,10 +1,10 @@
 .. _life-science-clusters:
 
 **************************
-Life Science Grid Clusters
+Life Science Grid clusters
 **************************
 
-The current page provides information about the Life Science Grid clusters and their locations, local support contact persons, and DNS addresses of User Interface (UI) and Storage Element (SE) machines.
+The current page provides information about the Life Science Grid (LSG) clusters and their locations, local support contact persons, and DNS addresses of User Interface (UI) and Storage Element (SE) machines.
 
 .. contents:: 
     :depth: 4
@@ -15,7 +15,7 @@ If you have any questions concerning access to the clusters below, please contac
 About
 =====
 
-The :ref:`Life Science grid <LSG>` is a compute and data processing infrastructure that is available for all Life Science researchers working in the Netherlands. The Life Science Grid consists of a series of computer clusters that can be used either as a local facility or as an integrated grid environment. For both types of usage, you will need an account on a User Interface machine. Accounts on the user interface machines are managed via a central system at SURFsara, and can be arranged after verification by a `local site support` contact person. To arrange access, the most efficient way is to ask (one of) your local support contact(s) to send a request to our helpdesk for access to the local User Interface machine. Your local support person will need your name, e-mail address, telephone number and nationality, and will verify that you are employed at the relevant institution and an active researcher in one of the Life Science disciplines. 
+The :ref:`Life Science Grid <LSG>` is a compute and data processing infrastructure that is available for all Life Science researchers working in the Netherlands. The Life Science Grid consists of a series of computer clusters that can be used either as a local facility or as an integrated Grid environment. For both types of usage, you will need an account on a User Interface machine. Accounts on the user interface machines are managed via a central system at SURFsara, and can be arranged after verification by a `local site support` contact person. To arrange access, the most efficient way is to ask (one of) your local support contact(s) to send a request to our helpdesk for access to the local User Interface machine. Your local support person will need your name, e-mail address, telephone number and nationality, and will verify that you are employed at the relevant institution and an active researcher in one of the Life Science disciplines. 
 
 .. _lsg-dsa:
 

@@ -13,20 +13,21 @@ This section describes how to obtain and install a DutchGrid Grid certificate. T
 
 .. _obtain-dutchgrid:
 
-================================	
-Obtain a *DutchGrid* certificate
-================================
+==============================	
+Obtain a DutchGrid certificate
+==============================
 
 In case that your institute does not support SURFconext and is not possible to get a :ref:`digicert`, then you can apply for a ``DutchGrid CA`` certificate. You can request a DutchGrid certificate by launching the `JGridstart`_ tool.
 
-Request a *DutchGrid* certificate
-=================================
+Request a DutchGrid certificate
+===============================
 
 * Login to your :ref:`UI account <get-ui-account>` with X forward enabled, e.g.: 
 
   .. code-block:: bash
 
-    ssh -X homer@ui.grid.sara.nl # replace "homer" with your username!
+    $ ssh -X homer@ui.grid.sara.nl 
+    # replace "homer" with your username!
 
 * Download the the jGridstart tool:
 
@@ -59,8 +60,8 @@ Request a *DutchGrid* certificate
 
 .. _retrieve-dutchgrid:
   
-Retrieve your *DutchGrid* certificate
-=====================================
+Retrieve your DutchGrid certificate
+===================================
 
 Once your request is approved, you will receive an email titled *"DutchGrid CA certificate ..."*. Now you need to retrieve the new certificate:
 
@@ -68,7 +69,7 @@ Once your request is approved, you will receive an email titled *"DutchGrid CA c
 
   .. code-block:: bash
 
-    ssh -X homer@ui.grid.sara.nl # replace "homer" with your username!   
+    $ ssh -X homer@ui.grid.sara.nl # replace "homer" with your username!   
 
 
 * Run the wizard again: 
@@ -93,25 +94,26 @@ If everything went well, your certificate and key files (``usercert.pem`` and ``
 
 .. _dutchgrid_ui_install:
 
-===========================================
-Install a *DutchGrid* certificate on the UI
-===========================================
+=========================================
+Install a DutchGrid certificate on the UI
+=========================================
 
-If you followed the steps above properly, then your *DutchGrid* certificate and private key file should now be present in the ``~/.globus`` directory (notice the dot!) on the User Interface machine. All you need to do is to set the proper permissions.
+If you followed the steps above properly, then your DutchGrid certificate and private key file should now be present in the ``~/.globus`` directory (notice the dot!) on the User Interface machine. All you need to do is to set the proper permissions.
 
 * Login to your :ref:`UI account <get-ui-account>`: 
 
   .. code-block:: bash
 
-    ssh homer@ui.grid.sara.nl # replace "homer" with your username!  
+    $ ssh homer@ui.grid.sara.nl 
+    # replace "homer" with your username!  
 
 * Set the proper permissions to your certificate files:
 
   .. code-block:: bash
 
-    cd $HOME/.globus
-    chmod 644 usercert.pem
-    chmod 400 userkey.pem
+    $ cd $HOME/.globus
+    $ chmod 644 usercert.pem
+    $ chmod 400 userkey.pem
 
 Note that the private key file should be **read-only** and only readable to you. 
 
@@ -119,18 +121,17 @@ Note that the private key file should be **read-only** and only readable to you.
 
   .. code-block:: bash
 
-	cd $HOME/.globus
-	ls -l
-	
-	# -rw -r --r --    1 homer    homer            4499  May 10 13:47  usercert.pem
- 	# -r --------      1 homer    homer             963  May 10 13:43  userkey.pem
+	$ cd $HOME/.globus
+	$ ls -l
+	-rw-r--r--      1 homer    homer            4499  May 10 13:47  usercert.pem
+ 	-r--------      1 homer    homer             963  May 10 13:43  userkey.pem
  	
 
 .. _dutchgrid_browser_install:
 
-=================================================
-Install a *DutchGrid* certificate in your browser
-=================================================
+===============================================
+Install a DutchGrid certificate in your browser
+===============================================
 
 In order to apply for a :ref:`VO membership <join-vo>` you will have to install your certificate in your browser. Note that you can do this from any browser, however for convenience we will describe the procedure using the UI browser.
 
@@ -138,8 +139,8 @@ In order to apply for a :ref:`VO membership <join-vo>` you will have to install 
 
   .. code-block:: bash
 
-    ssh homer@ui.grid.sara.nl # replace "homer" with your username!  
-    cd $HOME/.globus
+    $ ssh homer@ui.grid.sara.nl # replace "homer" with your username!  
+    $ cd $HOME/.globus
 
 .. warning:: You can import a certificate in your browser only when it is in the **pkcs12** format. This means that you need to convert the ``usercert.pem`` and ``userkey.pem`` files to a single  ``.p12`` file. 	
 
@@ -151,7 +152,7 @@ Convert PEM to pkcs12
 
   .. code-block:: bash
 
-    openssl pkcs12 -export -inkey userkey.pem -in usercert.pem -out browsercert.p12
+    $ openssl pkcs12 -export -inkey userkey.pem -in usercert.pem -out browsercert.p12
 
 This will ask you for a password three times: the first is to unlock your private key stored in the file ``userkey.pem``. The pkcs12-file will be password protected, which needs a new password, and the same password for confirmation. Note that your can use the same password as the password for the private key file, but this is not necessary.
 

@@ -6,7 +6,7 @@
 LSG Specifications
 ******************
 
-This page describes the specifications for the life science grid clusters. For a list of the clusters, see :ref:`life-science-clusters`.
+This page describes the specifications for the Life Science Grid (LSG) clusters. For a list of the clusters, see :ref:`life-science-clusters`.
 
 .. contents:: 
     :depth: 4

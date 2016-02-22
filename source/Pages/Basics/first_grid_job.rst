@@ -1,10 +1,10 @@
 .. _first-grid-job:
 
 **************
-First Grid Job
+First Grid job
 **************
 
-This section summarises all the steps to submit your first job on the grid, check its status and retrieve the output:
+This section summarises all the steps to submit your first job on the Grid, check its status and retrieve the output:
 
 .. contents:: 
     :depth: 4
@@ -20,7 +20,7 @@ Once you finish with the :ref:`first-grid-job`, you can continue with more :ref:
 Grid job lifecycle
 ==================
 		
-.. sidebar:: Grid Job lifecycle
+.. sidebar:: Grid job lifecycle
 
                 .. seealso:: Have a look at our mooc video that describes the :ref:`mooc-job-lifecycle` step by step.
 	
@@ -30,9 +30,9 @@ Except for the application requirements, you also need to specify in the JDL the
 
 .. note:: The amount of data that you can transfer using the sandboxes is very limited, in the order of a few megabytes (less than **100MB**). This means that you should normally limit the input sandbox to a few script files and the output sandbox to the stderr and stdout files.	
 
-Once you have the jdl ready, you can submit it to multiple clusters with ``glite-*`` commands. The Workload Management System (WMS) will schedule your job on a grid worker node. The purpose of WMS is to distribute and manage tasks across computing resources. More specifically, the WMS will accept your job, assign it to the most appropriate Computing Element (CE), record the job status and retrieve the output. 
+Once you have the jdl ready, you can submit it to multiple clusters with ``glite-*`` commands. The Workload Management System (WMS) will schedule your job on a Grid worker node. The purpose of WMS is to distribute and manage tasks across computing resources. More specifically, the WMS will accept your job, assign it to the most appropriate Computing Element (CE), record the job status and retrieve the output. 
 
-The following animations illustrate the grid lifecycle as described above:
+The following animations illustrate the Grid lifecycle as described above:
 
 * `Grid WMS animation`_
 * `Grid job status animation`_
@@ -53,7 +53,7 @@ This section will show you how to create a valid proxy:
 
 	ssh homer@ui.grid.sara.nl # replace "homer" with your username
 
-* Create a proxy with the following command, run on the UI the following command and provide your grid certificate password when prompted:
+* Create a proxy with the following command, run on the UI the following command and provide your Grid certificate password when prompted:
 
   .. code-block:: bash
  
@@ -87,7 +87,7 @@ This section will show you how to create a valid proxy:
 	
 	If you want to know more, see the advanced section about :ref:`grid-authentication`.
 
-And now you are ready to submit jobs to the Grid! Or copy data from and to the grid.
+And now you are ready to submit jobs to the Grid! Or copy data from and to the Grid.
 	
 
 .. _jdl:
@@ -283,7 +283,7 @@ Check job output
 	# -rw-rw-r-- 1 homer homer  0 Jan  5 18:06 simple.err
 	# -rw-rw-r-- 1 homer homer 20 Jan  5 18:06 simple.out
 
-	cat /home/homer/homer_JIVYfkMxtnRFWweGsx0XAA/simple.out # displays the hostname of the grid worker node where the job landed
+	cat /home/homer/homer_JIVYfkMxtnRFWweGsx0XAA/simple.out # displays the hostname of the Grid worker node where the job landed
 	# wn01.lsg.bcbr.uu.nl
 
 ==================
@@ -294,7 +294,7 @@ Congratulations! You have just executed your first job to the Grid!
 
 Let's summarise what we've seen so far.
 
-You interact with the Grid via the UI machine ``ui.grid.sara.nl``. You describe each job in a ``JDL`` (Job Description Language) file where you list which program should be executed and what are the worker node requirements. From the UI, you create first a proxy of your grid certificate and submit your job with ``glite-*`` commands. The resource broker, called ``WMS`` (short for Workload Management System), accepts your jobs, assigns them to the most appropriate ``CE`` (Computing Element), records the jobs statuses and retrieves the output. 
+You interact with the Grid via the UI machine ``ui.grid.sara.nl``. You describe each job in a ``JDL`` (Job Description Language) file where you list which program should be executed and what are the worker node requirements. From the UI, you create first a proxy of your Grid certificate and submit your job with ``glite-*`` commands. The resource broker, called ``WMS`` (short for Workload Management System), accepts your jobs, assigns them to the most appropriate ``CE`` (Computing Element), records the jobs statuses and retrieves the output. 
 
 This is a short overview of the commands needed to handle simple jobs: 
 
