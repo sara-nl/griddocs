@@ -226,7 +226,13 @@ a.headerlink:hover {
 div.body p, div.body dd, div.body li {
     line-height: 1.5em;
 }
- 
+
+div.contents,
+div.contents.topic {
+    background: #e4efdc;
+    border: 1px solid #DED !important;
+}
+
 div.admonition p.admonition-title + p {
     display: inline;
 }
