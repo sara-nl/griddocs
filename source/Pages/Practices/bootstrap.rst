@@ -94,7 +94,7 @@ Run on the Grid
 
      startGridSession lsgrid # replace lsgrid with your VO
 
-* Inspect the ``JDL`` file:
+* Inspect the JDL file:
 
   .. code-block:: bash
 
@@ -136,7 +136,7 @@ Once this jobs lands on the Grid, it will execute the ``wrapper.sh`` script whic
 
      glite-wms-job-status https://wms2.grid.sara.nl:9000/6swP5FEfGVZ69tVB3PwnDQ #replace with your jobID
   
-     #or
+     # or
      glite-wms-job-status -i jobIds
 
 * Once the job is finished, get the job output to the UI:

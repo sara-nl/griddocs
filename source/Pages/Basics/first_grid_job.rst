@@ -26,7 +26,7 @@ Grid job lifecycle
 	
 To run your application on the Grid you need to describe its requirements in a specific language called ``job description language`` (JDL). This is similar to the information that we need to specify when we run jobs using a batch scheduling system like :ref:`pbs`, although it is slightly more complex as we are now scheduling jobs across multiple sites.
 
-Except for the application requirements, you also need to specify in the JDL the content of the input/output ``sandboxes``. These sandboxes allow you to transfer data to or from the Grid. The input sandbox contains all the files that you want to send with your job to the worker node, like e.g. a script that you want executed. The output sandbox contains all the files that you want to have transferred back to the UI. 
+Except for the application requirements, you also need to specify in the JDL the content of the *input/output sandboxes*. These sandboxes allow you to transfer data to or from the Grid. The input sandbox contains all the files that you want to send with your job to the worker node, like e.g. a script that you want executed. The output sandbox contains all the files that you want to have transferred back to the UI. 
 
 .. note:: The amount of data that you can transfer using the sandboxes is very limited, in the order of a few megabytes (less than **100MB**). This means that you should normally limit the input sandbox to a few script files and the output sandbox to the stderr and stdout files.	
 
@@ -43,7 +43,7 @@ The following animations illustrate the Grid lifecycle as described above:
 StartGridSession
 ================
 
-Before submitting your first Grid job, you need to create a ``proxy`` from your certificate. This has a short lifetime and prevents you from passing along your personal certificate to the Grid. The job will keep a copy of your proxy and pass it along to the Worker Node.
+Before submitting your first Grid job, you need to create a *proxy* from your certificate. This has a short lifetime and prevents you from passing along your personal certificate to the Grid. The job will keep a copy of your proxy and pass it along to the Worker Node.
 
 This section will show you how to create a valid proxy:
 
@@ -81,9 +81,9 @@ This section will show you how to create a valid proxy:
 	
 .. note:: What does the startGridSession script actually do?
 
-	* It generates a ``local proxy`` (x509up_uXXX) in the UI ``/tmp/`` directory
-	* It uploads this proxy to ``Myproxy server``
-	* It ``delegates`` the proxy to the WMS with your user name as the delegation ID (DID)
+	* It generates a *local proxy* ``x509up_uXXX`` in the :abbr:`UI (User Interface)` ``/tmp/`` directory
+	* It uploads this proxy to Myproxy server
+	* It delegates the proxy to the WMS with your user name as the delegation ID (DID)
 	
 	If you want to know more, see the advanced section about :ref:`grid-authentication`.
 
@@ -114,7 +114,7 @@ To submit a Grid job you must describe this in a plain text file, called JDL. Op
 	StdError = "simple.err";
 	OutputSandbox = {"simple.out","simple.err"}; 
 
-This job involves no large input or output files. It will return to the user the hostname of the Worker Node that the job will land on. This is specified as the ``StdOutput`` file “simple.out” declared in the ``OutputSandbox`` statement.
+This job involves no large input or output files. It will return to the user the hostname of the Worker Node that the job will land on. This is specified as the ``StdOutput`` file ``simple.out`` declared in the ``OutputSandbox`` statement.
 
 
 .. _job-match:
@@ -196,7 +196,7 @@ The jobID string looks like this:
 Track the job status
 ====================
 
-To check the current job status from the command line, apply the following command that queries the ``WMS`` for the status of the job. 
+To check the current job status from the command line, apply the following command that queries the :abbr:`WMS (workload management system)` for the status of the job. 
 
 * After submitting the job, type:
 
@@ -210,7 +210,7 @@ To check the current job status from the command line, apply the following comma
 
 	glite-wms-job-status -i jobIds
 
-* Finally, a third (optional) way to check the job status is within the web browser that :ref:`you installed your certificate <digicert_browser_install>`. In this browser open the jobID link:
+* Finally, a third (optional) way to check the job status is with the web browser in which :ref:`you installed your certificate <digicert_browser_install>`. In this browser open the jobID link:
 
 	https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
 
@@ -244,7 +244,7 @@ Retrieve the output
 The output consists of the files included in the ``OutputSandbox`` statement. You can
 retrieve the job output once it is successfully completed, in other words the
 job status has changed from ``RUNNING`` to ``DONE``. The files in the
-output sandbox can be downloaded for approx. one week after the job finishes.
+output sandbox can be downloaded for approximately one week after the job finishes.
 
 .. note:: 
         You can choose the output directory with the ``--dir`` option. If you do not use this option then the output will be copied under the UI ``/scratch`` directory with a name based on the ID of the job.  
@@ -265,9 +265,9 @@ where you should substitute jobIds with the file that you used to store the
 job ids.
 
 If you omitted the ``--dir`` option, your output stored on the
-``/scratch``-directory on the UI. Please remove your files from the
-``/scratch``-directory when they are no longer necessary. Also keep in
-mind that if the ``/scratch``-directory becomes too full, the
+``/scratch`` directory on the UI. Please remove your files from the
+``/scratch`` directory when they are no longer necessary. Also keep in
+mind that if the ``/scratch`` directory becomes too full, the
 administrators remove the older files until enough space is available
 again.
 
@@ -294,7 +294,7 @@ Congratulations! You have just executed your first job to the Grid!
 
 Let's summarise what we've seen so far.
 
-You interact with the Grid via the UI machine ``ui.grid.sara.nl``. You describe each job in a ``JDL`` (Job Description Language) file where you list which program should be executed and what are the worker node requirements. From the UI, you create first a proxy of your Grid certificate and submit your job with ``glite-*`` commands. The resource broker, called ``WMS`` (short for Workload Management System), accepts your jobs, assigns them to the most appropriate ``CE`` (Computing Element), records the jobs statuses and retrieves the output. 
+You interact with the Grid via the UI machine ``ui.grid.sara.nl``. You describe each job in a JDL (Job Description Language) file where you list which program should be executed and what are the worker node requirements. From the :abbr:`UI (user interface)`, you create first a proxy of your Grid certificate and submit your job with ``glite-*`` commands. The resource broker, called WMS (short for Workload Management System), accepts your jobs, assigns them to the most appropriate CE (Computing Element), records the jobs statuses and retrieves the output. 
 
 This is a short overview of the commands needed to handle simple jobs: 
 

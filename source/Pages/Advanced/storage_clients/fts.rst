@@ -4,7 +4,7 @@
 *fts* client
 ************
 
-This page includes the basic commands to use ``fts``. For an overview of storage clients, see :ref:`storage-clients`.
+This page includes the basic commands to use the FTS (file transfer service). For an overview of storage clients, see :ref:`storage-clients`.
 
 .. contents:: 
     :depth: 4
@@ -14,7 +14,7 @@ This page includes the basic commands to use ``fts``. For an overview of storage
 FTS
 ===
 
-`FTS3`_ is a file transfer service for reliable file transfers across sites or else, ``third party`` transfers. You cannot use it to transfer files from your local machine to dCache and vice-versa. FTS3 service has been running for years. It was developed by Cern for WLCG data transfers up to petabytes per month.
+`FTS3`_ is a file transfer service for reliable file transfers across sites or else, *third party* transfers. You cannot use it to transfer files from your local machine to dCache and vice-versa. FTS3 service has been running for years. It was developed by Cern for WLCG data transfers up to petabytes per month.
 
 From the user perspective, it allows data movement, retrying if necessary, monitoring and displaying usage statistics, see `FTS3 wiki`_. From the operations view, it optimises resource usage. 
 
@@ -35,7 +35,7 @@ FTS file transfers
 
 fts-transfer-submit
 -------------------
-This command submits transfer-jobs by specifying the source and destination file location. The file location can be a ``SURL`` or ``TURL`` or ``https`` link. The source and destination endpoints are ``griftp`` or ``srm servers``. The output of the command is a *unique ID* that can be used for tracing the transfer status.
+This command submits transfer-jobs by specifying the source and destination file location. The file location can be a SURL, TURL or https link. The source and destination endpoints are GridFTP or SRM servers. The output of the command is a *unique ID* that can be used for tracing the transfer status.
 
 
 Basic options

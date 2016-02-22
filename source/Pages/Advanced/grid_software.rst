@@ -17,7 +17,7 @@ In this page we will talk about the options to run your software on the Grid wor
 Softdrive 
 =========
 
-``Softdrive`` is the service that allows you to install software in a central place and distribute it *automagically* on the Grid. You install the software once, and it will be available on all clusters, to all users. This means that you no longer need to supply your software in your *input sandbox*, or download your software in your job.
+Softdrive is the service that allows you to install software in a central place and distribute it *automagically* on the Grid. You install the software once, and it will be available on all clusters, to all users. This means that you no longer need to supply your software in your *input sandbox*, or download your software in your job.
 
 
 .. _cvmfs:
@@ -25,7 +25,7 @@ Softdrive
 CVMFS
 =====
 
-Softdrive is using the ``CVMFS`` (short for CernVM File System) tool on the background. CVMS is a network file system based on HTTP and optimized to deliver experiment software in a fast, scalable, and reliable way. 
+Softdrive is using the CVMFS (short for CernVM File System) tool on the background. CVMFS is a network file system based on HTTP and optimized to deliver experiment software in a fast, scalable, and reliable way. 
 
 
 Quickstart
@@ -101,7 +101,7 @@ Login to your :ref:`UI account <get-ui-account>` and check whether your files ar
     # drwxr-xr-x 17 cvmfs cvmfs 4096 Dec 16 12:11 test_dir
     
 
-.. note:: If your software is statically compiled, then copying the executables from your home directory to ``/cvmfs/softdrive.nl/$USER/`` should work. Just remember to export the ``/cvmfs/softdrive.nl/$USER`` software paths into your Grid scripts or UI bashrc. In other cases with library path dependencies, we advice you to install your software directly under ``/cvmfs/softdrive.nl/$USER`` or use a ``prefix``. An example of software installation in Softdrive can be found in section :ref:`anaconda on Grid <softdrive-anaconda>`.
+.. note:: If your software is statically compiled, then copying the executables from your home directory to ``/cvmfs/softdrive.nl/$USER/`` should work. Just remember to export the ``/cvmfs/softdrive.nl/$USER`` software paths into your Grid scripts or UI bashrc. In other cases with library path dependencies, we advice you to install your software directly under ``/cvmfs/softdrive.nl/$USER`` or use a prefix. An example of software installation in Softdrive can be found in section :ref:`anaconda on Grid <softdrive-anaconda>`.
   
   
 .. _python-grid:
@@ -137,7 +137,7 @@ Softdrive anaconda
 
     bash Anaconda2-2.4.0-Linux-x86_64.sh
 
-Note here! The installer will ask you to which location to install the software. Do not accept the default but change it to: **/cvmfs/softdrive.nl/$USER/anaconda-2-2.4.0/**:
+Note here! The installer will ask you to which location to install the software. Do not accept the default but change it to: ``/cvmfs/softdrive.nl/$USER/anaconda-2-2.4.0/``:
 
 .. code-block:: bash  
     
@@ -174,9 +174,7 @@ Docker
 
 At the moment it is not possible to run Docker containers on the :ref:`dutch-grid` or :ref:`lsg`. We are currently investigating different possibilities. Please contact us at helpdesk@surfsara.nl to discuss about the available options.
 
-..
 
-..
 
 .. Links:
 
