@@ -244,7 +244,7 @@ Retrieve the output
 The output consists of the files included in the ``OutputSandbox`` statement. You can
 retrieve the job output once it is successfully completed, in other words the
 job status has changed from ``RUNNING`` to ``DONE``. The files in the
-output sandbox can be downloaded for approx. one week after the job finishes.
+output sandbox can be downloaded for approximately one week after the job finishes.
 
 .. note:: 
         You can choose the output directory with the ``--dir`` option. If you do not use this option then the output will be copied under the UI ``/scratch`` directory with a name based on the ID of the job.  
