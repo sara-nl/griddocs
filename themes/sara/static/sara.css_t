@@ -280,8 +280,8 @@ pre {
 
 /* Inline code text */
 code.docutils.literal {
-    background-color: #E0F4E0;
-    border: 1px solid #D0E4D0;
+    background-color: #F5F5F5;
+    border: 1px solid #DDD;
     font-size: 1.2em;
     padding: 0.1em 0.2em 0em 0.2em;
 }
