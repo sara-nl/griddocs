@@ -2,12 +2,12 @@
 .. _job-requirements:
 
 *********************
-Grid job Requirements
+Grid job requirements
 *********************
 
 By telling what your job needs, you help the scheduler in finding the
 right place to run your jobs, and it also helps using the different
-compute nodes in the grid efficiently.
+compute nodes in the Grid efficiently.
 
 This chapter describes how to write the requirements, how the
 requirements determine where your jobs will run, and what they tell the
@@ -38,7 +38,6 @@ fine-grained control over requirements.
 ============
 Requirements
 ============
-
 
 .. _req-wallclock:
 
@@ -116,7 +115,8 @@ the queue. You can lookup these with the command "lcg-infosites --vo lsgrid ce".
 .. _req-multicore:   
    
 Multicore jobs
-==============   
+==============
+
 **Parameters: SmpGranularity, CPUNumber**
 
 Synopsis::
