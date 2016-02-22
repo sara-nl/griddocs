@@ -47,7 +47,12 @@ Acronyms
 Shell commands
 ==============
 
-* Prefix commands with ``$``, to differentiate between commands and their output.
+* Prefix commands with ``$``, to differentiate between commands and their output. Example:
+
+  .. code-block:: bash
+
+     $ echo "Hello World!"
+     Hello World!
 
 
 Markup
