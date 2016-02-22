@@ -122,7 +122,10 @@ Examples:
 	* lcg-lfn-lfc
 
 
-* Logical File Name (LFN) and Grid Unique Identifier (GUID). These identifiers correspond to logical filename such as ``lfn:/grid/lsgrid/homer/zap.tar``
+Logical File Name (LFN) and Grid Unique Identifier (GUID)
+=========================================================
+
+These identifiers correspond to logical filename such as ``lfn:/grid/lsgrid/homer/zap.tar``
 
 
 .. note:: The SURLs and TURLs contain information about where a ``physical`` file is located. While the GUIDs and LFNs identify a ``logical`` filename irrespective of its location. You only need to use these if you work with :ref:`large-data-lfc-practice` on multiple LSG sites.
