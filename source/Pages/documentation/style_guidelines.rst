@@ -63,10 +63,13 @@ Markup
   * pieces of code
   * commands
   * arguments
-  * file names
+  * file names, hostnames
+  * a specific term, when emphasis is on its name:
+
+    * Example: a language called ``job description language``
+    * But: a JDL file is written in the job description language.
+
   * configuration file statements and values
-  * hostnames
-  * very specific terms.
 
 * **Bold** for strong emphasis. Example: "**Only you** are allowed to know the contents of this key."
 * *italic* for moderate emphasis. Example: "You can continue only *after you* have completed the preparations."
