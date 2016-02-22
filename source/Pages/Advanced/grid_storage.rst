@@ -128,7 +128,7 @@ Logical File Name (LFN) and Grid Unique Identifier (GUID)
 These identifiers correspond to logical filename such as ``lfn:/grid/lsgrid/homer/zap.tar``
 
 
-.. note:: The SURLs and TURLs contain information about where a ``physical`` file is located. While the GUIDs and LFNs identify a ``logical`` filename irrespective of its location. You only need to use these if you work with :ref:`large-data-lfc-practice` on multiple LSG sites.
+.. note:: The SURLs and TURLs contain information about where a **physical** file is located. In contrast, the GUIDs and LFNs identify a **logical** filename irrespective of its location. You only need to use these if you work with :ref:`large-data-lfc-practice` on multiple LSG sites.
 
 
 .. _storage-ports:
@@ -329,7 +329,7 @@ Once you submit your stage requests, you can use the gfal scripts to monitor the
 Unpin a file
 ============
 
-Your files may remain ``ONLINE`` as long as there is free space on the disk pools. When a pool group is full and free space is needed, dCache will purge the least recently used cached files. The tape replica will remain on tape.
+Your files may remain *online* as long as there is free space on the disk pools. When a pool group is full and free space is needed, dCache will purge the least recently used cached files. The tape replica will remain on tape.
 
 The disk pool where your files are staged has limited capacity and is only meant for data that a user wants to process on a Grid site. When you :ref:`pin a file <pin-file>` you set a `pin lifetime`. The file will not be purged until the pin lifetime has expired. Then the data may be purged from disk, as soon as the space is required for new stage requests. When the disk copy has been purged, it has to be staged again in order to be processed on a Worker Node.
 

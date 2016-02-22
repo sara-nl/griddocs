@@ -27,12 +27,12 @@ Job requirements are written as an optional statement in the JDL file::
 
   Requirements = <expression>;
 
-Job requirements follow the JDL syntax. This also means that you can have multiple requirements using boolean operators ``&&`` for
+Job requirements follow the :abbr:`JDL (job description language)` syntax. This also means that you can have multiple requirements using boolean operators ``&&`` for
 *requirement 1 AND requirement 2*, and ``||`` for *requirement 1 OR
 requirement 2*. You can also use parentheses ``(...)`` for an even more
 fine-grained control over requirements.
 
-.. seealso:: For detailed information about ``JDL`` attributes supported by the gLite Workload Management System, have a look in the `EGEE JDL guide`_.
+.. seealso:: For detailed information about :abbr:`JDL (job description language)` attributes supported by the gLite Workload Management System, have a look in the `EGEE JDL guide`_.
 
 
 ============
@@ -105,12 +105,12 @@ Synopsis::
     Requirements=(RegExp("gina", other.GlueCEUniqueID));
 
 With the ``other.GlueCEInfoHostName`` criterion you can specify on which
-compute element your jobs will be scheduled. Or even on which CE your
+compute element your jobs will be scheduled. Or even on which :abbr:`CE (compute element)` your
 jobs will *not* be scheduled. This is convenient in cases where you know
 jobs will fail on particular systems, for some reason.
 
-other.GlueCEInfoHostName contains the hostname, while other.GlueCEUniqueID contains the full CE endpoint name including
-the queue. You can lookup these with the command "lcg-infosites --vo lsgrid ce". The last field is the GlueCEUniqueID.
+``other.GlueCEInfoHostName`` contains the hostname, while ``other.GlueCEUniqueID`` contains the full :abbr:`CE (compute element)` endpoint name including
+the queue. You can lookup these with the command ``lcg-infosites --vo lsgrid ce``. The last field is the ``GlueCEUniqueID``.
 
 .. _req-multicore:   
    
@@ -125,9 +125,9 @@ Synopsis::
     SmpGranularity = 4;
     CPUNumber = 4;   
 	
-CPUNumber is the number of cores requested. SMPGranularity is the number of cores that must be scheduled on the same host.
+``CPUNumber`` is the number of cores requested. ``SMPGranularity`` is the number of cores that must be scheduled on the same host.
 
-Note that if you do not specify SmpGranularity the requested number of cores (CPUNumber) can be distributed over different nodes, which is only useful for MPI (or likewise) applications. 
+Note that if you do not specify ``SmpGranularity`` the requested number of cores (``CPUNumber``) can be distributed over different nodes, which is only useful for MPI (or likewise) applications.
 
 .. warning:: If you are running a multi-core process in your job, and
              you do not set the correct number of CPU cores, **you will 
@@ -151,15 +151,11 @@ Synopsis::
     CPUNumber = 4;
     SMPGranularity = 4;
 
-The default is to select a cluster with GlueHostArchitectureSMPSize >= SmpGranularity.
+The default is to select a cluster with ``GlueHostArchitectureSMPSize >= SmpGranularity``.
 For efficient job allocation on a cluster it is often better to request a number of cores which is less
-than the GlueHostArchitectureSMPSize (i.e. the number of cores per node).
+than the ``GlueHostArchitectureSMPSize`` (i.e. the number of cores per node).
 
 
-
-..
-
-..
 
 .. Links:
 

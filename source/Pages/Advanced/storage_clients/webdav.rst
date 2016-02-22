@@ -4,7 +4,7 @@
 *webdav* client
 ***************
 
-This page includes the basic commands to use ``webdav``. For an overview of storage clients, see :ref:`storage-clients`.
+This page includes the basic commands to use the webdav protocol. For an overview of storage clients, see :ref:`storage-clients`.
 
 .. contents:: 
     :depth: 4
@@ -39,7 +39,7 @@ If you don't know which one you should use, choose the first. It has a good load
 
 webdav.grid.sara.nl is a DNS round robin that will direct you to a (more or less) random host in a pool of webdav servers.
 
-.. note:: To run the examples below you need to have a UI (or ``CUA``) account that is configured within dCache and authorized to the data you want to access. Contact us if you need assistance with that.
+.. note:: To run the examples below you need to have a :abbr:`UI (user interface)` (or :abbr:`CUA (SURFsara's central user adminstration)`) account that is configured within dCache and authorized to the data you want to access. Contact us if you need assistance with that.
 
 
 Listing
