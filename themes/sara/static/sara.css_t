@@ -34,7 +34,8 @@ div.bodywrapper {
 hr {
     border: 1px solid #B1B4B6;
 }
- 
+
+/* Background color of the left column with the menu and the search box */
 div.document {
     background-color: #e4efdc;
 }
