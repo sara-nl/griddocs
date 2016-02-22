@@ -2,12 +2,12 @@
 .. _job-requirements:
 
 *********************
-Grid job requirements
+Grid job Requirements
 *********************
 
 By telling what your job needs, you help the scheduler in finding the
 right place to run your jobs, and it also helps using the different
-compute nodes in the Grid efficiently.
+compute nodes in the grid efficiently.
 
 This chapter describes how to write the requirements, how the
 requirements determine where your jobs will run, and what they tell the
@@ -81,7 +81,7 @@ determining in which queue your job will run:
 Selecting particular compute elements
 =====================================
 
-**Parameter: other.GlueCEInfoHostName**
+**Parameter: other.GlueCEInfoHostName, other.GlueCEUniqueID**
 
 Synopsis::
 
@@ -110,11 +110,13 @@ compute element your jobs will be scheduled. Or even on which CE your
 jobs will *not* be scheduled. This is convenient in cases where you know
 jobs will fail on particular systems, for some reason.
 
+other.GlueCEInfoHostName contains the hostname, while other.GlueCEUniqueID contains the full CE endpoint name including
+the queue. You can lookup these with the command "lcg-infosites --vo lsgrid ce". The last field is the GlueCEUniqueID.
+
 .. _req-multicore:   
    
 Multicore jobs
-==============
-
+==============   
 **Parameters: SmpGranularity, CPUNumber**
 
 Synopsis::
@@ -155,6 +157,9 @@ than the GlueHostArchitectureSMPSize (i.e. the number of cores per node).
 
 
 
+..
+
+..
 
 .. Links:
 
