@@ -36,7 +36,7 @@ hr {
 }
  
 div.document {
-    background-color: #E0F4E0;
+    background-color: #e4efdc;
 }
 
 div.header {
