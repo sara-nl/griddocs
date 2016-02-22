@@ -110,33 +110,6 @@ compute element your jobs will be scheduled. Or even on which CE your
 jobs will *not* be scheduled. This is convenient in cases where you know
 jobs will fail on particular systems, for some reason.
 
-
-.. _req-cores:
-
-Requesting a number of CPU cores
-================================
-
-**Parameter: other.GlueHostArchitectureSMPSize**
-
-Synopsis::
-
-    # request a machine with at least 6 cpu cores on one node
-    Requirements = (other.GlueHostArchitectureSMPSize >= 6);
-    
-    # job uses 6 cores
-    SMPGranularity = 6;
-
-With this requirement you request a number of CPU cores on one compute
-node. You should set this to the number of CPU cores that your program
-actually uses, and you should also set the number of CPU cores in the JDL
-file with the ``SMPGranulari1ty`` directive. The default value is 1 core.
-
-.. warning:: If you are running a multi-core process in your job, and
-             you do not set the correct number of CPU cores, **you will 
-             oversubscribe a compute node, slowing down your own analysis,
-             as well as others**.
-   
-   
 .. _req-multicore:   
    
 Multicore jobs
@@ -149,7 +122,36 @@ Synopsis::
     SmpGranularity = 4;
     CPUNumber = 4;   
 	
+CPUNumber is the number of cores requested. SMPGranularity is the number of cores that must be scheduled on the same host.
+
 Note that if you do not specify SmpGranularity the requested number of cores (CPUNumber) can be distributed over different nodes, which is only useful for MPI (or likewise) applications. 
+
+.. warning:: If you are running a multi-core process in your job, and
+             you do not set the correct number of CPU cores, **you will 
+             oversubscribe a compute node, slowing down your own analysis,
+             as well as others**.
+   
+
+.. _req-cores:
+
+Requesting a cluster with a minimum number of cores per node
+============================================================
+
+**Parameter: other.GlueHostArchitectureSMPSize**
+
+Synopsis::
+
+    # request a machine with at least 6 cpu cores on one node
+    Requirements = (other.GlueHostArchitectureSMPSize >= 6);
+    
+    # job uses 4 cores
+    CPUNumber = 4;
+    SMPGranularity = 4;
+
+The default is to select a cluster with GlueHostArchitectureSMPSize >= SmpGranularity.
+For efficient job allocation on a cluster it is often better to request a number of cores which is less
+than the GlueHostArchitectureSMPSize (i.e. the number of cores per node).
+
 
 
 ..
