@@ -80,13 +80,6 @@ div.footer a:hover {
     text-decoration: underline;
 }
 
-div.contents,
-div.topic,
-div.contents.topic {
-    background: #EAF8EA;
-    border: 1px solid #DAEEDA !important;
-}
-
 div.related {
     line-height: 30px;
     color: #fff;
