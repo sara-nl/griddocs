@@ -67,13 +67,13 @@ Please note that the :abbr:`UI (User Interface)` is simply a Linux machine and w
 Get a Grid certificate
 ======================
 
-Grid certificates are supplied by a Certificate Authority (CA). Users affiliated with Dutch institutes can request a digital certificate either by ``Digicert CA`` or ``Dutchgrid CA``.
+Grid certificates are supplied by a Certificate Authority (CA). Users affiliated with Dutch institutes can request a digital certificate either by ``DigiCert CA`` or ``DutchGrid CA``.
 
 .. sidebar:: How to obtain a Grid certificate?
 
 		.. seealso:: Find detailed info in our mooc video :ref:`mooc-get-certificate`.
 
-If you are a researcher in the Netherlands we recommended you to request a certificate via ``Digicert CA``, by using your institutional login. This is the easiest and fastest way to get a Grid certificate. In cases that the Digicert CA option is not applicable, you can request a DutchGrid CA certificate.
+If you are a researcher in the Netherlands we recommended you to request a certificate via ``DigiCert CA``, by using your institutional login. This is the easiest and fastest way to get a Grid certificate. In cases that the DigiCert CA option is not applicable, you can request a DutchGrid CA certificate.
 
 Here you can find details for obtaining and installing a Grid certificate:
 

@@ -1,25 +1,25 @@
 .. _digicert:
 
 ********************
-Digicert certificate
+DigiCert certificate
 ********************
 
-This section describes how to obtain and install a Digicert Grid certificate. This is a prerequisite to get started on the Grid.
+This section describes how to obtain and install a DigiCert Grid certificate. This is a prerequisite to get started on the Grid.
 
 .. contents:: 
     :depth: 4
 
-.. note::  If you need help to obtain your Digicert certificate, please have a look to this `User Guide`_  or contact us at helpdesk@surfsara.nl.  
+.. note::  If you need help to obtain your DigiCert certificate, please have a look to this `User Guide`_  or contact us at helpdesk@surfsara.nl.  
 
 
 ===============================
-Obtain a *Digicert* certificate
+Obtain a *DigiCert* certificate
 ===============================
 
-Digicert CA allows you to get your Grid certificate *instantly* from the GEANT Trusted Certificate Service (former was the Terena portal), by using your institutional login and SURFconext. 
+DigiCert CA allows you to get your Grid certificate *instantly* from the GEANT Trusted Certificate Service (former was the Terena portal), by using your institutional login and SURFconext. 
 
 * Open a Firefox browser in your laptop or in your :ref:`UI account <get-ui-account>`
-* Access the `Digicert portal`_
+* Access the `DigiCert portal`_
 * Select your institution from the list and login with your account
 * Request a so called Grid certificate. Select: **Product:** ``Grid Premium``
 * If everything went well, after a while you should see this window:
@@ -33,17 +33,17 @@ Once finished, you will have a Grid certificate automatically stored in your bro
 .. _digicert_ui_install:
 
 ==========================================
-Install a *Digicert* certificate on the UI
+Install a *DigiCert* certificate on the UI
 ==========================================
 
-In order to install the *Digicert* certificate on the :abbr:`UI (User Interface)`, you need to export it first from your browser, copy it to your :ref:`UI account <get-ui-account>` and convert it to .pem format. This section shows you how to do this.
+In order to install the *DigiCert* certificate on the :abbr:`UI (User Interface)`, you need to export it first from your browser, copy it to your :ref:`UI account <get-ui-account>` and convert it to .pem format. This section shows you how to do this.
 
 Export certificate from browser
 ===============================
 
 You can export the certificate from the browser that you stored your certificate in the previous step:
 
-* Open the Firefox browser where the certificate is stored. This is the browser you used to access the `Digicert portal`_
+* Open the Firefox browser where the certificate is stored. This is the browser you used to access the `DigiCert portal`_
 * Select: ``Preferences -> Advanced (left pane) -> Certificates (tab) -> View Certificates (button)``
 * Select the certificate (.p12 file) that you stored in the previous step
 * Press ``Backup``
@@ -120,9 +120,9 @@ The certificate and private key file should now be present in the ``.globus`` di
 .. _digicert_browser_install:
 
 ================================================
-Install a *Digicert* certificate in your browser
+Install a *DigiCert* certificate in your browser
 ================================================
-In order to apply for a :ref:`VO membership <join-vo>` you will have to install your certificate in your browser. If everything worked gracefully when you :ref:`obtained the Digicert certificate <digicert>` then your certificate was *automatically* stored in your browser.
+In order to apply for a :ref:`VO membership <join-vo>` you will have to install your certificate in your browser. If everything worked gracefully when you :ref:`obtained the DigiCert certificate <digicert>` then your certificate was *automatically* stored in your browser.
 
 * Verify that your certificate is valid and properly installed in your browser by accessing this website from the browser that you have your certificate installed: 
 
@@ -142,4 +142,4 @@ If you receive an SSL authentication error, then try repeating the steps careful
 .. Links:
 
 .. _`User Guide`: https://ca.dutchgrid.nl/tcs/TCS2015help.pdf
-.. _`Digicert portal`: https://digicert.com/sso
+.. _`DigiCert portal`: https://digicert.com/sso
