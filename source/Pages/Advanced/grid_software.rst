@@ -99,11 +99,11 @@ Login to your :ref:`UI account <get-ui-account>` and check whether your files ar
     # drwxr-xr-x 17 cvmfs cvmfs 4096 Dec 16 12:11 test_dir
     
 
-.. note:: If your software is statically compiled, then copying the executables from your home directory to ``/cvmfs/softdrive.nl/$USER/`` should work. Just remember to export the ``/cvmfs/softdrive.nl/$USER`` software paths into your Grid scripts or UI bashrc. In other cases with library path dependencies, we advice you to install your software directly under ``/cvmfs/softdrive.nl/$USER`` or use a prefix. An example of software installation in Softdrive can be found in section :ref:`anaconda on Grid <softdrive-anaconda>`.
-  
-  
+.. note:: If your software is statically compiled, then copying the executables from your home directory to ``/cvmfs/softdrive.nl/$USER/`` should work. Just remember to export the ``/cvmfs/softdrive.nl/$USER`` software paths into your Grid scripts or :abbr:`UI (User Interface)` ``.bashrc``. In other cases with library path dependencies, we advice you to install your software directly under ``/cvmfs/softdrive.nl/$USER`` or use a prefix. An example of software installation in Softdrive can be found in section :ref:`anaconda on Grid <softdrive-anaconda>`.
+
+
 .. _python-grid:
-  
+
 ==================
 Python on the Grid
 ==================
@@ -148,13 +148,13 @@ Note here! The installer will ask you to which location to install the software.
     # [/home/homer/anaconda2] >>> /cvmfs/softdrive.nl/homer/anaconda-2-2.4.0/
     # ...
 
-That was it! You can now publish the software that is installed in your /cvmfs/softdrive.nl/homer/anaconda-2-2.4.0 directory. To do so, run this command in Softdrive:
+That was it! You can now publish the software that is installed in your ``/cvmfs/softdrive.nl/homer/anaconda-2-2.4.0 directory``. To do so, run this command in Softdrive:
 
 .. code-block:: bash  
 
     publish-my-softdrive
 
-Then check after 1-2 hours from the UI if the ``/cvmfs/softdrive.nl/homer/anaconda-2-2.4.0`` exists.
+Then check after 1-2 hours from the :abbr:`UI (User Interface)` if the ``/cvmfs/softdrive.nl/homer/anaconda-2-2.4.0`` exists.
 
 Finally, remember to include the installation path in your scripts as:
 
