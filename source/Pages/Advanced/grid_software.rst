@@ -51,9 +51,7 @@ After you have been added to the ``softdrive`` group, you can log in on the soft
 
 	ssh homer@softdrive.grid.sara.nl # replace homer with your username
 
-In your home-directory (e.g. ``/home/homer``), you will find:
-
-* a *README* file with detailed information about the *Softdrive* usage.
+In your home-directory (e.g. ``/home/homer``), you will find a *README* file with detailed information about the *Softdrive* usage.
 
 
 Distributing an example file
