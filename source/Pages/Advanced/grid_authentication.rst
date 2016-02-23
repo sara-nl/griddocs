@@ -18,7 +18,7 @@ Grid, by its very nature, is decentralized. This means that users must
 authenticate themself to the Grid services they want to use. This is accomplished 
 by means of a personal certificate and accompanying private key that 
 every Grid user must have. The combinbation of a certificate and private key
-uniquely identifies an user. Therefore, you should **never share
+uniquely identifies a user. Therefore, you should **never share
 your private key** with anyone else or with any service. At the same time,
 however, your jobs will typically run on systems you may not trust. However,
 to be able to use those systems you must identify yourself with those systems.
