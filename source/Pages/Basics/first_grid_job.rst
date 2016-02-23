@@ -24,11 +24,11 @@ Grid job lifecycle
 
                 .. seealso:: Have a look at our mooc video that describes the :ref:`mooc-job-lifecycle` step by step.
 	
-To run your application on the Grid you need to describe its requirements in a specific language called ``job description language`` (JDL). This is similar to the information that we need to specify when we run jobs using a batch scheduling system like :ref:`pbs`, although it is slightly more complex as we are now scheduling jobs across multiple sites.
+To run your application on the Grid you need to describe its requirements in a specific language called **job description language** (JDL). This is similar to the information that we need to specify when we run jobs using a batch scheduling system like :ref:`pbs`, although it is slightly more complex as we are now scheduling jobs across multiple sites.
 
-Except for the application requirements, you also need to specify in the JDL the content of the *input/output sandboxes*. These sandboxes allow you to transfer data to or from the Grid. The input sandbox contains all the files that you want to send with your job to the worker node, like e.g. a script that you want executed. The output sandbox contains all the files that you want to have transferred back to the UI. 
+Except for the application requirements, you also need to specify in the :abbr:`JDL (Job Description Language)` the content of the *input/output sandboxes*. These sandboxes allow you to transfer data to or from the Grid. The input sandbox contains all the files that you want to send with your job to the worker node, like e.g. a script that you want executed. The output sandbox contains all the files that you want to have transferred back to the :abbr:`UI (User Interface)`. 
 
-.. note:: The amount of data that you can transfer using the sandboxes is very limited, in the order of a few megabytes (less than **100MB**). This means that you should normally limit the input sandbox to a few script files and the output sandbox to the stderr and stdout files.	
+.. note:: The amount of data that you can transfer using the sandboxes is very limited, in the order of a few megabytes (less than **100MB**). This means that you should normally limit the input sandbox to a few script files and the output sandbox to the stderr and stdout files.
 
 Once you have the jdl ready, you can submit it to multiple clusters with ``glite-*`` commands. The Workload Management System (WMS) will schedule your job on a Grid worker node. The purpose of WMS is to distribute and manage tasks across computing resources. More specifically, the WMS will accept your job, assign it to the most appropriate Computing Element (CE), record the job status and retrieve the output. 
 
@@ -47,13 +47,13 @@ Before submitting your first Grid job, you need to create a *proxy* from your ce
 
 This section will show you how to create a valid proxy:
 
-* Login to your UI account:
+* Login to your :abbr:`UI (User Interface)` account:
 
   .. code-block:: bash
 
 	ssh homer@ui.grid.sara.nl # replace "homer" with your username
 
-* Create a proxy with the following command, run on the UI the following command and provide your Grid certificate password when prompted:
+* Create a proxy with the following command and provide your Grid certificate password when prompted:
 
   .. code-block:: bash
  
@@ -96,7 +96,7 @@ And now you are ready to submit jobs to the Grid! Or copy data from and to the G
 Describe your job in a JDL file
 ===============================
 
-To submit a Grid job you must describe this in a plain text file, called JDL. Optionally, you can check the Computing Elements (CEs) that this job may run on. The JDL will pass the details of your job to the WMS.
+To submit a Grid job you must describe this in a plain text file, called :abbr:`JDL (Job Description Language)`. Optionally, you can check the Computing Elements (CEs) that this job may run on. The JDL file will pass the details of your job to the :abbr:`WMS (Workload Management System)`.
 
 .. warning:: Make sure you have started your session and created already a :ref:`valid proxy <startgridsession>`. 
 
@@ -122,7 +122,7 @@ This job involves no large input or output files. It will return to the user the
 Job list match
 ==============
 
-Before actually submitting the job, you can optionally check the matching Computing Elements that satisfy your job description. It does not guarantee anything about the CE load, just matches your JDL criteria with the available VO resources:
+Before actually submitting the job, you can optionally check the matching Computing Elements that satisfy your job description. It does not guarantee anything about the :abbr:`CE (Compute Element)` load, just matches your :abbr:`JDL (Job Description Language)` criteria with the available VO resources:
 
 .. code-block:: bash
 
@@ -154,9 +154,9 @@ Submit the job to the Grid
 
 		.. seealso:: For more detailed information about submitting a simple Grid job, have a look at our mooc video :ref:`mooc-submit-job`.
 
-You should have your simple.jdl file ready in your UI up to this point. When you submit this simple Grid job to the WMS, a job will be created and sent to a remote Worker Node. There it will execute the command ``/bin/hostname -f`` and write its standard output and its standard error in the simple.out and simple.err respectively.
+You should have your ``simple.jdl`` file ready in your :abbr:`UI (User Interface)` up to this point. When you submit this simple Grid job to the :abbr:`WMS (Workload Management System)`, a job will be created and sent to a remote Worker Node. There it will execute the command ``/bin/hostname -f`` and write its standard output and its standard error in the ``simple.out`` and ``simple.err`` respectively.
 
-* Submit the simple job by typing in your UI terminal this command:
+* Submit the simple job by typing in your :abbr:`UI (User Interface)` terminal this command:
 
   .. code-block:: bash
 
@@ -196,7 +196,7 @@ The jobID string looks like this:
 Track the job status
 ====================
 
-To check the current job status from the command line, apply the following command that queries the :abbr:`WMS (workload management system)` for the status of the job. 
+To check the current job status from the command line, apply the following command that queries the :abbr:`WMS (Workload Management System)` for the status of the job. 
 
 * After submitting the job, type:
 
@@ -228,7 +228,7 @@ Cancel job
 
 	glite-wms-job-cancel https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
 
-* Alternatively, you can use the jobIDs file:
+* Alternatively, you can use the ``jobIds`` file:
 
   .. code-block:: bash
 
@@ -261,7 +261,7 @@ output sandbox can be downloaded for approximately one week after the job finish
 
 	glite-wms-job-output --dir . -i jobIds
 
-where you should substitute jobIds with the file that you used to store the
+where you should substitute ``jobIds`` with the file that you used to store the
 job ids.
 
 If you omitted the ``--dir`` option, your output stored on the
@@ -294,7 +294,7 @@ Congratulations! You have just executed your first job to the Grid!
 
 Let's summarise what we've seen so far.
 
-You interact with the Grid via the UI machine ``ui.grid.sara.nl``. You describe each job in a JDL (Job Description Language) file where you list which program should be executed and what are the worker node requirements. From the :abbr:`UI (user interface)`, you create first a proxy of your Grid certificate and submit your job with ``glite-*`` commands. The resource broker, called WMS (short for Workload Management System), accepts your jobs, assigns them to the most appropriate CE (Computing Element), records the jobs statuses and retrieves the output. 
+You interact with the Grid via the :abbr:`UI (User Interface)` machine ``ui.grid.sara.nl``. You describe each job in a JDL (Job Description Language) file where you list which program should be executed and what are the worker node requirements. From the :abbr:`UI (user interface)`, you create first a proxy of your Grid certificate and submit your job with ``glite-*`` commands. The resource broker, called WMS (short for Workload Management System), accepts your jobs, assigns them to the most appropriate CE (Computing Element), records the jobs statuses and retrieves the output.
 
 This is a short overview of the commands needed to handle simple jobs: 
 
