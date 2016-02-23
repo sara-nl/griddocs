@@ -13,7 +13,7 @@ This page provides some style guidelines for the grid documentation.
 General
 =======
 
-* Use simple language. Not ``The command results in an effective release of the file``, but ``The command releases the file``.
+* Use simple language. Not "The command results in an effective release of the file", but "The command releases the file".
 
 
 Use of capitals
@@ -47,7 +47,7 @@ Acronyms
 Shell commands
 ==============
 
-* Prefix commands with ``$``, to differentiate between commands and their output. Example:
+* **There is still discussion about this. We're looking at alternatives.** Prefix commands with ``$``, to differentiate between commands and their output. Example:
 
   .. code-block:: bash
 
