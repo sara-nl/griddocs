@@ -32,7 +32,7 @@ To get an account on a local user interface, please send a request to your Desig
 Access to the National Dutch Grid or LSG
 ========================================
 
-Access to the Dutch Grid or the LSG clusters (including non-local access) allows for: 
+Access to the Dutch Grid or the :abbr:`LSG (Life Science Grid)` clusters (including non-local access) allows for: 
 
 * submitting :ref:`Grid jobs <first-grid-job>` to multiple clusters via the Grid middleware
 * storing data to the :ref:`grid-storage`
@@ -59,13 +59,13 @@ In order for us to make a suitable allocation for a project, we need to know wha
 
 .. sidebar:: not sure how to calculate your resource requirements?
 	
-	Contact us at helpdesk@surfsara.nl and we can work together on estimating the resources for running your computation. 
+	Contact us at helpdesk@surfsara.nl and we can work together on estimating the resources for running your computation.
 
 For a proper estimation of resources requirements it is best to start with a few test runs of the code (if existing) on another system (e.g.: your laptop). The outcome of such tests will in many cases be sufficient to derive a total requirement for your larger-scale production runs. Sometimes a more elaborate process is needed to come to an estime, for example if the code does not exist yet of if changes to the existing code are still pending. Ideally you have been running a few representative samples of your runs before you file a resource request, in order to have some concrete information ready about the resources needed by your jobs, such as: 
 
 * how long it takes to run a representative input scenario
 * how much space you need to store input, output and intermediate data
-* what are the software requirements (required software tools, libraries, compilers, etc)
+* what the software requirements are (required software tools, libraries, compilers, etc)
 * how many scenarios (jobs) you need to run for a complete analysis
 
 In case you don't know how to prepare such an inventory, we would be happy to assist you with that. 
