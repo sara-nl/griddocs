@@ -93,7 +93,7 @@ Different systems use different formats. The two important formats are:
 * pkcs12: stores keys and certificates in one binary file; this
   format is used by browsers.
 
-:ref:`Digicert <digicert>` creates pkcs12 files, whereas :ref:`Dutchgrid <dutchgrid>` creates PEM files.
+:ref:`DigiCert <digicert>` creates pkcs12 files, whereas :ref:`DutchGrid <dutchgrid>` creates PEM files.
 
 
 Converting from pkcs12 to PEM

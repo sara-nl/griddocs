@@ -153,13 +153,13 @@ Note that the downloaded proxy will not include the voms attributes.
 How can I renew my certificate?
 ===============================
 
-The personal Grid certificates are valid for a year. This means that every year you need to renew your personal Grid certificate. The procedure for renewing your certificate depends on your CA, either Digicert or Dutchgrid.
+The personal Grid certificates are valid for a year. This means that every year you need to renew your personal Grid certificate. The procedure for renewing your certificate depends on your CA, either DigiCert or DutchGrid.
 
-* For *Digicert* Grid certificate, you can request a new certificate anytime from the `DigiCert portal <https://digicert.com/sso>`_. Follow this guide to :ref:`obtain and install a Digicert Grid certificate <digicert>`.
+* For *DigiCert* Grid certificate, you can request a new certificate anytime from the `DigiCert portal <https://digicert.com/sso>`_. Follow this guide to :ref:`obtain and install a DigiCert Grid certificate <digicert>`.
 
 * For *DutchGrid* Grid certificate, you have two options:
 
-  * When your certificate has already expired, you *have* to request a new certificate from scratch with the jGridstart tool. Follow this guide to :ref:`obtain a Dutchgrid certificate <dutchgrid>`.
+  * When your certificate has already expired, you *have* to request a new certificate from scratch with the jGridstart tool. Follow this guide to :ref:`obtain a DutchGrid certificate <dutchgrid>`.
   * If your current certificate has *not* expired yet, you can *renew* your certificate. This is a faster procedure because you avoid revisiting your RA for your id verification. What you need to do: 
   
     1. Login to the UI  with X session enabled.
