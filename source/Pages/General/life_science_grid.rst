@@ -36,8 +36,8 @@ LSG clusters
 .. image:: /Images/LSG_700px.png
 	:align: right
 
-Currently, ten LSG clusters are in place at the following sites:    
-    
+Currently, ten :abbr:`LSG (Life Science Grid)` clusters are in place at the following sites:    
+
 +-------------+-----------+
 |**LSG_BCBR** | Utrecht   |
 +-------------+-----------+         
@@ -60,11 +60,9 @@ Currently, ten LSG clusters are in place at the following sites:
 |**LSG_WUR**  | Wageningen|
 +-------------+-----------+         
 
-The technical specifications of a single LSG cluster are described in :ref:`specs-lsg`. 
+The technical specifications of a single :abbr:`LSG (Life Science Grid)` cluster are described in :ref:`specs-lsg`. 
 
-..
 
-..
 
 .. Links:
 
