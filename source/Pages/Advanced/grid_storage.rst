@@ -9,7 +9,7 @@ In this page we will talk about the Grid storage facilities, the tools to intera
 
 .. contents:: 
     :depth: 4
-    
+
 
 ====================
 About Grid Storage
@@ -17,7 +17,7 @@ About Grid Storage
 
 Each cluster on the Grid is equipped with a Storage Element or SE where data is stored. The Grid storage is useful for applications that handle large amount of data that can not be sent with the :ref:`job Sandbox <job-lifecycle>` or stored in a :ref:`pilot job database <pilotjob-db>`.
 
-You can interact with the Grid storage from the UI or from the worker node, within your running job. The scripts that can access the Grid Storage can be submitted from:
+You can interact with the Grid storage from the :abbr:`UI (User Interface)` or from a Worker Node, within your running job. The scripts that can access the Grid storage can be submitted from:
 
 * :ref:`The UI <get-ui-account>`
 * :ref:`Any local LSG cluster <lsg-clusters>`
@@ -28,7 +28,7 @@ To use the Grid storage you must:
 * Have :ref:`a personal Grid certificate <get-grid-certificate>` [1]_
 * Be member of :ref:`a VO <join-vo>` for which we have allocated storage space.
 
-You can access the Grid storage with Grid :ref:`storage-clients`, through interfaces that speak protocols like SRM, GridFTP, GSIdCap or webdav. With these storage clients you can:
+You can access the Grid storage with Grid :ref:`storage-clients`, through interfaces that speak protocols like :abbr:`SRM (Storage Resource Management)`, :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`, :abbr:`GSIdCap (dCache Access Protocol with Grid auhthentication)` or :abbr:`WebDAV (Web Distributed Authoring and Versioning)`. With these storage clients you can:
 
 * list directories and files
 * read (download) files
@@ -36,7 +36,7 @@ You can access the Grid storage with Grid :ref:`storage-clients`, through interf
 * delete files or directories
 * :ref:`stage` files (copy them from tape to disk for faster reading)
 
-.. [1] It is technically possible to access the dCache Grid storage without certificate, by using webdav with username/password authentication. We don't recommend this: authentication with username/password is less secure, and webdav is slower than GridFTP.
+.. [1] It is technically possible to access the dCache Grid storage without certificate, by using :abbr:`WebDAV (Web Distributed Authoring and Versioning)` with username/password authentication. We don't recommend this: authentication with username/password is less secure, and WebDAV is slower than :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`.
 
 
 .. _storage-types:
@@ -63,10 +63,10 @@ The storage element located at SURFsara is accessible from *any* Grid cluster or
 DPM
 ===
 
-The storage elements located at the various :ref:`LSG clusters <life-science-clusters>` are accessible *only* by the LSG users. The LSG clusters have local storage that uses DPM (short for Disk Pool Manager).
+The storage elements located at the various :ref:`Life Science Grid clusters <life-science-clusters>` are accessible *only* by the :abbr:`LSG (Life Science Grid)` users. The :abbr:`LSG (Life Science Grid)` clusters have local storage that uses DPM (short for Disk Pool Manager).
 
 
-.. note:: The DPM storage is only disk storage and does not support tape back-end. In opposite, the dCache central storage has both disk and tape.
+.. note:: The :abbr:`DPM (Disk Pool Manager)` storage is only disk storage and does not support tape back-end. In opposite, the dCache central storage has both disk and tape.
 
 
 .. _file-id:
@@ -87,7 +87,7 @@ Examples:
 	# lsgrid user homer stores the file zap.tar on dCache storage
 	gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 	
-	# same, but with a webdav TURL
+	# same, but with a WebDAV TURL
 	https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 	
 	# lsgrid user homer stores the file zap.tar on DPM storage at lumc cluster
@@ -128,7 +128,7 @@ Logical File Name (LFN) and Grid Unique Identifier (GUID)
 These identifiers correspond to logical filename such as ``lfn:/grid/lsgrid/homer/zap.tar``
 
 
-.. note:: The SURLs and TURLs contain information about where a **physical** file is located. In contrast, the GUIDs and LFNs identify a **logical** filename irrespective of its location. You only need to use these if you work with :ref:`large-data-lfc-practice` on multiple LSG sites.
+.. note:: The :abbr:`SURLs (Storage URLs)` and :abbr:`TURLs (Transport URLs)` contain information about where a **physical** file is located. In contrast, the :abbr:`GUIDs (Grid Unique Identifiers)` and :abbr:`LFNs (Logical File Name)` identify a **logical** filename irrespective of its location. You only need to use these if you work with :ref:`large-data-lfc-practice` on multiple :abbr:`LSG (Life Science Grid)` sites.
 
 
 .. _storage-ports:
@@ -148,7 +148,7 @@ dCache
 +------------+--------------------------------------+--------------------------------------+
 |            | https://webdav.grid.sara.nl:443      |                                      |
 +            +--------------------------------------+                                      +
-| webdav     | https://webdav.grid.sara.nl:2880     | See :ref:`webdav` for details        |
+| WebDAV     | https://webdav.grid.sara.nl:2880     | See :ref:`webdav` for details        |
 +            +--------------------------------------+                                      +
 |            | https://webdav.grid.sara.nl:2881     |                                      |
 +------------+--------------------------------------+--------------------------------------+
@@ -178,7 +178,7 @@ For an overview of all life science clusters and their DPM storage elements, see
 Storage clients
 ===============
 
-The InputSandbox and OutputSandbox attributes in the :ref:`JDL <JDL>` file are the basic way to move files to and from the User Interface (UI) and the Worker Node (WN). However, when you have large files (from about 100 MB and larger) then you should not use these Sandboxes to move data around. Instead you should use the :ref:`storage-types` and work with several :ref:`storage-clients`. 
+The ``InputSandbox`` and ``OutputSandbox`` attributes in the :ref:`JDL <JDL>` file are the basic way to move files to and from the User Interface (UI) and the Worker Node (WN). However, when you have large files (from about 100 MB and larger) then you should not use these sandboxes to move data around. Instead you should use the :ref:`storage-types` and work with several :ref:`storage-clients`. 
 
 In this section we will show the common commands to use the various storage clients. 
 
@@ -209,7 +209,7 @@ In this section we will show the common commands to use the various storage clie
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
 
 .. [1] Examples of tape control: staging a file from tape to disk, or get its locality (tape or disk).
-.. [2] SRM and LCG commands use the SRM protocol for metadata level operations and switch to another protocol like GridFTP for file transfers. This may cause protocol overhead. For example, authentication needs to be done twice: once for each protocol.
+.. [2] SRM and LCG commands use the :abbr:`SRM (Storage Resource Management)` protocol for metadata level operations and switch to another protocol like GridFTP for file transfers. This may cause protocol overhead. For example, authentication needs to be done twice: once for each protocol.
 
 .. toctree::
    :hidden:
@@ -258,7 +258,7 @@ Here is an example of how to stage a single file:
 	$ srm-bring-online srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test
 	srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test brought online, use request id 424966221 to release
 
-Don't use this method to stage multiple files. Use the stage.py example below instead, because it is much more efficient.
+Don't use this method to stage multiple files. Use the ``stage.py`` example below instead, because it is much more efficient.
 
 How to display the locality:
 
@@ -274,11 +274,11 @@ How to display the locality:
 Staging groups of files
 =======================
 
-The example below shows how to stage a list of files with known SURLs.
+The example below shows how to stage a list of files with known :abbr:`SURLs (Storage URLs)`.
 
-* Copy and untar the tarball :download:`staging scripts </Scripts/staging.tar>` to your UI directory.
+* Copy and untar the tarball :download:`staging scripts </Scripts/staging.tar>` to your :abbr:`UI (User Interface)` home directory.
 
-* Create a proxy on UI:
+* Create a proxy on the :abbr:`UI (User Interface)`:
 
   .. code-block:: bash
   
@@ -290,8 +290,8 @@ The example below shows how to stage a list of files with known SURLs.
 
 	/pnfs/grid.sara.nl/data/...
 
-  Let's say that you have a list of SURLs that you want to stage. Convert the list of SURLs
-  in the datasets/example.txt file to the desired ``/pnfs`` format: 
+  Let's say that you have a list of :abbr:`SURLs (Storage URLs)` that you want to stage. Convert the list of 
+  :abbr:`SURLs (Storage URLs)` in the ``datasets/example.txt`` file to the desired ``/pnfs`` format: 
 
   .. code-block:: bash
 
@@ -310,7 +310,7 @@ The example below shows how to stage a list of files with known SURLs.
 
 	$ python stage.py
 
-This script stages a number of files from tape. You can change the pin lifetime in the stage.py script by changing the ``srmv2_desiredpintime`` attribute in seconds.
+This script stages a number of files from tape. You can change the pin lifetime in the ``stage.py`` script by changing the ``srmv2_desiredpintime`` attribute in seconds.
 
 
 
@@ -341,9 +341,9 @@ When you are done with your processing, we recommend you release (or unpin) all 
 
 	$ srm-release-files srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar # replace with your SURL
 
-This command will initiate unpinning of file "zap.tar" (even if you submitted multiple pin requests) and the file will remain cached but purgeable until new requests will claim the available space. It is an optional action, but helps a lot with the effective system usage.
+This command will initiate unpinning of file ``zap.tar`` (even if you submitted multiple pin requests) and the file will remain cached but purgeable until new requests will claim the available space. It is an optional action, but helps a lot with the effective system usage.
 
-.. warning:: At the moment neither the srm-bring-online nor the python gfal scripts can effectively release a file if there are multiple pin requests. Please use ``srm-release-files``.
+.. warning:: At the moment neither the ``srm-bring-online`` nor the python ``gfal`` scripts can effectively release a file if there are multiple pin requests. Please use ``srm-release-files``.
 
 
 .. Links:
@@ -371,4 +371,4 @@ As you can see from this diagram, there can be a lot of overhead per file. For t
 Importing large amounts of data
 ===============================
 
-The `Data Ingest Service <https://www.surf.nl/en/services-and-products/data-ingest-service/index.html>`_ is a SURFsara service for researchers who want to store or analysis large amounts of data at SURFsara. The service is convenient for users who lack sufficient bandwidth or who have stored their data on a number of external hard disks.
+The `Data Ingest Service <https://www.surf.nl/en/services-and-products/data-ingest-service/index.html>`_ is a SURFsara service for researchers who want to store or analyze large amounts of data at SURFsara. The service is convenient for users who lack sufficient bandwidth or who have stored their data on a number of external hard disks.
