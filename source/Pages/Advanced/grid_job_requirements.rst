@@ -66,7 +66,6 @@ convert the hours in minutes in your JDL requirement, e.g.:
    +------------+-------------------------+
    | queue      |  job length in minutes  |
    +============+=========================+
-   +------------+-------------------------+
    | short      | 240 (= 4 hours)         |
    +------------+-------------------------+
    | medium     | 2160 (= 36 hours)       |
