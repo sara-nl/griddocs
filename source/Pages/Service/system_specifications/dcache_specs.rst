@@ -17,10 +17,10 @@ About
 
 dCache has the following concepts:
 
-* A pool is a location on a server that can contain files.
-* A poolgroup is a group of similar pools, assigned to a user group. Usually the pools are on different nodes to distribute the load.
+* A ``pool`` is a location on a server that can contain files.
+* A ``poolgroup`` is a group of similar pools, assigned to a user group. Usually the pools are on different nodes to distribute the load.
 * Our ~60 pool nodes are also configured as doors.
-* A door is a service that can you can contact to send, receive or delete 
+* A ``door`` is a service that can you can contact to send, receive or delete 
   files or restore files from tape using a specific protocol. Protocols are:
   
   * GridFTP (port range 20000-25000)
@@ -29,7 +29,7 @@ dCache has the following concepts:
   * GSIdCap
   * dCache also offers NFS doors, so the protocol list could be extended on demand for specific purposes.
   
-* The namespace contains a list of all files and their metadata. The files are structured 
+* The ``namespace`` contains a list of all files and their metadata. The files are structured 
   in a virtual directory structure, starting with /pnfs/grid.sara.nl/. Each directory can be 
   mapped onto a pool group. Subdirectories inherit this mapping from their parent directory.
 
@@ -53,7 +53,7 @@ We have these DNS round robin aliases pointing to our doors:
 * gridftp.grid.sara.nl
 * webdav.grid.sara.nl
 
-Here are some metrics per user group: `http://web.grid.sara.nl/dcache.php`
+Here are some metrics per user group: `web.grid.sara.nl/dcache.php <http://web.grid.sara.nl/dcache.php>`_
 
 The subnet is 145.100.32.0/22. You may need to change your firewall to access this subnet.
 
@@ -92,7 +92,7 @@ Number of transfers per pool
 
 Each pool supports up to a certain number of concurrent transfers. The specific number for a certain pool group can be looked up in the `dCache web interface <http://dcmain.grid.sara.nl:2288/webadmin/poolgroups>`_. If the limit is reached, transfers will be queued, and they will seem stalled. After some time, transfers may time out. But even if they don't, your job may waste valuable computing time waiting for input files that don't arrive.
 
-If that happens, you should reduce your number of concurrent transfers, or ask us whether the limit can be increased. We can not increase the limit endlessly because this would make our systems unstable.
+If that happens, you should reduce your number of concurrent transfers, or ask us whether the limit can be increased. We can not increase the limit endlessly because this would make our systems unstable. Not sure how to proceed? We can help! Contact us at helpdesk@surfsara.nl.
 
 A single SRM door
 -----------------
