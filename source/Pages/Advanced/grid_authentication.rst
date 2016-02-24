@@ -44,9 +44,9 @@ The easiest way to start a session on the Grid is to use the ``startGridSession 
 
 The ``startGridSession`` command:
 
-* generates a ``local proxy`` of your certificate and private key;
-* delegates this local proxy to the ``Myproxy server``;
-* delegates this local proxy to the WMS with your user name as the ``delegation ID`` (DID). 
+* generates a *local proxy* of your certificate and private key;
+* delegates this local proxy to the *Myproxy server*;
+* delegates this local proxy to the WMS with your user name as the *delegation ID* (DID). 
 
 Your jobs will now be able to run for week. The WMS, who is responsible for
 scheduling your jobs, will renew the proxy certificate of running
@@ -85,7 +85,7 @@ can read more in this `paper <http://toolkit.globus.org/alliance/publications/pa
 Proxies contain both a certificate and private key and, therefore, should never leave the system. Instead, proxies are
 delegated to other systems: a new proxy is created on a remote system using the local proxy as authentication.
 Services that have been provided with a delegation of your proxy can act on your behalf. The proxy
-file on the UI is owned by you and placed in the ``/tmp`` directory. You only deal
+file on the :abbr:`UI (User Interface)` is owned by you and placed in the ``/tmp`` directory. You only deal
 with this file directly in exceptional cases. 
 
 Creating a VOMS proxy
@@ -159,10 +159,10 @@ Here is an example::
 	timeleft  : 11:48:24
     
 You can see that a proxy certificate has a limited lifetime and is stored
-in the ``/tmp`` directory. VO extension information is also shown and
+in the ``/tmp`` directory. :abbr:`VO (Virtual Organisation)` extension information is also shown and
 is used to verify if you are indeed a member of this VO and group:
 A Grid service who has been provided with a delegation of your proxy 
-can contact the VOMS service for membership information and subsequently
+can contact the :abbr:`VOMS (Virtual Organisation Management Service)` service for membership information and subsequently
 grant or deny you access.
 
 .. note:: In the :ref:`next step <myproxy-server>`, you will delegate your proxy
