@@ -183,18 +183,13 @@ System status commands
 Local queues
 ============
 
-We recommend you to estimate the walltime of your jobs and specify the queue to send your job. This can be done with the '-q’ option in your ``qsub`` command. On the LSG clusters you can find three queue types:
-
-* short  -  4 hours walltime limit
-* medium - 36 hours walltime limit
-* long   - 72 hours walltime limit
-
-If you don’t specify a particular queue, then your jobs will be scheduled by default on the medium queue.  When the queue walltime is reached, the job will be killed. For example, if you want to run a job for 72 hours, you need to specify the queue "long" or else your job will land on the default (medium) queue and will be killed after 36hours:
+On the LSG clusters you can find different :ref:`queue types <lsg-specs-queues>`. We recommend you to estimate the walltime of your jobs and specify the queue to send your job. This can be done with the '-q’ option in your ``qsub`` command. For example, if you want to run a job for 72 hours, you need to specify the queue "long":
 
 .. code-block:: bash
 
     qsub -q long wrapper.sh # allow job to run for 72 hours
 
+If you don’t specify a particular queue, then your jobs will be scheduled by default on the medium queue (32 hours limit).  When the queue walltime is reached, the job will be killed.
 
 .. seealso:: :ref:`How to run PBS jobs with wallclock greater than 36 hours on LSG? <pbs-walltime>`
 
@@ -223,7 +218,7 @@ Example with $TMPDIR
 
 	cd $TMPDIR
 	cp -r ${PBS_O_WORKDIR}/<your scripts,files> .  # note the dot at the end of `cp` command
-   # ...
+	# ...
 	# Run the executables
 	# ...
 	# When done, copy the output to your home directory:
