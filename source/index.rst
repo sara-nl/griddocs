@@ -60,8 +60,8 @@ Advanced Topics
 .. toctree::
    :maxdepth: 1
 
-   Pages/Advanced/grid_authentication
    Pages/Advanced/grid_job_requirements
+   Pages/Advanced/grid_authentication
    Pages/Advanced/grid_certificates  
 
 
