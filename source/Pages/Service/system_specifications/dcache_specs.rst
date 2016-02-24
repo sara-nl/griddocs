@@ -6,6 +6,15 @@ dCache Specifications
 
 This page describes the technical specifications for dCache. If you have any questions concerning the technical specifications below, please contact us at helpdesk@surfsara.nl.
 
+.. contents:: 
+    :depth: 4
+
+
+.. _dCache-specs-about:
+
+About
+=====
+
 dCache has the following concepts:
 
 * A pool is a location on a server that can contain files.
@@ -48,15 +57,24 @@ Here are some metrics per user group: `http://web.grid.sara.nl/dcache.php`
 
 The subnet is 145.100.32.0/22. You may need to change your firewall to access this subnet.
 
+
+.. _dCache-specs-disk:
+
 Disk storage
 ============
 
 We currently (January 2016) have ~8 petabyte of disk storage capacity. This space is divided over several pool groups. These pool groups are for disk only data, t1d1 data (disk data with a tape replica) and for online caching of tape only data.
 
+
+.. _dCache-specs-tape:
+
 Tape storage
 ============
 
 The Grid tape storage back-end contains ~22 petabyte of data (January 2016). There are two tape libraries: one in Almere and one in the Vancis datacenter in Amsterdam Science Park. Some data only has a single copy, but smaller projects typically have a double copy of their tape data.
+
+
+.. _dCache-specs-performance:
 
 Transfer performance
 ====================
