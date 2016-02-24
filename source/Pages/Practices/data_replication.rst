@@ -1,4 +1,3 @@
-.. warning:: Page under construction
 
 .. _large-data-lfc-practice:
 
