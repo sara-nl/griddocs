@@ -48,6 +48,18 @@ Creating/listing
 Transferring data
 =================
 
+* Copy file from dCache to local machine:
+
+  .. code-block:: bash
+
+    $ uberftp gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar file:///home/homer/zap.tar 
+
+* Copy file from DPM to local machine:
+
+  .. code-block:: bash
+
+    $ uberftp gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar  file:///home/homer/zap.tar
+
 * Copy file from local machine to dCache:
 
   .. code-block:: bash
@@ -60,6 +72,8 @@ Transferring data
 
     $ uberftp file:///home/homer/zap.tar gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar 
 
+
+.. note::  The asterix “*” wildcard (match all characters) works with uberftp. Please, use this option with caution, especially when deleting files.
 
 Parallel streams
 ----------------
