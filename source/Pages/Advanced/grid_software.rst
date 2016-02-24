@@ -39,13 +39,13 @@ Softdrive works by logging in the software distribution node, and putting your f
 CVMFS group membership
 ----------------------
 
-To distribute your files using Softdrive, you must be a member of the group ``cvmfs``. If you are not a member yet, send an e-mail to helpdesk@surfsara.nl with a membership request.
+To distribute your files using Softdrive, you must be a member of the group ``softdrive``. If you are not a member yet, send an e-mail to helpdesk@surfsara.nl with a membership request.
 
 
 Logging in on the softdrive 
 ---------------------------
 
-After you have been added to the ``softdrive`` group, you can log in on the software distribution node, using your Grid username and password:
+After you have been added to the ``softdrive`` group, you can log in on the software distribution node, using your Grid UI username and password:
 
 .. code-block:: bash
 
