@@ -1,5 +1,3 @@
-.. warning:: Page under construction
-
 .. _specs-lsg:
 
 ******************
@@ -14,8 +12,7 @@ This page describes the specifications for the Life Science Grid (LSG) clusters.
 If you have any questions concerning the technical specifications below, please contact us at helpdesk@surfsara.nl.
 
 
-.. _dcache-lsg-summary:
-
+.. _lsg-specs-summary:
 
 Quick summary
 ============= 
@@ -58,6 +55,8 @@ Storage Node
 * RAM: 128 GB
 * Number of nodes: 1
 
+
+.. _lsg-specs-queues:
 
 Queues
 ======
