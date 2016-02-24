@@ -39,13 +39,13 @@ If you don't know which one you should use, choose the first. It has a good load
 
 ``webdav.grid.sara.nl`` is a DNS round robin that will direct you to a (more or less) random host in a pool of webdav servers.
 
-.. note:: To run the examples below you need to have a :abbr:`UI (user interface)` (or :abbr:`CUA (SURFsara's central user adminstration)`) account that is configured within dCache and authorized to the data you want to access. Contact us if you need assistance with that.
+.. note:: To run the examples below you need to have a :abbr:`UI (User Interface)` (or :abbr:`CUA (SURFsara's Central User Administration)`) account that is configured within dCache and authorized to the data you want to access. Contact us if you need assistance with that.
 
 
 Listing
 =======
 
-To list directories, you can point a browser like Firefox to https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/. When the browser asks for a username and password, you can provide your Grid UI (or CUA) username and password. When you click on a listed file, it will be downloaded, when you're authorized to do so. When you're not authorized to access a URL, you may see some unexpected behaviour.
+To list directories, you can point a browser like Firefox to https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/. When the browser asks for a username and password, you can provide your Grid :abbr:`UI (User Interface)` (or :abbr:`CUA (SURFsara's Central User Administration)`) username and password. When you click on a listed file, it will be downloaded, when you're authorized to do so. When you're not authorized to access a URL, you may see some unexpected behaviour.
 
 You can also use text browsers like curl to list directories.
 
@@ -77,11 +77,11 @@ To copy a file from your local machine to dCache:
        https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/
   # replace homer with your username, lsgrid with your VO and zap.tar with your local file
 
-The command will ask for the password of 'homer' on the command line. If you don't want to type the password each time, specify ``--netrc`` and store the password in the .netrc file in your home dir. Make sure it is not readable by others ($ chmod 600 .netrc). See 'man curl' for more details.
+The command will ask for the password of 'homer' on the command line. If you don't want to type the password each time, specify ``--netrc`` and store the password in the ``.netrc`` file in your home dir. Make sure it is not readable by others ($ chmod 600 .netrc). See 'man curl' for more details.
 
-.. note:: It is possible to specify the password on the command line like this: ``--user homer:password``. However, for security reasons this should be avoided from share systems (like the UI) because it allows other local users to read the password with the 'ps' command.
+.. note:: It is possible to specify the password on the command line like this: ``--user homer:password``. However, for security reasons this should be avoided from share systems (like the :abbr:`UI (User Interface)`) because it allows other local users to read the password with the ``ps`` command.
 
-If on your system there are no Grid :abbr:`CA (Certificate Authority)` certificates available in /etc/grid-security/certificates/, you can install them by following these instructions: https://dist.eugridpma.info/distribution/igtf/, or you can specify --insecure to skip certificate checking (not recommended).
+If on your system there are no Grid :abbr:`CA (Certificate Authority)` certificates available in ``/etc/grid-security/certificates/``, you can install them by following these instructions: https://dist.eugridpma.info/distribution/igtf/, or you can specify ``--insecure`` to skip certificate checking (not recommended!).
 
 
 Downloading
@@ -95,16 +95,16 @@ To copy a file from dCache to your local machine:
        https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
        --output zap.tar
   
-Or with wget:
+Or with ``wget``:
   
 .. code-block:: bash
 
   wget --user=homer --ask-password --ca-directory=/etc/grid-security/certificates \
        https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 
-Note: wget does not support certificate/proxy authentication.
+Note: ``wget`` does not support certificate/proxy authentication.
 
-If you don't have an /etc/grid-security/certificates directory, you could specify ``--no-check-certificate``, but we don't recommend this.
+If you don't have an ``/etc/grid-security/certificates`` directory, you could specify ``--no-check-certificate``, but we don't recommend this.
 
 
 Downloading with proxy authentication
@@ -120,7 +120,7 @@ Then use a command like this:
        --cert $X509_USER_PROXY --cacert $X509_USER_PROXY \
        https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
-.. note:: It is possible that your proxy DN is mapped to another user account than your own CUA user account. If you have permission issues with either username or proxy and not the other, contact us to check the user mapping.
+.. note:: It is possible that your proxy :abbr:`DN (Distinguished Name)` is mapped to another user account than your own :abbr:`CUA (SURFsara's Central User Administration)` user account. If you have permission issues with either username or proxy and not the other, contact us to check the user mapping.
 
 
 Renaming
@@ -156,10 +156,10 @@ Deleting a file from dCache:
 Graphical access
 ================
   
-To work with Webdav on Windows or Mac OS X, you can install Cyberduck from here: https://cyberduck.io/. Please note that the App store package costs money; the download from the website is free, but will ask for a donation.
+To work with WebDAV on Windows or Mac OS X, you can install **Cyberduck** from here: https://cyberduck.io/. Please note that the App store package costs money; the download from the website is free, but will ask for a donation.
 
 * Download the .zip file, open it, and drag the .app file into your Applications folder to install it. 
-* Open a Webdav (HTTP/SSL) connection and connect to the server with your ui account username and password:
+* Open a WebDAV (HTTP/SSL) connection and connect to the server with your :abbr:`UI (User Interface)` account username and password:
 
   .. code-block:: bash
 

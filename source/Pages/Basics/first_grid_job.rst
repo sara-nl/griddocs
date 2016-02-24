@@ -247,7 +247,7 @@ job status has changed from ``RUNNING`` to ``DONE``. The files in the
 output sandbox can be downloaded for approximately one week after the job finishes.
 
 .. note:: 
-        You can choose the output directory with the ``--dir`` option. If you do not use this option then the output will be copied under the UI ``/scratch`` directory with a name based on the ID of the job.  
+        You can choose the output directory with the ``--dir`` option. If you do not use this option then the output will be copied under the :abbr:`UI (User Interface)` ``/scratch`` directory with a name based on the ID of the job.  
 
 * To get the output, type:
 
@@ -294,7 +294,7 @@ Congratulations! You have just executed your first job to the Grid!
 
 Let's summarise what we've seen so far.
 
-You interact with the Grid via the :abbr:`UI (User Interface)` machine ``ui.grid.sara.nl``. You describe each job in a JDL (Job Description Language) file where you list which program should be executed and what are the worker node requirements. From the :abbr:`UI (user interface)`, you create first a proxy of your Grid certificate and submit your job with ``glite-*`` commands. The resource broker, called WMS (short for Workload Management System), accepts your jobs, assigns them to the most appropriate CE (Computing Element), records the jobs statuses and retrieves the output.
+You interact with the Grid via the :abbr:`UI (User Interface)` machine ``ui.grid.sara.nl``. You describe each job in a JDL (Job Description Language) file where you list which program should be executed and what are the worker node requirements. From the :abbr:`UI (User Interface)`, you create first a proxy of your Grid certificate and submit your job with ``glite-*`` commands. The resource broker, called WMS (short for Workload Management System), accepts your jobs, assigns them to the most appropriate CE (Computing Element), records the jobs statuses and retrieves the output.
 
 This is a short overview of the commands needed to handle simple jobs: 
 
