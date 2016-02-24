@@ -73,7 +73,7 @@ Transferring data
     $ uberftp file:///home/homer/zap.tar gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar 
 
 
-.. note::  The asterix “*” wildcard (match all characters) works with uberftp. Please, use this option with caution, especially when deleting files.
+.. note::  The asterisk “*” wildcard (match all characters) works with uberftp. Please use this option with caution, especially when deleting files.
 
 Parallel streams
 ----------------
