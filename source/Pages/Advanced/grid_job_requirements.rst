@@ -48,7 +48,7 @@ Specifying Wall Clock time
 
 Synopsis::
 
-    # make sure that the job can run for at least 3 days (3 x 24 x 60 = 4320)
+    # make sure that the job can run in a long queue of 72 hours (72 x 60 = 4320 minutes)
     Requirements = other.GlueCEPolicyMaxWallClockTime >= 4320;
 
 By specifying the wall clock time requirement, the scheduler picks a
@@ -59,13 +59,13 @@ sure that your requirement uses the 'greater than or equal to' syntax
 
 
 Jobs in short queues tend to get a higher priority, jobs in long queues
-tend to get a lower priority. You can use the following guideline for
-determining in which queue your job will run:
+tend to get a lower priority. You can use the :ref:`queues guideline <gina-specs-queues>` 
+for determining in which queue your job will run. Note that you need to 
+convert the hours in minutes in your JDL requirement, e.g.:
 
    +------------+-------------------------+
-   | queue      |   job length in minutes |
+   | queue      |  job length in minutes  |
    +============+=========================+
-   | express    | 10                      |
    +------------+-------------------------+
    | short      | 240 (= 4 hours)         |
    +------------+-------------------------+
@@ -110,7 +110,7 @@ jobs will *not* be scheduled. This is convenient in cases where you know
 jobs will fail on particular systems, for some reason.
 
 ``other.GlueCEInfoHostName`` contains the hostname, while ``other.GlueCEUniqueID`` contains the full :abbr:`CE (compute element)` endpoint name including
-the queue. You can lookup these with the command ``lcg-infosites --vo lsgrid ce``. The last field is the ``GlueCEUniqueID``.
+the queue. You can lookup these with the command ``lcg-infosites --vo lsgrid ce`` (see :ref:`example <available-ce>`). The last field is the ``GlueCEUniqueID``.
 
 .. _req-multicore:   
    
