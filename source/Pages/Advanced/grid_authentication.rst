@@ -15,12 +15,12 @@ Introduction: delegation of authentication
 ==========================================
 
 Grid, by its very nature, is decentralized. This means that users must
-authenticate themself to the Grid services they want to use. This is accomplished 
+authenticate themselves to the Grid services they want to use. This is accomplished 
 by means of a personal certificate and accompanying private key that 
 every Grid user must have. The combinbation of a certificate and private key
 uniquely identifies a user. Therefore, you should **never share
-your private key** with anyone else or with any service. At the same time,
-however, your jobs will typically run on systems you may not trust. However,
+your private key** with anyone else or with any service. At the same time 
+your jobs will typically run on systems you may not trust. However,
 to be able to use those systems you must identify yourself with those systems.
 This is where *delegation* comes in: identifying yourself with a system you don't trust
 by creating a new certificate/private key pair, called a proxy, with a limited 
@@ -48,7 +48,7 @@ The ``startGridSession`` command:
 * delegates this local proxy to the *Myproxy server*;
 * delegates this local proxy to the WMS with your user name as the *delegation ID* (DID). 
 
-Your jobs will now be able to run for week. The WMS, who is responsible for
+Your jobs will now be able to run for week. The :abbr:`WMS (Workload Managegement System)` that is responsible for
 scheduling your jobs, will renew the proxy certificate of running
 jobs *every 12 hours* automatically, for one week. This means that your
 jobs must finish within a week from starting the Grid session . However,
@@ -92,7 +92,7 @@ Creating a VOMS proxy
 ---------------------
 
 Make sure you have installed your certificate and private on the Grid user interface that you are working on. 
-They should be place in the ``.globus`` directory under your home directory and should be named ``usercert.pem``
+They should be placed in the ``.globus`` directory under your home directory and should be named ``usercert.pem``
 and ``userkey.pem``. They must have the following ownerships and permissions:
 	
 .. code-block:: bash
@@ -161,7 +161,7 @@ Here is an example::
 You can see that a proxy certificate has a limited lifetime and is stored
 in the ``/tmp`` directory. :abbr:`VO (Virtual Organisation)` extension information is also shown and
 is used to verify if you are indeed a member of this VO and group:
-A Grid service who has been provided with a delegation of your proxy 
+A Grid service that has been provided with a delegation of your proxy 
 can contact the :abbr:`VOMS (Virtual Organisation Management Service)` service for membership information and subsequently
 grant or deny you access.
 
