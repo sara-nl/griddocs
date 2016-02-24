@@ -370,7 +370,7 @@ How to run PBS jobs with wallclock greater than 36 hours on LSG?
 In order to run pbs jobs on LSG that last more than 36 hours, you need to :ref:`select the proper queue <lsg-specs-queues>` with the ``-q`` flag in your ``qsub`` command when submitting the job:
  
 * If you do *not* use ``-q`` flag and ``lwalltime`` directive, then the medium queue is picked and jobs lasting more than 36 hours will be killed.
-* If you do *not* use ``-q`` flag but specify -lwalltime directive with value larger than 36 hours, then you request more walltime than the max walltime available in the default medium queue and the job does not start at all.
+* If you do *not* use ``-q`` flag but specify ``-lwalltime`` directive with value larger than 36 hours, then you request more walltime than the max walltime available in the default medium queue and the job does not start at all.
 * If you use the ``-q`` flag, it is sufficient to get your jobs running for the amount of hours that the specified queue permits.
 
 
