@@ -20,6 +20,7 @@ From the user perspective, it allows data movement, retrying if necessary, monit
 
 It supports all the basic transfer protocols, such as: GridFTP, SRM, Webdav, HTTPS, xroot. It is open source and can be used from command-line clients or WebFTS, the web-interface version, or python bindings. 
 
+The ``fts client`` is currently installed on the UI ``ui.grid.sara.nl``. It is not available on the :ref:`LSG UI <lsg-hostnames>` machines.
 
 Authentication
 ==============
