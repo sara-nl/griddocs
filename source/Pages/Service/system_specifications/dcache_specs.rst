@@ -37,7 +37,7 @@ Here's a list of accessible dCache nodes:
 
 * srm.grid.sara.nl
 * `dcmain.grid.sara.nl:2288 <http://dcmain.grid.sara.nl:2288>`_ (a dCache web interface showing detailed configuration information)
-* pool nodes:
+* pool nodes::
 
   * fly{1..10}.grid.sara.nl
   * bw27-{1..9}.grid.sara.nl
