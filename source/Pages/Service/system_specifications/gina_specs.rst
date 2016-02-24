@@ -47,6 +47,7 @@ Worker nodes
 This is the list of the different worker nodes in order of installation/configuration from newest to oldest:
 
 Worker Nodes ``am90-{01-33}``, ``am91-{01-33}``, ``am94-{01-33}``:  
+
 *  Dell R630  
 *  2x Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz (24 cores)  
 *  192GB RAM  
@@ -58,6 +59,7 @@ Worker Nodes ``am90-{01-33}``, ``am91-{01-33}``, ``am94-{01-33}``:
 *  RAM per core: 8GB  
   
 Worker Nodes ``ar90-{01-52}``, ``ar91-{01-52}``:  
+
 *  Fujitsu CX250  
 *  2x Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz (16 cores)  
 *  128GB RAM  
@@ -69,6 +71,7 @@ Worker Nodes ``ar90-{01-52}``, ``ar91-{01-52}``:
 *  RAM per core: 8GB  
 
 Worker Nodes ``v37-{01-12}``, ``v33-{01-06}``:  
+
 *  Dell R820  
 *  4x Intel(R) Xeon(R) CPU E5-4620 0 @ 2.20GHz (32 cores)  
 *  256GB RAM  
@@ -80,6 +83,7 @@ Worker Nodes ``v37-{01-12}``, ``v33-{01-06}``:
 *  RAM per core: 8GB  
 
 Worker Nodes ``am95-{01-48}``, ``v33-{17-48}``:  
+
 *  Dell M610  
 *  2x Intel(R) Xeon(R) CPU E5649  @ 2.53GHz (12 cores)  
 *  48GB RAM  
