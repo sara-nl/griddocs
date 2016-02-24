@@ -24,10 +24,10 @@ dCache has the following concepts:
   files or restore files from tape using a specific protocol. Protocols are:
   
   * GridFTP (port range 20000-25000)
-  * webdav
+  * WebDAV
   * xroot
   * GSIdCap
-  * dCache also offers NFS doors, so the protocol list could be extended on demand for specific purposes.
+  * dCache also offers NFS doors, but we currently don't support it; for special cases we might consider supporting this protocol.
   
 * The ``namespace`` contains a list of all files and their metadata. The files are structured 
   in a virtual directory structure, starting with /pnfs/grid.sara.nl/. Each directory can be 
@@ -97,4 +97,4 @@ If that happens, you should reduce your number of concurrent transfers, or ask u
 A single SRM door
 -----------------
 
-Also the SRM door has some limitations. There's only one of that kind, and sometimes it might be a performance bottleneck. It may be wise to bypass the SRM door and use GridFTP and webdav doors directly when possible. If in doubt, feel free to contact us for advice.
+Also the SRM door has some limitations. There's only one of that kind, and sometimes it might be a performance bottleneck. It may be wise to bypass the SRM door and use GridFTP and WebDAV doors directly when possible. If in doubt, feel free to contact us for advice.
