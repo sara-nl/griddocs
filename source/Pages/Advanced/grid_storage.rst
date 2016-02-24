@@ -206,6 +206,7 @@ In this section we will show the common commands to use the various storage clie
   | :ref:`globusonline` | --  | yes     | --      | --     | yes       | high  | --                |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
   | :ref:`lcg-lfn-lfc`  | yes | [2]_    | --      | --     | --        |       | --                |
+  | (not recommended)   |     |         |         |        |           |       |                   |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
 
 .. [1] Examples of tape control: staging a file from tape to disk, or get it locality (tape or disk).
