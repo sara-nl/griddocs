@@ -27,12 +27,12 @@ Job requirements are written as an optional statement in the JDL file::
 
   Requirements = <expression>;
 
-Job requirements follow the :abbr:`JDL (job description language)` syntax. This also means that you can have multiple requirements using boolean operators ``&&`` for
+Job requirements follow the :abbr:`JDL (Job Description Language)` syntax. This also means that you can have multiple requirements using boolean operators ``&&`` for
 *requirement 1 AND requirement 2*, and ``||`` for *requirement 1 OR
 requirement 2*. You can also use parentheses ``(...)`` for an even more
 fine-grained control over requirements.
 
-.. seealso:: For detailed information about :abbr:`JDL (job description language)` attributes supported by the gLite Workload Management System, have a look in the `EGEE JDL guide`_.
+.. seealso:: For detailed information about :abbr:`JDL (Job Description Language)` attributes supported by the gLite Workload Management System, have a look in the `EGEE JDL guide`_.
 
 
 ============
@@ -61,7 +61,7 @@ sure that your requirement uses the 'greater than or equal to' syntax
 Jobs in short queues tend to get a higher priority, jobs in long queues
 tend to get a lower priority. You can use the :ref:`queues guideline <gina-specs-queues>` 
 for determining in which queue your job will run. Note that you need to 
-convert the hours in minutes in your JDL requirement, e.g.:
+convert the hours in minutes in your :abbr:`JDL (Job Description Language)` requirement, e.g.:
 
    +------------+-------------------------+
    | queue      |  job length in minutes  |
@@ -100,16 +100,13 @@ Synopsis::
     # Exclude a specific site, e.g. iihe.ac.be
     Requirements=(!RegExp("iihe.ac.be", other.GlueCEUniqueID));
 
-    # Schedule the jobs on a specific site, e.g. gina
+    # Schedule the jobs on a specific site, e.g. Gina
     Requirements=(RegExp("gina", other.GlueCEUniqueID));
 
-With the ``other.GlueCEInfoHostName`` criterion you can specify on which
-compute element your jobs will be scheduled. Or even on which :abbr:`CE (compute element)` your
-jobs will *not* be scheduled. This is convenient in cases where you know
+With the ``other.GlueCEInfoHostName`` criterion you can specify on which compute element your jobs will be scheduled. Or even on which :abbr:`CE (Compute Element)` your jobs will *not* be scheduled. This is convenient in cases where you know
 jobs will fail on particular systems, for some reason.
 
-``other.GlueCEInfoHostName`` contains the hostname, while ``other.GlueCEUniqueID`` contains the full :abbr:`CE (compute element)` endpoint name including
-the queue. You can lookup these with the command ``lcg-infosites --vo lsgrid ce`` (see :ref:`example <available-ce>`). The last field is the ``GlueCEUniqueID``.
+``other.GlueCEInfoHostName`` contains the hostname, while ``other.GlueCEUniqueID`` contains the full :abbr:`CE (Compute Element)` endpoint name including the queue. You can lookup these with the command ``lcg-infosites --vo lsgrid ce`` (see :ref:`example <available-ce>`). The last field is the ``GlueCEUniqueID``.
 
 .. _req-multicore:   
    

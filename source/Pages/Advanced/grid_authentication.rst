@@ -48,7 +48,7 @@ The ``startGridSession`` command:
 * delegates this local proxy to the *Myproxy server*;
 * delegates this local proxy to the WMS with your user name as the *delegation ID* (DID). 
 
-Your jobs will now be able to run for week. The :abbr:`WMS (Workload Managegement System)` that is responsible for
+Your jobs will now be able to run for week. The :abbr:`WMS (Workload Management System)` that is responsible for
 scheduling your jobs, will renew the proxy certificate of running
 jobs *every 12 hours* automatically, for one week. This means that your
 jobs must finish within a week from starting the Grid session . However,
