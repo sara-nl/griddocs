@@ -13,7 +13,7 @@ This page includes the basic commands to use ``lcg-lfn-lfc``. For an overview of
     :depth: 4
  
 
-.. warning:: If your jobs still works with the lcg- tools you can keep on using those; though the lcg- tools are *not* supported anymore. 
+.. warning:: In general we don't recommend the ``lcg-lfn-lfc`` clients as many users reported difficulties in usage and encountered worse performance compared to the other :ref:`storage-clients`. If your solution still works with the lcg- tools you can keep on using those; though the lcg- tools are *not* supported anymore. 
 
 =====
 About
