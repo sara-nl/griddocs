@@ -1,4 +1,4 @@
-Grid
+
 .. _topos-perl-client:
 
 **********
