@@ -37,7 +37,7 @@ dCache has the following webdav doors:
 
 If you don't know which one you should use, choose the first. It has a good load balancing. The second, on port 2880, may be useful for certain webdav clients that don't support redirects. Use the third one only if you need to use webdav with a certificate or proxy.
 
-webdav.grid.sara.nl is a DNS round robin that will direct you to a (more or less) random host in a pool of webdav servers.
+``webdav.grid.sara.nl`` is a DNS round robin that will direct you to a (more or less) random host in a pool of webdav servers.
 
 .. note:: To run the examples below you need to have a :abbr:`UI (user interface)` (or :abbr:`CUA (SURFsara's central user adminstration)`) account that is configured within dCache and authorized to the data you want to access. Contact us if you need assistance with that.
 
@@ -45,7 +45,7 @@ webdav.grid.sara.nl is a DNS round robin that will direct you to a (more or less
 Listing
 =======
 
-To list directories, you can point a browser like Firefox to https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/. When the browser asks for a username and password, you can provide your CUA username and password. When you click on a listed file, it will be downloaded, when you're authorized to do so. When you're not authorized to access a URL, you may see some unexpected behaviour.
+To list directories, you can point a browser like Firefox to https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/. When the browser asks for a username and password, you can provide your Grid UI (or CUA) username and password. When you click on a listed file, it will be downloaded, when you're authorized to do so. When you're not authorized to access a URL, you may see some unexpected behaviour.
 
 You can also use text browsers like curl to list directories.
 
@@ -77,9 +77,9 @@ To copy a file from your local machine to dCache:
        https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/
   # replace homer with your username, lsgrid with your VO and zap.tar with your local file
 
-The command will ask for the password of 'homer' on the command line. If you don't want to type the password each time, specify --netrc and store the password in the .netrc file in your home dir. Make sure it is not readable by others (chmod 600 .netrc). See 'man curl' for more details.
+The command will ask for the password of 'homer' on the command line. If you don't want to type the password each time, specify ``--netrc`` and store the password in the .netrc file in your home dir. Make sure it is not readable by others ($ chmod 600 .netrc). See 'man curl' for more details.
 
-It is possible to specify the password on the command line like this: --user homer:password. However, this should be avoided because it allows other local users to read the password with the 'ps' command.
+.. note:: It is possible to specify the password on the command line like this: ``--user homer:password``. However, for security reasons this should be avoided from share systems (like the UI) because it allows other local users to read the password with the 'ps' command.
 
 If on your system there are no Grid :abbr:`CA (Certificate Authority)` certificates available in /etc/grid-security/certificates/, you can install them by following these instructions: https://dist.eugridpma.info/distribution/igtf/, or you can specify --insecure to skip certificate checking (not recommended).
 
@@ -104,7 +104,7 @@ Or with wget:
 
 Note: wget does not support certificate/proxy authentication.
 
-If you don't have an /etc/grid-security/certificates directory, you could specify --no-check-certificate, but we don't recommend this.
+If you don't have an /etc/grid-security/certificates directory, you could specify ``--no-check-certificate``, but we don't recommend this.
 
 
 Downloading with proxy authentication
