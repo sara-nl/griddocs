@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link type="text/css" rel="stylesheet" href="css/style.css"></script>
+<script src="js/d3.v3.min.js"></script>
+<script type="text/javascript" src="js/d3_utils.js"></script>
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="js/grid.js"></script>
+</head>
+<body onload="main()">
+  <form>
+    <table>
+      <tr>
+        <td><input type="button" onClick="create_job(0,0)" value="Add job for Paul"></td>
+        <td><input type="button" onClick="create_job(0,1)" value="Add job for Paul"></td>
+        <td># jobs: <span id="Paul">0</span></td>
+      </tr><tr>
+        <td><input type="button" onClick="create_job(1,0)" value="Add job for Tijs"></td>
+        <td><input type="button" onClick="create_job(1,1)" value="Add job for Tijs"></td>
+        <td># jobs: <span id="Tijs">0</span></td>
+    </tr></table>
+  </form>
+  <div id="viz" style="height:700px; width=100%;"></div>
+</body>
+</html>
+
