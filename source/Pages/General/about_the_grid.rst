@@ -35,7 +35,7 @@ How it works
 
 As a user you connect to the Grid by connecting to a so-called **User Interface** (UI) system via secure shell. Once you have received the right credentials for a :abbr:`UI (User Interface)` (see :ref:`preparation`) you are set to go.
 
-In general your task needs to be split into smaller units, called **jobs**, that each fit a certain set of boundary conditions in terms of resources (typically runtime, memory, disk size). For the jobs to be executed on the Grid, a job slot needs to be selected based on the boundary conditions that suit the requirements for these jobs. The way to do this is to describe each job in terms of a ``Job Description Language`` (JDL), where you list which program should be executed and the requirements of the job slot to run the job. 
+In general your task needs to be split into smaller units, called **jobs**, that each fit a certain set of boundary conditions in terms of resources (typically runtime, memory, disk size). For the jobs to be executed on the Grid, a job slot needs to be selected based on the boundary conditions that suit the requirements for these jobs. The way to do this is to describe each job in terms of a ``Job Description Language`` (JDL), where you list which program should be executed and the requirements of the job slot to run the job. You can use the **input and output sandboxes** to send small data files or scripts with your job.
 
 .. sidebar:: More about Grid basics?
 
@@ -46,6 +46,10 @@ Each job is then submitted as a JDL file to the **Workload Management System** (
 In addition, the Grid's interconnected clusters each have a storage server, called a **Storage Element** (SE), which can hold the input and output data of the jobs. Data on the :abbr:`SEs (Storage Elements)` can be replicated at multiple sites if needed for scale-out scenarios. In general, all :abbr:`SEs (Storage Elements)` offer disk storage for the staging of datasets before and after job execution. In addition, a central Grid storage facility (see :ref:`dCache <dCache>`) also provides tape storage for long-term storage of datasets that need to be preserved. 
 
 In short, as a user you submit your jobs to execute your calculation or analysis code and to handle your input and output data. The :abbr:`WMS (Workload Management System)` distributes the jobs to the clusters and node that are most suitable for these jobs. When the jobs are finished, you can collect the results from the :abbr:`SE (Storage Element)` that was selected to hold the output data or keep them for later use on the central Grid storage facility.
+
+.. comment:: https://www.websequencediagrams.com/?lz=dGl0bGUgSm9iIGZsb3cKCnBhcnRpY2lwYW50IFVzZXIgSW50ZXJmYWNlAA4NV29ya2xvYWQgTWFuYWdlbWVudCBTeXN0ZW0ANQ1Db21wdXRlIEVsAB4FADIRZXIgTm9kAE0OU3RvcmFnACoKCm5vdGUgb3ZlcgCBAg86IFN1bWJpdCBqb2IKAIEeDiAtPgCBCBs6AIFrBSsgSW5wdXQgc2FuZGJveABcCwAeHFNlbGVjdCBiZXN0IENFCgCBbhogLT4AgW8QAFggAB4RU2NoZWR1bGUAgV0FAII9DwCBWwgAgjwHAIEwJAAiCVN0YXIAgjEGAIJeDwBEEVJlYWQgZmlsZXMgADUYRXhlY3V0ZSB0YXNrAIILBQCDTgcgLT4AgzwQOiBXcml0ZQAyH0ZpbmlzaACDUQUAQA8Agj8RT3V0AIM3DACCDBcAg2ocbG9nICsAOBAAhFgaQ29sAIN7BW8AdAUAg2AfAIUfEACBHw8&s=roundgreen
+
+.. image:: /Images/job_flow.png
 
 
 .. _use-or-not:
