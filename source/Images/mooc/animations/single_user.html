@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/d3.v3.min.js"></script>
+    <script type="text/javascript" src="js/d3_utils.js"></script>
+    <script type="text/javascript" src="js/single_user.js"></script>
+  </head>
+  <body onload="main()">
+    <form>
+      <label><input type="checkbox" name="enable_transition" checked onChange="modify_transition(this.checked);">
+        Animate
+      </label><br>
+      <label><input type="checkbox" name="enable_transition" onChange="set_multiple_users(this.checked);">
+        Multiple users
+      </label><br>
+      <label><input type="checkbox" name="enable_transition" onChange="set_multiple_computers(this.checked);">
+        Multiple computers
+      </label><br>
+    </form>
+    <div id="viz" style="height:600px; width=100%;"></div>
+  </body>
+</html>
+
