@@ -128,6 +128,7 @@ Frequently Asked Questions
    
    Pages/FAQ
    Pages/documentation/index
+   Pages/cookie_policy
 
 
 ==================
