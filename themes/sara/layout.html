@@ -23,4 +23,19 @@
 {% endblock %}
 
 {%- block sidebarlogo %}{%- endblock %}
-{%- block sidebarsourcelink %}{%- endblock %}
+{%- block sidebarsourcelink %}
+<p id="license">
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Grid documentation</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.surfsara.nl" property="cc:attributionName" rel="cc:attributionURL">SURFsara</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+</p>
+<script type="text/javascript">
+$(function() {
+  // Change the license position from a fixed position to an absolute position at the bottom of the page
+  var bottomBar = $('.related').filter(':last');
+  var offset = bottomBar.offset();
+  var license = $('#license');
+  offset['top'] -= license.outerHeight( true ) - parseInt( license.css('margin-top') );
+  license.css('position', 'absolute');
+  license.offset( offset );
+});
+</script>
+{%- endblock %}

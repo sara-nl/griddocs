@@ -384,3 +384,9 @@ tt.xref {
 div.related:nth-child(2) li.right:first-child {
   padding-right: 153px !important;
 }
+#license {
+  bottom: 0;
+  position: fixed;
+  width: 206px;
+  padding: 12px;
+}
