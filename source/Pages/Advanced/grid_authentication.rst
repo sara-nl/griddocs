@@ -46,7 +46,7 @@ The ``startGridSession`` command:
 
 * generates a *local proxy* of your certificate and private key;
 * delegates this local proxy to the *Myproxy server*;
-* delegates this local proxy to the WMS with your user name as the *delegation ID* (DID). 
+* delegates this local proxy to the :abbr:`WMS (Workload Management System)` with your user name as the *delegation ID* (DID). 
 
 Your jobs will now be able to run for week. The :abbr:`WMS (Workload Management System)` that is responsible for
 scheduling your jobs, will renew the proxy certificate of running
@@ -67,7 +67,7 @@ Instead of ``startGridSession``, you can run the following three commands separa
 	# running for more than 12 hours.
 	$ myproxy-init -d -n 
 	
-	# 3. WMS: delegate your credentials to the WMS.
+	# 3. WMS: delegate your credentials to the Workload Management System.
 	$ glite-wms-job-delegate-proxy -d $USER
 
 The next section explains the startGridSession operations step-by-step. See also ``startGridSession -h``.
@@ -183,7 +183,7 @@ The following command stores a proxy certificate in the proxy server
 where it will issue new proxy certificates on your behalf for a week.
 This is necessary for jobs that need more than 12 hours to run.
 
-Issue this command on the UI:
+Issue this command on the :abbr:`UI (User Interface)`:
 
 .. code-block:: bash
 
@@ -227,14 +227,14 @@ This section explains the usage of the command ``glite-wms-job-delegate-proxy``,
 When you submit a job to the Grid it will be sent to the Workload
 Management System (WMS). This system will then schedule your job and send
 it to a worker node somewhere on the Grid. The job will be run on your
-behalf, therefore, you should delegate your credentials to the WMS. 
+behalf, therefore, you should delegate your credentials to the :abbr:`WMS Workload Management System`. 
 
 Credential delegation solves the following problem: when the Grid is busy or when you submit a large number of jobs, it can take more then the standard 12 hours for the jobs to start than your local proxy certificate is valid. The solution is to use *proxy delegation* before submitting jobs.
 
 We assume that you have issued the ``voms-proxy-init command`` and have a valid
 local proxy. If not, please see :ref:`voms-proxy-init command <voms-proxies>`.
 
-To delegate your proxy to the WMS, run on the UI:
+To delegate your proxy to the :abbr:`WMS (Workload Management System)`, run on the :abbr:`UI (User Interface)`:
 
 .. code-block:: bash
 
