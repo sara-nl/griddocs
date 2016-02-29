@@ -96,7 +96,7 @@ Join a Virtual Organisation
 	
 A Virtual Organisation or VO is a group of geographically distributed people that have common objectives and that are using shared Grid resources to achieve them. Every Grid user is a member of one or more Virtual Organizations. 
 
-In practice your :abbr:`VO (Virtual Organisation)` membership determines to which resources (compute and storage) you have access to. You are eligible to register for a :abbr:`VO (Virtual Organisation)` only once you :ref:`get a valid certificate <get-grid-certificate>`. The :abbr:`VO (Virtual Organisation)` that is most suitable for you depends on the specific research area you are in. For example, if you are active in a field associated with the life sciences the ``lsgrid VO`` might be most suitable for you. If you still not sure which VO is best for you, then contact us at helpdesk@surfsara.nl to guide you on this.
+In practice your :abbr:`VO (Virtual Organisation)` membership determines to which resources (compute and storage) you have access to. You are eligible to register for a :abbr:`VO (Virtual Organisation)` only once you :ref:`get a valid certificate <get-grid-certificate>`. The :abbr:`VO (Virtual Organisation)` that is most suitable for you depends on the specific research area you are in. For example, if you are active in a field associated with the life sciences the ``lsgrid VO`` might be most suitable for you. If you still not sure which :abbr:`VO (Virtual Organisation)` is best for you, then contact us at helpdesk@surfsara.nl to guide you on this.
 
 This section describes how to get a :abbr:`VO (Virtual Organisation)` membership.
 
