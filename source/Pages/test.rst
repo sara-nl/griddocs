@@ -21,6 +21,7 @@ Code-block console
 ------------------
 
 .. code-block:: console
+   :emphasize-lines: 3
 
    # Comment
      # Indented comment
@@ -34,6 +35,7 @@ Code-block shell-session
 ------------------------
 
 .. code-block:: shell-session
+   :emphasize-lines: 3
 
    # Comment
      # Indented comment
@@ -49,6 +51,7 @@ Code-block python console
 Don't mind the syntax.
 
 .. code-block:: pycon
+   :emphasize-lines: 3
 
    # Comment
      # Indented comment
