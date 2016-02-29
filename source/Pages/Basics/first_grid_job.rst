@@ -318,5 +318,5 @@ This is a short overview of the commands needed to handle simple jobs:
 
 .. Links:
 
-.. _`Grid WMS animation`: https://mooc-inst.gridmooc-surfsara.vm.surfsara.nl/mooc/animations/wms.html
-.. _`Grid job status animation`: https://mooc-inst.gridmooc-surfsara.vm.surfsara.nl/mooc/animations/wms_with_status.html 
+.. _`Grid WMS animation`: http://web.grid.sara.nl/mooc/animations/wms.html
+.. _`Grid job status animation`: http://web.grid.sara.nl/mooc/animations/wms_with_status.html 
