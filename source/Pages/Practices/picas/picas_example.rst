@@ -16,7 +16,7 @@ Problem description
 
 .. sidebar:: More about Picas in practice?
 
-		.. seealso:: Checkout our mooc videos Picas examples :ref:`Part I <mooc-picas-example1>` and :ref:`Part II <mooc-picas-example2>`.
+		.. seealso:: Check out our mooc videos Picas examples :ref:`Part I <mooc-picas-example1>` and :ref:`Part II <mooc-picas-example2>`.
 
 In this example we will implement the following pilot job workflow:
  

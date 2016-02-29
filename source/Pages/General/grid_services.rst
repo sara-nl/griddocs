@@ -34,7 +34,7 @@ Support
 
 You may request support for our Grid services by contacting us by phone or email. Our dedicated team at `SURFsara helpdesk`_ is more than willing to assist you for any questions or complaints and carefully take note of your remarks for further improvement of our services.
 
-Checkout the detailed information about `SURFsara helpdesk`_. 
+Check out the detailed information about `SURFsara helpdesk`_. 
 Please don't hesitate to contact us!
 
 

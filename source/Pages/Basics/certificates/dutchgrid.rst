@@ -169,7 +169,7 @@ Import the certificate to the browser
 	
 .. sidebar:: Problems installing the certificate?
 
-		.. seealso:: Need more details for installing your certificate on the UI or browser? Checkout our mooc video :ref:`mooc-ui`.
+		.. seealso:: Need more details for installing your certificate on the UI or browser? Check out our mooc video :ref:`mooc-ui`.
 	
 * Verify that your certificate is valid and properly installed in your browser by accessing this website: 
 

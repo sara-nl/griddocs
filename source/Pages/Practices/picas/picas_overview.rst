@@ -38,7 +38,7 @@ Picas server
 
 .. sidebar:: More about Picas Server?
 
-		.. seealso:: Checkout our mooc videos Picas server side :ref:`Part I <mooc-picas-server1>` and :ref:`Part II <mooc-picas-server2>`.
+		.. seealso:: Check out our mooc videos Picas server side :ref:`Part I <mooc-picas-server1>` and :ref:`Part II <mooc-picas-server2>`.
 
 On the server side we have a queue which keeps track of which tokens are available, locked or done. This allows clients to easily retrieve new pieces of work and allows also easy monitoring of the resources. As every application needs different parameters, the framework has a flexible data structure that allows users to save different types of data. Because of this, tokens can contain any kind of information about a task: (a description of) the work that needs to be done, output, logs, a progress indicator etc.
 
@@ -52,7 +52,7 @@ Picas client
 
 .. sidebar:: More about Picas Client?
 
-		.. seealso:: Checkout our mooc video :ref:`mooc-picas-client` 
+		.. seealso:: Check out our mooc video :ref:`mooc-picas-client` 
 		
 The PiCaS client library was created to ease communication with the CouchDB back-end. It allows users to easily upload, fetch and modify tokens. The system has been implemented as a Python Iterator, which means that the application is one large for loop that keeps on running as long as there is work to be done. The client is written in Python and uses the python couchdb module, which requires at least python version 2.6. The  client library is constructed using a number of modules and classes, most important of these are:  
 

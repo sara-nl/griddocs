@@ -24,7 +24,7 @@ About pilot jobs
 
 .. sidebar:: More about Pilot jobs?
 
-		.. seealso:: Checkout our mooc video :ref:`mooc-pilot-jobs` 
+		.. seealso:: Check out our mooc video :ref:`mooc-pilot-jobs` 
 
 When you have tens, hundreds of jobs that you submit to the Grid you may find yourself writing software which checks the status of all those jobs and tries to find out which ones have succeeded and which ones should be resubmitted.
 
