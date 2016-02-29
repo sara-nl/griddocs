@@ -17,9 +17,9 @@ As of 18 November 2013, SURFsara offered the Massive Open Online Course (MOOC) `
 
 The taught material consists of:
 
-* a set of ``video lectures``.
-* a set of ``quizzes, assignments and exercises``.
-* real world examples of ``use cases`` on Grid.
+* a set of **video lectures**.
+* a set of **quizzes**, **assignments** and **exercises**.
+* real world examples of **use cases** on Grid.
 
 .. note::  The mooc participants were provided with student accounts and a preconfigured Virtual Machine (VM) with all the necessary Grid tools installed. If you want to run the examples presented in the video lectures below you will have to request your personal Grid account, see :ref:`prerequisites`. Please contact helpdesk@surfsara.nl if you need help with this.
 
