@@ -20,7 +20,7 @@ The Grid is a loosely coupled collection of heterogeneous resources with a large
 
 .. sidebar:: More about Cluster computing basics?
 
-		.. seealso:: Checkout our mooc video :ref:`mooc-cluster-computing`
+		.. seealso:: Check out our mooc video :ref:`mooc-cluster-computing`
 
 In addition, Grid clusters are not exclusively connected to their own storage facilities but can be accessed transparently from all Grid compute clusters, and as such form a virtual supercluster. Grid systems and their applications are more scalable than classic clusters.  
 
@@ -39,7 +39,7 @@ In general your task needs to be split into smaller units, called **jobs**, that
 
 .. sidebar:: More about Grid basics?
 
-		.. seealso:: Checkout our mooc video :ref:`mooc-grid-overview` 
+		.. seealso:: Check out our mooc video :ref:`mooc-grid-overview` 
 
 Each job is then submitted as a JDL file to the **Workload Management System** (WMS). The WMS is a *resource broker* that knows which Grid compute clusters are ready to accept your job and fulfil its requirements. Each Grid cluster consists of a **Compute Element** (CE) and several **Worker Nodes** (WNs). The :abbr:`CE (Compute Element)` is a scheduler within each Grid cluster that communicates with the :abbr:`WMS (Workload Management System)` about availability of the job slots in the cluster, and accepts and distributes the jobs to the available compute nodes in the cluster (these are called Worker Nodes or WNs). These :abbr:`WNs (Worker Nodes)` are the machines which do the actual work. When finished with a job they will report back to the :abbr:`CE (Compute Element)`, which in turn will inform the :abbr:`WMS (Workload Management System)` about the status of the job. 
 

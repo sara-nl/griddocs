@@ -272,7 +272,7 @@ You also need to do this step once every week, and not for each job.
 Now within the job, your :ref:`storage-clients` commands will work.
 
 
-.. seealso:: This section covers the basic usage of pbs jobs particularly on the LSG. For advanced usage of a pbs cluster you may checkout the `Lisa batch usage`_ guide or the `NYU Cluster usage`_ guide.
+.. seealso:: This section covers the basic usage of pbs jobs particularly on the LSG. For advanced usage of a pbs cluster you may check out the `Lisa batch usage`_ guide or the `NYU Cluster usage`_ guide.
 
 ..
 

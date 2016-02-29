@@ -311,7 +311,7 @@ This is a short overview of the commands needed to handle simple jobs:
 +---------------------+--------------------------------------------------------+
 
 
-.. seealso:: Try now to port your own application to the Grid. Checkout the :ref:`best-practices` section and run the example that suits your use case. The section :ref:`advanced` will help your understanding for several Grid modules used in the :ref:`best-practices`. 
+.. seealso:: Try now to port your own application to the Grid. Check out the :ref:`best-practices` section and run the example that suits your use case. The section :ref:`advanced` will help your understanding for several Grid modules used in the :ref:`best-practices`. 
 
 	Done with the :ref:`basics`, but not sure how to proceed? We can help! Contact us at helpdesk@surfsara.nl.
 
