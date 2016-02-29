@@ -25,7 +25,7 @@ Code-block console
    Hallo Wereld!
 
 
-Code-block snell-session
+Code-block shell-session
 ------------------------
 .. code-block:: shell-session
 
