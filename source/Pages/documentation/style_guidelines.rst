@@ -25,7 +25,7 @@ Use of capitals
 * Certificate Authority? -> First time per page "Certificate Authority (CA)", then :abbr:`CA (Certificate Authority)` with :abbr: tag. Same for:
 
   * First time per page Life Science Grid (LSG), then LSG.
-  * Virtual Organisation (VO), then VO.
+  * Virtual Organization (VO), then VO.
   * User Interface (UI), then UI.
 
 * GridFTP, gridFTP or gridftp? GSIdCap? -> GridFTP, GSIdCap

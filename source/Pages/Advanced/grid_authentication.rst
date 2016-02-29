@@ -159,10 +159,10 @@ Here is an example::
 	timeleft  : 11:48:24
     
 You can see that a proxy certificate has a limited lifetime and is stored
-in the ``/tmp`` directory. :abbr:`VO (Virtual Organisation)` extension information is also shown and
+in the ``/tmp`` directory. :abbr:`VO (Virtual Organization)` extension information is also shown and
 is used to verify if you are indeed a member of this VO and group:
 A Grid service that has been provided with a delegation of your proxy 
-can contact the :abbr:`VOMS (Virtual Organisation Management Service)` service for membership information and subsequently
+can contact the :abbr:`VOMS (Virtual Organization Management Service)` service for membership information and subsequently
 grant or deny you access.
 
 .. note:: In the :ref:`next step <myproxy-server>`, you will delegate your proxy

@@ -202,7 +202,7 @@ User Interface machine :download:`pdf </Pages/Tutorials/MOOC/slides/L10_W2_User_
 
 .. _mooc-vo:
 
-Virtual Organisations
+Virtual Organizations
 =====================
 
 .. raw:: html
@@ -212,7 +212,7 @@ Virtual Organisations
         src="http://www.youtube.com/embed/uqUORgYn648?controls=2">
     </iframe>
 
-Virtual Organisations :download:`pdf </Pages/Tutorials/MOOC/slides/L11_W2_Virtual_Organizations.pdf>`
+Virtual Organizations :download:`pdf </Pages/Tutorials/MOOC/slides/L11_W2_Virtual_Organizations.pdf>`
 
 
 Hands-on set

@@ -13,13 +13,13 @@ In this page you will find general information about the SURFsara Grid services 
 About
 =====
 
-To deploy your production tasks smoothly on the Grid, our services can be of great value. Our standard Grid services such as the Workload Management System, Compute Elements, Storage Elements, a Logical File Catalog, Virtual Organisation Management Services, and User Interface machines are indispensable for generic use of the Grid infrastructure. Apart from those we have additional services available as an option, that may be beneficial for your type of application. 
+To deploy your production tasks smoothly on the Grid, our services can be of great value. Our standard Grid services such as the Workload Management System, Compute Elements, Storage Elements, a Logical File Catalog, Virtual Organization Management Services, and User Interface machines are indispensable for generic use of the Grid infrastructure. Apart from those we have additional services available as an option, that may be beneficial for your type of application. 
 
 Our Grid services provide:
 
 * High-throughput processing nodes for job execution
 * Access to scalable :ref:`grid-storage` facilities, disk and tape
-* Standard Grid Services like User Interfaces, Brokers, and Virtual Organisation management services
+* Standard Grid Services like User Interfaces, Brokers, and Virtual Organization management services
 * *Token Pool* Services (:ref:`topos-overview` and :ref:`picas-overview`) for production run logistics, job collection management, monitoring and control
 * Virtual filesystem service :ref:`softdrive` for centralized software deployment on distributed systems
 * Dedicated *light paths*: we offer support bridging the last mile between the end points and your data sources.

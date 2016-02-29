@@ -16,7 +16,7 @@ This section summarises all the preparations you need to make before you run a :
 Preparation
 ===========
 
-The Grid is a cooperation of many different clusters and research organisations, and as such, there is no centralised user management. Yet, there must be a way for the system to identify you and your work. This is why **Grid certificates** and **Virtual Organisations** (VOs) are introduced.
+The Grid is a cooperation of many different clusters and research organisations, and as such, there is no centralised user management. Yet, there must be a way for the system to identify you and your work. This is why **Grid certificates** and **Virtual Organizations** (VOs) are introduced.
  
 .. sidebar:: More about Grid prerequisites?
 
@@ -24,7 +24,7 @@ The Grid is a cooperation of many different clusters and research organisations,
 
 Your digital identity starts with a private key. **Only you** are allowed to know the contents of this key. Next, you need a Grid certificate, which is issued by a Certificate Authority (CA). The Grid certificate contains your name and your organisation, and it says that the person who owns the private key is really the person mentioned, and that this is certified by the Certificate Authority.
 
-Now this is your identity. Big international cooperations do not want to deal with every user individually. Instead, users become part of Virtual Organisations. Individual clusters give access and compute time to certain VOs, and if you are a member of a :abbr:`VO (Virtual Organisation)`, you can run your jobs on that cluster.
+Now this is your identity. Big international cooperations do not want to deal with every user individually. Instead, users become part of Virtual Organizations. Individual clusters give access and compute time to certain VOs, and if you are a member of a :abbr:`VO (Virtual Organization)`, you can run your jobs on that cluster.
 
 
 .. sidebar:: More about Grid Security?
@@ -37,7 +37,7 @@ In order to run your work on the Grid, you have to make three essential steps:
 2. :ref:`get-grid-certificate`, so that you can be identified on the Grid.
 3. :ref:`join-vo`, so that you can run your jobs on the Grid.
 
-The UI account will provide you with the proper environment to submit your jobs to the Grid. The Grid certificate is required to authorize you for using the Grid. Finally, the :abbr:`VO (Virtual Organisation)` membership is based on your research domain (e.g. ``lsgrid`` for Life Scientists) and determines which resources you can use.
+The UI account will provide you with the proper environment to submit your jobs to the Grid. The Grid certificate is required to authorize you for using the Grid. Finally, the :abbr:`VO (Virtual Organization)` membership is based on your research domain (e.g. ``lsgrid`` for Life Scientists) and determines which resources you can use.
 
 These steps are described in this chapter.
 
@@ -87,25 +87,25 @@ Here you can find details for obtaining and installing a Grid certificate:
 .. _join-vo:
 
 ===========================
-Join a Virtual Organisation
+Join a Virtual Organization
 ===========================
 
 .. sidebar:: More about VOs?
 
 		.. seealso:: Need to know more about VOs and how to get a membership? Check out our mooc video :ref:`mooc-vo`.
 	
-A Virtual Organisation or VO is a group of geographically distributed people that have common objectives and that are using shared Grid resources to achieve them. Every Grid user is a member of one or more Virtual Organizations. 
+A Virtual Organization or VO is a group of geographically distributed people that have common objectives and that are using shared Grid resources to achieve them. Every Grid user is a member of one or more Virtual Organizations. 
 
-In practice your :abbr:`VO (Virtual Organisation)` membership determines to which resources (compute and storage) you have access to. You are eligible to register for a :abbr:`VO (Virtual Organisation)` only once you :ref:`get a valid certificate <get-grid-certificate>`. The :abbr:`VO (Virtual Organisation)` that is most suitable for you depends on the specific research area you are in. For example, if you are active in a field associated with the life sciences the ``lsgrid VO`` might be most suitable for you. If you still not sure which VO is best for you, then contact us at helpdesk@surfsara.nl to guide you on this.
+In practice your :abbr:`VO (Virtual Organization)` membership determines to which resources (compute and storage) you have access to. You are eligible to register for a :abbr:`VO (Virtual Organization)` only once you :ref:`get a valid certificate <get-grid-certificate>`. The :abbr:`VO (Virtual Organization)` that is most suitable for you depends on the specific research area you are in. For example, if you are active in a field associated with the life sciences the ``lsgrid VO`` might be most suitable for you. If you still not sure which VO is best for you, then contact us at helpdesk@surfsara.nl to guide you on this.
 
-This section describes how to get a :abbr:`VO (Virtual Organisation)` membership.
+This section describes how to get a :abbr:`VO (Virtual Organization)` membership.
 
 .. warning:: At this point you must have the certificate successfully installed in your browser. If you don’t have that, go back the :ref:`previous step <get-grid-certificate>`.
 
 * Open the link below from the browser where your certificate is installed (:abbr:`UI (User Interface)` or laptop). The page will ask you to confirm with your installed browser certificate:   https://voms.grid.sara.nl:8443/vomses/  
-* Select the VO that you are interested for e.g. ``lsgrid``, from the front page listing all the available :abbr:`VOs (Virtual Organisations)`. If it is unclear to you for which VO you should register, please contact us at helpdesk@surfsara.nl. 
+* Select the VO that you are interested for e.g. ``lsgrid``, from the front page listing all the available :abbr:`VOs (Virtual Organizations)`. If it is unclear to you for which VO you should register, please contact us at helpdesk@surfsara.nl. 
 * Fill in some of your personal details (name, email, etc.), then read and accept the :abbr:`AUP (Acceptable Use Policy)`.
 * Check that you have received a verification email titled “Your membership request for VO ...” and confirm with the URL, as described in the email.  
-* You will receive an approval email titled “Your vo membership request for VO lsgrid has been approved” when the :abbr:`VO (Virtual Organisation)` administrator finally sings your request.
+* You will receive an approval email titled “Your vo membership request for VO lsgrid has been approved” when the :abbr:`VO (Virtual Organization)` administrator finally sings your request.
 
 Once you finish this page instructions successfully, you are set to go and run your :ref:`first-grid-job`!

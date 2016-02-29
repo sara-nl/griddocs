@@ -374,14 +374,14 @@ The job submission file is a regular JDL file with the following properties:
 * the first argument must be the name of the script; so in the example above, the argument is 'example_pilotjob.pl'
 * the input sandbox must at least contain the two PerlToPoS perl modules and the name of the pilot job script
 
-We create a job submission file which will start the processing on 5 nodes. Replace <your VO name> with the name of your virtual organisation.
+We create a job submission file which will start the processing on 5 nodes. Replace <your VO name> with the name of your Virtual Organization.
 
 .. code-block:: bash
 	
     # example JDL file for the square computation
     Type                         = "Job";
     JobType                      = "Parametric";
-    VirtualOrganisation          = "<your VO name>";
+    VirtualOrganization          = "<your VO name>";
     DefaultNodeShallowRetryCount = 5;
  
     # Parametrization.

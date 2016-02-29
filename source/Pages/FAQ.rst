@@ -237,7 +237,7 @@ Using resources
 How many cpu's, nodes does the Grid offer?
 ===========================================
 
-The Grid infrastructure is interconnected clusters in Netherlands and abroad. The users can get access to multiple of these clusters based on their :ref:`Virtual Organisation <join-vo>`.
+The Grid infrastructure is interconnected clusters in Netherlands and abroad. The users can get access to multiple of these clusters based on their :ref:`Virtual Organization <join-vo>`.
 
 * Global picture: 170 datacenters in 36 countries: in total more than 330000 compute cores, 500 PB disk, 500 PB tape.
 * In the Netherlands NGI_NL infrastructure: 14 datacenters (3 large Grid clusters, 11 smaller ones): in total approximately 10000 compute cores, 12 PB disk, tape capacity up to 170 PB.
