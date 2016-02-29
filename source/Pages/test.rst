@@ -8,7 +8,8 @@ Code-block bash
 
 .. code-block:: bash
 
-   # Commentaar
+   # Comment
+     # Indented comment
    $ echo "Hallo Wereld!" \
      | grep .
    Hallo Wereld!
@@ -19,7 +20,8 @@ Code-block console
 
 .. code-block:: console
 
-   # Commentaar
+   # Comment
+     # Indented comment
    $ echo "Hallo Wereld!" \
      | grep .
    Hallo Wereld!
@@ -29,7 +31,8 @@ Code-block shell-session
 ------------------------
 .. code-block:: shell-session
 
-   # Commentaar
+   # Comment
+     # Indented comment
    $ echo "Hallo Wereld!" \
      | grep .
    Hallo Wereld!
