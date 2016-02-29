@@ -91,16 +91,16 @@ User Interface machines can be accessed with any SSH client.
 To learn how to access the Storage Elements, see :ref:`grid-storage`
 
  
-===============
+==========================
 Aditional Storage Elements
-===============
+==========================
 
-The following Storage Elements are also availble when you are member of the LSGRID VO
+The following Storage Elements are also availble when you are member of the ``lsgrid`` :abbr:`VO (Virtual Organisation)`.
 
 +-----------------------+--------------------------------+-----------------------------------------------------------------+----------------------------------+
 | Site                  | Storage element                | LSG Storage SURL                                                | Remarks                          |
 +-----------------------+--------------------------------+-----------------------------------------------------------------+----------------------------------+
-| SURFsara              | ``srm://srm.grid.sara.nl``     | ``srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid``   | :ref: `dcache#dcache`            |
+| SURFsara              | ``srm://srm.grid.sara.nl``     | ``srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid``   | :ref: `dCache`                   |
 +-----------------------+--------------------------------+-----------------------------------------------------------------+----------------------------------+
 | Target Groningen      | ``srm://srm.target.rug.nl``    | ``srm://srm.target.rug.nl:8444/lsgrid``                         |                                  |
 +-----------------------+--------------------------------+-----------------------------------------------------------------+----------------------------------+
