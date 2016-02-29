@@ -254,7 +254,7 @@ Staging a single file
 
 Here is an example of how to stage a single file:
 
-.. code-block:: console
+.. code-block:: shell-session
 
 	$ srm-bring-online srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test
 	srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test brought online, use request id 424966221 to release
