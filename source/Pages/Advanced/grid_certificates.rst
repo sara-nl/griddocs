@@ -2,7 +2,7 @@
 .. _grid-certificates:
 
 *****************
-Grid Certificates
+Grid certificates
 *****************
 
 In this section we discuss Grid user certificates in more detail; how to
@@ -28,7 +28,7 @@ file. Details like:
 
 * do the key and the certificate file go together?
 * when does the certificate expire?
-* what is the DN of the certificate?
+* what is the subject or DN (Distinguished Name) of the certificate?
 
 Using the ``openssl`` command, you can find out the details of your
 certificates and keys.
@@ -69,7 +69,7 @@ Note that a key does not have a validity period.
 Finding the subject of your certificate
 =======================================
 
-The subject of a certificate is the human-readable identification of who
+The subject or :abbr:`DN (Distinguished Name)` of a certificate is the human-readable identification of who
 the certificate belongs to. It usually contains your name, country,
 organization and your e-mail address.
 
@@ -90,16 +90,16 @@ Different systems use different formats. The two important formats are:
 * PEM: stores keys and certificates in separate ascii-files; this
   format is used by the Grid middleware and storage programs;
 
-* pkcs12: stores keys and certificates in one binary file; this
+* PKCS12: stores keys and certificates in one binary file; this
   format is used by browsers.
 
-:ref:`DigiCert <digicert>` creates pkcs12 files, whereas :ref:`DutchGrid <dutchgrid>` creates PEM files.
+:ref:`DigiCert <digicert>` creates PKCS12 files, whereas :ref:`DutchGrid <dutchgrid>` creates PEM files.
 
 
-Converting from pkcs12 to PEM
+Converting from PKCS12 to PEM
 =============================
 
-To convert a pkcs12 file to the PEM format, you need two commands; one to
+To convert a PKCS12 file to the PEM format, you need two commands; one to
 extract the key, and one to extract your certificate.
 
 To extract your key, run::
@@ -107,16 +107,16 @@ To extract your key, run::
   openssl pkcs12 -in browsercert.p12 -out userkey.pem -nocerts
 
 Note that you will first need to enter the password that was used to
-*create* the pkcs12 file. Next, you need to enter a password to protect
+*create* the PKCS12 file. Next, you need to enter a password to protect
 the exported key. Enter that password again to verify. Note that you must
-enter a password and the password must be at least 12 characters and include non-alphanumerics; if the password is too short, ``openssl`` will fail without error. You can use the same password as for the pkcs12 file.
+enter a password and the password must be at least 12 characters and include non-alphanumerics; if the password is too short, ``openssl`` will fail without error. You can use the same password as for the PKCS12 file.
 
 To extract your certificate, run::
 
   openssl pkcs12 -in browsercert.p12 -out usercert.pem -nokeys -clcerts
 
 
-Converting from PEM to pkcs12
+Converting from PEM to PKCS12
 =============================
 
 To convert your certificate in PEM format to the PKCS12-format, use::
@@ -124,7 +124,7 @@ To convert your certificate in PEM format to the PKCS12-format, use::
   openssl pkcs12 -export -inkey userkey.pem -in usercert.pem -out browsercert.p12
 
 This will ask you for a password three times: the first is to unlock your
-private key stored in the file ``userkey.pem``. The pkcs12-file
+private key stored in the file ``userkey.pem``. The PKCS12-file
 will be password protected, which needs a new password, and the same
 password for confirmation. Note that you can use the same password
 as for the private key, but this is not required.
