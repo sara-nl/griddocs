@@ -29,6 +29,7 @@ Code-block console
 
 Code-block shell-session
 ------------------------
+
 .. code-block:: shell-session
 
    # Comment
@@ -37,3 +38,19 @@ Code-block shell-session
      | grep .
    Hallo Wereld!
 
+
+Code-block default (python)
+---------------------------
+
+Don't mind the syntax.
+
+.. code-block::
+
+   # Comment
+     # Indented comment
+   $ echo "Hallo Wereld!" \
+     | grep .
+   Hallo Wereld!
+   >>> echo "Hallo Wereld!" \
+       | grep .
+   Hallo Wereld!
