@@ -71,7 +71,7 @@ Finding the subject of your certificate
 
 The subject or :abbr:`DN (Distinguished Name)` of a certificate is the human-readable identification of who
 the certificate belongs to. It usually contains your name, country,
-organization and your e-mail address.
+organisation and your e-mail address.
 
 To find out who the certificate belongs to, use::
 

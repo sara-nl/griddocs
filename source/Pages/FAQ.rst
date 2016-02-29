@@ -217,7 +217,7 @@ Note that a key does not have a validity period.
 How can I see the subject of my certificate?
 ============================================
 
-The subject of a certificate is the human-readable identification of who the certificate belongs to. It usually contains your name, country, organization and your e-mail address.
+The subject of a certificate is the human-readable identification of who the certificate belongs to. It usually contains your name, country, organisation and your e-mail address.
 
 To find out who the certificate belongs to, use:
 
