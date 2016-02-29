@@ -758,7 +758,7 @@ EGI-InSPIRE
 
 .. Links:
 
-.. _`Mooc Animations`: https://mooc-inst.gridmooc-surfsara.vm.surfsara.nl/mooc/animations/
+.. _`Mooc Animations`: http://web.grid.sara.nl/mooc/animations/
 .. _`User Guide`: https://ca.dutchgrid.nl/tcs/TCS2015help.pdf
 .. _`DigiCert portal`: https://digicert.com/sso
 .. _`W6 screencast1`: https://www.youtube.com/watch?v=QH90-cdgSTw&list=PLvgGDb8k0n2fH1KPLMRG53oVvIl_iR7sU&index=2
