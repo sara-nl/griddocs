@@ -39,12 +39,12 @@ Code-block shell-session
    Hallo Wereld!
 
 
-Code-block default (python)
----------------------------
+Code-block python console
+-------------------------
 
 Don't mind the syntax.
 
-.. code-block::
+.. code-block:: pycon
 
    # Comment
      # Indented comment
