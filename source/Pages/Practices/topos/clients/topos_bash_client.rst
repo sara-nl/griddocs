@@ -20,13 +20,13 @@ Introduction
 
 There is a bash 'library' available to ease the communication with ToPoS. It is written in bash script and requires curl and awk to be present. It has been tested on CentOS 6.7 and Ubuntu 14.04. You can find it :download:`here </Scripts/topos>`.
 
-To use it, you need to make the file executable::
+To use it, you need to make the file executable:
 
 .. code-block:: console
 
     $chmod +x topos
 
-After that you can call the function::
+After that you can call the function:
 
 .. code-block:: text
 

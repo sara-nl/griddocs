@@ -35,9 +35,9 @@ Preamble
 
 * Login to the UI: 
 
-  .. code-block:: console
+  .. code-block:: bash
 
-     $ssh homer@ui.grid.sara.nl # replace homer with your username
+     ssh homer@ui.grid.sara.nl # replace homer with your username
     
 * Copy the tarball :download:`bootstrap_fractals.tar </Scripts/bootstrap_fractals.tar>` to your UI directory.
 
@@ -71,9 +71,9 @@ Run locally
 
 * Run the example locally on the UI with a set of parameters to understand the program:
 
-  .. code-block:: console
+  .. code-block:: bash
 
-     $./fractals -o output -q 0.184 -d 2280 -m 4400 # try different parameters, e.g. -q 0.184 -d 2280 -m 4400
+     ./fractals -o output -q 0.184 -d 2280 -m 4400 # try different parameters, e.g. -q 0.184 -d 2280 -m 4400
     
 This will take a while, depending on the input parameters you selected. Once finished, it will create the "output" file.
 
@@ -90,9 +90,9 @@ Run on the Grid
 
 * Create a proxy valid for a week:  
 
-  .. code-block:: console
+  .. code-block:: bash
 
-     $startGridSession lsgrid # replace lsgrid with your VO
+     startGridSession lsgrid # replace lsgrid with your VO
 
 * Inspect the JDL file ``fractals.jdl``:
 
@@ -129,12 +129,12 @@ Once this jobs lands on the Grid, it will execute the ``wrapper.sh`` script whic
 
 * Check the job status from command line on the UI:
 
-  .. code-block:: console
+  .. code-block:: bash
 
-     $glite-wms-job-status https://wms2.grid.sara.nl:9000/6swP5FEfGVZ69tVB3PwnDQ #replace with your jobID
+     glite-wms-job-status https://wms2.grid.sara.nl:9000/6swP5FEfGVZ69tVB3PwnDQ #replace with your jobID
   
-      # or
-     $glite-wms-job-status -i jobIds
+     # or
+     glite-wms-job-status -i jobIds
 
 * Once the job is finished, get the job output to the UI:
 

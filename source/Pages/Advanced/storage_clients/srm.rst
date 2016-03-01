@@ -64,7 +64,7 @@ Transferring data
 
   .. code-block:: console
 
-     # note the flag -server_mode=passive!
+       # note the flag -server_mode=passive!
      $srmcp -server_mode=passive \
      $      srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
      $      file:///`pwd`/zap.tar 
@@ -74,7 +74,7 @@ Transferring data
 
   .. code-block:: console
 
-    # note the flag -server_mode=passive!
+      # note the flag -server_mode=passive!
     $srmcp -server_mode=passive \
     $      srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar \
     $      file:///`pwd`/zap.tar
