@@ -259,7 +259,7 @@ div.highlight-console pre {
 div.highlight-console span.go {
     font-weight: normal;
     xmargin-left: 0.6em;
-    color: #666;
+    color: #999;
 }
 
 div.highlight-console span.gp {
