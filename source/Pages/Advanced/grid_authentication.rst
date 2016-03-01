@@ -1,7 +1,7 @@
 .. _grid-authentication:
 
 *******************
-Grid Authentication
+Grid authentication
 *******************
 
 This section explains the concepts and operations regarding Grid authentication mechanisms:
