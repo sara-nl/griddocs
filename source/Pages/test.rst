@@ -12,7 +12,7 @@ Code-block bash
    # Comment
      # Indented comment
    $ test emphasize-lines
-   $ echo "Hallo Wereld!" \
+   $ echo "Hallo Wereld!" $VAR \
      | grep .
    Hallo Wereld!
 
@@ -26,7 +26,7 @@ Code-block console
    # Comment
      # Indented comment
    $ test emphasize-lines
-   $ echo "Hallo Wereld!" \
+   $ echo "Hallo Wereld!" $VAR \
      | grep .
    Hallo Wereld!
 
@@ -40,7 +40,7 @@ Code-block shell-session
    # Comment
      # Indented comment
    $ test emphasize-lines
-   $ echo "Hallo Wereld!" \
+   $ echo "Hallo Wereld!" $VAR \
      | grep .
    Hallo Wereld!
 
@@ -56,7 +56,7 @@ Don't mind the syntax.
    # Comment
      # Indented comment
    $ test emphasize-lines
-   $ echo "Hallo Wereld!" \
+   $ echo "Hallo Wereld!" $VAR \
      | grep .
    Hallo Wereld!
    >>> echo "Hallo Wereld!" \
