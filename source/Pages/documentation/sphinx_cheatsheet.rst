@@ -69,10 +69,10 @@ This is a command::
 
 And this is a code block:
 
-.. code-block:: bash
+.. code-block:: console
 	:linenos:
 
-	openssl pkcs12 -in user.p12 -out userkey.pem -nocerts
+	$openssl pkcs12 -in user.p12 -out userkey.pem -nocerts
 
 
 

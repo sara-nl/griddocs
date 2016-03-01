@@ -47,13 +47,15 @@ Acronyms
 Shell commands
 ==============
 
-* **There is still discussion about this. We're looking at alternatives.** Prefix commands with ``$``, to differentiate between commands and their output. Example:
+* Prefix commands with ``$``, to differentiate between commands and their output. The ``$ `` will be hidden from output, but will trigger the right markup. Example:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-     $ echo "Hello World!"
+     $echo 'Hello World!'
      Hello World!
+      # Comments should be indented because otherwise they are regarded as commands.
 
+* Listings of bash scripts should use ``.. code-block:: bash``. Here, commands do not have to be prefixed with ``$`` and comments don't have to be indented.
 
 Markup
 ======

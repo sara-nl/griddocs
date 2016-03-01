@@ -57,22 +57,22 @@ Copy certificate *.p12* file to the UI
 
 * Open a terminal and connect to the UI machine with your personal :ref:`UI account <get-ui-account>`:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	ssh homer@ui.grid.sara.nl # replace "homer" with your username!
+     $ssh homer@ui.grid.sara.nl # replace "homer" with your username!
 
 * Create a ``$HOME/.globus`` directory in your UI account:
 
 
-  .. code-block:: bash
+  .. code-block:: console
 
- 	mkdir $HOME/.globus
+     $mkdir $HOME/.globus
 
 * If you exported the certificate to your laptop, copy it from your local machine to your ``.globus`` directory on the :abbr:`UI (User Interface)`. If you exported your certificate from the UI browser, you can skip this step: 
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    laptop$ scp /PATH-TO-P12-FILE/browsercert.p12 homer@ui.grid.sara.nl:~/.globus  # replace "homer" with your username!
+     [homer@localmachine]$scp /PATH-TO-P12-FILE/browsercert.p12 homer@ui.grid.sara.nl:~/.globus  # replace "homer" with your username!
 
 
 Convert pkcs12 to PEM
@@ -82,39 +82,39 @@ Convert pkcs12 to PEM
 
 a) Extract your key, run on the :abbr:`UI (User Interface)`:
 
-   .. code-block:: bash
+   .. code-block:: console
 
-      cd $HOME/.globus   
-      openssl pkcs12 -in browsercert.p12 -out userkey.pem -nocerts
+      $cd $HOME/.globus   
+      $openssl pkcs12 -in browsercert.p12 -out userkey.pem -nocerts
 
 Note that you will first need to enter the password that was used to *create* the ``browsercert.p12`` file. Next, you need to enter a password to protect the exported key. Enter that password again to verify. Note that you must enter a password and the password must be at least 12 characters; if the password is too short, ``openssl`` will fail without error. Using the same password as for the p12 file is fine.
 
 b) Extract your certificate, run on the :abbr:`UI (User Interface)`:
 
-   .. code-block:: bash
+   .. code-block:: console
 
-      cd $HOME/.globus 
-      openssl pkcs12 -in browsercert.p12 -out usercert.pem -nokeys -clcerts
+      $cd $HOME/.globus 
+      $openssl pkcs12 -in browsercert.p12 -out usercert.pem -nokeys -clcerts
 
 
 * Set the proper permissions to your certificate files:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	chmod 644 usercert.pem
-	chmod 400 userkey.pem
+     $chmod 644 usercert.pem
+     $chmod 400 userkey.pem
 	
 The certificate and private key file should now be present in the ``.globus`` directory (notice the dot!) on the User Interface machine. Note that the private key file should be **read-only** and only readable to you.
 
 * Verify key permissions:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	cd $HOME/.globus
-	ls -l
-	
-	# -rw-r--r--      1 homer    homer            4499  May 10 13:47  usercert.pem
- 	# -r--------      1 homer    homer             963  May 10 13:43  userkey.pem
+     $cd $HOME/.globus
+     $ls -l
+
+     -rw-r--r--      1 homer    homer     4499  May 10 13:47  usercert.pem
+     -r--------      1 homer    homer      963  May 10 13:43  userkey.pem
 
 
 .. _digicert_browser_install:

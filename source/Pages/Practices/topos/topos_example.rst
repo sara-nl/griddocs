@@ -54,10 +54,11 @@ Start by downloading and unpacking the necessary files.
 
 * Login to the UI: 
 
-  .. code-block:: bash
+  .. code-block:: console
 
-     ssh homer@ui.grid.sara.nl # replace homer with your username
-    
+     $ssh homer@ui.grid.sara.nl 
+      # replace homer with your username
+
 * Copy the tarball :download:`pilot_topos_fractals.tar </Scripts/pilot_topos_fractals.tar>` to your UI directory.
 
 * Copy the fractals source code :download:`fractals.c </Scripts/fractals.c>` to your UI directory.
@@ -66,28 +67,28 @@ Start by downloading and unpacking the necessary files.
     
 * Untar the example and check the files:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    tar -xvf pilot_topos_fractals.tar
-    cd pilot_topos_fractals/
-    mv ../fractals.c ./
-    mv ../topos ./
-    chmod +x topos
-    ls -l
+     $tar -xvf pilot_topos_fractals.tar
+     $cd pilot_topos_fractals/
+     $mv ../fractals.c ./
+     $mv ../topos ./
+     $chmod +x topos
+     $ls -l
 
-    # -rwxr-xr-x 1 homer homer  convert
-    # -rwxr-xr-x 1 homer homer  createFractalsFromTokens
-    # -rwxr-xr-x 1 homer homer  createTokens
-    # -rw-rw-r-- 1 homer homer  fractals.c
-    # -rw-r--r-- 1 homer homer  fractals.jdl
-    # -rw-r--r-- 1 homer homer  README
-    # -rwxrwxr-x 1 homer homer  topos
+     -rwxr-xr-x 1 homer homer  convert
+     -rwxr-xr-x 1 homer homer  createFractalsFromTokens
+     -rwxr-xr-x 1 homer homer  createTokens
+     -rw-rw-r-- 1 homer homer  fractals.c
+     -rw-r--r-- 1 homer homer  fractals.jdl
+     -rw-r--r-- 1 homer homer  README
+     -rwxrwxr-x 1 homer homer  topos
 
 * Compile the example:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    cc fractals.c -o fractals -lm
+     $cc fractals.c -o fractals -lm
 
 
 .. warning:: It is advisable to compile your programs on the User Interface (UI) Machine. The Grid nodes have similar environments and the chance of your job to run successfully on a remote worker node is larger when your program is able to run on the UI. 
@@ -96,11 +97,11 @@ Start by downloading and unpacking the necessary files.
 Creating a parameter file for the fractals program
 ==================================================
 
-This example includes a bash script (./createTokens) that generates a sensible parameter file, with each line representing a set of parameters that the fractals program can be called with. Without arguments it creates a fairly sensible set of 24 lines of parameters. You can generate different sets of parameters by calling the program with a combination of -q, -d and -m arguments, but at the moment no documentation exists on these. We recommend not to use them for the moment.
+This example includes a bash script (``./createTokens``) that generates a sensible parameter file, with each line representing a set of parameters that the fractals program can be called with. Without arguments it creates a fairly sensible set of 24 lines of parameters. You can generate different sets of parameters by calling the program with a combination of ``-q``, ``-d`` and ``-m`` arguments, but at the moment no documentation exists on these. We recommend not to use them for the moment.
 
-After you ran the createTokens script you'll see output similar to the following::
+After you ran the ``createTokens`` script you'll see output similar to the following::
 
-    $ ./createTokens 
+    $./createTokens 
     /tmp/tmp.fZ33Kd8wXK
 
 
@@ -109,7 +110,7 @@ Getting a unique ToPoS poolname
 
 In order to run the tasks we first need to have the ToPoS service create tokens for us, based on the lines in our generated parameter file. Since all tokens need to be part of a pool, we first need to find out a suitable poolname. You can choose anything you like here, but the only way to be sure the poolname does not yet exist within ToPoS and to avoid clashes, we can ask the service for a unique poolname by calling::
 
-    $ ./topos newPool
+    $./topos newPool
     f24c058fdb6793ed7b6d5ff9
 
 Note that the poolname does not end with a newline in order to make it easier usable by scripts.
@@ -118,9 +119,11 @@ Note that the poolname does not end with a newline in order to make it easier us
 Creating ToPoS tokens
 =====================
 
-Now that we have a poolname, either thought of by ourselves or by the ToPoS service, we can upload the file to the service and have it create tokens::
+Now that we have a poolname, either thought of by ourselves or by the ToPoS service, we can upload the file to the service and have it create tokens:
 
-    $ ./topos createTokensFromLinesInFile f24c058fdb6793ed7b6d5ff9 /tmp/tmp.fZ33Kd8wXK
+.. code-block:: console
+
+    $./topos createTokensFromLinesInFile f24c058fdb6793ed7b6d5ff9 /tmp/tmp.fZ33Kd8wXK
 
 You might see some HTML output that you can ignore. To check if the request went well you can have a look at your pool by querying the service from a browser. Point it at https://topos.grid.sara.nl/4.1/pools/[POOLNAME]/ and check that it contains tokens by looking under the Content section.
 
@@ -130,13 +133,17 @@ Running the example
 
 Now that the tokens are uploaded we can submit a Grid job. A sample JDL, submitting 10 jobs at once, is included. You still need to fill in the poolname you use in this file by replacing the placeholder [POOLNAME]. It will call the ./createFractalsFromTokens script, which is the implementation of a simple pilot job that implements the pipeline as described above.
 
-This script calls the fractals program. You can compile it by simply running::
+This script calls the fractals program. You can compile it by simply running:
 
-    $ cc fractals.c -o fractals -lm
+.. code-block:: console
 
-To have an impression of how ./createFractalsFromTokens works you can call it on a local Linux machine (providing it can run the topos client and the fractals program)::
+    $cc fractals.c -o fractals -lm
 
-    $ ./createFractalsFromTokens -p [POOLNAME]
+To have an impression of how ./createFractalsFromTokens works you can call it on a local Linux machine (providing it can run the topos client and the fractals program):
+
+.. code-block:: console
+
+    $./createFractalsFromTokens -p [POOLNAME]
 
 It will recursively generate an image based on parameters received from the specified ToPoS pool, and output the path to the generated image.
 
@@ -152,9 +159,6 @@ Note that for this example, we made the pilot job upload the results to another 
 
 
 
-..
-
-..
 
 .. Links:
 

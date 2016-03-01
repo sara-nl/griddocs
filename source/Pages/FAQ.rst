@@ -44,10 +44,10 @@ Before you create a new private key file with a new password, we recommend you t
 
 To change your Grid certificate password, type:
 
-.. code-block:: bash
+.. code-block:: console
 
-    openssl rsa -in ~/.globus/userkey.pem -des3 -out ~/.globus/new_private_key_file
-    mv ~/.globus/new_private_key_file ~/.globus/userkey.pem # this will replace your old key file with the old password!
+   $openssl rsa -in ~/.globus/userkey.pem -des3 -out ~/.globus/new_private_key_file
+   $mv ~/.globus/new_private_key_file ~/.globus/userkey.pem # this will replace your old key file with the old password!
 
 Note: this only changes the password you use for your certificate. If you think your certificate is compromised, you HAVE to revoke your certificate!
 
@@ -59,10 +59,10 @@ Unable to load certificate error
 
 If you get the following error:
 
-.. code-block:: bash
+.. code-block:: console
 
-    unable to load certificate 17714:error:0906D064:PEM routines:PEM_read_bio:bad base64
-    decode:pem_lib.c:781:
+   unable to load certificate 17714:error:0906D064:PEM routines:PEM_read_bio:bad base64
+   decode:pem_lib.c:781:
 
 when you use the command ``openssl x509 -text -noout -in usercert.pem``, it means that the email with the certificate wasn't saved properly as plain text (it included the Mime type for formatting). Repeat carerefully the steps as described in :ref:`Retrieve your DutchGrid certificate <retrieve-dutchgrid>` section. 
 
@@ -74,20 +74,20 @@ What are the correct permissions for my certificate files?
 
 * Set the proper permissions to your certificate files:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	chmod 644 usercert.pem
-	chmod 400 userkey.pem
+     $chmod 644 usercert.pem
+     $chmod 400 userkey.pem
 
 * Verify the correct permissions:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	cd $HOME/.globus
-	ls -l
-	
-	# -rw-r--r--      1 homer    homer            4499  May 10 13:47  usercert.pem
- 	# -r--------      1 homer    homer             963  May 10 13:43  userkey.pem
+     $cd $HOME/.globus
+     $ls -l
+
+     -rw-r--r--      1 homer    homer            4499  May 10 13:47  usercert.pem
+     -r--------      1 homer    homer             963  May 10 13:43  userkey.pem
  	
 Note that the private key file should be **read-only** and only readable to you.
 
@@ -112,38 +112,38 @@ Get non-vomsified proxy locally
 
 * To download locally the proxy stored on :ref:`MyProxy server <myproxy-server>` you need to set a passphrase upon creation. To do this, protect your proxy with a MyProxy pass phrase by omitting option "-n":
 
-  .. code-block:: bash
+  .. code-block:: console
 
-     myproxy-init -d
+     $myproxy-init -d
     
   It will first ask your Grid certificate password and then prompt you to enter a MyProxy 
   passphrase twice. You will use the latter passphrase to download your proxy. 
 
   Here is an example of the displayed output:
 
-  .. code-block:: bash
+  .. code-block:: console
     
-    # Your identity: /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
-    # Enter GRID pass phrase for this identity:
-    # Creating proxy .......................... Done
-    # Proxy Verify OK
-    # Your proxy is valid until: Wed Jan 13 14:35:00 2016
-    # Enter MyProxy pass phrase:
-    # Verifying - Enter MyProxy pass phrase:
-    # A proxy valid for 168 hours (7.0 days) for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson now exists on px.grid.sara.nl.
+     Your identity: /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
+     Enter GRID pass phrase for this identity:
+     Creating proxy .......................... Done
+     Proxy Verify OK
+     Your proxy is valid until: Wed Jan 13 14:35:00 2016
+     Enter MyProxy pass phrase:
+     Verifying - Enter MyProxy pass phrase:
+     A proxy valid for 168 hours (7.0 days) for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson now exists on px.grid.sara.nl.
 
 * Now use the MyProxy pass phrase to get this proxy locally on the UI:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    myproxy-get-delegation -d
+     $myproxy-get-delegation -d
 
   Here is an example of the displayed output:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    # Enter MyProxy pass phrase:
-    # A credential has been received for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson in /tmp/x509up_u39111. 
+     Enter MyProxy pass phrase:
+     A credential has been received for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson in /tmp/x509up_u39111. 
     
 Note that the downloaded proxy will not include the voms attributes.
 
@@ -181,16 +181,16 @@ Using the modulus you can  see whether a key and a certificate match. The modulu
 
 To find the modulus of your key, use:
 
-.. code-block:: bash
+.. code-block:: console
 
-   openssl rsa -in userkey.pem -noout -modulus
+   $openssl rsa -in userkey.pem -noout -modulus
 
 which requires the key which you used to protect your key file.
 To find the modulus of your certificate, use:
 
-.. code-block:: bash
+.. code-block:: console
 
-   openssl x509 -in usercert.pem -noout -modulus
+   $openssl x509 -in usercert.pem -noout -modulus
 
 If the moduli of the key file and the certificate file do not match, you
 cannot use that combination to identify yourself.
@@ -203,9 +203,9 @@ What is the expiry date of my certificate?
 
 To find out when your certificate is valid, use:
 
-.. code-block:: bash
+.. code-block:: console
 
-   openssl x509 -in usercert.pem -noout -dates
+   $openssl x509 -in usercert.pem -noout -dates
 
 This will tell you when your certificate is valid. 
 
@@ -221,9 +221,9 @@ The subject of a certificate is the human-readable identification of who the cer
 
 To find out who the certificate belongs to, use:
 
-.. code-block:: bash
+.. code-block:: console
 
-   openssl x509 -in usercert.pem -noout -subject
+   $openssl x509 -in usercert.pem -noout -subject
 
 
 
@@ -300,15 +300,15 @@ How can I find all the available LSG Storage Elements and get their SURLS?
 
 * To find out the available SEs for a certain VO, type:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	lcg-infosites --vo lsgrid se 
+     $lcg-infosites --vo lsgrid se 
 	
 * To specify a specific SURL (srm URL), use the following syntax:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	srm://gb-se-amc.amc.nl:8446/dpm/amc.nl/home/lsgrid/ # storage element at AMC
+     srm://gb-se-amc.amc.nl:8446/dpm/amc.nl/home/lsgrid/ # storage element at AMC
 
 A complete list of the LSG SURLs can be found at :ref:`life-science-clusters#cluster-details`
 
@@ -324,20 +324,20 @@ How can I find all the available LSG Compute Elements and use in my JDL?
 
 * To find out the available CEs for a certain VO, type:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	lcg-infosites --vo lsgrid ce 
+     $lcg-infosites --vo lsgrid ce 
 	
 Note here that the Total, Running and Waiting numbers are per queue, and the CPU and Free number are per cluster.
 
 * To specify a specific cluster in your JDL, use the following syntax:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	Requirements = (RegExp("rug",other.GlueCEUniqueID)); # this requires the job to land on the "rug" site
+     $Requirements = (RegExp("rug",other.GlueCEUniqueID)); # this requires the job to land on the "rug" site
 	
-	# or you can specify the full UI hostname
-	Requirements = RegExp("gb-ce-lumc.lumc.nl",other.GlueCEUniqueID); # job lands at lumc
+      # or you can specify the full UI hostname
+     $Requirements = RegExp("gb-ce-lumc.lumc.nl",other.GlueCEUniqueID); # job lands at lumc
 
 
 .. _why-lsg-to-grid:
@@ -378,38 +378,38 @@ In order to assist you better, we have a few troubleshooting steps that may alre
 * Check the output of ``voms-proxy-info -all``. Is your proxy still valid? Does it have the correct attributes for the work you're doing?
 * Try running your command with higher debugging level or verbosity.
 
-  .. code-block:: bash
+  .. code-block:: console
 
-     $ glite-wms-job-submit --debug ...
-     $ srmcp -debug ...
-     $ gfal-copy --verbose ...
-     $ globus-url-copy -debugftp -verbose-perf -verbose ...
-     $ curl --verbose ...
+     $glite-wms-job-submit --debug ...
+     $srmcp -debug ...
+     $gfal-copy --verbose ...
+     $globus-url-copy -debugftp -verbose-perf -verbose ...
+     $curl --verbose ...
   
 * Is the resource you're using in downtime? Downtimes are announced in the `GOCDB (Grid Operations Center Database) <https://goc.egi.eu/portal/>`_ (certificate in your browser required). There is also a `list of downtimes of the Dutch Grid sites <http://web.grid.sara.nl/cgi-bin/eInfra.py>`_.
 
 * Can you connect to the service?
 
-  .. code-block:: bash
+  .. code-block:: console
 
-     # A basic firewall check: can you connect to the port?
-     $ telnet srm.grid.sara.nl 8443
+      # A basic firewall check: can you connect to the port?
+     $telnet srm.grid.sara.nl 8443
 
-     # Testing the SSL layer of a connection to the dCache SRM door
-     $ echo 'QUIT' | openssl s_client -connect srm.grid.sara.nl:8443 \
+      # Testing the SSL layer of a connection to the dCache SRM door
+     $echo 'QUIT' | openssl s_client -connect srm.grid.sara.nl:8443 \
                          -CApath /etc/grid-security/certificates
-     # One of the last lines should be: 'Verify return code: 0 (ok)'
+      # One of the last lines should be: 'Verify return code: 0 (ok)'
 
-     # Testing a gridFTP door, control channel
-     $ telnet rabbit1.grid.sara.nl 2811
+      # Testing a gridFTP door, control channel
+     $telnet rabbit1.grid.sara.nl 2811
 
-     # GridFTP data channels are more difficult to test, because the port opens only after a transfer is initiated.
-     # But after we start an iperf service, you can try to telnet to it.
-     $ telnet rabbit1.grid.sara.nl 24000
+      # GridFTP data channels are more difficult to test, because the port opens only after a transfer is initiated.
+      # But after we start an iperf service, you can try to telnet to it.
+     $telnet rabbit1.grid.sara.nl 24000
      
-     # Or just test with iperf:
-     $ iperf3 -c rabbit1.grid.sara.nl -p 24000
-     # Keep in mind that we have to start iperf first!
+      # Or just test with iperf:
+     $iperf3 -c rabbit1.grid.sara.nl -p 24000
+      # Keep in mind that we have to start iperf first!
 
 
 .. _get-log:
@@ -419,15 +419,15 @@ How can I get more logging info for my job?
 
 To find out more info about the status of your job, use:
  
-.. code-block:: bash
+.. code-block:: console
 
-	glite-wms-job-logging-info -v 2 https://wms2.grid.sara.nl:9000/PHyeyedC1EYBjP9l_Xq9mQ # replace with your job URL
+   $glite-wms-job-logging-info -v 2 https://wms2.grid.sara.nl:9000/PHyeyedC1EYBjP9l_Xq9mQ # replace with your job URL
 	
 And if you use a file to store your jobs, run:
 
-.. code-block:: bash
+.. code-block:: console
 
-	glite-wms-job-logging-info -v 2 -i jobIds # replace jobIds with your file
+   $glite-wms-job-logging-info -v 2 -i jobIds # replace jobIds with your file
 
 
 .. _stalling-transfers:
@@ -451,19 +451,19 @@ Occasionally, transfers are stuck when 0 bytes have been transferred. There are 
 
   Some tools to test this:
 
-  .. code-block:: bash
+  .. code-block:: console
 
      # Run this from your endpoint of the transfer; adjust the value to find the limit.
      # Check first whether your system supports a MTU of 9000.
-     ping -M do -s 8972 gridftp.grid.sara.nl
+     $ping -M do -s 8972 gridftp.grid.sara.nl
      
      # This command tells you what the supported MTU value is.
-     tracepath gridftp.grid.sara.nl
+     $tracepath gridftp.grid.sara.nl
 
   Another good tool for testing the network is iperf. We'll start an iperf server at your request so that you can test against it.
   
-  .. code-block:: bash
+  .. code-block:: console
   
-     iperf -c rabbit1.grid.sara.nl --port 24000 --parallel 4
+     $iperf -c rabbit1.grid.sara.nl --port 24000 --parallel 4
 
   A fix for Linux servers is to enable ``tcp_mtu_probing`` in ``sysctl.conf``. This enables the Linux kernel to select the best MTU value for a certain network route.

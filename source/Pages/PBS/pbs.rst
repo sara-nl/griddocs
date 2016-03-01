@@ -38,39 +38,39 @@ Preamble
 
 * Login to the LSG UI, e.g. "ams" cluster:
 
-.. code-block:: bash
+.. code-block:: console
 
-    ssh -X homer@gb-ui-ams.els.sara.nl # replace homer with your username and the ui address of your local cluster
+    $ssh -X homer@gb-ui-ams.els.sara.nl # replace homer with your username and the ui address of your local cluster
 
 * Copy the tarball :download:`pbsp_fractals.tar </Scripts/pbs_fractals.tar>` to your UI directory:
 
-.. code-block:: bash
+.. code-block:: console
 
-    wget http://doc.grid.surfsara.nl/en/latest/_downloads/pbs_fractals.tar
+    $wget http://doc.grid.surfsara.nl/en/latest/_downloads/pbs_fractals.tar
 
 * Copy the fractals source code :download:`fractals.c </Scripts/fractals.c>` to your UI directory.
 
-.. code-block:: bash
+.. code-block:: console
 
-    wget http://doc.grid.surfsara.nl/en/latest/_downloads/fractals.c
+    $wget http://doc.grid.surfsara.nl/en/latest/_downloads/fractals.c
 
 * Untar the example and check the files:
 
-.. code-block:: bash
+.. code-block:: console
 
-    tar -xvf pbs_fractals.tar
-    cd pbs_fractals/
-    mv ../fractals.c ./
-    ls -l
+    $tar -xvf pbs_fractals.tar
+    $cd pbs_fractals/
+    $mv ../fractals.c ./
+    $ls -l
 
-    # -rw-r--r-- 1 homer homer fractals.c
-    # -rw-rw-r-- 1 homer homer wrapper.sh
+    -rw-r--r-- 1 homer homer fractals.c
+    -rw-rw-r-- 1 homer homer wrapper.sh
 
 * Compile the example:
 
-.. code-block:: bash
+.. code-block:: console
 
-    cc fractals.c -o fractals -lm
+    $cc fractals.c -o fractals -lm
 
 
 .. _pbs-submit:
@@ -80,19 +80,19 @@ Submit a pbs job
 
 * Submit the job to the local cluster:
 
-.. code-block:: bash
+.. code-block:: console
 
-	qsub wrapper.sh
+	$qsub wrapper.sh
 
-	# 6401.gb-ce-ams.els.sara.nl
+	6401.gb-ce-ams.els.sara.nl
 
 This command returns a jobID (6401) that can be used to monitor the progress of the job.
 
 * Monitor the progress of your job:
 
-.. code-block:: bash
+.. code-block:: console
 
-	qstat -f 6401 # replace 6401 with your jobID
+	$qstat -f 6401 # replace 6401 with your jobID
 
 Optionally, when the job finishes, display the job output image::
 
@@ -101,15 +101,15 @@ Optionally, when the job finishes, display the job output image::
 
 * List your own jobs:
 
-.. code-block:: bash
+.. code-block:: console
 
-    qstat -u homer # replace homer with your username
+    $qstat -u homer # replace homer with your username
 
 * Cancel the job you submitted:
 
-.. code-block:: bash
+.. code-block:: console
 
-    qdel 6401 # replace 6401 with your jobID
+    $qdel 6401 # replace 6401 with your jobID
 
 
 
@@ -121,26 +121,26 @@ Directives
 
 * Specify the maximum job walltime in ``hh::mm:ss``:
 
-.. code-block:: bash
+.. code-block:: console
 
 	#PBS -l walltime=4:00:00 # the job will run 4h at maximum
 
 * Specify the number of cores to be allocated for your job:
 
-.. code-block:: bash
+.. code-block:: console
 
 	#PBS -l nodes=1:ppn=2  # asks two cores on a single node
 
 * The default stdout/stderr target is the directory that you submit the job from. The following line changes the stdout/stderr directory to a specified path (e.g. samples directory):
 
-.. code-block:: bash
+.. code-block:: console
 
 	#PBS -e /home/homer/samples/
 	#PBS -o /home/homer/samples/
 
 * Send job status notifications to your email:
 
-.. code-block:: bash
+.. code-block:: console
 
 	#PBS -m abe
 	#PBS -M homer@troy.com #replace with your email
@@ -155,27 +155,27 @@ System status commands
 
 * List all the running/queued jobs in the cluster:
 
-.. code-block:: bash
+.. code-block:: console
 
-    qstat
+   $qstat
 
 * Get details for all jobs in a queue, e.g. "long":
 
-.. code-block:: bash
+.. code-block:: console
 
-	qstat -f long
+   $qstat -f long
 
 * Show all the running jobs in the system and the occupied cores on the two worker nodes. The very last number in each row (after ‘/‘) shows the rank of corresponding core:
 
-.. code-block:: bash
+.. code-block:: console
 
-	qstat -an1
+   $qstat -an1
 
 * List all running jobs per worker node and core:
 
-.. code-block:: bash
+.. code-block:: console
 
-	pbsnodes
+   $pbsnodes
 
 
 
@@ -185,9 +185,9 @@ Local queues
 
 On the LSG clusters you can find different :ref:`queue types <lsg-specs-queues>`. We recommend you to estimate the walltime of your jobs and specify the queue to send your job. This can be done with the '-q’ option in your ``qsub`` command. For example, if you want to run a job for 72 hours, you need to specify the queue "long":
 
-.. code-block:: bash
+.. code-block:: console
 
-    qsub -q long wrapper.sh # allow job to run for 72 hours
+   $qsub -q long wrapper.sh # allow job to run for 72 hours
 
 If you don’t specify a particular queue, then your jobs will be scheduled by default on the medium queue (32 hours limit).  When the queue walltime is reached, the job will be killed.
 
@@ -248,15 +248,15 @@ Therefore, to interact with the Grid storage, you need:
 
 * Copy your proxy certificate to for example your home-directory using:
 
-.. code-block:: bash
+.. code-block:: console
 
-  cp /tmp/x509up_u39111 /home/homer/ # replace x509up_u39111 with your own proxy file, here "39111" is your unix user-id
+   $cp /tmp/x509up_u39111 /home/homer/ # replace x509up_u39111 with your own proxy file, here "39111" is your unix user-id
 
 * Set the rights of this file to 600 and treat it as confidential:
 
-.. code-block:: bash
+.. code-block:: console
 
-	chmod 600 /home/homer/x509up_u39111
+   $chmod 600 /home/homer/x509up_u39111
 
 Because your home-directory is shared across the cluster, your proxy will
 also be available on all nodes within the cluster.
@@ -265,18 +265,16 @@ You also need to do this step once every week, and not for each job.
 
 * Tell the system where your proxy certificate is, by setting an environment variable. Add in the job script:
 
-.. code-block:: bash
+.. code-block:: console
 
-	export X509_USER_PROXY=/home/homer/x509up_u39111
+   $export X509_USER_PROXY=/home/homer/x509up_u39111
 
 Now within the job, your :ref:`storage-clients` commands will work.
 
 
 .. seealso:: This section covers the basic usage of pbs jobs particularly on the LSG. For advanced usage of a pbs cluster you may check out the `Lisa batch usage`_ guide or the `NYU Cluster usage`_ guide.
 
-..
 
-..
 
 .. Links:
 

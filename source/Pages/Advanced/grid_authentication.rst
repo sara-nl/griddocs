@@ -61,14 +61,14 @@ Instead of ``startGridSession``, you can run the following three commands separa
 .. code-block:: bash
 
 	# 1. VOMS server: create a voms proxy with voms extensions that enables you to access the Grid for *12 hours*.
-	$ voms-proxy-init --voms lsgrid  #replace lsgrid with your VO
+	voms-proxy-init --voms lsgrid  #replace lsgrid with your VO
 	
 	# 2. MyProxy server: store a *week* long proxy certificate in the Myproxy server; useful for jobs that are 
 	# running for more than 12 hours.
-	$ myproxy-init -d -n 
+	myproxy-init -d -n 
 	
 	# 3. WMS: delegate your credentials to the Workload Management System.
-	$ glite-wms-job-delegate-proxy -d $USER
+	glite-wms-job-delegate-proxy -d $USER
 
 The next section explains the startGridSession operations step-by-step. See also ``startGridSession -h``.
 
@@ -95,21 +95,21 @@ Make sure you have installed your certificate and private on the Grid user inter
 They should be placed in the ``.globus`` directory under your home directory and should be named ``usercert.pem``
 and ``userkey.pem``. They must have the following ownerships and permissions:
 	
-.. code-block:: bash
+.. code-block:: console
 
-	$ ls -l $HOME/.globus/usercert.pem
+	$ls -l $HOME/.globus/usercert.pem
 	-rw-r--r-- 1 homer homer 1956 Nov 16 12:20 /home/homer/.globus/usercert.pem
 		
-	$ ls -l $HOME/.globus/userkey.pem
+	$ls -l $HOME/.globus/userkey.pem
 	-r-------- 1 homer homer 1956 Nov 16 12:20 /home/homer/.globus/usercert.pem
 	
 where ``homer`` should be replaced with your username.
 
 Now issue the following command to create a *local* proxy. The pass phrase you are asked for, is your Grid certificate password:
 
-.. code-block:: bash
+.. code-block:: console
 
-    $ voms-proxy-init --voms lsgrid
+    $voms-proxy-init --voms lsgrid
 
 You will see the following output in your terminal::
 
@@ -125,9 +125,9 @@ Non standard location
 `````````````````````
 To store your local proxy in a non standard location, use the `-out` option:
 
-.. code-block:: bash
+.. code-block:: console
 
-    $ voms-proxy-init -voms lsgrid --valid 168:00 -out /home/homer/my_proxy_cert
+    $voms-proxy-init -voms lsgrid --valid 168:00 -out /home/homer/my_proxy_cert
 
 See ``voms-proxy-init -h`` for more options. 
 
@@ -136,9 +136,9 @@ Inspecting your proxy certificate
 
 You can inspect your local proxy with the command:
 
-.. code-block:: bash
+.. code-block:: console
 
-    $ voms-proxy-info -all
+    $voms-proxy-info -all
 
 Here is an example::
 
@@ -185,9 +185,9 @@ This is necessary for jobs that need more than 12 hours to run.
 
 Issue this command on the :abbr:`UI (User Interface)`:
 
-.. code-block:: bash
+.. code-block:: console
 
-    $ myproxy-init -d -n
+    $myproxy-init -d -n
 
 You should get something like this::
 
@@ -206,9 +206,9 @@ Inspecting the *myproxy* certificate
 
 You can inspect the the *myproxy* certificate with the command:
 
-.. code-block:: bash
+.. code-block:: console
 
-    $ myproxy-info -d
+    $myproxy-info -d
 
 Here is an example of the displayed output::
 
@@ -236,10 +236,10 @@ local proxy. If not, please see :ref:`voms-proxy-init command <voms-proxies>`.
 
 To delegate your proxy to the :abbr:`WMS (Workload Management System)`, run on the :abbr:`UI (User Interface)`:
 
-.. code-block:: bash
+.. code-block:: console
 
-    $ echo $USER
-    $ glite-wms-job-delegate-proxy -d $USER  # the $USER is the delegation id
+    $echo $USER
+    $glite-wms-job-delegate-proxy -d $USER  # the $USER is the delegation id
 
 The variable ``$USER`` is the delegation id (in this case your login name from the system). This string is needed in other commands to identify your session. In general, you can use any string you like after the ``-d`` option.
 
@@ -271,33 +271,33 @@ Commands for viewing your proxy information
 
 * To start your Grid session:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	$ startGridSession lsgrid  # replace lsgrid with your VO
+	$startGridSession lsgrid  # replace lsgrid with your VO
 
 * To see how much time there is left on your Grid session:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-  	$ myproxy-info -d
+  	$myproxy-info -d
 
 * To renew your Grid session:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	$ startGridSession lsgrid  #replace lsgrid with your VO
+	$startGridSession lsgrid  #replace lsgrid with your VO
    
 * To end your session:
 
-  .. code-block:: bash
+  .. code-block:: console
 
- 	$ myproxy-destroy -d
+ 	$myproxy-destroy -d
 
 * To remove your local ``/tmp/x509up_uXXX`` proxy:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	$ voms-proxy-destroy
+	$voms-proxy-destroy
 
 .. note:: ``myproxy-destroy`` will not terminate any job. Jobs will continue
   to run and will fail when the the proxy certificate that was used at the

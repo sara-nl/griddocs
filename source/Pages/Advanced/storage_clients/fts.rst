@@ -50,31 +50,31 @@ Basic options
 File transfer - TURL to TURL
 ----------------------------
 
-.. code-block:: bash
+.. code-block:: console
 
-  $ fts-transfer-submit -s https://fts3.grid.sara.nl:8443 \
-        gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
-        gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/penelope/zap.tar 
+   $fts-transfer-submit -s https://fts3.grid.sara.nl:8443 \
+   $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
+   $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/penelope/zap.tar 
 
 
 File transfer - TURL to TURL
 ----------------------------
 
-.. code-block:: bash
+.. code-block:: console
 
-  $ fts-transfer-submit -s https://fts3.grid.sara.nl:8443 \
-        gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
-        gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/penelope/zap.tar
+   $fts-transfer-submit -s https://fts3.grid.sara.nl:8443 \
+   $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
+   $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/penelope/zap.tar
 
 
 File transfer - srmv2 to srmv2
 ------------------------------
 
-.. code-block:: bash
+.. code-block:: console
 
-  $ fts-transfer-submit -s https://fts3.grid.sara.nl:8443 \
-        srm://srm.grid.sara.nl:8443/srm/managerv2?SFN=/pnfs/grid.sara.nl/data/lsgrid/zap.tar \
-        srm://srm.grid.sara.nl:8443/srm/managerv2?SFN=/pnfs/grid.sara.nl/data/lsgrid/penelope/zap.tar
+   $fts-transfer-submit -s https://fts3.grid.sara.nl:8443 \
+   $    srm://srm.grid.sara.nl:8443/srm/managerv2?SFN=/pnfs/grid.sara.nl/data/lsgrid/zap.tar \
+   $    srm://srm.grid.sara.nl:8443/srm/managerv2?SFN=/pnfs/grid.sara.nl/data/lsgrid/penelope/zap.tar
 
 .. note:: Combinations between TURLS, SURLS, https and srmv2 are possible.
 
@@ -87,11 +87,10 @@ Command line
   
 The ``fts-transfer-submit`` command will return instantly an ID for the specific job. This ID can be used to trace the status of the transfer:
 
-.. code-block:: bash
+.. code-block:: console
 
-	$ fts-transfer-status -s https://fts3.grid.sara.nl:8443 \
-	      9e665677-76e5-4734-b729-b69e161da99a
-	# replace the string with your ID
+   $ fts-transfer-status -s https://fts3.grid.sara.nl:8443  9e665677-76e5-4734-b729-b69e161da99a
+    # replace the string with your ID
 
 
 Web interface
