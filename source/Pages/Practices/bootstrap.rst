@@ -129,12 +129,12 @@ Once this jobs lands on the Grid, it will execute the ``wrapper.sh`` script whic
 
 * Check the job status from command line on the UI:
 
-  .. code-block:: console
+  .. code-block:: bash
 
-     $glite-wms-job-status https://wms2.grid.sara.nl:9000/6swP5FEfGVZ69tVB3PwnDQ #replace with your jobID
+     glite-wms-job-status https://wms2.grid.sara.nl:9000/6swP5FEfGVZ69tVB3PwnDQ #replace with your jobID
   
-      # or
-     $glite-wms-job-status -i jobIds
+     # or
+     glite-wms-job-status -i jobIds
 
 * Once the job is finished, get the job output to the UI:
 

@@ -54,10 +54,10 @@ Start by downloading and unpacking the necessary files.
 
 * Login to the UI: 
 
-  .. code-block:: console
+  .. code-block:: bash
 
-     $ssh homer@ui.grid.sara.nl 
-      # replace homer with your username
+     ssh homer@ui.grid.sara.nl 
+     # replace homer with your username
 
 * Copy the tarball :download:`pilot_topos_fractals.tar </Scripts/pilot_topos_fractals.tar>` to your UI directory.
 
@@ -99,7 +99,9 @@ Creating a parameter file for the fractals program
 
 This example includes a bash script (``./createTokens``) that generates a sensible parameter file, with each line representing a set of parameters that the fractals program can be called with. Without arguments it creates a fairly sensible set of 24 lines of parameters. You can generate different sets of parameters by calling the program with a combination of ``-q``, ``-d`` and ``-m`` arguments, but at the moment no documentation exists on these. We recommend not to use them for the moment.
 
-After you ran the ``createTokens`` script you'll see output similar to the following::
+After you ran the ``createTokens`` script you'll see output similar to the following:
+
+.. code-block:: console
 
     $./createTokens 
     /tmp/tmp.fZ33Kd8wXK
@@ -108,7 +110,9 @@ After you ran the ``createTokens`` script you'll see output similar to the follo
 Getting a unique ToPoS poolname
 ===============================
 
-In order to run the tasks we first need to have the ToPoS service create tokens for us, based on the lines in our generated parameter file. Since all tokens need to be part of a pool, we first need to find out a suitable poolname. You can choose anything you like here, but the only way to be sure the poolname does not yet exist within ToPoS and to avoid clashes, we can ask the service for a unique poolname by calling::
+In order to run the tasks we first need to have the ToPoS service create tokens for us, based on the lines in our generated parameter file. Since all tokens need to be part of a pool, we first need to find out a suitable poolname. You can choose anything you like here, but the only way to be sure the poolname does not yet exist within ToPoS and to avoid clashes, we can ask the service for a unique poolname by calling:
+
+.. code-block:: console
 
     $./topos newPool
     f24c058fdb6793ed7b6d5ff9
