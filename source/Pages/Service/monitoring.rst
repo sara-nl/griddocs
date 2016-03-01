@@ -2,7 +2,7 @@
 .. _monitoring-pages:
 
 *************************
-Statistics and Monitoring
+Statistics and monitoring
 *************************
 
 In this section you will find information about the Grid systems status and usage statistics:
@@ -51,10 +51,6 @@ The following site provides Grid sites info updated by participating NGIs:
 * `GOCDB NGIs info`_
 
 
-
-..
-
-..
 
 .. Links:
 
