@@ -15,9 +15,9 @@ In this page we will talk about job submission to the local Life Science Grid (L
 Introduction
 ============
 
-The Life Science Grid or LSG is a group of clusters which can be used locally only, or as one big cluster (Grid). Each :ref:`local LSG cluster <lsg-clusters>` is part of the Life Science Grid that has its own user interface (UI) and two worker nodes of 64 cores (see :ref:`LSG specifications <specs-lsg>`). You can use the local UI for submitting both local :ref:`pbs jobs <pbs-submit>` or :ref:`Grid jobs <first-grid-job>`.
+The Life Science Grid or LSG is a group of clusters which can be used locally only, or as one big cluster (Grid). Each :ref:`local LSG cluster <lsg-clusters>` is part of the Life Science Grid that has its own User Interface (UI) and two Worker Nodes of 64 cores (see :ref:`LSG specifications <specs-lsg>`). You can use the local UI for submitting both local :ref:`pbs jobs <pbs-submit>` or :ref:`Grid jobs <first-grid-job>`.
 
-In this section we will focus on the usage of local LSG cluster as a common batch system. The local job submission can be useful when:
+In this section we will focus on the usage of local :abbr:`LSG (Life Science Grid)` cluster as a common batch system. The local job submission can be useful when:
 
 * prototyping your Grid application
 * running multicore jobs with high number of cores (e.g. more than 8 cores)
@@ -30,7 +30,7 @@ In this section we will focus on the usage of local LSG cluster as a common batc
 Quickstart example
 ==================
 
-In this example we will submit a simple pbs job to the local LSG cluster using the fractals example.
+In this example we will submit a simple :abbr:`PBS (Portable Batch System)` job to the local LSG cluster using the fractals example.
 
 
 Preamble
@@ -38,78 +38,80 @@ Preamble
 
 * Login to the LSG UI, e.g. "ams" cluster:
 
-.. code-block:: console
+  .. code-block:: console
 
-    $ssh -X homer@gb-ui-ams.els.sara.nl # replace homer with your username and the ui address of your local cluster
+     $ssh -X homer@gb-ui-ams.els.sara.nl   # replace homer with your username and the ui address of your local cluster
 
 * Copy the tarball :download:`pbsp_fractals.tar </Scripts/pbs_fractals.tar>` to your UI directory:
 
-.. code-block:: console
+  .. code-block:: console
 
-    $wget http://doc.grid.surfsara.nl/en/latest/_downloads/pbs_fractals.tar
+     $wget http://doc.grid.surfsara.nl/en/latest/_downloads/pbs_fractals.tar
 
 * Copy the fractals source code :download:`fractals.c </Scripts/fractals.c>` to your UI directory.
 
-.. code-block:: console
+  .. code-block:: console
 
-    $wget http://doc.grid.surfsara.nl/en/latest/_downloads/fractals.c
+     $wget http://doc.grid.surfsara.nl/en/latest/_downloads/fractals.c
 
 * Untar the example and check the files:
 
-.. code-block:: console
+  .. code-block:: console
 
-    $tar -xvf pbs_fractals.tar
-    $cd pbs_fractals/
-    $mv ../fractals.c ./
-    $ls -l
+     $tar -xvf pbs_fractals.tar
+     $cd pbs_fractals/
+     $mv ../fractals.c ./
+     $ls -l
 
-    -rw-r--r-- 1 homer homer fractals.c
-    -rw-rw-r-- 1 homer homer wrapper.sh
+     -rw-r--r-- 1 homer homer fractals.c
+     -rw-rw-r-- 1 homer homer wrapper.sh
 
 * Compile the example:
 
-.. code-block:: console
+  .. code-block:: console
 
-    $cc fractals.c -o fractals -lm
+     $cc fractals.c -o fractals -lm
 
 
 .. _pbs-submit:
 
-Submit a pbs job
+Submit a PBS job
 ================
 
 * Submit the job to the local cluster:
 
-.. code-block:: console
+  .. code-block:: console
 
-	$qsub wrapper.sh
+     $qsub wrapper.sh
 
-	6401.gb-ce-ams.els.sara.nl
+     6401.gb-ce-ams.els.sara.nl
 
 This command returns a jobID (6401) that can be used to monitor the progress of the job.
 
 * Monitor the progress of your job:
 
-.. code-block:: console
+  .. code-block:: console
 
-	$qstat -f 6401 # replace 6401 with your jobID
+     $qstat -f 6401   # replace 6401 with your jobID
 
-Optionally, when the job finishes, display the job output image::
+Optionally, when the job finishes, display the job output image:
 
-    convert output "output.png"
-    display output.png
+  .. code-block:: console
+
+     $convert output "output.png"
+     $display output.png
 
 * List your own jobs:
 
-.. code-block:: console
+  .. code-block:: console
 
-    $qstat -u homer # replace homer with your username
+     $qstat -u homer   # replace homer with your username
 
 * Cancel the job you submitted:
 
-.. code-block:: console
+  .. code-block:: console
 
-    $qdel 6401 # replace 6401 with your jobID
+     $qdel 6401   # replace 6401 with your jobID
 
 
 
@@ -123,27 +125,27 @@ Directives
 
 .. code-block:: console
 
-	#PBS -l walltime=4:00:00 # the job will run 4h at maximum
+	##PBS -l walltime=4:00:00 # the job will run 4h at maximum
 
 * Specify the number of cores to be allocated for your job:
 
 .. code-block:: console
 
-	#PBS -l nodes=1:ppn=2  # asks two cores on a single node
+	##PBS -l nodes=1:ppn=2  # asks two cores on a single node
 
 * The default stdout/stderr target is the directory that you submit the job from. The following line changes the stdout/stderr directory to a specified path (e.g. samples directory):
 
 .. code-block:: console
 
-	#PBS -e /home/homer/samples/
-	#PBS -o /home/homer/samples/
+	##PBS -e /home/homer/samples/
+	##PBS -o /home/homer/samples/
 
 * Send job status notifications to your email:
 
 .. code-block:: console
 
-	#PBS -m abe
-	#PBS -M homer@troy.com #replace with your email
+	##PBS -m abe
+	##PBS -M homer@troy.com #replace with your email
 
 
 
@@ -191,7 +193,7 @@ On the LSG clusters you can find different :ref:`queue types <lsg-specs-queues>`
 
 If you don’t specify a particular queue, then your jobs will be scheduled by default on the medium queue (32 hours limit).  When the queue walltime is reached, the job will be killed.
 
-.. seealso:: :ref:`How to run PBS jobs with wallclock greater than 36 hours on LSG? <pbs-walltime>`
+.. seealso:: :ref:`How to run PBS jobs with wallclock greater than 36 hours on :abbr:`LSG (Life Science Grid)`? <pbs-walltime>`
 
 
 .. _pbs-scratch:
@@ -201,7 +203,7 @@ How to use local `scratch`
 ==========================
 
 
-When you submit a local job, it will land on one of the cluster nodes. This means that the working directory will be different to the directory from where you submit the job (the worker node is a different machine to the UI).
+When you submit a local job, it will land on one of the cluster nodes. This means that the working directory will be different to the directory from where you submit the job (the worker node is a different machine to the :abbr:`UI (User Interface)`).
 
 The home UI directory is mounted on the worker node via NFS. For better I/O performance, copy files, computation to the worker node's ``/scratch``.
 
@@ -250,7 +252,7 @@ Therefore, to interact with the Grid storage, you need:
 
 .. code-block:: console
 
-   $cp /tmp/x509up_u39111 /home/homer/ # replace x509up_u39111 with your own proxy file, here "39111" is your unix user-id
+   $cp /tmp/x509up_u39111 /home/homer/  # replace x509up_u39111 with your own proxy file, here "39111" is your unix user-id
 
 * Set the rights of this file to 600 and treat it as confidential:
 
@@ -272,7 +274,7 @@ You also need to do this step once every week, and not for each job.
 Now within the job, your :ref:`storage-clients` commands will work.
 
 
-.. seealso:: This section covers the basic usage of pbs jobs particularly on the LSG. For advanced usage of a pbs cluster you may check out the `Lisa batch usage`_ guide or the `NYU Cluster usage`_ guide.
+.. seealso:: This section covers the basic usage of :abbr:`PBS (Portable Batch System)` jobs particularly on the :abbr:`LSG (Life Science Grid)`. For advanced usage of a :abbr:`PBS (Portable Batch System)` cluster you may check out the `Lisa batch usage`_ guide or the `NYU Cluster usage`_ guide.
 
 
 
