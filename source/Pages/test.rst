@@ -23,10 +23,10 @@ Code-block console
 .. code-block:: console
    :emphasize-lines: 3
 
-   # Comment
-     # Indented comment
-   $ test emphasize-lines
-   $ echo "Hallo Wereld!" $VAR \
+   #Comment
+    # Indented comment
+   $test emphasize-lines
+   $echo "Hallo Wereld!" $VAR \
      | grep .
    Hallo Wereld!
 
