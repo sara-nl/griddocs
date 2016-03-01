@@ -1,7 +1,7 @@
 .. _specs-lsg:
 
 ******************
-LSG Specifications
+LSG specifications
 ******************
 
 This page describes the specifications for the Life Science Grid (LSG) clusters. For a list of the clusters, see :ref:`life-science-clusters`.
@@ -20,7 +20,7 @@ Quick summary
 ============================ =====================================================
 LSG cluster                  Capacity                                             
 ============================ =====================================================
-Operating System             Linux CentOS 6.x 64bit
+Operating system             Linux CentOS 6.x 64bit
 Total number of cores        128 CPU cores at 2.3 GHz
 Total amount of memory       512 GB
 Total scratch space          10TB
