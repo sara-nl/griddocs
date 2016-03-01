@@ -32,27 +32,27 @@ Creating/listing
 
 * Listing directories on dCache:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    $ srmls srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/
+     $srmls srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/
   
 * Listing directories on DPM:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    $ srmls srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/
+     $srmls srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/
 
 * Create a new directory on dCache:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    $ srmmkdir srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/newdir/ 
+     $srmmkdir srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/newdir/ 
 
 * Create a new directory on DPM:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    $ srmmkdir srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/newdir 
+     $srmmkdir srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/newdir 
 
 
 Transferring data
@@ -62,36 +62,36 @@ Transferring data
 
 * Copy file from dCache to local machine:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    # note the flag -server_mode=passive!
-    $ srmcp -server_mode=passive \
-            srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
-            file:///`pwd`/zap.tar 
+     # note the flag -server_mode=passive!
+     $srmcp -server_mode=passive \
+     $      srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
+     $      file:///`pwd`/zap.tar 
 
 
 * Copy file from DPM to local machine:
 
-  .. code-block:: bash
+  .. code-block:: console
 
     # note the flag -server_mode=passive!
-    $ srmcp -server_mode=passive \
-            srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar \
-            file:///`pwd`/zap.tar
+    $srmcp -server_mode=passive \
+    $      srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar \
+    $      file:///`pwd`/zap.tar
 
 * Copy file from local machine to dCache:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    $ srmcp -debug file:///`pwd`/zap.tar \
-            srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+    $srmcp -debug file:///`pwd`/zap.tar \
+    $      srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
 * Copy file from local machine to DPM:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    $ srmcp -debug file:///`pwd`/zap.tar \
-            srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar
+    $srmcp -debug file:///`pwd`/zap.tar \
+    $      srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar
 
 
 Recursive transfer
@@ -111,15 +111,15 @@ Removing data
 
 * Remove a file from dCache:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    $ srmrm srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+     $srmrm srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
 * Remove a file from DPM:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    $ srmrm srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar
+     $srmrm srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar
 
 Recursive delete
 ----------------

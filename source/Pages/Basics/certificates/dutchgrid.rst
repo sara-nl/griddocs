@@ -24,22 +24,21 @@ Request a DutchGrid certificate
 
 * Login to your :ref:`UI account <get-ui-account>` with X forward enabled, e.g.: 
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    $ ssh -X homer@ui.grid.sara.nl 
-    # replace "homer" with your username!
+     $ssh -X homer@ui.grid.sara.nl   # replace "homer" with your username!
 
 * Download the the jGridstart tool:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    $ wget http://ca.dutchgrid.nl/start/jgridstart-wrapper-1.16.jar
+     $wget http://ca.dutchgrid.nl/start/jgridstart-wrapper-1.16.jar
 
 * Run the wizard:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    $ java -jar jgridstart-wrapper-1.16.jar
+     $java -jar jgridstart-wrapper-1.16.jar
 
 * Follow the wizard instructions. You will typically go through these steps:
 
@@ -67,16 +66,16 @@ Once your request is approved, you will receive an email titled *"DutchGrid CA c
 
 * Login to your :ref:`UI account <get-ui-account>` with X forward enabled, e.g.: 
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    $ ssh -X homer@ui.grid.sara.nl # replace "homer" with your username!   
+     $ssh -X homer@ui.grid.sara.nl # replace "homer" with your username!   
 
 
 * Run the wizard again: 
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    $ java -jar jgridstart-wrapper-1.16.jar
+     $java -jar jgridstart-wrapper-1.16.jar
 
 Then a window pops up similar to the following:
 
@@ -102,29 +101,28 @@ If you followed the steps above properly, then your DutchGrid certificate and pr
 
 * Login to your :ref:`UI account <get-ui-account>`: 
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    $ ssh homer@ui.grid.sara.nl 
-    # replace "homer" with your username!  
+     $ssh homer@ui.grid.sara.nl   # replace "homer" with your username!  
 
 * Set the proper permissions to your certificate files:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    $ cd $HOME/.globus
-    $ chmod 644 usercert.pem
-    $ chmod 400 userkey.pem
+     $cd $HOME/.globus
+     $chmod 644 usercert.pem
+     $chmod 400 userkey.pem
 
 Note that the private key file should be **read-only** and only readable to you. 
 
 * Verify the correct permissions:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	$ cd $HOME/.globus
-	$ ls -l
-	-rw-r--r--      1 homer    homer            4499  May 10 13:47  usercert.pem
- 	-r--------      1 homer    homer             963  May 10 13:43  userkey.pem
+     $ cd $HOME/.globus
+     $ ls -l
+     -rw-r--r--      1 homer    homer            4499  May 10 13:47  usercert.pem
+     -r--------      1 homer    homer             963  May 10 13:43  userkey.pem
  	
 
 .. _dutchgrid_browser_install:
@@ -137,10 +135,10 @@ In order to apply for a :ref:`VO membership <join-vo>` you will have to install 
 
 * Login to your :ref:`UI account <get-ui-account>`: 
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    $ ssh homer@ui.grid.sara.nl # replace "homer" with your username!  
-    $ cd $HOME/.globus
+     $ssh homer@ui.grid.sara.nl # replace "homer" with your username!  
+     $cd $HOME/.globus
 
 .. warning:: You can import a certificate in your browser only when it is in the **pkcs12** format. This means that you need to convert the ``usercert.pem`` and ``userkey.pem`` files to a single  ``.p12`` file. 	
 
@@ -150,9 +148,9 @@ Convert PEM to pkcs12
 
 * To convert a PEM file to the pkcs12 format, run on the UI:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-    $ openssl pkcs12 -export -inkey userkey.pem -in usercert.pem -out browsercert.p12
+     $openssl pkcs12 -export -inkey userkey.pem -in usercert.pem -out browsercert.p12
 
 This will ask you for a password three times: the first is to unlock your private key stored in the file ``userkey.pem``. The pkcs12-file will be password protected, which needs a new password, and the same password for confirmation. Note that your can use the same password as the password for the private key file, but this is not necessary.
 

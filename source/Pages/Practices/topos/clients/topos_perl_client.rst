@@ -12,6 +12,10 @@ This page contains information about ``PerlToPoS``, a perl client for ToPoS:
     :depth: 4
 
 
+.. comment: Next statement will set the default language for all code blocks after a '::'.
+.. highlight:: perl
+
+
 .. _perl-client-intro:
 
 ============
@@ -20,9 +24,7 @@ Introduction
 
 PerlToPoS is a ToPoS client library written in Perl. The library has no dependencies other than those found on all Grid nodes, so including the two modules 'ToposPool.pm' and 'ToposToken.pm' is enough to run pilot jobs using PerlToPoS.
 
-As an introduction, the following example shows a simple, but functional PerlToPoS client:
-
-.. code-block:: bash
+As an introduction, the following example shows a simple, but functional PerlToPoS client::
 	
 	use ToposPool;
 	use ToposToken;
@@ -130,9 +132,7 @@ If there are no more tokens, or if all remaining tokens are locked, 'next_token'
 Getting the token contents
 ==========================
 
-Tokens can contain plain text or a file, depending on what was stored in the token when it was created. To find out what the token contains, use the 'is_file' method:
-
-.. code-block:: bash
+Tokens can contain plain text or a file, depending on what was stored in the token when it was created. To find out what the token contains, use the 'is_file' method::
 	
     if ($token_object -> is_file) {
         # token is a file
@@ -160,9 +160,7 @@ If a token object contains a file, there are two convenient methods:
 * 'filename' which returns the name of the file when it was uploaded, but without any path information;
 * 'save', which will save the file in the current directory (as a safety feature), with the original file name or with the specified file name.
 
-Both methods can be used as follows:
-
-.. code-block:: bash
+Both methods can be used as follows::
 
     if ($token_object -> is_file) {
         $token_object -> save;
@@ -291,9 +289,7 @@ As a complete example, the following scripts will first populate a new pool with
 Creating a script to populate a new pool with tokens
 ====================================================
 
-The first script populates a new pool with tokens, each of which contains a number. With the two PerlToPoS modules 'ToposPool.pm' and 'ToposToken' in a fresh directory, create the script:
-
-.. code-block:: bash
+The first script populates a new pool with tokens, each of which contains a number. With the two PerlToPoS modules 'ToposPool.pm' and 'ToposToken' in a fresh directory, create the script::
 	
     #!/usr/bin/perl
 	
@@ -321,10 +317,7 @@ After running the script you can verify that the pool was indeed filled with tok
 Creating a pilot job
 ====================
 
-We used a pool named "input_pool" for storing the data which must be processed. For simplicity, let's call the pool with results "output_pool". The script for the pilot job is:
-
-
-.. code-block:: bash
+We used a pool named "input_pool" for storing the data which must be processed. For simplicity, let's call the pool with results "output_pool". The script for the pilot job is::
 
     #!/usr/bin/perl
     
@@ -376,8 +369,8 @@ The job submission file is a regular JDL file with the following properties:
 
 We create a job submission file which will start the processing on 5 nodes. Replace <your VO name> with the name of your virtual organisation.
 
-.. code-block:: bash
-	
+.. code-block:: cfg
+
     # example JDL file for the square computation
     Type                         = "Job";
     JobType                      = "Parametric";

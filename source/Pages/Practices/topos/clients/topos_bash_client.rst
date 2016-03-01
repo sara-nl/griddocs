@@ -22,15 +22,19 @@ There is a bash 'library' available to ease the communication with ToPoS. It is 
 
 To use it, you need to make the file executable::
 
-    chmod +x topos
+.. code-block:: console
+
+    $chmod +x topos
 
 After that you can call the function::
+
+.. code-block:: text
 
     USAGE: ./topos [ command ] [ arguments ]
 
 Where the combination command and arguments is one of:
 
-.. code-block:: bash
+.. code-block:: text
 
     newPool
     createTokensFromLinesInFile [POOLNAME] [FILENAME]

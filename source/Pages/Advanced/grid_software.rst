@@ -47,9 +47,9 @@ Logging in on the softdrive
 
 After you have been added to the ``softdrive`` group, you can log in on the software distribution node, using your Grid UI username and password:
 
-.. code-block:: bash
+.. code-block:: console
 
-	ssh homer@softdrive.grid.sara.nl # replace homer with your username
+	$ssh homer@softdrive.grid.sara.nl # replace homer with your username
 
 In your home-directory (e.g. ``/home/homer``), you will find a *README* file with detailed information about the *Softdrive* usage.
 
@@ -87,16 +87,16 @@ Finding your files on the Grid nodes
 
 On nodes, your Softdrive files will be available under:
 
-.. code-block:: bash
+.. code-block:: console
 
 	/cvmfs/softdrive.nl/homer/ # replace homer with your username
   
 Login to your :ref:`UI account <get-ui-account>` and check whether your files are there:
 
-.. code-block:: bash  
+.. code-block:: console  
   
     ui.grid.sara.nl:/home/homer$ ls /cvmfs/softdrive.nl/homer/ 
-    # drwxr-xr-x 17 cvmfs cvmfs 4096 Dec 16 12:11 test_dir
+    drwxr-xr-x 17 cvmfs cvmfs 4096 Dec 16 12:11 test_dir
     
 
 .. note:: If your software is statically compiled, then copying the executables from your home directory to ``/cvmfs/softdrive.nl/$USER/`` should work. Just remember to export the ``/cvmfs/softdrive.nl/$USER`` software paths into your Grid scripts or :abbr:`UI (User Interface)` ``.bashrc``. In other cases with library path dependencies, we advice you to install your software directly under ``/cvmfs/softdrive.nl/$USER`` or use a prefix. An example of software installation in Softdrive can be found in section :ref:`anaconda on Grid <softdrive-anaconda>`.
@@ -119,48 +119,48 @@ Softdrive anaconda
  
 * Login to Softdrive with your account:
 
-.. code-block:: bash  
+.. code-block:: console  
  
-	ssh homer@softdrive.grid.sara.nl # replace homer with your username
+   $ssh homer@softdrive.grid.sara.nl # replace homer with your username
 
 * Download in your home account the latest version of Anaconda installer for linux, e.g.:
 
-.. code-block:: bash  
+.. code-block:: console  
 
-    wget https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda2-2.4.0-Linux-x86_64.sh 
+   $wget https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda2-2.4.0-Linux-x86_64.sh 
 
 * Run the installer (read and approve the license terms) in Softdrive:
 
-.. code-block:: bash  
+.. code-block:: console  
 
-    bash Anaconda2-2.4.0-Linux-x86_64.sh
+   $bash Anaconda2-2.4.0-Linux-x86_64.sh
 
 Note here! The installer will ask you to which location to install the software. Do not accept the default but change it to: ``/cvmfs/softdrive.nl/$USER/anaconda-2-2.4.0/``:
 
-.. code-block:: bash  
+.. code-block:: console  
     
-    # Anaconda2 will now be installed into this location:
-    # /home/homer/anaconda2
-    # - Press ENTER to confirm the location
-    # - Press CTRL-C to abort the installation
-    # - Or specify a different location below
+    Anaconda2 will now be installed into this location:
+    /home/homer/anaconda2
+    - Press ENTER to confirm the location
+    - Press CTRL-C to abort the installation
+    - Or specify a different location below
 
-    # [/home/homer/anaconda2] >>> /cvmfs/softdrive.nl/homer/anaconda-2-2.4.0/
-    # ...
+    [/home/homer/anaconda2] >>> /cvmfs/softdrive.nl/homer/anaconda-2-2.4.0/
+    ...
 
 That was it! You can now publish the software that is installed in your ``/cvmfs/softdrive.nl/homer/anaconda-2-2.4.0 directory``. To do so, run this command in Softdrive:
 
-.. code-block:: bash  
+.. code-block:: console  
 
-    publish-my-softdrive
+    $publish-my-softdrive
 
 Then check after 1-2 hours from the :abbr:`UI (User Interface)` if the ``/cvmfs/softdrive.nl/homer/anaconda-2-2.4.0`` exists.
 
 Finally, remember to include the installation path in your scripts as:
 
-.. code-block:: bash  
+.. code-block:: console  
 
-    export PATH=/cvmfs/softdrive.nl/homer/anaconda-2-2.4.0/bin:$PATH # replace homer with your username
+    $export PATH=/cvmfs/softdrive.nl/homer/anaconda-2-2.4.0/bin:$PATH # replace homer with your username
   
   
   

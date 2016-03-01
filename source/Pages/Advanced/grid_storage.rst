@@ -256,16 +256,16 @@ Here is an example of how to stage a single file:
 
 .. code-block:: console
 
-	$ srm-bring-online srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test
+	$srm-bring-online srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test
 	srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test brought online, use request id 424966221 to release
 
 Don't use this method to stage multiple files. Use the ``stage.py`` example below instead, because it is much more efficient.
 
 How to display the locality:
 
-.. code-block:: bash
+.. code-block:: console
 
-	$ srmls -l srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test | grep locality
+	$srmls -l srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test | grep locality
 	  locality:ONLINE_AND_NEARLINE
 
 
@@ -281,35 +281,35 @@ The example below shows how to stage a list of files with known :abbr:`SURLs (St
 
 * Create a proxy on the :abbr:`UI (User Interface)`:
 
-  .. code-block:: bash
+  .. code-block:: console
   
-	$ startGridSession lsgrid  
+	$startGridSession lsgrid  
 
 * The file paths should be listed in a file called ``files`` with the following format:
 
-  .. code-block:: bash
+  .. code-block:: console
 
 	/pnfs/grid.sara.nl/data/...
 
   Let's say that you have a list of :abbr:`SURLs (Storage URLs)` that you want to stage. Convert the list of 
   :abbr:`SURLs (Storage URLs)` in the ``datasets/example.txt`` file to the desired ``/pnfs`` format: 
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	$ grep --only-matching '/pnfs/grid.sara.nl.*' datasets/example.txt > files
+	$grep --only-matching '/pnfs/grid.sara.nl.*' datasets/example.txt > files
 
 * Display the locality of the files with:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	$ python state.py
+	$python state.py
 
 
 * Stage the files:  
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	$ python stage.py
+	$python stage.py
 
 This script stages a number of files from tape. You can change the pin lifetime in the ``stage.py`` script by changing the ``srmv2_desiredpintime`` attribute in seconds.
 
@@ -338,9 +338,9 @@ When a pool group is full with pinned files, staging is paused. Stage requests w
 
 When you are done with your processing, we recommend you release (or unpin) all the files that you don't need any more. In order to unpin a file, run from the UI:
 
-.. code-block:: bash
+.. code-block:: console
 
-	$ srm-release-files srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar # replace with your SURL
+	$srm-release-files srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar # replace with your SURL
 
 This command will initiate unpinning of file ``zap.tar`` (even if you submitted multiple pin requests) and the file will remain cached but purgeable until new requests will claim the available space. It is an optional action, but helps a lot with the effective system usage.
 

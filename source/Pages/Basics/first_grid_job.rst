@@ -49,35 +49,35 @@ This section will show you how to create a valid proxy:
 
 * Login to your :abbr:`UI (User Interface)` account:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	ssh homer@ui.grid.sara.nl # replace "homer" with your username
+     $ssh homer@ui.grid.sara.nl # replace "homer" with your username
 
 * Create a proxy with the following command and provide your Grid certificate password when prompted:
 
-  .. code-block:: bash
- 
-	startGridSession lsgrid  #replace lsgrid with your VO
+  .. code-block:: console
+
+     $startGridSession lsgrid  #replace lsgrid with your VO
 
   You should see a similar output displayed in your terminal:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	# Now starting...
-	# Please enter your GRID password:
-	# voms-proxy-init -voms lsgrid --valid 168:00 -pwstdin
-	# Contacting voms.grid.sara.nl:30018 [/O=dutchgrid/O=hosts/OU=sara.nl/CN=voms.grid.sara.nl] "lsgrid"...
-	# Remote VOMS server contacted successfully.
+	Now starting...
+	Please enter your GRID password:
+	voms-proxy-init -voms lsgrid --valid 168:00 -pwstdin
+	Contacting voms.grid.sara.nl:30018 [/O=dutchgrid/O=hosts/OU=sara.nl/CN=voms.grid.sara.nl] "lsgrid"...
+	Remote VOMS server contacted successfully.
 
-	# Created proxy in /tmp/x509up_u39111.
+	Created proxy in /tmp/x509up_u39111.
 
-	# Your proxy is valid until Tue Jan 11 09:31:56 CET 2016
-	# Your identity: /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
-	# Creating proxy ..................................................... Done
-	# Proxy Verify OK
-	# Your proxy is valid until: Tue Jan 11 09:31:56 2016
-	# A proxy valid for 168 hours (7.0 days) for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson now exists on px.grid.sara.nl.
-	# Your delegation ID is: homer
+	Your proxy is valid until Tue Jan 11 09:31:56 CET 2016
+	Your identity: /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
+	Creating proxy ..................................................... Done
+	Proxy Verify OK
+	Your proxy is valid until: Tue Jan 11 09:31:56 2016
+	A proxy valid for 168 hours (7.0 days) for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson now exists on px.grid.sara.nl.
+	Your delegation ID is: homer
 	
 .. note:: What does the startGridSession script actually do?
 
@@ -103,7 +103,7 @@ To submit a Grid job you must describe this in a plain text file, called :abbr:`
 * Login to your User Interface. 
 * Create a file with the following content describing the job requirements. Save it as ``simple.jdl``: 
 
-  .. code-block:: bash
+  .. code-block:: cfg
 	:linenos:
 	
 	Type = "Job";
@@ -124,15 +124,15 @@ Job list match
 
 Before actually submitting the job, you can optionally check the matching Computing Elements that satisfy your job description. It does not guarantee anything about the :abbr:`CE (Compute Element)` load, just matches your :abbr:`JDL (Job Description Language)` criteria with the available VO resources:
 
-.. code-block:: bash
+.. code-block:: console
 
-	glite-wms-job-list-match -a simple.jdl # replace simple.jdl with your JDL file
+   $glite-wms-job-list-match -a simple.jdl # replace simple.jdl with your JDL file
 
 Alternatively, use your delegation ID:
 
-.. code-block:: bash
+.. code-block:: console
 
-	glite-wms-job-list-match -d homer simple.jdl # replace homer with your delegation id, in this case your login name 
+   $glite-wms-job-list-match -d homer simple.jdl # replace homer with your delegation id, in this case your login name 
 	
 .. note:: The ``-a`` option should not be used frequently. It creates a proxy of your certificate 'on-the-fly' when the job is submitted; therefore ``-a`` is quite inefficient when submitting hundreds of jobs.
 
@@ -158,20 +158,20 @@ You should have your ``simple.jdl`` file ready in your :abbr:`UI (User Interface
 
 * Submit the simple job by typing in your :abbr:`UI (User Interface)` terminal this command:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	glite-wms-job-submit -d $USER -o jobIds simple.jdl
-	
-	# Connecting to the service https://wms2.grid.sara.nl:7443/glite_wms_wmproxy_server
-	# ====================== glite-wms-job-submit Success ======================
-	# The job has been successfully submitted to the WMProxy
-	# Your job identifier is:
-	#
-	# https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA
-	#
-	# The job identifier has been saved in the following file:
-	# /home/homer/jobIds
-	# ==========================================================================
+     $glite-wms-job-submit -d $USER -o jobIds simple.jdl
+
+     Connecting to the service https://wms2.grid.sara.nl:7443/glite_wms_wmproxy_server
+     ====================== glite-wms-job-submit Success ======================
+     The job has been successfully submitted to the WMProxy
+     Your job identifier is:
+
+     https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA
+
+     The job identifier has been saved in the following file:
+     /home/homer/jobIds
+     ==========================================================================
 
 Note the use of ``-d $USER`` to tell your job that it should use your delegated proxy certificate.	
 	
@@ -182,12 +182,12 @@ The option ``-o`` allows you to specify a file (in this case ``jobIDs``) to stor
 
 The jobID string looks like this:
 
-.. code-block:: bash
+.. code-block:: console
 
-	cat jobIds
+   $cat jobIds
 
-	# ###Submitted Job Ids### 
-	# https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA
+    ###Submitted Job Ids### 
+    https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA
 
 
 .. _job-status:
@@ -200,15 +200,15 @@ To check the current job status from the command line, apply the following comma
 
 * After submitting the job, type:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	glite-wms-job-status https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
+     $glite-wms-job-status https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
 
 * Alternatively, if you have saved your jobIds into a file you can use the ``-i`` option and the filename as argument:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	glite-wms-job-status -i jobIds
+     $glite-wms-job-status -i jobIds
 
 * Finally, a third (optional) way to check the job status is with the web browser in which :ref:`you installed your certificate <digicert_browser_install>`. In this browser open the jobID link:
 
@@ -224,15 +224,15 @@ Cancel job
 
 * If you realize that you need to cancel a submitted job, use the following command:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	glite-wms-job-cancel https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
+     $glite-wms-job-cancel https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
 
 * Alternatively, you can use the ``jobIds`` file:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	glite-wms-job-cancel -i jobIds
+     $glite-wms-job-cancel -i jobIds
 
 
 .. _job-output:
@@ -251,15 +251,15 @@ output sandbox can be downloaded for approximately one week after the job finish
 
 * To get the output, type:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	glite-wms-job-output https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
+     $glite-wms-job-output https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
 	
 * Alternatively, you can use the jobIDs file:
 	
-  .. code-block:: bash
+  .. code-block:: console
 
-	glite-wms-job-output --dir . -i jobIds
+     $glite-wms-job-output --dir . -i jobIds
 
 where you should substitute ``jobIds`` with the file that you used to store the
 job ids.
@@ -276,15 +276,15 @@ Check job output
 
 * To check your job output, browse into the downloaded output directory. This includes the ``simple.out``, ``simple.err`` files specified in the ``OutputSandbox`` statement:
 
-  .. code-block:: bash
+  .. code-block:: console
 
-	ls -l /home/homer/homer_JIVYfkMxtnRFWweGsx0XAA/
+	$ls -l /home/homer/homer_JIVYfkMxtnRFWweGsx0XAA/
 
-	# -rw-rw-r-- 1 homer homer  0 Jan  5 18:06 simple.err
-	# -rw-rw-r-- 1 homer homer 20 Jan  5 18:06 simple.out
+	-rw-rw-r-- 1 homer homer  0 Jan  5 18:06 simple.err
+	-rw-rw-r-- 1 homer homer 20 Jan  5 18:06 simple.out
 
-	cat /home/homer/homer_JIVYfkMxtnRFWweGsx0XAA/simple.out # displays the hostname of the Grid worker node where the job landed
-	# wn01.lsg.bcbr.uu.nl
+	$cat /home/homer/homer_JIVYfkMxtnRFWweGsx0XAA/simple.out # displays the hostname of the Grid worker node where the job landed
+	wn01.lsg.bcbr.uu.nl
 
 ==================
 Recap & Next Steps

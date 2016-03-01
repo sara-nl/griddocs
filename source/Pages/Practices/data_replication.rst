@@ -42,9 +42,9 @@ The presence of the DataRequirements attribute causes the job to run on a Comput
 
 To do this, first register a file on a SE and to the LFC Catalog. We do this by copy and register (lcg-cr):
 
-.. code-block:: bash
+.. code-block:: console
 
-    $ lcg-cr --vo lsgrid -d gb-se-ams.els.sara.nl -l lfn:/grid/lsgrid/homer/test.txt file:/home/homer/local_test.txt 
+    $lcg-cr --vo lsgrid -d gb-se-ams.els.sara.nl -l lfn:/grid/lsgrid/homer/test.txt file:/home/homer/local_test.txt 
     guid:522350d4-a28a-48aa-939b-d85c9ab5443f
 
 Note that the guid part is what we get as return value from the command. It identifies the file uniquely in the Grid storage. You can save this id for emergencies. The part which starts with lfn: identifies the logical file name of our uploaded file.
@@ -86,23 +86,23 @@ The script gets the file, performs the ``ls`` command and shows the content of t
 
 .. code-block:: bash
 
-    $ cat scriptInputData.sh 
-    #!/bin/sh
+     $ cat scriptInputData.sh 
+     #!/bin/sh
 
-    # Set the proper environment
-    export LFC_HOST=lfc.grid.sara.nl
-    export LCG_GFAL_INFOSYS=bdii.grid.sara.nl:2170
-    export LCG_CATALOG_TYPE=lfc
+     # Set the proper environment
+     export LFC_HOST=lfc.grid.sara.nl
+     export LCG_GFAL_INFOSYS=bdii.grid.sara.nl:2170
+     export LCG_CATALOG_TYPE=lfc
     
-    # Download the file from the SE to the WN where this job runs
-    # note that the LFN is passed as input to this script
-    lcg-cp --vo lsgrid $1 file:`pwd`/local_file
+     # Download the file from the SE to the WN where this job runs
+     # note that the LFN is passed as input to this script
+     lcg-cp --vo lsgrid $1 file:`pwd`/local_file
     
-    echo "########################################"
-    ls -la local_file
-    echo "########################################"
-    # type the file just downloaded
-    cat local_file
+     echo "########################################"
+     ls -la local_file
+     echo "########################################"
+     # type the file just downloaded
+     cat local_file
 
 Now the actual submission, status checking, output retrieval and inspection can take place. If you want to try this example, you have to create two files, ``inputdata.jdl`` and ``scriptInputData.sh``, filling them with the content displayed above. Of course, you have to register your own file and consequently change the LFN requested within the DataRequirements attribute.
 
