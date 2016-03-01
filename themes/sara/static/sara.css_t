@@ -258,7 +258,8 @@ div.highlight-console pre {
     font-weight: bold;
 }
 
-div.highlight-console span.go {
+div.highlight-console span.go,
+div.highlight-console span.c {
     font-weight: normal;
     xmargin-left: 0.6em;
     color: #999;
