@@ -13,7 +13,7 @@ Code-block bash
      # Indented comment
    $ test emphasize-lines
    $ echo "Hallo Wereld!" $VAR \
-     | grep .
+   $ | grep .
    Hallo Wereld!
 
 
