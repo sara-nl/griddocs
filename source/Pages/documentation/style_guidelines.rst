@@ -58,8 +58,8 @@ Shell commands
 
   .. code-block:: bash
 
-     # lsgrid user homer stores the file zap.tar on dCache storage
-     gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+     # 1. VOMS server: create a voms proxy with voms extensions that enables you to access the Grid for *12 hours*.
+     voms-proxy-init --voms lsgrid  # Replace lsgrid with your VO
 
 * When you want to display commands, output and comments, use ``.. code-block:: console``. Prefix each command with a ``$`` and indent the ``#`` before each comment, otherwise it is marked up as a command. Example:
 
