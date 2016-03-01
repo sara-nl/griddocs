@@ -61,13 +61,13 @@ Shell commands
      # 1. VOMS server: create a voms proxy with voms extensions that enables you to access the Grid for *12 hours*.
      voms-proxy-init --voms lsgrid  # Replace lsgrid with your VO
 
-* When you want to display commands, output and comments, use ``.. code-block:: console``. Prefix each command with a ``$`` and indent the ``#`` before each comment, otherwise it is marked up as a command. Example:
+* When you want to display commands, output and comments, use ``.. code-block:: console``. Prefix commands with a ``$`` and prefix comments with ``##``, otherwise they are marked up as a command. Example:
 
   .. code-block:: console
 
      $echo 'Hello World!'
      Hello World!
-       # Comments should be indented because otherwise they are regarded as commands in a console block.
+     ## Comments should be prefixed with a double ``#``.
 
 * To display the contents of a shell script, use ``.. code-block:: bash``.
 * To display perl, use ``.. code-block:: perl``. If a page only displays perl code, you can use ``.. highlight:: perl`` once and then ``::`` for each code block. See :ref:`topos-perl-client` for an example.

@@ -67,7 +67,7 @@ Transferring data
      $globus-url-copy -cd -r \
      $    /home/homer/testdir/ \
      $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/testdir/
-      # replace testdir with your directory
+     ## replace testdir with your directory
 
 * Recursive upload to DPM:
 
@@ -106,7 +106,7 @@ Transferring data
      $globus-url-copy -cd -r \
      $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/sourcetdir/ \
      $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/penelope/targetdir/   
-      # note: you must include the trailing slash!
+     ## note: you must include the trailing slash!
 
   .. seealso:: For dCache 3rd party transfers see also :ref:`fts client <fts>`. 
 
@@ -119,7 +119,7 @@ Transferring data
      $globus-url-copy -cd -r \
      $    gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/testdir/ \
      $    gsiftp://gb-se-ams.els.sara.nl/dpm/els.sara.nl:2811/home/lsgrid/penelope/testdir/ 
-      # note: you must include the trailing slash!
+     ## note: you must include the trailing slash!
 
 
 Parallel streams
