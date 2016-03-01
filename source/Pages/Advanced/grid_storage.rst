@@ -12,7 +12,7 @@ In this page we will talk about the Grid storage facilities, the tools to intera
 
 
 ====================
-About Grid Storage
+About Grid storage
 ====================
 
 Each cluster on the Grid is equipped with a Storage Element or SE where data is stored. The Grid storage is useful for applications that handle large amount of data that can not be sent with the :ref:`job Sandbox <job-lifecycle>` or stored in a :ref:`pilot job database <pilotjob-db>`.
