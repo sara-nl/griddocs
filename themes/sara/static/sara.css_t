@@ -242,6 +242,33 @@ div.highlight{
     background-color: white;
 }
 
+/* Code blocks. Two kinds of code blocks: bash and console. */
+div.highlight-bash span {
+    font-weight: bold;
+}
+
+div.highlight-bash span.c {
+    font-weight: normal;
+    color: #999;
+}
+
+div.highlight-console pre {
+    font-weight: bold;
+}
+
+div.highlight-console span.go {
+    font-weight: normal;
+    xmargin-left: 0.6em;
+    color: #666;
+}
+
+div.highlight-console span.gp {
+    display: none;
+    color: #F80;
+    font-weight: normal;
+}
+
+
 div.note {
     border: 1px solid #79e;
     background: #def url(dialog-note.png) no-repeat 12px 15px;
