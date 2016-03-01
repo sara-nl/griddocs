@@ -1,7 +1,7 @@
 .. _specs-gina:
 
 *******************
-Gina Specifications
+Gina specifications
 *******************
 
 Gina is the Grid cluster at SURFsara; currently all the servers are located at the Vancis B.V. datacenter divided over two rooms. After different tenders these servers belong to different brands (Dell & Fujitsu). Three service nodes are used to host virtual machines for different purposes (creamces, monitoring, installation, dns servers...). All the worker nodes are installed on physical nodes.
@@ -36,13 +36,13 @@ Network backbone             Juniper Q-Fabric Network Fabric which also connects
 
 Network
 ============
-GinA is connected to a Juniper Q-Fabric network fabric. On this fabric also the Grid Storage is connected and makes high throughput possible. Currently we have seen over 20GB/sec (~170-200Gbit/sec) of peak network traffic to the Grid Storage.
+GinA is connected to a Juniper Q-Fabric network fabric. On this fabric also the Grid storage is connected and makes high throughput possible. Currently we have seen over 20GB/sec (~170-200Gbit/sec) of peak network traffic to the Grid storage.
 All workernodes are connected with a single 10Gbit ethernet connection.
 
 
 .. _gina-specs-wn:
 
-Worker nodes
+Worker Nodes
 ============
 This is the list of the different worker nodes in order of installation/configuration from newest to oldest:
 
@@ -95,7 +95,7 @@ Worker Nodes ``am95-{01-48}``, ``v33-{17-48}``::
   *  RAM per core: 4GB  
 
 
-Service Nodes
+Service nodes
 =============
 
 Service{01,02,03}::  
