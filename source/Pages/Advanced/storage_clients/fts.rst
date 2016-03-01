@@ -90,7 +90,7 @@ The ``fts-transfer-submit`` command will return instantly an ID for the specific
 .. code-block:: console
 
    $ fts-transfer-status -s https://fts3.grid.sara.nl:8443  9e665677-76e5-4734-b729-b69e161da99a
-    # replace the string with your ID
+   ## replace the string with your ID
 
 
 Web interface
