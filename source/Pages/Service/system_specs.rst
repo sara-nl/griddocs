@@ -1,10 +1,10 @@
 .. _specs:
 
 *********************
-System Specifications
+System specifications
 *********************
 
-This page describes the specifications for the underlying Grid resources, both Compute and Storage systems:
+This page describes the specifications for the underlying Grid resources, both compute and storage systems:
 
 .. toctree::
 	:maxdepth: 1
