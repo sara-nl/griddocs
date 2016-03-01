@@ -161,7 +161,7 @@ To work with WebDAV on Windows or Mac OS X, you can install **Cyberduck** from h
 * Download the .zip file, open it, and drag the .app file into your Applications folder to install it. 
 * Open a WebDAV (HTTP/SSL) connection and connect to the server with your :abbr:`UI (User Interface)` account username and password:
 
-  .. code-block:: console
+  .. code-block:: bash
 
      https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/ # replace lsgrid with your VO
 
