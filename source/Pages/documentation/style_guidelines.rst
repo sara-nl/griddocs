@@ -47,15 +47,32 @@ Acronyms
 Shell commands
 ==============
 
-* Prefix commands with ``$``, to differentiate between commands and their output. The ``$ `` will be hidden from output, but will trigger the right markup. Example:
+* When you want to display commands and their output, use ``.. code-block:: console``. Prefix each command with a ``$``, without space.
 
   .. code-block:: console
 
      $echo 'Hello World!'
      Hello World!
-      # Comments should be indented because otherwise they are regarded as commands.
 
-* Listings of bash scripts should use ``.. code-block:: bash``. Here, commands do not have to be prefixed with ``$`` and comments don't have to be indented.
+* When you want to display commands and comments, use ``.. code-block:: bash``. Don't prefix commands. Example:
+
+  .. code-block:: bash
+
+     # lsgrid user homer stores the file zap.tar on dCache storage
+     gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+
+* When you want to display commands, output and comments, use ``.. code-block:: console``. Prefix each command with a ``$`` and indent the ``#`` before each comment, otherwise it is marked up as a command. Example:
+
+  .. code-block:: console
+
+     $echo 'Hello World!'
+     Hello World!
+       # Comments should be indented because otherwise they are regarded as commands in a console block.
+
+* To display the contents of a shell script, use ``.. code-block:: bash``.
+* To display perl, use ``.. code-block:: perl``. If a page only displays perl code, you can use ``.. highlight:: perl`` once and then ``::`` for each code block. See :ref:`topos-perl-client` for an example.
+* To display configuration files, use ``.. code-block:: cfg``.
+
 
 Markup
 ======
