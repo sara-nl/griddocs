@@ -332,12 +332,12 @@ Note here that the Total, Running and Waiting numbers are per queue, and the CPU
 
 * To specify a specific cluster in your JDL, use the following syntax:
 
-  .. code-block:: console
+  .. code-block:: bash
 
-     $Requirements = (RegExp("rug",other.GlueCEUniqueID)); # this requires the job to land on the "rug" site
+     Requirements = (RegExp("rug",other.GlueCEUniqueID)); # this requires the job to land on the "rug" site
 	
-      # or you can specify the full UI hostname
-     $Requirements = RegExp("gb-ce-lumc.lumc.nl",other.GlueCEUniqueID); # job lands at lumc
+     # or you can specify the full UI hostname
+     Requirements = RegExp("gb-ce-lumc.lumc.nl",other.GlueCEUniqueID); # job lands at lumc
 
 
 .. _why-lsg-to-grid:
@@ -390,26 +390,26 @@ In order to assist you better, we have a few troubleshooting steps that may alre
 
 * Can you connect to the service?
 
-  .. code-block:: console
+  .. code-block:: bash
 
-      # A basic firewall check: can you connect to the port?
+     # A basic firewall check: can you connect to the port?
      $telnet srm.grid.sara.nl 8443
 
-      # Testing the SSL layer of a connection to the dCache SRM door
+     # Testing the SSL layer of a connection to the dCache SRM door
      $echo 'QUIT' | openssl s_client -connect srm.grid.sara.nl:8443 \
                          -CApath /etc/grid-security/certificates
-      # One of the last lines should be: 'Verify return code: 0 (ok)'
+     # One of the last lines should be: 'Verify return code: 0 (ok)'
 
-      # Testing a gridFTP door, control channel
+     # Testing a gridFTP door, control channel
      $telnet rabbit1.grid.sara.nl 2811
 
-      # GridFTP data channels are more difficult to test, because the port opens only after a transfer is initiated.
-      # But after we start an iperf service, you can try to telnet to it.
+     # GridFTP data channels are more difficult to test, because the port opens only after a transfer is initiated.
+     # But after we start an iperf service, you can try to telnet to it.
      $telnet rabbit1.grid.sara.nl 24000
      
-      # Or just test with iperf:
+     # Or just test with iperf:
      $iperf3 -c rabbit1.grid.sara.nl -p 24000
-      # Keep in mind that we have to start iperf first!
+     # Keep in mind that we have to start iperf first!
 
 
 .. _get-log:
@@ -451,14 +451,14 @@ Occasionally, transfers are stuck when 0 bytes have been transferred. There are 
 
   Some tools to test this:
 
-  .. code-block:: console
+  .. code-block:: bash
 
      # Run this from your endpoint of the transfer; adjust the value to find the limit.
      # Check first whether your system supports a MTU of 9000.
-     $ping -M do -s 8972 gridftp.grid.sara.nl
+     ping -M do -s 8972 gridftp.grid.sara.nl
      
      # This command tells you what the supported MTU value is.
-     $tracepath gridftp.grid.sara.nl
+     tracepath gridftp.grid.sara.nl
 
   Another good tool for testing the network is iperf. We'll start an iperf server at your request so that you can test against it.
   
