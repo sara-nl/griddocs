@@ -94,7 +94,7 @@ This command returns a jobID (6401) that can be used to monitor the progress of 
 
      $qstat -f 6401   # replace 6401 with your jobID
 
-Optionally, when the job finishes, display the job output image:
+  Optionally, when the job finishes, display the job output image:
 
   .. code-block:: console
 
@@ -123,26 +123,26 @@ Directives
 
 * Specify the maximum job walltime in ``hh::mm:ss``:
 
-.. code-block:: console
+  .. code-block:: console
 
 	##PBS -l walltime=4:00:00 # the job will run 4h at maximum
 
 * Specify the number of cores to be allocated for your job:
 
-.. code-block:: console
+  .. code-block:: console
 
 	##PBS -l nodes=1:ppn=2  # asks two cores on a single node
 
 * The default stdout/stderr target is the directory that you submit the job from. The following line changes the stdout/stderr directory to a specified path (e.g. samples directory):
 
-.. code-block:: console
+  .. code-block:: console
 
 	##PBS -e /home/homer/samples/
 	##PBS -o /home/homer/samples/
 
 * Send job status notifications to your email:
 
-.. code-block:: console
+  .. code-block:: console
 
 	##PBS -m abe
 	##PBS -M homer@troy.com #replace with your email
@@ -157,27 +157,27 @@ System status commands
 
 * List all the running/queued jobs in the cluster:
 
-.. code-block:: console
+  .. code-block:: console
 
-   $qstat
+     $qstat
 
 * Get details for all jobs in a queue, e.g. "long":
 
-.. code-block:: console
+  .. code-block:: console
 
-   $qstat -f long
+     $qstat -f long
 
 * Show all the running jobs in the system and the occupied cores on the two worker nodes. The very last number in each row (after ‘/‘) shows the rank of corresponding core:
 
-.. code-block:: console
+  .. code-block:: console
 
-   $qstat -an1
+     $qstat -an1
 
 * List all running jobs per worker node and core:
 
-.. code-block:: console
+  .. code-block:: console
 
-   $pbsnodes
+     $pbsnodes
 
 
 
@@ -193,7 +193,7 @@ On the LSG clusters you can find different :ref:`queue types <lsg-specs-queues>`
 
 If you don’t specify a particular queue, then your jobs will be scheduled by default on the medium queue (32 hours limit).  When the queue walltime is reached, the job will be killed.
 
-.. seealso:: :ref:`How to run PBS jobs with wallclock greater than 36 hours on :abbr:`LSG (Life Science Grid)`? <pbs-walltime>`
+.. seealso:: :ref:`How to run PBS jobs with wallclock greater than 36 hours on the Life Science Grid? <pbs-walltime>`
 
 
 .. _pbs-scratch:
@@ -216,7 +216,7 @@ Example with $TMPDIR
 
 * Use the ``{PBS_O_WORKDIR}`` variable to locate your scripts and make sure that your code does not contain any hard-coded paths pointing to your home directory. This variable points to the directory from where you submit the job. Edit the script that you submit with qsub as:
 
-.. code-block:: bash
+  .. code-block:: bash
 
 	cd $TMPDIR
 	cp -r ${PBS_O_WORKDIR}/<your scripts,files> .  # note the dot at the end of `cp` command
@@ -250,15 +250,15 @@ Therefore, to interact with the Grid storage, you need:
 
 * Copy your proxy certificate to for example your home-directory using:
 
-.. code-block:: console
+  .. code-block:: console
 
-   $cp /tmp/x509up_u39111 /home/homer/  # replace x509up_u39111 with your own proxy file, here "39111" is your unix user-id
+     $cp /tmp/x509up_u39111 /home/homer/  # replace x509up_u39111 with your own proxy file, here "39111" is your unix user-id
 
 * Set the rights of this file to 600 and treat it as confidential:
 
-.. code-block:: console
+  .. code-block:: console
 
-   $chmod 600 /home/homer/x509up_u39111
+     $chmod 600 /home/homer/x509up_u39111
 
 Because your home-directory is shared across the cluster, your proxy will
 also be available on all nodes within the cluster.
@@ -267,9 +267,9 @@ You also need to do this step once every week, and not for each job.
 
 * Tell the system where your proxy certificate is, by setting an environment variable. Add in the job script:
 
-.. code-block:: console
+  .. code-block:: console
 
-   $export X509_USER_PROXY=/home/homer/x509up_u39111
+     $export X509_USER_PROXY=/home/homer/x509up_u39111
 
 Now within the job, your :ref:`storage-clients` commands will work.
 
