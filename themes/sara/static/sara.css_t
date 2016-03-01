@@ -243,12 +243,14 @@ div.highlight{
 }
 
 /* Code blocks. Two kinds of code blocks: bash and console. */
-div.highlight-bash span {
+div.highlight-bash pre {
     font-weight: bold;
 }
 
-div.highlight-bash span.c {
+div.highlight-bash span {
     font-weight: normal;
+}
+div.highlight-bash span.c {
     color: #999;
 }
 
