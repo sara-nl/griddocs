@@ -28,17 +28,15 @@ Data Requirements
 
 This case describes the ``DataRequirements`` attribute in your job description file; this attribute is a list of classads representing the data requirements for the job. Each classad has to contain three attributes :
 
-* ``InputData``
-* ``DataCatalog``
-* ``DataCatalogType`` 
+``InputData``
+    The list of input files needed by the job
+``DataCatalog``
+    The type of data catalog - needed by the Grid middleware. This is needed in order to 
+    resolve logical names to physical names. Fill in "DLI" here.
+``DataCatalogType`` 
+    The address (URL) of the data catalog if this is not the :abbr:`VO (Virtual Organisation)` default one. 
 
-These represent respectively:
-
-* The list of input files needed by the job
-* The type of data catalog - needed by the Grid middleware. This is needed in order to resolve logical names to physical names. Fill in "DLI" here.
-* The address (URL) of the data catalog if this is not the VO default one. 
-
-The presence of the DataRequirements attribute causes the job to run on a Computing Element (CE) which is next to the Storage Element (SE) where the requested file is stored. Note that this attribute doesn't perform the actual copy of the file from the :abbr:`SE (Storage Element)` to the WN; as we will see, this has to be done by the user.
+The presence of the ``DataRequirements`` attribute causes the job to run on a Computing Element (CE) which is next to the Storage Element (SE) where the requested file is stored. Note that this attribute doesn't perform the actual copy of the file from the :abbr:`SE (Storage Element)` to the WN; as we will see, this has to be done by the user.
 
 To do this, first register a file on a :abbr:`SE (Storage Element)` and to the :abbr:`LFC (Logical File Catalog)`. We do this by copy and register (``lcg-cr``):
 
