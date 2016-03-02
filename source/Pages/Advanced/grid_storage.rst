@@ -360,7 +360,7 @@ This command will initiate unpinning of file ``zap.tar`` (even if you submitted 
 SRM interaction example diagram
 ===============================
 
-Here is a sequence diagram that illustrates how the SRM commands interact with the Grid storage.
+Here is a sequence diagram that illustrates how the :abbr:`SRM (Storage Resource Manager)` commands interact with the Grid storage.
 
 .. image:: /Images/Using_SRM.png
 

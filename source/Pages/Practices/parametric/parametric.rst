@@ -14,19 +14,19 @@ The :ref:`pilot jobs <pilot-jobs>` use the technique of parametric jobs for the 
 About
 =====
 
-Pilot jobs are submitted to the Grid with a specific :ref:`JDL <jdl>` type called ``Parametric``. A parametric job causes a set of jobs to be generated from one JDL file. 
+Pilot jobs are submitted to the Grid with a specific :ref:`Job Description Language <jdl>` type called ``Parametric``. A parametric job causes a set of jobs to be generated from one :abbr:`JDL (Job Description Language)` file.
 
 
 =======
 Example
 =======
 
-In the example below, the parametric job will create 3 child jobs (see line 4) that will all run the same executable (see line 6). The value ``_PARAM_`` will be replaced by the actual value of Parameters during the jdl expansion.
+In the example below, the parametric job will create 3 child jobs (see line 4) that will all run the same executable (see line 6). The value ``_PARAM_`` will be replaced by the actual value of Parameters during the :abbr:`JDL (Job Description Language)` expansion.
 
 ``ParameterStart`` defines the starting value for the variation, ``ParameterStep`` the step for each variation and ``Parameters`` defines the value where the submission of jobs will stop (that value itself is not used) . The number of jobs is: 
 (Parameters – ParameterStart) / ParameterStep 
 
-* Login to your User Interface. 
+* Log in to your User Interface. 
 * Create a file with the following content describing the job requirements. Save it as ``parametric.jdl``: 
 
   .. code-block:: cfg
@@ -50,7 +50,7 @@ In the example below, the parametric job will create 3 child jobs (see line 4) t
 
      $glite-wms-job-submit -d $USER -o jobIds parametric.jdl
 	
-In this case, 3 child jobs will be generated. Each job will generate two files: std0.out and std0.err, std1.out and std1.err, std2.out and std2.err.	
+In this case, 3 child jobs will be generated. Each job will generate two files: ``std0.out`` and ``std0.err``, ``std1.out`` and ``std1.err``, ``std2.out`` and ``std2.err``.	
 
 * Monitor the job status to see the the parent job URL and the 3 child jobs URLs with their status:
 

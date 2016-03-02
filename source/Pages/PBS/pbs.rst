@@ -15,7 +15,7 @@ In this page we will talk about job submission to the local Life Science Grid (L
 Introduction
 ============
 
-The Life Science Grid or LSG is a group of clusters which can be used locally only, or as one big cluster (Grid). Each :ref:`local LSG cluster <lsg-clusters>` is part of the Life Science Grid that has its own User Interface (UI) and two Worker Nodes of 64 cores (see :ref:`LSG specifications <specs-lsg>`). You can use the local UI for submitting both local :ref:`pbs jobs <pbs-submit>` or :ref:`Grid jobs <first-grid-job>`.
+The Life Science Grid or LSG is a group of clusters which can be used locally only, or as one big cluster (Grid). Each :ref:`local LSG cluster <lsg-clusters>` is part of the Life Science Grid that has its own User Interface (UI) and two Worker Nodes of 64 cores (see :ref:`LSG specifications <specs-lsg>`). You can use the local :abbr:`UI (User Interface)` for submitting both local :ref:`pbs jobs <pbs-submit>` or :ref:`Grid jobs <first-grid-job>`.
 
 In this section we will focus on the usage of local :abbr:`LSG (Life Science Grid)` cluster as a common batch system. The local job submission can be useful when:
 
@@ -36,19 +36,19 @@ In this example we will submit a simple :abbr:`PBS (Portable Batch System)` job 
 Preamble
 ========
 
-* Login to the LSG UI, e.g. "ams" cluster:
+* Log in to the :abbr:`LSG (Life Science Grid)` User Interface, e.g. "ams" cluster (you can find the hostname in the :ref:`list of LSG hostnames <lsg-hostnames>`):
 
   .. code-block:: console
 
-     $ssh -X homer@gb-ui-ams.els.sara.nl   # replace homer with your username and the ui address of your local cluster
+     $ssh -X homer@gb-ui-ams.els.sara.nl   # replace homer with your username and the UI address of your local cluster
 
-* Copy the tarball :download:`pbsp_fractals.tar </Scripts/pbs_fractals.tar>` to your UI directory:
+* Copy the tarball :download:`pbsp_fractals.tar </Scripts/pbs_fractals.tar>` to your :abbr:`UI (User Interface)` directory:
 
   .. code-block:: console
 
      $wget http://doc.grid.surfsara.nl/en/latest/_downloads/pbs_fractals.tar
 
-* Copy the fractals source code :download:`fractals.c </Scripts/fractals.c>` to your UI directory.
+* Copy the fractals source code :download:`fractals.c </Scripts/fractals.c>` to your :abbr:`UI (User Interface)` directory.
 
   .. code-block:: console
 
@@ -205,7 +205,7 @@ How to use local `scratch`
 
 When you submit a local job, it will land on one of the cluster nodes. This means that the working directory will be different to the directory from where you submit the job (the worker node is a different machine to the :abbr:`UI (User Interface)`).
 
-The home UI directory is mounted on the worker node via NFS. For better I/O performance, copy files, computation to the worker node's ``/scratch``.
+The home :abbr:`UI (User Interface)` directory is mounted on the worker node via NFS. For better I/O performance, copy files, computation to the worker node's ``/scratch``.
 
 .. note:: There is an environment variable set on the worker nodes called ``$TMPDIR`` that points to your job directory, e.g. ``/scratch/<jobID>.gb-ui-ams.els.sara.nl/``.
 

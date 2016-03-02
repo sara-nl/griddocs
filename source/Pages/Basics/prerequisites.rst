@@ -50,7 +50,7 @@ Get a User Interface account
 
 *In this section we will describe how to get a User Interface account.*
 
-The User Interface (UI) account will provide you with the environment to interact with the Grid. It is your access point to the Grid.  You login to a UI machine via SSH. On this computer you can, amongst others, do the following things: access Grid resources, create proxies, submit jobs, compile programs or prototype your application. For debugging purposes it is good to know that the environment of a user interface is similar to a Grid worker node thus if your code runs on the user interface it will most likely run on a Grid worker node.
+The User Interface (UI) account will provide you with the environment to interact with the Grid. It is your access point to the Grid.  You log in to a UI machine via SSH. On this computer you can, amongst others, do the following things: access Grid resources, create proxies, submit jobs, compile programs or prototype your application. For debugging purposes it is good to know that the environment of a user interface is similar to a Grid worker node thus if your code runs on the user interface it will most likely run on a Grid worker node.
 
 To get this :abbr:`UI (User Interface)` account, there are two options:
 

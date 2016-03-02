@@ -22,13 +22,13 @@ In case that your institute does not support SURFconext and is not possible to g
 Request a DutchGrid certificate
 ===============================
 
-* Login to your :ref:`UI account <get-ui-account>` with X forward enabled, e.g.: 
+* Log in to your :ref:`UI account <get-ui-account>` with X forward enabled, e.g.: 
 
   .. code-block:: console
 
      $ssh -X homer@ui.grid.sara.nl   # replace "homer" with your username!
 
-* Download the the jGridstart tool:
+* Download the the ``jGridstart`` tool:
 
   .. code-block:: console
 
@@ -50,9 +50,9 @@ Request a DutchGrid certificate
   
 * Check your details in the printed form and contact your institution's ``Registration Authority`` (RA) in person. The RA person will check your identity (id or passport or driving license) and sign the printed form.
 
-* Once your form is signed by the RA, send a scanned copy to the DutchGrid CA via email or fax. The contact details can be found in the printed form, but you can contact also helpdesk@surfsara.nl if you are in doubt.  
+* Once your form is signed by the :abbr:`RA (Registration Authority)`, send a scanned copy to the DutchGrid CA via email or fax. The contact details can be found in the printed form, but you can contact also helpdesk@surfsara.nl if you are in doubt.  
 
-* The CA will finally send your certificate via email within ~a week. Once you have a received your  a certificate you will need to install it both on your :ref:`UI account <get-ui-account>` and your browser (UI or laptop). We'll see this next.
+* The DutchGrid :abbr:`CA (Certificate Authority)` will finally send your certificate via email within ~a week. Once you have a received your certificate you will need to install it both on your :ref:`UI account <get-ui-account>` and your browser (UI or laptop). We'll see this next.
 
 .. note::  If you need help to obtain your DutchGrid certificate, please read the `JGridstart guide`_  or contact us at helpdesk@surfsara.nl. 
 
@@ -64,7 +64,7 @@ Retrieve your DutchGrid certificate
 
 Once your request is approved, you will receive an email titled *"DutchGrid CA certificate ..."*. Now you need to retrieve the new certificate:
 
-* Login to your :ref:`UI account <get-ui-account>` with X forward enabled, e.g.: 
+* Log in to your :ref:`UI account <get-ui-account>` with X forwarding enabled, e.g.: 
 
   .. code-block:: console
 
@@ -84,7 +84,7 @@ Then a window pops up similar to the following:
 
 * Click on **retrieve your certificate**. This will automatically create a file ``usercert.pem`` in your ``~/.globus`` directory (check with ``$ ls ~/.globus``).
 
-* You may skip the step “install in browser” because the X session on the UI is slow and will probably be interrupted. Just click "Next"
+* You may skip the step “install in browser” because the X session on the :abbr:`UI (User Interface)` is slow and will probably be interrupted. Just click "Next"
 
 * Close the wizard.
 
@@ -99,7 +99,7 @@ Install a DutchGrid certificate on the UI
 
 If you followed the steps above properly, then your DutchGrid certificate and private key file should now be present in the ``~/.globus`` directory (notice the dot!) on the User Interface machine. All you need to do is to set the proper permissions.
 
-* Login to your :ref:`UI account <get-ui-account>`: 
+* Log in to your :ref:`UI account <get-ui-account>`: 
 
   .. code-block:: console
 
@@ -131,44 +131,44 @@ Note that the private key file should be **read-only** and only readable to you.
 Install a DutchGrid certificate in your browser
 ===============================================
 
-In order to apply for a :ref:`VO membership <join-vo>` you will have to install your certificate in your browser. Note that you can do this from any browser, however for convenience we will describe the procedure using the UI browser.
+In order to apply for a :ref:`VO membership <join-vo>` you will have to install your certificate in your browser. Note that you can do this from any browser, however for convenience we will describe the procedure using the :abbr:`UI (User Interface)` browser.
 
-* Login to your :ref:`UI account <get-ui-account>`: 
+* Log in to your :ref:`UI account <get-ui-account>`: 
 
   .. code-block:: console
 
      $ssh homer@ui.grid.sara.nl # replace "homer" with your username!  
      $cd $HOME/.globus
 
-.. warning:: You can import a certificate in your browser only when it is in the **pkcs12** format. This means that you need to convert the ``usercert.pem`` and ``userkey.pem`` files to a single  ``.p12`` file. 	
+.. warning:: You can import a certificate in your browser only when it is in the **PKCS12** format. This means that you need to convert the ``usercert.pem`` and ``userkey.pem`` files to a single  ``.p12`` file. 	
 
 
 Convert PEM to pkcs12
 =====================
 
-* To convert a PEM file to the pkcs12 format, run on the UI:
+* To convert a PEM file to the PKCS12 format, run on the :abbr:`UI (User Interface)`:
 
   .. code-block:: console
 
      $openssl pkcs12 -export -inkey userkey.pem -in usercert.pem -out browsercert.p12
 
-This will ask you for a password three times: the first is to unlock your private key stored in the file ``userkey.pem``. The pkcs12-file will be password protected, which needs a new password, and the same password for confirmation. Note that your can use the same password as the password for the private key file, but this is not necessary.
+This will ask you for a password three times: the first is to unlock your private key stored in the file ``userkey.pem``. The PKCS12-file will be password protected, which needs a new password, and the same password for confirmation. Note that your can use the same password as the password for the private key file, but this is not necessary.
 
 
 Import the certificate to the browser
 =====================================
 
-* To import the ``.p12`` file in your browser, open a Firefox window (``$ firefox &``) on the UI and apply the following steps (Note that you may have to copy the p12 file to a directory accessible from your browser):
+* To import the ``.p12`` file in your browser, open a Firefox window (``$ firefox &``) on the :abbr:`UI (User Interface)` and apply the following steps (Note that you may have to copy the .p12 file to a directory accessible from your browser):
 
   * From the Firefox Menu bar select: ``Edit > Preferences > Encryption > View Certificates > Import``
-  * Select the ``browsercert.p12`` file from the UI local directory
+  * Select the ``browsercert.p12`` file from the :abbr:`UI (User Interface)` local directory
   * Give the password you set in the previous step.
   * You should now see the certificate listed. Close the window.
 	
 .. sidebar:: Problems installing the certificate?
 
-		.. seealso:: Need more details for installing your certificate on the UI or browser? Check out our mooc video :ref:`mooc-ui`.
-	
+		.. seealso:: Need more details for installing your certificate on the :abbr:`UI (User Interface)` or browser? Check out our mooc video :ref:`mooc-ui`.
+
 * Verify that your certificate is valid and properly installed in your browser by accessing this website: 
 
 	https://voms.grid.sara.nl:8443/vomses/

@@ -45,7 +45,7 @@ To distribute your files using Softdrive, you must be a member of the group ``so
 Logging in on the softdrive 
 ---------------------------
 
-After you have been added to the ``softdrive`` group, you can log in on the software distribution node, using your Grid UI username and password:
+After you have been added to the ``softdrive`` group, you can log in on the software distribution node, using your Grid :abbr:`UI (User Interface)` username and password:
 
 .. code-block:: console
 
@@ -91,7 +91,7 @@ On nodes, your Softdrive files will be available under:
 
 	/cvmfs/softdrive.nl/homer/ # replace homer with your username
   
-Login to your :ref:`UI account <get-ui-account>` and check whether your files are there:
+Log in to your :ref:`UI account <get-ui-account>` and check whether your files are there:
 
 .. code-block:: console  
   
@@ -117,7 +117,7 @@ Next is an example of installing the *Anaconda* python distribution in *Softdriv
 Softdrive anaconda 
 ================== 
  
-* Login to Softdrive with your account:
+* Log in to Softdrive with your account:
 
 .. code-block:: console  
  

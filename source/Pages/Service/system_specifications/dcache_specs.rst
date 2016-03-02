@@ -97,4 +97,4 @@ If that happens, you should reduce your number of concurrent transfers, or ask u
 A single SRM door
 -----------------
 
-Also the :abbr:`SRM (Storage Resource Manager)` door has some limitations. There's only one of that kind, and sometimes it might be a performance bottleneck. It may be wise to bypass the SRM door and use GridFTP and WebDAV doors directly when possible. If in doubt, feel free to contact us for advice.
+Also the :abbr:`SRM (Storage Resource Manager)` door has some limitations. There's only one of that kind, and sometimes it might be a performance bottleneck. It may be wise to bypass the :abbr:`SRM (Storage Resource Manager)` door and use GridFTP and WebDAV doors directly when possible. If in doubt, feel free to contact us for advice.

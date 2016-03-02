@@ -50,25 +50,24 @@ You can export the certificate from the browser that you stored your certificate
 * Give it a name, e.g. ``browsercert`` and select the location to store it
 * Give a safe password and press ``Ok``
   
-The file ``browsercert.p12`` is now stored locally. Next, we will store it on the UI.
+The file ``browsercert.p12`` is now stored locally. Next, we will store it on the User Interface.
 
 Copy certificate *.p12* file to the UI
 ======================================
 
-* Open a terminal and connect to the UI machine with your personal :ref:`UI account <get-ui-account>`:
+* Open a terminal and connect to the User Interface with your personal :ref:`UI account <get-ui-account>`:
 
   .. code-block:: console
 
      $ssh homer@ui.grid.sara.nl # replace "homer" with your username!
 
-* Create a ``$HOME/.globus`` directory in your UI account:
-
+* Create a ``$HOME/.globus`` directory in your :abbr:`UI (User Interface)` account:
 
   .. code-block:: console
 
      $mkdir $HOME/.globus
 
-* If you exported the certificate to your laptop, copy it from your local machine to your ``.globus`` directory on the :abbr:`UI (User Interface)`. If you exported your certificate from the UI browser, you can skip this step: 
+* If you exported the certificate to your laptop, copy it from your local machine to your ``.globus`` directory on the :abbr:`UI (User Interface)`. If you exported your certificate from the :abbr:`UI (User Interface)` browser, you can skip this step: 
 
   .. code-block:: console
 
@@ -104,7 +103,7 @@ b) Extract your certificate, run on the :abbr:`UI (User Interface)`:
      $chmod 644 usercert.pem
      $chmod 400 userkey.pem
 	
-The certificate and private key file should now be present in the ``.globus`` directory (notice the dot!) on the User Interface machine. Note that the private key file should be **read-only** and only readable to you.
+The certificate and private key file should now be present in the ``.globus`` directory (notice the dot!) on the User Interface. Note that the private key file should be **read-only** and only readable to you.
 
 * Verify key permissions:
 

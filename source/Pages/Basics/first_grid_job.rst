@@ -30,7 +30,7 @@ Except for the application requirements, you also need to specify in the :abbr:`
 
 .. note:: The amount of data that you can transfer using the sandboxes is very limited, in the order of a few megabytes (less than **100MB**). This means that you should normally limit the input sandbox to a few script files and the output sandbox to the stderr and stdout files.
 
-Once you have the jdl ready, you can submit it to multiple clusters with ``glite-*`` commands. The Workload Management System (WMS) will schedule your job on a Grid worker node. The purpose of WMS is to distribute and manage tasks across computing resources. More specifically, the WMS will accept your job, assign it to the most appropriate Computing Element (CE), record the job status and retrieve the output. 
+Once you have the :abbr:`JDL (Job Description Language)` file ready, you can submit it to multiple clusters with ``glite-*`` commands. The Workload Management System (WMS) will schedule your job on a Grid worker node. The purpose of WMS is to distribute and manage tasks across computing resources. More specifically, the WMS will accept your job, assign it to the most appropriate Computing Element (CE), record the job status and retrieve the output.
 
 The following animations illustrate the Grid lifecycle as described above:
 
@@ -47,7 +47,7 @@ Before submitting your first Grid job, you need to create a *proxy* from your ce
 
 This section will show you how to create a valid proxy:
 
-* Login to your :abbr:`UI (User Interface)` account:
+* Log in to your :abbr:`UI (User Interface)` account:
 
   .. code-block:: console
 
@@ -78,13 +78,13 @@ This section will show you how to create a valid proxy:
 	Your proxy is valid until: Tue Jan 11 09:31:56 2016
 	A proxy valid for 168 hours (7.0 days) for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson now exists on px.grid.sara.nl.
 	Your delegation ID is: homer
-	
+
 .. note:: What does the startGridSession script actually do?
 
 	* It generates a *local proxy* ``x509up_uXXX`` in the :abbr:`UI (User Interface)` ``/tmp/`` directory
 	* It uploads this proxy to Myproxy server
-	* It delegates the proxy to the WMS with your user name as the delegation ID (DID)
-	
+	* It delegates the proxy to the :abbr:`WMS (Workload Management System)` with your user name as the delegation ID (DID)
+
 	If you want to know more, see the advanced section about :ref:`grid-authentication`.
 
 And now you are ready to submit jobs to the Grid! Or copy data from and to the Grid.
@@ -100,7 +100,7 @@ To submit a Grid job you must describe this in a plain text file, called :abbr:`
 
 .. warning:: Make sure you have started your session and created already a :ref:`valid proxy <startgridsession>`. 
 
-* Login to your User Interface. 
+* Log in to your User Interface. 
 * Create a file with the following content describing the job requirements. Save it as ``simple.jdl``: 
 
   .. code-block:: cfg
@@ -265,7 +265,7 @@ where you should substitute ``jobIds`` with the file that you used to store the
 job ids.
 
 If you omitted the ``--dir`` option, your output stored on the
-``/scratch`` directory on the UI. Please remove your files from the
+``/scratch`` directory on the :abbr:`UI (User Interface)`. Please remove your files from the
 ``/scratch`` directory when they are no longer necessary. Also keep in
 mind that if the ``/scratch`` directory becomes too full, the
 administrators remove the older files until enough space is available
