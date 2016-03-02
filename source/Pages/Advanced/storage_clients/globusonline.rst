@@ -21,7 +21,7 @@ Globus provides a web service to schedule file transfers from one storage endpoi
 
 There exists a python API which allows to steer and monitor the processes from within e.g. the data generating processes. Via this API data transfers can be easily integrated into workflows.
 
-The service is run on Amazon cloud located in the US.
+The service is run on the Amazon cloud located in the US.
 
 Requirements
 ============

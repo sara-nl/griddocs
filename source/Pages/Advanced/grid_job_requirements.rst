@@ -23,7 +23,7 @@ scheduler.
 Requirement syntax
 ==================
 
-Job requirements are written as an optional statement in the JDL file::
+Job requirements are written as an optional statement in the :abbr:`JDL (Job Description Language)` file::
 
   Requirements = <expression>;
 

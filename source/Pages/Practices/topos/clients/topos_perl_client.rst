@@ -12,7 +12,7 @@ This page contains information about ``PerlToPoS``, a perl client for ToPoS:
     :depth: 4
 
 
-.. comment: Next statement will set the default language for all code blocks after a '::'.
+.. comment: The 'highlight' statement will set the default language for all code blocks after a '::'.
 .. highlight:: perl
 
 
@@ -359,15 +359,15 @@ Note that the timeout for a task is set to 3 seconds. It is expected that each t
 Creating a job submission file
 ===============================
 
-The job submission file is a regular JDL file with the following properties:
+The job submission file is a regular :ref:`Job Description Language <jdl>` file with the following properties:
 
-* the job type must be "Parametric"
+* the job type must be ``Parametric``
 * the number of parameters is the number of machines that should be used per job submit
-* the executable must be '/usr/bin/perl'
-* the first argument must be the name of the script; so in the example above, the argument is 'example_pilotjob.pl'
+* the executable must be ``/usr/bin/perl``
+* the first argument must be the name of the script; so in the example above, the argument is ``example_pilotjob.pl``
 * the input sandbox must at least contain the two PerlToPoS perl modules and the name of the pilot job script
 
-We create a job submission file which will start the processing on 5 nodes. Replace <your VO name> with the name of your virtual organisation.
+We create a job submission file which will start the processing on 5 nodes. Replace <your VO name> with the name of your Virtual Organisation.
 
 .. code-block:: cfg
 

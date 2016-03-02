@@ -132,7 +132,7 @@ Get non-vomsified proxy locally
      Verifying - Enter MyProxy pass phrase:
      A proxy valid for 168 hours (7.0 days) for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson now exists on px.grid.sara.nl.
 
-* Now use the MyProxy pass phrase to get this proxy locally on the UI:
+* Now use the MyProxy pass phrase to get this proxy locally on the :abbr:`UI (User Interface)`:
 
   .. code-block:: console
 
@@ -162,8 +162,8 @@ The personal Grid certificates are valid for a year. This means that every year 
   * When your certificate has already expired, you *have* to request a new certificate from scratch with the jGridstart tool. Follow this guide to :ref:`obtain a DutchGrid certificate <dutchgrid>`.
   * If your current certificate has *not* expired yet, you can *renew* your certificate. This is a faster procedure because you avoid revisiting your RA for your id verification. What you need to do: 
   
-    1. Login to the UI  with X session enabled.
-    2. Start the jGridstart tool on the UI (assuming that your current certificate is installed there): ``java -jar jgridstart-wrapper-XX.jar``
+    1. Log in to the :abbr:`UI (User Interface)` with X session enabled.
+    2. Start the jGridstart tool on the :abbr:`UI (User Interface)` (assuming that your current certificate is installed there): ``java -jar jgridstart-wrapper-XX.jar``
     3. Select ``Actions -> Renew`` from the menu bar.
     4. Generate a new request by verifying your details (name, surname, email, organisation). At this stage you will provide a new password for your new Grid certificate - make sure you keep this safe! Click "Next".
     5. Submit the request. This will create a new private ``userkey.pem`` file in your ``~/.globus`` directory. Click "Next".
@@ -298,13 +298,13 @@ If the CPU was efficiently being used during the job runtime, then a single core
 How can I find all the available LSG Storage Elements and get their SURLS?
 ==========================================================================
 
-* To find out the available SEs for a certain VO, type:
+* To find out the available :abbr:`SEs (Storage Elements)` for a certain :abbr:`VO (Virtual Organisation)`, type:
 
   .. code-block:: console
 
      $lcg-infosites --vo lsgrid se 
 	
-* To specify a specific SURL (srm URL), use the following syntax:
+* To specify a specific SURL (Storage URL), use the following syntax:
 
   .. code-block:: console
 
@@ -322,7 +322,7 @@ A complete list of the LSG SURLs can be found at :ref:`life-science-clusters#clu
 How can I find all the available LSG Compute Elements and use in my JDL?
 ========================================================================
 
-* To find out the available CEs for a certain VO, type:
+* To find out the available :abbr:`CEs (Compute Elements)` for a certain :abbr:`VO (Virtual Organisation)`, type:
 
   .. code-block:: console
 
@@ -330,7 +330,7 @@ How can I find all the available LSG Compute Elements and use in my JDL?
 	
 Note here that the Total, Running and Waiting numbers are per queue, and the CPU and Free number are per cluster.
 
-* To specify a specific cluster in your JDL, use the following syntax:
+* To specify a specific cluster in your :abbr:`JDL (Job Description Language)` file, use the following syntax:
 
   .. code-block:: cfg
 
@@ -353,7 +353,7 @@ If your local cluster is too busy to get a priority or if you want to run hundre
 How to run PBS jobs with wallclock greater than 36 hours on LSG?
 ================================================================ 
 
-In order to run pbs jobs on LSG that last more than 36 hours, you need to :ref:`select the proper queue <lsg-specs-queues>` with the ``-q`` flag in your ``qsub`` command when submitting the job:
+In order to run :abbr:`PBS (Portable Batch System)` jobs on the :abbr:`LSG (Life Science Grid)` that last more than 36 hours, you need to :ref:`select the proper queue <lsg-specs-queues>` with the ``-q`` flag in your ``qsub`` command when submitting the job:
  
 * If you do *not* use ``-q`` flag and ``lwalltime`` directive, then the medium queue is picked and jobs lasting more than 36 hours will be killed.
 * If you do *not* use ``-q`` flag but specify ``-lwalltime`` directive with value larger than 36 hours, then you request more walltime than the max walltime available in the default medium queue and the job does not start at all.
@@ -460,7 +460,7 @@ Occasionally, transfers are stuck when 0 bytes have been transferred. There are 
      # This command tells you what the supported MTU value is.
      tracepath gridftp.grid.sara.nl
 
-  Another good tool for testing the network is iperf. We'll start an iperf server at your request so that you can test against it.
+  Another good tool for testing the network is ``iperf``. We'll start an ``iperf`` server at your request so that you can test against it.
   
   .. code-block:: console
   

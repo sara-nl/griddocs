@@ -11,24 +11,24 @@ This page includes the basic commands to use ``lcg-lfn-lfc``. For an overview of
     :depth: 4
  
 
-.. warning:: In general we don't recommend the ``lcg-lfn-lfc`` clients as many users reported difficulties in usage and encountered worse performance compared to the other :ref:`storage-clients`. If your solution still works with the lcg- tools you can keep on using those; though the lcg- tools are *not* supported anymore. 
+.. warning:: In general we don't recommend the ``lcg-lfn-lfc`` clients as many users reported difficulties in usage and encountered worse performance compared to the other :ref:`storage-clients`. If your solution still works with the ``lcg-`` tools you can keep on using those; though the ``lcg-`` tools are *not* supported anymore. 
 
 =====
 About
 =====
 
-The logical file catalog (LFC) allows you to give more descriptive names to your files, and to order your files in a directory structure. Bear in mind that the LFC is not itself a storage system. It's just a database that keeps track of your files.
+The Logical File Catalog (LFC) allows you to give more descriptive names to your files, and to order your files in a directory structure. Bear in mind that the :abbr:`LFC (Logical File Catalog)` is not itself a storage system. It's just a database that keeps track of your files.
 
-You can manipulate your data with a set of command line tools. Some of these commands start with lfc-..., while others start with lcg-..., which can be confusing at first.
+You can manipulate your data with a set of command line tools. Some of these commands start with ``lfc-``, while others start with ``lcg-``, which can be confusing at first.
 
 lcg-...
-    All these commands operate on the data itself. Additionally, some of these commands have "side effects" in the LFC: e.g. the lcg-cr command uploads a file to an SE and registers this file in the LFC under a certain name.
+    All these commands operate on the data itself. Additionally, some of these commands have "side effects" in the :abbr:`LFC (Logical File Catalog)`: e.g. the ``lcg-cr`` command uploads a file to an :abbr:`SE (Storage Element)` and registers this file in the :abbr:`LFC (Logical File Catalog)` under a certain name.
 
 lfc-...
-    These commands only operate on the LFC, and don't manipulate data. E.g. the command lfc-mkdir creates a new directory in the LFC.
+    These commands only operate on the :abbr:`LFC (Logical File Catalog)`, and don't manipulate data. E.g. the command ``lfc-mkdir`` creates a new directory in the :abbr:`LFC (Logical File Catalog)`.
 
 lfn-...
-    The ``lfn`` commands allow you interact with the LFC logical names.    
+    The ``lfn`` commands allow you interact with the :abbr:`LFC (Logical File Catalog)` logical names.    
 
 .. note:: To run the examples below you need to have a valid proxy, see :ref:`startgridsession`. 
 
@@ -46,7 +46,7 @@ Creating/listing
 
      $lcg-ls  srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/
 
-* List DPM directories:
+* List :abbr:`DPM (Disk Pool Manager)` directories:
 
   .. code-block:: console
 
@@ -62,7 +62,7 @@ Transferring data
 
      $lcg-cp file:`pwd`/zap.tar srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
-* Copy file from local machine to DPM:
+* Copy file from local machine to :abbr:`DPM (Disk Pool Manager)`:
 
   .. code-block:: console
 
@@ -92,7 +92,7 @@ Putting lcg-lfn-lfn together
 Creating/listing 
 ================
 
-For each of the supported VO's, a separate "top level" directory exists under the ``/grid/`` directory. E.g. to see all the files that are stored for the lsgrid VO, make sure you have a running lsgrid VOMS proxy and then type:
+For each of the supported :abbr:`VOs (Virtual Organisations)`, a separate "top level" directory exists under the ``/grid/`` directory. E.g. to see all the files that are stored for the lsgrid :abbr:`VO (Virtual Organisation)`, make sure you have a running lsgrid VOMS proxy and then type:
 
 .. code-block:: console
 
@@ -104,7 +104,7 @@ For each of the supported VO's, a separate "top level" directory exists under th
     ...
     ...
 
-Rather than having to type an absolute path for every file and directory you use, it is instead possible to define a home directory from which you may use relative file/directory paths. You can do this by setting the environment variable LFC_HOME:
+Rather than having to type an absolute path for every file and directory you use, it is instead possible to define a home directory from which you may use relative file/directory paths. You can do this by setting the environment variable ``LFC_HOME``:
 
 .. code-block:: console
 
@@ -143,13 +143,13 @@ the time needed to copy the file, and reduces network traffic.
 You can replicate a file and use the replicas with the following steps:
 
 1. Copy your file to one of the storage elements, while registering the
-   file in the *logical file catalog*
+   file in the *Logical File Catalog*
 
 2. Replicate the file to other storage elements, and register the copies
-   under the same entry in the *logical file catalog*
+   under the same entry in the *Logical File Catalog*
 
 3. In your job description, tell the scheduler where to run jobs by
-   specifying a *Data requirement*
+   specifying a *data requirement*
 
 
 This section describes the steps.
@@ -173,7 +173,7 @@ register the file in the logical file catalog:
   :ref:`file-id` about how to refer to the target file.
 
 * use ``lcg-cr`` and the fulls path to the file to store the first copy of your
-  file on one of the storage elements, and register the file in the *logical
+  file on one of the Storage Elements, and register the file in the *logical
   file catalog*:
   
   .. code-block:: console
@@ -185,11 +185,11 @@ register the file in the logical file catalog:
 
   In this example, the file ``input.dat`` is copied from the ``Projects``
   directory on the local user interface, to a storage element on the Life
-  Science Cluster in Nijmegen, and registered in the LFC, with the credentials
-  from the VO *lsgrid*. Note that this requires membership of the *lsgrid* VO.
+  Science Cluster in Nijmegen, and registered in the :abbr:`LFC (Logical File Catalog)`, with the credentials
+  from the :abbr:`VO (Virtual Organisation)` *lsgrid*. Note that this requires membership of the *lsgrid* VO.
 
 * use ``lcg-rep`` to create a replica of the file, and register the replica
-  with the LFC:
+  with the :abbr:`LFC (Logical File Catalog)`:
 
   .. code-block:: console
 
@@ -197,10 +197,10 @@ register the file in the logical file catalog:
     $     -d srm://gb-se-amc.amc.nl/dpm/amc.nl/home/lsgrid/homer/input.dat \
     $     lfn:/grid/lsgrid/homer/input.dat
 
-  Note that the LFC location is the same as in the ``lcg-cr`` command.
+  Note that the :abbr:`LFC (Logical File Catalog)` location is the same as in the ``lcg-cr`` command.
 
 * verify that there are two copies of the file, registered under the same
-  LFC entry:
+  :abbr:`LFC (Logical File Catalog)` entry:
 
   .. code-block:: console
 
@@ -214,11 +214,11 @@ register the file in the logical file catalog:
 Troubleshooting LFC entries
 ===========================
 
-.. note:: The LFC Catalog needs to support your VO in order to work.
+.. note:: The :abbr:`LFC (Logical File Catalog)` needs to support your :abbr:`VO (Virtual Organisation)` in order to work.
 
-The logical file catalog is a place where you register files, so you can find their replicas that a physically stored on a storage element.
+The :abbr:`LFC (Logical File Catalog)` is a place where you register files, so you can find their replicas that a physically stored on a Storage Element.
 
-If the physical storage is removed or lost, and you don't have any other replica's, you end up with only a registration in the lfc.
+If the physical storage is removed or lost, and you don't have any other replica's, you end up with only a registration in the :abbr:`LFC (Logical File Catalog)`.
 
 .. code-block:: none
 

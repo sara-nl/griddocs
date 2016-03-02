@@ -33,15 +33,15 @@ Quickstart example
 Preamble
 ========
 
-* Login to the UI: 
+* Log in to the User Interface (UI):
 
   .. code-block:: console
 
      $ssh homer@ui.grid.sara.nl # replace homer with your username
     
-* Copy the tarball :download:`bootstrap_fractals.tar </Scripts/bootstrap_fractals.tar>` to your UI directory.
+* Copy the tarball :download:`bootstrap_fractals.tar </Scripts/bootstrap_fractals.tar>` to your :abbr:`UI (User Interface)` directory.
 
-* Copy the fractals source code :download:`fractals.c </Scripts/fractals.c>` to your UI directory.
+* Copy the fractals source code :download:`fractals.c </Scripts/fractals.c>` to your :abbr:`UI (User Interface)` directory.
     
 * Untar the example and check the files:
 
@@ -94,7 +94,7 @@ Run on the Grid
 
      $startGridSession lsgrid # replace lsgrid with your VO
 
-* Inspect the JDL file ``fractals.jdl``:
+* Inspect the :abbr:`JDL (Job Description Language)` file ``fractals.jdl``:
 
   .. code-block:: cfg
 
@@ -107,7 +107,7 @@ Run on the Grid
      InputSandbox = {"wrapper.sh","fractals"};
      OutputSandbox = {"stdout","stderr","output"}; 
 
-In the JDL we specify the content of the in- and output sandboxes. These sandboxes allow you to transfer small files to or from the Grid. The input sandbox contains all the files that you want to send with your job to the worker node, like e.g. the fractals script that you want executed. The output sandbox contains all the files that you want to have transferred back to the UI, e.g. the output fractals image.   
+In the :abbr:`JDL (Job Description Language)` file we specify the content of the in- and output sandboxes. These sandboxes allow you to transfer small files to or from the Grid. The input sandbox contains all the files that you want to send with your job to the worker node, like e.g. the fractals script that you want executed. The output sandbox contains all the files that you want to have transferred back to the :abbr:`UI (User Interface)`, e.g. the output fractals image.   
 
 * Inspect the contents of the ``wrapper.sh`` script:
 
@@ -127,7 +127,7 @@ Once this jobs lands on the Grid, it will execute the ``wrapper.sh`` script whic
 
      $glite-wms-job-submit -d $USER -o jobIds fractals.jdl
 
-* Check the job status from command line on the UI:
+* Check the job status from command line on the :abbr:`UI (User Interface)`:
 
   .. code-block:: bash
 
@@ -136,7 +136,7 @@ Once this jobs lands on the Grid, it will execute the ``wrapper.sh`` script whic
      # or
      glite-wms-job-status -i jobIds
 
-* Once the job is finished, get the job output to the UI:
+* Once the job is finished, get the job output to the :abbr:`UI (User Interface)`:
 
   .. code-block:: console
 
