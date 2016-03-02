@@ -48,7 +48,7 @@ Basics
 .. _advanced:
    
 ===============
-Advanced Topics 
+Advanced topics 
 ===============
    
 .. toctree::
@@ -67,9 +67,9 @@ Advanced Topics
 
 .. _local-lsg:
 
-=================
-Local Jobs on LSG
-=================
+===================================
+Local jobs on the Life Science Grid
+===================================
 
 .. toctree::
    :maxdepth: 1
@@ -120,7 +120,7 @@ Tutorials
 
 
 ==========================
-Frequently Asked Questions
+Frequently asked questions
 ==========================
 
 .. toctree::
