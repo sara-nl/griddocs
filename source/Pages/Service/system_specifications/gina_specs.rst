@@ -130,4 +130,5 @@ short           04:00:00                    04:00:00                    astron a
 infra           02:00:00                    00:30:00                    dteam ops pvier
 =============== =========================== =========================== ============================
 \*  This is a queue for multicore jobs
+
 ** This is a queue for jobs that require 8GB per core
