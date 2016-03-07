@@ -123,9 +123,9 @@ Queue           Max. CPU Time (hh:mm:ss)    Max. Walltime (hh:mm:ss)    VOs allo
 =============== =========================== =========================== =============
 extreme         120:00:00                   120:00:00                   emutd
 long            96:00:00                    96:00:00                    geant4 atlas
-mediumc         n/a                         72:00:00                    lofar
-medium          36:00:00                    36:00:00                    atlas
-medium_8gb      36:00:00                    36:00:00                    alice
-short           04:00:00                    04:00:00                    atlas
-infra           02:00:00                    00:30:00                    dteam ops
+mediumc         n/a                         72:00:00                    lofar lsgrid bbmri.nl projects.nl
+medium          36:00:00                    36:00:00                    atlas lhcb biomed enmr.eu geant4 lofar lsgrid projects.nl
+medium_8gb      36:00:00                    36:00:00                    alice 
+short           04:00:00                    04:00:00                    atlas lhcb biomed enmr.eu geant4 lofar lsgrid projects.nl
+infra           02:00:00                    00:30:00                    dteam ops pvier
 =============== =========================== =========================== =============
