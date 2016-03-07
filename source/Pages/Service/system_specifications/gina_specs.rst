@@ -123,9 +123,11 @@ Queue           Max. CPU Time (hh:mm:ss)    Max. Walltime (hh:mm:ss)    VOs(grou
 =============== =========================== =========================== ============================
 extreme         120:00:00                   120:00:00                   emutd
 long            96:00:00                    96:00:00                    geant4 atlas(production)
-mediumc         n/a                         72:00:00                    bbmri.nl(RP2) lofar lsgrid(mediummc) projects.nl(geomodel) pvier
+mediumc*        n/a                         72:00:00                    bbmri.nl(RP2) lofar lsgrid(mediummc) projects.nl(geomodel) pvier
 medium          36:00:00                    36:00:00                    astron atlas alice bbmri.nl beapps biomed dans drihm.eu enmr.eu esr euclid-ec.org geant4 lhcb lofar lsgrid nlesc.nl omegac pvier vlemed xenon.biggrid.nl projects.nl
-medium_8gb      36:00:00                    36:00:00                    alice 
+medium_8gb**    36:00:00                    36:00:00                    alice 
 short           04:00:00                    04:00:00                    astron atlas bbmri.nl beapps biomed dans drihm.eu enmr.eu esr euclid-ec.org geant4 lhcb lofar lsgrid nlesc.nl omegac pvier vlemed xenon.biggrid.nl projects.nl  
 infra           02:00:00                    00:30:00                    dteam ops pvier
 =============== =========================== =========================== ============================
+*  This is a queue for multicore jobs
+** This is a queue for jobs that require 8GB per core
