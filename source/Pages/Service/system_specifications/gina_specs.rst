@@ -129,5 +129,5 @@ medium_8gb**    36:00:00                    36:00:00                    alice
 short           04:00:00                    04:00:00                    astron atlas bbmri.nl beapps biomed dans drihm.eu enmr.eu esr euclid-ec.org geant4 lhcb lofar lsgrid nlesc.nl omegac pvier vlemed xenon.biggrid.nl projects.nl  
 infra           02:00:00                    00:30:00                    dteam ops pvier
 =============== =========================== =========================== ============================
-*  This is a queue for multicore jobs
+\*  This is a queue for multicore jobs
 ** This is a queue for jobs that require 8GB per core
