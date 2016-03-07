@@ -63,6 +63,17 @@ The hardware specifications of the storage nodes::
   * Cores: 16
   * RAM: 128 GB
   * Number of nodes: 1
+  
+  
+User Interface
+==============
+
+This is a virtual machine running on one of the Service Nodes; please be aware that this server's purpose is NOT to execute directly your programs. Use instead Torque commands such us 'qsub' to submit your jobs to the Worker Nodes which have more CPU/Memory capacity. Thank you for your understanding. The hardware specifications of the UI is::
+
+  * Cores: 8
+  * RAM: 16 GB
+  * Number of nodes: 1
+  
 
 
 .. _lsg-specs-queues:
