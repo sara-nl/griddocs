@@ -35,7 +35,7 @@ Service Nodes
 The hardware specifications of the service nodes::
 
   * PowerEdge R420 2xIntel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
-  * Type: 
+  * Type: Sandy Bridge architecture /w Sandy Bridge-EP cores
   * Cores: 24
   * RAM: 96 GB
   * Number of nodes: 2
@@ -47,7 +47,7 @@ Worker Nodes
 The hardware specifications of the worker nodes::
 
   * PowerEdge R815 4xAMD Opteron(tm) Processor 6376
-  * Type: 
+  * Type: Bulldozer
   * Cores: 64
   * RAM: 256GB
   * Number of nodes: 2
@@ -59,7 +59,7 @@ Storage Node
 The hardware specifications of the storage nodes::
 
   * PowerEdge R515 2xAMD Opteron(tm) Processor 4280
-  * Type: 
+  * Type: Bulldozer
   * Cores: 16
   * RAM: 128 GB
   * Number of nodes: 1
