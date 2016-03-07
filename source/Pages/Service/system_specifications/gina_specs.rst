@@ -123,8 +123,7 @@ Queue           Max. CPU Time (hh:mm:ss)    Max. Walltime (hh:mm:ss)    VOs allo
 =============== =========================== =========================== ========================
 extreme         120:00:00                   120:00:00                   emutd
 long            96:00:00                    96:00:00                    geant4 atlas(production)
-mediumc         n/a                         72:00:00                    pvier lofar lsgrid
-                                                                        bbmri.nl projects.nl
+mediumc         n/a                         72:00:00                    pvier lofar lsgrid bbmri.nl projects.nl
 medium          36:00:00                    36:00:00                    astron atlas alice bbmri.nl s biomed dans enmr.eu esr geant4 lhcb lofar lsgrid nlesc.nl omegac pvier vlemed xenon.biggrid.nl projects.nl chem.biggrid.nl euclid-ec.org drihm.eu
 medium_8gb      36:00:00                    36:00:00                    alice
 short           04:00:00                    04:00:00
