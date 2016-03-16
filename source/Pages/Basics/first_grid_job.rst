@@ -58,6 +58,12 @@ This section will show you how to create a valid proxy:
   .. code-block:: console
 
      $startGridSession lsgrid  #replace lsgrid with your VO
+     
+  Alternatively, you might have to login to a VO group. In that case, the syntax is as follows:
+  
+  .. code-block:: console
+  
+    $startGridSession lsgrid:/lsgrid/vo_group #replace both the 'lsgrid' words with your VO and 'vo_group' with the name of your VO group
 
   You should see a similar output displayed in your terminal:
 
