@@ -17,7 +17,7 @@ Introduction: delegation of authentication
 Grid, by its very nature, is decentralized. This means that users must
 authenticate themselves to the Grid services they want to use. This is accomplished 
 by means of a personal certificate and accompanying private key that 
-every Grid user must have. The combinbation of a certificate and private key
+every Grid user must have. The combination of a certificate and private key
 uniquely identifies a user. Therefore, you should **never share
 your private key** with anyone else or with any service. At the same time 
 your jobs will typically run on systems you may not trust. However,
