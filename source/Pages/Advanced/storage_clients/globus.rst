@@ -133,3 +133,56 @@ Removing data
 
 The ``globus-*`` client does not offer an option to delete files or directories. For this purpose, use a different client, e.g. :ref:`uberftp client <uberftp>`.
 
+
+Fifo pipes
+==========
+
+When you want to process a large ``tar`` file that is stored on the the Grid Storage, it is possible to extract just the content without copying the complete tar file on the Worker Node. Similarly, you can copy the tar. This saves space on the local node and is possible by using ``fifo pipes``. 
+
+Extract directory from dCache
+-----------------------------
+
+Extract the content of a tar file from the Grid storage on the worker node or UI:
+
+  .. code-block:: console
+     
+     ## Create fifo for input data
+     $INPUT_FIFO="GRID_input_fifo.tar" 
+     $mkfifo $INPUT_FIFO 
+     ## Extract the directory from fifo and catch PID
+     $tar -Bxf ${INPUT_FIFO} & TAR_PID=$! # specify the exact file location in the tar file
+     ## Download the content of the tar file
+     $globus-url-copy -vb \
+     $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
+     $    file:///`pwd`/${INPUT_FIFO} && wait $TAR_PID 
+
+Extract a file
+--------------
+
+Extract a particular from a known directory location in a ``tar`` file:
+
+  .. code-block:: console
+     
+     ## Create fifo for input file
+     $INPUT_FIFO="GRID_input_fifo.tar" 
+     $mkfifo $INPUT_FIFO 
+     ## Extract a particular file from fifo and catch PID
+     $tar -Bxf ${INPUT_FIFO} zap/filename & TAR_PID=$! # specify the exact file location in the tar file
+     ## Download the file
+     $globus-url-copy -vb \
+     $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
+     $    file:///`pwd`/${INPUT_FIFO} && wait $TAR_PID 
+
+Transfer directory to dCache
+----------------------------
+
+  .. code-block:: console
+     
+     $OUTPUT_FIFO="GRID_output_fifo.tar"	 
+     $mkfifo ${OUTPUT_FIFO} # create a fifo pipe
+     ## Push output directory to file (fifo) and catch PID
+     $tar -Bcf ${OUTPUT_FIFO} zap/ & TAR_PID=$! # replace zap/ with the directory to be uploaded  
+     ## Upload the final dir with fifo
+     $globus-url-copy -vb file:///${PWD}/${OUTPUT_FIFO} \ 
+     	  gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar && wait ${TAR_PID}
+     ## note:add stall-timeout flag in sec (e.g. -stall-timeout 7200) for large files that take too long to complete checksum on the server after transfer
