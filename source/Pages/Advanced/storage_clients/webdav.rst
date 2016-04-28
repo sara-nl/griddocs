@@ -25,15 +25,15 @@ It also has disadvantages:
 
 dCache has the following webdav doors:
 
-+----------------------------------+---------------------------+-----------------------------+-------------+
-| URL including port               | Authentication method     | Redirection behaviour       | Overwrites  |
-+==================================+===========================+=============================+=============+
-| https://webdav.grid.sara.nl:443  | Username/password         | Redirects on read           | Not allowed |
-+----------------------------------+---------------------------+-----------------------------+-------------+
-| https://webdav.grid.sara.nl:2880 | Username/password         | No redirects                | Allowed     |
-+----------------------------------+---------------------------+-----------------------------+-------------+
-| https://webdav.grid.sara.nl:2882 | User certificate or proxy | Redirects on read and write | Not allowed |
-+----------------------------------+---------------------------+-----------------------------+-------------+
++----------------------------------+---------------------------+-----------------------------+--------------+
+| URL including port               | Authentication method     | Redirection behaviour       | Overwrites   |
++==================================+===========================+=============================+==============+
+| https://webdav.grid.sara.nl:443  | Username/password         | Redirects on read           | Not allowed  |
++----------------------------------+---------------------------+-----------------------------+--------------+
+| https://webdav.grid.sara.nl:2880 | Username/password         | No redirects                | Allowed      |
++----------------------------------+---------------------------+-----------------------------+--------------+
+| https://webdav.grid.sara.nl:2882 | User certificate or proxy | Redirects on read and write | Not allowed  |
++----------------------------------+---------------------------+-----------------------------+--------------+
 
 If you don't know which one you should use, choose the first. It has a good load balancing. The second, on port 2880, may be useful for certain webdav clients that don't support redirects, such as ``cadaver``. Use the third one only if you need to use webdav with a certificate or proxy.
 
