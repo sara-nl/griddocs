@@ -209,7 +209,7 @@ In this section we will show the common commands to use the various storage clie
   | (not recommended)   |     |         |         |        |           |       |                   |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
 
-.. [1] Examples of tape control: staging a file from tape to disk, or get it locality (tape or disk).
+.. [1] Examples of tape control: staging a file from tape to disk, or get its locality (tape or disk).
 .. [2] SRM and LCG commands use the :abbr:`SRM (Storage Resource Management)` protocol for metadata level operations and switch to another protocol like GridFTP for file transfers. This may cause protocol overhead. For example, authentication needs to be done twice: once for each protocol.
 
 .. toctree::
