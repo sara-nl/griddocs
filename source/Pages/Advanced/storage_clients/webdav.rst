@@ -25,15 +25,20 @@ It also has disadvantages:
 
 dCache has the following webdav doors:
 
-+----------------------------------+---------------------------+-----------------------------+
-| URL including port               | Authentication method     | Redirection behaviour       |
-+==================================+===========================+=============================+
-| https://webdav.grid.sara.nl:443  | Username/password         | Redirects on read           |
-+----------------------------------+---------------------------+-----------------------------+
-| https://webdav.grid.sara.nl:2880 | Username/password         | No redirects                |
-+----------------------------------+---------------------------+-----------------------------+
-| https://webdav.grid.sara.nl:2882 | User certificate or proxy | Redirects on read and write |
-+----------------------------------+---------------------------+-----------------------------+
+.. comment: The following is a trick to get non-breaking spaces. See https://stackoverflow.com/questions/11830242/non-breaking-space
+
+.. |nbsp| unicode:: 0xA0 
+   :trim:
+
++----------------------------------+---------------------------+-----------------------------+---------------------+
+| URL including port               | Authentication method     | Redirection behaviour       | Overwrites          |
++==================================+===========================+=============================+=====================+
+| https://webdav.grid.sara.nl:443  | Username/password         | Redirects on read           | Not |nbsp| allowed  |
++----------------------------------+---------------------------+-----------------------------+---------------------+
+| https://webdav.grid.sara.nl:2880 | Username/password         | No redirects                | Allowed             |
++----------------------------------+---------------------------+-----------------------------+---------------------+
+| https://webdav.grid.sara.nl:2882 | User certificate or proxy | Redirects on read and write | Not |nbsp| allowed  |
++----------------------------------+---------------------------+-----------------------------+---------------------+
 
 If you don't know which one you should use, choose the first. It has a good load balancing. The second, on port 2880, may be useful for certain webdav clients that don't support redirects, such as ``cadaver``. Use the third one only if you need to use webdav with a certificate or proxy.
 
