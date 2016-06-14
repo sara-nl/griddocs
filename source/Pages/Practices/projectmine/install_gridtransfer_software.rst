@@ -131,7 +131,7 @@ For installing the voms-clients, you need to install the java build tool maven (
 
 	wget -O maven.tar.gz http://apache.mirror.triple-it.nl/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
 	tar -xf maven.tar.gz
-	export $PATH=$PATH:$(pwd)/apache-maven-3.3.9/bin/
+	export PATH=$PATH:$(pwd)/apache-maven-3.3.9/bin/
 
 Install voms-client itself
 
