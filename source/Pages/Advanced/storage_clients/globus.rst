@@ -20,7 +20,17 @@ Globus tools
 Creating/listing 
 ================
 
-The ``globus-*`` client does not offer an option to create or list directories. For this purpose, use a different client, e.g. :ref:`uberftp client <uberftp>`.
+* Listing directories on dCache:
+
+  .. code-block:: console
+  
+     globus-url-copy -list gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/
+
+* Listing directories on DPM:
+
+     globus-url-copy -list gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/
+     
+The ``globus-*`` client does not offer an option to create directories. For this purpose use a different client, e.g. :ref:`uberftp client <uberftp>`.
 
 
 Transferring data
