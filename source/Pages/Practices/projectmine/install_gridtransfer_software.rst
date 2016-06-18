@@ -252,7 +252,7 @@ After installing your personal grid certificate you cat create a vomsiefied prox
 
 .. code-block:: bash
 
-	voms-proxy-init --voms lsgrid:/lsgrid/ProjectMine --valid 168:00
+	voms-proxy-init --voms lsgrid:/lsgrid/Project_MinE --valid 168:00
 
 	Enter GRID pass phrase for this identity:
 	Contacting voms.grid.sara.nl:30018 [/O=dutchgrid/O=hosts/OU=sara.nl/CN=voms.grid.sara.nl] "lsgrid"...
