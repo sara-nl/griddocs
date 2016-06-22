@@ -373,3 +373,11 @@ Importing large amounts of data
 ===============================
 
 The `Data Ingest Service <https://www.surf.nl/en/services-and-products/data-ingest-service/index.html>`_ is a SURFsara service for researchers who want to store or analyze large amounts of data at SURFsara. The service is convenient for users who lack sufficient bandwidth or who have stored their data on a number of external hard disks.
+
+===================
+Future developments
+===================
+
+SURFsara is working towards better integration between systems. We're currently building what we call the **Central Data Infrastructure**. This will allow users to store their data to be accessible from all SURFsara systems, including the Lisa compute cluster and the Cartesius supercomputer, with the same protocols as the grid storage but also NFS and SCP. A web user interface will allow you to easily share information with other users. The current Central Archive will be assimilated into the :abbr:`CDI (Central Data Infrastructure)`. If you're happy with the current grid storage, you don't have to move your data, because the grid storage will still be supported.
+
+Contact us if you would like to learn more.
