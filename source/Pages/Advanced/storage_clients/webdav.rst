@@ -52,7 +52,7 @@ Listing
 
 To list directories, you can point a browser like Firefox to https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/. When the browser asks for a username and password, you can provide your Grid :abbr:`UI (User Interface)` (or :abbr:`CUA (SURFsara's Central User Administration)`) username and password. When you click on a listed file, it will be downloaded, when you're authorized to do so. When you're not authorized to access a URL, you may see some unexpected behaviour.
 
-You can also use text browsers like curl to list directories.
+You can also use command line web tools like curl to list directories.
 
 
 Creating directories
@@ -82,9 +82,9 @@ To copy a file from your local machine to dCache:
    $     https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/
    $# replace homer with your username, lsgrid with your VO and zap.tar with your local file
 
-The command will ask for the password of 'homer' on the command line. If you don't want to type the password each time, specify ``--netrc`` and store the password in the ``.netrc`` file in your home dir. Make sure it is not readable by others ($ chmod 600 .netrc). See 'man curl' for more details.
+The command will ask for the password of 'homer' on the command line. If you don't want to type the password each time, specify ``--netrc`` and store the password in the ``.netrc`` file in your home dir. Make sure it is not readable by others ($ chmod 600 .netrc). See ``man curl`` for more details.
 
-.. note:: It is possible to specify the password on the command line like this: ``--user homer:password``. However, for security reasons this should be avoided from share systems (like the :abbr:`UI (User Interface)`) because it allows other local users to read the password with the ``ps`` command.
+.. note:: It is possible to specify the password on the command line like this: ``--user homer:password``. However, for security reasons this should be avoided on shared systems (like the :abbr:`UI (User Interface)`) because it allows other local users to read the password with the ``ps`` command.
 
 If on your system there are no Grid :abbr:`CA (Certificate Authority)` certificates available in ``/etc/grid-security/certificates/``, you can install them by following these instructions: https://dist.eugridpma.info/distribution/igtf/, or you can specify ``--insecure`` to skip certificate checking (not recommended!).
 
