@@ -147,6 +147,8 @@ File properties and locality are not changed. A file that is stored on tape (nea
 With username/password authentication
 -------------------------------------
 
+.. code-block:: console
+
    $curl --capath /etc/grid-security/certificates/  --fail --location-trusted \
    $     --user homer \
    $     --request MOVE \
