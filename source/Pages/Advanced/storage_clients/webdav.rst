@@ -55,6 +55,22 @@ To list directories, you can point a browser like Firefox to https://webdav.grid
 You can also use command line web tools like curl to list directories.
 
 
+Querying file locality
+======================
+
+With curl and webdav, it's possible to find out whether a file is online or nearline (on tape). Here is an example with username/password authentication:
+
+.. code-block:: console
+
+   $echo -e '<?xml version="1.0"?>\n<a:propfind xmlns:a="DAV:"><a:prop><srm:FileLocality 
+   $         xmlns:srm="http://srm.lbl.gov/StorageResourceManager"/></a:prop></a:propfind>' \
+   $| curl --silent --fail --capath /etc/grid-security/certificates/ \
+   $       --user homer --request PROPFIND \
+   $       https://webdav.grid.sara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
+   $       --header "Content-Type: text/xml" --upload - \
+   $| xmllint -format -
+
+
 Creating directories
 ====================
 
