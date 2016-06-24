@@ -82,7 +82,7 @@ To copy a file from your local machine to dCache:
    $     https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/
    $# replace homer with your username, lsgrid with your VO and zap.tar with your local file
 
-The command will ask for the password of 'homer' on the command line. If you don't want to type the password each time, specify ``--netrc`` and store the password in the ``.netrc`` file in your home dir. Make sure it is not readable by others ($ chmod 600 .netrc). See ``man curl`` for more details.
+The command will ask for the password of 'homer' on the command line. If you don't want to type the password each time, specify ``--netrc`` and store the password in the ``.netrc`` file in your home dir. Make sure it is not readable by others (``chmod 600 .netrc``). See ``man curl`` for more details.
 
 .. note:: It is possible to specify the password on the command line like this: ``--user homer:password``. However, for security reasons this should be avoided on shared systems (like the :abbr:`UI (User Interface)`) because it allows other local users to read the password with the ``ps`` command.
 
