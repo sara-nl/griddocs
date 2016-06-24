@@ -152,7 +152,7 @@ With username/password authentication
    $curl --capath /etc/grid-security/certificates/  --fail --location-trusted \
    $     --user homer \
    $     --request MOVE \
-   $     https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/oldfile \
+   $     https://webdav.grid.sara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/oldfile \
    $     --header "Destination:https://webdav.grid.sara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/newfile"
 
 Please note the differences with the previous example:
