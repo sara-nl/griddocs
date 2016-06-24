@@ -153,7 +153,12 @@ With username/password authentication
    $     --user homer \
    $     --request MOVE \
    $     https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/oldfile \
-   $     --header "Destination:https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/newfile"
+   $     --header "Destination:https://webdav.grid.sara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/newfile"
+
+Please note the differences with the previous example:
+
+* ``--location-trusted`` will send the username and password also to the destination server.
+* Port 2880 is used for username/password authentication.
 
 
 Removing data
