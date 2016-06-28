@@ -256,8 +256,8 @@ An alternative way to query an MD5 checksum:
    $echo -e '<?xml version="1.0"?>\n<a:propfind xmlns:a="DAV:"><a:prop><srm:Checksums
    $         xmlns:srm="http://www.dcache.org/2013/webdav"/></a:prop></a:propfind>' \
    $| curl --silent --fail --capath /etc/grid-security/certificates/ \
-   $       --user onno --request PROPFIND \
-   $       https://pn1.cdi.surfsara.nl:2880/cdi/users/onno/files/Photos/TheRenamedSquirrel.jpg \
+   $       --user homer --request PROPFIND \
+   $       https://pn1.cdi.surfsara.nl:2880/cdi/users/homer/myfile \
    $       --header "Content-Type: text/xml" --upload - \
    $| xmllint -format - \
    $| egrep -o '<ns1:Checksums>md5=.*</ns1:Checksums>' \
