@@ -273,7 +273,7 @@ An alternative way to query an MD5 checksum:
    $| base64 --decode \
    $| xxd -p
 
-Queries can be combined to improve efficiency:
+Queries can be combined to reduce transaction overhead:
 
 .. code-block:: console
 
