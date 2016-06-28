@@ -235,7 +235,7 @@ The dCache grid storage at SURFsara is configured to use only Adler32 checksums.
 
 .. code-block:: console
 
-   $curl --head --header 'Want-Digest: ADLER32' --silent --fail --capath /etc/grid-security/certificates/ \
+   $curl --head --header 'Want-Digest: MD5' --silent --fail --capath /etc/grid-security/certificates/ \
    $     --user homer \
    $     https://pn1.cdi.surfsara.nl:2880/cdi/users/homer/myfile \
    $| grep -o 'md5=.*' \
