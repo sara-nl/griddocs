@@ -55,8 +55,11 @@ To list directories, you can point a browser like Firefox to https://webdav.grid
 You can also use command line web tools like curl to list directories.
 
 
-Querying file locality
-======================
+Querying file properties
+========================
+
+Locality
+--------
 
 With curl and webdav, it's possible to find out whether a file is online or nearline (on tape). Here is an example with username/password authentication:
 
@@ -70,6 +73,78 @@ With curl and webdav, it's possible to find out whether a file is online or near
    $       --header "Content-Type: text/xml" --upload - \
    $| xmllint -format -
 
+Adler32 checksums
+-----------------
+
+With webdav it is possible to get the checksum for a file. This works both with username/password and proxy authentication, provided you use the correct port (443 or 2880 for username/password, 2882 for proxy authentication). This has been tested with the dCache grid storage. dCache uses Adler32 checksums by default.
+
+.. code-block:: console
+
+   $curl --head --header 'Want-Digest: ADLER32' --silent --fail --capath /etc/grid-security/certificates/ \
+   $     --user homer \
+   $     https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/home/myfile \
+   $| grep 'adler32='
+
+.. code-block:: console
+
+   Digest: adler32=46fd067a
+
+
+Here is an alternative way to query an Adler32 checksum:
+
+.. code-block:: console
+
+   $echo -e '<?xml version="1.0"?>\n<a:propfind xmlns:a="DAV:"><a:prop><srm:Checksums
+   $         xmlns:srm="http://www.dcache.org/2013/webdav"/></a:prop></a:propfind>' \
+   $| curl --silent --fail --capath /etc/grid-security/certificates/ \
+   $       --user homer --request PROPFIND \
+   $       https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/myfile \
+   $       --header "Content-Type: text/xml" --upload - \
+   $| xmllint -format - \
+   $| egrep -o '<ns1:Checksums>.*</ns1:Checksums>'
+
+Here is an example of the expected output:
+
+.. code-block:: console
+
+   $<ns1:Checksums>adler32=46fd067a</ns1:Checksums>
+
+MD5 checksums
+-------------
+
+The dCache grid storage at SURFsara is configured to use only Adler32 checksums. Some storage services, for instance our new facility Central Data Infrastructure, may use MD5 checksums. This complicates things a bit because they are base64 encoded, as prescribed by RFC 3230
+
+.. code-block:: console
+
+   $curl --head --header 'Want-Digest: ADLER32' --silent --fail --capath /etc/grid-security/certificates/ \
+   $     --user homer \
+   $     https://pn1.cdi.surfsara.nl:2880/cdi/users/homer/myfile \
+   $| grep -o 'md5=.*' \
+   $| sed -e 's/md5=//' -e 's/[\r\n]*$//' \
+   $| base64 --decode \
+   $| xxd -p
+
+The output should look similar to this:
+
+.. code-block:: console
+
+   0f43fa5a262c476393018f7329080fa7
+
+An alternative way to query an MD5 checksum:
+
+.. code-block:: console
+
+   $echo -e '<?xml version="1.0"?>\n<a:propfind xmlns:a="DAV:"><a:prop><srm:Checksums
+   $         xmlns:srm="http://www.dcache.org/2013/webdav"/></a:prop></a:propfind>' \
+   $| curl --silent --fail --capath /etc/grid-security/certificates/ \
+   $       --user onno --request PROPFIND \
+   $       https://pn1.cdi.surfsara.nl:2880/cdi/users/onno/files/Photos/TheRenamedSquirrel.jpg \
+   $       --header "Content-Type: text/xml" --upload - \
+   $| xmllint -format - \
+   $| egrep -o '<ns1:Checksums>md5=.*</ns1:Checksums>' \
+   $| sed -e 's#<ns1:Checksums>[^=]*=\([^<]*\)</ns1:Checksums>#\1#' \
+   $| base64 --decode \
+   $| xxd -p
 
 Creating directories
 ====================
