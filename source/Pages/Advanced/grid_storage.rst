@@ -244,6 +244,7 @@ The :ref:`dCache` storage at SURFsara consists of magnetic tape storage and hard
   | ONLINE_AND_NEARLINE | The file is both on disk and on tape                            |
   +---------------------+-----------------------------------------------------------------+
 
+There are some more file statuses. See the `SRMv2 specifications <https://sdm.lbl.gov/srm-wg/doc/SRM.v2.2.html#_Toc241633052>`_ for a full list.
 
 .. _staging-single-file:
 
