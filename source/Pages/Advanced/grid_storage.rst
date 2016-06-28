@@ -251,7 +251,7 @@ There are some more file statuses. See the `SRMv2 specifications <https://sdm.lb
 Staging a single file
 =====================
 
-.. note:: For staging operations you need to have either a valid proxy, see :ref:`startgridsession`, or use :ref:`webdav` with username/password authentication.
+.. note:: For the staging examples below, you need a valid proxy, see :ref:`startgridsession`.
 
 Here is an example of how to stage a single file:
 
