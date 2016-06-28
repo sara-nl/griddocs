@@ -191,6 +191,8 @@ With curl and webdav, it's possible to find out whether a file is online or near
    $       --header "Content-Type: text/xml" --upload - \
    $| xmllint -format -
 
+See :ref:`staging` for more information about file locality.
+
 Adler32 checksums
 -----------------
 
