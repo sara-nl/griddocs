@@ -182,8 +182,9 @@ With curl and webdav, it's possible to find out whether a file is online or near
 
 .. code-block:: console
 
-   $echo -e '<?xml version="1.0"?>\n<a:propfind xmlns:a="DAV:"><a:prop><srm:FileLocality 
-   $         xmlns:srm="http://srm.lbl.gov/StorageResourceManager"/></a:prop></a:propfind>' \
+   $echo -e '<?xml version="1.0"?>\n
+   $         <a:propfind xmlns:a="DAV:"><a:prop><srm:FileLocality xmlns:srm="http://srm.lbl.gov/StorageResourceManager"/></a:prop>
+   $         </a:propfind>' \
    $| curl --silent --fail --capath /etc/grid-security/certificates/ \
    $       --user homer --request PROPFIND \
    $       https://webdav.grid.sara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
@@ -213,8 +214,10 @@ Here is an alternative way to query an Adler32 checksum:
 
 .. code-block:: console
 
-   $echo -e '<?xml version="1.0"?>\n<a:propfind xmlns:a="DAV:"><a:prop><srm:Checksums
-   $         xmlns:srm="http://www.dcache.org/2013/webdav"/></a:prop></a:propfind>' \
+   $echo -e '<?xml version="1.0"?>\n
+   $         <a:propfind xmlns:a="DAV:">
+   $         <a:prop><srm:Checksums xmlns:srm="http://www.dcache.org/2013/webdav"/></a:prop>
+   $         </a:propfind>' \
    $| curl --silent --fail --capath /etc/grid-security/certificates/ \
    $       --user homer --request PROPFIND \
    $       https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/myfile \
@@ -253,8 +256,10 @@ An alternative way to query an MD5 checksum:
 
 .. code-block:: console
 
-   $echo -e '<?xml version="1.0"?>\n<a:propfind xmlns:a="DAV:"><a:prop><srm:Checksums
-   $         xmlns:srm="http://www.dcache.org/2013/webdav"/></a:prop></a:propfind>' \
+   $echo -e '<?xml version="1.0"?>\n
+   $         <a:propfind xmlns:a="DAV:">
+   $         <a:prop><srm:Checksums xmlns:srm="http://www.dcache.org/2013/webdav"/></a:prop>
+   $         </a:propfind>' \
    $| curl --silent --fail --capath /etc/grid-security/certificates/ \
    $       --user homer --request PROPFIND \
    $       https://pn1.cdi.surfsara.nl:2880/cdi/users/homer/myfile \
@@ -265,6 +270,18 @@ An alternative way to query an MD5 checksum:
    $| base64 --decode \
    $| xxd -p
 
+Queries can be combined to improve efficiency:
+
+.. code-block::console
+
+   $echo -e '<?xml version="1.0"?>\n
+   $         <a:propfind xmlns:a="DAV:">
+   $         <a:prop><srm:RetentionPolicy xmlns:srm="http://srm.lbl.gov/StorageResourceManager"/></a:prop>
+   $         <a:prop><srm:AccessLatency xmlns:srm="http://srm.lbl.gov/StorageResourceManager"/></a:prop>
+   $         <a:prop><srm:FileLocality xmlns:srm="http://srm.lbl.gov/StorageResourceManager"/></a:prop>
+   $         <a:prop><srm:Checksums xmlns:srm="http://www.dcache.org/2013/webdav"/></a:prop>
+   $         </a:propfind>' \
+   $| curl ...
 
 ================
 Graphical access
