@@ -272,7 +272,7 @@ An alternative way to query an MD5 checksum:
 
 Queries can be combined to improve efficiency:
 
-.. code-block::console
+.. code-block:: console
 
    $echo -e '<?xml version="1.0"?>\n
    $         <a:propfind xmlns:a="DAV:">
