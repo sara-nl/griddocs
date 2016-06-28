@@ -85,6 +85,8 @@ With webdav it is possible to get the checksum for a file. This works both with 
    $     https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/home/myfile \
    $| grep 'adler32='
 
+Here an example output:
+
 .. code-block:: console
 
    Digest: adler32=46fd067a
@@ -112,7 +114,7 @@ Here is an example of the expected output:
 MD5 checksums
 -------------
 
-The dCache grid storage at SURFsara is configured to use only Adler32 checksums. Some storage services, for instance our new facility Central Data Infrastructure, may use MD5 checksums. This complicates things a bit because they are base64 encoded, as prescribed by RFC 3230
+The dCache grid storage at SURFsara is configured to use only Adler32 checksums. Some storage services, for instance our new facility Central Data Infrastructure, may use MD5 checksums. This complicates things a bit because they are base64 encoded, as prescribed by RFC 3230.
 
 .. code-block:: console
 
