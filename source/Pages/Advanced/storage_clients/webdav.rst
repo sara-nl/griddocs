@@ -183,7 +183,8 @@ With curl and webdav, it's possible to find out whether a file is online or near
 .. code-block:: console
 
    $echo -e '<?xml version="1.0"?>\n
-   $         <a:propfind xmlns:a="DAV:"><a:prop><srm:FileLocality xmlns:srm="http://srm.lbl.gov/StorageResourceManager"/></a:prop>
+   $         <a:propfind xmlns:a="DAV:">
+   $         <a:prop><srm:FileLocality xmlns:srm="http://srm.lbl.gov/StorageResourceManager"/></a:prop>
    $         </a:propfind>' \
    $| curl --silent --fail --capath /etc/grid-security/certificates/ \
    $       --user homer --request PROPFIND \
