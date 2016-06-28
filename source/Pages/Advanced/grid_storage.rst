@@ -28,7 +28,7 @@ To use the Grid storage you must:
 * Have :ref:`a personal Grid certificate <get-grid-certificate>` [1]_
 * Be member of :ref:`a VO <join-vo>` for which we have allocated storage space.
 
-You can access the Grid storage with Grid :ref:`storage-clients`, through interfaces that speak protocols like :abbr:`SRM (Storage Resource Management)`, :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`, :abbr:`GSIdCap (dCache Access Protocol with Grid auhthentication)` or :abbr:`WebDAV (Web Distributed Authoring and Versioning)`. With these storage clients you can:
+You can access the Grid storage with Grid :ref:`storage-clients`, through interfaces that speak protocols like :abbr:`SRM (Storage Resource Management)`, :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`, :abbr:`GSIdCap (dCache Access Protocol with Grid auhthentication)` or :abbr:`Webdav (Web Distributed Authoring and Versioning)`. With these storage clients you can:
 
 * list directories and files
 * read (download) files
@@ -36,7 +36,7 @@ You can access the Grid storage with Grid :ref:`storage-clients`, through interf
 * delete files or directories
 * :ref:`stage` files (copy them from tape to disk for faster reading)
 
-.. [1] It is technically possible to access the dCache Grid storage without certificate, by using :abbr:`WebDAV (Web Distributed Authoring and Versioning)` with username/password authentication. We don't recommend this: authentication with username/password is less secure, and WebDAV is slower than :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`.
+.. [1] It is possible to access the dCache Grid storage without certificate, by using :abbr:`Webdav (Web Distributed Authoring and Versioning)` with username/password authentication. However, authentication with username/password is less secure, and Webdav is not as fast as :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`.
 
 
 .. _storage-types:
@@ -87,7 +87,7 @@ Examples:
 	# lsgrid user homer stores the file zap.tar on dCache storage
 	gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 	
-	# same, but with a WebDAV TURL
+	# same, but with a Webdav TURL
 	https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 	
 	# lsgrid user homer stores the file zap.tar on DPM storage at lumc cluster
@@ -148,7 +148,7 @@ dCache
 +------------+--------------------------------------+--------------------------------------+
 |            | https://webdav.grid.sara.nl:443      |                                      |
 +            +--------------------------------------+                                      +
-| WebDAV     | https://webdav.grid.sara.nl:2880     | See :ref:`webdav` for details        |
+| Webdav     | https://webdav.grid.sara.nl:2880     | See :ref:`webdav` for details        |
 +            +--------------------------------------+                                      +
 |            | https://webdav.grid.sara.nl:2882     |                                      |
 +------------+--------------------------------------+--------------------------------------+
@@ -189,7 +189,7 @@ In this section we will show the common commands to use the various storage clie
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
   |                     |             protocols            |                                       |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
-  | Client              | SRM | GridFTP | GSIdCap | WebDAV | 3rd party | Speed | Tape control [1]_ |
+  | Client              | SRM | GridFTP | GSIdCap | Webdav | 3rd party | Speed | Tape control [1]_ |
   +=====================+=====+=========+=========+========+===========+=======+===================+
   | :ref:`uberftp`      | --  | yes     | --      | --     | --        | high  | --                |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
