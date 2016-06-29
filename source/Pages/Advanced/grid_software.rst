@@ -36,16 +36,21 @@ In this example, we will distribute a few small files to all nodes in the Life S
 Softdrive works by logging in the software distribution node, and putting your files there. Next, you tell the software distribution system that you are ready installing files. These files will be made available on all nodes in the :ref:`lsg` and on all other nodes on the :ref:`dutch-grid`.
 
 
-CVMFS group membership
-----------------------
+Access
+------
 
-To distribute your files using Softdrive, you must be a member of the group ``softdrive``. If you are not a member yet, send an e-mail to helpdesk@surfsara.nl with a membership request.
+Users of the National e-Infrastructure are entitled to use Softdrive
+without the need for a separate resource request.  You can request
+access by sending an e-mail with your current project allocation id to
+helpdesk@surfsara.nl.
 
 
 Logging in on the softdrive 
 ---------------------------
 
-After you have been added to the ``softdrive`` group, you can log in on the software distribution node, using your Grid :abbr:`UI (User Interface)` username and password:
+Once access has been arranged, you can log in on the software
+distribution node, using your Grid :abbr:`UI (User Interface)`
+username and password:
 
 .. code-block:: console
 
