@@ -17,7 +17,9 @@ In this page we will talk about the options to run your software on the Grid wor
 Softdrive 
 =========
 
-Softdrive is the service that allows you to install software in a central place and distribute it *automagically* on the Grid. You install the software once, and it will be available on all clusters, to all users. This means that you no longer need to supply your software in your *input sandbox*, or download your software in your job.
+Softdrive is the service that allows you to install software in a central place and distribute it *automagically* on the Grid. You install the software once, and it will be available on all clusters, to all users. This means that you no longer need to supply your software in your *input sandbox*, or download your software in your job. 
+
+This page is about using Softdrive on the grid infrastructure. The use of Softdrive is however not limited to grid alone, as it can equally well be applied to your own clusters or in `cloud environments`_. 
 
 
 .. _cvmfs:
@@ -25,7 +27,7 @@ Softdrive is the service that allows you to install software in a central place 
 CVMFS
 =====
 
-Softdrive is using the CVMFS (short for CernVM File System) tool on the background. CVMFS is a network file system based on HTTP and optimized to deliver experiment software in a fast, scalable, and reliable way. 
+Softdrive is using the `CVMFS`_ (short for CernVM File System) tool on the background. CVMFS is a network file system based on HTTP and optimized to deliver experiment software in a fast, scalable, and reliable way. 
 
 
 Quickstart
@@ -182,3 +184,5 @@ At the moment it is not possible to run Docker containers on the :ref:`dutch-gri
 .. Links:
 
 .. _`Anaconda python`: https://www.continuum.io/downloads
+.. _`CVMFS`: https://cernvm.cern.ch/portal/filesystem
+.. _`in cloud environments`: https://doc.hpccloud.surfsara.nl/softdrive
