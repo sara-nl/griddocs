@@ -175,10 +175,12 @@ Deleting a file from dCache:
 Querying file properties
 ========================
 
+With curl and the dCache webdav door, it's possible to request file properties. This works both with username/password and proxy authentication, provided you use the correct port (443 or 2880 for username/password, 2882 for proxy authentication). 
+
 Locality
 --------
 
-With curl and webdav, it's possible to find out whether a file is online or nearline (on tape). Here is an example with username/password authentication:
+This example shows how to query the file locality: whether a file is online or nearline (on tape). This example uses username/password authentication:
 
 .. code-block:: console
 
@@ -197,7 +199,9 @@ See :ref:`staging` for more information about file locality.
 Adler32 checksums
 -----------------
 
-With webdav it is possible to get the checksum for a file. This works both with username/password and proxy authentication, provided you use the correct port (443 or 2880 for username/password, 2882 for proxy authentication). This has been tested with the dCache grid storage. dCache uses Adler32 checksums by default.
+This example shows how to get the checksum of a stored file. dCache uses Adler32 checksums by default. 
+
+The returned checksum comes from the dCache database, so it is a very efficient way to check your files. dCache does checksum checks on most operations, so you can safely assume the checksum matches the stored file.
 
 .. code-block:: console
 
@@ -237,7 +241,7 @@ Here is an example of the expected output:
 MD5 checksums
 -------------
 
-The dCache grid storage at SURFsara is configured to use only Adler32 checksums. Some storage services may use MD5 checksums, for instance our new facility Central Data Infrastructure. This complicates things a bit because they are base64 encoded, as prescribed by RFC 3230.
+The dCache grid storage at SURFsara is configured to use only Adler32 checksums. Some other storage services may use MD5 checksums, for instance our new facility Central Data Infrastructure. This complicates things a bit because they are base64 encoded, as prescribed by RFC 3230.
 
 .. code-block:: console
 
