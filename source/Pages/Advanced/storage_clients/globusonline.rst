@@ -78,7 +78,9 @@ By clicking the button "Endpoints" you can search in a list with all endpoints, 
 Data transfer workflow
 ======================
 
-.. sidebar:: Interacting with Globusonline is possible via the Web Interface or with a python API. The examples here show the webinterface transfers. 
+.. sidebar:: using Globusonline
+
+	Interacting with Globusonline is possible via the Web Interface or with a python API. The examples here show the webinterface transfers. 
 
 Activating endpoints
 =====================
