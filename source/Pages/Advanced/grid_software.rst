@@ -183,6 +183,8 @@ At the moment it is not possible to run Docker containers on the :ref:`dutch-gri
 
 .. Links:
 
-.. _`Anaconda python`: https://www.continuum.io/downloads
-.. _`CVMFS`: https://cernvm.cern.ch/portal/filesystem
-.. _`in cloud environments`: https://doc.hpccloud.surfsara.nl/softdrive
+.. _`Anaconda python`: https://www.continuum.io/downloads  
+
+.. _`CVMFS`: https://cernvm.cern.ch/portal/filesystem  
+
+.. _`in cloud environments`: https://doc.hpccloud.surfsara.nl/softdrive  
