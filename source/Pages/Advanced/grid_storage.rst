@@ -189,13 +189,13 @@ In this section we will show the common commands to use the various storage clie
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
   |                     |             protocols            |                                       |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
-  | Client              | SRM | GridFTP | GSIdCap | Webdav | 3rd party | Speed | Tape control [1]_ |
+  | Client              | SRM | GridFTP | GSIdCap | Webdav | 3rd party | Speed | Tape control [2]_ |
   +=====================+=====+=========+=========+========+===========+=======+===================+
   | :ref:`uberftp`      | --  | yes     | --      | --     | --        | high  | --                |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
   | :ref:`globus`       | --  | yes     | --      | --     | --        | high  | --                |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
-  | :ref:`srm`          | yes | [2]_    | [2]_    | [2]_   | --        |       | yes               |
+  | :ref:`srm`          | yes | [3]_    | [3]_    | [3]_   | --        |       | yes               |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
   | :ref:`gfal`         | yes | yes     | --      | --     | --        |       | yes               |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
@@ -205,12 +205,13 @@ In this section we will show the common commands to use the various storage clie
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
   | :ref:`globusonline` | --  | yes     | --      | --     | yes       | high  | --                |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
-  | :ref:`lcg-lfn-lfc`  | yes | [2]_    | --      | --     | --        |       | --                |
+  | :ref:`lcg-lfn-lfc`  | yes | [3]_    | --      | --     | --        |       | --                |
   | (not recommended)   |     |         |         |        |           |       |                   |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
 
-.. [1] Examples of tape control: staging a file from tape to disk, or get its locality (tape or disk).
-.. [2] SRM and LCG commands use the :abbr:`SRM (Storage Resource Management)` protocol for metadata level operations and switch to another protocol like GridFTP for file transfers. This may cause protocol overhead. For example, authentication needs to be done twice: once for each protocol.
+.. [2] Examples of tape control: staging a file from tape to disk, or get its locality (tape or disk).
+
+.. [3] SRM and LCG commands use the :abbr:`SRM (Storage Resource Management)` protocol for metadata level operations and switch to another protocol like GridFTP for file transfers. This may cause protocol overhead. For example, authentication needs to be done twice: once for each protocol.
 
 .. toctree::
    :hidden:

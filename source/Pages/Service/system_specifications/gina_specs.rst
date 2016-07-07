@@ -24,13 +24,13 @@ Quick summary
 Gina cluster                 Capacity                                             
 ============================ =====================================================
 Operating system             Linux CentOS 6.x 64bit                              
-Total number of cores        5600 Xeon cores at 2.2 to 2.6 GHz                   
-Total memory                 41TB                                                 
-Total scratch space          2100TB                                              
+Total number of cores        4640 Xeon cores at 2.2 to 2.6 GHz                   
+Total memory                 37TB                                                 
+Total scratch space          2032TB                                              
 Network backbone             Juniper Q-Fabric Network Fabric which also connects the Grid storage 
 ============================ =====================================================
 
-``Last update: January 2016``
+``Last update: Juli 2016``
 
 .. _gina-specs-network:
 
@@ -82,17 +82,6 @@ Worker Nodes ``v37-{01-12}``, ``v33-{01-06}``::
   *  Scratch per core: ~200GB  
   *  RAM per core: 8GB  
 
-Worker Nodes ``am95-{01-48}``, ``v33-{17-48}``::  
-
-  *  Dell M610  
-  *  2x Intel(R) Xeon(R) CPU E5649  @ 2.53GHz (12 cores)  
-  *  48GB RAM  
-  *  ~850 GB scratch  
-  *  Type: Nehalem architecture /w Westmere-EP cores (2011)  
-  *  Number of nodes: 80  
-  *  Total cores of this type: 960  
-  *  Scratch per core: ~70GB  
-  *  RAM per core: 4GB  
 
 
 Service nodes

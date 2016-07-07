@@ -47,7 +47,7 @@ In addition, the Grid's interconnected clusters each have a storage server, call
 
 In short, as a user you submit your jobs to execute your calculation or analysis code and to handle your input and output data. The :abbr:`WMS (Workload Management System)` distributes the jobs to the clusters and node that are most suitable for these jobs. When the jobs are finished, you can collect the results from the :abbr:`SE (Storage Element)` that was selected to hold the output data or keep them for later use on the central Grid storage facility.
 
-.. comment:: https://www.websequencediagrams.com/?lz=dGl0bGUgSm9iIGZsb3cKCnBhcnRpY2lwYW50IFVzZXIgSW50ZXJmYWNlAA4NV29ya2xvYWQgTWFuYWdlbWVudCBTeXN0ZW0ANQ1Db21wdXRlIEVsAB4FADIRZXIgTm9kAE0OU3RvcmFnACoKCm5vdGUgb3ZlcgCBAg86IFN1bWJpdCBqb2IKAIEeDiAtPgCBCBs6AIFrBSsgSW5wdXQgc2FuZGJveABcCwAeHFNlbGVjdCBiZXN0IENFCgCBbhogLT4AgW8QAFggAB4RU2NoZWR1bGUAgV0FAII9DwCBWwgAgjwHAIEwJAAiCVN0YXIAgjEGAIJeDwBEEVJlYWQgZmlsZXMgADUYRXhlY3V0ZSB0YXNrAIILBQCDTgcgLT4AgzwQOiBXcml0ZQAyH0ZpbmlzaACDUQUAQA8Agj8RT3V0AIM3DACCDBcAg2ocbG9nICsAOBAAhFgaQ29sAIN7BW8AdAUAg2AfAIUfEACBHw8&s=roundgreen
+.. comment: Image source at https://www.websequencediagrams.com/?lz=dGl0bGUgSm9iIGZsb3cKCnBhcnRpY2lwYW50IFVzZXIgSW50ZXJmYWNlAA4NV29ya2xvYWQgTWFuYWdlbWVudCBTeXN0ZW0ANQ1Db21wdXRlIEVsAB4FADIRZXIgTm9kAE0OU3RvcmFnACoKCm5vdGUgb3ZlcgCBAg86IFN1bWJpdCBqb2IKAIEeDiAtPgCBCBs6AIFrBSsgSW5wdXQgc2FuZGJveABcCwAeHFNlbGVjdCBiZXN0IENFCgCBbhogLT4AgW8QAFggAB4RU2NoZWR1bGUAgV0FAII9DwCBWwgAgjwHAIEwJAAiCVN0YXIAgjEGAIJeDwBEEVJlYWQgZmlsZXMgADUYRXhlY3V0ZSB0YXNrAIILBQCDTgcgLT4AgzwQOiBXcml0ZQAyH0ZpbmlzaACDUQUAQA8Agj8RT3V0AIM3DACCDBcAg2ocbG9nICsAOBAAhFgaQ29sAIN7BW8AdAUAg2AfAIUfEACBHw8&s=roundgreen
 
 .. image:: /Images/job_flow.png
 
