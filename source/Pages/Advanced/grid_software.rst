@@ -155,7 +155,7 @@ Note here! The installer will ask you to which location to install the software.
     [/home/homer/anaconda2] >>> /cvmfs/softdrive.nl/homer/anaconda-2-2.4.0/
     ...
 
-That was it! You can now publish the software that is installed in your ``/cvmfs/softdrive.nl/homer/anaconda-2-2.4.0 directory``. To do so, run this command in Softdrive:
+That was it! You can now publish the software that is installed in your ``/cvmfs/softdrive.nl/homer/anaconda-2-2.4.0`` directory. To do so, run this command in Softdrive:
 
 .. code-block:: console  
 
