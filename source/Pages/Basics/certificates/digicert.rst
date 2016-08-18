@@ -18,7 +18,14 @@ Obtain a *DigiCert* certificate
 
 DigiCert CA allows you to get your Grid certificate *instantly* from the GEANT Trusted Certificate Service (former was the Terena portal), by using your institutional login and SURFconext. 
 
-* Open a Firefox browser in your laptop or in your :ref:`UI account <get-ui-account>`
+* Open a Firefox browser in your laptop or in your :ref:`UI account <get-ui-account>` 
+  To open the firefox browser from the UI, open a terminal and first connect to the UI with the following command
+ 
+   .. code-block:: console
+ 
+      $ssh -X homer@ui.grid.sara.nl # replace "homer" with your username! 
+      $firefox &
+
 * Access the `DigiCert portal`_
 * Select your institution from the list and login with your account
 * Request a so called Grid certificate. Select: **Product:** ``Grid Premium``
@@ -35,7 +42,11 @@ Once finished, you will have a Grid certificate automatically stored in your bro
 ==========================================
 Install a *DigiCert* certificate on the UI
 ==========================================
+Certificates can be stored in different formats. Different systems use different formats. The two important formats are:
 
+    *PEM: stores keys and certificates in separate ascii-files; this format is used by the Grid middleware and storage programs;
+    *PKCS12: stores keys and certificates in one binary file; this format is used by browsers.
+DigiCert creates PKCS12 files
 In order to install the *DigiCert* certificate on the :abbr:`UI (User Interface)`, you need to export it first from your browser, copy it to your :ref:`UI account <get-ui-account>` and convert it to .pem format. This section shows you how to do this.
 
 Export certificate from browser
