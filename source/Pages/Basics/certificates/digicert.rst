@@ -68,6 +68,7 @@ Store the certificate
   .. code-block:: console
 
      $mkdir $HOME/.globus
+     $cp browsercert.p12 $HOME/.globus
 
 Convert pkcs12 to PEM
 =====================
