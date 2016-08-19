@@ -4,11 +4,7 @@
 Prerequisites
 *************
 
-This section summarises all the preparations you need to make before you run a :ref:`simple job <first-grid-job>` on the Grid:
-
-.. contents:: 
-    :depth: 4
-
+This section summarises all the preparations you need to make before you run a :ref:`simple job <first-grid-job>` on the Grid.
 
 .. _preparation:
 
@@ -25,7 +21,6 @@ The Grid is a cooperation of many different clusters and research organisations.
 Your digital identity starts with a private key. **Only you** are allowed to know the contents of this key. Next, you need a Grid certificate, which is issued by a Certificate Authority (CA). The Grid certificate contains your name and your organisation, and it says that the person who owns the private key is really the person mentioned, and that this is certified by the Certificate Authority.
 
 Now this is your identity. Big international cooperations do not want to deal with every user individually. Instead, users become part of Virtual Organisations. To give an analogy, Grid certificate provides authentication (identitiy, e.g., like a passport) and the VO provides authorization (approval, e.g., like a visa). Individual clusters give access and compute time to certain VOs, and if you are a member of a :abbr:`VO (Virtual Organisation)`, you can run your jobs on that cluster.
-
 
 .. sidebar:: More about Grid Security?
 
@@ -47,8 +42,6 @@ These steps are described in this chapter.
 ============================
 Get a User Interface account
 ============================
-
-*In this section we will describe how to get a User Interface account.*
 
 The User Interface (UI) account will provide you with the environment to interact with the Grid. It is your access point to the Grid.  You log in to a UI machine via SSH. On this computer you can, amongst others, do the following things: access Grid resources, create proxies, submit jobs, compile programs or prototype your application. For debugging purposes it is good to know that the environment of a user interface is similar to a Grid worker node thus if your code runs on the user interface it will most likely run on a Grid worker node.
 
