@@ -44,7 +44,7 @@ Certificates can be stored in different formats for different systems. The two i
     
     *PKCS12: stores keys and certificates in one binary file; this format is used by browsers.
     
-DigiCert creates PKCS12 files. In order to install the *DigiCert* certificate on the :abbr:`UI (User Interface)`, you need to export it first from your browser, store it locally and convert it to .pem format. This section shows you how to do this.
+DigiCert creates PKCS12 files. In order to install the *DigiCert* certificate on the :abbr:`UI (User Interface)` (which the Grid middleware can identify), you need to export it first from your browser, store it locally and convert it to .pem format. This section shows you how to do this.
 
 Export certificate from browser
 ===============================
