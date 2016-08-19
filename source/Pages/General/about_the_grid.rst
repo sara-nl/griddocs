@@ -4,11 +4,7 @@
 About the Grid
 **************
 
-In this page you will find general information about the Grid, how it works and what it is suited for:
-
-.. contents:: 
-    :depth: 4
-
+In this page you will find general information about the Grid, how it works and what it is suited for.
 
 .. _intro-grid:
 
@@ -26,7 +22,7 @@ Grid computing is different from conventional high performance computing such as
 		.. seealso:: Check out our mooc video :ref:`mooc-cluster-computing`
 
 
-The Grid is especially suited, therefore, to applications that cannot be solved in a single cluster within a reasonable timeframe (and large storage facilities are required?). Common examples are the Large Hadron Collider (LHC) experiments, large-scale DNA analyses and Monte-Carlo simulations.
+The Grid is especially suited, therefore, to applications that cannot be solved in a single cluster within a reasonable timeframe and large storage facilities are required. Common examples are the Large Hadron Collider (LHC) experiments, large-scale DNA analyses and Monte-Carlo simulations.
 
 .. _use-or-not:
 
