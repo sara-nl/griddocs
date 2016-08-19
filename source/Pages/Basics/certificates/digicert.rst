@@ -6,9 +6,6 @@ DigiCert certificate
 
 This section describes how to obtain and install a DigiCert Grid certificate. This is a prerequisite to get started on the Grid.
 
-.. contents:: 
-    :depth: 4
-
 .. note::  If you need help to obtain your DigiCert certificate, please have a look to this `User Guide`_  or contact us at helpdesk@surfsara.nl.  
 
 
@@ -18,8 +15,7 @@ Obtain a *DigiCert* certificate
 
 DigiCert CA allows you to get your Grid certificate *instantly* from the GEANT Trusted Certificate Service (former was the Terena portal), by using your institutional login and SURFconext. 
 
-* Open a Firefox browser in your laptop or in your :ref:`UI account <get-ui-account>` 
-  To open the firefox browser from the UI, open a terminal and first connect to the UI with the following command
+* Open a Firefox browser in your :ref:`UI account <get-ui-account>`. To do so, open a terminal and first connect to the UI with the following command
  
    .. code-block:: console
  
@@ -42,12 +38,13 @@ Once finished, you will have a Grid certificate automatically stored in your bro
 ==========================================
 Install a *DigiCert* certificate on the UI
 ==========================================
-Certificates can be stored in different formats. Different systems use different formats. The two important formats are:
+Certificates can be stored in different formats for different systems. The two important formats are:
 
     *PEM: stores keys and certificates in separate ascii-files; this format is used by the Grid middleware and storage programs;
+    
     *PKCS12: stores keys and certificates in one binary file; this format is used by browsers.
-DigiCert creates PKCS12 files
-In order to install the *DigiCert* certificate on the :abbr:`UI (User Interface)`, you need to export it first from your browser, copy it to your :ref:`UI account <get-ui-account>` and convert it to .pem format. This section shows you how to do this.
+    
+DigiCert creates PKCS12 files. In order to install the *DigiCert* certificate on the :abbr:`UI (User Interface)`, you need to export it first from your browser, store it locally and convert it to .pem format. This section shows you how to do this.
 
 Export certificate from browser
 ===============================
@@ -61,29 +58,16 @@ You can export the certificate from the browser that you stored your certificate
 * Give it a name, e.g. ``browsercert`` and select the location to store it
 * Give a safe password and press ``Ok``
   
-The file ``browsercert.p12`` is now stored locally. Next, we will store it on the User Interface.
+The file ``browsercert.p12`` is now stored locally. 
 
-Copy certificate *.p12* file to the UI
-======================================
-
-* Open a terminal and connect to the User Interface with your personal :ref:`UI account <get-ui-account>`:
-
-  .. code-block:: console
-
-     $ssh homer@ui.grid.sara.nl # replace "homer" with your username!
+Store the certificate
+=====================
 
 * Create a ``$HOME/.globus`` directory in your :abbr:`UI (User Interface)` account:
 
   .. code-block:: console
 
      $mkdir $HOME/.globus
-
-* If you exported the certificate to your laptop, copy it from your local machine to your ``.globus`` directory on the :abbr:`UI (User Interface)`. If you exported your certificate from the :abbr:`UI (User Interface)` browser, you can skip this step: 
-
-  .. code-block:: console
-
-     [homer@localmachine]$scp /PATH-TO-P12-FILE/browsercert.p12 homer@ui.grid.sara.nl:~/.globus  # replace "homer" with your username!
-
 
 Convert pkcs12 to PEM
 =====================
@@ -126,6 +110,13 @@ The certificate and private key file should now be present in the ``.globus`` di
      -rw-r--r--      1 homer    homer     4499  May 10 13:47  usercert.pem
      -r--------      1 homer    homer      963  May 10 13:43  userkey.pem
 
+* The certificate can also be locally stored on your laptop. Open a new terminal on the laptop and give the following command:
+
+.. code-block:: console
+     [homer@localmachine]$mkdir $HOME/.globus
+     [homer@localmachine]$scp homer@ui.grid.sara.nl:~/.globus/browsercert.p12  $HOME/.globus  # replace "homer" with your username!
+     
+Repeat the same steps from "Execute the Store Convert pkcs12 to PEM" you performed on the User Interface on the laptop.
 
 .. _digicert_browser_install:
 
@@ -153,3 +144,10 @@ If you receive an SSL authentication error, then try repeating the steps careful
 
 .. _`User Guide`: https://ca.dutchgrid.nl/tcs/TCS2015help.pdf
 .. _`DigiCert portal`: https://digicert.com/sso
+
+
+     
+     * If you exported the certificate to your laptop, copy it from your local machine to your ``.globus`` directory on the :abbr:`UI (User Interface)`. If you exported your certificate from the :abbr:`UI (User Interface)` browser, you can skip this step: 
+
+ 
+
