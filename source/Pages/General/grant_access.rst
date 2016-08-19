@@ -4,11 +4,7 @@
 How to get access
 *****************
 
-In this page you will find general information about getting access to the Life Science Grid and the National Dutch Grid infrastructure:
-
-.. contents:: 
-    :depth: 4
-
+In this page you will find general information about getting access to the Life Science Grid and the National Dutch Grid infrastructure.
 
 .. _access-local-lsg:
 
@@ -24,9 +20,6 @@ Granting local access to a Life Science Grid (LSG) cluster enables you:
 
 * submitting jobs (:ref:`pbs`) directly to your local cluster
 * the possibility to scale up to other LSG clusters (see :ref:`access-grid`) 
-
-
-
 
 .. _access-grid:
 
