@@ -9,13 +9,12 @@ In this page we will talk about the Grid storage facilities, the tools to intera
 
 .. contents:: 
     :depth: 4
-
-
+    
 ====================
 About Grid storage
 ====================
 
-Each cluster on the Grid is equipped with a Storage Element or SE where data is stored. The Grid storage is useful for applications that handle large amount of data that can not be sent with the :ref:`job Sandbox <job-lifecycle>` or stored in a :ref:`pilot job database <pilotjob-db>`.
+Each cluster on the Grid is equipped with a Storage Element (SE) where data is stored. The Grid storage is useful for applications that handle large amount of data that can not be sent with the :ref:`job Sandbox <job-lifecycle>` or stored in a :ref:`pilot job database <pilotjob-db>`.
 
 You can interact with the Grid storage from the :abbr:`UI (User Interface)` or from a Worker Node, within your running job. The scripts that can access the Grid storage can be submitted from:
 
@@ -28,6 +27,29 @@ To use the Grid storage you must:
 * Have :ref:`a personal Grid certificate <get-grid-certificate>` [1]_
 * Be member of :ref:`a VO <join-vo>` for which we have allocated storage space.
 
+.. _storage-types:
+
+Storage types
+=============
+
+There are two storage types available on the Dutch Grid sites: 
+
+* The :ref:`dCache` storage element located at SURFsara and accessible from *any* Grid site.
+* The :ref:`DPM` storage elements located at each :ref:`LSG cluster <lsg-clusters>` and accessible *only* by the :ref:`lsg` users.
+
+dCache
+======
+
+The storage element located at SURFsara is accessible from *any* Grid cluster or :abbr:`UI (User Interface)`. It uses the `dCache system`_ for storing and retrieving huge amounts of data, distributed among a large number of server nodes. It consists of magnetic tape storage and hard disk storage and both are addressed by a common file system. See :ref:`dCache-specs` for details about our dCache instance.
+
+DPM
+===
+
+The storage elements located at the various :ref:`Life Science Grid clusters <life-science-clusters>` are accessible *only* by the :abbr:`LSG (Life Science Grid)` users. The :abbr:`LSG (Life Science Grid)` clusters have local storage that uses DPM (short for Disk Pool Manager).
+
+
+.. note:: The :abbr:`DPM (Disk Pool Manager)` storage is only disk storage and does not support tape back-end. In opposite, the dCache central storage has both disk and tape.
+
 You can access the Grid storage with Grid :ref:`storage-clients`, through interfaces that speak protocols like :abbr:`SRM (Storage Resource Management)`, :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`, :abbr:`GSIdCap (dCache Access Protocol with Grid auhthentication)` or :abbr:`Webdav (Web Distributed Authoring and Versioning)`. With these storage clients you can:
 
 * list directories and files
@@ -37,36 +59,6 @@ You can access the Grid storage with Grid :ref:`storage-clients`, through interf
 * :ref:`stage` files (copy them from tape to disk for faster reading)
 
 .. [1] It is possible to access the dCache Grid storage without certificate, by using :abbr:`Webdav (Web Distributed Authoring and Versioning)` with username/password authentication. However, authentication with username/password is less secure, and Webdav is not as fast as :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`.
-
-
-.. _storage-types:
-
-=============
-Storage types
-=============
-
-There are two storage types available on the Dutch Grid sites: 
-
-* The :ref:`dCache` storage element located at SURFsara and accessible from *any* Grid site.
-* The :ref:`DPM` storage elements located at each :ref:`LSG cluster <lsg-clusters>` and accessible *only* by the :ref:`lsg` users.
-
-
-.. _dCache:
-
-dCache
-======
-
-The storage element located at SURFsara is accessible from *any* Grid cluster or :abbr:`UI (User Interface)`. It uses the `dCache system`_ for storing and retrieving huge amounts of data, distributed among a large number of server nodes. It consists of magnetic tape storage and hard disk storage and both are addressed by a common file system. See :ref:`dCache-specs` for details about our dCache instance.
-
-.. _dpm:
-
-DPM
-===
-
-The storage elements located at the various :ref:`Life Science Grid clusters <life-science-clusters>` are accessible *only* by the :abbr:`LSG (Life Science Grid)` users. The :abbr:`LSG (Life Science Grid)` clusters have local storage that uses DPM (short for Disk Pool Manager).
-
-
-.. note:: The :abbr:`DPM (Disk Pool Manager)` storage is only disk storage and does not support tape back-end. In opposite, the dCache central storage has both disk and tape.
 
 
 .. _file-id:
