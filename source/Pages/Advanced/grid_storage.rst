@@ -8,7 +8,7 @@ Grid storage
 In this page we will talk about the Grid storage facilities, the tools to interact with it and the method to handle data that is stored on tape.
 
 .. contents:: 
-    :depth: 1
+    :depth: 3
     
 ====================
 About Grid storage
@@ -34,12 +34,15 @@ Storage types
 
 There are two storage types available on the Dutch Grid sites: 
 
-* dCache
+ .. _dCache:
+ 
+ dCache
+ ======
 
 The storage element located at SURFsara is accessible from *any* Grid cluster or :abbr:`UI (User Interface)`. It uses the `dCache system`_ for storing and retrieving huge amounts of data, distributed among a large number of server nodes. It consists of magnetic tape storage and hard disk storage and both are addressed by a common file system. See :ref:`dCache-specs` for details about our dCache instance.
 
-* DPM
-
+ .. _DPM:
+ 
 The storage elements located at the various :ref:`Life Science Grid clusters <life-science-clusters>` are accessible *only* by the :abbr:`LSG (Life Science Grid)` users. The :abbr:`LSG (Life Science Grid)` clusters have local storage that uses DPM (short for Disk Pool Manager).
 
 
