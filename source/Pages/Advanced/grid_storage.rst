@@ -45,7 +45,7 @@ The storage element located at SURFsara is accessible from *any* Grid cluster or
 * DPM
  
  
-The storage elements located at the various :ref:`Life Science Grid clusters <life-science-clusters>` are accessible *only* by the :abbr:`LSG (Life Science Grid)` users. The :abbr:`LSG (Life Science Grid)` clusters have local storage that uses DPM (short for Disk Pool Manager).
+The storage elements located at the various :ref:`Life Science Grid clusters <life-science-clusters>` are accessible *only* by the :abbr:`LSG (Life Science Grid)` users. The :abbr:`LSG (Life Science Grid)` clusters have local storage that uses DPM (Disk Pool Manager).
 
 
 .. note:: The :abbr:`DPM (Disk Pool Manager)` storage is only disk storage and does not support tape back-end. In opposite, the dCache central storage has both disk and tape.
