@@ -27,7 +27,7 @@ To use the Grid storage you must:
 * Have :ref:`a personal Grid certificate <get-grid-certificate>` [1]_
 * Be member of :ref:`a VO <join-vo>` for which we have allocated storage space.
 
-.. [1] It is possible to access the dCache Grid storage without certificate, by using :abbr:`Webdav (Web Distributed Authoring and Versioning)` storage client with username/password authentication. However, authentication with username/password is less secure, and Webdav is not as fast as :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`. Please see below.
+.. [1] It is possible to access the dCache Grid storage without certificate, e.g., by using a web based storage client :abbr:`Webdav (Web Distributed Authoring and Versioning)` with username/password authentication. However, authentication with username/password is less secure, and is not as fast as other clients. Please see below.
 
 
 .. _storage-types:
