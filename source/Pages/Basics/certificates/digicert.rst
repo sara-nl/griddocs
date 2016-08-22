@@ -127,7 +127,7 @@ In order to apply for a :ref:`VO membership <join-vo>` you will have to install 
 
 	https://voms.grid.sara.nl:8443/vomses/
 
-If you receive an SSL authentication error, then try repeating the steps carefully as they come. If you managed to access the page above, your certificate is successfully installed!
+If you receive an SSL authentication error, then try repeating the steps carefully as they come. If you managed to access the page above, your certificate is successfully installed! You may now proceed to apply for a VO membership
 	
 .. topic:: See also:
 	
@@ -142,10 +142,5 @@ If you receive an SSL authentication error, then try repeating the steps careful
 
 .. _`User Guide`: https://ca.dutchgrid.nl/tcs/TCS2015help.pdf
 .. _`DigiCert portal`: https://digicert.com/sso
-
-
-     
-     * If you exported the certificate to your laptop, copy it from your local machine to your ``.globus`` directory on the :abbr:`UI (User Interface)`. If you exported your certificate from the :abbr:`UI (User Interface)` browser, you can skip this step: 
-
  
 
