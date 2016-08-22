@@ -117,21 +117,32 @@ Grid file identifiers
 
 You can refer to your files on the Grid with different ways depending on which of the available :ref:`storage-clients` you use to manage your files: 
 
-Transport URL (TURL)
+Transport URL (TURL) or Storage (SURL)
 =====================
 
-Examples:
+For example, the location of a file named *zap.tar* owned by *homer*, who is a member of the VO e.g., *lsgrid*, can be referred to in several ways depending on the storage client and the protocols supported by the client:
 
 .. code-block:: bash
-
-	# lsgrid user homer stores the file zap.tar on dCache storage
-	gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 	
-	# same, but with a Webdav TURL
+	TURLs
+	# The GridFTP protocol (default port 2811) on dCache storage (which will be supported multiple clients)
+	gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+
+	# same, but with a Webdav TURL protocol
 	https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 	
-	# lsgrid user homer stores the file zap.tar on DPM storage at lumc cluster
+	# The GridFTP protocol (default port 2811) on DPM storage at lumc cluster
 	gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar
+	
+	SURLs
+	# SRM protocol (default port 8443) on dCache storage (which will be supported only by the SRM client)
+	srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+
+        # The GridFTP protocol (default port 2811) on dCache storage (which will be supported multiple clients)
+        gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/
+	
+	# SRM protocol on DPM storage at lumc cluster
+	srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar 
 	
 .. topic:: Clients for TURLs
 
@@ -140,19 +151,6 @@ Examples:
 	* gfal
 	* fts
 	* globusonline
-
-Storage URL (SURL)
-===================
-
-Examples:
-
-.. code-block:: bash
-
-	# lsgrid user homer stores the file zap.tar on dCache storage
-	srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
-	
-	# lsgrid user homer stores the file zap.tar on DPM storage at lumc cluster
-	srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar 
 	
 .. topic:: Clients for SURLs
 
