@@ -64,7 +64,7 @@ You can access the Grid storage with Grid :ref:`storage-clients`, through interf
 * delete files or directories
 * :ref:`stage` files (copy them from tape to disk for faster reading)
 
-In this section we will show the common commands to use the various storage clients. 
+The common commands for each individual clients are shown in their own sections available through the link in the table below.
 
 .. note:: From the many Grid storage clients, we recommend you to use the :ref:`uberftp`, :ref:`globus` or :ref:`gfal`. These tools have a clean interface, and their speed is much better on our systems compared with their srm-* equivalents.
 
