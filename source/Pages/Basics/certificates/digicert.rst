@@ -110,9 +110,10 @@ The certificate and private key file should now be present in the ``.globus`` di
 
 Store the certificate on your laptop
 ====================================
- The certificate can also be locally stored on your laptop. Open a new terminal on the laptop and give the following command:
+The certificate can also be locally stored on your laptop. Open a new terminal on the laptop and give the following command:
 
 .. code-block:: console
+
      [homer@localmachine]$mkdir $HOME/.globus
      [homer@localmachine]$scp homer@ui.grid.sara.nl:~/.globus/browsercert.p12  $HOME/.globus  # replace "homer" with your username!
      
