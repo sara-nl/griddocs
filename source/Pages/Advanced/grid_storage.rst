@@ -8,7 +8,7 @@ Grid storage
 In this page we will talk about the Grid storage facilities, the tools to interact with it and the method to handle data that is stored on tape.
 
 .. contents:: 
-    :depth: 1
+    :depth: 2
     
 ====================
 About Grid storage
@@ -27,6 +27,9 @@ To use the Grid storage you must:
 * Have :ref:`a personal Grid certificate <get-grid-certificate>` [1]_
 * Be member of :ref:`a VO <join-vo>` for which we have allocated storage space.
 
+.. [1] It is possible to access the dCache Grid storage without certificate, by using :abbr:`Webdav (Web Distributed Authoring and Versioning)` storage client with username/password authentication. However, authentication with username/password is less secure, and Webdav is not as fast as :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`. Please see below.
+
+
 .. _storage-types:
 
 Storage types
@@ -39,14 +42,20 @@ There are two storage types available on the Dutch Grid sites:
 
 The storage element located at SURFsara is accessible from *any* Grid cluster or :abbr:`UI (User Interface)`. It uses the `dCache system`_ for storing and retrieving huge amounts of data, distributed among a large number of server nodes. It consists of magnetic tape storage and hard disk storage and both are addressed by a common file system. See :ref:`dCache-specs` for details about our dCache instance.
 
- * DPM
+* DPM
  
  
 The storage elements located at the various :ref:`Life Science Grid clusters <life-science-clusters>` are accessible *only* by the :abbr:`LSG (Life Science Grid)` users. The :abbr:`LSG (Life Science Grid)` clusters have local storage that uses DPM (short for Disk Pool Manager).
 
 
 .. note:: The :abbr:`DPM (Disk Pool Manager)` storage is only disk storage and does not support tape back-end. In opposite, the dCache central storage has both disk and tape.
+.. _storage-clients:
 
+===============
+Storage clients
+===============
+
+The ``InputSandbox`` and ``OutputSandbox`` attributes in the :ref:`JDL <JDL>` file are the basic way to move files to and from the User Interface (UI) and the Worker Node (WN). However, when you have large files (from about 100 MB and larger) then you should not use these sandboxes to move data around. Instead you should use the :ref:`storage-types` and work with several :ref:`storage-clients`. 
 You can access the Grid storage with Grid :ref:`storage-clients`, through interfaces that speak protocols like :abbr:`SRM (Storage Resource Management)`, :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`, :abbr:`GSIdCap (dCache Access Protocol with Grid auhthentication)` or :abbr:`Webdav (Web Distributed Authoring and Versioning)`. With these storage clients you can:
 
 * list directories and files
@@ -55,8 +64,50 @@ You can access the Grid storage with Grid :ref:`storage-clients`, through interf
 * delete files or directories
 * :ref:`stage` files (copy them from tape to disk for faster reading)
 
-.. [1] It is possible to access the dCache Grid storage without certificate, by using :abbr:`Webdav (Web Distributed Authoring and Versioning)` with username/password authentication. However, authentication with username/password is less secure, and Webdav is not as fast as :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`.
+In this section we will show the common commands to use the various storage clients. 
 
+.. note:: From the many Grid storage clients, we recommend you to use the :ref:`uberftp`, :ref:`globus` or :ref:`gfal`. These tools have a clean interface, and their speed is much better on our systems compared with their srm-* equivalents.
+
+.. table:: Storage clients
+
+  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
+  |                     |             protocols            |                                       |
+  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
+  | Client              | SRM | GridFTP | GSIdCap | Webdav | 3rd party | Speed | Tape control [2]_ |
+  +=====================+=====+=========+=========+========+===========+=======+===================+
+  | :ref:`uberftp`      | --  | yes     | --      | --     | --        | high  | --                |
+  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
+  | :ref:`globus`       | --  | yes     | --      | --     | --        | high  | --                |
+  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
+  | :ref:`srm`          | yes | [3]_    | [3]_    | [3]_   | --        |       | yes               |
+  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
+  | :ref:`gfal`         | yes | yes     | --      | --     | --        |       | yes               |
+  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
+  | :ref:`webdav`       | --  | --      | --      | yes    | --        |       | --                |
+  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
+  | :ref:`fts`          | yes | yes     | --      | yes    | yes       | high  | yes               |
+  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
+  | :ref:`globusonline` | --  | yes     | --      | --     | yes       | high  | --                |
+  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
+  | :ref:`lcg-lfn-lfc`  | yes | [3]_    | --      | --     | --        |       | --                |
+  | (not recommended)   |     |         |         |        |           |       |                   |
+  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
+
+.. [2] Examples of tape control: staging a file from tape to disk, or get its locality (tape or disk).
+
+.. [3] SRM and LCG commands use the :abbr:`SRM (Storage Resource Management)` protocol for metadata level operations and switch to another protocol like GridFTP for file transfers. This may cause protocol overhead. For example, authentication needs to be done twice: once for each protocol.
+
+.. toctree::
+   :hidden:
+   
+   storage_clients/uberftp
+   storage_clients/globus
+   storage_clients/srm
+   storage_clients/gfal
+   storage_clients/webdav
+   storage_clients/fts
+   storage_clients/globusonline
+   storage_clients/lcg-lfn-lfc
 
 .. _file-id:
 
@@ -159,60 +210,6 @@ DPM
 +------------+--------------------------------------+--------------------------------------+
 
 For an overview of all life science clusters and their DPM storage elements, see :ref:`lsg-hostnames`
-
-
-.. _storage-clients:
-
-===============
-Storage clients
-===============
-
-The ``InputSandbox`` and ``OutputSandbox`` attributes in the :ref:`JDL <JDL>` file are the basic way to move files to and from the User Interface (UI) and the Worker Node (WN). However, when you have large files (from about 100 MB and larger) then you should not use these sandboxes to move data around. Instead you should use the :ref:`storage-types` and work with several :ref:`storage-clients`. 
-
-In this section we will show the common commands to use the various storage clients. 
-
-.. note:: From the many Grid storage clients, we recommend you to use the :ref:`uberftp`, :ref:`globus` or :ref:`gfal`. These tools have a clean interface, and their speed is much better on our systems compared with their srm-* equivalents.
-
-.. table:: Storage clients
-
-  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
-  |                     |             protocols            |                                       |
-  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
-  | Client              | SRM | GridFTP | GSIdCap | Webdav | 3rd party | Speed | Tape control [2]_ |
-  +=====================+=====+=========+=========+========+===========+=======+===================+
-  | :ref:`uberftp`      | --  | yes     | --      | --     | --        | high  | --                |
-  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
-  | :ref:`globus`       | --  | yes     | --      | --     | --        | high  | --                |
-  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
-  | :ref:`srm`          | yes | [3]_    | [3]_    | [3]_   | --        |       | yes               |
-  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
-  | :ref:`gfal`         | yes | yes     | --      | --     | --        |       | yes               |
-  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
-  | :ref:`webdav`       | --  | --      | --      | yes    | --        |       | --                |
-  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
-  | :ref:`fts`          | yes | yes     | --      | yes    | yes       | high  | yes               |
-  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
-  | :ref:`globusonline` | --  | yes     | --      | --     | yes       | high  | --                |
-  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
-  | :ref:`lcg-lfn-lfc`  | yes | [3]_    | --      | --     | --        |       | --                |
-  | (not recommended)   |     |         |         |        |           |       |                   |
-  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
-
-.. [2] Examples of tape control: staging a file from tape to disk, or get its locality (tape or disk).
-
-.. [3] SRM and LCG commands use the :abbr:`SRM (Storage Resource Management)` protocol for metadata level operations and switch to another protocol like GridFTP for file transfers. This may cause protocol overhead. For example, authentication needs to be done twice: once for each protocol.
-
-.. toctree::
-   :hidden:
-   
-   storage_clients/uberftp
-   storage_clients/globus
-   storage_clients/srm
-   storage_clients/gfal
-   storage_clients/webdav
-   storage_clients/fts
-   storage_clients/globusonline
-   storage_clients/lcg-lfn-lfc
 
 .. _staging:
 
