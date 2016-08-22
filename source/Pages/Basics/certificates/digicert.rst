@@ -119,15 +119,23 @@ The certificate can also be locally stored on your laptop. Open a new terminal o
      
 Repeat the same steps from "Convert pkcs12 to PEM" you performed on the User Interface on the laptop. Note that you should use the same password as the one used to protect the key on the UI.
 
-Verify the certificate
+Install the DutchGrid certificate
 ======================
-In order to apply for a :ref:`VO membership <join-vo>` you will have to install your certificate in your browser. If everything worked gracefully when you :ref:`obtained the DigiCert certificate <digicert>` then your certificate was *automatically* stored in your browser.
+In order to apply for a :ref:`VO membership <join-vo>` you should have installed your UI certificate in your browser. If everything worked gracefully when you :ref:`obtained the DigiCert certificate <digicert>` then your certificate was *automatically* stored in your browser.
+
+To access the VO membership website with a secured connection, you may install the DutchGrid CA trust anchor in your browser. For this, you need to visit the website `Dutchgrid cert`_ and click on the "Install the DutchGrid CA" (the link present on the right side of the webpage under "Trust this site ..."). A window will pop up where you should select “Trust this CA to identify websites” in the window click OK as shown in the image below:
+
+.. image:: /Images/dutch-grid-cert
+	:align: center
+	
+Refresh the browser (or open a new one).
 
 * Verify that your certificate is valid and properly installed in your browser by accessing this website from the browser that you have your certificate installed: 
 
 	https://voms.grid.sara.nl:8443/vomses/
 
 If you receive an SSL authentication error, then try repeating the steps carefully as they come. If you managed to access the page above, your certificate is successfully installed! You may now proceed to apply for a VO membership.
+
 	
 .. topic:: See also:
 	
@@ -142,5 +150,6 @@ If you receive an SSL authentication error, then try repeating the steps careful
 
 .. _`User Guide`: https://ca.dutchgrid.nl/tcs/TCS2015help.pdf
 .. _`DigiCert portal`: https://digicert.com/sso
+.. _`Dutchgrid cert`: https://ca.dutchgrid.nl/
  
 
