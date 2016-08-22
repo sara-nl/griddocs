@@ -127,7 +127,7 @@ In order to apply for a :ref:`VO membership <join-vo>` you will have to install 
 
 	https://voms.grid.sara.nl:8443/vomses/
 
-If you receive an SSL authentication error, then try repeating the steps carefully as they come. If you managed to access the page above, your certificate is successfully installed! You may now proceed to apply for a VO membership
+If you receive an SSL authentication error, then try repeating the steps carefully as they come. If you managed to access the page above, your certificate is successfully installed! You may now proceed to apply for a VO membership.
 	
 .. topic:: See also:
 	
