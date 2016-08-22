@@ -8,8 +8,6 @@ This section describes how to obtain and install a DigiCert Grid certificate. Th
 
 .. note::  If you need help to obtain your DigiCert certificate, please have a look to this `User Guide`_  or contact us at helpdesk@surfsara.nl.  
 
-
-===============================
 Obtain a *DigiCert* certificate
 ===============================
 
@@ -35,7 +33,6 @@ Once finished, you will have a Grid certificate automatically stored in your bro
 
 .. _digicert_ui_install:
 
-==========================================
 Install a *DigiCert* certificate on the UI
 ==========================================
 Certificates can be stored in different formats for different systems. The two important formats are:
@@ -60,8 +57,8 @@ You can export the certificate from the browser that you stored your certificate
   
 The file ``browsercert.p12`` is now stored locally. 
 
-Store the certificate
-=====================
+Store the certificate on the UI
+==============================
 
 * Create a ``$HOME/.globus`` directory in your :abbr:`UI (User Interface)` account:
 
@@ -73,7 +70,7 @@ Store the certificate
 Convert pkcs12 to PEM
 =====================
     
-* Convert the ``.p12`` file to the PEM format. For this you need *two* commands; a) one to extract the key, and b) one to extract your certificate.
+* For this you need *two* commands; a) one to extract the key, and b) one to extract your certificate.
 
 a) Extract your key, run on the :abbr:`UI (User Interface)`:
 
@@ -111,19 +108,18 @@ The certificate and private key file should now be present in the ``.globus`` di
      -rw-r--r--      1 homer    homer     4499  May 10 13:47  usercert.pem
      -r--------      1 homer    homer      963  May 10 13:43  userkey.pem
 
-* The certificate can also be locally stored on your laptop. Open a new terminal on the laptop and give the following command:
+Store the certificate on your laptop
+====================================
+ The certificate can also be locally stored on your laptop. Open a new terminal on the laptop and give the following command:
 
 .. code-block:: console
      [homer@localmachine]$mkdir $HOME/.globus
      [homer@localmachine]$scp homer@ui.grid.sara.nl:~/.globus/browsercert.p12  $HOME/.globus  # replace "homer" with your username!
      
-Repeat the same steps from "Execute the Store Convert pkcs12 to PEM" you performed on the User Interface on the laptop.
+Repeat the same steps from "Convert pkcs12 to PEM" you performed on the User Interface on the laptop. Note that you should use the same password as the one used to protect the key on the UI.
 
-.. _digicert_browser_install:
-
-================================================
-Install a *DigiCert* certificate in your browser
-================================================
+Verify the certificate
+======================
 In order to apply for a :ref:`VO membership <join-vo>` you will have to install your certificate in your browser. If everything worked gracefully when you :ref:`obtained the DigiCert certificate <digicert>` then your certificate was *automatically* stored in your browser.
 
 * Verify that your certificate is valid and properly installed in your browser by accessing this website from the browser that you have your certificate installed: 
