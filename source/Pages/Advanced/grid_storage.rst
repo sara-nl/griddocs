@@ -117,7 +117,7 @@ Grid file identifiers
 
 You can refer to your files on the Grid with different ways depending on which of the available :ref:`storage-clients` you use to manage your files: 
 
-Transport URL or TURL
+Transport URL (TURL)
 =====================
 
 Examples:
@@ -141,7 +141,7 @@ Examples:
 	* fts
 	* globusonline
 
-Storage URL or SURL
+Storage URL (SURL)
 ===================
 
 Examples:
