@@ -16,7 +16,7 @@ Pilot jobs
 In this page we will show you how to run pilot jobs on the Grid and track the status of hundreds jobs running at a time:
 
 ================
-About pilot jobs
+About 
 ================
 
 .. sidebar:: More about Pilot jobs?
