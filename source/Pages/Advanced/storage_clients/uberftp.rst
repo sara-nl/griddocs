@@ -6,14 +6,12 @@
 ****************
  
 This page includes the basic commands to use ``uberftp``. For an overview of storage clients, see :ref:`storage-clients`.
-
-.. contents:: 
-    :depth: 4
-    
     
 =======    
 Uberftp
 =======
+
+A file named *zap.tar* is owned by *homer*, who is a member of the VO e.g., *lsgrid*.
 
 Creating/listing 
 ================
@@ -26,7 +24,7 @@ Creating/listing
 
      $uberftp -ls gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/
 
-* Listing directories on :abbr:`DPM (Disk Pool Manager)`:
+* Listing directories on :abbr:`DPM (Disk Pool Manager)` at *lumc* cluster:
 
   .. code-block:: console
 
@@ -38,7 +36,7 @@ Creating/listing
 
      $uberftp -mkdir gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/newdir 
 
-* Create a new directory on :abbr:`DPM (Disk Pool Manager)`:
+* Create a new directory on :abbr:`DPM (Disk Pool Manager)` at *lumc* cluster:
 
   .. code-block:: console
 
@@ -54,7 +52,7 @@ Transferring data
 
     $uberftp gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar file:///home/homer/zap.tar 
 
-* Copy file from :abbr:`DPM (Disk Pool Manager)` to local machine:
+* Copy file from :abbr:`DPM (Disk Pool Manager)` at *lumc* cluster to local machine:
 
   .. code-block:: console
 
@@ -66,7 +64,7 @@ Transferring data
 
      $uberftp file:///home/homer/zap.tar gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 
-* Copy file from local machine to :abbr:`DPM (Disk Pool Manager)`:
+* Copy file from local machine to :abbr:`DPM (Disk Pool Manager)` at *lumc* cluster:
 
   .. code-block:: console
 
@@ -98,7 +96,7 @@ Removing data
 
      $uberftp -rm gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
-* Remove a file from :abbr:`DPM (Disk Pool Manager)`:
+* Remove a file from :abbr:`DPM (Disk Pool Manager)` at *lumc* cluster:
 
   .. code-block:: console
 
@@ -111,7 +109,7 @@ Removing data
      $uberftp -rm -r gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/testdir/
 
 
-* Remove whole (non-empty) directory with all content from :abbr:`DPM (Disk Pool Manager)`:
+* Remove whole (non-empty) directory with all content from :abbr:`DPM (Disk Pool Manager)` at *lumc* cluster:
 
   .. code-block:: console
 
