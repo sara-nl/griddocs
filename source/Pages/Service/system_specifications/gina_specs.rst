@@ -10,7 +10,6 @@ If you have any questions concerning the technical specifications below, please 
 
 .. _gina-specs-summary:
 
-
 Quick summary
 =============
 
@@ -25,14 +24,6 @@ Network backbone             Juniper Q-Fabric Network Fabric which also connects
 ============================ =====================================================
 
 ``Last update: Juli 2016``
-
-.. _gina-specs-network:
-
-Network
-============
-GinA is connected to a Juniper Q-Fabric network fabric. On this fabric also the Grid storage is connected and makes high throughput possible. Currently we have seen over 20GB/sec (~170-200Gbit/sec) of peak network traffic to the Grid storage.
-All workernodes are connected with a single 10Gbit ethernet connection.
-
 
 .. _gina-specs-wn:
 
@@ -76,12 +67,10 @@ Worker Nodes ``v37-{01-12}``, ``v33-{01-06}``:
   *  Scratch per core: ~200GB  
   *  RAM per core: 8GB  
 
-
-
 Service nodes
 =============
 
-Service{01,02,03}::  
+Service{01,02,03}: 
 
   *  Dell R420  
   *  2xIntel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz (12 cores)  
@@ -89,12 +78,17 @@ Service{01,02,03}::
   *  Number of nodes: 3  
   *  RAM per core: 8GB  
 
-
-CreamCEs
+CreamCEs (Computing elements)
 ========
 
 All 3 CreamCEs are virtualized and distributed among the 3 Service Nodes. Every CreamCE has 4 cores and 9GB RAM in total.
 
+.. _gina-specs-network:
+
+Network
+============
+GinA is connected to a Juniper Q-Fabric network fabric. On this fabric also the Grid storage is connected and makes high throughput possible. Currently we have seen over 20GB/sec (~170-200Gbit/sec) of peak network traffic to the Grid storage.
+All workernodes are connected with a single 10Gbit ethernet connection.
 
 .. _gina-specs-queues:
 
