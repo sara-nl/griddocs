@@ -7,11 +7,7 @@
  
 This page includes the basic commands to use ``uberftp``. For an overview of storage clients, see :ref:`storage-clients`.
     
-=======    
-Uberftp
-=======
-
-A file named *zap.tar* is owned by *homer*, who is a member of the VO e.g., *lsgrid* with an account on the UI and on *lumc* cluster. Note that you should create a directory in your username as it is not created by default when your account is created.
+In the following examples, a file named *zap.tar* is owned by *homer*, who is a member of the VO e.g., *lsgrid* with an account on the UI and on *lumc* cluster (only in the case of LSG VO members). 
 
 Creating/listing 
 ================
@@ -29,6 +25,8 @@ Creating/listing
   .. code-block:: console
 
      $uberftp -mkdir gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer
+     
+Note that you should create a directory in your username as it is not created by default when your account is created.
 
 * Listing directories on dCache:
 
