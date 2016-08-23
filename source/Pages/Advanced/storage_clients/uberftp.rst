@@ -11,7 +11,7 @@ This page includes the basic commands to use ``uberftp``. For an overview of sto
 Uberftp
 =======
 
-A file named *zap.tar* is owned by *homer*, who is a member of the VO e.g., *lsgrid*.
+A file named *zap.tar* is owned by *homer*, who is a member of the VO e.g., *lsgrid* with an account on the UI and on *lumc* cluster.
 
 Creating/listing 
 ================
@@ -24,7 +24,7 @@ Creating/listing
 
      $uberftp -ls gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/
 
-* Listing directories on :abbr:`DPM (Disk Pool Manager)` at *lumc* cluster:
+* Listing directories on :abbr:`DPM (Disk Pool Manager)`:
 
   .. code-block:: console
 
@@ -52,7 +52,7 @@ Transferring data
 
     $uberftp gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar file:///home/homer/zap.tar 
 
-* Copy file from :abbr:`DPM (Disk Pool Manager)` at *lumc* cluster to local machine:
+* Copy file from :abbr:`DPM (Disk Pool Manager)` to local machine:
 
   .. code-block:: console
 
@@ -64,7 +64,7 @@ Transferring data
 
      $uberftp file:///home/homer/zap.tar gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 
-* Copy file from local machine to :abbr:`DPM (Disk Pool Manager)` at *lumc* cluster:
+* Copy file from local machine to :abbr:`DPM (Disk Pool Manager)`:
 
   .. code-block:: console
 
@@ -96,7 +96,7 @@ Removing data
 
      $uberftp -rm gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
-* Remove a file from :abbr:`DPM (Disk Pool Manager)` at *lumc* cluster:
+* Remove a file from :abbr:`DPM (Disk Pool Manager)`:
 
   .. code-block:: console
 
@@ -109,7 +109,7 @@ Removing data
      $uberftp -rm -r gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/testdir/
 
 
-* Remove whole (non-empty) directory with all content from :abbr:`DPM (Disk Pool Manager)` at *lumc* cluster:
+* Remove whole (non-empty) directory with all content from :abbr:`DPM (Disk Pool Manager)`:
 
   .. code-block:: console
 
