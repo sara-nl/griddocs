@@ -113,7 +113,7 @@ In the :abbr:`JDL (Job Description Language)` file we specify the content of the
      #!/bin/bash
      chmod u+x fractals
      ./fractals -o output -q 0.184 -d 2280 -m 4400
-     ...
+    
     
 Once this jobs lands on the Grid, it will execute the ``wrapper.sh`` script which is a master script to set the program environment and initiate the program execution. In the ``wrapper.sh`` script you may include also the commands to retrieve input from a Grid storage location or transfer the output results to a Grid storage location.
 
