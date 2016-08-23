@@ -6,10 +6,6 @@ Downtimes and maintenances
 
 Here you will find details to keep informed for the ongoing and upcoming downtimes and maintenances in our Grid systems:
 
-.. contents:: 
-    :depth: 4
-
-
 ====================
 Ongoing maintenances
 ====================
