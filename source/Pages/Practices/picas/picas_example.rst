@@ -4,11 +4,6 @@
 Picas Example
 *************
 
-This page presents a PiCaS pilot job example:
-
-.. contents:: 
-    :depth: 4
-
 
 ===================
 Problem description
