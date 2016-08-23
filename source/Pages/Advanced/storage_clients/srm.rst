@@ -35,7 +35,7 @@ Creating/listing
 
      $srmmkdir srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer 
      
- Note that you should create a directory in your username as it is not created by default when your account is created.
+Note that you should create a directory in your username as it is not created by default when your account is created.
 
 * Listing directories on dCache:
 
