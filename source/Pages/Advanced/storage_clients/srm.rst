@@ -7,11 +7,6 @@
 
 This page explains the use of the ``srm`` client. For an overview of storage clients, see :ref:`storage-clients`.
 
-.. contents:: 
-    :depth: 4
-    
- 
-
 .. sidebar:: SRM basics
 
 		.. seealso:: Have a look at our mooc video :ref:`mooc-srm` for additional examples.
@@ -26,9 +21,22 @@ The :ref:`srm` is one of the most popular :ref:`storage-clients`. However, srm- 
 
 .. note:: To run the examples below you need to have a valid proxy, see :ref:`startgridsession`. 
 
+A file named *zap.tar* is owned by *homer*, who is a member of the VO e.g., *lsgrid* with an account on the UI and on *lumc* cluster. Note that you should create a directory in your username as it is not created by default when your account is created.
 
 Creating/listing 
 ================
+
+* Create a new directory on dCache:
+
+  .. code-block:: console
+
+     $srmmkdir srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer 
+
+* Create a new directory on DPM:
+
+  .. code-block:: console
+
+     $srmmkdir srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer 
 
 * Listing directories on dCache:
 
@@ -42,42 +50,10 @@ Creating/listing
 
      $srmls srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/
 
-* Create a new directory on dCache:
-
-  .. code-block:: console
-
-     $srmmkdir srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/newdir/ 
-
-* Create a new directory on DPM:
-
-  .. code-block:: console
-
-     $srmmkdir srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/newdir 
-
-
 Transferring data
 =================
 
 .. note:: The ``-debug`` option would show you extra logging information for your transfers.
-
-* Copy file from dCache to local machine:
-
-  .. code-block:: console
-
-     ## note the flag -server_mode=passive!
-     $srmcp -server_mode=passive \
-     $      srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
-     $      file:///`pwd`/zap.tar 
-
-
-* Copy file from DPM to local machine:
-
-  .. code-block:: console
-
-    ## note the flag -server_mode=passive!
-    $srmcp -server_mode=passive \
-    $      srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar \
-    $      file:///`pwd`/zap.tar
 
 * Copy file from local machine to dCache:
 
@@ -92,6 +68,24 @@ Transferring data
 
     $srmcp -debug file:///`pwd`/zap.tar \
     $      srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar
+
+* Copy file from dCache to local machine:
+
+  .. code-block:: console
+
+     ## note the flag -server_mode=passive!
+     $srmcp -server_mode=passive \
+     $      srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
+     $      file:///`pwd`/zap.tar 
+
+* Copy file from DPM to local machine:
+
+  .. code-block:: console
+
+    ## note the flag -server_mode=passive!
+    $srmcp -server_mode=passive \
+    $      srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar \
+    $      file:///`pwd`/zap.tar
 
 
 Recursive transfer
