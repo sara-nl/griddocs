@@ -7,9 +7,6 @@ Parametric jobs
 
 The :ref:`pilot jobs <pilot-jobs>` use the technique of parametric jobs for the job submission to the Grid. In this page we give an example of parametric jobs:
 
-.. contents:: 
-    :depth: 4
-
 =====
 About
 =====
