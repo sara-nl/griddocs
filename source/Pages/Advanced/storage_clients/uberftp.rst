@@ -7,7 +7,7 @@
  
 This page includes the basic commands to use ``uberftp``. For an overview of storage clients, see :ref:`storage-clients`.
     
-In the following examples, a file named *zap.tar* is owned by *homer*, who is a member of the VO e.g., *lsgrid* with an account on the UI and on *lumc* cluster (only in the case of LSG VO members). 
+In the following examples, a file named *zap.tar* is owned by *homer*, who has an account on the UI and is a member of a  VO *your-vo*, or with an account on the UI on the *lumc* cluster and is a member of the VO *lsgrid* (only in the case of LSG VO members). It should be noted again that the dCache storage located at SURFsara is accessible from any Grid cluster or UI, while the DPM storage located at various clusters can only be accessed by LSG users.
 
 Creating/listing 
 ================
@@ -20,6 +20,7 @@ Note that you should create a directory in your username as it is not created by
 
   .. code-block:: console
 
+     $uberftp -mkdir gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/your-vo/homer
      $uberftp -mkdir gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer
 
 * Create a new directory for a user *homer* on :abbr:`DPM (Disk Pool Manager)` at *lumc* cluster:
@@ -32,7 +33,7 @@ Note that you should create a directory in your username as it is not created by
 
   .. code-block:: console
 
-     $uberftp -ls gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/
+     $uberftp -ls gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/your-vo/
 
 * Listing directories on :abbr:`DPM (Disk Pool Manager)`:
 
