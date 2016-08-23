@@ -14,6 +14,8 @@ Creating/listing
 
 .. note:: To run the examples below you need to have a valid proxy, see :ref:`startgridsession`. 
 
+Note that you should create a directory in your username as it is not created by default when your account is created. This is shown below.
+
 * Create a new directory for a user *homer* on dCache:
 
   .. code-block:: console
@@ -26,8 +28,6 @@ Creating/listing
 
      $uberftp -mkdir gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer
      
-Note that you should create a directory in your username as it is not created by default when your account is created.
-
 * Listing directories on dCache:
 
   .. code-block:: console
