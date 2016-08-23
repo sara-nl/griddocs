@@ -13,7 +13,7 @@ If you have any questions concerning the technical specifications below, please 
 
 Quick summary
 ============= 
-
+The typical configuration of the LSG clusters is as follows:
 ``Last update: March 2016``
 
 ============================ =====================================================
@@ -27,6 +27,7 @@ Disk storage                 40TB of staging area
 Network backbone             10Gbit/s local switch, 1Gbit/s external connectivity
 ============================ =====================================================
 
+Each cluster typically has the following configuration:
 
 Worker Nodes
 ============
