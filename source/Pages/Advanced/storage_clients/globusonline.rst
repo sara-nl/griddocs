@@ -7,13 +7,6 @@
 
 This page includes the basic commands to use ``globusonline``. For an overview of storage clients, see :ref:`storage-clients`.
 
-.. contents:: 
-    :depth: 4
-  
-============
-GlobusOnline
-============
-
 About
 =====
 
