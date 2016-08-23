@@ -12,45 +12,30 @@ Globus tools
 
 .. note:: To run the examples below you need to have a valid proxy, see :ref:`startgridsession`. 
 
+A file named *zap.tar* is owned by *homer*, who is a member of the VO e.g., *lsgrid* with an account on the UI and on *lumc* cluster. Note that you should create a directory in your username as it is not created by default when your account is created.
 
-Creating/listing 
+The ``globus-*`` client does not offer an option to create directories. For this purpose use a different client, e.g. :ref:`uberftp client <uberftp>`.
+
+Listing 
 ================
 
 * Listing directories on dCache:
 
   .. code-block:: console
   
-     $globus-url-copy -list gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/
+     $globus-url-copy -list gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/
 
 * Listing directories on DPM:
 
   .. code-block:: console
   
      $globus-url-copy -list gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/
-     
-The ``globus-*`` client does not offer an option to create directories. For this purpose use a different client, e.g. :ref:`uberftp client <uberftp>`.
-
+    
 
 Transferring data
 =================
 
 .. note:: The options ``-dbg -gt 2 -vb`` would show you extra logging information for your transfer.
-
-* Copy file from dCache to local machine:
-
-  .. code-block:: console
-
-     $globus-url-copy \
-     $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
-     $    file:///`pwd`/zap.tar 
-
-* Copy file from DPM to local machine:
-
-  .. code-block:: console
-
-     $globus-url-copy \
-     $    gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar \
-     $    file:///`pwd`/zap.tar 
 
 * Copy file from local machine to dCache:
 
@@ -67,6 +52,22 @@ Transferring data
      $globus-url-copy \
      $    file:///`pwd`/zap.tar \
      $    gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar
+     
+* Copy file from dCache to local machine:
+
+  .. code-block:: console
+
+     $globus-url-copy \
+     $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
+     $    file:///`pwd`/zap.tar 
+
+* Copy file from DPM to local machine:
+
+  .. code-block:: console
+
+     $globus-url-copy \
+     $    gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar \
+     $    file:///`pwd`/zap.tar 
 
 * Recursive upload to dCache:
 
