@@ -6,13 +6,7 @@ Gina specifications
 
 Gina is the Grid cluster at SURFsara; currently all the servers are located at the Vancis B.V. datacenter divided over two rooms. After different tenders these servers belong to different brands (Dell & Fujitsu). Three service nodes are used to host virtual machines for different purposes (creamces, monitoring, installation, dns servers...). All the worker nodes are installed on physical nodes.
 
-This page describes the specifications for the Gina Grid cluster at SURFsara:
-
-.. contents:: 
-    :depth: 4
-
 If you have any questions concerning the technical specifications below, please contact us at helpdesk@surfsara.nl.
-
 
 .. _gina-specs-summary:
 
@@ -46,7 +40,7 @@ Worker Nodes
 ============
 This is the list of the different worker nodes in order of installation/configuration from newest to oldest:
 
-Worker Nodes ``am90-{01-33}``, ``am91-{01-33}``, ``am94-{01-33}``::  
+Worker Nodes ``am90-{01-33}``, ``am91-{01-33}``, ``am94-{01-33}``:  
 
   *  Dell R630  
   *  2x Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz (24 cores)  
@@ -58,7 +52,7 @@ Worker Nodes ``am90-{01-33}``, ``am91-{01-33}``, ``am94-{01-33}``::
   *  Scratch per core: ~300GB  
   *  RAM per core: 8GB  
   
-Worker Nodes ``ar90-{01-52}``, ``ar91-{01-52}``::  
+Worker Nodes ``ar90-{01-52}``, ``ar91-{01-52}``:  
 
   *  Fujitsu CX250  
   *  2x Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz (16 cores)  
@@ -70,7 +64,7 @@ Worker Nodes ``ar90-{01-52}``, ``ar91-{01-52}``::
   *  Scratch per core: ~680GB  
   *  RAM per core: 8GB  
 
-Worker Nodes ``v37-{01-12}``, ``v33-{01-06}``::  
+Worker Nodes ``v37-{01-12}``, ``v33-{01-06}``:  
 
   *  Dell R820  
   *  4x Intel(R) Xeon(R) CPU E5-4620 0 @ 2.20GHz (32 cores)  
