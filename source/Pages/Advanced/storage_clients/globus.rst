@@ -6,10 +6,6 @@
 
 This page includes the basic commands to use ``globus``. For an overview of storage clients, see :ref:`storage-clients`.
 
-.. contents:: 
-    :depth: 4
-    
-
 ============
 Globus tools
 ============
