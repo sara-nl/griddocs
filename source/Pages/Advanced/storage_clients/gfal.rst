@@ -35,7 +35,7 @@ Note that you should create a directory in your username as it is not created by
 
   .. code-block:: console
 
-     $gfal-mkdir gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/newdir/ 
+     $gfal-mkdir gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer 
 
 * Listing directories on dCache:
 
