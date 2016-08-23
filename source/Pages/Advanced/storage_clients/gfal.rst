@@ -53,18 +53,6 @@ Note that you should create a directory in your username as it is not created by
 Transferring data
 =================
 
-* Copy file from dCache to local machine:
-
-  .. code-block:: console
-
-     $gfal-copy gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar file:///`pwd`/zap.tar 
-
-* Copy file from DPM to local machine:
-
-  .. code-block:: console
-
-     $gfal-copy gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar file:///`pwd`/zap.tar 
-
 * Copy file from local machine to dCache:
 
   .. code-block:: console
@@ -77,6 +65,18 @@ Transferring data
 
      $gfal-copy file:///`pwd`/zap.tar gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar
 
+* Copy file from dCache to local machine:
+
+  .. code-block:: console
+
+     $gfal-copy gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar file:///`pwd`/zap.tar 
+
+* Copy file from DPM to local machine:
+
+  .. code-block:: console
+
+     $gfal-copy gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar file:///`pwd`/zap.tar 
+     
 Recursive transfer
 ------------------
 
