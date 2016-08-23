@@ -52,6 +52,17 @@ This node stores all the data related to the user jobs:
   * Number of nodes: 1
   * Storage space: 40TB
   
+Service Nodes
+=============
+
+The hardware specifications of the service nodes::
+
+  * PowerEdge R420 2xIntel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
+  * Type: Sandy Bridge architecture /w Sandy Bridge-EP cores
+  * Cores: 24
+  * RAM: 96 GB
+  * Number of nodes: 2
+
 
 Computing Element
 =================
@@ -72,17 +83,6 @@ This is a virtual machine running on one of the Service Nodes; please be aware t
   * RAM: 16 GB
   * Number of nodes: 1
   
-Service Nodes
-=============
-
-The hardware specifications of the service nodes::
-
-  * PowerEdge R420 2xIntel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
-  * Type: Sandy Bridge architecture /w Sandy Bridge-EP cores
-  * Cores: 24
-  * RAM: 96 GB
-  * Number of nodes: 2
-
 .. _lsg-specs-queues:
 
 Queues
