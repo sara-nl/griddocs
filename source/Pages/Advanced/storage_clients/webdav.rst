@@ -6,13 +6,6 @@
 
 This page includes the basic commands to use the webdav protocol. For an overview of storage clients, see :ref:`storage-clients`.
 
-.. contents:: 
-    :depth: 4
- 
-======
-Webdav
-======
-
 The webdav protocol has the following advantages:
 
 * It supports username & password authentication
@@ -58,12 +51,12 @@ You can also use command line web tools like curl to list directories.
 Creating directories
 ====================
 
-To create a directory with curl:
+Note that you should create a directory in your username as it is not created by default when your account is created. To create a directory with curl:
 
 .. code-block:: console
 
    $curl --capath /etc/grid-security/certificates/ --fail --user homer \
-   $     --request MKCOL https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/directory
+   $     --request MKCOL https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer
 
 
 Transferring data
