@@ -55,7 +55,7 @@ This node stores all the data related to the user jobs:
 Service Nodes
 =============
 
-The hardware specifications of the service nodes::
+The hardware specifications of the service nodes:
 
   * PowerEdge R420 2xIntel(R) Xeon(R) CPU E5-2420 0 @ 1.90GHz
   * Type: Sandy Bridge architecture /w Sandy Bridge-EP cores
