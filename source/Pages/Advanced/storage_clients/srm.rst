@@ -15,9 +15,9 @@ The Storage Resource Manager (short SRM) has been designed to be a single interf
 
 The :ref:`srm` is one of the most popular :ref:`storage-clients`. However, srm- commands are using Java which has the tendency to allocate big amounts of memory and sometimes be slow, also because of the SRM protocol overhead. If transfer speed is important, use :ref:`uberftp`, :ref:`globus` or :ref:`gfal` instead.
 
-.. note:: To run the examples below you need to have a valid proxy, see :ref:`startgridsession`. 
-
 In the following examples, a file named *zap.tar* is owned by *homer*, who has an account on the UI and is a member of a  VO *your-vo*, or with an account on the UI on the *lumc* cluster and is a member of the VO *lsgrid* (only in the case of LSG VO members). It should be noted again that the dCache storage located at SURFsara is accessible from any Grid cluster or UI, while the DPM storage located at various clusters can only be accessed by LSG users.
+
+.. note:: To run the examples below you need to have a valid proxy, see :ref:`startgridsession`. 
 
 Creating/listing 
 ================
