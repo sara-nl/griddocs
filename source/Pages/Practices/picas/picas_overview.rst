@@ -4,16 +4,10 @@
 Picas Overview
 **************
 
-This page is about the PiCaS pilot framework:
-
-.. contents:: 
-    :depth: 4
-
-
 .. _about-picas:
 
 ===========
-About PiCaS
+About
 ===========
 
 Let's say that you have a number of *tasks* to be processed on the Grid Worker Nodes. Each task requires a set of parameters to run. The parameters of each task (run id, input files, etc) construct an individual piece of work, called ``token``, which is just a description - not the task itself.  
