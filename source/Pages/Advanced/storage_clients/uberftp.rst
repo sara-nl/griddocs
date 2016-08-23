@@ -11,12 +11,24 @@ This page includes the basic commands to use ``uberftp``. For an overview of sto
 Uberftp
 =======
 
-A file named *zap.tar* is owned by *homer*, who is a member of the VO e.g., *lsgrid* with an account on the UI and on *lumc* cluster.
+A file named *zap.tar* is owned by *homer*, who is a member of the VO e.g., *lsgrid* with an account on the UI and on *lumc* cluster. Note that you should create a directory in your username as it is not created by default when your account is created.
 
 Creating/listing 
 ================
 
 .. note:: To run the examples below you need to have a valid proxy, see :ref:`startgridsession`. 
+
+* Create a new directory for a user *homer* on dCache:
+
+  .. code-block:: console
+
+     $uberftp -mkdir gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer
+
+* Create a new directory for a user *homer* on :abbr:`DPM (Disk Pool Manager)` at *lumc* cluster:
+
+  .. code-block:: console
+
+     $uberftp -mkdir gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer
 
 * Listing directories on dCache:
 
@@ -30,33 +42,9 @@ Creating/listing
 
      $uberftp -ls gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid
 
-* Create a new directory on dCache:
-
-  .. code-block:: console
-
-     $uberftp -mkdir gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/newdir 
-
-* Create a new directory on :abbr:`DPM (Disk Pool Manager)` at *lumc* cluster:
-
-  .. code-block:: console
-
-     $uberftp -mkdir gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/newdir 
-
 
 Transferring data
 =================
-
-* Copy file from dCache to local machine:
-
-  .. code-block:: console
-
-    $uberftp gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar file:///home/homer/zap.tar 
-
-* Copy file from :abbr:`DPM (Disk Pool Manager)` to local machine:
-
-  .. code-block:: console
-
-     $uberftp gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar  file:///home/homer/zap.tar
 
 * Copy file from local machine to dCache:
 
@@ -69,6 +57,18 @@ Transferring data
   .. code-block:: console
 
      $uberftp file:///home/homer/zap.tar gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar 
+     
+* Copy file from dCache to local machine:
+
+  .. code-block:: console
+
+    $uberftp gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar file:///home/homer/zap.tar 
+
+* Copy file from :abbr:`DPM (Disk Pool Manager)` to local machine:
+
+  .. code-block:: console
+
+     $uberftp gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar  file:///home/homer/zap.tar
 
 
 .. note::  The asterisk “*” wildcard (match all characters) works with uberftp. Please use this option with caution, especially when deleting files.
