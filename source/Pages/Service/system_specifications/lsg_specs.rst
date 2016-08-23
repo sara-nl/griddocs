@@ -6,9 +6,6 @@ LSG specifications
 
 This page describes the specifications for the Life Science Grid (LSG) clusters. For a list of the clusters, see :ref:`life-science-clusters`.
 
-.. contents:: 
-    :depth: 4
-
 If you have any questions concerning the technical specifications below, please contact us at helpdesk@surfsara.nl.
 
 
