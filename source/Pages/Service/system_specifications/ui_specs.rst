@@ -8,13 +8,13 @@ Grid User Interface machine
 The Grid User Interface (UI) machine is a virtual machine. Its specifications are given below. 
 The hardware specifications of the host machine are also included.
 
-Grid UI machine::
+Grid UI machine:
 
   * Virtual machine
   * Cores: 4
   * RAM: 16 GB
 
-Host machine::
+Host machine:
 
   * Poweredge R630
   * CPU: Intel Xeon E5645 @ 2.40GHz
