@@ -21,7 +21,7 @@ The :ref:`srm` is one of the most popular :ref:`storage-clients`. However, srm- 
 
 .. note:: To run the examples below you need to have a valid proxy, see :ref:`startgridsession`. 
 
-A file named *zap.tar* is owned by *homer*, who is a member of the VO e.g., *lsgrid* with an account on the UI and on *lumc* cluster. Note that you should create a directory in your username as it is not created by default when your account is created.
+A file named *zap.tar* is owned by *homer*, who is a member of the VO e.g., *lsgrid* with an account on the UI and on *lumc* cluster (only in the case of LSG VO members). Note that you should create a directory in your username as it is not created by default when your account is created.
 
 Creating/listing 
 ================
