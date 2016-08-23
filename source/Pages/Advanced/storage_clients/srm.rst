@@ -17,7 +17,7 @@ The :ref:`srm` is one of the most popular :ref:`storage-clients`. However, srm- 
 
 .. note:: To run the examples below you need to have a valid proxy, see :ref:`startgridsession`. 
 
-In the following examples, a file named *zap.tar* is owned by *homer*, who has an account on the UI and is a member of a  VO *your-vo*, or with an account on the UI on the *lumc* cluster and is a member of the VO *lsgrid* (only in the case of LSG VO members). It should be noted again that the dCache storage located at SURFsara is accessible from any Grid cluster or UI, while the DPM storage located at various clusters can only be accessed by LSG users. Note that you should create a directory in your username as it is not created by default when your account is created.
+In the following examples, a file named *zap.tar* is owned by *homer*, who has an account on the UI and is a member of a  VO *your-vo*, or with an account on the UI on the *lumc* cluster and is a member of the VO *lsgrid* (only in the case of LSG VO members). It should be noted again that the dCache storage located at SURFsara is accessible from any Grid cluster or UI, while the DPM storage located at various clusters can only be accessed by LSG users.
 
 Creating/listing 
 ================
@@ -34,6 +34,8 @@ Creating/listing
   .. code-block:: console
 
      $srmmkdir srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer 
+     
+ Note that you should create a directory in your username as it is not created by default when your account is created.
 
 * Listing directories on dCache:
 
