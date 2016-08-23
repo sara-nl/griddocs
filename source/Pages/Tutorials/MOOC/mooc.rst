@@ -6,9 +6,6 @@ MOOC - Introduction to Grid Computing
 
 This page includes the complete course material as presented during the SURFsara MOOC ``Introduction to Grid Computing``:
 
-.. contents::
-    :depth: 2
-
 =====
 About
 =====
