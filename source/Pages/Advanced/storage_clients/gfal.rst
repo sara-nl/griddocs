@@ -7,13 +7,6 @@
 
 This page includes the basic commands to use ``gfal``. For an overview of storage clients, see :ref:`storage-clients`.
 
-.. contents:: 
-    :depth: 4
-
-====
-gFAL
-==== 
-
 .. note:: To run the examples below you need to have a valid proxy, see :ref:`startgridsession`. 
 
 
@@ -26,22 +19,12 @@ Mandatory environment settings:
 
 .. note:: The examples below will work both with :ref:`TURLs and SURLs <file-id>`.
 
+In the following examples, a file named *zap.tar* is owned by *homer*, who has an account on the UI and is a member of a  VO *your-vo*, or with an account on the UI on the *lumc* cluster and is a member of the VO *lsgrid* (only in the case of LSG VO members). It should be noted again that the dCache storage located at SURFsara is accessible from any Grid cluster or UI, while the DPM storage located at various clusters can only be accessed by LSG users.
 
 Creating/listing 
 ================
 
-* Listing directories on dCache:
-
-  .. code-block:: console
-
-     $gfal-ls -l gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/
-
-* Listing directories on DPM:
-
-  .. code-block:: console
-
-     $gfal-ls -l gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid
-
+Note that you should create a directory in your username as it is not created by default when your account is created. This is shown below.
 
 * Create a new directory on dCache:
 
@@ -54,6 +37,18 @@ Creating/listing
   .. code-block:: console
 
      $gfal-mkdir gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/newdir/ 
+
+* Listing directories on dCache:
+
+  .. code-block:: console
+
+     $gfal-ls -l gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/
+
+* Listing directories on DPM:
+
+  .. code-block:: console
+
+     $gfal-ls -l gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid
 
 
 Transferring data
