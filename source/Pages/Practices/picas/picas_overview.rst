@@ -27,7 +27,7 @@ The server is based on `CouchDB`_ (see `CouchDB book`_), a NoSQL database, and t
 Source Code
 ============
 
-The source code of Topos is on `Github Picas Client`_.
+The source code of PiCaS is on `Github Picas Client`_.
 
 
 .. _picas-server:
