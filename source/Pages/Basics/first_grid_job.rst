@@ -4,10 +4,7 @@
 First Grid job
 **************
 
-This section summarises all the steps to submit your first job on the Grid, check its status and retrieve the output:
-
-.. contents:: 
-    :depth: 4
+This section summarises all the steps to submit your first job on the Grid, check its status and retrieve the output.
 
 .. warning:: You can continue with this guide *only after* you have completed the :ref:`preparations <preparation>` for Grid. If you skipped that, go back to the :ref:`prerequisites` section. Still need help with obtaining or installing your certificate? We can help! Contact us at helpdesk@surfsara.nl.
 	 
