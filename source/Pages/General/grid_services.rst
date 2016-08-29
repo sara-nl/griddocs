@@ -88,7 +88,7 @@ Our Grid services provide:
 * High-throughput processing nodes for job execution
 * Access to scalable :ref:`grid-storage` facilities, disk and tape
 * Standard Grid Services like User Interfaces, Brokers, and Virtual Organisation management services
-* *Token Pool* Services (:ref:`picas-overview`) for production run logistics, job collection management, monitoring and control
+* *Token Pool* Services (:ref:`topos-overview` and :ref:`picas-overview`) for production run logistics, job collection management, monitoring and control
 * Virtual filesystem service :ref:`softdrive` for centralized software deployment on distributed systems
 * Dedicated *light paths* (`surflichtpaden <https://www.surf.nl/en/services-and-products/surflichtpaden/index.html>`_): we offer support bridging the last mile between the end points and your data sources.
 * *Consultancy*: advice and support on getting access, working with Grid certificates, basic job submission, data access methods, best practices, advice on design and optimization of applications for performance improvements, integration with large-scale job-submission frameworks, and international upscaling.
