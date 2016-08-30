@@ -4,11 +4,7 @@
 Grid authentication
 *******************
 
-This section explains the concepts and operations regarding Grid authentication mechanisms:
-
-.. contents:: 
-    :depth: 4
-
+This section explains the concepts and operations regarding Grid authentication mechanisms.
 
 ==========================================
 Introduction: delegation of authentication
