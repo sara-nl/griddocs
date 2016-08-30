@@ -9,10 +9,6 @@ In this section we discuss Grid user certificates in more detail; how to
 convert certificates, and how to find out the details of your Grid
 certificate.
 
-.. contents:: 
-    :depth: 4
-
-
 
 Once you have obtained and installed a :ref:`legacy certificate <get-grid-certificate>` there are some ``openssl`` commands that can help you inspect the information stored in your certificate. This section will show you how to do this.
 
