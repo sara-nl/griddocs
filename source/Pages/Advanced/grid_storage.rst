@@ -29,6 +29,7 @@ To use the Grid storage you must:
 
 .. _storage-types:
 
+=============
 Storage types
 =============
 
