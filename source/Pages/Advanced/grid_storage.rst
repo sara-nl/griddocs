@@ -7,9 +7,6 @@ Grid storage
 
 In this page we will talk about the Grid storage facilities, the tools to interact with it and the method to handle data that is stored on tape.
 
-.. contents:: 
-    :depth: 2
-    
 ====================
 About Grid storage
 ====================
