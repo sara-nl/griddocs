@@ -6,9 +6,6 @@ Life Science Grid clusters
 
 The current page provides information about the Life Science Grid (LSG) clusters and their locations, local support contact persons, and DNS addresses of User Interface (UI) and Storage Element (SE) machines.
 
-.. contents:: 
-    :depth: 4
-
 If you have any questions concerning access to the clusters below, please contact us at helpdesk@surfsara.nl.
 
 =====
