@@ -5,11 +5,7 @@
 PBS local jobs
 **************
 
-In this page we will talk about job submission to the local Life Science Grid (LSG) cluster. The information here applies to :ref:`LSG users <lsg>` who own an account on their :ref:`local LSG cluster <lsg-clusters>`:
-
-.. contents::
-    :depth: 4
-
+In this page we will talk about job submission to the local Life Science Grid (LSG) cluster. The information here applies to :ref:`LSG users <lsg>` who own an account on their :ref:`local LSG cluster <lsg-clusters>`.
 
 ============
 Introduction
