@@ -137,7 +137,7 @@ For example, the location of a file named *zap.tar* owned by *homer*, who is a m
 	srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 
         # The GridFTP protocol (default port 2811) on dCache storage (which will be supported multiple clients)
-        gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/
+        gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 	
 	# SRM protocol on DPM storage at lumc cluster
 	srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar 
