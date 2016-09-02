@@ -91,18 +91,18 @@ If you have multiple files to transfer, you can submit the transfers in one bulk
 
 The list of transfers should have this format:
 
-.. code-block:: console
+.. code-block:: cfg
 
-   #file1-source-SURL-or-TURL file1-destination-SURL-or-TURL
-   #file2-source-SURL-or-TURL file2-destination-SURL-or-TURL
-   #...
+   file1-source-SURL-or-TURL file1-destination-SURL-or-TURL
+   file2-source-SURL-or-TURL file2-destination-SURL-or-TURL
+   ...
 
 An example:
 
-.. code-block:: console
+.. code-block:: cfg
 
-   #srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/file1 srm://gb-se-amc.amc.nl:8446/dpm/amc.nl/home/lsgrid/homer/file1
-   #srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/file2 srm://gb-se-amc.amc.nl:8446/dpm/amc.nl/home/lsgrid/homer/file2
+   srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/file1 srm://gb-se-amc.amc.nl:8446/dpm/amc.nl/home/lsgrid/homer/file1
+   srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/file2 srm://gb-se-amc.amc.nl:8446/dpm/amc.nl/home/lsgrid/homer/file2
 
 More information and examples of bulk transfers and FTS in general can be found at `CERN FTS3 documentation`_.
 
