@@ -5,11 +5,7 @@ Grid software
 *************
 
 
-In this page we will talk about the options to run your software on the Grid worker nodes:
-
-.. contents:: 
-    :depth: 4
-    
+In this page we will talk about the options to run your software on the Grid worker nodes.
 
 .. _softdrive:
 

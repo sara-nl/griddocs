@@ -7,10 +7,6 @@ Bootstrap application
 
 When you have a binary program that you want to execute on the Grid you need to create a bootstrap application. This will execute a wrapper script that contains all the necessary information for your job to run. In this page we will show an example to run your bootstrap application on the Grid:
 
-.. contents:: 
-    :depth: 4
-
-    
 ===================
 Problem description
 ===================
@@ -39,7 +35,7 @@ Preamble
 
      $ssh homer@ui.grid.sara.nl # replace homer with your username
     
-* Copy the tarball :download:`bootstrap_fractals.tar </Scripts/bootstrap_fractals.tar>` to your :abbr:`UI (User Interface)` directory.
+* Copy the tarball :download:`bootstrap_fractals.tar </Scripts/bootstrap_fractals.tar>` to your :abbr:`UI (User Interface)` directory. You can do this by either opening a browser from the UI and copying the tarball locally or use the scp transfer (see e.g., the example on :ref:`Grid jobs <digicert>`)
 
 * Copy the fractals source code :download:`fractals.c </Scripts/fractals.c>` to your :abbr:`UI (User Interface)` directory.
     
@@ -117,7 +113,7 @@ In the :abbr:`JDL (Job Description Language)` file we specify the content of the
      #!/bin/bash
      chmod u+x fractals
      ./fractals -o output -q 0.184 -d 2280 -m 4400
-     ...
+    
     
 Once this jobs lands on the Grid, it will execute the ``wrapper.sh`` script which is a master script to set the program environment and initiate the program execution. In the ``wrapper.sh`` script you may include also the commands to retrieve input from a Grid storage location or transfer the output results to a Grid storage location.
 

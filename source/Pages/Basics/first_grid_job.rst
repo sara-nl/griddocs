@@ -4,10 +4,7 @@
 First Grid job
 **************
 
-This section summarises all the steps to submit your first job on the Grid, check its status and retrieve the output:
-
-.. contents:: 
-    :depth: 4
+This section summarises all the steps to submit your first job on the Grid, check its status and retrieve the output.
 
 .. warning:: You can continue with this guide *only after* you have completed the :ref:`preparations <preparation>` for Grid. If you skipped that, go back to the :ref:`prerequisites` section. Still need help with obtaining or installing your certificate? We can help! Contact us at helpdesk@surfsara.nl.
 	 
@@ -24,9 +21,7 @@ Grid job lifecycle
 
                 .. seealso:: Have a look at our mooc video that describes the :ref:`mooc-job-lifecycle` step by step.
 	
-To run your application on the Grid you need to describe its requirements in a specific language called **job description language** (JDL). This is similar to the information that we need to specify when we run jobs using a batch scheduling system like :ref:`pbs`, although it is slightly more complex as we are now scheduling jobs across multiple sites.
-
-Except for the application requirements, you also need to specify in the :abbr:`JDL (Job Description Language)` the content of the *input/output sandboxes*. These sandboxes allow you to transfer data to or from the Grid. The input sandbox contains all the files that you want to send with your job to the worker node, like e.g. a script that you want executed. The output sandbox contains all the files that you want to have transferred back to the :abbr:`UI (User Interface)`. 
+To run your application on the Grid you need to describe its requirements in a specific language called **job description language** (JDL). In addition to the application requirements, you also need to specify in the :abbr:`JDL (Job Description Language)` the content of the *input/output sandboxes*. These sandboxes allow you to transfer data to or from the Grid. The input sandbox contains all the files that you want to send with your job to the worker node, like e.g. a script that you want executed. The output sandbox contains all the files that you want to have transferred back to the :abbr:`UI (User Interface)`. 
 
 .. note:: The amount of data that you can transfer using the sandboxes is very limited, in the order of a few megabytes (less than **100MB**). This means that you should normally limit the input sandbox to a few script files and the output sandbox to the stderr and stdout files.
 
@@ -102,7 +97,7 @@ And now you are ready to submit jobs to the Grid! Or copy data from and to the G
 Describe your job in a JDL file
 ===============================
 
-To submit a Grid job you must describe this in a plain text file, called :abbr:`JDL (Job Description Language)`. Optionally, you can check the Computing Elements (CEs) that this job may run on. The JDL file will pass the details of your job to the :abbr:`WMS (Workload Management System)`.
+To submit a Grid job you must describe this in a plain text :abbr:`JDL (job description language)` file. You may also check the Computing Elements (CEs) that this job may run on. The JDL file will pass the details of your job to the :abbr:`WMS (Workload Management System)`.
 
 .. warning:: Make sure you have started your session and created already a :ref:`valid proxy <startgridsession>`. 
 
@@ -184,7 +179,7 @@ Note the use of ``-d $USER`` to tell your job that it should use your delegated 
 The option ``-o`` allows you to specify a file (in this case ``jobIDs``) to store the unique job identifier:
 
 * You can use this URL identifier to monitor your job from the command line or your browser and to get the job output.
-* Note that omitting the ``-o`` option means that the jobID is not saved in a file. When you do not save this id you will effectively loose the output of your job!
+* Note that omitting the ``-o`` option means that the jobID is not saved in a file. When you do not save this id you will effectively lose the output of your job!
 
 The jobID string looks like this:
 

@@ -6,10 +6,6 @@ dCache specifications
 
 This page describes the technical specifications for dCache. If you have any questions concerning the technical specifications below, please contact us at helpdesk@surfsara.nl.
 
-.. contents:: 
-    :depth: 4
-
-
 .. _dCache-specs-about:
 
 About

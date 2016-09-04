@@ -5,12 +5,8 @@
 Statistics and monitoring
 *************************
 
-In this section you will find information about the Grid systems status and usage statistics:
+In this section you will find information about the Grid systems status and usage statistics.
 
-.. contents:: 
-    :depth: 4
-
- 
 .. _monitoring-pages-surfsara:
  
 ================ 

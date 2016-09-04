@@ -4,11 +4,7 @@
 How to get access
 *****************
 
-In this page you will find general information about getting access to the Life Science Grid and the National Dutch Grid infrastructure:
-
-.. contents:: 
-    :depth: 4
-
+In this page you will find general information about getting access to the Life Science Grid and the National Dutch Grid infrastructure.
 
 .. _access-local-lsg:
 
@@ -16,15 +12,14 @@ In this page you will find general information about getting access to the Life 
 Local access to an LSG cluster
 ==============================
 
-Granting local access to a Life Science Grid (LSG) cluster enables you:
-
-* submitting :ref:`pbs` jobs directly to your local cluster
-* the possibility to scale up to other LSG clusters (see :ref:`access-grid`) 
-
 If your research applies to one of the life science disciplines and your institute hosts a LSG cluster (see :ref:`lsg-clusters`), you are eligible to obtain an account on your local LSG cluster.
 
 To get an account on a local user interface, please send a request to your Designated Site Admin (see :ref:`lsg-dsa`) or contact us at helpdesk@surfsara.nl.
 
+Granting local access to a Life Science Grid (LSG) cluster enables you:
+
+* submitting jobs (:ref:`pbs`) directly to your local cluster
+* the possibility to scale up to other LSG clusters (see :ref:`access-grid`) 
 
 .. _access-grid:
 
@@ -32,15 +27,14 @@ To get an account on a local user interface, please send a request to your Desig
 Access to the National Dutch Grid or LSG
 ========================================
 
-Access to the Dutch Grid or the :abbr:`LSG (Life Science Grid)` clusters (including non-local access) allows for: 
-
-* submitting :ref:`Grid jobs <first-grid-job>` to multiple clusters via the Grid middleware
-* storing data to the :ref:`grid-storage`
-
 Researchers at SURF-affiliated institutes can apply for compute and storage capacity on the Grid by submitting the `SURFsara application form`_. For scientists not affiliated to SURF, rates are based on tailor made packages. Specific details on obtaining accounts can be found in the `Access Grid`_ section of our website. 
 
 Please contact us at helpdesk@surfsara.nl for any inquiry on our possibilities.
 
+Access to the Dutch Grid or the :abbr:`LSG (Life Science Grid)` clusters (including non-local access) allows for: 
+
+* submitting :ref:`Grid jobs <first-grid-job>` to multiple clusters via the Grid middleware
+* storing data to the :ref:`grid-storage`
 
 .. _quotas:
 
@@ -57,7 +51,7 @@ In general, each project resource allocation involves:
 
 In order for us to make a suitable allocation for a project, we need to know what your goals are and how you want to achieve those goals. That is why it is important for you to understand how to estimate the resources for your project.
 
-.. sidebar:: not sure how to calculate your resource requirements?
+.. sidebar:: Not sure how to calculate your resource requirements?
 	
 	Contact us at helpdesk@surfsara.nl and we can work together on estimating the resources for running your computation.
 
@@ -65,7 +59,7 @@ For a proper estimation of resources requirements it is best to start with a few
 
 * how long it takes to run a representative input scenario
 * how much space you need to store input, output and intermediate data
-* what the software requirements are (required software tools, libraries, compilers, etc)
+* what the software requirements are (required software tools, libraries, compilers, etc.)
 * how many scenarios (jobs) you need to run for a complete analysis
 
 In case you don't know how to prepare such an inventory, we would be happy to assist you with that. 

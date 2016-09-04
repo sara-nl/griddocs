@@ -13,10 +13,6 @@ This chapter describes how to write the requirements, how the
 requirements determine where your jobs will run, and what they tell the
 scheduler.
 
-.. contents:: 
-    :depth: 4
-    
-
 .. _req-syntax:
 
 ==================
