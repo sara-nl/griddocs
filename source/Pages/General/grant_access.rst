@@ -18,7 +18,7 @@ Local access to an LSG cluster
 
 Granting local access to a Life Science Grid (LSG) cluster enables you:
 
-* submitting :ref:`pbs` jobs directly to your local cluster
+* submitting jobs (:ref:`pbs`) jobs directly to your local cluster
 * the possibility to scale up to other LSG clusters (see :ref:`access-grid`) 
 
 If your research applies to one of the life science disciplines and your institute hosts a LSG cluster (see :ref:`lsg-clusters`), you are eligible to obtain an account on your local LSG cluster.
@@ -57,7 +57,7 @@ In general, each project resource allocation involves:
 
 In order for us to make a suitable allocation for a project, we need to know what your goals are and how you want to achieve those goals. That is why it is important for you to understand how to estimate the resources for your project.
 
-.. sidebar:: not sure how to calculate your resource requirements?
+.. sidebar:: Not sure how to calculate your resource requirements?
 	
 	Contact us at helpdesk@surfsara.nl and we can work together on estimating the resources for running your computation.
 
@@ -65,7 +65,7 @@ For a proper estimation of resources requirements it is best to start with a few
 
 * how long it takes to run a representative input scenario
 * how much space you need to store input, output and intermediate data
-* what the software requirements are (required software tools, libraries, compilers, etc)
+* what the software requirements are (required software tools, libraries, compilers, etc.)
 * how many scenarios (jobs) you need to run for a complete analysis
 
 In case you don't know how to prepare such an inventory, we would be happy to assist you with that. 
