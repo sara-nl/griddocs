@@ -27,6 +27,28 @@ In addition, Grid clusters are not exclusively connected to their own storage fa
 The Grid is especially suited, therefore, to applications that cannot be solved in a single cluster within a reasonable timeframe. Common examples are the Large Hadron Collider (LHC) experiments, large-scale DNA analyses and Monte-Carlo simulations.
 
 
+.. _use-or-not:
+
+======================
+To use the Grid or not
+======================
+
+Grid computing is a form of distributed computing which can be *very powerful when applied correctly*. Grid is best suited for applications with a data-parallel nature that require many simultaneous *independent* jobs. With the help of the Grid, large scale computational problems can be solved and large amounts of data can be handled and stored.
+
+.. note:: The Grid suits applications that can be split up relatively easily in multiple, independent parts or else **embarrassingly parallel** jobs. 
+
+.. sidebar:: Other HPC options
+	
+	The Grid will be an interesting service if you are faced with workloads that concern hundreds of thousands of core hours and/or many terabytes of data. For Life Scientists we provide the `Life Science Grid`_ that offers additional functionality for smaller scale workloads. For other applications that concern small data or compute requirements, please have a look for other suitable `HPC systems`_ at SURFsara. 
+
+Job submission has a relatively high overhead. Submitting a “hello world” program may take minutes. Your data and your software must be available on the worker nodes, which requires careful planning of the job workflow. With the size of the job collections typical for the Grid, and submitting hundreds or even thousands jobs simultaneously, it may become a challenge to check your jobs for status and reschedule based on judgement of failures and their causes. We offer tools to help you automate these actions (see :ref:`pilot-jobs`), however, porting of your solution to the Grid will always require time and effort to set up. Our experienced consultants are available for assistance and to help you make the right decisions right from the beginning.
+
+The Grid infrastructure is able to accommodate a variety of communities and scientific fields, each with their own type of application and requirements, and without mutual interference. Typical Grid applications are:
+
+* Massive data processing workloads. 
+* Large computational job collections that require a minimal time to completion. 
+* Projects that require collaboration and resource sharing with national or international partners.  
+
 .. _how-it-works:
 
 ============
@@ -50,29 +72,6 @@ In short, as a user you submit your jobs to execute your calculation or analysis
 .. comment: Image source at https://www.websequencediagrams.com/?lz=dGl0bGUgSm9iIGZsb3cKCnBhcnRpY2lwYW50IFVzZXIgSW50ZXJmYWNlAA4NV29ya2xvYWQgTWFuYWdlbWVudCBTeXN0ZW0ANQ1Db21wdXRlIEVsAB4FADIRZXIgTm9kAE0OU3RvcmFnACoKCm5vdGUgb3ZlcgCBAg86IFN1bWJpdCBqb2IKAIEeDiAtPgCBCBs6AIFrBSsgSW5wdXQgc2FuZGJveABcCwAeHFNlbGVjdCBiZXN0IENFCgCBbhogLT4AgW8QAFggAB4RU2NoZWR1bGUAgV0FAII9DwCBWwgAgjwHAIEwJAAiCVN0YXIAgjEGAIJeDwBEEVJlYWQgZmlsZXMgADUYRXhlY3V0ZSB0YXNrAIILBQCDTgcgLT4AgzwQOiBXcml0ZQAyH0ZpbmlzaACDUQUAQA8Agj8RT3V0AIM3DACCDBcAg2ocbG9nICsAOBAAhFgaQ29sAIN7BW8AdAUAg2AfAIUfEACBHw8&s=roundgreen
 
 .. image:: /Images/job_flow.png
-
-
-.. _use-or-not:
-
-======================
-To use the Grid or not
-======================
-
-Grid computing is a form of distributed computing which can be *very powerful when applied correctly*. Grid is best suited for applications with a data-parallel nature that require many simultaneous *independent* jobs. With the help of the Grid, large scale computational problems can be solved and large amounts of data can be handled and stored.
-
-.. note:: The Grid suits applications that can be split up relatively easily in multiple, independent parts or else **embarrassingly parallel** jobs. 
-
-.. sidebar:: Other HPC options
-	
-	The Grid will be an interesting service if you are faced with workloads that concern hundreds of thousands of core hours and/or many terabytes of data. For Life Scientists we provide the `Life Science Grid`_ that offers additional functionality for smaller scale workloads. For other applications that concern small data or compute requirements, please have a look for other suitable `HPC systems`_ at SURFsara. 
-
-Job submission has a relatively high overhead. Submitting a “hello world” program may take minutes. Your data and your software must be available on the worker nodes, which requires careful planning of the job workflow. With the size of the job collections typical for the Grid, and submitting hundreds or even thousands jobs simultaneously, it may become a challenge to check your jobs for status and reschedule based on judgement of failures and their causes. We offer tools to help you automate these actions (see :ref:`pilot-jobs`), however, porting of your solution to the Grid will always require time and effort to set up. Our experienced consultants are available for assistance and to help you make the right decisions right from the beginning.
-
-The Grid infrastructure is able to accommodate a variety of communities and scientific fields, each with their own type of application and requirements, and without mutual interference. Typical Grid applications are:
-
-* Massive data processing workloads. 
-* Large computational job collections that require a minimal time to completion. 
-* Projects that require collaboration and resource sharing with national or international partners.  
 
 
 
