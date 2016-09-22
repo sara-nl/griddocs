@@ -27,8 +27,19 @@ Upcoming maintenances
 
 If you use want to receive notifications and be prepared for upcoming downtimes and maintenances, you can create personal subscriptions to receive announcements tailored specifically for the Grid services and clusters that are relevant for you. 
 
-These subscriptions can be created here: https://operations-portal.egi.eu/dns. 
+These subscriptions can be created here: https://operations-portal.egi.eu/downtimes/subscription. 
 
 .. note::  You can use this service only if you have your Grid certificate installed in you browser.
 
-If you need help creating your subscription(s) we are of course more than willing to assist at helpdesk@surfsara.nl.
+.. topic:: Example of Rule specifications:
+
+    * Rule: I WANT
+    * Region: NGI_NL
+    * Site: All sites
+    * Node: All nodes
+    * VO: All VOs
+    * Comm. channels: Add new -> Email
+    Once you make the rule, click on `Save rules specifications` to take effect.
+
+
+If you need help creating your subscription(s) we are of course willing to assist at helpdesk@surfsara.nl.
