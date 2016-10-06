@@ -127,6 +127,7 @@ Frequently asked questions
    :maxdepth: 1
    
    Pages/FAQ
+   Pages/Troubleshooting
    Pages/documentation/index
    Pages/cookie_policy
 
