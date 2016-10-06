@@ -165,7 +165,7 @@ Extract the content of a tar file from the Grid storage on the worker node or UI
      $tar -Bxf ${INPUT_FIFO} & TAR_PID=$! 
      ## Download the content of the tar file, replace zap.tar with your tar file
      $globus-url-copy -vb \
-     $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \  
+     $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
      $    file:///`pwd`/${INPUT_FIFO} && wait $TAR_PID 
 
 Extract a file
@@ -195,6 +195,6 @@ Transfer directory to dCache
      ## Push output directory to file (fifo) and catch PID
      $tar -Bcf ${OUTPUT_FIFO} zap/ & TAR_PID=$! # replace zap/ with the directory to be uploaded  
      ## Upload the final dir with fifo
-     $globus-url-copy -vb file:///${PWD}/${OUTPUT_FIFO} \ 
+     $globus-url-copy -vb file:///${PWD}/${OUTPUT_FIFO} \
      $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar && wait ${TAR_PID}
      ## note:add stall-timeout flag in sec (e.g. -stall-timeout 7200) for large files that take too long to complete checksum on the server after transfer
