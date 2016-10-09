@@ -19,7 +19,7 @@ Softdrive
 
 Softdrive is the service that allows you to install software in a central place and distribute it *automagically* on the Grid. You install the software once, and it will be available on all clusters, to all users. This means that you no longer need to supply your software in your *input sandbox*, or download your software in your job. 
 
-This page is about using Softdrive on the grid infrastructure. The use of Softdrive is however not limited to grid alone, as it can equally well be applied to your own clusters or in `cloud environments`_. 
+This page is about using Softdrive on the grid infrastructure. The use of Softdrive is however not limited to grid alone, as it can equally well be applied to your own clusters, your :ref:`own computer <softdrive-on-laptop>` or in `cloud environments`_. 
 
 
 .. _cvmfs:
@@ -187,4 +187,4 @@ At the moment it is not possible to run Docker containers on the :ref:`dutch-gri
 
 .. _`CVMFS service`: https://cernvm.cern.ch/portal/filesystem  
 
-.. _`cloud environments`: https://doc.hpccloud.surfsara.nl/softdrive  
+.. _`cloud environments`: http://doc.hpccloud.surfsara.nl/softdrive  
