@@ -22,6 +22,11 @@ It supports all the basic transfer protocols, such as: GridFTP, SRM, Webdav, HTT
 
 The FTS client is currently installed on the UI ``ui.grid.sara.nl``. It is not available on the :ref:`LSG UI <lsg-hostnames>` machines.
 
+  .. image:: /Images/Using_the_File_Transfer_Service.png
+
+  .. comment: Image source is at https://www.websequencediagrams.com/?lz=dGl0bGUgVXNpbmcgdGhlIEZpbGUgVHJhbnNmZXIgU2VydmljZQoKcGFydGljaXBhbnQgVXNlciBJbnRlcmZhY2UADg1GVFMAHg1TdG9yYWdlIEVsZW1lbnQgMQABHTIKCgBODiAtPiBGVFM6IGZ0cy10AIEOBy1zdWJtaXQKCmxvb3AgZm9yIGVhY2ggZmlsZSBpbiBqb2IKICBGVFMgLT4AbhI6IHByZXBhcmUANAUASwgAFxoyAAEwMTogc3RhcnQAUAwAgXURAFMXR3JpZEZUUACBRQYAICAAghMFcmVzdWx0AFATMgATEGVuZACCNyd0YXR1cwoAgjoHAINeDgBoCQo&s=roundgreen
+
+
 Authentication
 ==============
  
