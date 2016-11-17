@@ -62,8 +62,8 @@ Advanced topics
 
    Pages/Advanced/grid_job_requirements
    Pages/Advanced/grid_authentication
-   Pages/Advanced/grid_certificates  
-
+   Pages/Advanced/grid_certificates
+   Pages/Advanced/host_certificates
 
 .. _local-lsg:
 
