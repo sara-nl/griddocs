@@ -65,6 +65,8 @@ To create a directory with curl:
    $curl --capath /etc/grid-security/certificates/ --fail --user homer \
    $     --request MKCOL https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/directory
 
+If on your system there are no Grid :abbr:`CA (Certificate Authority)` certificates available in ``/etc/grid-security/certificates/``, please read :ref:`host_certificates`.
+
 
 Transferring data
 =================
@@ -85,8 +87,6 @@ To copy a file from your local machine to dCache:
 The command will ask for the password of 'homer' on the command line. If you don't want to type the password each time, specify ``--netrc`` and store the password in the ``.netrc`` file in your home dir. Make sure it is not readable by others (``chmod 600 .netrc``). See ``man curl`` for more details.
 
 .. note:: It is possible to specify the password on the command line like this: ``--user homer:password``. However, for security reasons this should be avoided on shared systems (like the :abbr:`UI (User Interface)`) because it allows other local users to read the password with the ``ps`` command.
-
-If on your system there are no Grid :abbr:`CA (Certificate Authority)` certificates available in ``/etc/grid-security/certificates/``, you can install them by following these instructions: https://dist.eugridpma.info/distribution/igtf/, or you can specify ``--insecure`` to skip certificate checking (not recommended!).
 
 
 Downloading
