@@ -50,6 +50,7 @@ In order to assist you better, we have a few troubleshooting steps that may alre
      
      ## Or just test with iperf:
      $iperf3 -c rabbit1.grid.sara.nl -p 24000
+     $iperf3 -c rabbit1.grid.sara.nl -p 24000 --reverse
      ## Keep in mind that we have to start iperf first!
 
 
