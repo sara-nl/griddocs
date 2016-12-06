@@ -103,8 +103,15 @@ Occasionally, transfers are stuck when 0 bytes have been transferred. There are 
 
   Another good tool for testing the network is ``iperf``. We'll start an ``iperf`` server at your request so that you can test against it.
   
-  .. code-block:: console
+  .. code-block:: bash
   
-     $iperf -c rabbit1.grid.sara.nl --port 24000 --parallel 4
+     # Using iperf3 to test upload speed
+     iperf3 -c rabbit1.grid.sara.nl --port 24000 --parallel 4
+
+     # Same but for download speed
+     iperf3 -c rabbit1.grid.sara.nl --port 24000 --parallel 4 --reverse
+
+     # Using the older iperf to test upload and download speed simultaneously, with 4 streams
+     iperf -c rabbit1.grid.sara.nl --port 24001 --parallel 4 --dualtest
 
   A fix for Linux servers is to enable ``tcp_mtu_probing`` in ``sysctl.conf``. This enables the Linux kernel to select the best MTU value for a certain network route.
