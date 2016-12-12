@@ -27,7 +27,7 @@ In order to assist you better, we have a few troubleshooting steps that may alre
      $globus-url-copy -debugftp -verbose-perf -verbose ...
      $curl --verbose ...
   
-* Is the resource you're using in downtime? Downtimes are announced in the `GOCDB (Grid Operations Center Database) <https://goc.egi.eu/portal/>`_ (certificate in your browser required). There is also a `list of downtimes of the Dutch Grid sites <http://web.grid.sara.nl/cgi-bin/eInfra.py>`_ that can be accessed without a certificate.
+* Is the resource you're using in :ref:`downtime <notifications>`?
 
 * Can you connect to the service?
 
