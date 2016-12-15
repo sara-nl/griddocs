@@ -4,7 +4,7 @@
 Gina specifications
 *******************
 
-Gina is the Grid cluster at SURFsara; currently all the servers are located at the Vancis B.V. datacenter divided over two rooms. After different tenders these servers belong to different brands (Dell & Fujitsu). Three service nodes are used to host virtual machines for different purposes (creamces, monitoring, installation, dns servers...). All the worker nodes are installed on physical nodes.
+Gina is the Grid cluster at SURFsara; currently all the servers are located at the Digital Realty datacenter. After different tenders these servers belong to different brands (Dell & Fujitsu). Three service nodes are used to host virtual machines for different purposes (creamces, monitoring, installation, dns servers...). All the worker nodes are installed on physical nodes.
 
 This page describes the specifications for the Gina Grid cluster at SURFsara:
 
@@ -24,13 +24,13 @@ Quick summary
 Gina cluster                 Capacity                                             
 ============================ =====================================================
 Operating system             Linux CentOS 6.x 64bit                              
-Total number of cores        4640 Xeon cores at 2.2 to 2.6 GHz                   
-Total memory                 37TB                                                 
-Total scratch space          2032TB                                              
+Total number of cores        6584 Xeon cores at 2.2 to 2.6 GHz                   
+Total memory                 52.7TB                                                 
+Total scratch space          2264TB                                              
 Network backbone             Juniper Q-Fabric Network Fabric which also connects the Grid storage 
 ============================ =====================================================
 
-``Last update: Juli 2016``
+``Last update: December 2016``
 
 .. _gina-specs-network:
 
@@ -46,7 +46,7 @@ Worker Nodes
 ============
 This is the list of the different worker nodes in order of installation/configuration from newest to oldest:
 
-Worker Nodes ``am90-{01-33}``, ``am91-{01-33}``, ``am94-{01-33}``::  
+Worker Nodes ``f03-{01-20}``, ``f04-{01-20}``, ``f05-{01-20}``, ``f06-{01-20}``, ``f07-{01-20}``::  
 
   *  Dell R630  
   *  2x Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz (24 cores)  
@@ -57,8 +57,20 @@ Worker Nodes ``am90-{01-33}``, ``am91-{01-33}``, ``am94-{01-33}``::
   *  Total cores of this type: 2400  
   *  Scratch per core: ~300GB  
   *  RAM per core: 8GB  
-  
-Worker Nodes ``ar90-{01-52}``, ``ar91-{01-52}``::  
+
+Worker Nodes ``f08-{01-16}``, ``f09-{01-16}``, ``f10-{01-16}``, ``f11-{01-16}``, ``f12-{01-17}``::  
+
+  *  Fujitsu RX2530
+  *  2x Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.60GHz (24 cores)  
+  *  192GB RAM  
+  *  ~2.4TB scratch (SSD only)
+  *  Type: Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz (2016)
+  *  Number of nodes: 81
+  *  Total cores of this type: 1944  
+  *  Scratch per core: ~100GB  
+  *  RAM per core: 8GB  
+
+Worker Nodes ``f13-{01-24}``, ``f14-{01-20}``, ``f15-{01-20}``, ``f16-{01-20}``, ``f17-{01-20}``::  
 
   *  Fujitsu CX250  
   *  2x Intel(R) Xeon(R) CPU E5-2650 v2 @ 2.60GHz (16 cores)  
@@ -70,12 +82,12 @@ Worker Nodes ``ar90-{01-52}``, ``ar91-{01-52}``::
   *  Scratch per core: ~680GB  
   *  RAM per core: 8GB  
 
-Worker Nodes ``v37-{01-12}``, ``v33-{01-06}``::  
+Worker Nodes ``f18-{01-06}``, ``f19-{01-06}``, ``f20-{01-06}``::  
 
   *  Dell R820  
   *  4x Intel(R) Xeon(R) CPU E5-4620 0 @ 2.20GHz (32 cores)  
   *  256GB RAM  
-  *  6.8TiB scratch  
+  *  7TB scratch  
   *  Type: Sandy Bridge architecture /w Sandy Bridge-EP cores (2012)  
   *  Number of nodes: 18  
   *  Total cores of this type: 576  
