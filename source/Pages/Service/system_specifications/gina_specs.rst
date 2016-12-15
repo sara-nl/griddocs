@@ -46,18 +46,6 @@ Worker Nodes
 ============
 This is the list of the different worker nodes in order of installation/configuration from newest to oldest:
 
-Worker Nodes ``f03-{01-20}``, ``f04-{01-20}``, ``f05-{01-20}``, ``f06-{01-20}``, ``f07-{01-20}``::  
-
-  *  Dell R630  
-  *  2x Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz (24 cores)  
-  *  192GB RAM  
-  *  ~8000GB scratch  
-  *  Type: Haswell architecture /w Haswell-EP cores (2014)  
-  *  Number of nodes: 100   
-  *  Total cores of this type: 2400  
-  *  Scratch per core: ~300GB  
-  *  RAM per core: 8GB  
-
 Worker Nodes ``f08-{01-16}``, ``f09-{01-16}``, ``f10-{01-16}``, ``f11-{01-16}``, ``f12-{01-17}``::  
 
   *  Fujitsu RX2530
@@ -68,6 +56,18 @@ Worker Nodes ``f08-{01-16}``, ``f09-{01-16}``, ``f10-{01-16}``, ``f11-{01-16}``,
   *  Number of nodes: 81
   *  Total cores of this type: 1944  
   *  Scratch per core: ~100GB  
+  *  RAM per core: 8GB  
+
+Worker Nodes ``f03-{01-20}``, ``f04-{01-20}``, ``f05-{01-20}``, ``f06-{01-20}``, ``f07-{01-20}``::  
+
+  *  Dell R630  
+  *  2x Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz (24 cores)  
+  *  192GB RAM  
+  *  ~8000GB scratch  
+  *  Type: Haswell architecture /w Haswell-EP cores (2014)  
+  *  Number of nodes: 100   
+  *  Total cores of this type: 2400  
+  *  Scratch per core: ~300GB  
   *  RAM per core: 8GB  
 
 Worker Nodes ``f13-{01-24}``, ``f14-{01-20}``, ``f15-{01-20}``, ``f16-{01-20}``, ``f17-{01-20}``::  
