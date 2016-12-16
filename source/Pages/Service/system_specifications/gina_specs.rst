@@ -52,7 +52,7 @@ Worker Nodes ``f08-{01-16}``, ``f09-{01-16}``, ``f10-{01-16}``, ``f11-{01-16}``,
   *  2x Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz (24 cores)  
   *  192GB RAM  
   *  ~2.4TB scratch (SSD only)
-  *   Type: Broadwell architecture /w Broadwell-EP cores (2014)
+  *   Type: Broadwell architecture /w Broadwell-EP cores (2016)
   *  Number of nodes: 81
   *  Total cores of this type: 1944  
   *  Scratch per core: ~100GB  
