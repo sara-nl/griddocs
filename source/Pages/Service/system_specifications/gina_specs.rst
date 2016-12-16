@@ -49,10 +49,10 @@ This is the list of the different worker nodes in order of installation/configur
 Worker Nodes ``f08-{01-16}``, ``f09-{01-16}``, ``f10-{01-16}``, ``f11-{01-16}``, ``f12-{01-17}``::  
 
   *  Fujitsu RX2530
-  *  2x Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.60GHz (24 cores)  
+  *  2x Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz (24 cores)  
   *  192GB RAM  
   *  ~2.4TB scratch (SSD only)
-  *  Type: Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz (2016)
+  *   Type: Broadwell architecture /w Broadwell-EP cores (2014)
   *  Number of nodes: 81
   *  Total cores of this type: 1944  
   *  Scratch per core: ~100GB  
