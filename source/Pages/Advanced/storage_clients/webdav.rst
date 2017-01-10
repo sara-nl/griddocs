@@ -334,3 +334,4 @@ Choose your certificate.
 
 .. image:: /Images/cyberduck-usercert-4.png
 	:align: center
+	:scale: 50 %
