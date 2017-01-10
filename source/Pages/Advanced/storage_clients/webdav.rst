@@ -290,9 +290,9 @@ Queries can be combined to reduce transaction overhead:
    $         </a:propfind>' \
    $| curl ...
 
-================
-Graphical access
-================
+===============================
+Graphical access with Cyberduck
+===============================
   
 To work with WebDAV on Windows or Mac OS X, you can install **Cyberduck** from here: https://cyberduck.io/. Please note that the App store package costs money; the download from the website is free, but will ask for a donation.
 
