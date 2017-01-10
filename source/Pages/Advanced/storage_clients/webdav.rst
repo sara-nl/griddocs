@@ -320,7 +320,7 @@ First, import your user certificate in p12 format into the Keychain Access. It s
 .. image:: /Images/cyberduck-usercert-1.png
 	:align: center
 
-Second, create a bookmark with these settings:
+Second, go to Cyberduck and create a bookmark with these settings:
 
 .. image:: /Images/cyberduck-usercert-2.png
 	:align: center
