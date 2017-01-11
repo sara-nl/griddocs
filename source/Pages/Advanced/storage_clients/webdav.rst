@@ -309,9 +309,11 @@ To work with WebDAV on Windows or Mac OS X, you can install **Cyberduck** from h
 Cyberduck with a user certificate
 =================================
 
-Normally, one would authenticate to dCache using a user certificate or proxy. In dCache, your user certificate or proxy DN is mapped onto the correct identity. However, if you authenticate with your CUA username & password, that identity might not be the same and you may not have access to your own data.
+Normally, one would authenticate to dCache using a user certificate or proxy. dCache determines your identity based either on your user certificate or proxy DN, or on your VOMS credentials. However, if you authenticate with your CUA username & password, that identity might not be the same and you may not have access to your own data.
 
-To work around this, it may be useful to have Cyberduck authenticate you using your user certificate. Please note that since you will not use a *VOMS* proxy, we may need to map your *DN* onto the desired identity instead of your VOMS attributes.
+To work around this, it may be useful to have Cyberduck authenticate you using your user certificate. 
+
+.. note:: Most users are authenticated based on the VOMS credentials of their proxy. Since you will not use a *VOMS* proxy but a certificate, this identity mapping won't work and you may not have access. Instead, we may need to map your *DN* onto the desired identity instead of your VOMS credentials. If you want to use Cyberduck with certificate authentication, contact us so that we can map your DN to the desired identity.
 
 Here is how to configure Cyberduck for certificate authentication on OS X:
 
