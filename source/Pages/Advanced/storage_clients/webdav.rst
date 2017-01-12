@@ -30,19 +30,23 @@ dCache has the following webdav doors:
 .. |nbsp| unicode:: 0xA0 
    :trim:
 
-+----------------------------------+---------------------------+-----------------------------+---------------------+
-| URL including port               | Authentication method     | Redirection behaviour       | Overwrites          |
-+==================================+===========================+=============================+=====================+
-| https://webdav.grid.sara.nl:443  | Username/password         | Redirects on read           | Not |nbsp| allowed  |
-+----------------------------------+---------------------------+-----------------------------+---------------------+
-| https://webdav.grid.sara.nl:2880 | Username/password         | No redirects                | Allowed             |
-+----------------------------------+---------------------------+-----------------------------+---------------------+
-| https://webdav.grid.sara.nl:2882 | User certificate or proxy | Redirects on read and write | Not |nbsp| allowed  |
-+----------------------------------+---------------------------+-----------------------------+---------------------+
++--------------------------------------+---------------------------+-----------------------------+---------------------+
+| URL including port                   | Authentication method     | Redirection behaviour       | Overwrites          |
++======================================+===========================+=============================+=====================+
+| https://webdav.grid.sara.nl:443      | Username/password         | Redirects on read           | Not |nbsp| allowed  |
++--------------------------------------+---------------------------+-----------------------------+---------------------+
+| https://webdav.grid.sara.nl:2880     | Username/password         | No redirects                | Allowed             |
++--------------------------------------+---------------------------+-----------------------------+---------------------+
+| https://webdav.grid.sara.nl:2882     | User certificate or proxy | Redirects on read and write | Not |nbsp| allowed  |
++--------------------------------------+---------------------------+-----------------------------+---------------------+
+| https://webdav-cert.grid.sara.nl:443 | User certificate or proxy | No redirects                | Not |nbsp| allowed  |
++--------------------------------------+---------------------------+-----------------------------+---------------------+
 
 If you don't know which one you should use, choose the first. It has a good load balancing. The second, on port 2880, may be useful for certain webdav clients that don't support redirects, such as ``cadaver``. Use the third one only if you need to use webdav with a certificate or proxy.
 
 ``webdav.grid.sara.nl`` is a DNS round robin that will direct you to a (more or less) random host in a pool of webdav servers.
+
+``webdav-cert.grid.sara.nl`` is a single virtual machine. Its bandwidth is limited. Use it only when you want to authenticate with a user certificate or proxy, and your institute's firewall blocks outgoing connections to port 2882.
 
 .. note:: To run the examples below you need to have a :abbr:`UI (User Interface)` (or :abbr:`CUA (SURFsara's Central User Administration)`) account that is configured within dCache and authorized to the data you want to access. Contact us if you need assistance with that.
 
