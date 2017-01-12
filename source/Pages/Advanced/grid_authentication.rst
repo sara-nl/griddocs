@@ -103,7 +103,9 @@ and ``userkey.pem``. They must have the following ownerships and permissions:
 	$ls -l $HOME/.globus/userkey.pem
 	-r-------- 1 homer homer 1956 Nov 16 12:20 /home/homer/.globus/usercert.pem
 	
-where ``homer`` should be replaced with your username.
+where ``homer`` should be replaced with your username. You can check the documentation about how to get a valid Grid certificate
+:ref:`how to get a Grid certificate<get-grid-certificate>` and instructions about :ref:`how to
+convert <convert-pkcs12-to-pem>` a pkcs12 certificate to the above PEM format.
 
 Now issue the following command to create a *local* proxy. The pass phrase you are asked for, is your Grid certificate password:
 
@@ -200,6 +202,9 @@ You should get something like this::
 
 The delegated proxy can be received locally from other authorized Grid machines. 
 
+MyProxy tools rely on the environment variable ``MYPROXY_SERVER`` to determine the
+MyProxy server to be used. This variable is set to ``px.grid.sara.nl`` for the SURFsara
+Grid UI.
 
 Inspecting the *myproxy* certificate
 ------------------------------------

@@ -17,7 +17,7 @@ In this page we will talk about the options to run your software on the Grid wor
 Softdrive 
 =========
 
-Softdrive is the service that allows you to install software in a central place and distribute it *automagically* on the Grid. You install the software once, and it will be available on all clusters, to all users. This means that you no longer need to supply your software in your *input sandbox*, or download your software in your job.
+Softdrive is a software distribution service that allows you to install software in a central place and distribute it *automagically* on the Grid. You install the software once, and it will be available on all clusters, to all users. This means that you no longer need to supply your software in your *input sandbox*, or download your software in your job.
 
 
 .. _cvmfs:

@@ -73,6 +73,7 @@ Copy certificate *.p12* file to the UI
 
      [homer@localmachine]$scp /PATH-TO-P12-FILE/browsercert.p12 homer@ui.grid.sara.nl:~/.globus  # replace "homer" with your username!
 
+.. _convert-pkcs12-to-pem:
 
 Convert pkcs12 to PEM
 =====================
