@@ -17,15 +17,16 @@ In this page we will talk about the options to run your software on the Grid wor
 Softdrive 
 =========
 
-Softdrive is a software distribution service that allows you to install software in a central place and distribute it *automagically* on the Grid. You install the software once, and it will be available on all clusters, to all users. This means that you no longer need to supply your software in your *input sandbox*, or download your software in your job.
+Softdrive is the service that allows you to install software in a central place and distribute it *automagically* on the Grid. You install the software once, and it will be available on all clusters, to all users. This means that you no longer need to supply your software in your *input sandbox*, or download your software in your job. 
 
+This page is about using Softdrive on the grid infrastructure. The use of Softdrive is however not limited to grid alone, as it can equally well be applied to your own clusters, your :ref:`own computer <softdrive-on-laptop>` or in `cloud environments`_. 
 
 .. _cvmfs:
 
 CVMFS
 =====
 
-Softdrive is using the CVMFS (short for CernVM File System) tool on the background. CVMFS is a network file system based on HTTP and optimized to deliver experiment software in a fast, scalable, and reliable way. 
+Softdrive is using the `CVMFS service`_ (short for CernVM File System) on the background. CVMFS is a network file system based on HTTP and optimized to deliver experiment software in a fast, scalable, and reliable way. 
 
 
 Quickstart
@@ -36,16 +37,21 @@ In this example, we will distribute a few small files to all nodes in the Life S
 Softdrive works by logging in the software distribution node, and putting your files there. Next, you tell the software distribution system that you are ready installing files. These files will be made available on all nodes in the :ref:`lsg` and on all other nodes on the :ref:`dutch-grid`.
 
 
-CVMFS group membership
-----------------------
+Access
+------
 
-To distribute your files using Softdrive, you must be a member of the group ``softdrive``. If you are not a member yet, send an e-mail to helpdesk@surfsara.nl with a membership request.
+Users of the National e-Infrastructure are entitled to use Softdrive
+without the need for a separate resource request.  You can request
+access by sending an e-mail with your current project allocation id to
+helpdesk@surfsara.nl.
 
 
 Logging in on the softdrive 
 ---------------------------
 
-After you have been added to the ``softdrive`` group, you can log in on the software distribution node, using your Grid :abbr:`UI (User Interface)` username and password:
+Once access has been arranged, you can log in on the software
+distribution node, using your Grid :abbr:`UI (User Interface)`
+username and password:
 
 .. code-block:: console
 
@@ -148,7 +154,7 @@ Note here! The installer will ask you to which location to install the software.
     [/home/homer/anaconda2] >>> /cvmfs/softdrive.nl/homer/anaconda-2-2.4.0/
     ...
 
-That was it! You can now publish the software that is installed in your ``/cvmfs/softdrive.nl/homer/anaconda-2-2.4.0 directory``. To do so, run this command in Softdrive:
+That was it! You can now publish the software that is installed in your ``/cvmfs/softdrive.nl/homer/anaconda-2-2.4.0`` directory. To do so, run this command in Softdrive:
 
 .. code-block:: console  
 
@@ -176,4 +182,8 @@ At the moment it is not possible to run Docker containers on the :ref:`dutch-gri
 
 .. Links:
 
-.. _`Anaconda python`: https://www.continuum.io/downloads
+.. _`Anaconda python`: https://www.continuum.io/downloads  
+
+.. _`CVMFS service`: https://cernvm.cern.ch/portal/filesystem  
+
+.. _`cloud environments`: http://doc.hpccloud.surfsara.nl/softdrive  

@@ -140,7 +140,7 @@ Directives
 	##PBS -e /home/homer/samples/
 	##PBS -o /home/homer/samples/
 
-* Send job status notifications to your email:
+.. * Send job status notifications to your email:
 
   .. code-block:: console
 

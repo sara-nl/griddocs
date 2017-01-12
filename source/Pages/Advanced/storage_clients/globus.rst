@@ -20,7 +20,19 @@ Globus tools
 Creating/listing 
 ================
 
-The ``globus-*`` client does not offer an option to create or list directories. For this purpose, use a different client, e.g. :ref:`uberftp client <uberftp>`.
+* Listing directories on dCache:
+
+  .. code-block:: console
+  
+     $globus-url-copy -list gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/
+
+* Listing directories on DPM:
+
+  .. code-block:: console
+  
+     $globus-url-copy -list gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/
+     
+The ``globus-*`` client does not offer an option to create directories. For this purpose use a different client, e.g. :ref:`uberftp client <uberftp>`.
 
 
 Transferring data
@@ -133,3 +145,56 @@ Removing data
 
 The ``globus-*`` client does not offer an option to delete files or directories. For this purpose, use a different client, e.g. :ref:`uberftp client <uberftp>`.
 
+
+Fifo pipes
+==========
+
+When you want to process data from a large ``tar`` file (hundreds of Gigabytes) that is stored on the Grid Storage, it is possible to extract just the content without copying the complete tar file on the Worker Node. Similarly, you can upload a directory that will be stored in a tar file on the Grid storage on-the-fly. This trick saves space on the local node from keeping the double copy of the data and is possible by using the ``fifo pipes`` technique. 
+
+Extract directory from dCache
+-----------------------------
+
+Extract the content of a tar file from the Grid storage on the worker node or UI:
+
+  .. code-block:: console
+     
+     ## Create fifo for input data
+     $INPUT_FIFO="GRID_input_fifo.tar" 
+     $mkfifo $INPUT_FIFO 
+     ## Extract the directory from fifo and catch PID
+     $tar -Bxf ${INPUT_FIFO} & TAR_PID=$! 
+     ## Download the content of the tar file, replace zap.tar with your tar file
+     $globus-url-copy -vb \
+     $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
+     $    file:///`pwd`/${INPUT_FIFO} && wait $TAR_PID 
+
+Extract a file
+--------------
+
+Extract a particular from a known directory location in a ``tar`` file:
+
+  .. code-block:: console
+     
+     ## Create fifo for input file
+     $INPUT_FIFO="GRID_input_fifo.tar" 
+     $mkfifo $INPUT_FIFO 
+     ## Extract a particular file from fifo and catch PID
+     $tar -Bxf ${INPUT_FIFO} zap/filename & TAR_PID=$! # replace zap/filename with the exact location of you file in the tar
+     ## Download the file, replace zap.tar with your tar file
+     $globus-url-copy -vb \
+     $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
+     $    file:///`pwd`/${INPUT_FIFO} && wait $TAR_PID 
+
+Transfer directory to dCache
+----------------------------
+
+  .. code-block:: console
+     
+     $OUTPUT_FIFO="GRID_output_fifo.tar"	 
+     $mkfifo ${OUTPUT_FIFO} # create a fifo pipe
+     ## Push output directory to file (fifo) and catch PID
+     $tar -Bcf ${OUTPUT_FIFO} zap/ & TAR_PID=$! # replace zap/ with the directory to be uploaded  
+     ## Upload the final dir with fifo
+     $globus-url-copy -vb file:///${PWD}/${OUTPUT_FIFO} \
+     $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar && wait ${TAR_PID}
+     ## note:add stall-timeout flag in sec (e.g. -stall-timeout 7200) for large files that take too long to complete checksum on the server after transfer

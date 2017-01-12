@@ -28,7 +28,7 @@ To use the Grid storage you must:
 * Have :ref:`a personal Grid certificate <get-grid-certificate>` [1]_
 * Be member of :ref:`a VO <join-vo>` for which we have allocated storage space.
 
-You can access the Grid storage with Grid :ref:`storage-clients`, through interfaces that speak protocols like :abbr:`SRM (Storage Resource Management)`, :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`, :abbr:`GSIdCap (dCache Access Protocol with Grid auhthentication)` or :abbr:`WebDAV (Web Distributed Authoring and Versioning)`. With these storage clients you can:
+You can access the Grid storage with Grid :ref:`storage-clients`, through interfaces that speak protocols like :abbr:`SRM (Storage Resource Management)`, :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`, :abbr:`GSIdCap (dCache Access Protocol with Grid auhthentication)` or :abbr:`Webdav (Web Distributed Authoring and Versioning)`. With these storage clients you can:
 
 * list directories and files
 * read (download) files
@@ -36,7 +36,7 @@ You can access the Grid storage with Grid :ref:`storage-clients`, through interf
 * delete files or directories
 * :ref:`stage` files (copy them from tape to disk for faster reading)
 
-.. [1] It is technically possible to access the dCache Grid storage without certificate, by using :abbr:`WebDAV (Web Distributed Authoring and Versioning)` with username/password authentication. We don't recommend this: authentication with username/password is less secure, and WebDAV is slower than :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`.
+.. [1] It is possible to access the dCache Grid storage without certificate, by using :abbr:`Webdav (Web Distributed Authoring and Versioning)` with username/password authentication. However, authentication with username/password is less secure, and Webdav is not as fast as :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`.
 
 
 .. _storage-types:
@@ -87,7 +87,7 @@ Examples:
 	# lsgrid user homer stores the file zap.tar on dCache storage
 	gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 	
-	# same, but with a WebDAV TURL
+	# same, but with a Webdav TURL
 	https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 	
 	# lsgrid user homer stores the file zap.tar on DPM storage at lumc cluster
@@ -148,7 +148,7 @@ dCache
 +------------+--------------------------------------+--------------------------------------+
 |            | https://webdav.grid.sara.nl:443      |                                      |
 +            +--------------------------------------+                                      +
-| WebDAV     | https://webdav.grid.sara.nl:2880     | See :ref:`webdav` for details        |
+| Webdav     | https://webdav.grid.sara.nl:2880     | See :ref:`webdav` for details        |
 +            +--------------------------------------+                                      +
 |            | https://webdav.grid.sara.nl:2882     |                                      |
 +------------+--------------------------------------+--------------------------------------+
@@ -189,13 +189,13 @@ In this section we will show the common commands to use the various storage clie
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
   |                     |             protocols            |                                       |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
-  | Client              | SRM | GridFTP | GSIdCap | WebDAV | 3rd party | Speed | Tape control [1]_ |
+  | Client              | SRM | GridFTP | GSIdCap | Webdav | 3rd party | Speed | Tape control [2]_ |
   +=====================+=====+=========+=========+========+===========+=======+===================+
   | :ref:`uberftp`      | --  | yes     | --      | --     | --        | high  | --                |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
   | :ref:`globus`       | --  | yes     | --      | --     | --        | high  | --                |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
-  | :ref:`srm`          | yes | [2]_    | [2]_    | [2]_   | --        |       | yes               |
+  | :ref:`srm`          | yes | [3]_    | [3]_    | [3]_   | --        |       | yes               |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
   | :ref:`gfal`         | yes | yes     | --      | --     | --        |       | yes               |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
@@ -203,14 +203,15 @@ In this section we will show the common commands to use the various storage clie
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
   | :ref:`fts`          | yes | yes     | --      | yes    | yes       | high  | yes               |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
-  | :ref:`globusonline` | --  | yes     | --      | --     | yes       | high  | --                |
+  | :ref:`globusonline` | --  | yes     | --      | --     | yes       |       | --                |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
-  | :ref:`lcg-lfn-lfc`  | yes | [2]_    | --      | --     | --        |       | --                |
+  | :ref:`lcg-lfn-lfc`  | yes | [3]_    | --      | --     | --        |       | --                |
   | (not recommended)   |     |         |         |        |           |       |                   |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
 
-.. [1] Examples of tape control: staging a file from tape to disk, or get it locality (tape or disk).
-.. [2] SRM and LCG commands use the :abbr:`SRM (Storage Resource Management)` protocol for metadata level operations and switch to another protocol like GridFTP for file transfers. This may cause protocol overhead. For example, authentication needs to be done twice: once for each protocol.
+.. [2] Examples of tape control: staging a file from tape to disk, or get its locality (tape or disk).
+
+.. [3] SRM and LCG commands use the :abbr:`SRM (Storage Resource Management)` protocol for metadata level operations and switch to another protocol like GridFTP for file transfers. This may cause protocol overhead. For example, authentication needs to be done twice: once for each protocol.
 
 .. toctree::
    :hidden:
@@ -244,13 +245,14 @@ The :ref:`dCache` storage at SURFsara consists of magnetic tape storage and hard
   | ONLINE_AND_NEARLINE | The file is both on disk and on tape                            |
   +---------------------+-----------------------------------------------------------------+
 
+There are some more file statuses. See the `SRMv2 specifications <https://sdm.lbl.gov/srm-wg/doc/SRM.v2.2.html#_Toc241633052>`_ for a full list.
 
 .. _staging-single-file:
 
 Staging a single file
 =====================
 
-.. note:: For all staging operations you need to have a valid proxy, see :ref:`startgridsession`. 
+.. note:: For the staging examples below, you need a valid proxy, see :ref:`startgridsession`.
 
 Here is an example of how to stage a single file:
 
@@ -373,3 +375,11 @@ Importing large amounts of data
 ===============================
 
 The `Data Ingest Service <https://www.surf.nl/en/services-and-products/data-ingest-service/index.html>`_ is a SURFsara service for researchers who want to store or analyze large amounts of data at SURFsara. The service is convenient for users who lack sufficient bandwidth or who have stored their data on a number of external hard disks.
+
+===================
+Future developments
+===================
+
+SURFsara is working towards better integration between systems. We're currently building what we call the **Central Data Infrastructure**. This will allow users to store their data to be accessible from all SURFsara systems, including the Lisa compute cluster and the Cartesius supercomputer, with the same protocols as the grid storage but also NFS and SCP. A web user interface will allow you to easily share information with other users. The current Central Archive will be assimilated into the :abbr:`CDI (Central Data Infrastructure)`. If you're happy with the current grid storage, you don't have to move your data, because the grid storage will still be supported.
+
+Contact us if you would like to learn more.

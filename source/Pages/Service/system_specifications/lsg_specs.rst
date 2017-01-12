@@ -90,7 +90,7 @@ Updated hardware setup
 Storage Node
 ============
 
-This node stores all the data related to the user jobs; every user has a default quota of 50GB, unless a specific one is required:
+This node stores all the data related to the user jobs:
 
   * PowerEdge R515 2xAMD Opteron(tm) Processor 4280
   * Type: Bulldozer
@@ -118,9 +118,12 @@ Updated hardware setup:
 
 User Interface
 ==============
+
 Each LSG cluster hosts a User Interface (UI) a virtual machine from where the users can prepare and submit their jobs. Please be aware that this server's purpose is NOT to execute directly your programs. Use instead Torque commands such us 'qsub' to submit your jobs to the Worker Nodes which have more CPU/Memory capacity. The VM specifications of the UI are:
+This is a virtual machine running on one of the Service Nodes; please be aware that this server's purpose is NOT to execute directly your programs. For local datasets every user has a default quota of 50GB, unless more is required for a specific purpose. Temporary datasets may be placed under the /scratch directory, which will be cleaned up periodically. Use instead Torque commands such us 'qsub' to submit your jobs to the Worker Nodes which have more CPU/Memory capacity. Thank you for your understanding. The VM specifications of the UI are:
 
 Classic hardware setup:
+
   * Cores: 8
   * RAM: 16 GB
   * Number of nodes: 1

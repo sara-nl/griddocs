@@ -22,6 +22,11 @@ It supports all the basic transfer protocols, such as: GridFTP, SRM, Webdav, HTT
 
 The FTS client is currently installed on the UI ``ui.grid.sara.nl``. It is not available on the :ref:`LSG UI <lsg-hostnames>` machines.
 
+  .. image:: /Images/Using_the_File_Transfer_Service.png
+
+  .. comment: Image source is at https://www.websequencediagrams.com/?lz=dGl0bGUgVXNpbmcgdGhlIEZpbGUgVHJhbnNmZXIgU2VydmljZQoKcGFydGljaXBhbnQgVXNlciBJbnRlcmZhY2UADg1GVFMAHg1TdG9yYWdlIEVsZW1lbnQgMQABHTIKCgBODiAtPiBGVFM6IGZ0cy10AIEOBy1zdWJtaXQKCmxvb3AgZm9yIGVhY2ggZmlsZSBpbiBqb2IKICBGVFMgLT4AbhI6IHByZXBhcmUANAUASwgAFxoyAAEwMTogc3RhcnQAUAwAgXURAFMXR3JpZEZUUACBRQYAICAAghMFcmVzdWx0AFATMgATEGVuZACCNyd0YXR1cwoAgjoHAINeDgBoCQo&s=roundgreen
+
+
 Authentication
 ==============
  
@@ -79,6 +84,33 @@ File transfer - SRMv2 to SRMv2
 .. note:: Combinations between TURLS, SURLS, HTTPS and SRMv2 are possible.
 
 
+Bulk transfers
+--------------
+
+If you have multiple files to transfer, you can submit the transfers in one bulk operation. Example:
+
+.. code-block:: console
+
+   $fts-transfer-submit -s https://fts3.grid.sara.nl:8443 \
+   $    -f transfer-list.txt
+
+The list of transfers should have this format:
+
+.. code-block:: cfg
+
+   file1-source-SURL-or-TURL file1-destination-SURL-or-TURL
+   file2-source-SURL-or-TURL file2-destination-SURL-or-TURL
+   ...
+
+An example:
+
+.. code-block:: cfg
+
+   srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/file1 srm://gb-se-amc.amc.nl:8446/dpm/amc.nl/home/lsgrid/homer/file1
+   srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/file2 srm://gb-se-amc.amc.nl:8446/dpm/amc.nl/home/lsgrid/homer/file2
+
+More information and examples of bulk transfers and FTS in general can be found at `CERN FTS3 documentation`_.
+
 Monitor Status
 ==============
 
@@ -106,4 +138,4 @@ At the moment any jobs are visible to anyone under any :abbr:`VO (Virtual Organi
 .. Links:
 .. _`FTS3`: http://fts3-service.web.cern.ch/
 .. _`FTS3 wiki`: https://svnweb.cern.ch/trac/fts3/wiki/UserGuide
-
+.. _`CERN FTS3 documentation`: http://fts3-docs.web.cern.ch/fts3-docs/docs/cli/cli.html

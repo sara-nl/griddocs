@@ -17,7 +17,9 @@ GlobusOnline
 About
 =====
 
-Globus provides a web service to schedule file transfers from one storage endpoint to another. Since the service employs GridFTP as transfer protocol either the source or the sink has to be GridFTP-enabled. The Globus Online web service allows to monitor the transfer processes via the web interface and reschedules transfers automatically when they fail. Storage endpoints can be different servers or only different locations on the same server. The data transfer is executed on behalf of the user employing his/her credentials or Grid certificate.
+Globus Online provides a service to transfer files from one storage endpoint to another via the Web GUI or an API. These endpoints can be local machines like your laptop, a Virtual Machine or the SURFsara grid UI, and gridFTP servers, like the :ref:`Grid Storage <storage-types>` or `SURFsara's archive <https://www.surf.nl/en/services-and-products/data-archive/index.html>`_. Since the service employs GridFTP as transfer protocol either the source or the destination has to be GridFTP-enabled. The storage endpoints can be different servers or only different locations on the same server.
+
+The Globus Online web service allows to monitor the transfer processes via the web interface and reschedules transfers automatically when they fail. The data transfer is executed on behalf of the user with the use of his/her Grid proxy.
 
 There exists a python API which allows to steer and monitor the processes from within e.g. the data generating processes. Via this API data transfers can be easily integrated into workflows.
 
@@ -78,7 +80,9 @@ By clicking the button "Endpoints" you can search in a list with all endpoints, 
 Data transfer workflow
 ======================
 
-.. sidebar:: Interacting with Globusonline is possible via the Web Interface or with a python API. The examples here show the webinterface transfers. 
+.. sidebar:: using Globusonline
+
+	Interacting with Globusonline is possible via the Web Interface or with a python API. The examples here show the webinterface transfers. 
 
 Activating endpoints
 =====================
