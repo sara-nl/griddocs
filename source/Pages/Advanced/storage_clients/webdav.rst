@@ -42,11 +42,11 @@ dCache has the following webdav doors:
 | https://webdav-cert.grid.sara.nl:443 | User certificate or proxy | No redirects                | Not |nbsp| allowed  |
 +--------------------------------------+---------------------------+-----------------------------+---------------------+
 
-If you don't know which one you should use, choose the first. It has a good load balancing. The second, on port 2880, may be useful for certain webdav clients that don't support redirects, such as ``cadaver``. Use the third one only if you need to use webdav with a certificate or proxy.
+If you don't know which one you should use, choose the first. It has a good load balancing. The second, on port ``2880``, may be useful for certain webdav clients that don't support redirects, such as ``cadaver``. Use the third one only if you need to use webdav with a certificate or proxy.
 
 ``webdav.grid.sara.nl`` is a DNS round robin that will direct you to a (more or less) random host in a pool of webdav servers.
 
-``webdav-cert.grid.sara.nl`` is a single virtual machine. Its bandwidth is limited. Use it only when you want to authenticate with a user certificate or proxy, and your institute's firewall blocks outgoing connections to port 2882.
+``webdav-cert.grid.sara.nl`` is a single virtual machine. Its bandwidth is limited. Use it only when you want to authenticate with a user certificate or proxy, and your institute's firewall blocks outgoing connections to port ``2882``.
 
 .. note:: To run the examples below you need to have a :abbr:`UI (User Interface)` (or :abbr:`CUA (SURFsara's Central User Administration)`) account that is configured within dCache and authorized to the data you want to access. Contact us if you need assistance with that.
 
@@ -162,7 +162,7 @@ With username/password authentication
 Please note the differences with the previous example:
 
 * ``--location-trusted`` will send the username and password also to the destination server.
-* Port 2880 is used for username/password authentication.
+* Port ``2880`` is used for username/password authentication.
 
 
 Removing data
@@ -179,7 +179,7 @@ Deleting a file from dCache:
 Querying file properties
 ========================
 
-With curl and the dCache webdav door, it's possible to request file properties. This works both with username/password and proxy authentication, provided you use the correct port (443 or 2880 for username/password, 2882 for proxy authentication). 
+With curl and the dCache webdav door, it's possible to request file properties. This works both with username/password and proxy authentication, provided you use the correct port (``443`` or ``2880`` for username/password, ``2882`` for proxy authentication). 
 
 Locality
 --------
@@ -331,7 +331,7 @@ Second, go to Cyberduck and create a bookmark with these settings:
 .. image:: /Images/cyberduck-usercert-2.png
 	:align: center
 
-If your institute blocks outgoing port 2882, you can use webdav-cert.grid.sara.nl:443, as described at the top of this page.
+If your institute blocks outgoing port ``2882``, you can use server ``webdav-cert.grid.sara.nl`` and port ``443``, as described at the top of this page.
 
 Right-click the bookmark and choose "Connect to server".
 
