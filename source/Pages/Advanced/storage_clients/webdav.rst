@@ -331,6 +331,8 @@ Second, go to Cyberduck and create a bookmark with these settings:
 .. image:: /Images/cyberduck-usercert-2.png
 	:align: center
 
+If your institute blocks outgoing port 2882, you can use webdav-cert.grid.sara.nl:443, as described at the top of this page.
+
 Right-click the bookmark and choose "Connect to server".
 
 .. image:: /Images/cyberduck-usercert-3.png
