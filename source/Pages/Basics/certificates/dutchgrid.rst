@@ -32,13 +32,13 @@ Request a DutchGrid certificate
 
   .. code-block:: console
 
-     $wget http://ca.dutchgrid.nl/start/jgridstart-wrapper-1.16.jar
+     $wget https://ca.dutchgrid.nl/start/jgridstart-wrapper-1.17.jar
 
 * Run the wizard:
 
   .. code-block:: console
 
-     $java -jar jgridstart-wrapper-1.16.jar
+     $java -jar jgridstart-wrapper-1.17.jar
 
 * Follow the wizard instructions. You will typically go through these steps:
 
