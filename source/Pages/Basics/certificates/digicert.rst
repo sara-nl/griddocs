@@ -61,7 +61,7 @@ Copy certificate *.p12* file to the UI
 
   .. code-block:: console
 
-     $ssh homer@ui.grid.sara.nl # replace "homer" with your username!
+     $ssh homer@ui.grid.sara.nl # replace "homer" with your username! For LSG users, also replace the host with your local ui.   
 
 * Create a ``$HOME/.globus`` directory in your :abbr:`UI (User Interface)` account:
 
