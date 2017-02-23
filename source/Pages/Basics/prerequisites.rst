@@ -54,7 +54,7 @@ The User Interface (UI) account will provide you with the environment to interac
 
 To get this :abbr:`UI (User Interface)` account, there are two options:
 
-* If you work in Life Sciences sector and your local institutional cluster is part of the :ref:`lsg` (see :ref:`lsg-clusters`), then you can get an account to the local user interface. Please send your request to your designated site admin (see :ref:`local contacts <lsg-dsa>`) or contact us at helpdesk@surfsara.nl.
+* If you work in Life Sciences sector and your local institutional cluster is part of the :ref:`lsg` (see :ref:`lsg-clusters`), then you can get an account to the local user interface. Please send us your request at helpdesk@surfsara.nl. We will ask confirmation for your affiliation with the institute from your designated site admin (see :ref:`local contacts <lsg-dsa>`) and provide you with an account on your local cluster.
 
 * At any other case, we will give you an account on the SURFsara Grid :abbr:`UI (User Interface)` (server name: ``ui.grid.sara.nl``). For this, you need to contact us at helpdesk@surfsara.nl.
 
