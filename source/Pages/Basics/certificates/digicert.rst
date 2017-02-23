@@ -25,7 +25,9 @@ DigiCert CA allows you to get your Grid certificate *instantly* from the GEANT T
 .. image:: /Images/digicert_install_cert.png
 	:align: center
 
-Once finished, you will have a Grid certificate automatically stored in your browser.
+Once finished, you will have a Grid certificate automatically stored in your browser. 
+
+If your browser prompts you to choose for which purposes to trust the CA, press 'Cancel' in the window that pops up.
 
 .. note::  If you cannot access the `DigiCert portal`_ with your institutional account, please have a look to the section "No access to the TCS service in NL" in the `TCS document`_ or contact us at helpdesk@surfsara.nl.  
 
