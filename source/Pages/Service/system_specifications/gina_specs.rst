@@ -133,5 +133,5 @@ infra           00:30:00                    dteam ops pvier
 
 The Grid jobs submitted to the queues above are restricted by the walltime limit, not the CPU limit.
 
-* This is a queue for jobs that require 8GB per core
+*This is a queue for jobs that require 8GB per core
 
