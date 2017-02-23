@@ -9,8 +9,6 @@ This section describes how to obtain and install a DigiCert Grid certificate. Th
 .. contents:: 
     :depth: 4
 
-.. note::  If you need help to obtain your DigiCert certificate, please have a look to this `User Guide`_  or contact us at helpdesk@surfsara.nl.  
-
 
 ===============================
 Obtain a *DigiCert* certificate
@@ -28,6 +26,8 @@ DigiCert CA allows you to get your Grid certificate *instantly* from the GEANT T
 	:align: center
 
 Once finished, you will have a Grid certificate automatically stored in your browser.
+
+.. note::  If you cannot access the `DigiCert portal`_ with your institutional account, please have a look to the section "No access to the TCS service in NL" in the `TCS document`_ or contact us at helpdesk@surfsara.nl.  
 
 
 .. _digicert_ui_install:
@@ -140,5 +140,5 @@ If you receive an SSL authentication error, then try repeating the steps careful
 
 .. Links:
 
-.. _`User Guide`: https://ca.dutchgrid.nl/tcs/TCS2015help.pdf
+.. _`TCS document`: https://ca.dutchgrid.nl/tcs/TCS2015help.pdf
 .. _`DigiCert portal`: https://digicert.com/sso
