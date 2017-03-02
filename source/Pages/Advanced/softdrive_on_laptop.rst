@@ -50,8 +50,7 @@ Mac OS
 
 	e.g. squidman.net/resources/downloads/SquidMan3.8.dmg
 
-* Check your own http proxy port and keep it for later steps: 
-By default it is ``8080``. 
+* Check your own http proxy port and keep it for later steps. By default it is ``8080``. 
 
 Centos
 ======

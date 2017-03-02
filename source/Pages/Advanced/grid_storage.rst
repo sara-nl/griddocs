@@ -34,7 +34,7 @@ You can access the Grid storage with Grid :ref:`storage-clients`, through interf
 * read (download) files
 * write (upload) files
 * delete files or directories
-* :ref:`stage` files (copy them from tape to disk for faster reading)
+* :ref:`stage <staging>` files (copy them from tape to disk for faster reading)
 
 .. [1] It is possible to access the dCache Grid storage without certificate, by using :abbr:`Webdav (Web Distributed Authoring and Versioning)` with username/password authentication. However, authentication with username/password is less secure, and Webdav is not as fast as :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`.
 
@@ -334,7 +334,7 @@ Unpin a file
 
 Your files may remain *online* as long as there is free space on the disk pools. When a pool group is full and free space is needed, dCache will purge the least recently used cached files. The tape replica will remain on tape.
 
-The disk pool where your files are staged has limited capacity and is only meant for data that a user wants to process on a Grid site. When you :ref:`pin a file <pin-file>` you set a `pin lifetime`. The file will not be purged until the pin lifetime has expired. Then the data may be purged from disk, as soon as the space is required for new stage requests. When the disk copy has been purged, it has to be staged again in order to be processed on a Worker Node.
+The disk pool where your files are staged has limited capacity and is only meant for data that a user wants to process on a Grid site. When you :ref:`pin a file <staging-single-file>` you set a `pin lifetime`. The file will not be purged until the pin lifetime has expired. Then the data may be purged from disk, as soon as the space is required for new stage requests. When the disk copy has been purged, it has to be staged again in order to be processed on a Worker Node.
 
 When a pool group is full with pinned files, staging is paused. Stage requests will just wait until pin lifetimes for other files expire. dCache will then use the released space to stage more files until the pool group is full again. When this takes too long, stage requests will time out. So pinning should be used moderately.
 

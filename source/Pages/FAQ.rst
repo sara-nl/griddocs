@@ -310,7 +310,7 @@ How can I find all the available LSG Storage Elements and get their SURLS?
 
      srm://gb-se-amc.amc.nl:8446/dpm/amc.nl/home/lsgrid/ # storage element at AMC
 
-A complete list of the LSG SURLs can be found at :ref:`life-science-clusters#cluster-details`
+A complete list of the LSG SURLs can be found at :ref:`life-science-clusters <lsg-hostnames>`
 
   
 	

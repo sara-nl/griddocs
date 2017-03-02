@@ -313,7 +313,7 @@ This is a short overview of the commands needed to handle simple jobs:
 +---------------------+--------------------------------------------------------+
 | cancel job          | ``glite-wms-job-cancel -i jobIds``                     |
 +---------------------+--------------------------------------------------------+
-| retrieve job output | ``glite-wms-job-output --dir . -i jobIds``               |
+| retrieve job output | ``glite-wms-job-output --dir . -i jobIds``             |
 +---------------------+--------------------------------------------------------+
 
 

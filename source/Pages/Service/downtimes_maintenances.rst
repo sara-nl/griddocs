@@ -39,6 +39,7 @@ These subscriptions can be created here: https://operations-portal.egi.eu/downti
     * Node: All nodes
     * VO: All VOs
     * Comm. channels: Add new -> Email
+
     Once you make the rule, click on `Save rules specifications` to take effect.
 
 
