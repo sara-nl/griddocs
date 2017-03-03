@@ -137,7 +137,7 @@ In order to apply for a :ref:`VO membership <join-vo>` you will have to install 
 
   .. code-block:: console
 
-     $ssh homer@ui.grid.sara.nl # replace "homer" with your username!  
+     $ssh -X homer@ui.grid.sara.nl # replace "homer" with your username!  
      $cd $HOME/.globus
 
 .. warning:: You can import a certificate in your browser only when it is in the **PKCS12** format. This means that you need to convert the ``usercert.pem`` and ``userkey.pem`` files to a single  ``.p12`` file. 	
