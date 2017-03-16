@@ -83,7 +83,7 @@ Here you can find details for obtaining and installing a Grid certificate:
    certificates/digicert
    certificates/dutchgrid
 
-If you're not affiliated with a Dutch institute, please find a suitable :abbr:`CA (Certificate Authority)` at https://www.igtf.net/pmamap to obtain a Grid certificate.
+If you're not affiliated with a Dutch institute, please find a suitable :abbr:`CA (Certificate Authority)` at https://www.igtf.net/pmamap to obtain a Grid certificate from.
 
 .. _join-vo:
 
