@@ -1,11 +1,12 @@
-.. toctree::
-   :hidden:
-
 .. _list-of-grid-cas:
 
 ****************
 List of Grid CAs
 ****************
+
+.. contents:: 
+    :depth: 4
+
 
 If Dutchgrid or Digicert is not an option for you, please have a look at the following list of Certificate Authorities that are supported on the grid.
 
