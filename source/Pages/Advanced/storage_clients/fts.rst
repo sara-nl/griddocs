@@ -23,7 +23,7 @@ From the user perspective, it allows data movement, retrying if necessary, monit
 
 The wisdom of FTS is the *Optimiser* which decides whether to increase or decrease the amount of transfers attempted at a time. It evaluates any symptoms of saturation and decreases the number of parallel transfers when there is an increase of recoverable errors, or the throughput worsens.
 
-FTS3 has a REST API and supports all the basic transfer protocols, such as: GridFTP, SRM, Webdav, HTTPS, xroot.  
+FTS3 has a REST API and supports several transfer protocols, such as: GridFTP, SRM, Webdav, HTTPS.  
 
 
 SURFsara FTS instance
@@ -62,7 +62,7 @@ FTS file transfers
 Submit a transfer
 -----------------
 
-The ``fts-transfer-submit`` command submits transfer-jobs by specifying the source and destination file location. The file location can be a :abbr:`SURL (Storage URL)`, :abbr:`TURL (Transport URL)` or HTTPS link. The source and destination endpoints are GridFTP or :abbr:`SRM (Storage Resource Manager)` servers. 
+The ``fts-transfer-submit`` command submits transfer-jobs by specifying the source and destination file location. The file location can be a :abbr:`SURL (Storage URL)`, :abbr:`TURL (Transport URL)` or HTTPS link. For efficient usage of the service, it is preferred that the source and destination endpoints are GridFTP or :abbr:`SRM (Storage Resource Manager)` servers. 
 
 The output of the submit command is a *unique ID* that can be used for tracing the transfer status.
 
