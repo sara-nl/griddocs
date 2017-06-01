@@ -26,7 +26,7 @@ But commands such as:
 
 will fail. You can copy data from the NFS mount to your home directory, but as you will have limited space on your home directory we recommend caution. Please note that you still need a grid certificate to run the analyses and write files to the grid storage. You can find the information on interacting with grid here http://doc.grid.surfsara.nl/en/latest/index.html. Tips specific to Project_MinE can be found here https://bitbucket.org/JokevanVugt/projectmine_surfsaragrid_example_script
 
-2. Additional /scratch space: For the users who wish to upload data to the project but do not have access to a certificate can upload the data to /scratch. The Project_Mine data managers will co-ordinate with those users and transfer the data to the grid storage which can then be accessed via the NFS mount. Please note that the data on /scratch space cannot be directly used for analysis, but needs to be uploaded to the grid storage first. 
+2. Additional /scratch space: For the users who wish to upload data to the project but do not have access to a certificate can upload the data to /scratch. The Project_Mine data managers will co-ordinate with those users and transfer the data to the grid storage which can then be accessed via the NFS mount. Please note that the data on /scratch space cannot be directly used for analysis, but needs to be uploaded to the grid storage first. The /scratch space may also be used to run the test jobs.
 
 3. Access to the Mine user interface is ssh key authentication based instead of username/password. This reduces the system vulnerability to unwanted users due to weak passwords or shared passwords. 
 
@@ -48,7 +48,7 @@ If you were accessing the Grid facility at SURFsara via the grid user interface 
 
 .. code-block:: console
 
-   $rsync -a user@ui.grid.sara.nl:/home/user/ /home/user/   # replace user with your username 
+   $rsync -a --progress user@ui.grid.sara.nl:/home/user/ /home/user/   # replace user with your username 
 
 This will replicate all your files in the home folder on the Mine user interface. 
 
