@@ -15,7 +15,7 @@ This page includes the basic commands to use ``uberftp``. For an overview of sto
 Uberftp
 =======
 
-.. warning:: We have observed that ``uberftp`` deletes a file after it has unsuccessfully tried to overwrite it. If you write data with ``uberftp``, please make sure you never try to overwrite existing files! ::ref:`globus` does not have this bug.
+.. warning:: We have observed that ``uberftp`` deletes a file after it has unsuccessfully tried to overwrite it. If you write data with ``uberftp``, please make sure you never try to overwrite existing files! ::ref:`globus-url-copy <globus>` does not have this bug.
 
 Creating/listing 
 ================
