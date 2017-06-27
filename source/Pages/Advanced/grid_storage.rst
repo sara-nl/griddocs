@@ -182,7 +182,7 @@ The ``InputSandbox`` and ``OutputSandbox`` attributes in the :ref:`JDL <JDL>` fi
 
 In this section we will show the common commands to use the various storage clients. 
 
-.. note:: From the many Grid storage clients, we recommend you to use the :ref:`uberftp`, :ref:`globus` or :ref:`gfal`. These tools have a clean interface, and their speed is much better on our systems compared with their srm-* equivalents.
+.. note:: From the many Grid storage clients, we recommend you to use the : :ref:`globus` or :ref:`gfal`. These tools have a clean interface, and their speed is much better on our systems compared with their srm-* equivalents.
 
 .. table:: Storage clients
 
@@ -191,8 +191,6 @@ In this section we will show the common commands to use the various storage clie
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
   | Client              | SRM | GridFTP | GSIdCap | Webdav | 3rd party | Speed | Tape control [2]_ |
   +=====================+=====+=========+=========+========+===========+=======+===================+
-  | :ref:`uberftp`      | --  | yes     | --      | --     | --        | high  | --                |
-  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
   | :ref:`globus`       | --  | yes     | --      | --     | --        | high  | --                |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
   | :ref:`srm`          | yes | [3]_    | [3]_    | [3]_   | --        |       | yes               |
@@ -207,6 +205,8 @@ In this section we will show the common commands to use the various storage clie
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
   | :ref:`lcg-lfn-lfc`  | yes | [3]_    | --      | --     | --        |       | --                |
   | (not recommended)   |     |         |         |        |           |       |                   |
+  +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
+  | :ref:`uberftp`      | --  | yes     | --      | --     | --        | high  | --                |
   +---------------------+-----+---------+---------+--------+-----------+-------+-------------------+
 
 .. [2] Examples of tape control: staging a file from tape to disk, or get its locality (tape or disk).
