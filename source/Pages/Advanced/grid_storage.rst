@@ -151,11 +151,17 @@ dCache
 | Webdav     | https://webdav.grid.sara.nl:2880     | See :ref:`webdav` for details        |
 +            +--------------------------------------+                                      +
 |            | https://webdav.grid.sara.nl:2882     |                                      |
++            +--------------------------------------+                                      +
+|            | https://webdav-cert.grid.sara.nl:443 |                                      |
 +------------+--------------------------------------+--------------------------------------+
 | GSIdCap    | gsidcap://gsidcap.grid.sara.nl:22128 |                                      |
 +------------+--------------------------------------+--------------------------------------+
 | xroot      | xrootd.grid.sara.nl:1094             | Used by CERN only                    |
 +------------+--------------------------------------+--------------------------------------+
+| all        | ipv4.grid.sara.nl                    | For clients that don't speak IPv6    |
++------------+--------------------------------------+--------------------------------------+
+
+The last one, ipv4.grid.sara.nl, is a single VM that supports only IPv4 and no IPv6. It can be used for small scale access through GridFTP, Webdav, Xroot or GSIdCap where IPv6 causes problems. Don't use it for batch processing.
 
 
 DPM
