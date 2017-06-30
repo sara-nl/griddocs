@@ -41,12 +41,23 @@ dCache has the following webdav doors:
 +--------------------------------------+---------------------------+-----------------------------+---------------------+
 | https://webdav-cert.grid.sara.nl:443 | User certificate or proxy | No redirects                | Not |nbsp| allowed  |
 +--------------------------------------+---------------------------+-----------------------------+---------------------+
+| https://ipv4.grid.surfsara.nl:443    | Username/password         | Redirects on read           | Not |nbsp| allowed  |
++--------------------------------------+---------------------------+-----------------------------+---------------------+
+| https://ipv4.grid.surfsara.nl:2880   | Username/password         | No redirects                | Allowed             |
++--------------------------------------+---------------------------+-----------------------------+---------------------+
+| https://ipv4.grid.surfsara.nl:2882   | User certificate or proxy | Redirects on read and write | Not |nbsp| allowed  |
++--------------------------------------+---------------------------+-----------------------------+---------------------+
 
 If you don't know which one you should use, choose the first. It has a good load balancing. The second, on port ``2880``, may be useful for certain webdav clients that don't support redirects, such as ``cadaver``. Use the third one only if you need to use webdav with a certificate or proxy.
 
 ``webdav.grid.sara.nl`` is a DNS round robin that will direct you to a (more or less) random host in a pool of webdav servers.
 
-``webdav-cert.grid.sara.nl`` is a single virtual machine. Its bandwidth is limited. Use it only when you want to authenticate with a user certificate or proxy, and your institute's firewall blocks outgoing connections to port ``2882``. Do not use this interface for batch processing.
+Use ``webdav-cert.grid.sara.nl`` when you want to authenticate with a user certificate or proxy, and your institute's firewall blocks outgoing connections to port ``2882``.
+
+Use ``ipv4.grid.surfsara.nl`` for storage clients that have problems with IPv6.
+
+``webdav-cert.grid.sara.nl`` and ``ipv4.grid.surfsara.nl`` are single virtual machines. Their bandwidth is limited. Do not use these interfaces interface for batch processing.
+
 
 .. note:: To run the examples below you need to have a :abbr:`UI (User Interface)` (or :abbr:`CUA (SURFsara's Central User Administration)`) account that is configured within dCache and authorized to the data you want to access. Contact us if you need assistance with that.
 
