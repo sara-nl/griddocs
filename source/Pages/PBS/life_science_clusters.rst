@@ -104,5 +104,16 @@ The following Storage Elements are also availble when you are member of the ``ls
 | Test Cluster SURFsara | ``srm://gb-se-ams.els.sara.nl``| ``srm://gb-se-ams.els.sara.nl:8446/dpm/els.sara.nl/home/lsgrid``| Do not use: testing purpose only |
 +-----------------------+--------------------------------+-----------------------------------------------------------------+----------------------------------+
 
+===============
+Security
+===============
+
+The default permissions on the LSG clusters for ``/home``, ``/home/nobackup`` and ``/scratch`` directories is:
+
+* read+write+execute for the user
+* read+execute for the group
+* read+execute for others
+
+In general, where security is important, we advise you to verify and set the permissions to abide by your data access regulations, especially for temporary working directories under ``/scratch`` and ``/tmp``. For example, you can do ``$ umask 0077`` to keep all data invisible to other users or ``$ umask 0007`` to keep it closed for everone outside the group. Another point of attention is cleaning up intermediate data before job exit. 
 
 .. vim: set wm=7 :
