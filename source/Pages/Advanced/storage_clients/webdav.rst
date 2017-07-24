@@ -78,7 +78,7 @@ To create a directory with curl:
 .. code-block:: console
 
    $curl --capath /etc/grid-security/certificates/ --fail --user homer \
-   $     --request MKCOL https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/directory
+         --request MKCOL https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/directory
 
 If on your system there are no Grid :abbr:`CA (Certificate Authority)` certificates available in ``/etc/grid-security/certificates/``, please read :ref:`host_certificates <host-certificates>`.
 
