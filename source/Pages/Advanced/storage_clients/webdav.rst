@@ -56,7 +56,7 @@ Use ``webdav-cert.grid.sara.nl`` when you want to authenticate with a user certi
 
 Use ``ipv4.grid.surfsara.nl`` for storage clients that have problems with IPv6.
 
-``webdav-cert.grid.sara.nl`` and ``ipv4.grid.surfsara.nl`` are single virtual machines. Their bandwidth is limited. Do not use these interfaces interface for batch processing.
+``webdav-cert.grid.sara.nl`` and ``ipv4.grid.surfsara.nl`` are single virtual machines. Their bandwidth is limited. Do not use these interfaces for batch processing.
 
 
 .. note:: To run the examples below you need to have a :abbr:`UI (User Interface)` (or :abbr:`CUA (SURFsara's Central User Administration)`) account that is configured within dCache and authorized to the data you want to access. Contact us if you need assistance with that.
