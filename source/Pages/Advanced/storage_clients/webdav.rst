@@ -78,7 +78,7 @@ To create a directory with curl:
 .. code-block:: console
 
    $curl --capath /etc/grid-security/certificates/ --fail --user homer \
-         --request MKCOL https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/directory
+        --request MKCOL https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/directory
 
 If on your system there are no Grid :abbr:`CA (Certificate Authority)` certificates available in ``/etc/grid-security/certificates/``, please read :ref:`host_certificates <host-certificates>`.
 
@@ -95,8 +95,8 @@ To copy a file from your local machine to dCache:
 .. code-block:: console
 
    $curl --capath /etc/grid-security/certificates/ --fail --location --user homer \
-   $     --upload-file zap.tar \
-   $     https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/
+        --upload-file zap.tar \
+        https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/
    $# replace homer with your username, lsgrid with your VO and zap.tar with your local file
 
 The command will ask for the password of 'homer' on the command line. If you don't want to type the password each time, specify ``--netrc`` and store the password in the ``.netrc`` file in your home dir. Make sure it is not readable by others (``chmod 600 .netrc``). See ``man curl`` for more details.
@@ -112,15 +112,15 @@ To copy a file from dCache to your local machine:
 .. code-block:: console
   
    $curl --capath /etc/grid-security/certificates/ --fail --location --user homer \
-   $     https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
-   $     --output zap.tar
+        https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
+        --output zap.tar
   
 Or with ``wget``:
   
 .. code-block:: console
 
    $wget --user=homer --ask-password --ca-directory=/etc/grid-security/certificates \
-   $     https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+        https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 
 Note: ``wget`` does not support certificate/proxy authentication.
 
@@ -137,8 +137,8 @@ Then use a command like this:
 .. code-block:: console
 
    $curl --capath /etc/grid-security/certificates/ \
-   $     --cert $X509_USER_PROXY --cacert $X509_USER_PROXY \
-   $     https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+        --cert $X509_USER_PROXY --cacert $X509_USER_PROXY \
+        https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
 .. note:: It is possible that your proxy :abbr:`DN (Distinguished Name)` is mapped to another user account than your own :abbr:`CUA (SURFsara's Central User Administration)` user account. If you have permission issues with either username or proxy and not the other, contact us to check the user mapping.
 
@@ -152,10 +152,10 @@ With proxy authentication
 .. code-block:: console
 
    $curl --capath /etc/grid-security/certificates/  --fail --location \
-   $     --cert $X509_USER_PROXY --cacert $X509_USER_PROXY \
-   $     --request MOVE \
-   $     https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/oldfile \
-   $     --header "Destination:https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/newfile"
+        --cert $X509_USER_PROXY --cacert $X509_USER_PROXY \
+        --request MOVE \
+        https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/oldfile \
+        --header "Destination:https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/newfile"
 
 File properties and locality are not changed. A file that is stored on tape (nearline) will stay on tape, even if it is moved to a directory for disk-only files.
 
@@ -165,10 +165,10 @@ With username/password authentication
 .. code-block:: console
 
    $curl --capath /etc/grid-security/certificates/  --fail --location-trusted \
-   $     --user homer \
-   $     --request MOVE \
-   $     https://webdav.grid.sara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/oldfile \
-   $     --header "Destination:https://webdav.grid.sara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/newfile"
+        --user homer \
+        --request MOVE \
+        https://webdav.grid.sara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/oldfile \
+        --header "Destination:https://webdav.grid.sara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/newfile"
 
 Please note the differences with the previous example:
 
@@ -184,7 +184,7 @@ Deleting a file from dCache:
 .. code-block:: console
 
    $curl --capath /etc/grid-security/certificates/ --user homer --location \
-   $     --request DELETE https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+        --request DELETE https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 
 
 Querying file properties
@@ -200,14 +200,14 @@ This example shows how to query the file locality: whether a file is online or n
 .. code-block:: console
 
    $echo -e '<?xml version="1.0"?>\n
-   $         <a:propfind xmlns:a="DAV:">
-   $         <a:prop><srm:FileLocality xmlns:srm="http://srm.lbl.gov/StorageResourceManager"/></a:prop>
-   $         </a:propfind>' \
-   $| curl --silent --fail --capath /etc/grid-security/certificates/ \
-   $       --user homer --request PROPFIND \
-   $       https://webdav.grid.sara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
-   $       --header "Content-Type: text/xml" --upload - \
-   $| xmllint -format -
+            <a:propfind xmlns:a="DAV:">
+            <a:prop><srm:FileLocality xmlns:srm="http://srm.lbl.gov/StorageResourceManager"/></a:prop>
+            </a:propfind>' \
+   | curl --silent --fail --capath /etc/grid-security/certificates/ \
+          --user homer --request PROPFIND \
+          https://webdav.grid.sara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
+          --header "Content-Type: text/xml" --upload - \
+   | xmllint -format -
 
 See :ref:`staging` for more information about file locality.
 
@@ -221,9 +221,9 @@ The returned checksum comes from the dCache database, so it is a very efficient 
 .. code-block:: console
 
    $curl --head --header 'Want-Digest: ADLER32' --silent --fail --capath /etc/grid-security/certificates/ \
-   $     --user homer \
-   $     https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/home/myfile \
-   $| grep 'adler32='
+        --user homer \
+        https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/home/myfile \
+   | grep 'adler32='
 
 Here an example output:
 
@@ -237,15 +237,15 @@ Here is an alternative way to query an Adler32 checksum:
 .. code-block:: console
 
    $echo -e '<?xml version="1.0"?>\n
-   $         <a:propfind xmlns:a="DAV:">
-   $         <a:prop><srm:Checksums xmlns:srm="http://www.dcache.org/2013/webdav"/></a:prop>
-   $         </a:propfind>' \
-   $| curl --silent --fail --capath /etc/grid-security/certificates/ \
-   $       --user homer --request PROPFIND \
-   $       https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/myfile \
-   $       --header "Content-Type: text/xml" --upload - \
-   $| xmllint -format - \
-   $| egrep -o '<ns1:Checksums>.*</ns1:Checksums>'
+            <a:propfind xmlns:a="DAV:">
+            <a:prop><srm:Checksums xmlns:srm="http://www.dcache.org/2013/webdav"/></a:prop>
+            </a:propfind>' \
+   | curl --silent --fail --capath /etc/grid-security/certificates/ \
+          --user homer --request PROPFIND \
+          https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/myfile \
+          --header "Content-Type: text/xml" --upload - \
+   | xmllint -format - \
+   | egrep -o '<ns1:Checksums>.*</ns1:Checksums>'
 
 Here is an example of the expected output:
 
@@ -261,12 +261,12 @@ The dCache grid storage at SURFsara is configured to use only Adler32 checksums.
 .. code-block:: console
 
    $curl --head --header 'Want-Digest: MD5' --silent --fail --capath /etc/grid-security/certificates/ \
-   $     --user homer \
-   $     https://pn1.cdi.surfsara.nl:2880/cdi/users/homer/myfile \
-   $| grep -o 'md5=.*' \
-   $| sed -e 's/md5=//' -e 's/[\r\n]*$//' \
-   $| base64 --decode \
-   $| xxd -p
+        --user homer \
+        https://pn1.cdi.surfsara.nl:2880/cdi/users/homer/myfile \
+   | grep -o 'md5=.*' \
+   | sed -e 's/md5=//' -e 's/[\r\n]*$//' \
+   | base64 --decode \
+   | xxd -p
 
 The output should look similar to this:
 
@@ -279,31 +279,31 @@ An alternative way to query an MD5 checksum:
 .. code-block:: console
 
    $echo -e '<?xml version="1.0"?>\n
-   $         <a:propfind xmlns:a="DAV:">
-   $         <a:prop><srm:Checksums xmlns:srm="http://www.dcache.org/2013/webdav"/></a:prop>
-   $         </a:propfind>' \
-   $| curl --silent --fail --capath /etc/grid-security/certificates/ \
-   $       --user homer --request PROPFIND \
-   $       https://pn1.cdi.surfsara.nl:2880/cdi/users/homer/myfile \
-   $       --header "Content-Type: text/xml" --upload - \
-   $| xmllint -format - \
-   $| egrep -o '<ns1:Checksums>md5=.*</ns1:Checksums>' \
-   $| sed -e 's#<ns1:Checksums>[^=]*=\([^<]*\)</ns1:Checksums>#\1#' \
-   $| base64 --decode \
-   $| xxd -p
+            <a:propfind xmlns:a="DAV:">
+            <a:prop><srm:Checksums xmlns:srm="http://www.dcache.org/2013/webdav"/></a:prop>
+            </a:propfind>' \
+   | curl --silent --fail --capath /etc/grid-security/certificates/ \
+          --user homer --request PROPFIND \
+          https://pn1.cdi.surfsara.nl:2880/cdi/users/homer/myfile \
+          --header "Content-Type: text/xml" --upload - \
+   | xmllint -format - \
+   | egrep -o '<ns1:Checksums>md5=.*</ns1:Checksums>' \
+   | sed -e 's#<ns1:Checksums>[^=]*=\([^<]*\)</ns1:Checksums>#\1#' \
+   | base64 --decode \
+   | xxd -p
 
 Queries can be combined to reduce transaction overhead:
 
 .. code-block:: console
 
    $echo -e '<?xml version="1.0"?>\n
-   $         <a:propfind xmlns:a="DAV:">
-   $         <a:prop><srm:RetentionPolicy xmlns:srm="http://srm.lbl.gov/StorageResourceManager"/></a:prop>
-   $         <a:prop><srm:AccessLatency xmlns:srm="http://srm.lbl.gov/StorageResourceManager"/></a:prop>
-   $         <a:prop><srm:FileLocality xmlns:srm="http://srm.lbl.gov/StorageResourceManager"/></a:prop>
-   $         <a:prop><srm:Checksums xmlns:srm="http://www.dcache.org/2013/webdav"/></a:prop>
-   $         </a:propfind>' \
-   $| curl ...
+            <a:propfind xmlns:a="DAV:">
+            <a:prop><srm:RetentionPolicy xmlns:srm="http://srm.lbl.gov/StorageResourceManager"/></a:prop>
+            <a:prop><srm:AccessLatency xmlns:srm="http://srm.lbl.gov/StorageResourceManager"/></a:prop>
+            <a:prop><srm:FileLocality xmlns:srm="http://srm.lbl.gov/StorageResourceManager"/></a:prop>
+            <a:prop><srm:Checksums xmlns:srm="http://www.dcache.org/2013/webdav"/></a:prop>
+            </a:propfind>' \
+   | curl ...
 
 ===============================
 Graphical access with Cyberduck
