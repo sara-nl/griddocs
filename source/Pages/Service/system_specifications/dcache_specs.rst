@@ -39,7 +39,6 @@ Here's a list of accessible dCache nodes:
 * `dcmain.grid.sara.nl:2288 <http://dcmain.grid.sara.nl:2288>`_ (a dCache web interface showing detailed configuration information)
 * pool nodes::
 
-  * fly{1..10}.grid.sara.nl
   * bw27-{1..9}.grid.sara.nl
   * bw32-{1..9}.grid.sara.nl
   * by27-{1..9}.grid.sara.nl
@@ -47,6 +46,9 @@ Here's a list of accessible dCache nodes:
   * rabbit{1..3}.grid.sara.nl
   * v40-{8..10}.grid.sara.nl
   * whale{1..6}.grid.sara.nl
+  * mouse{1..16}.grid.sara.nl
+  * cat{1..3}.grid.sara.nl
+  * s35{04 05 07}.grid.sara.nl
 
 We have these DNS round robin aliases pointing to our doors:
 
@@ -63,7 +65,7 @@ The subnet is 145.100.32.0/22. You may need to change your firewall to access th
 Disk storage
 ============
 
-We currently (January 2016) have ~8 petabyte of disk storage capacity. This space is divided over several pool groups. These pool groups are for disk only data, t1d1 data (disk data with a tape replica) and for online caching of tape only data.
+We currently (July 2017) have ~10 petabyte of disk storage capacity. This space is divided over several pool groups. These pool groups are for disk only data, t1d1 data (disk data with a tape replica) and for online caching of tape only data.
 
 
 .. _dCache-specs-tape:
@@ -71,7 +73,7 @@ We currently (January 2016) have ~8 petabyte of disk storage capacity. This spac
 Tape storage
 ============
 
-The Grid tape storage back-end contains ~22 petabyte of data (January 2016). There are two tape libraries: one in Almere and one in the Vancis datacenter in Amsterdam Science Park. Some data only has a single copy, but smaller projects typically have a double copy of their tape data.
+The Grid tape storage back-end contains ~30 petabyte of data (July 2017). There are two tape libraries: one in Almere and one in the Vancis datacenter in Amsterdam Science Park. Some data only has a single copy, but smaller projects typically have a double copy of their tape data.
 
 
 .. _dCache-specs-performance:
