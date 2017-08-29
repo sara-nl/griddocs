@@ -122,11 +122,9 @@ Queues
 =============== =========================== ============================
 Queue           Max. Walltime (hh:mm:ss)    VOs(group) allowed
 =============== =========================== ============================
-extreme         120:00:00                   emutd
-long            96:00:00                    geant4 atlas(production)
-mediumc         72:00:00                    bbmri.nl(RP2) lofar lsgrid(mediummc) projects.nl(geomodel) pvier
+long            96:00:00                    geant4 atlas(production) projects.nl(tropomi)
+mediummc        72:00:00                    bbmri.nl(RP2) lofar lsgrid(mediummc) projects.nl(geomodel,Project_MinE) pvier
 medium          36:00:00                    astron atlas alice bbmri.nl beapps biomed dans drihm.eu enmr.eu esr euclid-ec.org geant4 lhcb lofar lsgrid nlesc.nl omegac pvier vlemed xenon.biggrid.nl projects.nl
-medium_8gb*     36:00:00                    alice 
 short           04:00:00                    astron atlas bbmri.nl beapps biomed dans drihm.eu enmr.eu esr euclid-ec.org geant4 lhcb lofar lsgrid nlesc.nl omegac pvier vlemed xenon.biggrid.nl projects.nl  
 infra           00:30:00                    dteam ops pvier
 =============== =========================== ============================
