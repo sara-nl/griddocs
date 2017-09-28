@@ -195,11 +195,11 @@ In this section we will show the common commands to use the various storage clie
   +---------------------+-----+--------------+---------+--------+-----------+-------------------+
   |                     |               protocols               |                               |
   +---------------------+-----+--------------+---------+--------+-----------+-------------------+
-  | Client              | SRM | GridFTP [1]_ | GSIdCap | Webdav | 3rd party | Tape control [2]_ |
+  | Client              | SRM | GridFTP [2]_ | GSIdCap | Webdav | 3rd party | Tape control [3]_ |
   +=====================+=====+==============+=========+========+===========+===================+
   | :ref:`globus`       | --  | yes          | --      | --     | --        | --                |
   +---------------------+-----+--------------+---------+--------+-----------+-------------------+
-  | :ref:`srm`          | yes | [3]_         | [3]_    | [3]_   | --        | yes               |
+  | :ref:`srm`          | yes | [4]_         | [4]_    | [4]_   | --        | yes               |
   +---------------------+-----+--------------+---------+--------+-----------+-------------------+
   | :ref:`gfal`         | yes | yes          | --      | --     | --        | yes               |
   +---------------------+-----+--------------+---------+--------+-----------+-------------------+
@@ -209,19 +209,20 @@ In this section we will show the common commands to use the various storage clie
   +---------------------+-----+--------------+---------+--------+-----------+-------------------+
   | :ref:`globusonline` | --  | yes          | --      | --     | yes       | --                |
   +---------------------+-----+--------------+---------+--------+-----------+-------------------+
-  | :ref:`lcg-lfn-lfc`  | yes | [3]_         | --      | --     | --        | --                |
+  | :ref:`lcg-lfn-lfc`  | yes | [4]_         | --      | --     | --        | --                |
   | (not recommended)   |     |              |         |        |           |                   |
   +---------------------+-----+--------------+---------+--------+-----------+-------------------+
-  | :ref:`uberftp` [4]_ | --  | yes          | --      | --     | --        | --                |
+  | :ref:`uberftp` [5]_ | --  | yes          | --      | --     | --        | --                |
+  | (not recommended)   |     |              |         |        |           |                   |
   +---------------------+-----+--------------+---------+--------+-----------+-------------------+
 
-.. [1] The GridFTP protocol offers the best network performance.
+.. [2] The GridFTP protocol offers the best network performance.
 
-.. [2] Examples of tape control: staging a file from tape to disk, or get its locality (tape or disk).
+.. [3] Examples of tape control: staging a file from tape to disk, or get its locality (tape or disk).
 
-.. [3] SRM and LCG commands use the :abbr:`SRM (Storage Resource Management)` protocol for metadata level operations and switch to another protocol like GridFTP for file transfers. This may cause protocol overhead. For example, authentication needs to be done twice: once for each protocol. For small files, that may be inefficient.
+.. [4] SRM and LCG commands use the :abbr:`SRM (Storage Resource Management)` protocol for metadata level operations and switch to another protocol like GridFTP for file transfers. This may cause protocol overhead. For example, authentication needs to be done twice: once for each protocol. For small files, that may be inefficient.
 
-.. [4] UberFTP currently has a dangerous bug that may destroy data. See https://ggus.eu/?mode=ticket_info&ticket_id=129103 for details.
+.. [5] UberFTP currently has a dangerous bug that may destroy data. See https://ggus.eu/?mode=ticket_info&ticket_id=129103 for details.
 
 .. toctree::
    :hidden:
