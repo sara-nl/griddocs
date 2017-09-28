@@ -244,6 +244,9 @@ Staging files
 
 The :ref:`dCache` storage at SURFsara consists of magnetic tape storage and hard disk storage. If your :ref:`quota allocation <quotas>` includes tape storage, then the data stored on magnetic tape has to be copied to a hard drive before it can be used. This action is called :ref:`staging` or 'bringing a file online'.
 
+.. note:: Staging is important. If your job reads a file that is on tape but not online, your job will wait until dCache brings the file online. This may take minutes when it's quiet, but it may take days when miltiple users are staging files. That would be a waste of CPU cycles. But that's not all: the number of concurrent transfers is limited per pool, so it would also be a waste of transfers slots.
+
+
 .. table:: Staging terms
 
   +---------------------+-----------------------------------------------------------------+
