@@ -75,7 +75,7 @@ Once your request is approved, you will receive an email titled *"DutchGrid CA c
 
   .. code-block:: console
 
-     $java -jar jgridstart-wrapper-1.16.jar
+     $java -jar jgridstart-wrapper-1.18.jar
 
 Then a window pops up similar to the following:
 
