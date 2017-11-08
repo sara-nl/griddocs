@@ -142,6 +142,19 @@ Then use a command like this:
 
 .. note:: It is possible that your proxy :abbr:`DN (Distinguished Name)` is mapped to another user account than your own :abbr:`CUA (SURFsara's Central User Administration)` user account. If you have permission issues with either username or proxy and not the other, contact us to check the user mapping.
 
+Partial downloads
+-----------------
+
+With Curl you can download only part of a file by specifying `--range`. Example:
+
+.. code-block:: console
+
+   $curl --fail --capath /etc/grid-security/certificates/ \
+        --user homer \
+	https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/myfile \
+	--range 0-4 \
+	--output first-5-bytes 
+
 
 Renaming
 ========
