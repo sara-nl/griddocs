@@ -39,21 +39,33 @@ Here's a list of accessible dCache nodes:
 * `dcmain.grid.sara.nl:2288 <http://dcmain.grid.sara.nl:2288>`_ (a dCache web interface showing detailed configuration information)
 * pool nodes::
 
-  * bw27-{1..9}.grid.sara.nl
-  * bw32-{1..9}.grid.sara.nl
-  * by27-{1..9}.grid.sara.nl
-  * by32-{1..9}.grid.sara.nl
+  * bw27-{1..9}.grid.sara.nl (decommissioned in November 2017)
+  * bw32-{1..9}.grid.sara.nl (decommissioned in November 2017)
+  * by27-{1..9}.grid.sara.nl (decommissioned in November 2017)
+  * by32-{1..9}.grid.sara.nl (decommissioned in November 2017)
+  * s35{03,04,06..09}.grid.sara.nl
   * rabbit{1..3}.grid.sara.nl
   * v40-{8..10}.grid.sara.nl
   * whale{1..6}.grid.sara.nl
-  * mouse{1..16}.grid.sara.nl
-  * cat{1..3}.grid.sara.nl
-  * s35{04 05 07}.grid.sara.nl
+  * mouse{1..16}.grid.surfsara.nl
+  * cat{1..3}.grid.surfsara.nl
+  * dog1.grid.surfsara.nl
+  * guppy{1..16}.grid.surfsara.nl
+  * hake{1..16}.grid.surfsara.nl
+  * lobster{1..16}.grid.surfsara.nl
+  * shark{1..16}.grid.surfsara.nl
 
 We have these DNS round robin aliases pointing to our doors:
 
 * gridftp.grid.sara.nl
 * webdav.grid.sara.nl
+
+We're gradually moving systems to the surfsara.nl domain, so these are more long-term future proof:
+
+* gridftp.grid.surfsara.nl
+* webdav.grid.surfsara.nl
+
+The ``srm.grid.sara.nl`` will be maintained though because it is hardcoded in a lot of file catalogues and software.
 
 Here are some metrics per user group: `web.grid.sara.nl/dcache.php <http://web.grid.sara.nl/dcache.php>`_
 
@@ -73,7 +85,7 @@ We currently (July 2017) have ~10 petabyte of disk storage capacity. This space 
 Tape storage
 ============
 
-The Grid tape storage back-end contains ~30 petabyte of data (July 2017). There are two tape libraries: one in Almere and one in the Vancis datacenter in Amsterdam Science Park. Some data only has a single copy, but smaller projects typically have a double copy of their tape data.
+The Grid tape storage back-end contains ~30 petabyte of data (July 2017). There are two tape libraries: one in the Digital Realty datacenter and one in the Vancis datacenter, both in Amsterdam Science Park. Some data only has a single copy, but smaller projects typically have a double copy of their tape data.
 
 
 .. _dCache-specs-performance:
