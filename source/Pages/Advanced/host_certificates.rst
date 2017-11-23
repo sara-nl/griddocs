@@ -40,6 +40,7 @@ The eugridpma.org website has a map that helps you to find relevant Certificate 
 In Firefox, you can view the certificate information of a website. Very often, this information includes a link to the issuing CA root certificate you need to trust this certificate. See this image:
 
 .. image:: /Images/Firefox-find-certificate-issuer.png
+   :width: 400px
 
 Here is a command to get the issuer of a host certificate, in this example of webdav.grid.surfsara.nl:
 
