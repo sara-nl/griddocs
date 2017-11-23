@@ -26,3 +26,33 @@ Certificate Revocation Lists
 ============================
 
 Certificate Revocation Lists or CRLs declare which host certificates have been revoked, for instance because they have been compromised. A utility called ``fetch-crl`` downloads these CRLs. It's good practice to set up ``fetch-crl`` as a cron job. You can find more information about this at https://wiki.nikhef.nl/grid/FetchCRL3.
+
+.. _root-CA-certificates:
+
+===============================================
+Telling your browser to trust host certificates
+===============================================
+
+Not every browser trusts Grid host certificates. You might see the error `SEC_ERROR_UNKNOWN_ISSUER` in Firefox. This means, that Firefox does not have the root CA certificate that was used to sign a specific host certificate. The solution is, to import the root CA certificate into the browser. But which one? Here are some tips to help you.
+
+The eugridpma.org website has a map that helps you to find relevant Certificate Authorities and their root CA certificates: https://www.eugridpma.org/members/worldmap/
+
+In Firefox, you can view the certificate information of a website. Very often, this information includes a link to the issuing CA root certificate you need to trust this certificate. See this image:
+
+.. image:: /Images/Firefox-find-certificate-issuer.png
+
+Here is a command to get the issuer of a host certificate, in this example of webdav.grid.surfsara.nl:
+
+.. code-block:: console
+
+   $echo | openssl s_client -connect webdav.grid.surfsara.nl:443 -CApath /etc/grid-security/certificates/ 2>/dev/null \
+   $| openssl x509 -noout -text \
+   $| egrep -o 'https{0,1}://.*\.(pem|crt|der)'
+
+This will show:
+
+.. code-block:: console
+
+   http://cacerts.digicert.com/TERENAeScienceSSLCA3.crt
+   
+You can copy this link and paste it in the URL field to import the root certificate into Firefox. After that, Firefox will trust all sites with host certificates signed by this root certificate.
