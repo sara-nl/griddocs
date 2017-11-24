@@ -88,7 +88,7 @@ Examples:
 	gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 	
 	# same, but with a Webdav TURL
-	https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+	https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 	
 	# lsgrid user homer stores the file zap.tar on DPM storage at lumc cluster
 	gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar
@@ -146,11 +146,11 @@ dCache
 +------------+--------------------------------------+--------------------------------------+
 | GridFTP    | gsiftp://gridftp.grid.sara.nl:2811   | Data channel port range: 20000-25000 |
 +------------+--------------------------------------+--------------------------------------+
-|            | https://webdav.grid.sara.nl:443      |                                      |
+|            | https://webdav.grid.surfsara.nl:443  |                                      |
 +            +--------------------------------------+                                      +
-| Webdav     | https://webdav.grid.sara.nl:2880     | See :ref:`webdav` for details        |
+| Webdav     | https://webdav.grid.surfsara.nl:2880 | See :ref:`webdav` for details        |
 +            +--------------------------------------+                                      +
-|            | https://webdav.grid.sara.nl:2882     |                                      |
+|            | https://webdav.grid.surfsara.nl:2882 |                                      |
 +            +--------------------------------------+                                      +
 |            | https://webdav-cert.grid.sara.nl:443 |                                      |
 +------------+--------------------------------------+--------------------------------------+
