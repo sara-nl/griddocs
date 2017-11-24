@@ -30,27 +30,27 @@ dCache has the following webdav doors:
 .. |nbsp| unicode:: 0xA0 
    :trim:
 
-+--------------------------------------+---------------------------+-----------------------------+---------------------+
-| URL including port                   | Authentication method     | Redirection behaviour       | Overwrites          |
-+======================================+===========================+=============================+=====================+
-| https://webdav.grid.sara.nl:443      | Username/password         | Redirects on read           | Not |nbsp| allowed  |
-+--------------------------------------+---------------------------+-----------------------------+---------------------+
-| https://webdav.grid.sara.nl:2880     | Username/password         | No redirects                | Allowed             |
-+--------------------------------------+---------------------------+-----------------------------+---------------------+
-| https://webdav.grid.sara.nl:2882     | User certificate or proxy | Redirects on read and write | Not |nbsp| allowed  |
-+--------------------------------------+---------------------------+-----------------------------+---------------------+
-| https://webdav-cert.grid.sara.nl:443 | User certificate or proxy | No redirects                | Not |nbsp| allowed  |
-+--------------------------------------+---------------------------+-----------------------------+---------------------+
-| https://ipv4.grid.surfsara.nl:443    | Username/password         | Redirects on read           | Not |nbsp| allowed  |
-+--------------------------------------+---------------------------+-----------------------------+---------------------+
-| https://ipv4.grid.surfsara.nl:2880   | Username/password         | No redirects                | Allowed             |
-+--------------------------------------+---------------------------+-----------------------------+---------------------+
-| https://ipv4.grid.surfsara.nl:2882   | User certificate or proxy | Redirects on read and write | Not |nbsp| allowed  |
-+--------------------------------------+---------------------------+-----------------------------+---------------------+
++------------------------------------------+---------------------------+-----------------------------+---------------------+
+| URL including port                       | Authentication method     | Redirection behaviour       | Overwrites          |
++==========================================+===========================+=============================+=====================+
+| https://webdav.grid.surfsara.nl:443      | Username/password         | Redirects on read           | Not |nbsp| allowed  |
++------------------------------------------+---------------------------+-----------------------------+---------------------+
+| https://webdav.grid.surfsara.nl:2880     | Username/password         | No redirects                | Allowed             |
++------------------------------------------+---------------------------+-----------------------------+---------------------+
+| https://webdav.grid.surfsara.nl:2882     | User certificate or proxy | Redirects on read and write | Not |nbsp| allowed  |
++------------------------------------------+---------------------------+-----------------------------+---------------------+
+| https://webdav-cert.grid.sara.nl:443     | User certificate or proxy | No redirects                | Not |nbsp| allowed  |
++------------------------------------------+---------------------------+-----------------------------+---------------------+
+| https://ipv4.grid.surfsara.nl:443        | Username/password         | Redirects on read           | Not |nbsp| allowed  |
++------------------------------------------+---------------------------+-----------------------------+---------------------+
+| https://ipv4.grid.surfsara.nl:2880       | Username/password         | No redirects                | Allowed             |
++------------------------------------------+---------------------------+-----------------------------+---------------------+
+| https://ipv4.grid.surfsara.nl:2882       | User certificate or proxy | Redirects on read and write | Not |nbsp| allowed  |
++------------------------------------------+---------------------------+-----------------------------+---------------------+
 
 If you don't know which one you should use, choose the first. It has a good load balancing. The second, on port ``2880``, may be useful for certain webdav clients that don't support redirects, such as ``cadaver``. Use the third one only if you need to use webdav with a certificate or proxy.
 
-``webdav.grid.sara.nl`` is a DNS round robin that will direct you to a (more or less) random host in a pool of webdav servers.
+``webdav.grid.surfsara.nl`` is a DNS round robin that will direct you to a (more or less) random host in a pool of webdav servers.
 
 Use ``webdav-cert.grid.sara.nl`` when you want to authenticate with a user certificate or proxy, and your institute's firewall blocks outgoing connections to port ``2882``.
 
@@ -65,7 +65,7 @@ Use ``ipv4.grid.surfsara.nl`` for storage clients that have problems with IPv6.
 Listing
 =======
 
-To list directories, you can point a browser like Firefox to https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/. When the browser asks for a username and password, you can provide your Grid :abbr:`UI (User Interface)` (or :abbr:`CUA (SURFsara's Central User Administration)`) username and password. When you click on a listed file, it will be downloaded, when you're authorized to do so. When you're not authorized to access a URL, you may see some unexpected behaviour.
+To list directories, you can point a browser like Firefox to https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/. When the browser asks for a username and password, you can provide your Grid :abbr:`UI (User Interface)` (or :abbr:`CUA (SURFsara's Central User Administration)`) username and password. When you click on a listed file, it will be downloaded, when you're authorized to do so. When you're not authorized to access a URL, you may see some unexpected behaviour.
 
 You can also use command line web tools like curl to list directories.
 
@@ -78,7 +78,7 @@ To create a directory with curl:
 .. code-block:: console
 
    $curl --capath /etc/grid-security/certificates/ --fail --user homer \
-        --request MKCOL https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/directory
+        --request MKCOL https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/directory
 
 If on your system there are no Grid :abbr:`CA (Certificate Authority)` certificates available in ``/etc/grid-security/certificates/``, please read :ref:`host_certificates <host-certificates>`.
 
@@ -96,7 +96,7 @@ To copy a file from your local machine to dCache:
 
    $curl --capath /etc/grid-security/certificates/ --fail --location --user homer \
         --upload-file zap.tar \
-        https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/
+        https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/
    $# replace homer with your username, lsgrid with your VO and zap.tar with your local file
 
 The command will ask for the password of 'homer' on the command line. If you don't want to type the password each time, specify ``--netrc`` and store the password in the ``.netrc`` file in your home dir. Make sure it is not readable by others (``chmod 600 .netrc``). See ``man curl`` for more details.
@@ -112,7 +112,7 @@ To copy a file from dCache to your local machine:
 .. code-block:: console
   
    $curl --capath /etc/grid-security/certificates/ --fail --location --user homer \
-        https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
+        https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
         --output zap.tar
   
 Or with ``wget``:
@@ -120,7 +120,7 @@ Or with ``wget``:
 .. code-block:: console
 
    $wget --user=homer --ask-password --ca-directory=/etc/grid-security/certificates \
-        https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+        https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 
 Note: ``wget`` does not support certificate/proxy authentication.
 
@@ -138,7 +138,7 @@ Then use a command like this:
 
    $curl --capath /etc/grid-security/certificates/ \
         --cert $X509_USER_PROXY --cacert $X509_USER_PROXY \
-        https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+        https://webdav.grid.surfsara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
 .. note:: It is possible that your proxy :abbr:`DN (Distinguished Name)` is mapped to another user account than your own :abbr:`CUA (SURFsara's Central User Administration)` user account. If you have permission issues with either username or proxy and not the other, contact us to check the user mapping.
 
@@ -151,7 +151,7 @@ With Curl you can download only part of a file by specifying `--range`. Example:
 
    $curl --fail --capath /etc/grid-security/certificates/ \
         --user homer \
-	https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/myfile \
+	https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/myfile \
 	--range 0-4 \
 	--output first-5-bytes 
 
@@ -167,8 +167,8 @@ With proxy authentication
    $curl --capath /etc/grid-security/certificates/  --fail --location \
         --cert $X509_USER_PROXY --cacert $X509_USER_PROXY \
         --request MOVE \
-        https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/oldfile \
-        --header "Destination:https://webdav.grid.sara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/newfile"
+        https://webdav.grid.surfsara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/oldfile \
+        --header "Destination:https://webdav.grid.surfsara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/newfile"
 
 File properties and locality are not changed. A file that is stored on tape (nearline) will stay on tape, even if it is moved to a directory for disk-only files.
 
@@ -180,8 +180,8 @@ With username/password authentication
    $curl --capath /etc/grid-security/certificates/  --fail --location-trusted \
         --user homer \
         --request MOVE \
-        https://webdav.grid.sara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/oldfile \
-        --header "Destination:https://webdav.grid.sara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/newfile"
+        https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/oldfile \
+        --header "Destination:https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/newfile"
 
 Please note the differences with the previous example:
 
@@ -197,7 +197,7 @@ Deleting a file from dCache:
 .. code-block:: console
 
    $curl --capath /etc/grid-security/certificates/ --user homer --location \
-        --request DELETE https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+        --request DELETE https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 
 
 Querying file properties
@@ -218,7 +218,7 @@ This example shows how to query the file locality: whether a file is online or n
             </a:propfind>' \
    | curl --silent --fail --capath /etc/grid-security/certificates/ \
           --user homer --request PROPFIND \
-          https://webdav.grid.sara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
+          https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
           --header "Content-Type: text/xml" --upload - \
    | xmllint -format -
 
@@ -235,7 +235,7 @@ The returned checksum comes from the dCache database, so it is a very efficient 
 
    $curl --head --header 'Want-Digest: ADLER32' --silent --fail --capath /etc/grid-security/certificates/ \
         --user homer \
-        https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/home/myfile \
+        https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/home/myfile \
    | grep 'adler32='
 
 Here an example output:
@@ -255,7 +255,7 @@ Here is an alternative way to query an Adler32 checksum:
             </a:propfind>' \
    | curl --silent --fail --capath /etc/grid-security/certificates/ \
           --user homer --request PROPFIND \
-          https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/myfile \
+          https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/myfile \
           --header "Content-Type: text/xml" --upload - \
    | xmllint -format - \
    | egrep -o '<ns1:Checksums>.*</ns1:Checksums>'
@@ -329,7 +329,7 @@ To work with WebDAV on Windows or Mac OS X, you can install **Cyberduck** from h
 
   .. code-block:: bash
 
-     https://webdav.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/ # replace lsgrid with your VO
+     https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/ # replace lsgrid with your VO
 
 .. image:: /Images/cyberduck.png
 	:align: center
