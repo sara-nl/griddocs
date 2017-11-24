@@ -23,7 +23,7 @@ Quick summary
 ============================ =====================================================
 Gina cluster                 Capacity                                             
 ============================ =====================================================
-Operating system             Linux CentOS 6.x 64bit                              
+Operating system             Linux CentOS 7.x 64bit                              
 Total number of cores        6584 Xeon cores at 2.2 to 2.6 GHz                   
 Total memory                 52.7TB                                                 
 Total scratch space          2264TB                                              
