@@ -122,8 +122,6 @@ Or with ``wget``:
    $wget --user=homer --ask-password --ca-directory=/etc/grid-security/certificates \
         https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 
-Note: ``wget`` does not support certificate/proxy authentication.
-
 If you don't have an ``/etc/grid-security/certificates`` directory, you could specify ``--no-check-certificate``, but we don't recommend this.
 
 
@@ -141,6 +139,8 @@ Then use a command like this:
         https://webdav.grid.surfsara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
 .. note:: It is possible that your proxy :abbr:`DN (Distinguished Name)` is mapped to another user account than your own :abbr:`CUA (SURFsara's Central User Administration)` user account. If you have permission issues with either username or proxy and not the other, contact us to check the user mapping.
+
+Note: ``wget`` does not support certificate/proxy authentication.
 
 Partial downloads
 -----------------
