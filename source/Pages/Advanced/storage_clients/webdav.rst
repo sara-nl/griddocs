@@ -136,7 +136,7 @@ Then use a command like this:
 
 .. code-block:: console
 
-   $curl --capath /etc/grid-security/certificates/ \
+   $curl --location --capath /etc/grid-security/certificates/ \
         --cert $X509_USER_PROXY --cacert $X509_USER_PROXY \
         https://webdav.grid.surfsara.nl:2882/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
