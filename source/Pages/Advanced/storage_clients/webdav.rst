@@ -74,7 +74,7 @@ Another consideration is whether youre using the door for parallel access.
 
 ``webdav.grid.surfsara.nl`` is a DNS round robin that will direct you to a (more or less) random host in a pool of webdav servers. So it is very well suited for parallel access.
 
-Use ``webdav-cert.grid.sara.nl`` when you want to authenticate with a user certificate or proxy, and your institute's firewall blocks outgoing connections to port ``2882`` and `2883`. It's a single virtual machine; don't use it for parallel processing.
+Use ``webdav-cert.grid.sara.nl`` when you want to authenticate with a user certificate or proxy, and your institute's firewall blocks outgoing connections to port ``2882`` and ``2883``. It's a single virtual machine; don't use it for parallel processing.
 
 Use ``ipv4.grid.surfsara.nl`` for storage clients that have problems with IPv6. It's a single virtual machine; don't use it for parallel processing.
 
