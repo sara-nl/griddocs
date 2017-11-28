@@ -68,7 +68,7 @@ Advantages of redirects:
 * It's a form of load balancing, which improves the speed.
 * Redirecting WebDAV doors do the authentication over HTTPS, but they redirect your client to an HTTP port. So the data transfer is unencrypted. This improves speed.
 
-Disdvantages of redirects:
+Disadvantages of redirects:
 
 * File transfers are sent over HTTP, so they are not encryted. A "man in the middle" might be able to read the data, or even modify it in transit. If privacy is a concern, choose a door that does not redirect.
 * Some WebDAV clients don't handle redirects very well.
