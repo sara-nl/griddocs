@@ -9,24 +9,25 @@ This page includes the basic commands to use the webdav protocol. For an overvie
 .. contents:: 
     :depth: 4
  
-======
-Webdav
-======
 
-The webdav protocol has the following advantages:
+About WebDAV
+============
+
+The WebDAV protocol has the following advantages:
 
 * It supports username & password authentication
-* It uses the common port 443. Some overly strict firewalls may block outgoing traffic, but port 443 is so common that it is seldom blocked. However, using webdav to bypass firewalls should be seen as a temporary solution; it would be better to open up your institute's firewall to allow access to the dCache subnet.
+* It uses the common port 443. Some overly strict firewalls may block outgoing traffic, but port 443 is so common that it is seldom blocked. However, using WebDAV to bypass firewalls should be seen as a temporary solution; it would be better to open up your institute's firewall to allow access to the dCache subnet.
 
 It also has disadvantages:
 
 * It is not a high performance transfer protocol. If this is important, use GridFTP instead.
-* Support by webdav clients varies widely. Some operations (like renaming a file) may not work in certain clients and circumstances. Modifying/overwriting a file, although the webdav protocol supports it, doesn't work on dCache; you'll need to delete the old file and upload the new file instead.
+* Support by WebDAV clients varies widely. Some operations (like renaming a file) may not work in certain clients and circumstances. Modifying/overwriting a file, although the WebDAV protocol supports it, doesn't work on dCache; you'll need to delete the old file and upload the new file instead.
 
-Available Webdav doors
+
+Available WebDAV doors
 ======================
 
-dCache has the following webdav doors:
+dCache has the following WebDAV doors:
 
 .. comment: The following is a trick to get non-breaking spaces. See https://stackoverflow.com/questions/11830242/non-breaking-space
 
@@ -55,15 +56,16 @@ dCache has the following webdav doors:
 | https://ipv4.grid.surfsara.nl:2883       | User certificate or proxy | No redirects                | Not |nbsp| allowed  |
 +------------------------------------------+---------------------------+-----------------------------+---------------------+
 
+
 Choosing a WebDAV door
 ----------------------
 
-The most important consideration is whether you want to authenticate with username/password or with ``x509`` (certificate/proxy). Another important consideration is whether a webdav door should redirect or not.
+The most important consideration is whether you want to authenticate with username/password or with ``x509`` (certificate/proxy). Another important consideration is whether a WebDAV door should redirect or not.
 
 Advantages of redirects:
 
 * It's a form of load balancing, which improves the speed.
-* Redirecting Webdav doors do the authentication over HTTPS, but they redirect your client to an HTTP port. So the data transfer is unencrypted. This improves speed.
+* Redirecting WebDAV doors do the authentication over HTTPS, but they redirect your client to an HTTP port. So the data transfer is unencrypted. This improves speed.
 
 Disdvantages of redirects:
 
@@ -72,7 +74,7 @@ Disdvantages of redirects:
 
 Another consideration is whether youre using the door for parallel access.
 
-``webdav.grid.surfsara.nl`` is a DNS round robin that will direct you to a (more or less) random host in a pool of webdav servers. So it is very well suited for parallel access.
+``webdav.grid.surfsara.nl`` is a DNS round robin that will direct you to a (more or less) random host in a pool of WebDAV servers. So it is very well suited for parallel access.
 
 Use ``webdav-cert.grid.sara.nl`` when you want to authenticate with a user certificate or proxy, and your institute's firewall blocks outgoing connections to port ``2882`` and ``2883``. It's a single virtual machine; don't use it for parallel processing.
 
@@ -222,7 +224,7 @@ Deleting a file from dCache:
 Querying file properties
 ========================
 
-With curl and the dCache webdav door, it's possible to request file properties. This works both with username/password and proxy authentication, provided you use the correct port (``443`` or ``2880`` for username/password, ``2882`` or ``2883`` for proxy authentication). 
+With curl and a dCache WebDAV door, it's possible to request file properties. This works both with username/password and proxy authentication, provided you use the correct port (``443`` or ``2880`` for username/password, ``2882`` or ``2883`` for proxy authentication). 
 
 Locality
 --------
@@ -337,7 +339,7 @@ Queries can be combined to reduce transaction overhead:
             </a:propfind>' \
    | curl ...
 
-===============================
+
 Graphical access with Cyberduck
 ===============================
   
@@ -354,7 +356,7 @@ To work with WebDAV on Windows or Mac OS X, you can install **Cyberduck** from h
 	:align: center
 
 Cyberduck with a user certificate
-=================================
+---------------------------------
 
 Normally, one would authenticate to dCache using a user certificate or proxy. dCache determines your identity based either on your user certificate or proxy DN, or on your VOMS credentials. However, if you authenticate with your CUA username & password, that identity might not be the same and you may not have access to your own data.
 
