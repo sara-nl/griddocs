@@ -171,7 +171,7 @@ With Curl you can download only part of a file by specifying `--range`. Example:
 
 .. code-block:: console
 
-   $curl --fail --capath /etc/grid-security/certificates/ \
+   $curl --fail --location --capath /etc/grid-security/certificates/ \
         --user homer \
 	https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/myfile \
 	--range 0-4 \
