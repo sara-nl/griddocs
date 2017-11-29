@@ -144,7 +144,7 @@ Or with ``wget``:
    $wget --user=homer --ask-password --ca-directory=/etc/grid-security/certificates \
         https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
 
-If you don't have an ``/etc/grid-security/certificates`` directory, you could specify ``--no-check-certificate``, but we don't recommend this.
+The ``--ca-directory`` is probably not necessary anymore. If it is, but you don't have an ``/etc/grid-security/certificates`` directory, you could specify ``--no-check-certificate``, but we don't recommend this.
 
 
 Downloading with proxy authentication
