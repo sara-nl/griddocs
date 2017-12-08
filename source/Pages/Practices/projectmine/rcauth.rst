@@ -14,10 +14,10 @@ enabled users to copy data from dCache to their local site without a certificate
 
 When users start working on the grid, or interact with dCache for data transfers, a proxy (http://doc.grid.surfsara.nl/en/latest/Pages/Advanced/grid_authentication.html) is created based on the user's 
 certificate. RCauth is a service that allows users to get this proxy without the actual user certificate but instead with username/password 
-authentication provided by SURFsara. This feature will help users to speed up in getting started without worrying about grid certificates! This document provides information on how to use the RCAuth service.
+authentication provided by SURFsara. This feature will help users to speed up in getting started without worrying about grid certificates! This document provides information on how to use the RCauth service.
 
 =============
-How to use RCAuth
+How to use RCauth
 =============
 
 SURFsara will provide entitlement to enable existing users to use this service. Future incoming users will be automatically  provided with this entitlement when their accounts are created. 
