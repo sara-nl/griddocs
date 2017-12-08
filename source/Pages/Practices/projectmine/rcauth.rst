@@ -53,7 +53,7 @@ You need to login with the username and password (the same credentials that prov
 .. image:: rcauth-consent.png
 	:align: center
 
-Please check remember (so you will not be asked again) and click yes to proceed to the following page:
+Please check remember/bewaar toestemming (so you will not be asked again) and click yes/Ja, ik ga akkoord to proceed to the following page:
 
 .. image:: rcauth-hash.png
 	:align: center
