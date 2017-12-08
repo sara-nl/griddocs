@@ -35,7 +35,7 @@ This will prompt you for the following response:
 
     Please enter the authentication hash that you retrieved from https://rcdemo.nikhef.nl/projectmine/ 
 
-From a web browser please proceed to the above link (If you are logging into the mine-ui from a remote server which does not allow X-forwarding, you can also open the link with a browser from your laptop/desktop) You will be directed to the following page:
+If X forwarding is enabled (i.e., you logged in as ssh -X user@mine-ui.grid.sara.nl) a browser will direct you to the following portal. If you are logging into the mine-ui from a remote server which does not allow X-forwarding, you can also open the link with a browser from your laptop/desktop, or for a faster reponse you can open the above link from a broswer from your laptop/desktop. You will be directed to the following page:
 
 .. image:: rcauth-portal.png
 	:align: center
@@ -45,7 +45,7 @@ Click on the start button upon which you will be redirected to the SURFsara port
 .. image:: surfsara-portal.png
 	:align: center
 
-You need to login with the username and password (the same credentials that provide you access to the SURFsara user portal https://portal.surfsara.nl/home). Once you enter the correct credentials you will be redirected to the following pages for agreeing to the terms and conditions. 
+You need to login with the username and password (the same credentials that provide you access to the SURFsara user portal https://portal.surfsara.nl/home). Once you enter the correct credentials you will be redirected to the following pages for agreeing to the terms and conditions available in both English and Dutch. 
 
 .. image:: consent-personal-info.png
 	:align: center
