@@ -138,7 +138,7 @@ The command will ask for the password of 'homer' on the command line. If you don
 .. code-block:: console
 
    $ cat .netrc
-   machine webdav.grid.sara.nl
+   machine webdav.grid.surfsara.nl
    login <your_username>
    password <your_pwd>
 
@@ -375,7 +375,7 @@ There is also a disadvantage: it uses only username/password authentication; not
 
 Because of this, Rclone is best suited for uploading or downloading large datasets; lacking X509 support, it's not suited for batch processing.
 
-You can use it with for example https://webdav.grid.sara.nl:443/pnfs/grid.sara.nl/data/lsgrid/homer (for performance) or https://webdav.grid.sara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer (with encrypted transport).
+You can use it with for example https://webdav.grid.surfsara.nl:443/pnfs/grid.sara.nl/data/lsgrid/homer (for performance) or https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer (with encrypted transport).
 
 
 Graphical access with Cyberduck
