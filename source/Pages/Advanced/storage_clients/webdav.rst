@@ -388,13 +388,13 @@ Rclone is a command line tool that you can download from https://rclone.org/down
 Advantages of Rclone are:
 
 * It can sync directories, like rsync does
-* It uses multiple parallel connections, 4 by default, to get a better performance
+* It uses parallel transfers, 4 by default, to get a better performance
 
 There is also a disadvantage: it uses only username/password authentication; not X509 certificate/proxy authentication. You'll have to use your CUA credentials and write to a directory where you are permitted to write.
 
-Because of this, Rclone is best suited for uploading or downloading large datasets; lacking X509 support, it's not suited for batch processing.
+Because of this, Rclone is best suited for uploading or downloading large datasets; lacking X509 client authentication, it's not suited for batch processing.
 
-You can use it with for example https://webdav.grid.surfsara.nl:443/pnfs/grid.sara.nl/data/lsgrid/homer (for performance) or https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer (with encrypted transport).
+You can use it with for example ``https://webdav.grid.surfsara.nl:443/pnfs/grid.sara.nl/data/lsgrid/homer`` (for performance) or ``https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer`` (with encrypted transport).
 
 
 Graphical access with Cyberduck
