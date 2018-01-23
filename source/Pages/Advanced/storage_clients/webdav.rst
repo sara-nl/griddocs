@@ -1,10 +1,10 @@
 .. _webdav:
 
-***************
-*webdav* client
-***************
+****************
+*webdav* clients
+****************
 
-This page includes the basic commands to use the webdav protocol. For an overview of storage clients, see :ref:`storage-clients`.
+This page describes how to use the webdav protocol. For an overview of storage clients, see :ref:`storage-clients`.
 
 .. contents:: 
     :depth: 4
@@ -44,7 +44,7 @@ dCache has the following WebDAV doors:
 +------------------------------------------+---------------------------+-----------------------------+---------------------+
 | https://webdav.grid.surfsara.nl:2882     | User certificate or proxy | Redirects on read and write | Not |nbsp| allowed  |
 +------------------------------------------+---------------------------+-----------------------------+---------------------+
-| https://webdav.grid.surfsara.nl:2883     | User certificate or proxy | No redirects                | Not |nbsp| allowed  |
+| https://webdav.grid.surfsara.nl:2883     | User certificate or proxy | No redirects                | Allowed             |
 +------------------------------------------+---------------------------+-----------------------------+---------------------+
 | https://webdav-cert.grid.sara.nl:443     | User certificate or proxy | No redirects                | Not |nbsp| allowed  |
 +------------------------------------------+---------------------------+-----------------------------+---------------------+
@@ -54,7 +54,7 @@ dCache has the following WebDAV doors:
 +------------------------------------------+---------------------------+-----------------------------+---------------------+
 | https://ipv4.grid.surfsara.nl:2882       | User certificate or proxy | Redirects on read and write | Not |nbsp| allowed  |
 +------------------------------------------+---------------------------+-----------------------------+---------------------+
-| https://ipv4.grid.surfsara.nl:2883       | User certificate or proxy | No redirects                | Not |nbsp| allowed  |
+| https://ipv4.grid.surfsara.nl:2883       | User certificate or proxy | No redirects                | Allowed             |
 +------------------------------------------+---------------------------+-----------------------------+---------------------+
 
 
@@ -91,6 +91,18 @@ To list directories, you can point a browser like Firefox to https://webdav.grid
 
 You can also use command line web tools like curl to list directories.
 
+
+Clients
+=======
+
+We've tested these WebDAV clients successfully with dCache:
+
+* curl
+* wget (download only)
+* rclone (username/password only)
+* cyberduck (GUI)
+
+We'll describe how to use them below, starting with ``curl`` and ``wget``.
 
 Creating directories
 ====================
@@ -347,6 +359,23 @@ Queries can be combined to reduce transaction overhead:
             <a:prop><srm:Checksums xmlns:srm="http://www.dcache.org/2013/webdav"/></a:prop>
             </a:propfind>' \
    | curl ...
+
+
+Rclone
+======
+
+Rclone is a command line tool that you can download from https://rclone.org/downloads/. It works on many platforms and it can talk to many storage systems besides WebDAV. A description how to use it with WebDAV is here: https://rclone.org/webdav/. 
+
+Advantages of Rclone are:
+
+* It can sync directories, like rsync does
+* It uses multiple parallel connections, 4 by default, to get a better performance
+
+There is also a disadvantage: it uses only username/password authentication; not X509 certificate/proxy authentication. You'll have to use your CUA credentials and write to a directory where you are permitted to write.
+
+Because of this, Rclone is best suited for uploading or downloading large datasets; lacking X509 support, it's not suited for batch processing.
+
+You can use it with for example https://webdav.grid.sara.nl:443/pnfs/grid.sara.nl/data/lsgrid/homer (for performance) or https://webdav.grid.sara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer (with encrypted transport).
 
 
 Graphical access with Cyberduck
