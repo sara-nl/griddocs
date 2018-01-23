@@ -104,8 +104,12 @@ We've tested these WebDAV clients successfully with dCache:
 
 We'll describe how to use them below, starting with ``curl`` and ``wget``.
 
+
+Curl & wget
+===========
+
 Creating directories
-====================
+--------------------
 
 To create a directory with curl:
 
@@ -118,9 +122,10 @@ If on your system there are no Grid :abbr:`CA (Certificate Authority)` certifica
 
 
 Transferring data
-=================
+-----------------
 
 
+---------
 Uploading
 ---------
 
@@ -146,6 +151,7 @@ The command will ask for the password of 'homer' on the command line. If you don
 .. note:: It is possible to specify the password on the command line like this: ``--user homer:password``. However, for security reasons this should be avoided on shared systems (like the :abbr:`UI (User Interface)`) because it allows other local users to read the password with the ``ps`` command.
 
 
+-----------
 Downloading
 -----------
 
@@ -167,6 +173,7 @@ Or with ``wget``:
 The ``--ca-directory`` is probably not necessary anymore. If it is, but you don't have an ``/etc/grid-security/certificates`` directory, you could specify ``--no-check-certificate``, but we don't recommend this.
 
 
+-------------------------------------
 Downloading with proxy authentication
 -------------------------------------
 
@@ -184,6 +191,8 @@ Then use a command like this:
 
 Note: ``wget`` does not support certificate/proxy authentication.
 
+
+-----------------
 Partial downloads
 -----------------
 
@@ -199,8 +208,10 @@ With Curl you can download only part of a file by specifying `--range`. Example:
 
 
 Renaming
-========
+--------
 
+
+-------------------------
 With proxy authentication
 -------------------------
 
@@ -214,6 +225,8 @@ With proxy authentication
 
 File properties and locality are not changed. A file that is stored on tape (nearline) will stay on tape, even if it is moved to a directory for disk-only files.
 
+
+-------------------------------------
 With username/password authentication
 -------------------------------------
 
@@ -232,7 +245,7 @@ Please note the differences with the previous example:
 
 
 Removing data
-=============
+-------------
 
 Deleting a file from dCache:
 
@@ -243,10 +256,12 @@ Deleting a file from dCache:
 
 
 Querying file properties
-========================
+------------------------
 
 With curl and a dCache WebDAV door, it's possible to request file properties. This works both with username/password and proxy authentication, provided you use the correct port (``443`` or ``2880`` for username/password, ``2882`` or ``2883`` for proxy authentication). 
 
+
+--------
 Locality
 --------
 
@@ -266,6 +281,8 @@ This example shows how to query the file locality: whether a file is online or n
 
 See :ref:`staging` for more information about file locality.
 
+
+-----------------
 Adler32 checksums
 -----------------
 
@@ -308,6 +325,8 @@ Here is an example of the expected output:
 
    $<ns1:Checksums>adler32=46fd067a</ns1:Checksums>
 
+
+-------------
 MD5 checksums
 -------------
 
