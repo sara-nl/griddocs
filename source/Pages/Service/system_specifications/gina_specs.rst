@@ -82,7 +82,7 @@ Worker Nodes ``f13-{01-24}``, ``f14-{01-20}``, ``f15-{01-20}``, ``f16-{01-20}``,
   *  Scratch per core: ~680GB  
   *  RAM per core: 8GB  
 
-Worker Nodes ``f18-{01-06}``, ``f19-{01-06}``, ``f20-{01-06}``::  
+Worker Nodes ``f18-01``::  
 
   *  Dell R820  
   *  4x Intel(R) Xeon(R) CPU E5-4620 0 @ 2.20GHz (32 cores)  
