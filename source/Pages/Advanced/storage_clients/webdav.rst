@@ -84,25 +84,26 @@ Use ``ipv4.grid.surfsara.nl`` for storage clients that have problems with IPv6. 
 .. note:: To run the examples below you need to have a :abbr:`UI (User Interface)` (or :abbr:`CUA (SURFsara's Central User Administration)`) account that is configured within dCache and authorized to the data you want to access. Contact us if you need assistance with that.
 
 
-Listing
-=======
-
-To list directories, you can point a browser like Firefox to https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/. When the browser asks for a username and password, you can provide your Grid :abbr:`UI (User Interface)` (or :abbr:`CUA (SURFsara's Central User Administration)`) username and password. When you click on a listed file, it will be downloaded, when you're authorized to do so. When you're not authorized to access a URL, you may see some unexpected behaviour.
-
-You can also use command line web tools like curl to list directories.
-
-
 Clients
 =======
 
 We've tested these WebDAV clients successfully with dCache:
 
+* web browsers (read only)
 * curl
-* wget (download only)
+* wget (read only)
 * rclone (username/password only)
 * cyberduck (GUI)
 
-We'll describe how to use them below, starting with ``curl`` and ``wget``.
+We'll describe how to use them below.
+
+
+Web browsers
+============
+
+The easiest way to access dCache is with a normal web browser. You can point a browser like Firefox to https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/ or any of the other WebDAV doors listed in the table above. When the browser asks for a username and password, you can provide your Grid :abbr:`UI (User Interface)` (or :abbr:`CUA (SURFsara's Central User Administration)`) username and password. When you click on a listed file, it will be downloaded, if you're authorized to do so.
+
+You can't upload to dCache with a normal web browser.
 
 
 Curl & wget
@@ -383,7 +384,7 @@ Queries can be combined to reduce transaction overhead:
 Rclone
 ======
 
-Rclone is a command line tool that you can download from https://rclone.org/downloads/. It works on many platforms and it can talk to many storage systems besides WebDAV. A description how to use it with WebDAV is here: https://rclone.org/webdav/. 
+Rclone is a command line tool that you can download from https://rclone.org/downloads/. It works on many platforms and it can talk to many storage systems besides WebDAV.
 
 Advantages of Rclone are:
 
@@ -394,7 +395,27 @@ There is also a disadvantage: it uses only username/password authentication; not
 
 Because of this, Rclone is best suited for uploading or downloading large datasets; lacking X509 client authentication, it's not suited for batch processing.
 
-You can use it with for example ``https://webdav.grid.surfsara.nl:443/pnfs/grid.sara.nl/data/lsgrid/homer`` (for performance) or ``https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer`` (with encrypted transport).
+The first time you use rclone, you need to make a profile with ``rclone config``.
+
+You can use for example ``https://webdav.grid.surfsara.nl:443/pnfs/grid.sara.nl/data/lsgrid/homer`` (for performance) or ``https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer`` (with encrypted transport).
+
+An example of a profile:
+
+.. code-block:: console
+
+   [dcache]
+   url = https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer
+   vendor = other
+   user = homer
+   pass = *** ENCRYPTED ***
+
+An example of using rclone to copy a directory:
+
+.. code-block:: console
+
+   $rclone copy mydir dcache:rclone-test
+
+More information on how to use ``rclone`` with WebDAV is here: https://rclone.org/webdav/. There are also graphical user interfaces to ``rclone``; one is `RcloneBrowser <https://github.com/mmozeiko/RcloneBrowser>`_.
 
 
 Graphical access with Cyberduck
