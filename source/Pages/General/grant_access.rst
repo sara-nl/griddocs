@@ -4,7 +4,7 @@
 How to get access
 *****************
 
-In this page you will find general information about getting access to the Life Science Grid and the National Dutch Grid infrastructure:
+In this page you will find general information about getting access to the National Dutch Grid infrastructure:
 
 .. contents:: 
     :depth: 4
@@ -12,27 +12,27 @@ In this page you will find general information about getting access to the Life 
 
 .. _access-local-lsg:
 
-==============================
-Local access to an LSG cluster
-==============================
+.. ==============================
+.. Local access to an LSG cluster
+.. ==============================
 
-Granting local access to a Life Science Grid (LSG) cluster enables you:
+.. Granting local access to a Life Science Grid (LSG) cluster enables you:
 
-* submitting jobs (:ref:`pbs`) jobs directly to your local cluster
-* the possibility to scale up to other LSG clusters (see :ref:`access-grid`) 
+.. * submitting jobs (:ref:`pbs`) jobs directly to your local cluster
+.. * the possibility to scale up to other LSG clusters (see :ref:`access-grid`) 
 
-If your research applies to one of the life science disciplines and your institute hosts a LSG cluster (see :ref:`lsg-clusters`), you are eligible to obtain an account on your local LSG cluster.
+.. If your research applies to one of the life science disciplines and your institute hosts a LSG cluster (see :ref:`lsg-clusters`), you are eligible to obtain an account on your local LSG cluster.
 
-To get an account on a local user interface, please send a request to your Designated Site Admin (see :ref:`lsg-dsa`) or contact us at helpdesk@surfsara.nl.
+.. To get an account on a local user interface, please send a request to your Designated Site Admin (see :ref:`lsg-dsa`) or contact us at helpdesk@surfsara.nl.
 
 
 .. _access-grid:
 
-========================================
-Access to the National Dutch Grid or LSG
-========================================
+=================================
+Access to the National Dutch Grid
+=================================
 
-Access to the Dutch Grid or the :abbr:`LSG (Life Science Grid)` clusters (including non-local access) allows for: 
+Access to the Dutch Grid clusters allows for: 
 
 * submitting :ref:`Grid jobs <first-grid-job>` to multiple clusters via the Grid middleware
 * storing data to the :ref:`grid-storage`
