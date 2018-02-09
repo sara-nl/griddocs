@@ -295,7 +295,7 @@ If the CPU was efficiently being used during the job runtime, then a single core
 
 .. _available-se:
 
-How can I find all the available LSG Storage Elements and get their SURLS?
+How can I find all the available Storage Elements and get their SURLS?
 ==========================================================================
 
 * To find out the available :abbr:`SEs (Storage Elements)` for a certain :abbr:`VO (Virtual Organisation)`, type:
@@ -303,23 +303,12 @@ How can I find all the available LSG Storage Elements and get their SURLS?
   .. code-block:: console
 
      $lcg-infosites --vo lsgrid se 
-	
-* To specify a specific SURL (Storage URL), use the following syntax:
-
-  .. code-block:: console
-
-     srm://gb-se-amc.amc.nl:8446/dpm/amc.nl/home/lsgrid/ # storage element at AMC
-
-A complete list of the LSG SURLs can be found at :ref:`life-science-clusters <lsg-hostnames>`
-
-  
-	
 
 
 
 .. _available-ce:
 
-How can I find all the available LSG Compute Elements and use in my JDL?
+How can I find all the available Compute Elements and use in my JDL?
 ========================================================================
 
 * To find out the available :abbr:`CEs (Compute Elements)` for a certain :abbr:`VO (Virtual Organisation)`, type:
@@ -342,18 +331,18 @@ Note here that the Total, Running and Waiting numbers are per queue, and the CPU
 
 .. _why-lsg-to-grid:
 
-Do I need to switch from my local LSG cluster to Grid?
-======================================================
+.. Do I need to switch from my local LSG cluster to Grid?
+.. ======================================================
 
-If your local cluster is too busy to get a priority or if you want to run hundreds of jobs at the same time, then we advise you to submit through the Grid middleware instead of submitting to the queue directly. There is obviously more capacity when you scale out to multiple clusters and even if there is maintenance on one cluster, your jobs will then be scheduled on other clusters.  
+.. If your local cluster is too busy to get a priority or if you want to run hundreds of jobs at the same time, then we advise you to submit through the Grid middleware instead of submitting to the queue directly. There is obviously more capacity when you scale out to multiple clusters and even if there is maintenance on one cluster, your jobs will then be scheduled on other clusters.  
 
 
 .. _pbs-walltime:
 
-How to run PBS jobs with wallclock greater than 36 hours on LSG?
-================================================================ 
+How to run PBS jobs with wallclock greater than 36 hours on local clusters?
+=========================================================================== 
 
-In order to run :abbr:`PBS (Portable Batch System)` jobs on the :abbr:`LSG (Life Science Grid)` that last more than 36 hours, you need to :ref:`select the proper queue <lsg-specs-queues>` with the ``-q`` flag in your ``qsub`` command when submitting the job:
+In order to run :abbr:`PBS (Portable Batch System)` jobs that last more than 36 hours, you need to :ref:`select the proper queue <lsg-specs-queues>` with the ``-q`` flag in your ``qsub`` command when submitting the job:
  
 * If you do *not* use ``-q`` flag and ``lwalltime`` directive, then the medium queue is picked and jobs lasting more than 36 hours will be killed.
 * If you do *not* use ``-q`` flag but specify ``-lwalltime`` directive with value larger than 36 hours, then you request more walltime than the max walltime available in the default medium queue and the job does not start at all.
