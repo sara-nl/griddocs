@@ -10,6 +10,10 @@ On this page you will find general information about the Life Science Grid (LSG)
     :depth: 4
 
 
+.. warning:: The Life Science Grid infrastructure is scheduled to be decommissioned mid 2018. After the decommissioning the smaller LSG clusters within the UMC's and other universities will cease to exist; the large central Grid clusters at NIKHEF and SURFsara will remain. More details about the decommissioning can be found here:
+https://userinfo.surfsara.nl/documentation/decommissioning-life-science-grid
+
+
 =====
 About
 =====
