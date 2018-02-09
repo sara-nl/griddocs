@@ -33,7 +33,7 @@ Softdrive is using the `CVMFS service`_ (short for CernVM File System) on the ba
 Quickstart
 ==========
 
-In this example, we will distribute a few small files to all nodes in the Life Sciences Grid. This should give you an idea of what is possible with *Softdrive*.
+In this example, we will distribute a few small files to all nodes in the Dutch Grid. This should give you an idea of what is possible with *Softdrive*.
 
 Softdrive works by logging in the software distribution node, and putting your files there. Next, you tell the software distribution system that you are ready installing files. These files will be made available on all nodes in the :ref:`lsg` and on all other nodes on the :ref:`dutch-grid`.
 
@@ -42,7 +42,7 @@ Access
 ------
 
 Users of the National e-Infrastructure are entitled to use Softdrive
-without the need for a separate resource request.  You can request
+without the need for a separate resource request. You can request
 access by sending an e-mail with your current project allocation id to
 helpdesk@surfsara.nl.
 
@@ -92,7 +92,7 @@ Updating on all Grid nodes can take up to two hours.
 Finding your files on the Grid nodes
 ------------------------------------
 
-On nodes, your Softdrive files will be available under:
+On Dutch Grid nodes, your Softdrive files will be available under:
 
 .. code-block:: console
 
@@ -115,7 +115,7 @@ Log in to your :ref:`UI account <get-ui-account>` and check whether your files a
 Python on the Grid
 ==================
 
-On the local Grid clusters the python version installed is *Python 2.6.6*. If you need a different python version or additional packages, we recommend you to install `Anaconda python`_ in your UI or :ref:`Softdrive <softdrive>` account.
+If you want to use a different python version to the existing on the Grid nodes or additional packages, we recommend you to install `Anaconda python`_ in your UI or :ref:`Softdrive <softdrive>` account.
 
 Next is an example of installing the *Anaconda* python distribution in *Softdrive*.
 
@@ -177,7 +177,7 @@ Finally, remember to include the installation path in your scripts as:
 Docker
 ====== 
 
-At the moment it is not possible to run Docker containers on the :ref:`dutch-grid` or :ref:`lsg`. We are currently investigating different possibilities. Please contact us at helpdesk@surfsara.nl to discuss about the available options.
+At the moment it is not possible to run Docker containers on the :ref:`dutch-grid` or :ref:`lsg`. We are currently investigating different possibilities and we offer `Singularity`_ as a container service. Please contact us at helpdesk@surfsara.nl to discuss about the available options.
 
 
 
@@ -188,3 +188,6 @@ At the moment it is not possible to run Docker containers on the :ref:`dutch-gri
 .. _`CVMFS service`: https://cernvm.cern.ch/portal/filesystem  
 
 .. _`cloud environments`: http://doc.hpccloud.surfsara.nl/softdrive  
+
+.. _`Singularity`: https://userinfo.surfsara.nl/systems/shared/software/Singularity
+
