@@ -26,7 +26,7 @@ Request a DutchGrid certificate
 
   .. code-block:: console
 
-     $ssh -X homer@ui.grid.sara.nl   # replace "homer" with your username!
+     $ssh -Y homer@ui.grid.sara.nl   # replace "homer" with your username!
 
 * Download the the ``jGridstart`` tool:
 
