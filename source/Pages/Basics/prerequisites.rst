@@ -52,11 +52,7 @@ Get a User Interface account
 
 The User Interface (UI) account will provide you with the environment to interact with the Grid. It is your access point to the Grid.  You log in to a UI machine via SSH. On this computer you can, amongst others, do the following things: access Grid resources, create proxies, submit jobs, compile programs or prototype your application. For debugging purposes it is good to know that the environment of a user interface is similar to a Grid worker node thus if your code runs on the user interface it will most likely run on a Grid worker node.
 
-To get this :abbr:`UI (User Interface)` account, there are two options:
-
-* If you work in Life Sciences sector and your local institutional cluster is part of the :ref:`lsg` (see :ref:`lsg-clusters`), then you can get an account to the local user interface. Please send us your request at helpdesk@surfsara.nl. We will ask confirmation for your affiliation with the institute from your designated site admin (see :ref:`local contacts <lsg-dsa>`) and provide you with an account on your local cluster.
-
-* At any other case, we will give you an account on the SURFsara Grid :abbr:`UI (User Interface)` (server name: ``ui.grid.sara.nl``). For this, you need to contact us at helpdesk@surfsara.nl.
+To request for a :abbr:`UI (User Interface)` account, please send us your request at helpdesk@surfsara.nl and we will give you an account on the SURFsara Grid :abbr:`UI (User Interface)` (server name: ``ui.grid.sara.nl``). 
 
 Please note that the :abbr:`UI (User Interface)` is simply a Linux machine and working on it requires some familiarity with linux commands and remote access methods. If you need help with this, check out our mooc video :ref:`remote-access`.
 
