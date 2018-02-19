@@ -472,4 +472,4 @@ Choose your certificate.
 Mounting WebDAV with Mountain duck
 ----------------------------------
 
-Mountain Duck is a WebDAV client that can mount WebDAV in OS-X and Windows. We've had some mixed results using it with dCache, so you should to test it before trusting it with your data. You can find it at https://mountainduck.io/.
+Mountain Duck is a WebDAV client that can mount WebDAV in OS-X and Windows. We've had some mixed results using it with dCache, so you should test it before trusting it with your data. You can find it at https://mountainduck.io/.
