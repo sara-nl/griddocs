@@ -81,8 +81,6 @@ Use ``webdav-cert.grid.sara.nl`` when you want to authenticate with a user certi
 
 Use ``ipv4.grid.surfsara.nl`` for storage clients that have problems with IPv6. It's a single virtual machine; don't use it for parallel processing.
 
-.. note:: To run the examples below you need to have a :abbr:`UI (User Interface)` (or :abbr:`CUA (SURFsara's Central User Administration)`) account that is configured within dCache and authorized to the data you want to access. Contact us if you need assistance with that.
-
 
 Clients
 =======
@@ -108,6 +106,9 @@ You can't upload to dCache with a normal web browser.
 
 Curl & wget
 ===========
+
+.. note:: To run the examples below you need to have a :abbr:`UI (User Interface)` (or :abbr:`CUA (SURFsara's Central User Administration)`) account that is configured within dCache and authorized to the data you want to access. Contact us if you need assistance with that.
+
 
 Creating directories
 --------------------
@@ -466,3 +467,9 @@ Choose your certificate.
 .. image:: /Images/cyberduck-usercert-4.png
 	:align: center
 	:scale: 50 %
+
+
+Mounting WebDAV with Mountain duck
+----------------------------------
+
+Mountain Duck is a WebDAV client that can mount WebDAV in OS-X and Windows. We've had some mixed results using it with dCache, so you should to test it before trusting it with your data. You can find it at https://mountainduck.io/.
