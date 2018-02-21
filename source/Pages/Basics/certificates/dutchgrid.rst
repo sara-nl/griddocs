@@ -160,7 +160,7 @@ Import the certificate to the browser
 
 * To import the ``.p12`` file in your browser, open a Firefox window (``$ firefox &``) on the :abbr:`UI (User Interface)` and apply the following steps (Note that you may have to copy the .p12 file to a directory accessible from your browser): 
    * From the Firefox Menu bar select: 
-      * For Firefox versions older than v57.0: ``Edit > Preferences > Encryption > View Certificates > Import``
+      * For Firefox versions older than v57.0: ``Edit > Preferences > Advanced > View Certificates > Import``
       * For Firefox versions higher than v57.0: ``Firefox > Preferences > Privacy & Security > scroll to the bottom "Security" section > View Certificates > Import``
    * Select the ``browsercert.p12`` file from the :abbr:`UI (User Interface)` local directory
    * Give the password you set in the previous step.  
