@@ -24,7 +24,7 @@ The Grid is a cooperation of many different clusters and research organisations,
 
 Your digital identity starts with a private key. **Only you** are allowed to know the contents of this key. Next, you need a Grid certificate, which is issued by a Certificate Authority (CA). The Grid certificate contains your name and your organisation, and it says that the person who owns the private key is really the person mentioned, and that this is certified by the Certificate Authority.
 
-Now this is your identity. Big international cooperations do not want to deal with every user individually. Instead, users become part of Virtual Organisations. Individual clusters give access and compute time to certain VOs, and if you are a member of a :abbr:`VO (Virtual Organisation)`, you can run your jobs on that cluster.
+Now this is your identity. Big international cooperations do not want to deal with every user individually. Instead, users become part of Virtual Organisations. To give an analogy, the Grid certificate provides authentication (identitiy, e.g., like a passport) and the VO provides authorization (approval, e.g., like a visa). Individual clusters give access and compute time to certain VOs, and if you are a member of a :abbr:`VO (Virtual Organisation)`, you can run your jobs on that cluster.
 
 
 .. sidebar:: More about Grid Security?
