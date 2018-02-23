@@ -38,6 +38,13 @@ If your browser prompts you to choose for which purposes to trust the CA, press 
 Install a *DigiCert* certificate on the UI
 ==========================================
 
+Certificates can be stored in different formats. Different systems use different formats. The two important formats are:
+ 
+* PEM: stores keys and certificates in separate ascii-files; this format is used by the Grid middleware and storage programs;
+* PKCS12: stores keys and certificates in one binary file; this format is used by browsers.
+
+DigiCert automatically imports the PKCS12 file in the browser.
+
 In order to install the *DigiCert* certificate on the :abbr:`UI (User Interface)`, you need to export it first from your browser, copy it to your :ref:`UI account <get-ui-account>` and convert it to .pem format. This section shows you how to do this.
 
 Export certificate from browser
