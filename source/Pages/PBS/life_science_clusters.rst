@@ -57,6 +57,8 @@ Locations and local support contacts
 
 .. _lsg-hostnames:
 
+
+.. _life-science-clusters-details:   
 ===============
 Cluster details
 ===============
@@ -91,7 +93,34 @@ The following table lists the DNS addresses of the User Interface and Storage El
 User Interface machines can be accessed with any SSH client. 
 To learn how to access the Storage Elements, see :ref:`grid-storage`
 
- 
+
++----------+-----------------------------------------------------------+
+| LSG Site | Computing element queue                                   |
++==========+===========================================================+
+| LSG_AMC  | ``gb-ce-amc.amc.nl:8443/cream-pbs-<queue>``               |
++----------+-----------------------------------------------------------+
+| LSG_TUD  | ``gb-ce-tud.ewi.tudelft.nl:8443/cream-pbs-<queue>``       |
++----------+-----------------------------------------------------------+
+| LSG_RUG  | ``gb-ce-rug.sara.usor.nl:8443/cream-pbs-<queue>``         |
++----------+-----------------------------------------------------------+
+| LSG_LUMC | ``gb-ce-lumc.lumc.nl:8443/cream-pbs-<queue>``             |
++----------+-----------------------------------------------------------+
+| LSG_UM   | ``ce.lsg.maastrichtuniversity.nl:8443/cream-pbs-<queue>`` |
++----------+-----------------------------------------------------------+
+| LSG_KUN  | ``gb-ce-kun.els.sara.nl:8443/cream-pbs-<queue>``          |
++----------+-----------------------------------------------------------+
+| LSG_EMC  | ``gb-ce-emc.erasmusmc.nl:8443/cream-pbs-<queue>``         |
++----------+-----------------------------------------------------------+
+| LSG_BCBR | ``ce.lsg.bcbr.uu.nl:8443/cream-pbs-<queue>``              |
++----------+-----------------------------------------------------------+
+| LSG_VU   | ``ce.lsg.psy.vu.nl:8443/cream-pbs-<queue>``               |
++----------+-----------------------------------------------------------+
+| LSG_WUR  | ``gb-ce-wur.els.sara.nl:8443/cream-pbs-<queue>``          |
++----------+-----------------------------------------------------------+
+
+The possible ``<queue>`` values can be ``express``, ``medium`` and ``long``. For
+and update listing of the available queues use the command ``lcg-infosites``.
+
 ==========================
 Aditional Storage Elements
 ==========================

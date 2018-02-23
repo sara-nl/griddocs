@@ -21,7 +21,6 @@ Softdrive is the service that allows you to install software in a central place 
 
 This page is about using Softdrive on the grid infrastructure. The use of Softdrive is however not limited to grid alone, as it can equally well be applied to your own clusters, your :ref:`own computer <softdrive-on-laptop>` or in `cloud environments`_. 
 
-
 .. _cvmfs:
 
 CVMFS
