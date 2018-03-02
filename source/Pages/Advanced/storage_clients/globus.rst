@@ -48,6 +48,8 @@ Transferring data
      $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
      $    file:///`pwd`/zap.tar 
 
+.. note:: globus-url-copy does **NOT** encrypt the data channel. Even when you supply the commandline flags **-dcpriv** or **-data-channel-private**. If you need to transfer sensitive data, please contact our helpdesk.
+
 * Copy file from DPM to local machine:
 
   .. code-block:: console
