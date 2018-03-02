@@ -48,7 +48,7 @@ Transferring data
      $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
      $    file:///`pwd`/zap.tar 
 
-.. note:: globus-url-copy does **NOT** encrypt the data channel when transferring data to and from dCache. Even when you supply the commandline flags **-dcpriv** or **-data-channel-private**. If you need to transfer sensitive data, please contact our helpdesk.
+.. note:: globus-url-copy does **NOT** encrypt the data channel when transferring data to and from dCache. Even when you supply the commandline flags **-dcpriv** or **-data-channel-private** to enforce encryption the data transfers are still not encrypted. If you need to transfer sensitive data, please contact our helpdesk. Then we can help you with a more secure alternative. This flaw has been reported to the appropriate organisations. 
 
 * Copy file from DPM to local machine:
 
