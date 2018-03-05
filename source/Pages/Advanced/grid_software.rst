@@ -129,19 +129,19 @@ Softdrive anaconda
  
    $ssh homer@softdrive.grid.sara.nl # replace homer with your username
 
-* Download in your home account the latest version of Anaconda installer for linux, e.g.:
+* Download in your home account the `latest version of Anaconda`_ installer for linux, e.g.:
 
 .. code-block:: console  
 
-   $wget https://3230d63b5fc54e62148e-c95ac804525aac4b6dba79b00b39d1d3.ssl.cf1.rackcdn.com/Anaconda2-2.4.0-Linux-x86_64.sh 
-
+   $wget https://repo.continuum.io/archive/Anaconda2-5.1.0-Linux-x86_64.sh
+   
 * Run the installer (read and approve the license terms) in Softdrive:
 
 .. code-block:: console  
 
-   $bash Anaconda2-2.4.0-Linux-x86_64.sh
+   $bash Anaconda2-5.1.0-Linux-x86_64.sh
 
-Note here! The installer will ask you to which location to install the software. Do not accept the default but change it to: ``/cvmfs/softdrive.nl/$USER/anaconda-2-2.4.0/``:
+Note here! The installer will ask you to which location to install the software. Do not accept the default but change it to: ``/cvmfs/softdrive.nl/$USER/anaconda-2-5.1.0/``:
 
 .. code-block:: console  
     
@@ -151,22 +151,22 @@ Note here! The installer will ask you to which location to install the software.
     - Press CTRL-C to abort the installation
     - Or specify a different location below
 
-    [/home/homer/anaconda2] >>> /cvmfs/softdrive.nl/homer/anaconda-2-2.4.0/
+    [/home/homer/anaconda2] >>> /cvmfs/softdrive.nl/homer/anaconda-2-5.1.0/
     ...
 
-That was it! You can now publish the software that is installed in your ``/cvmfs/softdrive.nl/homer/anaconda-2-2.4.0`` directory. To do so, run this command in Softdrive:
+That was it! You can now publish the software that is installed in your ``/cvmfs/softdrive.nl/homer/anaconda-2-5.1.0`` directory. To do so, run this command in Softdrive:
 
 .. code-block:: console  
 
     $publish-my-softdrive
 
-Then check after 1-2 hours from the :abbr:`UI (User Interface)` if the ``/cvmfs/softdrive.nl/homer/anaconda-2-2.4.0`` exists.
+Then check after 1-2 hours from the :abbr:`UI (User Interface)` if the ``/cvmfs/softdrive.nl/homer/anaconda-2-5.1.0` exists.
 
 Finally, remember to include the installation path in your scripts as:
 
 .. code-block:: console  
 
-    $export PATH=/cvmfs/softdrive.nl/homer/anaconda-2-2.4.0/bin:$PATH # replace homer with your username
+    $export PATH=/cvmfs/softdrive.nl/homer/anaconda-2-5.1.0/bin:$PATH # replace homer with your username
   
   
   
@@ -190,3 +190,4 @@ At the moment it is not possible to run Docker containers on the :ref:`dutch-gri
 
 .. _`Singularity`: https://userinfo.surfsara.nl/systems/shared/software/Singularity
 
+.. _`latest version of Anaconda`: https://www.anaconda.com/download/#linux
