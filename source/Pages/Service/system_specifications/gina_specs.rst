@@ -82,16 +82,16 @@ Worker Nodes ``f13-{01-24}``, ``f14-{01-20}``, ``f15-{01-20}``, ``f16-{01-20}``,
   *  Scratch per core: ~680GB  
   *  RAM per core: 8GB  
 
-Worker Nodes ``f18-01``::  
+Worker Nodes ``f18-{01-12}``, ``f19-{01-11}``, ``f20-{01-12}``::  
 
-  *  Dell R820  
-  *  4x Intel(R) Xeon(R) CPU E5-4620 0 @ 2.20GHz (32 cores)  
-  *  256GB RAM  
-  *  7TB scratch  
-  *  Type: Sandy Bridge architecture /w Sandy Bridge-EP cores (2012)  
-  *  Number of nodes: 18  
-  *  Total cores of this type: 576  
-  *  Scratch per core: ~200GB  
+  *  Dell R640  
+  *  2x Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz (40 cores)  
+  *  384GB RAM  
+  *  3TB scratch  
+  *  Type: Skylake architecture  
+  *  Number of nodes: 35
+  *  Total cores of this type: 1400 
+  *  Scratch per core: ~80GB  
   *  RAM per core: 8GB  
 
 
