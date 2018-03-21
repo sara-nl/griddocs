@@ -30,7 +30,7 @@ Total scratch space          2264TB
 Network backbone             Juniper Q-Fabric Network Fabric which also connects the Grid storage 
 ============================ =====================================================
 
-``Last update: December 2016``
+``Last update: March 2018``
 
 .. _gina-specs-network:
 
