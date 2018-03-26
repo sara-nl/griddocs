@@ -97,7 +97,7 @@ You can use the same command to copy files from other locations on your LSG-UI, 
 **NB**: If rsync fails you can rerun the same command; the transfer of the data will continue where it did stop because ``rsync`` will synchronise files and directories between your LSG folders and Cartesius system. While copying please do not alter files to prevent accidental loss of files due to mixing up systems.
     
 
-4. Check your data on Cartesisus    
+4. Check your data on Cartesius    
 ================================
     
 When coping is done then log into Cartesius and you will find your data here. Access your Cartesius account:
