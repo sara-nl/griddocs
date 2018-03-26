@@ -71,7 +71,7 @@ You will typically transfer data from your LSG HOME (``/home/$USER``) or NOBACKU
     $gb-ui-kun.els.sara.nl:/home/homer
     $homer$ screen #hit 'Enter'
 
-**NB:**In case that you lose connection during the transfer, login the LSG UI again and use ``screen -r`` to reattach your session and return to your transfer. 
+**NB:** In case that you lose connection during the transfer, login the LSG UI again and use ``screen -r`` to reattach your session and return to your transfer. 
 
 * Start transferring your data from LSG to Cartesius with ``rsync``: 
 
@@ -84,13 +84,15 @@ You will typically transfer data from your LSG HOME (``/home/$USER``) or NOBACKU
     , where SRC is the local file or directory (or a list of multiple files and directories) to copy from, and DEST represents the remote file or directory to copy to. 
 
 
-   * Here is an example:
+  * Here is an example:
 
-     .. code-block:: console
+    .. code-block:: console
 
-     	 $rsync -aP ~/* cartesius.surfsara.nl:~  # hit 'ENTER', type your password and hit 'ENTER' again to start copying 
+       $rsync -aP ~/* cartesius.surfsara.nl:~  # hit 'ENTER', type your password and hit 'ENTER' again to start copying 
      	 
-     , where ``~/*`` is the SRC (all of my home data left after cleaning up) and ``cartesius.surfsara.nl:~`` is the HOST:DEST directory in my Cartesius account.
+    , where ``~/*`` is the SRC (all of my home data left after cleaning up) and ``cartesius.surfsara.nl:~`` is the HOST:DEST directory in my Cartesius account.
+
+You can use the same command to copy files from other locations on your LSG-UI, e.g. the NOBACKUP (``/home/nobackup/$USER``) directory by replacing [SRC] with the location that your data is stored.
 
 **NB**: If rsync fails you can rerun the same command; the transfer of the data will continue where it did stop because ``rsync`` will synchronise files and directories between your LSG folders and Cartesius system. While copying please do not alter files to prevent accidental loss of files due to mixing up systems.
     
