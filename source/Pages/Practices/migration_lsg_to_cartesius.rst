@@ -4,7 +4,7 @@
 Data migration
 **************
 
-This page explains how to migrate your data from your local LSG (Life Science Grid) cluster to Cartesius. Since the file systems of your local LSG cluster and Cartesius are separate, you cannot directly access the Cartesius home file system from LSG, or vice versa. However, you can use ``rsync`` to copy data between these file systems over the network. Here you will find instructions how to copy data files/directories from LSG to Cartesius. 
+This page explains how to migrate your data from your local LSG (Life Science Grid) cluster to Cartesius. Since the file systems of your local LSG cluster and Cartesius are separate, you cannot directly access the Cartesius home file system from LSG, or vice versa. However, you can use ``rsync`` to copy data between these file systems over the network. Here you will find instructions on how to copy data files/directories from LSG to Cartesius. 
 
 .. contents:: 
     :depth: 4
@@ -59,7 +59,7 @@ Before initiating the data transfer, you should remove all data that you do not 
 3. Transfer your data
 =====================
 
-Once you have selected which data you want to keep (and removed the rest), you can start the data transfer to Cartesius by using two powerful tools: ``screen`` and ``rsync``. The ``screen`` tool makes sure your copying process continues when accidentally you loose connection to the server. The ``rsync`` tool is  a file synchronisation and file transfer program that can minimise network data transfer such that only the differences between and source and destination data are actually transmitted.
+Once you have selected which data you want to keep (and removed the rest), you can start the data transfer to Cartesius by using two powerful tools: ``screen`` and ``rsync``. The ``screen`` tool makes sure your copying process continues when you accidentally lose connection to the server. The ``rsync`` tool is  a file synchronisation and file transfer program that can minimise network data transfer such that only the differences between and source and destination data are actually transmitted.
 
 You will typically transfer data from your LSG HOME (``/home/$USER``) or NOBACKUP (``/home/nobackup/$USER``) directory to your Cartesius HOME (``/home/$USER``) or Project space (``/projects/0/PROJECT``) that you have been granted access to. 
 
@@ -94,13 +94,13 @@ You will typically transfer data from your LSG HOME (``/home/$USER``) or NOBACKU
 
 You can use the same command to copy files from other locations on your LSG-UI, e.g. the NOBACKUP (``/home/nobackup/$USER``) directory by replacing [SRC] with the location that your data is stored.
 
-**NB**: If rsync fails you can rerun the same command; the transfer of the data will continue where it did stop because ``rsync`` will synchronise files and directories between your LSG folders and Cartesius system. While copying please do not alter files to prevent accidental loss of files due to mixing up systems.
+**NB**: If rsync fails you can rerun the same command; the transfer of the data will continue where it stopped because ``rsync`` will synchronise files and directories between your LSG folders and Cartesius system. While copying, please do not alter files to prevent accidental loss of files due to mixing up of systems.
     
 
 4. Check your data on Cartesius    
 ================================
     
-When coping is done then log into Cartesius and you will find your data here. Access your Cartesius account:
+When copying is done, please check your data on Cartesius before deleting the data from the LSG. You can access your Cartesius account:
 
 * The generic syntax is:
 
