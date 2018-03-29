@@ -115,7 +115,7 @@ When copying is done, please check your data on Cartesius before deleting the da
   .. code-block:: console
 
      $gb-ui-kun.els.sara.nl:/home/homer
-     $homer$ssh homer@cartesius.surfsara.nl
+     $homer$ ssh homer@cartesius.surfsara.nl
 
 * To disconnect simply type
 
