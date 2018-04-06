@@ -129,7 +129,7 @@ When copying is done, please check your data on Cartesius before deleting the da
 
 If you want to validate the integrity of the data that you have migrated on Cartesius then we recommend you the following options:
 
-* On the LSG UI, apply the once again the rsync command that you used to copy your data to Cartesius. If all the files have been trasnferred correctly you should receive an empty list, e.g.:
+* On the LSG UI, apply once again the rsync command that you used to copy your data to Cartesius. If all the files have been trasnferred correctly you should receive an empty list, e.g.:
 
  .. code-block:: console
  
@@ -137,7 +137,7 @@ If you want to validate the integrity of the data that you have migrated on Cart
     ##sending incremental file list
     ##<empty> 	
 
-* On both the LSG UI and the Cartesius UI, check the total size of all your files. Due to the different filesystems (blocksize) between the LSG UI and Cartesius, the standard `du` command would return different sizes for the same data on the two sytems. Therefore, we suggest you run the following long command both in the two systems. The result number should be the same in both systems:
+* On both the LSG UI and the Cartesius UI, check the total size of all your files. Due to the different filesystems (blocksize) between the LSG UI and Cartesius, the standard `du` command would return different sizes for the same data on the two systems. Therefore, we suggest you run the following long command in both the systems. The result number should be the same in both systems:
 
  .. code-block:: console
 
@@ -151,7 +151,7 @@ If you want to validate the integrity of the data that you have migrated on Cart
     $homer$ find ./* -type f -print0 | xargs -0 ls -l | awk '{print $5;}' |  paste -s -d+ | bc
     ##103096205
 
-* The best way to validate your data is calculating the checksum of each file and comparing it with the checksum of the copied files. Please note that depending on the amount of your files and their sizes, this operation can be computationally expensive and take long time. Here is an example:
+* The best way to validate your data is calculating the checksum of each file and comparing it with the checksum of the copied files. Please note that depending on the amount of your files and their sizes, this operation can be computationally expensive and may take a long time. Here is an example:
 
  .. code-block:: console
  
