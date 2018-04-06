@@ -100,7 +100,7 @@ You can use the same command to copy files from other locations on your LSG-UI, 
 4. Check your data on Cartesius    
 ================================
     
-When copying is done, please check your data on Cartesius before deleting the data from the LSG. You can access your Cartesius account:
+When copying is done, please check your data on Cartesius before deleting the data from the LSG. You can access your Cartesius account to inspect your files:
 
 * The generic syntax is:
 
@@ -123,6 +123,49 @@ When copying is done, please check your data on Cartesius before deleting the da
 	
      $logout # hit 'Enter' after this command
 
+
+5. Data validation   
+==================
+
+If you want to validate the integrity of the data that you have migrated on Cartesius then we recommend you the following options:
+
+* On the LSG UI, apply the once again the rsync command that you used to copy your data to Cartesius. If all the files have been trasnferred correctly you should receive an empty list, e.g.:
+
+ .. code-block:: console
+ 
+    $rsync -aP ~/* cartesius.surfsara.nl:~ 	
+    #sending incremental file list
+    #<empty> 	
+
+* On both the LSG UI and the Cartesius UI, check the total size of all your files. Due to the different filesystems (blocksize) between the LSG UI and Cartesius, the standard `du` command would return different sizes for the same data on the two sytems. Therefore, we suggest you run the following long command both in the two systems. The result number should be the same in both systems:
+
+ .. code-block:: console
+
+    gb-ui-kun.els.sara.nl:/home/homer  # on LSG UI source
+    homer$ find ./* -type f -print0 | xargs -0 ls -l | awk '{print $5;}' |  paste -s -d+ | bc
+    #103096205
+
+ .. code-block:: console
+
+    cartesius.surfsara.nl:/home/homer  # on Cartesius destination
+    homer$ find ./* -type f -print0 | xargs -0 ls -l | awk '{print $5;}' |  paste -s -d+ | bc
+    #103096205
+
+* The best way to validate your data is calculating the checksum of each file and comparing it with the checksum of the copied files. Please note that depending on the amount od your files and their sizes, this operation can be computationally expensive and take long time. Here is an example:
+
+ .. code-block:: console
+ 
+    gb-ui-kun.els.sara.nl:/home/homer  # on LSG UI source
+    homer$  find ./* -type f | xargs md5sum > md5sums.txt  # it calculates the md5sum of all the files and stores it in a text file
+    homer$ rsync -aP ~/* cartesius.surfsara.nl:~ # run rsync to copy the md5sums.txt file too
+    #sending incremental file list
+    #md5sums.txt
+
+ .. code-block:: console  
+    cartesius.surfsara.nl:/home/homer  # on Cartesius destination
+    homer$ md5sum -c md5sums.txt
+    #all files should be marked 'OK'
+    
 
 ============
 Useful links
