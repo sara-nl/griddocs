@@ -141,13 +141,13 @@ If you want to validate the integrity of the data that you have migrated on Cart
 
  .. code-block:: console
 
-    $gb-ui-kun.els.sara.nl:/home/homer  # on LSG UI source
+    $gb-ui-kun.els.sara.nl:/home/homer  # source is the LSG UI
     $homer$ find ./* -type f -print0 | xargs -0 ls -l | awk '{print $5;}' |  paste -s -d+ | bc
     ##103096205
 
  .. code-block:: console
 
-    $cartesius.surfsara.nl:/home/homer  # on Cartesius destination
+    $cartesius.surfsara.nl:/home/homer  # destination is the Cartesius UI 
     $homer$ find ./* -type f -print0 | xargs -0 ls -l | awk '{print $5;}' |  paste -s -d+ | bc
     ##103096205
 
@@ -155,7 +155,7 @@ If you want to validate the integrity of the data that you have migrated on Cart
 
  .. code-block:: console
  
-    $gb-ui-kun.els.sara.nl:/home/homer  # on LSG UI source
+    $gb-ui-kun.els.sara.nl:/home/homer  # source is the LSG UI
     $homer$  find ./* -type f | xargs md5sum > md5sums.txt  # it calculates the md5sum of all the files and stores it in a text file
     $homer$ rsync -aP ~/* cartesius.surfsara.nl:~ # run rsync to copy the md5sums.txt file too
     ##sending incremental file list
@@ -163,7 +163,7 @@ If you want to validate the integrity of the data that you have migrated on Cart
 
  .. code-block:: console  
  
-    $cartesius.surfsara.nl:/home/homer  # on Cartesius destination
+    $cartesius.surfsara.nl:/home/homer  # destination is the Cartesius UI 
     $homer$ md5sum -c md5sums.txt
     ##all files should be marked 'OK'
     
