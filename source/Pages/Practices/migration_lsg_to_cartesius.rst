@@ -156,7 +156,7 @@ If you want to validate the integrity of the data that you have migrated on Cart
  .. code-block:: console
  
     $gb-ui-kun.els.sara.nl:/home/homer  # source is the LSG UI
-    $homer$  find ./* -type f | xargs md5sum > md5sums.txt  # it calculates the md5sum of all the files and stores it in a text file
+    $homer$ find ./* -type f | xargs md5sum > md5sums.txt  # it calculates the md5sum of all the files and stores it in a text file
     $homer$ rsync -aP ~/* cartesius.surfsara.nl:~ # run rsync to copy the md5sums.txt file too
     ##sending incremental file list
     ##md5sums.txt
