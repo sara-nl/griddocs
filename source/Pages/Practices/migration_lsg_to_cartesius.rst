@@ -165,7 +165,17 @@ If you want to validate the integrity of the data that you have migrated on Cart
  
     $cartesius.surfsara.nl:/home/homer  # destination is the Cartesius UI 
     $homer$ md5sum -c md5sums.txt
-    ##all files should be marked 'OK'
+   
+All the files should be marked 'OK'. In case that there are any checksums that do not match in the two systems then you can check which files failed to match the checksum with:
+ 
+ .. code-block:: console  
+
+    ##md5sum: WARNING: 1 computed checksum did NOT match
+    $homer$ md5sum -c md5sums.txt | grep FAILED
+    ##./myfile: FAILED
+    
+    
+    
     
 
 ============
