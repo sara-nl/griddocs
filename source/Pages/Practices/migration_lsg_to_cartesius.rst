@@ -162,6 +162,7 @@ If you want to validate the integrity of the data that you have migrated on Cart
     ##md5sums.txt
 
  .. code-block:: console  
+ 
     $cartesius.surfsara.nl:/home/homer  # on Cartesius destination
     $homer$ md5sum -c md5sums.txt
     ##all files should be marked 'OK'
