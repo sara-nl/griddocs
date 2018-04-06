@@ -151,7 +151,7 @@ If you want to validate the integrity of the data that you have migrated on Cart
     $homer$ find ./* -type f -print0 | xargs -0 ls -l | awk '{print $5;}' |  paste -s -d+ | bc
     ##103096205
 
-* The best way to validate your data is calculating the checksum of each file and comparing it with the checksum of the copied files. Please note that depending on the amount od your files and their sizes, this operation can be computationally expensive and take long time. Here is an example:
+* The best way to validate your data is calculating the checksum of each file and comparing it with the checksum of the copied files. Please note that depending on the amount of your files and their sizes, this operation can be computationally expensive and take long time. Here is an example:
 
  .. code-block:: console
  
