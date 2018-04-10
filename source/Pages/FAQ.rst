@@ -347,3 +347,12 @@ In order to run :abbr:`PBS (Portable Batch System)` jobs that last more than 36 
 * If you do *not* use ``-q`` flag and ``lwalltime`` directive, then the medium queue is picked and jobs lasting more than 36 hours will be killed.
 * If you do *not* use ``-q`` flag but specify ``-lwalltime`` directive with value larger than 36 hours, then you request more walltime than the max walltime available in the default medium queue and the job does not start at all.
 * If you use the ``-q`` flag, it is sufficient to get your jobs running for the amount of hours that the specified queue permits.
+
+
+.. _scratch-usage:
+
+How to use the Grid worker node /scratch on Gina?
+=================================================
+
+You should not write data directly under the worker node ``/scratch``, but use your job directory instead. See the instuctions :ref:`here <storage-grid-wn>` to make effiecient use of the local storage on the Grid worker nodes.
+
