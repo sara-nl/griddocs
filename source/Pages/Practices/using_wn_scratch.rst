@@ -51,7 +51,7 @@ The following code block is an example for creating the temporary directory with
     #/scratch/20372174.batch.gina.sara.nl/CREAM20372174/tmp.nCXtOkxcr8
 
     cd ${RUNDIR} #move to the working directory
-    # copy your data here
+    #copy your data here
     #run the analysis
 	
     cd ${JOBDIR} #once analysis ends, move the the dir where the job landed
