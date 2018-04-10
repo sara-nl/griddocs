@@ -36,12 +36,11 @@ The worker node ``/scratch`` storage is not directly accessible by the UI or oth
 When you submit a job to the Grid, it creates a unique job directory once it lands on a worker node. The job directory format is ``/scratch/XXX.batch.gina.sara.nl/CREAMXXX``,
 where 'XXX' is your job identifier. Creating a temporary directory under this partition helps to collect the generated data by a particular job in a single directory. 
 
-.. note:: There is an environment variable set on the worker nodes called ``$TMPDIR`` that points to ``/scratch``. Do not use the command ```mktemp -d -p ${TMPDIR}`` to create the temporary directory because it will create directly a first level directory under /scratch under ``/scratch`` (i.e. ``/scratch/tmp.nCXtOkxcr8``) which will be regularly checked and deleted for our system healthiness. 
-
+.. note:: There is an environment variable set on the worker nodes called ``$TMPDIR`` that points to ``/scratch``. Do not use the command ```mktemp -d -p ${TMPDIR}`` to create the temporary directory because it will create directly a first level directory under ``/scratch`` (i.e. ``/scratch/tmp.nCXtOkxcr8``) which will be regularly checked and deleted for our system healthiness. 
 
 The following code block is an example for creating the temporary directory within your job and removing it effectively after the analysis ends:
 
-... code-block:: bash
+.. code-block:: bash
 
     JOBDIR=${PWD} #the job lands here
     echo $JOBDIR
