@@ -57,7 +57,6 @@ The following code block is an example for creating the temporary directory with
     exit 0
  	
 	
-
 .. note:: There is an environment variable set on the worker nodes called ``$TMPDIR`` that points to ``/scratch``. Do not use the command ``mktemp -d -p ${TMPDIR}`` to create the temporary directory because it will create directly a first level directory under ``/scratch`` (i.e. ``/scratch/tmp.nCXtOkxcr8``) which will be regularly checked and deleted for our system healthiness. 	
 
 
