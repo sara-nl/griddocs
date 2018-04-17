@@ -24,9 +24,9 @@ Quick summary
 Gina cluster                 Capacity                                             
 ============================ =====================================================
 Operating system             Linux CentOS 7.x 64bit                              
-Total number of cores        6584 Xeon cores at 2.2 to 2.6 GHz                   
-Total memory                 52.7TB                                                 
-Total scratch space          2264TB                                              
+Total number of cores        7408 Xeon cores at 2.2 to 2.6 GHz                   
+Total memory                 58.3TB                                                 
+Total scratch space          2258TB                                              
 Network backbone             Juniper Q-Fabric Network Fabric which also connects the Grid storage 
 ============================ =====================================================
 
@@ -45,6 +45,19 @@ All workernodes are connected with a single 10Gbit ethernet connection.
 Worker Nodes
 ============
 This is the list of the different worker nodes in order of installation/configuration from newest to oldest:
+
+
+Worker Nodes ``f18-{01-12}``, ``f19-{01-11}``, ``f20-{01-12}``::  
+
+  *  Dell R640  
+  *  2x Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz (40 cores)  
+  *  384GB RAM  
+  *  3TB scratch  
+  *  Type: Skylake architecture  
+  *  Number of nodes: 35
+  *  Total cores of this type: 1400 
+  *  Scratch per core: ~80GB  
+  *  RAM per core: 8GB  
 
 Worker Nodes ``f08-{01-16}``, ``f09-{01-16}``, ``f10-{01-16}``, ``f11-{01-16}``, ``f12-{01-17}``::  
 
@@ -81,19 +94,6 @@ Worker Nodes ``f13-{01-24}``, ``f14-{01-20}``, ``f15-{01-20}``, ``f16-{01-20}``,
   *  Total cores of this type: 1664  
   *  Scratch per core: ~680GB  
   *  RAM per core: 8GB  
-
-Worker Nodes ``f18-{01-12}``, ``f19-{01-11}``, ``f20-{01-12}``::  
-
-  *  Dell R640  
-  *  2x Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz (40 cores)  
-  *  384GB RAM  
-  *  3TB scratch  
-  *  Type: Skylake architecture  
-  *  Number of nodes: 35
-  *  Total cores of this type: 1400 
-  *  Scratch per core: ~80GB  
-  *  RAM per core: 8GB  
-
 
 
 Service nodes
