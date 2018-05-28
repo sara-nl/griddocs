@@ -9,7 +9,6 @@ This page describes the specifications for the underlying Grid resources, both c
 .. toctree::
 	:maxdepth: 1
 
-	system_specifications/lsg_specs
 	system_specifications/gina_specs
 	system_specifications/dcache_specs
 	system_specifications/ui_specs
