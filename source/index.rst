@@ -78,7 +78,6 @@ Best practices
    
    Pages/Practices/bootstrap
    Pages/Practices/pilot_jobs
-   Pages/Practices/data_replication
 
  
 .. _service-implementation:
