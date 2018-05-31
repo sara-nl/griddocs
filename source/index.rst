@@ -29,7 +29,6 @@ General
    
    Pages/General/about_the_grid
    Pages/General/national_grid
-   Pages/General/life_science_grid
    Pages/General/grid_services
    Pages/General/grant_access.rst
    
@@ -66,16 +65,6 @@ Advanced topics
    Pages/Advanced/host_certificates
 
 .. _local-lsg:
-
-===================================
-Local jobs on the Life Science Grid
-===================================
-
-.. toctree::
-   :maxdepth: 1
-
-   Pages/PBS/life_science_clusters
-   Pages/PBS/pbs
 
 
 .. _best-practices:
