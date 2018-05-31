@@ -27,7 +27,6 @@ Operating system             Linux CentOS 7.x 64bit
 Total number of cores        7408 Xeon cores at 2.2 to 2.6 GHz                   
 Total memory                 58.3TB                                                 
 Total scratch space          2258TB                                              
-Network backbone             Juniper Q-Fabric Network Fabric which also connects the Grid storage 
 ============================ =====================================================
 
 ``Last update: March 2018``
@@ -36,8 +35,7 @@ Network backbone             Juniper Q-Fabric Network Fabric which also connects
 
 Network
 ============
-GinA is connected to a Juniper Q-Fabric network fabric. On this fabric also the Grid storage is connected and makes high throughput possible. Currently we have seen over 20GB/sec (~170-200Gbit/sec) of peak network traffic to the Grid storage.
-All workernodes are connected with a single 10Gbit ethernet connection.
+GinA and Grid storage share a network backbone, connected with a high throughput network. Currently we have seen over 20GB/sec (~170-200Gbit/sec) of peak network traffic to the Grid storage. All workernodes are connected with a single 10Gbit or 25Gbit ethernet connection.
 
 
 .. _gina-specs-wn:
@@ -125,7 +123,7 @@ Queue           Max. Walltime (hh:mm:ss)    VOs(group) allowed
 long            96:00:00                    geant4 atlas(production) projects.nl(tropomi)
 mediummc        72:00:00                    bbmri.nl(RP2) lofar lsgrid(mediummc) projects.nl(geomodel) pvier
 medium          36:00:00                    astron atlas alice bbmri.nl beapps biomed dans drihm.eu enmr.eu esr euclid-ec.org geant4 lhcb lofar lsgrid nlesc.nl omegac pvier xenon.biggrid.nl projects.nl
-short           04:00:00                    astron atlas bbmri.nl beapps biomed dans drihm.eu enmr.eu esr euclid-ec.org geant4 lhcb lofar lsgrid nlesc.nl omegac pvier vlemed xenon.biggrid.nl projects.nl  
+short           04:00:00                    astron atlas bbmri.nl beapps biomed dans drihm.eu enmr.eu esr euclid-ec.org geant4 lhcb lofar lsgrid nlesc.nl omegac pvier xenon.biggrid.nl projects.nl  
 infra           00:30:00                    dteam ops pvier
 =============== =========================== ============================
 
