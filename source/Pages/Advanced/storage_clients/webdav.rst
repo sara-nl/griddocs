@@ -73,7 +73,7 @@ Disadvantages of redirects:
 * File transfers are sent over HTTP, so they are not encryted. A "man in the middle" might be able to read the data, or even modify it in transit. If privacy is a concern, choose a door that does not redirect.
 * Some WebDAV clients don't handle redirects very well.
 
-Another consideration is whether youre using the door for parallel access.
+Another consideration is whether you're using the door for parallel access.
 
 ``webdav.grid.surfsara.nl`` is a DNS round robin that will direct you to a (more or less) random host in a pool of WebDAV servers. So it is very well suited for parallel access.
 
