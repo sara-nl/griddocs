@@ -29,7 +29,7 @@ Total memory                 58.3TB
 Total scratch space          2258TB                                              
 ============================ =====================================================
 
-``Last update: March 2018``
+``Last update: June 2018``
 
 .. _gina-specs-network:
 
