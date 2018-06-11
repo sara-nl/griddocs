@@ -11,7 +11,7 @@
 Documentation how-to
 ********************
 
-This page explains how you can edit the documentation, how to generate HTML documentation from the source and how to install the software needed for this. Some handy links:
+This page explains how you can edit the documentation, how to generate HTML documentation from the source and how to install the software needed for this. Some handy links are given below:
 
 * The Grid documentation page is: http://doc.grid.surfsara.nl/
 * The source code of documentation is in GitHub: https://github.com/sara-nl/griddocs/tree/master/source/
