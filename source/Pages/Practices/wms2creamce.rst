@@ -210,7 +210,7 @@ http://docs.surfsaralabs.nl/projects/grid/en/latest/Pages/Basics/first_grid_job.
 
     Note1: a user defined output directory can be specified via the -D or --dir option
 
-* 4d. Job cancel
+* 4d. Job cancellation
 
   Here we show an example in case you want to cancel a job after having submitted it. 
 
