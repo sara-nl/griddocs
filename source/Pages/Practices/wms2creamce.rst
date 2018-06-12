@@ -130,18 +130,7 @@ http://docs.surfsaralabs.nl/projects/grid/en/latest/Pages/Basics/first_grid_job.
 
     Please note that all possible Status states are (see also the --help option for this command):
 
-      UNDEF
-	  SUBMITTED
-	  WAITING
-	  READY
-	  SCHEDULED
-	  RUNNING
-	  DONE
-	  CLEARED
-	  ABORTED
-	  CANCELLED
-	  UNKNOWN
-	  PURGED
+      UNDEF, SUBMITTED, WAITING, READY, SCHEDULED, RUNNING, DONE, CLEARED, ABORTED, CANCELLED, UNKNOWN, PURGED
 
 
 
