@@ -8,7 +8,7 @@ The Workload Management System (WMS) is no longer officially supported. It is th
 
 Here we describe an alternative method for handling Grid jobs by users. This method will still work even when the WMS is no longer available. We refer to this method as (direct) creame submission and it makes use of glite-ce commands. These commands are similar to the glite-wms commands. However, there are a few differences that we will describe here.
 
-We first briefly recap Grid jobs using basic glite-wms commands (1). We then list the glite-ce commands corresponding to the the most common glite-wms commands (2). We discuss the differences regarding the JDL file setup (3). We end by showing an example Grid job submitted with glite-wms and with glite-ce and discuss the differences (4).
+We first briefly recap Grid jobs using basic glite-wms commands (1). We then list the glite-ce commands corresponding to the most common glite-wms commands (2). We discuss the differences regarding the JDL file setup (3). We end by showing an example Grid job submitted with glite-wms and with glite-ce and discuss the differences (4).
 
 .. contents:: 
     :depth: 4
