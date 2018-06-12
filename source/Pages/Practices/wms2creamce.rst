@@ -192,3 +192,20 @@ http://docs.surfsaralabs.nl/projects/grid/en/latest/Pages/Basics/first_grid_job.
     
     Note3: instead of /scratch one can use the option --dir to specify an output directory 
 
+
+  glite-ce:
+
+    .. code-block:: console
+    
+       $ glite-ce-job-output  https://creamce.gina.sara.nl:8443/CREAM887592310
+
+       2018-06-07 10:54:28,881 INFO - For JobID [https://creamce.gina.sara.nl:8443/
+         CREAM887592310] output will be stored in the dir 
+         ./creamce.gina.sara.nl_8443_CREAM887592310
+
+       $ ls ./creamce.gina.sara.nl_8443_CREAM887592310/
+         stderror  stdout
+
+    We see here that the stdout and stderror files, as specified in your_ce_job.jdl, are retrieved and saved to this local directory.
+
+    Note1: a user defined output directory can be specified via the -D or --dir option
