@@ -54,9 +54,13 @@ the relevant glite-ce commands corresponding to the most common glite-wms comman
 
 * On the command line, for both glite-ce and glite-wms commands, help is available via:
 
-$ <command> --help
+  $ <command> --help
 
-* These glite-ce commands belong to the command line interface (CLI) for interacting with 
-CREAM and are described in more detail here:
+* The glite-ce commands belong to the command line interface (CLI) for interacting with CREAM and are described in more detail here:
 
-http://cream-guide.readthedocs.io/en/latest/User_Guide.html
+  http://cream-guide.readthedocs.io/en/latest/User_Guide.html
+
+===================
+3. Simple JDL Job files for WMS and for direct creamce submission
+===================
+
