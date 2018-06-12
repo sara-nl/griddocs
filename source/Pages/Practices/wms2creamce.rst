@@ -1,7 +1,7 @@
 .. _glitece:
 
 *********************
-Grids jobs via direct creamce submission: an alternative to WMS
+Grid jobs via creamce submission: an alternative to WMS
 *********************
 
 The Workload Management System (WMS) is no longer officially supported. It is therefore 
@@ -11,7 +11,7 @@ users, in particular in the way that they carry out job submission, monitoring a
 retrieval using the glite-wms commands. 
 
 Here we describe an alternative method for handling Grid jobs by users. This method will
-still work even when the WMS is no longer available. We refer to this method as direct 
+still work even when the WMS is no longer available. We refer to this method as (direct) 
 creame submission and it makes use of glite-ce commands. These commands are similar to 
 the glite-wms commands. However, there are a few differences that we will describe here.
 
@@ -42,3 +42,21 @@ http://docs.surfsaralabs.nl/projects/grid/en/latest/Pages/Basics/first_grid_job.
 
 Direct job submission to the CREAMCE is handled through glite-ce commands. Below we list 
 the relevant glite-ce commands corresponding to the most common glite-wms commands.
+
+
+  .. code-block:: console
+
+     $glite-wms-job-submit  ->  $glite-ce-job-submit
+     $glite-wms-job-status  ->  $glite-ce-job-status
+     $glite-wms-job-cancel  ->  $glite-ce-job-cancel
+     $glite-wms-job-output  ->  $glite-ce-job-output
+
+
+* On the command line, for both glite-ce and glite-wms commands, help is available via:
+
+$ <command> --help
+
+* These glite-ce commands belong to the command line interface (CLI) for interacting with 
+CREAM and are described in more detail here:
+
+http://cream-guide.readthedocs.io/en/latest/User_Guide.html
