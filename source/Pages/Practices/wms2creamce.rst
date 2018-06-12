@@ -1,7 +1,7 @@
 .. _glitece:
 
 *********************
-Grids jobs via direct creamce submission: an alternative to WMS
+Grids jobs via direct creamce submission using glite-ce
 *********************
 
 The Workload Management System (WMS) is no longer officially supported. It is therefore 
