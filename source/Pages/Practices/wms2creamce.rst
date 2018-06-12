@@ -93,3 +93,24 @@ Direct job submission to the CREAMCE is handled through glite-ce commands. Below
 Please note that the glite-wms part of the below example may also be found at:
 
 http://docs.surfsaralabs.nl/projects/grid/en/latest/Pages/Basics/first_grid_job.html
+
+* 4a. Job submission
+
+  glite-wms:
+  
+    .. code-block:: console
+  
+       $ glite-wms-job-submit -d $USER your_wms_job.jdl 
+         ...
+         Your job identifier is:
+         https://wms2.grid.sara.nl:9000/HnMrnxuzXWuM--JDXM8-pw
+
+
+  glite-ce:
+
+    .. code-block:: console
+  
+       $ glite-ce-job-submit -d -a -r creamce.gina.sara.nl:8443/cream-pbs-medium  your_ce_job.jdl
+         ...
+         2018-06-07 10:42:27,528 DEBUG - Will invoke JobStart for JobID [CREAM887592310]
+         https://creamce.gina.sara.nl:8443/CREAM887592310
