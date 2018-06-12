@@ -1,7 +1,7 @@
 .. _glitece:
 
 *********************
-Grids jobs via direct creamce submission using glite-ce
+Grids jobs via direct creamce submission: an alternative to WMS
 *********************
 
 The Workload Management System (WMS) is no longer officially supported. It is therefore 
@@ -19,3 +19,26 @@ We first briefly recap Grid jobs using basic glite-wms commands (1). We then lis
 glite-ce commands corresponding to the the most common glite-wms commands (2). We discuss 
 the differences regarding the JDL file setup (3). We end by showing an example Grid job 
 submitted with glite-wms and with glite-ce and discuss the differences (4).
+
+.. contents:: 
+    :depth: 4
+    
+    
+===================
+1. Grid Job handling via the Workload Management System
+===================
+
+The current (2018) Grid middleware is the Workload Management System (WMS). The WMS is
+responsible for distributing and managing tasks across the different compute and storage
+resources available on a Grid. Users typically submit and monitor their jobs to the WMS 
+using glite-wms commands. These glite-wms commands and their relation to Grid jobs at
+SURFsara are explained in more detail here:
+
+http://docs.surfsaralabs.nl/projects/grid/en/latest/Pages/Basics/first_grid_job.html
+
+===================
+2. Grid Job handling via direct creamce submission
+===================
+
+Direct job submission to the CREAMCE is handled through glite-ce commands. Below we list 
+the relevant glite-ce commands corresponding to the most common glite-wms commands.
