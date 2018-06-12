@@ -209,3 +209,58 @@ http://docs.surfsaralabs.nl/projects/grid/en/latest/Pages/Basics/first_grid_job.
     We see here that the stdout and stderror files, as specified in your_ce_job.jdl, are retrieved and saved to this local directory.
 
     Note1: a user defined output directory can be specified via the -D or --dir option
+
+* 4d. Job cancel
+
+  Here we show an example in case you want to cancel a job after having submitted it. 
+
+  glite-wms:
+
+    .. code-block:: console
+
+       $ glite-wms-job-submit -d $USER your_wms_job.jdl 
+
+       $ glite-wms-job-cancel https://wms2.grid.sara.nl:9000/_XLil1T3EEIVCmDnWY-tmA
+
+         Are you sure you want to remove specified job(s) [y/n]y : y
+
+       $ glite-wms-job-status https://wms2.grid.sara.nl:9000/_XLil1T3EEIVCmDnWY-tmA
+
+
+       ======================= glite-wms-job-status Success =====================
+       BOOKKEEPING INFORMATION:
+
+       Status info for the Job : https://wms2.grid.sara.nl:9000/_XLil1T3EEIVCmDnWY-tmA
+       Current Status:     Cancelled
+       ...
+
+  glite-ce:
+
+    .. code-block:: console
+
+       $ glite-ce-job-submit -d -a -r creamce.gina.sara.nl:8443/cream-pbs-medium your_ce_job.jdl
+
+       $ glite-ce-job-cancel https://creamce.gina.sara.nl:8443/CREAM423808807
+
+         Are you sure you want to cancel specified job(s) [y/n]: y
+
+       $ glite-ce-job-status https://creamce.gina.sara.nl:8443/CREAM423808807
+
+       ******  JobID=[https://creamce.gina.sara.nl:8443/CREAM423808807]
+	       Status        = [CANCELLED]
+	       ExitCode      = []
+	       Description   = [Cancelled by user]
+       ...
+
+
+Some unfinished notes and remarks (TBD):
+
+(a) Should we add full/more terminal output from glite commands, so that users know how to parse the output (some users use the job-status output for monitoring) ?
+
+(b) Should we provide a full example job (scripts etc) ?
+
+(c) Are there any important differences in any of allowed/used JDL parameters for glite-ce vs. glite-wms (e.g. in specifying number of cpus, memory etc) >
+
+(d) Is it possible to pipe the https job identifier to a jobID file for glite-ce ?
+
+(e) proxy delegation and lifetime is an issue when WMS is no longer available.
