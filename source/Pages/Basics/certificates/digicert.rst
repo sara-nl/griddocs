@@ -56,10 +56,10 @@ You can export the certificate from the browser that you stored your certificate
    * From the Firefox Menu bar select: 
       * For Firefox versions older than v57.0: ``Edit > Preferences > Advanced > View Certificates > Import``
       * For Firefox versions higher than v57.0: ``Firefox > Preferences > Privacy & Security > scroll to the bottom "Security" section > View Certificates > Import``
-* Select the certificate (.p12 file) that you stored in the previous step
-* Press ``Backup``
-* Give it a name, e.g. ``browsercert`` and select the location to store it
-* Give a safe password and press ``Ok``
+   * Select the certificate (.p12 file) that you stored in the previous step
+   * Press ``Backup``
+   * Give it a name, e.g. ``browsercert`` and select the location to store it
+   * Give a safe password and press ``Ok``
   
 The file ``browsercert.p12`` is now stored locally. Next, we will store it on the User Interface.
 
