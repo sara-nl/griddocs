@@ -63,10 +63,6 @@ Direct job submission to the CREAMCE is handled through glite-ce commands. Below
      OutputSandbox = {"stdout", "stderror"};
      ShallowRetryCount = 0;
      Requirements=(RegExp("mediummc",other.GlueCEUniqueID));
-     # Just 1 cores on a single node, is this WMS specific ?
-     SmpGranularity = 1;
-     CPUNumber = 1;
-     # Can glite-ce run parametric jobs, or is this WMS specific ? 
      ]
 
 * 3b. glite-ce:  your_ce_job.jdl
@@ -83,7 +79,6 @@ Direct job submission to the CREAMCE is handled through glite-ce commands. Below
      OutputSandbox = {"stdout", "stderror"};
      RetryCount = 0;
      ShallowRetryCount = 0;
-     # based on: https://github.com/sara-nl/ska2grid/blob/master/ska_test/simple.jdl
      ]
 
 ===================
@@ -251,16 +246,3 @@ http://docs.surfsaralabs.nl/projects/grid/en/latest/Pages/Basics/first_grid_job.
 	       ExitCode      = []
 	       Description   = [Cancelled by user]
        ...
-
-
-Some unfinished notes and remarks (TBD):
-
-(a) Should we add full/more terminal output from glite commands, so that users know how to parse the output (some users use the job-status output for monitoring) ?
-
-(b) Should we provide a full example job (scripts etc) ?
-
-(c) Are there any important differences in any of allowed/used JDL parameters for glite-ce vs. glite-wms (e.g. in specifying number of cpus, memory etc) >
-
-(d) Is it possible to pipe the https job identifier to a jobID file for glite-ce ?
-
-(e) proxy delegation and lifetime is an issue when WMS is no longer available.
