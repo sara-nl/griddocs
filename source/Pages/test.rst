@@ -1,5 +1,5 @@
 ====
-New code-block syntax
+Code-block syntax
 ====
 
 
