@@ -78,7 +78,7 @@ Best practices
    
    Pages/Practices/bootstrap
    Pages/Practices/pilot_jobs
-
+   Pages/Practices/wms2creamce.rst
  
 .. _service-implementation:
 
