@@ -435,7 +435,7 @@ For your convenience, we've created a script called `get-share-link <https://git
 
 The printed link can be pasted into a browser's address bar, or provided as an argument to curl for download.
 
-When uploading with curl, the token can be provided in a custom header (replace <token> with the Macaroon):
+When uploading (or downloading) with curl, the token can be provided in a custom header (replace <token> with the Macaroon):
 
 .. code-block:: console
 
