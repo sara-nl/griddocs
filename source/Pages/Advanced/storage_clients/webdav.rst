@@ -419,6 +419,50 @@ An example of using rclone to copy a directory:
 More information on how to use ``rclone`` with WebDAV is here: https://rclone.org/webdav/. There are also graphical user interfaces to ``rclone``; one is `RcloneBrowser <https://github.com/mmozeiko/RcloneBrowser>`_.
 
 
+Sharing data with Macaroons
+===========================
+
+Macaroons are bearer tokens that authorize someone to access certain directories or files. With this technique, you can share (some of) your data with anyone else. The other person does not need to have a user account or a certificate; only a WebDAV client that supports bearer tokens. Clients that support this are Curl, Rclone and (read only) ordinary browsers such as Firefox. Cyberduck does not support it (`yet <https://trac.cyberduck.io/ticket/10378>`_).
+
+For your convenience, we've created a script called `get-share-link <https://github.com/onnozweers/dcache-scripts/blob/master/get-share-link>`_ that makes it easy to obtain a Macaroon. It's installed on the :abbr:`UI (User Interface)`. Example:
+
+.. code-block:: console
+
+    12:12 ui.grid.surfsara.nl:/home/homer 
+    homer$ get-share-link --url https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/Shared/ --chroot --user homer --duration PT1H --permissions DOWNLOAD,LIST
+    Enter host password for user 'homer':
+    https://webdav.grid.surfsara.nl:2880/?authz=MDAxY2xvY2F0aW9uIE9wdGlvbmFsLmVtcHR5CjAwMThpZGVudGlmaWVyIGNOMDBnRHRSCjAwMmVjaWQgaWQ6MzEwMjk7MzEwNDAsNDQ0MzYsNDEzODUsMzAwMTM7b25ubwowMDI4Y2lkIGJlZm9yZToyMDE4LTA3LTA1VDEyOjIxOjM3LjQzMVoKMDAzZGNpZCByb290Oi9wbmZzL2dyaWQuc2FyYS5ubC9kYXRhL3VzZXJzL29ubm8vRGlzay9TaGFyZWQvCjAwMWZjaWQgYWN0aXZpdHk6RE9XTkxPQUQsTElTVAowMDJmc2lnbmF0dXJlIODcyEAeF-oe2VxwSpym6rPP7fNKprXTQEH2qlXwaLKACg
+
+The printed link can be pasted into a browser's address bar.
+
+The script can also create an Rclone config file:
+
+.. code-block:: console
+
+    $ get-share-link --url https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/Shared/ --chroot --user homer --duration PT1H --permissions DOWNLOAD,LIST --output rclone homers-share
+    Enter host password for user 'homer':
+    Creating rclone config file homers-share.conf:
+    ....
+    Send this file to the persons you want to share data with.
+    They need rclone v1.42-012-gfa051ff9 or newer to access the data.
+    Example command:
+    rclone --config=homers-share.conf ls homers-share:
+
+You can get a Macaroon with X509 authentication too. Please note, that port `2883` is used for this.
+
+.. code-block:: console
+
+    $ voms-proxy-init -voms lsgrid:/lsgrid
+    Enter GRID pass phrase for this identity:
+    ....
+    Your proxy is valid until Fri Jul 06 01:37:31 CEST 2018
+
+    $ get-share-link --url https://webdav.grid.surfsara.nl:2883/pnfs/grid.sara.nl/data/lsgrid/homer/Shared --proxy --chroot --duration PT1H
+    https://webdav.grid.surfsara.nl:2883/?authz=MDAxY2xvY2F0aW9uIE9wdGlvbmFsLmVtcHR5CjAwMThpZGVudGlmaWVyIGNOMDBnRHRSCjAwMzZjaWQgaWQ6MzY0OTQ7MzE4ODMsNDQ0MzYsNDEzODUsMzEwNDAsMzAwMTM7bHNncmlkCjAwMjhjaWQgYmVmb3JlOjIwMTgtMDctMDVUMTI6Mzg6MDAuODg5WgowMDM5Y2lkIHJvb3Q6L3BuZnMvZ3JpZC5zYXJhLm5sL2RhdGEvbHNncmlkL2hvbWVyL1NoYXJlZAowMDFmY2lkIGFjdGl2aXR5OkRPV05MT0FELExJU1QKMDAyZnNpZ25hdHVyZSBwshmIGsGrEfDt0Mg1wdK00Wgt6lGyps9IQX_zh2OGkwo
+
+For more information, see this presentation from the dCache developers: https://www.dcache.org/manuals/workshop-2017-05-29-Umea/000-Final/anupam_macaroons_v02.pdf
+
+
 Graphical access with Cyberduck
 ===============================
   
