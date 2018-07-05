@@ -433,13 +433,19 @@ For your convenience, we've created a script called `get-share-link <https://git
     Enter host password for user 'homer':
     https://webdav.grid.surfsara.nl:2880/?authz=MDAxY2xvY2F0aW9uIE9wdGlvbmFsLmVtcHR5CjAwMThpZGVudGlmaWVyIGNOMDBnRHRSCjAwMmVjaWQgaWQ6MzEwMjk7MzEwNDAsNDQ0MzYsNDEzODUsMzAwMTM7b25ubwowMDI4Y2lkIGJlZm9yZToyMDE4LTA3LTA1VDEyOjIxOjM3LjQzMVoKMDAzZGNpZCByb290Oi9wbmZzL2dyaWQuc2FyYS5ubC9kYXRhL3VzZXJzL29ubm8vRGlzay9TaGFyZWQvCjAwMWZjaWQgYWN0aXZpdHk6RE9XTkxPQUQsTElTVAowMDJmc2lnbmF0dXJlIODcyEAeF-oe2VxwSpym6rPP7fNKprXTQEH2qlXwaLKACg
 
-The printed link can be pasted into a browser's address bar.
+The printed link can be pasted into a browser's address bar, or provided as an argument to curl for download.
+
+When uploading with curl, the token can be provided in a custom header (replace <token> with the Macaroon):
+
+.. code-block:: console
+
+    $curl --header 'Authorization: BEARER <token>' --upload-file myfile https://webdav.grid.surfsara.nl:2880/
 
 The script can also create an Rclone config file:
 
 .. code-block:: console
 
-    $ get-share-link --url https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/Shared/ --chroot --user homer --duration PT1H --permissions DOWNLOAD,LIST --output rclone homers-share
+    $get-share-link --url https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/Shared/ --chroot --user homer --duration PT1H --permissions DOWNLOAD,LIST --output rclone homers-share
     Enter host password for user 'homer':
     Creating rclone config file homers-share.conf:
     ....
@@ -452,7 +458,7 @@ You can get a Macaroon with X509 authentication too. Please note, that port `288
 
 .. code-block:: console
 
-    $ voms-proxy-init -voms lsgrid:/lsgrid
+    $voms-proxy-init -voms lsgrid:/lsgrid
     Enter GRID pass phrase for this identity:
     ....
     Your proxy is valid until Fri Jul 06 01:37:31 CEST 2018
