@@ -454,7 +454,7 @@ The script can also create an Rclone config file:
     Example command:
     rclone --config=homers-share.conf ls homers-share:
 
-You can get a Macaroon with X509 authentication too. Please note, that port `2883` is used for this.
+You can get a Macaroon with X509 authentication too. Please note, that port ``2883`` is used for this.
 
 .. code-block:: console
 
