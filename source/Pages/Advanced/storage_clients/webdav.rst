@@ -296,7 +296,7 @@ The returned checksum comes from the dCache database, so it is a very efficient 
 
    $curl --head --header 'Want-Digest: ADLER32' --silent --fail --capath /etc/grid-security/certificates/ \
         --user homer \
-        https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/home/myfile \
+        https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/myfile \
    | grep 'adler32='
 
 Here an example output:
