@@ -370,6 +370,28 @@ This command will initiate unpinning of file ``zap.tar`` (even if you submitted 
 .. vim: set wm=7 :
 
 
+
+=========
+Checksums
+=========
+
+dCache checks the checksum of a file on many operations (for instance, during tape store & restore operations). If dCache finds, that the checksum of a file does not match the checksum it has in its database, dCache will refuse to continue and will present an error message instead.
+
+dCache is configured to use Adler32 checksums by default, for performance reasons. It is however possible to transfer files to dCache while verifying MD5 checksums. Globus Online works only with MD5 checksums, and previous versions of dCache did not support MD5 checksums, so one would have to disable checksum checking in Globus. Now, dCache does support MD5 checksums during transfers, even when the default checksum type is Adler32. So now Globus Online and dCache should be able to work together with checksums enabled. If a GridFTP clients uploads data with MD5 verification enabled, dCache will calculate the MD5 checksum, return this to the client and store it in its database.
+
+dCache does not enable a user to add MD5 checksums of **existing** data.
+
+We may however, if your project needs it, change the default checksum from Adler32 to MD5 for your poolgroups. From the moment we do that, for new files, dCache will store MD5 checksums in its database, and this MD5 checksum will be used to verify file integrity during operations. Checksums for existing data will not be recalculated however: they will remain Adler32.
+
+Checksums can be listed with `srmls -l`:
+
+.. code-block:: console
+
+	$srmls -l srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test | grep locality
+
+Also through :ref:`webdav` you can retrieve a file's checksum. The checksum value comes from the database so it performs well.
+
+
 .. _SRM-interaction-diagram:
 
 ===============================
