@@ -15,7 +15,7 @@ About WebDAV
 
 The WebDAV protocol has the following advantages:
 
-* It supports username & password authentication
+* It supports not only x509 authentication, but also username & password authentication and :ref:`macaroons <macaroon>` authentication
 * It uses the common port 443. Some overly strict firewalls may block outgoing traffic, but port 443 is so common that it is seldom blocked. However, using WebDAV to bypass firewalls should be seen as a temporary solution; it would be better to open up your institute's firewall to allow access to the dCache subnet.
 * It can transfer data over a secure channel; other protocols like GridFTP do authentication over a secure channel but transfer data unencrypted.
 
@@ -90,7 +90,7 @@ We've tested these WebDAV clients successfully with dCache:
 * web browsers (read only)
 * curl
 * wget (read only)
-* rclone (username/password only)
+* rclone (username/password; no x509 authentication)
 * cyberduck (GUI)
 
 We'll describe how to use them below.
