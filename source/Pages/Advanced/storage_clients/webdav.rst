@@ -419,10 +419,10 @@ An example of using rclone to copy a directory:
 More information on how to use ``rclone`` with WebDAV is here: https://rclone.org/webdav/. There are also graphical user interfaces to ``rclone``; one is `RcloneBrowser <https://github.com/mmozeiko/RcloneBrowser>`_.
 
 
+.. _macaroons:
+
 Sharing data with Macaroons
 ===========================
-
-.. _macaroons:
 
 Macaroons are bearer tokens that authorize someone to access certain directories or files. With this technique, you can share (some of) your data with anyone else. The other person does not need to have a user account or a certificate; only a WebDAV client that supports bearer tokens. Clients that support this are Curl, Rclone and (read only) ordinary browsers such as Firefox. Cyberduck does not support it (`yet <https://trac.cyberduck.io/ticket/10378>`_).
 
