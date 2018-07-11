@@ -467,7 +467,7 @@ You can get a Macaroon with X509 authentication too. Please note, that port ``28
     ....
     Your proxy is valid until Fri Jul 06 01:37:31 CEST 2018
 
-    $ get-share-link --url https://webdav.grid.surfsara.nl:2883/pnfs/grid.sara.nl/data/lsgrid/homer/Shared --proxy --chroot --duration PT1H
+    $get-share-link --url https://webdav.grid.surfsara.nl:2883/pnfs/grid.sara.nl/data/lsgrid/homer/Shared --proxy --chroot --duration PT1H
     https://webdav.grid.surfsara.nl:2883/?authz=MDAxY2xvY2F0aW9uIE9wdGlvbmFsLmVtcHR5CjAwMThpZGVudGlmaWVyIGNOMDBnRHRSCjAwMzZjaWQgaWQ6MzY0OTQ7MzE4ODMsNDQ0MzYsNDEzODUsMzEwNDAsMzAwMTM7bHNncmlkCjAwMjhjaWQgYmVmb3JlOjIwMTgtMDctMDVUMTI6Mzg6MDAuODg5WgowMDM5Y2lkIHJvb3Q6L3BuZnMvZ3JpZC5zYXJhLm5sL2RhdGEvbHNncmlkL2hvbWVyL1NoYXJlZAowMDFmY2lkIGFjdGl2aXR5OkRPV05MT0FELExJU1QKMDAyZnNpZ25hdHVyZSBwshmIGsGrEfDt0Mg1wdK00Wgt6lGyps9IQX_zh2OGkwo
 
 For more information, see this presentation from the dCache developers: https://www.dcache.org/manuals/workshop-2017-05-29-Umea/000-Final/anupam_macaroons_v02.pdf
