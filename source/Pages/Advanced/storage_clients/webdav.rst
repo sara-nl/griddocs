@@ -288,7 +288,7 @@ See :ref:`staging` for more information about file locality.
 Adler32 checksums
 -----------------
 
-This example shows how to get the checksum of a stored file. dCache uses Adler32 checksums by default. 
+This example shows how to get the Adler32 checksum of a stored file. dCache uses Adler32 checksums by default, but this can be configured per project. 
 
 The returned checksum comes from the dCache database, so it is a very efficient way to check your files. dCache does checksum checks on most operations, so you can safely assume the checksum matches the stored file.
 
@@ -327,18 +327,22 @@ Here is an example of the expected output:
 
    $<ns1:Checksums>adler32=46fd067a</ns1:Checksums>
 
+There's a script that uses the above technique to retrieve checksums: https://github.com/onnozweers/dcache-scripts/blob/master/get-file-checksum
+
 
 -------------
 MD5 checksums
 -------------
 
-The dCache grid storage at SURFsara is configured to use only Adler32 checksums. Some other storage services may use MD5 checksums. This complicates things a bit because they are base64 encoded, as prescribed by RFC 3230.
+dCache  is configured to use Adler32 checksums by default. However, in some cases, dCache may have a file's MD5 checksum in its database.
+
+You can use WebDAV to retrieve the MD5 checksum of a file, when it is in dCache's database. It's a bit more complicated than Adler32 because MD5 checksums are presented in base64 encoding, as prescribed by RFC 3230.
 
 .. code-block:: console
 
    $curl --head --header 'Want-Digest: MD5' --silent --fail --capath /etc/grid-security/certificates/ \
         --user homer \
-        https://pn1.cdi.surfsara.nl:2880/cdi/users/homer/myfile \
+        https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/lsgrid/homer/myfile \
    | grep -o 'md5=.*' \
    | sed -e 's/md5=//' -e 's/[\r\n]*$//' \
    | base64 --decode \
@@ -360,7 +364,7 @@ An alternative way to query an MD5 checksum:
             </a:propfind>' \
    | curl --silent --fail --capath /etc/grid-security/certificates/ \
           --user homer --request PROPFIND \
-          https://pn1.cdi.surfsara.nl:2880/cdi/users/homer/myfile \
+          https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/lsgrid/homer/myfile \
           --header "Content-Type: text/xml" --upload - \
    | xmllint -format - \
    | egrep -o '<ns1:Checksums>md5=.*</ns1:Checksums>' \
@@ -380,6 +384,8 @@ Queries can be combined to reduce transaction overhead:
             <a:prop><srm:Checksums xmlns:srm="http://www.dcache.org/2013/webdav"/></a:prop>
             </a:propfind>' \
    | curl ...
+
+There's a script that uses the above technique to retrieve checksums: https://github.com/onnozweers/dcache-scripts/blob/master/get-file-checksum
 
 
 Rclone
