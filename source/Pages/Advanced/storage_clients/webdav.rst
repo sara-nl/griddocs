@@ -426,7 +426,7 @@ Sharing data with Macaroons
 
 Macaroons are bearer tokens that authorize someone to access certain directories or files. With this technique, you can share (some of) your data with anyone else. The other person does not need to have a user account or a certificate; only a WebDAV client that supports bearer tokens. Clients that support this are Curl, Rclone and (read only) ordinary browsers such as Firefox. Cyberduck does not support it (`yet <https://trac.cyberduck.io/ticket/10378>`_).
 
-A Macaroon may contain caveats that limit access. Such caveats can be based on the data location, the activities that may be performed with the data (list, download, upload, etc.), the IP address of the client, or a maximum validity period.
+A Macaroon may contain caveats that limit access. Such caveats can be based on the data path, the activities that may be performed with the data (list, download, upload, etc.), the IP address of the client, or a maximum validity period.
 
 For your convenience, we've created a script called `get-share-link <https://github.com/onnozweers/dcache-scripts/blob/master/get-share-link>`_ that makes it easy to obtain a Macaroon. It's installed on the :abbr:`UI (User Interface)`. Example:
 
