@@ -20,7 +20,6 @@ Each cluster on the Grid is equipped with a Storage Element or SE where data is 
 You can interact with the Grid storage from the :abbr:`UI (User Interface)` or from a Worker Node, within your running job. The scripts that can access the Grid storage can be submitted from:
 
 * :ref:`The UI <get-ui-account>`
-* :ref:`Any local LSG cluster <lsg-clusters>`
 * :ref:`The Dutch Grid <dutch-grid>` 
 
 To use the Grid storage you must:
@@ -36,37 +35,16 @@ You can access the Grid storage with Grid :ref:`storage-clients`, through interf
 * delete files or directories
 * :ref:`stage <staging>` files (copy them from tape to disk for faster reading)
 
-.. [1] It is possible to access the dCache Grid storage without certificate, by using :abbr:`Webdav (Web Distributed Authoring and Versioning)` with username/password authentication. However, authentication with username/password is less secure, and Webdav is not as fast as :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`.
+.. [1] It is possible to access the dCache Grid storage without certificate, by using :ref:`webdav` with username/password authentication. However, authentication with username/password is less secure, and Webdav is not as fast as :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`.
 
 
 .. _storage-types:
 
-=============
-Storage types
-=============
-
-There are two storage types available on the Dutch Grid sites: 
-
-* The :ref:`dCache` storage element located at SURFsara and accessible from *any* Grid site.
-* The :ref:`DPM` storage elements located at each :ref:`LSG cluster <lsg-clusters>` and accessible *only* by the :ref:`lsg` users.
-
-
-.. _dCache:
-
+======
 dCache
 ======
 
 The storage element located at SURFsara is accessible from *any* Grid cluster or :abbr:`UI (User Interface)`. It uses the `dCache system`_ for storing and retrieving huge amounts of data, distributed among a large number of server nodes. It consists of magnetic tape storage and hard disk storage and both are addressed by a common file system. See :ref:`dCache-specs` for details about our dCache instance.
-
-.. _dpm:
-
-DPM
-===
-
-The storage elements located at the various :ref:`Life Science Grid clusters <life-science-clusters>` are accessible *only* by the :abbr:`LSG (Life Science Grid)` users. The :abbr:`LSG (Life Science Grid)` clusters have local storage that uses DPM (short for Disk Pool Manager).
-
-
-.. note:: The :abbr:`DPM (Disk Pool Manager)` storage is only disk storage and does not support tape back-end. In opposite, the dCache central storage has both disk and tape.
 
 
 .. _file-id:
@@ -89,10 +67,7 @@ Examples:
 	
 	# same, but with a Webdav TURL
 	https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
-	
-	# lsgrid user homer stores the file zap.tar on DPM storage at lumc cluster
-	gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar
-	
+
 .. topic:: Clients for TURLs
 
 	* uberftp
@@ -104,15 +79,13 @@ Examples:
 Storage URL or SURL
 ===================
 
-Examples:
+Example:
 
 .. code-block:: bash
 
 	# lsgrid user homer stores the file zap.tar on dCache storage
 	srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
-	
-	# lsgrid user homer stores the file zap.tar on DPM storage at lumc cluster
-	srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar 
+
 	
 .. topic:: Clients for SURLs
 
@@ -128,16 +101,13 @@ Logical File Name (LFN) and Grid Unique Identifier (GUID)
 These identifiers correspond to logical filename such as ``lfn:/grid/lsgrid/homer/zap.tar``
 
 
-.. note:: The :abbr:`SURLs (Storage URLs)` and :abbr:`TURLs (Transport URLs)` contain information about where a **physical** file is located. In contrast, the :abbr:`GUIDs (Grid Unique Identifiers)` and :abbr:`LFNs (Logical File Name)` identify a **logical** filename irrespective of its location. You only need to use these if you work with :ref:`large-data-lfc-practice` on multiple :abbr:`LSG (Life Science Grid)` sites.
+.. note:: The :abbr:`SURLs (Storage URLs)` and :abbr:`TURLs (Transport URLs)` contain information about where a **physical** file is located. In contrast, the :abbr:`GUIDs (Grid Unique Identifiers)` and :abbr:`LFNs (Logical File Name)` identify a **logical** filename irrespective of its location. You only need to use these if you work with :ref:`large-data-lfc-practice` on multiple :abbr:`SEs (Storage Elements)`.
 
 
 .. _storage-ports:
 
 Default ports
 =============
-
-dCache
-------
 
 +------------+--------------------------------------+--------------------------------------+
 | Protocol   | Host(s) and port(s)                  | Remark                               |
@@ -162,20 +132,6 @@ dCache
 +------------+--------------------------------------+--------------------------------------+
 
 The last one, ipv4.grid.sara.nl, is a single VM that supports only IPv4 and no IPv6. It can be used for small scale access through GridFTP, Webdav, Xroot or GSIdCap where IPv6 causes problems. Don't use it for batch processing.
-
-
-DPM
----
-
-+------------+--------------------------------------+--------------------------------------+
-| Protocol   | Host(s) and port(s) (examples)       | Remark                               |
-+============+======================================+======================================+
-| SRM        | srm://gb-se-lumc.lumc.nl:8446        |                                      |
-+------------+--------------------------------------+--------------------------------------+
-| GridFTP    | gsiftp://gb-se-lumc.lumc.nl:2811     | Data channel port range: 20000-25000 |
-+------------+--------------------------------------+--------------------------------------+
-
-For an overview of all life science clusters and their DPM storage elements, see :ref:`lsg-hostnames`
 
 
 .. _storage-clients:
