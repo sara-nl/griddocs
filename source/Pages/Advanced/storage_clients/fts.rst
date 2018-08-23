@@ -33,7 +33,7 @@ Our FTS instance can be found at: `SURFsara FTS UI`_. The site can be accessed w
 
 The `SURFsara FTS Rest API`_ be used from command-line clients or the web-interface version (`SURFsara WebFTS`_), or python bindings. The Cern website offers several examples to interact with the API with python, see `FTS Easy Bindings`_.
 
-The FTS command-line client is currently installed on the UI ``ui.grid.sara.nl``. It is not available on the :ref:`LSG UI <lsg-hostnames>` machines.
+The FTS command-line client is currently installed on the UI ``ui.grid.sara.nl``.
 
 The following graph depicts the FTS transfer lifecycle:
 
@@ -197,7 +197,7 @@ Submit the failed transfers with:
 
 .. Links:
 .. _`FTS3`: http://fts3-service.web.cern.ch/
-.. _`FTS3 wiki`: https://svnweb.cern.ch/trac/fts3/wiki/UserGuide
+.. _`FTS3 wiki`: http://fts3-docs.web.cern.ch/fts3-docs/
 .. _`CERN FTS3 documentation`: http://fts3-docs.web.cern.ch/fts3-docs/docs/cli/cli.html
 .. _`SURFsara FTS UI`: https://fts3.grid.sara.nl:8449/fts3
 .. _`SURFsara FTS Rest API`: https://fts3.grid.sara.nl:8446/
