@@ -347,18 +347,18 @@ Life scientists however may need to store private data such as MRI scans or DNA 
 
 Data channel encryption:
 
-  * WebDAV over port 2880
-  * WebDAV over port 2883
-  * WebDAV over port 443 only through https://webdav-cert.grid.sara.nl
+* WebDAV over port 2880
+* WebDAV over port 2883
+* WebDAV over port 443 only through https://webdav-cert.grid.sara.nl
 
 NO data channel encryption:
 
-  * WebDAV over port 443
-  * WebDAV over port 2882
-  * SRM
-  * GridFTP (dCache does not support GridFTP data encryption. Please be warned that `globus-url-copy -dcpriv` does not warn you about this and tranfers your data in plain text.)
-  * GSIdCap, dCap
-  * Xroot
+* WebDAV over port 443
+* WebDAV over port 2882
+* SRM
+* GridFTP (dCache does not support GridFTP data encryption. Please be warned that `globus-url-copy -dcpriv` does not warn you about this and tranfers your data in plain text.)
+* GSIdCap, dCap
+* Xroot
 
 Since WebDAV is currently the only way to encrypt data in transit, we continuously try to improve the security of our WebDAV doors. We regularly test our WebDAV doors with tools like `the Qualys SSLtest <https://www.ssllabs.com/ssltest/>`_, `nmap <https://nmap.org/>`_, `Greenbone/OpenVAS <http://www.openvas.org/>`_, and others and follow their recommendations.
 
