@@ -99,9 +99,9 @@ We'll describe how to use them below.
 Web browsers
 ============
 
-The easiest way to access dCache is with a normal web browser. You can point a browser like Firefox to https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/ or any of the other WebDAV doors listed in the table above. When the browser asks for a username and password, you can provide your Grid :abbr:`UI (User Interface)` (or :abbr:`CUA (SURFsara's Central User Administration)`) username and password. When you click on a listed file, it will be downloaded, if you're authorized to do so.
+The easiest way to access dCache is with a normal web browser. You can point a browser like Firefox to https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/ or any of the other WebDAV doors listed in the table above. When the browser asks for a username and password, you can provide your Grid :abbr:`UI (User Interface)` (or :abbr:`CUA (SURFsara's Central User Administration)`) username and password. An icon in front of each file indicates the locality of the file (tape or disk). When you click on a listed file, it will be downloaded, if you're authorized to do so.
 
-You can't upload to dCache with a normal web browser.
+You can't upload to dCache WebDAV with a normal browser. There is a new interface, `dCache View <https://dcacheview.grid.surfsara.nl>`_, that allows you to upload files from your browser. This is still in development, so test it first before using it for production data.
 
 
 Curl & wget
