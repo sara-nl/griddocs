@@ -92,16 +92,6 @@ Example:
 	* srm
 	* gfal
 	* fts
-	* lcg-lfn-lfc
-
-
-Logical File Name (LFN) and Grid Unique Identifier (GUID)
-=========================================================
-
-These identifiers correspond to logical filename such as ``lfn:/grid/lsgrid/homer/zap.tar``
-
-
-.. note:: The :abbr:`SURLs (Storage URLs)` and :abbr:`TURLs (Transport URLs)` contain information about where a **physical** file is located. In contrast, the :abbr:`GUIDs (Grid Unique Identifiers)` and :abbr:`LFNs (Logical File Name)` identify a **logical** filename irrespective of its location. You only need to use these if you work with :ref:`large-data-lfc-practice` on multiple :abbr:`SEs (Storage Elements)`.
 
 
 .. _storage-ports:
@@ -165,9 +155,6 @@ In this section we will show the common commands to use the various storage clie
   +---------------------+-----+--------------+---------+--------+-----------+-------------------+
   | :ref:`globusonline` | --  | yes          | --      | --     | yes       | --                |
   +---------------------+-----+--------------+---------+--------+-----------+-------------------+
-  | :ref:`lcg-lfn-lfc`  | yes | [4]_         | --      | --     | --        | --                |
-  | (not recommended)   |     |              |         |        |           |                   |
-  +---------------------+-----+--------------+---------+--------+-----------+-------------------+
   | :ref:`uberftp` [5]_ | --  | yes          | --      | --     | --        | --                |
   | (not recommended)   |     |              |         |        |           |                   |
   +---------------------+-----+--------------+---------+--------+-----------+-------------------+
@@ -190,7 +177,6 @@ In this section we will show the common commands to use the various storage clie
    storage_clients/webdav
    storage_clients/fts
    storage_clients/globusonline
-   storage_clients/lcg-lfn-lfc
 
 .. _staging:
 
