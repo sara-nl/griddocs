@@ -356,7 +356,7 @@ NO data channel encryption:
 * WebDAV over port 443
 * WebDAV over port 2882
 * SRM
-* GridFTP (dCache does not support GridFTP data encryption. Please be warned that `globus-url-copy -dcpriv` does not warn you about this and tranfers your data in plain text.)
+* GridFTP (dCache does not support GridFTP data encryption. Please be warned that ``globus-url-copy -dcpriv`` does not warn you about this and tranfers your data in plain text.)
 * GSIdCap, dCap
 * Xroot
 
