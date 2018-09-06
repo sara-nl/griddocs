@@ -430,6 +430,8 @@ More information on how to use ``rclone`` with WebDAV is here: https://rclone.or
 Sharing data with Macaroons
 ===========================
 
+.. warning:: Macaroons are a new feature in dCache and have not been fully tested. There may be some risks involved. Always add sufficient caveats to your Macaroons to avoid abuse. Please contact us if you want to use them.
+
 Macaroons are bearer tokens that authorize someone to access certain directories or files. With this technique, you can share (some of) your data with anyone else. The other person does not need to have a user account or a certificate; only a WebDAV client that supports bearer tokens. Clients that support this are Curl, Rclone and (read only) ordinary browsers such as Firefox. Cyberduck does not support it (`yet <https://trac.cyberduck.io/ticket/10378>`_).
 
 A Macaroon may contain caveats that limit access. Such caveats can be based on the data path, the activities that may be performed with the data (list, download, upload, etc.), the IP address of the client, or a maximum validity period.
