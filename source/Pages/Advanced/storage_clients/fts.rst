@@ -76,7 +76,7 @@ Basic options
 Here are some basic options to use when initiating FTS transfers. The proposed values for retrials, parallel streams and timeout settings depend on the amount of files and volume of data to be transferred. If you need help to estimate these values, please contact us at helpdesk@surfsara.nl
 
 * ``-v``: enable verbose information  
-* ``-s https://fts3.grid.sara.nl:8443``: specify the fts server.
+* ``-s https://fts3.grid.sara.nl:8446``: specify the fts server.
 * ``-K``: enable checksum. By default, adler32 is supported on the SURFsara servers.
 * ``--retry 2 --retry-delay 300``: in case of errors (timeouts, overwriting, etc) the file transfer will be retried after 5 minutes 
 * ``--nostreams 4``: the longer the distance between the transfer endpoints, the more streams you need to achieve transfers less vulnerable to congestion
@@ -88,7 +88,7 @@ File transfer - TURL to TURL
 
 .. code-block:: console
 
-   $fts-transfer-submit -s https://fts3.grid.sara.nl:8443 \
+   $fts-transfer-submit -s https://fts3.grid.sara.nl:8446 \
    $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
    $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/penelope/zap.tar 
 
@@ -98,7 +98,7 @@ File transfer - TURL to TURL
 
 .. code-block:: console
 
-   $fts-transfer-submit -s https://fts3.grid.sara.nl:8443 \
+   $fts-transfer-submit -s https://fts3.grid.sara.nl:8446 \
    $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
    $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/penelope/zap.tar
 
@@ -108,7 +108,7 @@ File transfer - SRMv2 to SRMv2
 
 .. code-block:: console
 
-   $fts-transfer-submit -s https://fts3.grid.sara.nl:8443 \
+   $fts-transfer-submit -s https://fts3.grid.sara.nl:8446 \
    $    srm://srm.grid.sara.nl:8443/srm/managerv2?SFN=/pnfs/grid.sara.nl/data/lsgrid/zap.tar \
    $    srm://srm.grid.sara.nl:8443/srm/managerv2?SFN=/pnfs/grid.sara.nl/data/lsgrid/penelope/zap.tar
 
@@ -122,7 +122,7 @@ If you have multiple files to transfer, you can submit the transfers in one bulk
 
 .. code-block:: console
 
-   $fts-transfer-submit -s https://fts3.grid.sara.nl:8443 \
+   $fts-transfer-submit -s https://fts3.grid.sara.nl:8446 \
    $    -f transfer-list.txt
 
 The list of transfers should have this format:
@@ -156,14 +156,14 @@ The ``fts-transfer-submit`` command will return instantly an ID for the specific
 
 .. code-block:: console
 
-   $fts-transfer-status -s https://fts3.grid.sara.nl:8443  9e665677-76e5-4734-b729-b69e161da99a
+   $fts-transfer-status -s https://fts3.grid.sara.nl:8446  9e665677-76e5-4734-b729-b69e161da99a
    ## replace the string '9e665677-76e5-4734-b729-b69e161da99a' with your transfer job ID
 
 For bulk transfers, monitor the status overview of all submitted files with:
 
 .. code-block:: console
 
-   $fts-transfer-status -s https://fts3.grid.sara.nl:8443 —list 9e665677-76e5-4734-b729-b69e161da99a | grep State: | sort | uniq —count
+   $fts-transfer-status -s https://fts3.grid.sara.nl:8446 —list 9e665677-76e5-4734-b729-b69e161da99a | grep State: | sort | uniq —count
 
 
 Web interface
@@ -185,13 +185,13 @@ Make a list to retry the failed transfers:
 
 .. code-block:: console
 
-   $fts-transfer-status -s https://fts3.grid.sara.nl:8443 --list [JOBID] | grep -3 State:.*FAILED | egrep 'Source:|Destination:' | sed -e 's/  Source:      //' -e 'N;s/\n  Destination://' > srm_fts_retry1.txt # replace the [JOBID] with your bulk job ID
+   $fts-transfer-status -s https://fts3.grid.sara.nl:8446 --list [JOBID] | grep -3 State:.*FAILED | egrep 'Source:|Destination:' | sed -e 's/  Source:      //' -e 'N;s/\n  Destination://' > srm_fts_retry1.txt # replace the [JOBID] with your bulk job ID
 
 Submit the failed transfers with: 
 
 .. code-block:: console
 
-   $fts-transfer-submit -s https://fts3.grid.sara.nl:8443 --retry 2 --retry-delay 300 --nostreams 4 --timeout 14400 -f srm_fts_retry1.txt >> fts_jobids
+   $fts-transfer-submit -s https://fts3.grid.sara.nl:8446 --retry 2 --retry-delay 300 --nostreams 4 --timeout 14400 -f srm_fts_retry1.txt >> fts_jobids
 
 
 
