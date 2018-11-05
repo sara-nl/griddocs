@@ -35,51 +35,76 @@ dCache has the following WebDAV doors:
 .. |nbsp| unicode:: 0xA0 
    :trim:
 
-+------------------------------------------+---------------------------+-----------------------------+---------------------+
-| URL including port                       | Authentication method     | Redirection behaviour       | Overwrites          |
-+==========================================+===========================+=============================+=====================+
-| https://webdav.grid.surfsara.nl:443      | Username/password         | Redirects on read           | Not |nbsp| allowed  |
-+------------------------------------------+---------------------------+-----------------------------+---------------------+
-| https://webdav.grid.surfsara.nl:2880     | Username/password         | No redirects                | Allowed             |
-+------------------------------------------+---------------------------+-----------------------------+---------------------+
-| https://webdav.grid.surfsara.nl:2882     | User certificate or proxy | Redirects on read and write | Not |nbsp| allowed  |
-+------------------------------------------+---------------------------+-----------------------------+---------------------+
-| https://webdav.grid.surfsara.nl:2883     | User certificate or proxy | No redirects                | Allowed             |
-+------------------------------------------+---------------------------+-----------------------------+---------------------+
-| https://webdav-cert.grid.sara.nl:443     | User certificate or proxy | No redirects                | Not |nbsp| allowed  |
-+------------------------------------------+---------------------------+-----------------------------+---------------------+
-| https://ipv4.grid.surfsara.nl:443        | Username/password         | Redirects on read           | Not |nbsp| allowed  |
-+------------------------------------------+---------------------------+-----------------------------+---------------------+
-| https://ipv4.grid.surfsara.nl:2880       | Username/password         | No redirects                | Allowed             |
-+------------------------------------------+---------------------------+-----------------------------+---------------------+
-| https://ipv4.grid.surfsara.nl:2882       | User certificate or proxy | Redirects on read and write | Not |nbsp| allowed  |
-+------------------------------------------+---------------------------+-----------------------------+---------------------+
-| https://ipv4.grid.surfsara.nl:2883       | User certificate or proxy | No redirects                | Allowed             |
-+------------------------------------------+---------------------------+-----------------------------+---------------------+
++------------------------------------------+---------------------------+-------------------------------------------+
+| URL including port                       | Authentication method     | Remarks                                   |
++==========================================+===========================+===========================================+
+| https://webdav.grid.surfsara.nl:443      | Username/password         | Redirects on read                         |
++------------------------------------------+---------------------------+-------------------------------------------+
+| https://webdav.grid.surfsara.nl:2880     | Username/password         | No redirects                              |
++------------------------------------------+---------------------------+-------------------------------------------+
+| https://webdav.grid.surfsara.nl:2881     | Username/password         | No redirects; maximum transport security  |
++------------------------------------------+---------------------------+-------------------------------------------+
+| https://webdav.grid.surfsara.nl:2882     | User certificate or proxy | Redirects on read and write               |
++------------------------------------------+---------------------------+-------------------------------------------+
+| https://webdav.grid.surfsara.nl:2883     | User certificate or proxy | No redirects                              |
++------------------------------------------+---------------------------+-------------------------------------------+
+| https://webdav.grid.surfsara.nl:2884     | User certificate or proxy | No redirects; maximum transport security  |
++------------------------------------------+---------------------------+-------------------------------------------+
+| https://webdav-cert.grid.sara.nl:443     | User certificate or proxy | No redirects; maximum transport security  |
++------------------------------------------+---------------------------+-------------------------------------------+
+| https://ipv4.grid.surfsara.nl:*          | Same as webdav.grid.surfsara.nl, but IPv4 only                        |
++------------------------------------------+---------------------------+-------------------------------------------+
 
 
 Choosing a WebDAV door
 ----------------------
 
-The most important consideration is whether you want to authenticate with username/password or with ``x509`` (certificate/proxy). Another important consideration is whether a WebDAV door should redirect or not.
+--------------
+Authentication
+--------------
+
+The most important consideration is whether you want to authenticate with username/password or with ``x509`` (certificate/proxy). See the above table.
+
+------------------
+Transport security
+------------------
+
+Another important consideration is whether a WebDAV door should redirect or not; this affects transport security and throughput.
 
 Advantages of redirects:
 
 * It's a form of load balancing, which improves the speed.
-* Redirecting WebDAV doors do the authentication over HTTPS, but they redirect your client to an HTTP port. So the data transfer is unencrypted. This improves speed.
+* Redirecting WebDAV doors do the authentication over HTTPS, but they redirect your client to an HTTP port. So the data transfer is unencrypted. This too improves speed.
 
 Disadvantages of redirects:
 
 * File transfers are sent over HTTP, so they are not encryted. A "man in the middle" might be able to read the data, or even modify it in transit. If privacy is a concern, choose a door that does not redirect.
 * Some WebDAV clients don't handle redirects very well.
 
+If transport security is a requirement, we suggest to use the WebDAV doors on port ``2881`` or ``2884`` for the best transport security. They use only TLSv1.2 or better, and they are configured with encryption ciphers that offer Perfect Forward Secrecy. They have some extra HTTP security headers that may make abuse more difficult. 
+
+There might be some clients that have difficulties connecting to these high security doors. If data security is important to you, we suggest you find clients that do support these improved security settings. In the future, these settings will be applied to ports 2880 and 2883 as well.
+
+
+-----------
+Performance
+-----------
+
 Another consideration is whether you're using the door for parallel access.
 
-``webdav.grid.surfsara.nl`` is a DNS round robin that will direct you to a (more or less) random host in a pool of WebDAV servers. So it is very well suited for parallel access.
+``webdav.grid.surfsara.nl`` is a DNS round robin that will direct you to a (more or less) random host in a pool of WebDAV servers. So it is very well suited for parallel access. The other host names are not powered by a group of nodes, so they are less suited to parallel processing.
 
-Use ``webdav-cert.grid.sara.nl`` when you want to authenticate with a user certificate or proxy, and your institute's firewall blocks outgoing connections to port ``2882`` and ``2883``. It's a single virtual machine; don't use it for parallel processing.
+---------------
+Firewall issues
+---------------
 
-Use ``ipv4.grid.surfsara.nl`` for storage clients that have problems with IPv6. It's a single virtual machine; don't use it for parallel processing.
+Use ``webdav-cert.grid.sara.nl`` when you want to authenticate with a user certificate or proxy, and your institute's firewall blocks outgoing connections to port ``2882`` to ``2884``. It's a single virtual machine; don't use it for parallel processing. It is configured with the best security settings, like the ones on port 2881 and 2884.
+
+-----------
+IPv4 / IPv6
+-----------
+
+All WebDAV doors are dual stack: they support both IPv4 and IPv6, with IPv6 as the preferred protocol. Use ``ipv4.grid.surfsara.nl`` for storage clients that have problems with IPv6. It's a single virtual machine; don't use it for parallel processing.
 
 
 Clients
