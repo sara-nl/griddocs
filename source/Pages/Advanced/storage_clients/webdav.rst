@@ -63,7 +63,7 @@ Choosing a WebDAV door
 Authentication
 --------------
 
-The most important consideration is whether you want to authenticate with username/password or with ``x509`` (certificate/proxy). See the above table.
+The most important consideration is whether you want to authenticate with username/password or with ``x509`` (certificate/proxy). See the above table. All WebDAV doors support :ref:`macaroons <macaroons>` (bearer tokens).
 
 ------------------
 Transport security
