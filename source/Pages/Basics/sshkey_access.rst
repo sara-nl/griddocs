@@ -10,7 +10,7 @@ Access method
 
 Access to `loui` will be provided via SSH (Secure Shell) Public key
 authentication only. For the highest security of your data and the platform, we
-don't not allow username/password authentication.
+won't not allow username/password authentication from *January 2nd, 2019*.
 
 To use this method you will need first to configure your SSH public key on a
 portal provided by SURFsara. Then you can connect and authenticate to `loui` 
@@ -53,8 +53,7 @@ Follow these steps to upload your key to our SURFsara portal. Note that this is
   .. image:: /Images/cua-portal-addssh.png
 	   :align: center
 
-* **Step4**: Type your SURFsara user account password next to the field ``CUA password``. 
-(CUA stands for Central User Administration, in other words your SURFsara account)  
+* **Step4**: Type your SURFsara user account password next to the field ``CUA password``. (CUA stands for Central User Administration, in other words your SURFsara account)  
 * **Step5**: Submit your changes with a click on the ``Add sshkey`` button  
 
 From now on you can login to `loui` with your SSH keys from your laptop
@@ -64,7 +63,9 @@ From now on you can login to `loui` with your SSH keys from your laptop
 
       $ssh username@loui.grid.surfsara.nl
 
-.. note:: In case that you have multiple keys in your ``.ssh/`` folder, you would need to specify the key that matches the .pub file you :ref:`uploaded on the SURFsara portal <upload-key>`, i.e. ``ssh -i ~/.ssh/surfsarakey username@loui.grid.surfsara.nl``
+You have now logged in to `loui` without typing your password!
+
+.. note:: In case that you have multiple keys in your ``.ssh/`` folder, you would need to specify the key that matches the .pub file that you uploaded on the SURFsara portal, i.e. ``ssh -i ~/.ssh/surfsarakey username@loui.grid.surfsara.nl``
 
 
 .. seealso:: Still need help? Contact :ref:`our helpdesk <helpdesk>`
