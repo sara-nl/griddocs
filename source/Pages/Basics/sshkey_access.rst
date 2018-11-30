@@ -68,8 +68,7 @@ You have now logged in to `loui` without typing your password!
 .. note:: In case that you have multiple keys in your ``.ssh/`` folder, you would need to specify the key that matches the .pub file that you uploaded on the SURFsara portal, i.e. ``ssh -i ~/.ssh/surfsarakey username@loui.grid.surfsara.nl``
 
 
-.. seealso:: Still need help? Contact :ref:`our helpdesk <helpdesk>`
-
+.. seealso:: Still need help? Contact us at helpdesk@surfsara.nl
 
 .. Links:
 
