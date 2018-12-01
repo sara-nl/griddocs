@@ -10,12 +10,17 @@ Access method
 
 Access to `loui` will be provided via SSH (Secure Shell) Public key
 authentication only. For the highest security of your data and the platform, we
-won't not allow username/password authentication from *January 2nd, 2019*.
+won't not allow username/password authentication from *January 7th, 2019*.
 
 To use this method you will need first to configure your SSH public key on a
 portal provided by SURFsara. Then you can connect and authenticate to `loui` 
 with your SSH keys without supplying your username or password at
 each visit.
+
+*NB: If you have already configured your ssh key on the portal and used it previously to access 
+other SURFsara systems (e.g. Softdrive), you don't need to do anything. The ssh key on the portal 
+allows you access most of the SURFsara User Interface machines, including `loui`: you install 
+the key once and use it to authenticate to multiple SURFsara systems.*
 
 .. _access-prerequisites:
 
