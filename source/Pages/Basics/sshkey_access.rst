@@ -4,9 +4,9 @@
 .. contents::
     :depth: 2
 
-*************
-Access method
-*************
+**********************************************
+Enabling *key-only* ssh authentication on Loui 
+**********************************************
 
 Access to `loui` will be provided via SSH (Secure Shell) Public key
 authentication only. For the highest security of your data and the platform, we
