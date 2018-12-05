@@ -44,7 +44,7 @@ Picas sample example
 
 .. code-block:: console
 
-    $tar -zxf pilot_picas_fractals.tgz
+    $tar -xvf pilot_picas_fractals.tgz
     $cd pilot_picas_fractals/
     $ls -l
     -rwxrwxr-x 1 homer homer 1247 Jan 28 15:40 createTokens
