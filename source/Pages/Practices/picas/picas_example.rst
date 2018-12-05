@@ -55,7 +55,7 @@ Picas sample example
 
 Detailed information regarding the operations performed in each of the scripts below is embedded to the comments inside each of the scripts individually.
 
-* Also download the current PiCaS version :download:`picas.tar </Scripts/picas.tar>` ``picas.tar`` and put both PiCaS and the couchdb.tgz file in the ``sandbox`` directory:
+* Also download the current PiCaS version :download:`picas.tar </Scripts/picas.tar>` and put both PiCaS and the couchdb.tgz file in the ``sandbox`` directory:
 
 .. code-block:: console
 
