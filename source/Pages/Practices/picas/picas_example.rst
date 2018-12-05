@@ -62,7 +62,7 @@ Detailed information regarding the operations performed in each of the scripts b
     $cd sandbox
     $mv ../../couchdb.tgz ./
 
-<--- !   $curl --location https://github.com/sara-nl/picasclient/archive/master.zip > picas.zip
+<---!   $curl --location https://github.com/sara-nl/picasclient/archive/master.zip > picas.zip
 --->
 
 * And finally compile the fractals program (and put it in the sandbox directory) and move one directory up again:
