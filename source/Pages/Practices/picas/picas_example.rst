@@ -55,13 +55,15 @@ Picas sample example
 
 Detailed information regarding the operations performed in each of the scripts below is embedded to the comments inside each of the scripts individually.
 
-* Also download the current PiCaS version as ``picas.zip`` from GitHub and put both PiCaS and the couchdb.tgz file in the ``sandbox`` directory:
+* Also download the current PiCaS version :download:`picas.tar </Scripts/picas.tar>` ``picas.tar`` and put both PiCaS and the couchdb.tgz file in the ``sandbox`` directory:
 
 .. code-block:: console
 
     $cd sandbox
-    $curl --location https://github.com/sara-nl/picasclient/archive/master.zip > picas.zip
     $mv ../../couchdb.tgz ./
+
+<--- !   $curl --location https://github.com/sara-nl/picasclient/archive/master.zip > picas.zip
+--->
 
 * And finally compile the fractals program (and put it in the sandbox directory) and move one directory up again:
 
@@ -117,7 +119,7 @@ Now we will start using PiCaS. For this we need the downloaded CouchDB and PiCaS
 	
 * Check your database in this link:
 
-    https://nosql01.grid.sara.nl:6984/_utils/database.html?homerdb
+    https://picas.surfsara.nl:6984/_utils/database.html?homerdb
     
     replace homerdb with your Picas database name
 
