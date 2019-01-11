@@ -63,7 +63,7 @@ Examples:
 .. code-block:: bash
 
 	# lsgrid user homer stores the file zap.tar on dCache storage
-	gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+	gsiftp://gridftp.grid.surfsara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 	
 	# same, but with a Webdav TURL
 	https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
@@ -99,27 +99,31 @@ Example:
 Default ports
 =============
 
-+------------+--------------------------------------+--------------------------------------+
-| Protocol   | Host(s) and port(s)                  | Remark                               |
-+============+======================================+======================================+
-| SRM        | srm://srm.grid.sara.nl:8443          |                                      |
-+------------+--------------------------------------+--------------------------------------+
-| GridFTP    | gsiftp://gridftp.grid.sara.nl:2811   | Data channel port range: 20000-25000 |
-+------------+--------------------------------------+--------------------------------------+
-|            | https://webdav.grid.surfsara.nl:443  |                                      |
-+            +--------------------------------------+                                      +
-| Webdav     | https://webdav.grid.surfsara.nl:2880 | See :ref:`webdav` for details        |
-+            +--------------------------------------+                                      +
-|            | https://webdav.grid.surfsara.nl:2882 |                                      |
-+            +--------------------------------------+                                      +
-|            | https://webdav-cert.grid.sara.nl:443 |                                      |
-+------------+--------------------------------------+--------------------------------------+
-| GSIdCap    | gsidcap://gsidcap.grid.sara.nl:22128 |                                      |
-+------------+--------------------------------------+--------------------------------------+
-| xroot      | xrootd.grid.sara.nl:1094             | Used by CERN only                    |
-+------------+--------------------------------------+--------------------------------------+
-| all        | ipv4.grid.sara.nl                    | For clients that don't speak IPv6    |
-+------------+--------------------------------------+--------------------------------------+
++------------+----------------------------------------+--------------------------------------+
+| Protocol   | Host(s) and port(s)                    | Remark                               |
++============+========================================+======================================+
+| SRM        | srm://srm.grid.sara.nl:8443            |                                      |
++------------+----------------------------------------+--------------------------------------+
+| GridFTP    | gsiftp://gridftp.grid.surfsara.nl:2811 | Data channel port range: 20000-25000 |
++------------+----------------------------------------+--------------------------------------+
+|            | https://webdav.grid.surfsara.nl:443    |                                      |
++            +----------------------------------------+                                      +
+| Webdav     | https://webdav.grid.surfsara.nl:2880   | See :ref:`webdav` for details        |
++            +----------------------------------------+                                      +
+|            | https://webdav.grid.surfsara.nl:2881   |                                      |
++            +----------------------------------------+                                      +
+|            | https://webdav.grid.surfsara.nl:2882   |                                      |
++            +----------------------------------------+                                      +
+|            | https://webdav.grid.surfsara.nl:2883   |                                      |
++            +----------------------------------------+                                      +
+|            | https://webdav-cert.grid.sara.nl:443   |                                      |
++------------+----------------------------------------+--------------------------------------+
+| GSIdCap    | gsidcap://gsidcap.grid.sara.nl:22128   |                                      |
++------------+----------------------------------------+--------------------------------------+
+| xroot      | xrootd.grid.sara.nl:1094               | Used by CERN only                    |
++------------+----------------------------------------+--------------------------------------+
+| all        | ipv4.grid.sara.nl                      | For clients that don't speak IPv6    |
++------------+----------------------------------------+--------------------------------------+
 
 The last one, ipv4.grid.sara.nl, is a single VM that supports only IPv4 and no IPv6. It can be used for small scale access through GridFTP, Webdav, Xroot or GSIdCap where IPv6 causes problems. Don't use it for batch processing.
 
