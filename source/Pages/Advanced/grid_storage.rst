@@ -116,6 +116,8 @@ Default ports
 +            +----------------------------------------+                                      +
 |            | https://webdav.grid.surfsara.nl:2883   |                                      |
 +            +----------------------------------------+                                      +
+|            | https://webdav.grid.surfsara.nl:2884   |                                      |
++            +----------------------------------------+                                      +
 |            | https://webdav-cert.grid.sara.nl:443   |                                      |
 +------------+----------------------------------------+--------------------------------------+
 | GSIdCap    | gsidcap://gsidcap.grid.sara.nl:22128   |                                      |
@@ -351,8 +353,7 @@ Life scientists however may need to store private data such as MRI scans or DNA 
 
 Data channel encryption:
 
-* WebDAV over port 2880
-* WebDAV over port 2883
+* WebDAV over port 2880, 2881, 2883 and 2884 (we configured 2881 and 2884 to have the most secure encryption)
 * WebDAV over port 443 only through https://webdav-cert.grid.sara.nl
 
 NO data channel encryption:
@@ -364,9 +365,9 @@ NO data channel encryption:
 * GSIdCap, dCap
 * Xroot
 
-Since WebDAV is currently the only way to encrypt data in transit, we continuously try to improve the security of our WebDAV doors. We regularly test our WebDAV doors with tools like `the Qualys SSLtest <https://www.ssllabs.com/ssltest/>`_, `nmap <https://nmap.org/>`_, `Greenbone/OpenVAS <http://www.openvas.org/>`_, and others and follow their recommendations.
+Since WebDAV is currently the only way to encrypt data in transit, we continuously try to improve the security of our WebDAV doors. We regularly test our WebDAV doors with tools like `the Qualys SSLtest <https://www.ssllabs.com/ssltest/>`_, `nmap <https://nmap.org/>`_, `Greenbone/OpenVAS <http://www.openvas.org/>`_, and others, and follow their recommendations.
 
-The conclusion: if your data is personal, safely upload it to and download it from dCache, by using WebDAV over ports 2880 or 2883.
+The conclusion: if your data is personal, safely upload it to and download it from dCache, by using WebDAV over ports 2881 or 2884. See :ref:`webdav` for more information.
 
 
 ===============================
