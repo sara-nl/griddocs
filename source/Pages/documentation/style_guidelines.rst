@@ -28,7 +28,7 @@ Use of capitals
   * Virtual Organisation (VO), then VO.
   * User Interface (UI), then UI.
 
-* GridFTP, gridFTP or gridftp? GSIdCap? -> GridFTP, GSIdCap
+* GridFTP, gridFTP or gridftp? GSIdCap? -> GridFTP, GSIdCap, WebDAV
 * OutputSandbox or output sandbox? -> 
 
   * OutputSandbox is the statement in the JDL. Better: ``OutputSandbox`` statement.
