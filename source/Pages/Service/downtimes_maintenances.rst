@@ -29,7 +29,7 @@ If you use want to receive notifications and be prepared for upcoming downtimes 
 
 These subscriptions can be created here: https://operations-portal.egi.eu/downtimes/subscription. 
 
-.. note::  You can use this service only if you have your Grid certificate installed in you browser.
+.. note::  You can use this service only if you have your Grid certificate installed in your browser.
 
 .. topic:: Example of Rule specifications:
 
