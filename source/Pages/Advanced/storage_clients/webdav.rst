@@ -461,12 +461,12 @@ Macaroons are bearer tokens that authorize someone to access certain directories
 
 A Macaroon may contain caveats that limit access. Such caveats can be based on the data path, the activities that may be performed with the data (list, download, upload, etc.), the IP address of the client, or a maximum validity period.
 
-For your convenience, we've created a script called `get-share-link <https://github.com/onnozweers/dcache-scripts/blob/master/get-share-link>`_ that makes it easy to obtain a Macaroon. It's installed on the :abbr:`UI (User Interface)`. Example:
+For your convenience, we've created a script called `get-macaroon <https://github.com/sara-nl/GridScripts/blob/master/get-macaroon>`_ that makes it easy to obtain a Macaroon. It's installed on the :abbr:`UI (User Interface)`. Example:
 
 .. code-block:: console
 
     12:12 ui.grid.surfsara.nl:/home/homer 
-    homer$ get-share-link --url https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/Shared/ --chroot --user homer --duration PT1H --permissions DOWNLOAD,LIST
+    homer$ get-macaroon --url https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/Shared/ --chroot --user homer --duration PT1H --permissions DOWNLOAD,LIST
     Enter host password for user 'homer':
     https://webdav.grid.surfsara.nl:2880/?authz=MDAxY2xvY2F0aW9uIE9wdGlvbmFsLmVtcHR5CjAwMThpZGVudGlmaWVyIGNOMDBnRHRSCjAwMmVjaWQgaWQ6MzEwMjk7MzEwNDAsNDQ0MzYsNDEzODUsMzAwMTM7b25ubwowMDI4Y2lkIGJlZm9yZToyMDE4LTA3LTA1VDEyOjIxOjM3LjQzMVoKMDAzZGNpZCByb290Oi9wbmZzL2dyaWQuc2FyYS5ubC9kYXRhL3VzZXJzL29ubm8vRGlzay9TaGFyZWQvCjAwMWZjaWQgYWN0aXZpdHk6RE9XTkxPQUQsTElTVAowMDJmc2lnbmF0dXJlIODcyEAeF-oe2VxwSpym6rPP7fNKprXTQEH2qlXwaLKACg
 
@@ -482,7 +482,7 @@ The script can also create an Rclone config file:
 
 .. code-block:: console
 
-    $get-share-link --url https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/Shared/ --chroot --user homer --duration PT1H --permissions DOWNLOAD,LIST --output rclone homers-share
+    $get-macaroon --url https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/Shared/ --chroot --user homer --duration PT1H --permissions DOWNLOAD,LIST --output rclone homers-share
     Enter host password for user 'homer':
     Creating rclone config file homers-share.conf:
     ....
@@ -500,7 +500,7 @@ You can get a Macaroon with X509 authentication too. Please note, that port ``28
     ....
     Your proxy is valid until Fri Jul 06 01:37:31 CEST 2018
 
-    $get-share-link --url https://webdav.grid.surfsara.nl:2883/pnfs/grid.sara.nl/data/lsgrid/homer/Shared --proxy --chroot --duration PT1H
+    $get-macaroon --url https://webdav.grid.surfsara.nl:2883/pnfs/grid.sara.nl/data/lsgrid/homer/Shared --proxy --chroot --duration PT1H
     https://webdav.grid.surfsara.nl:2883/?authz=MDAxY2xvY2F0aW9uIE9wdGlvbmFsLmVtcHR5CjAwMThpZGVudGlmaWVyIGNOMDBnRHRSCjAwMzZjaWQgaWQ6MzY0OTQ7MzE4ODMsNDQ0MzYsNDEzODUsMzEwNDAsMzAwMTM7bHNncmlkCjAwMjhjaWQgYmVmb3JlOjIwMTgtMDctMDVUMTI6Mzg6MDAuODg5WgowMDM5Y2lkIHJvb3Q6L3BuZnMvZ3JpZC5zYXJhLm5sL2RhdGEvbHNncmlkL2hvbWVyL1NoYXJlZAowMDFmY2lkIGFjdGl2aXR5OkRPV05MT0FELExJU1QKMDAyZnNpZ25hdHVyZSBwshmIGsGrEfDt0Mg1wdK00Wgt6lGyps9IQX_zh2OGkwo
 
 For more information, see this presentation from the dCache developers: https://www.dcache.org/manuals/workshop-2017-05-29-Umea/000-Final/anupam_macaroons_v02.pdf
