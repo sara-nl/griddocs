@@ -68,13 +68,14 @@ Synopsis::
     # make sure that the job will be submitted to the 'short' queue
     Requirements=(RegExp("gina.sara.nl:8443/cream-pbs-short", other.GlueCEUniqueID));
     # make sure that the job will be submitted to the 'medium' queue
-    #Requirements=(RegExp("gina.sara.nl:8443/cream-pbs-medium", other.GlueCEUniqueID));
+    Requirements=(RegExp("gina.sara.nl:8443/cream-pbs-medium", other.GlueCEUniqueID));
     # make sure that the job will be submitted to the 'long' queue
-    #Requirements=(RegExp("gina.sara.nl:8443/cream-pbs-long", other.GlueCEUniqueID));
+    Requirements=(RegExp("gina.sara.nl:8443/cream-pbs-long", other.GlueCEUniqueID));
 
 Jobs in short queues tend to get a higher priority, jobs in long queues
 tend to get a lower priority. You can use the :ref:`queues guideline <gina-specs-queues>` 
-for determining in which queue your job will run. 
+for determining in which queue your job will run based on your VO. The supported queues and
+their respective wall-time limits are the following:
 
    +------------+-------------------------+
    | queue      |  job length in minutes  |
