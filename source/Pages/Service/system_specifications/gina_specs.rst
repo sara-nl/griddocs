@@ -120,9 +120,9 @@ Queues
 =============== =========================== ============================
 Queue           Max. Walltime (hh:mm:ss)    VOs(group) allowed
 =============== =========================== ============================
-long            96:00:00                    geant4 atlas(production) projects.nl(tropomi)
-medium          36:00:00                    astron atlas alice bbmri.nl beapps biomed dans drihm.eu enmr.eu esr euclid-ec.org geant4 lhcb lofar lsgrid nlesc.nl omegac pvier xenon.biggrid.nl projects.nl
-short           04:00:00                    astron atlas bbmri.nl beapps biomed dans drihm.eu enmr.eu esr euclid-ec.org geant4 lhcb lofar lsgrid nlesc.nl omegac pvier xenon.biggrid.nl projects.nl  
+long            96:00:00                    geant4 atlas(production) projects.nl(tropomi) virgo
+medium          36:00:00                    astron atlas alice auger bbmri.nl beapps biomed dans enmr.eu esr geant4 lhcb lofar lsgrid nlesc.nl omegac pvier xenon.biggrid.nl projects.nl chem.biggrid.nl euclid-ec.org drihm.eu virgo skatelescope.eu
+short           04:00:00                    astron atlas auger bbmri.nl beapps biomed dans enmr.eu esr geant4 lhcb lofar lsgrid nlesc.nl omegac pvier xenon.biggrid.nl projects.nl chem.biggrid.nl euclid-ec.org drihm.eu 
 infra           00:30:00                    dteam ops pvier
 =============== =========================== ============================
 
