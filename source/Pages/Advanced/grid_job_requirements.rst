@@ -58,10 +58,23 @@ sure that your requirement uses the 'greater than or equal to' syntax
 (``>=``).
 
 
+Specifying the queue
+==========================
+
+**Parameter: other.GlueCEUniqueID**
+
+Synopsis::
+
+    # make sure that the job will be submitted to the 'short' queue
+    Requirements=(RegExp("gina.sara.nl:8443/cream-pbs-short", other.GlueCEUniqueID));
+    # make sure that the job will be submitted to the 'medium' queue
+    #Requirements=(RegExp("gina.sara.nl:8443/cream-pbs-medium", other.GlueCEUniqueID));
+    # make sure that the job will be submitted to the 'long' queue
+    #Requirements=(RegExp("gina.sara.nl:8443/cream-pbs-long", other.GlueCEUniqueID));
+
 Jobs in short queues tend to get a higher priority, jobs in long queues
 tend to get a lower priority. You can use the :ref:`queues guideline <gina-specs-queues>` 
-for determining in which queue your job will run. Note that you need to 
-convert the hours in minutes in your :abbr:`JDL (Job Description Language)` requirement, e.g.:
+for determining in which queue your job will run. 
 
    +------------+-------------------------+
    | queue      |  job length in minutes  |
