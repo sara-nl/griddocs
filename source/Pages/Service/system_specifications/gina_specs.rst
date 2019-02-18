@@ -126,5 +126,7 @@ short           04:00:00                    astron atlas auger bbmri.nl beapps b
 infra           00:30:00                    dteam ops pvier
 =============== =========================== ============================
 
+``Last update: February 2019``
+
 The Grid jobs submitted to the queues above are restricted by the walltime limit, not the CPU limit.
 
