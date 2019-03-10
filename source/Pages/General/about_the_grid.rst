@@ -4,7 +4,7 @@
 About the Grid
 **************
 
-In this page you will find general information about the Grid, how it works and what is suited for:
+In this page you will find some general information about the Grid, how it works and what is suited for:
 
 .. contents:: 
     :depth: 4
