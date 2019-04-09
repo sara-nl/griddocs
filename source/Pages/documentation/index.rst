@@ -85,6 +85,10 @@ Optionally you can provide an output location (default: ./build) and the docker 
 
     ./build.sh /alternative/output/path/ docker_image_alternative_name
 
+For example, you csn use the latest readthedocs image with:
+
+    ./build_mac.sh mybuild readthedocs/build:latest
+
 .. _test-on-sphinx:
 
 Sphinx local installation
