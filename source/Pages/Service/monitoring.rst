@@ -21,7 +21,7 @@ The webpage below contains monitoring information about the usage of various sys
  
 * `SURFsara systems usage`_
  
-More specific monitoring information about the Grid systems can be found in the following website:
+More specific monitoring information about the Grid jobs usage can be found in the following website:
 
 * `SURFsara Grid systems`_
 
@@ -56,7 +56,7 @@ The following site provides Grid sites info updated by participating NGIs:
 
 .. _`SURFsara systems usage`: https://ganglia.surfsara.nl/
 
-.. _`SURFsara Grid systems`: http://web.grid.sara.nl/monitoring/
+.. _`SURFsara Grid systems`: https://jobsview.grid.surfsara.nl/grafana
 
 .. _`EGI Accounting portal`: http://accounting.egi.eu/egi.php
 
