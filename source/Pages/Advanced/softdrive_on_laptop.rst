@@ -238,7 +238,13 @@ Mac OS, Centos, Ubuntu
 
 	$ mkdir /cvmfs/softdrive.nl /var/lib/cvmfs
 
-* Mount the SoftDrive diretory (make sure that Squid is running):
+* Make sure that Squid is running:
+
+.. code-block:: bash
+
+	$ service squid restart
+
+* Mount the SoftDrive diretory :
 
 .. code-block:: bash
 
