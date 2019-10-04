@@ -20,7 +20,7 @@ DigiCert CA allows you to get your Grid certificate *instantly* from the GEANT T
 * Access the `DigiCert portal`_
 * Select your institution from the list and login with your account
 * Request a so called Grid certificate. Select: **Product:** ``Grid Premium``
-* Before, you could leave the CSR empty and your browser would generate one. This no longer works. You will have to paste your own CSR. This page will be updated soon to include instructions how to do that.
+* In the past, you could leave the CSR empty and your browser would generate one. This no longer works. You will have to paste your own CSR. This page will be updated soon to include instructions how to do that.
 * If everything went well, after a while you should see this window:
 
 .. image:: /Images/digicert_install_cert.png
