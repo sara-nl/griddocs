@@ -130,3 +130,9 @@ infra           00:30:00                    dteam ops pvier
 
 The Grid jobs submitted to the queues above are restricted by the walltime limit, not the CPU limit.
 
+Information on the queues available on the cluster at Nikhef can be found `here`_
+
+.. Links:
+
+.. _`here`: https://wiki.nikhef.nl/grid/Grid@Nikhef 
+
