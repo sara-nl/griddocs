@@ -329,7 +329,7 @@ dCache is configured to use Adler32 checksums by default, for performance reason
 
 dCache does not enable a user to add MD5 checksums of **existing** data.
 
-We may however, if your project needs it, change the default checksum from Adler32 to MD5 for your poolgroups. From the moment we do that, for new files, dCache will store MD5 checksums in its database, and this MD5 checksum will be used to verify file integrity during operations. Checksums for existing data will not be recalculated however: they will remain Adler32.
+We may however, if your project needs it, change the default checksum from Adler32 to MD5 for your poolgroups. From the moment we do that, for new files, dCache will store MD5 checksums in its database, and this MD5 checksum will be used to verify file integrity during operations. For existing data, we can tell dCache to calculate the new checksums. Tape data will have to be staged to do this. MD5 checksums require more CPU than Adler32, so there will be a performance impact for writing, staging and reading data.
 
 Checksums can be listed with `srmls -l`:
 
