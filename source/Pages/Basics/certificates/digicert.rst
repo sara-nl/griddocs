@@ -79,7 +79,7 @@ Convert crt to PEM
 
 .. code-block:: console
 
-   $cat userkey.pem usercert.crt > usercert.pem   #replace the usercert.crt file with your certificate file
+   $cat usercert.crt > usercert.pem   #replace the usercert.crt file with your certificate file 
 
 * Set the proper permissions to your certificate files:
 
