@@ -24,6 +24,7 @@ DigiCert CA allows you to get your Grid certificate *instantly* from the GEANT T
 * In the past, you could leave the CSR empty and your browser would generate one. This no longer works. You will have to paste your own CSR. Open a terminal on your laptop or from the :abbr:`UI (User Interface)` generate the CSR with the following command:
 
  .. code-block:: console
+ 
     $openssl genrsa -out grid.key 2048
     $openssl req -new -key grid.key -out grid.csr
 
