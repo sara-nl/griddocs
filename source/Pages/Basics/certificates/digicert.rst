@@ -154,8 +154,6 @@ The certificate and private key file should now be present in the ``.globus`` di
    $chmod 644 usercert.pem
    $chmod 400 userkey.pem
    
-* You may now delete the grid.csr and grid.key files from your laptop.
-
 .. _digicert_browser_install:
 
 ================================================
