@@ -21,16 +21,32 @@ DigiCert CA allows you to get your Grid certificate *instantly* from the GEANT T
 * Access the `DigiCert portal`_
 * Select your institution from the list and login with your account
 * Request a so called Grid certificate. Select: **Product:** ``Grid Premium``
-* In the past, you could leave the CSR empty and your browser would generate one. This no longer works. You will have to paste your own CSR. Open a terminal on your laptop or from the :abbr:`UI (User Interface)` generate the CSR with the following command:
+* In the past, you could leave the CSR empty and your browser would generate one. This no longer works. You will have to paste your own CSR. Open a terminal on your laptop or from the :abbr:`UI (User Interface)` generate the CSR with the following commands:
 
  .. code-block:: console
  
-    $openssl genrsa -out grid.key 2048
-    $openssl req -new -key grid.key -out grid.csr
-
-    Generating a 2048 bit RSA private key
-    .....+++
-    writing new private key to 'grid.key'
+    $openssl genrsa -aes256 -out userkey.pem 2048
+    
+    Generating RSA private key, 2048 bit long modulus
+    ................................................+++++
+    .......................................................+++++
+    e is 65537 (0x10001)
+    Enter pass phrase for userkey.pem:
+    Verifying - Enter pass phrase for userkey.pem:
+ 
+ Please choose a strong pass phrase. This is the pass phrase you will be asked in some of the steps below as well as when creating grid proxies so remember it well.
+ 
+.. code-block:: console
+     
+    $openssl req -new -key userkey.pem -out grid.csr
+    
+    Enter pass phrase for userkey.pem:         
+    
+    You are about to be asked to enter information that will be incorporated into your certificate request.
+    What you are about to enter is what is called a Distinguished Name or a DN.
+    There are quite a few fields but you can leave some blank
+    For some fields there will be a default value,
+    If you enter '.', the field will be left blank.
     -----
     Country Name (2 letter code) []:NL
     State or Province Name (full name) []:
@@ -46,7 +62,7 @@ DigiCert CA allows you to get your Grid certificate *instantly* from the GEANT T
 
 Please enter your own full name as 'Common Name' and the institutional email address. The rest of the fields can be left empty. 
 
-* The above step will create two files - grid.key and grid.csr. You need to copy the contents of the grid.csr file in the CSR field in the Digicert portal in your browser. You can display the contents of the grid.csr file with the following command:
+* The above step will create the grid.csr file. You need to copy the contents of this file in the CSR field in the Digicert portal in your browser. You can display its contents with the following command:
 
   .. code-block:: console
 
@@ -81,18 +97,7 @@ Convert crt to PEM
 
    $cat yournamefile.crt > usercert.pem   #replace the yournamefile.crt file with your certificate file 
    
-* The grid.key file (this was generated while creating the CSR) should be converted as follows: 
-
-.. code-block:: console
-
-   $openssl rsa -aes256 -in grid.key -out userkey.pem 
    
-    writing RSA key
-    Enter PEM pass phrase:
-    Verifying - Enter PEM pass phrase:
-
-Please choose a strong password. This is the password you will be asked for when creating grid proxies so remember it well.
-
 * Set the proper permissions to your certificate files:
 
 .. code-block:: console
