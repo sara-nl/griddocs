@@ -24,12 +24,12 @@ DigiCert CA allows you to get your Grid certificate *instantly* from the GEANT T
 * In the past, you could leave the CSR empty and your browser would generate one. This no longer works. You will have to paste your own CSR. Open a terminal on your laptop or from the :abbr:`UI (User Interface)` generate the CSR with the following command:
 
  .. code-block:: console
-
-    $openssl req -nodes -newkey rsa:2048 -sha256 -keyout userkey.pem -out req.csr
+    $openssl genrsa -out grid.key 2048
+    $openssl req -new -key grid.key -out grid.csr
 
     Generating a 2048 bit RSA private key
     .....+++
-    writing new private key to 'userkey.pem'
+    writing new private key to 'grid.key'
     -----
     Country Name (2 letter code) []:NL
     State or Province Name (full name) []:
@@ -43,13 +43,13 @@ DigiCert CA allows you to get your Grid certificate *instantly* from the GEANT T
     to be sent with your certificate request
     A challenge password []:
 
-Please enter your own name as 'Common Name' and the institutional email address. The rest of the fields can be left empty. Please choose a strong challenge password.
+Please enter your own full name as 'Common Name' and the institutional email address. The rest of the fields can be left empty. 
 
-* The above step will create two files - usekey.pem and req.csr. You need to copy the contents of the req.csr file in the CSR field in the Digicert portal in your browser. You can display the contents of the req.csr file with the following command:
+* The above step will create two files - grid.key and grid.csr. You need to copy the contents of the grid.csr file in the CSR field in the Digicert portal in your browser. You can display the contents of the grid.csr file with the following command:
 
   .. code-block:: console
 
-     $cat req.csr
+     $cat grid.csr
 
 * After you fill in the CSR and click on *request certificate*, the certificate will be sent to you by email and it can also be dowloaded from the DigiCert portal.
 
@@ -74,12 +74,23 @@ Convert crt to PEM
 =====================
 
 * Download the certificate file and unzip it. Open a terminal and go to the directory where the .crt files are available.
-* Copy the usercert.pem file (this was generated while creating the CSR) into this folder
 * The following command will convert the certificate in the PEM format
 
 .. code-block:: console
 
-   $cat usercert.crt > usercert.pem   #replace the usercert.crt file with your certificate file 
+   $cat yournamefile.crt > usercert.pem   #replace the yournamefile.crt file with your certificate file 
+   
+* The grid.key file (this was generated while creating the CSR) should be converted as follows: 
+
+.. code-block:: console
+
+   $openssl rsa -aes256 -in grid.key -out userkey.pem 
+   
+    writing RSA key
+    Enter PEM pass phrase:
+    Verifying - Enter PEM pass phrase:
+
+Please choose a strong password. This is the password you will be asked for when creating grid proxies so remember it well.
 
 * Set the proper permissions to your certificate files:
 
@@ -99,7 +110,7 @@ Convert PEM to pkcs12
 
    openssl pkcs12 -export -inkey userkey.pem -in usercert.pem -out browsercert.p12
 
-Note that you will first need to enter the password that was used to generate the CSR. Next, you need to enter a password to protect the exported key. Enter that password again to verify. Note that you must enter a password and the password must be at least 12 characters; if the password is too short, openssl will fail without error.
+Note that you will first need to enter the password that was used when converting the grid.key file to userkey.pem. Next, you need to enter a password to protect the exported key. Enter that password again to verify. Note that you must enter a password and the password must be at least 12 characters; if the password is too short, openssl will fail without error.
 
 .. _digicert_ui_install:
 
@@ -136,6 +147,8 @@ The certificate and private key file should now be present in the ``.globus`` di
    $cd $HOME/.globus
    $chmod 644 usercert.pem
    $chmod 400 userkey.pem
+   
+* You may now delete the grid.csr and grid.key files from your laptop.
 
 .. _digicert_browser_install:
 
