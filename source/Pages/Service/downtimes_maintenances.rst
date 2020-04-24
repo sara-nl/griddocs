@@ -40,7 +40,7 @@ If you use want to receive notifications and be prepared for upcoming downtimes 
     * Site: SARA-MATRIX
     * Node: All nodes
     * VO: All VOs
-    * Comm. channels: click on 'Add comm'. Then '+Add new' -> Type: Email(HTML), Value: your email address -> click 'Close'
+    * Comm. channels: click on 'Add comm'. Then '+Add new' -> Type: Email(HTML), Value: put your email address and click 'Enter' in the same field box -> click 'Close'
 * Click on `Save rules specifications` to take effect. From now on you should receive notifications when the Gina cluster or SURFsara dCache has a downtime 
 
 
