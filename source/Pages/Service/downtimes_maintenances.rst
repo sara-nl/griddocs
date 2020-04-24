@@ -37,7 +37,7 @@ If you use want to receive notifications and be prepared for upcoming downtimes 
 * Create the following rule to receive notifications 
     * Rule: I WANT
     * Region: NGI_NL
-    * Site: All sites
+    * Site: SARA-MATRIX
     * Node: All nodes
     * VO: All VOs
     * Comm. channels: click on 'Add comm'. Then '+Add new' -> Type: Email(HTML), Value: your email address -> click 'Close'
