@@ -18,7 +18,7 @@ You can lookup announcements for the current status of the Grid systems, includi
 
     ``Systems > System status > National e-Infrastructure Grid Maintenances``
 
-Direct link: http://web.grid.sara.nl/cgi-bin/eInfra.py 
+Direct link: https://ganglia.grid.surfsara.nl/cgi-bin/eInfra.py
 
  
 =====================
@@ -27,20 +27,21 @@ Upcoming maintenances
 
 If you use want to receive notifications and be prepared for upcoming downtimes and maintenances, you can create personal subscriptions to receive announcements tailored specifically for the Grid services and clusters that are relevant for you. 
 
-These subscriptions can be created here: https://operations-portal.egi.eu/downtimes/subscription. 
-
-.. note::  You can use this service only if you have your Grid certificate installed in your browser.
-
-.. topic:: Example of Rule specifications:
-
+* Login to the portal here: https://operations-portal.egi.eu/ (click on EGI button)
+* Select your academic or social account and login
+* The first time you login you will be asked to "Sign Up EGI user community"
+    * Click and review the terms & conditions. Once you agree you will receive an email. Click on the link to verify address
+    * Accept the invitation and verify again
+* You should have now logged in successfully to the portal
+* Click on Downtimes Link button and then on the top right “SUBSCRIPTION”. Add your email as Subscriber
+* Create the following rule to receive notifications 
     * Rule: I WANT
     * Region: NGI_NL
     * Site: All sites
     * Node: All nodes
     * VO: All VOs
-    * Comm. channels: Add new -> Email
-
-    Once you make the rule, click on `Save rules specifications` to take effect.
+    * Comm. channels: click on 'Add comm'. Then '+Add new' -> Type: Email(HTML), Value: your email address -> click 'Close'
+* Click on `Save rules specifications` to take effect. From now on you should receive notifications when the Gina cluster or SURFsara dCache has a downtime 
 
 
 If you need help creating your subscription(s) we are of course willing to assist at helpdesk@surfsara.nl.
