@@ -63,7 +63,7 @@ Please note that the :abbr:`UI (User Interface)` is simply a Linux machine and w
 Get a Grid certificate
 ======================
 
-Grid certificates are supplied by a Certificate Authority (CA). Users affiliated with Dutch institutes can request a digital certificate either by ``DigiCert CA`` or ``DutchGrid CA``.
+Grid certificates are supplied by a Certificate Authority (CA). Users affiliated with Dutch institutes can request a digital certificate either by ``Sectigo`` or ``DutchGrid`` CA.
 
 .. sidebar:: How to obtain a Grid certificate?
 
@@ -76,7 +76,7 @@ Here you can find details for obtaining and installing a Grid certificate:
 .. toctree::
    :maxdepth: 1
 
-   certificates/digicert
+   certificates/sectigo
    certificates/dutchgrid
 
 If you're not affiliated with a Dutch institute, please find a suitable :abbr:`CA (Certificate Authority)` at https://www.igtf.net/pmamap to obtain a Grid certificate from. We also have a :ref:`list of CAs that are supported on the grid <list-of-grid-cas>`.
