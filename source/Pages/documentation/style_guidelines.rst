@@ -1,6 +1,6 @@
 .. toctree::
    :hidden:
-   
+
 .. _doc-style:
 
 ****************
@@ -29,7 +29,7 @@ Use of capitals
   * User Interface (UI), then UI.
 
 * GridFTP, gridFTP or gridftp? GSIdCap? -> GridFTP, GSIdCap, WebDAV
-* OutputSandbox or output sandbox? -> 
+* OutputSandbox or output sandbox? ->
 
   * OutputSandbox is the statement in the JDL. Better: ``OutputSandbox`` statement.
   * output sandbox is the location where the output files are returned.
@@ -70,7 +70,7 @@ Shell commands
      ## Comments should be prefixed with a double ``#``.
 
 * To display the contents of a shell script, use ``.. code-block:: bash``.
-* To display perl, use ``.. code-block:: perl``. If a page only displays perl code, you can use ``.. highlight:: perl`` once and then ``::`` for each code block. See :ref:`topos-perl-client` for an example.
+* To display perl, use ``.. code-block:: perl``. If a page only displays perl code, you can use ``.. highlight:: perl`` once and then ``::`` for each code block. 
 * To display configuration files, use ``.. code-block:: cfg``.
 
 
