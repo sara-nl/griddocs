@@ -26,14 +26,14 @@ General
 
 .. toctree::
    :maxdepth: 1
-   
+
    Pages/General/about_the_grid
    Pages/General/national_grid
    Pages/General/grid_services
    Pages/General/grant_access.rst
-   
 
-======        
+
+======
 Basics
 ======
 
@@ -42,17 +42,17 @@ Basics
 
    Pages/Basics/prerequisites
    Pages/Basics/first_grid_job
-   
-   
+
+
 .. _advanced:
-   
+
 ===============
-Advanced topics 
+Advanced topics
 ===============
-   
+
 .. toctree::
    :maxdepth: 2
-   
+
    Pages/Advanced/grid_software
    Pages/Advanced/grid_storage
 
@@ -70,16 +70,16 @@ Advanced topics
 .. _best-practices:
 
 ==============
-Best practices 
+Best practices
 ==============
 
 .. toctree::
    :maxdepth: 1
-   
+
    Pages/Practices/bootstrap
    Pages/Practices/pilot_jobs
    Pages/Practices/wms2creamce.rst
- 
+
 .. _service-implementation:
 
 ======================
@@ -88,11 +88,10 @@ Service implementation
 
 .. toctree::
    :maxdepth: 1
-   
-   Pages/Service/system_specs
+
    Pages/Service/downtimes_maintenances
    Pages/Service/monitoring
-      
+
 
 =========
 Tutorials
@@ -100,9 +99,9 @@ Tutorials
 
 .. toctree::
    :hidden:
-   
+
    Pages/Tutorials/MOOC/mooc
-   
+
 * :ref:`mooc`
 * `gLite tutorial 2008 <http://www.dutchgrid.nl/events/tutorial08/agenda/Tutorial2008Handout.pdf>`_
 
@@ -113,7 +112,7 @@ Frequently asked questions
 
 .. toctree::
    :maxdepth: 1
-   
+
    Pages/FAQ
    Pages/Troubleshooting
    Pages/documentation/index
