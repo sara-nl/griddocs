@@ -12,7 +12,7 @@ fi
 if [[ "xx" != "x${2}x" ]]; then
   DOCKER_IMAGE="${2}"
 else
-  DOCKER_IMAGE="rtfd-build:base"
+  DOCKER_IMAGE="readthedocs/build:latest"
 fi
 
 # Create the output directory
