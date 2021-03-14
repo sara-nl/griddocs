@@ -4,11 +4,11 @@
 List of Grid CAs
 ****************
 
-If Dutchgrid or Digicert is not an option for you, please have a look at the following list of Certificate Authorities that are supported on the grid.
+If Dutchgrid or Sectigo is not an option for you, please have a look at the following list of Certificate Authorities that are supported on the grid.
 
   .. code-block:: console
 
-    $10:30 ui.grid.sara.nl:/home/homer 
+    $10:30 ui.grid.sara.nl:/home/homer
     $homer$ for rootcert in /etc/grid-security/certificates/*.pem ; do openssl x509 -in $rootcert -noout -subject ; done | sed -e 's/^subject= //' | sort
     /C=AE/O=DarkMatter LLC/CN=DarkMatter Assured CA
     /C=AE/O=DarkMatter LLC/CN=DarkMatter Secure CA

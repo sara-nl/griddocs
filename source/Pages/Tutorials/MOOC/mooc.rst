@@ -171,9 +171,9 @@ Grid Certificate I (extras) :download:`pdf </Pages/Tutorials/MOOC/slides/L8_W2_G
 Obtain a Grid Certificate
 ==========================
 
-.. sidebar:: DigiCert: new way to request a certificate!
+.. sidebar:: Sectigo: new way to request a certificate!
 
-	.. note:: DigiCert CA allows you to get your Grid certificate instantly from the GEANT Trusted Certificate Service (instead of Terena portal), by using your institutional login and SURFconext.  Read the `User Guide`_  or login directly on the `DigiCert portal`_.
+	.. note:: Sectigo allows you to get your Grid certificate instantly from the GEANT Trusted Certificate Service (instead of Terena portal), by using your institutional login and SURFconext.  Read the `User Guide`_  or login directly on the `Sectigo portal`_.
 
 .. raw:: html
 
@@ -759,8 +759,9 @@ EGI-InSPIRE
 .. Links:
 
 .. _`Mooc Animations`: http://web.grid.sara.nl/mooc/animations/
-.. _`User Guide`: https://ca.dutchgrid.nl/tcs/TCS2015help.pdf
+.. _`User Guide`: https://ca.dutchgrid.nl/tcs/TCS-enduser-request-guide-NL-2020-04.pdf
 .. _`DigiCert portal`: https://digicert.com/sso
+.. _`Sectigo portal`: https://cert-manager.com/customer/surfnet/idp/clientgeant
 .. _`W6 screencast1`: https://www.youtube.com/watch?v=QH90-cdgSTw&list=PLvgGDb8k0n2fH1KPLMRG53oVvIl_iR7sU&index=2
 .. _`W6 screencast2`: https://www.youtube.com/watch?v=5EDkcOQmisA&list=PLvgGDb8k0n2fH1KPLMRG53oVvIl_iR7sU&index=7
 .. _`W6 screencast3`: https://www.youtube.com/watch?v=muh5MJLQuE4&list=PLvgGDb8k0n2fH1KPLMRG53oVvIl_iR7sU&index=6

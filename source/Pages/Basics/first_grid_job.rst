@@ -6,12 +6,12 @@ First Grid job
 
 This section summarises all the steps to submit your first job on the Grid, check its status and retrieve the output:
 
-.. contents:: 
+.. contents::
     :depth: 4
 
 .. warning:: You can continue with this guide *only after* you have completed the :ref:`preparations <preparation>` for Grid. If you skipped that, go back to the :ref:`prerequisites` section. Still need help with obtaining or installing your certificate? We can help! Contact us at helpdesk@surfsara.nl.
-	 
-Once you finish with the :ref:`first-grid-job`, you can continue with more :ref:`advanced topics <advanced>` and also :ref:`best-practices`, the section that contains guidelines for porting real complex simulations on the Grid. 
+
+Once you finish with the :ref:`first-grid-job`, you can continue with more :ref:`advanced topics <advanced>` and also :ref:`best-practices`, the section that contains guidelines for porting real complex simulations on the Grid.
 
 
 .. _job-lifecycle:
@@ -19,14 +19,14 @@ Once you finish with the :ref:`first-grid-job`, you can continue with more :ref:
 ==================
 Grid job lifecycle
 ==================
-		
+
 .. sidebar:: Grid job lifecycle
 
                 .. seealso:: Have a look at our mooc video that describes the :ref:`mooc-job-lifecycle` step by step.
-	
+
 To run your application on the Grid you need to describe its requirements in a specific language called **job description language** (JDL). This is similar to the information that we need to specify when we run jobs using a batch scheduling system like :ref:`pbs`, although it is slightly more complex as we are now scheduling jobs across multiple sites.
 
-Except for the application requirements, you also need to specify in the :abbr:`JDL (Job Description Language)` the content of the *input/output sandboxes*. These sandboxes allow you to transfer data to or from the Grid. The input sandbox contains all the files that you want to send with your job to the worker node, like e.g. a script that you want executed. The output sandbox contains all the files that you want to have transferred back to the :abbr:`UI (User Interface)`. 
+Except for the application requirements, you also need to specify in the :abbr:`JDL (Job Description Language)` the content of the *input/output sandboxes*. These sandboxes allow you to transfer data to or from the Grid. The input sandbox contains all the files that you want to send with your job to the worker node, like e.g. a script that you want executed. The output sandbox contains all the files that you want to have transferred back to the :abbr:`UI (User Interface)`.
 
 .. note:: The amount of data that you can transfer using the sandboxes is very limited, in the order of a few megabytes (less than **100MB**). This means that you should normally limit the input sandbox to a few script files and the output sandbox to the stderr and stdout files.
 
@@ -58,11 +58,11 @@ This section will show you how to create a valid proxy:
   .. code-block:: console
 
      $startGridSession lsgrid  #replace lsgrid with your VO
-     
+
   Alternatively, you might have to login to a VO group. In that case, the syntax is as follows:
-  
+
   .. code-block:: console
-  
+
     $startGridSession lsgrid:/lsgrid/vo_group #replace both the 'lsgrid' words with your VO and 'vo_group' with the name of your VO group
 
   You should see a similar output displayed in your terminal:
@@ -94,31 +94,31 @@ This section will show you how to create a valid proxy:
 	If you want to know more, see the advanced section about :ref:`grid-authentication`.
 
 And now you are ready to submit jobs to the Grid! Or copy data from and to the Grid.
-	
+
 
 .. _jdl:
 
-===============================	
+===============================
 Describe your job in a JDL file
 ===============================
 
 To submit a Grid job you must describe this in a plain text file, called :abbr:`JDL (Job Description Language)`. Optionally, you can check the Computing Elements (CEs) that this job may run on. The JDL file will pass the details of your job to the :abbr:`WMS (Workload Management System)`.
 
-.. warning:: Make sure you have started your session and created already a :ref:`valid proxy <startgridsession>`. 
+.. warning:: Make sure you have started your session and created already a :ref:`valid proxy <startgridsession>`.
 
-* Log in to your User Interface. 
-* Create a file with the following content describing the job requirements. Save it as ``simple.jdl``: 
+* Log in to your User Interface.
+* Create a file with the following content describing the job requirements. Save it as ``simple.jdl``:
 
   .. code-block:: cfg
 	:linenos:
-	
+
 	Type = "Job";
 	JobType = "Normal";
 	Executable = "/bin/hostname";
 	Arguments = "-f";
 	StdOutput = "simple.out";
 	StdError = "simple.err";
-	OutputSandbox = {"simple.out","simple.err"}; 
+	OutputSandbox = {"simple.out","simple.err"};
 
 This job involves no large input or output files. It will return to the user the hostname of the Worker Node that the job will land on. This is specified as the ``StdOutput`` file ``simple.out`` declared in the ``OutputSandbox`` statement.
 
@@ -138,8 +138,8 @@ Alternatively, use your delegation ID:
 
 .. code-block:: console
 
-   $glite-wms-job-list-match -d homer simple.jdl # replace homer with your delegation id, in this case your login name 
-	
+   $glite-wms-job-list-match -d homer simple.jdl # replace homer with your delegation id, in this case your login name
+
 .. note:: The ``-a`` option should not be used frequently. It creates a proxy of your certificate 'on-the-fly' when the job is submitted; therefore ``-a`` is quite inefficient when submitting hundreds of jobs.
 
 Your job is now ready. Continue to the next step to submit it to the Grid!
@@ -179,8 +179,8 @@ You should have your ``simple.jdl`` file ready in your :abbr:`UI (User Interface
      /home/homer/jobIds
      ==========================================================================
 
-Note the use of ``-d $USER`` to tell your job that it should use your delegated proxy certificate.	
-	
+Note the use of ``-d $USER`` to tell your job that it should use your delegated proxy certificate.
+
 The option ``-o`` allows you to specify a file (in this case ``jobIDs``) to store the unique job identifier:
 
 * You can use this URL identifier to monitor your job from the command line or your browser and to get the job output.
@@ -192,7 +192,7 @@ The jobID string looks like this:
 
    $cat jobIds
 
-    ###Submitted Job Ids### 
+    ###Submitted Job Ids###
     https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA
 
 
@@ -202,7 +202,7 @@ The jobID string looks like this:
 Track the job status
 ====================
 
-To check the current job status from the command line, apply the following command that queries the :abbr:`WMS (Workload Management System)` for the status of the job. 
+To check the current job status from the command line, apply the following command that queries the :abbr:`WMS (Workload Management System)` for the status of the job.
 
 * After submitting the job, type:
 
@@ -216,7 +216,7 @@ To check the current job status from the command line, apply the following comma
 
      $glite-wms-job-status -i jobIds
 
-* Finally, a third (optional) way to check the job status is with the web browser in which :ref:`you installed your certificate <digicert_browser_install>`. In this browser open the jobID link:
+* Finally, a third (optional) way to check the job status is with the web browser in which you installed your certificate. In this browser open the jobID link:
 
 	https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
 
@@ -252,17 +252,17 @@ retrieve the job output once it is successfully completed, in other words the
 job status has changed from ``RUNNING`` to ``DONE``. The files in the
 output sandbox can be downloaded for approximately one week after the job finishes.
 
-.. note:: 
-        You can choose the output directory with the ``--dir`` option. If you do not use this option then the output will be copied under the :abbr:`UI (User Interface)` ``/scratch`` directory with a name based on the ID of the job.  
+.. note::
+        You can choose the output directory with the ``--dir`` option. If you do not use this option then the output will be copied under the :abbr:`UI (User Interface)` ``/scratch`` directory with a name based on the ID of the job.
 
 * To get the output, type:
 
   .. code-block:: console
 
      $glite-wms-job-output https://wms2.grid.sara.nl:9000/JIVYfkMxtnRFWweGsx0XAA #replace with your jobID
-	
+
 * Alternatively, you can use the jobIDs file:
-	
+
   .. code-block:: console
 
      $glite-wms-job-output --dir . -i jobIds
@@ -295,21 +295,21 @@ Check job output
 ==================
 Recap & Next Steps
 ==================
-        
+
 Congratulations! You have just executed your first job to the Grid!
 
 Let's summarise what we've seen so far.
 
 You interact with the Grid via the :abbr:`UI (User Interface)` machine ``ui.grid.sara.nl``. You describe each job in a JDL (Job Description Language) file where you list which program should be executed and what are the worker node requirements. From the :abbr:`UI (User Interface)`, you create first a proxy of your Grid certificate and submit your job with ``glite-*`` commands. The resource broker, called WMS (short for Workload Management System), accepts your jobs, assigns them to the most appropriate CE (Computing Element), records the jobs statuses and retrieves the output.
 
-This is a short overview of the commands needed to handle simple jobs: 
+This is a short overview of the commands needed to handle simple jobs:
 
 +---------------------+--------------------------------------------------------+
 | startGridSession    | ``startGridSession lsgrid``                            |
 +---------------------+--------------------------------------------------------+
-| submit job          | ``glite-wms-job-submit -d $USER -o jobIds simple.jdl`` |	    
+| submit job          | ``glite-wms-job-submit -d $USER -o jobIds simple.jdl`` |
 +---------------------+--------------------------------------------------------+
-| job status          | ``glite-wms-job-status -i jobIds``                     |	   
+| job status          | ``glite-wms-job-status -i jobIds``                     |
 +---------------------+--------------------------------------------------------+
 | cancel job          | ``glite-wms-job-cancel -i jobIds``                     |
 +---------------------+--------------------------------------------------------+
@@ -317,7 +317,7 @@ This is a short overview of the commands needed to handle simple jobs:
 +---------------------+--------------------------------------------------------+
 
 
-.. seealso:: Try now to port your own application to the Grid. Check out the :ref:`best-practices` section and run the example that suits your use case. The section :ref:`advanced` will help your understanding for several Grid modules used in the :ref:`best-practices`. 
+.. seealso:: Try now to port your own application to the Grid. Check out the :ref:`best-practices` section and run the example that suits your use case. The section :ref:`advanced` will help your understanding for several Grid modules used in the :ref:`best-practices`.
 
 	Done with the :ref:`basics`, but not sure how to proceed? We can help! Contact us at helpdesk@surfsara.nl.
 
@@ -325,4 +325,4 @@ This is a short overview of the commands needed to handle simple jobs:
 .. Links:
 
 .. _`Grid WMS animation`: http://web.grid.sara.nl/mooc/animations/wms.html
-.. _`Grid job status animation`: http://web.grid.sara.nl/mooc/animations/wms_with_status.html 
+.. _`Grid job status animation`: http://web.grid.sara.nl/mooc/animations/wms_with_status.html

@@ -9,7 +9,7 @@ In this section we discuss Grid user certificates in more detail; how to
 convert certificates, and how to find out the details of your Grid
 certificate.
 
-.. contents:: 
+.. contents::
     :depth: 4
 
 
@@ -93,7 +93,7 @@ Different systems use different formats. The two important formats are:
 * PKCS12: stores keys and certificates in one binary file; this
   format is used by browsers.
 
-:ref:`DigiCert <digicert>` creates PKCS12 files, whereas :ref:`DutchGrid <dutchgrid>` creates PEM files.
+:ref:`Sectigo <sectigo>` creates PKCS12 files, whereas :ref:`DutchGrid <dutchgrid>` creates PEM files.
 
 
 Converting from PKCS12 to PEM

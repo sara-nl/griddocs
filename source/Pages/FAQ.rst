@@ -6,8 +6,8 @@ Frequently asked questions
 
 Check out in this page the most commonly asked questions about Grid. If you still have questions, please contact us at helpdesk@surfsara.nl:
 
-.. contents:: 
-    :depth: 4  
+.. contents::
+    :depth: 4
 
 
 ===============
@@ -64,7 +64,7 @@ If you get the following error:
    unable to load certificate 17714:error:0906D064:PEM routines:PEM_read_bio:bad base64
    decode:pem_lib.c:781:
 
-when you use the command ``openssl x509 -text -noout -in usercert.pem``, it means that the email with the certificate wasn't saved properly as plain text (it included the Mime type for formatting). Repeat carerefully the steps as described in :ref:`Retrieve your DutchGrid certificate <retrieve-dutchgrid>` section. 
+when you use the command ``openssl x509 -text -noout -in usercert.pem``, it means that the email with the certificate wasn't saved properly as plain text (it included the Mime type for formatting). Repeat carerefully the steps as described in :ref:`Retrieve your DutchGrid certificate <retrieve-dutchgrid>` section.
 
 
 .. _grid-cert-permissions:
@@ -88,7 +88,7 @@ What are the correct permissions for my certificate files?
 
      -rw-r--r--      1 homer    homer            4499  May 10 13:47  usercert.pem
      -r--------      1 homer    homer             963  May 10 13:43  userkey.pem
- 	
+
 Note that the private key file should be **read-only** and only readable to you.
 
 
@@ -115,14 +115,14 @@ Get non-vomsified proxy locally
   .. code-block:: console
 
      $myproxy-init -d
-    
-  It will first ask your Grid certificate password and then prompt you to enter a MyProxy 
-  passphrase twice. You will use the latter passphrase to download your proxy. 
+
+  It will first ask your Grid certificate password and then prompt you to enter a MyProxy
+  passphrase twice. You will use the latter passphrase to download your proxy.
 
   Here is an example of the displayed output:
 
   .. code-block:: console
-    
+
      Your identity: /O=dutchgrid/O=users/O=sara/CN=Homer Simpson
      Enter GRID pass phrase for this identity:
      Creating proxy .......................... Done
@@ -143,8 +143,8 @@ Get non-vomsified proxy locally
   .. code-block:: console
 
      Enter MyProxy pass phrase:
-     A credential has been received for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson in /tmp/x509up_u39111. 
-    
+     A credential has been received for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson in /tmp/x509up_u39111.
+
 Note that the downloaded proxy will not include the voms attributes.
 
 
@@ -153,22 +153,22 @@ Note that the downloaded proxy will not include the voms attributes.
 How can I renew my certificate?
 ===============================
 
-The personal Grid certificates are valid for a year. This means that every year you need to renew your personal Grid certificate. The procedure for renewing your certificate depends on your CA, either DigiCert or DutchGrid.
+The personal Grid certificates are valid for a year. This means that every year you need to renew your personal Grid certificate. The procedure for renewing your certificate depends on your CA, either Sectigo or DutchGrid.
 
-* For *DigiCert* Grid certificate, you can request a new certificate anytime from the `DigiCert portal <https://digicert.com/sso>`_. Follow this guide to :ref:`obtain and install a DigiCert Grid certificate <digicert>`.
+* For *Sectigo* Grid certificate, you can request a new certificate anytime from the `Sectigo portal <https://cert-manager.com/customer/surfnet/idp/clientgeant>`_. Follow this guide to :ref:`obtain and install a Sectigo Grid certificate <sectigo>`.
 
 * For *DutchGrid* Grid certificate, you have two options:
 
   * When your certificate has already expired, you *have* to request a new certificate from scratch with the jGridstart tool. Follow this guide to :ref:`obtain a DutchGrid certificate <dutchgrid>`.
-  * If your current certificate has *not* expired yet, you can *renew* your certificate. This is a faster procedure because you avoid revisiting your RA for your id verification. What you need to do: 
-  
+  * If your current certificate has *not* expired yet, you can *renew* your certificate. This is a faster procedure because you avoid revisiting your RA for your id verification. What you need to do:
+
     1. Log in to the :abbr:`UI (User Interface)` with X session enabled.
     2. Start the jGridstart tool on the :abbr:`UI (User Interface)` (assuming that your current certificate is installed there): ``java -jar jgridstart-wrapper-XX.jar``
     3. Select ``Actions -> Renew`` from the menu bar.
     4. Generate a new request by verifying your details (name, surname, email, organisation). At this stage you will provide a new password for your new Grid certificate - make sure you keep this safe! Click "Next".
     5. Submit the request. This will create a new private ``userkey.pem`` file in your ``~/.globus`` directory. Click "Next".
     6. You will receive your new certificate within few days via email. Once received, follow the instructions to :ref:`install it on the UI <retrieve-dutchgrid>`.
-  
+
 Keep in mind that when you renew your certificate the certificate key will change too. To avoid mixing up the old and new certificate files, check whether your new certificate and key :ref:`match each other <key-match>`.
 
 
@@ -207,7 +207,7 @@ To find out when your certificate is valid, use:
 
    $openssl x509 -in usercert.pem -noout -dates
 
-This will tell you when your certificate is valid. 
+This will tell you when your certificate is valid.
 
 Note that a key does not have a validity period.
 
@@ -228,7 +228,7 @@ To find out who the certificate belongs to, use:
 
 
 ===============
-Using resources 
+Using resources
 ===============
 
 
@@ -274,11 +274,11 @@ How can I calculate the total CPU time I consumed?
 
 The total CPU time depends on the amount of cores that your application is using and the wallclock time that the corresponding job takes to finish::
 
-	CPU time = #cores x wallclock(per job) x #jobs	
+	CPU time = #cores x wallclock(per job) x #jobs
 
 For example, let's say that a single job takes 12 h to finish on a 4-core machine and we submitted 10,000 of those. The total CPU time spent is::
 
-	CPU time = 4cores x 12h x 10,000 = 480,000 CPU hours ~ 55 CPU years 
+	CPU time = 4cores x 12h x 10,000 = 480,000 CPU hours ~ 55 CPU years
 
 
 .. _cpu-efficiency:
@@ -302,7 +302,7 @@ How can I find all the available Storage Elements and get their SURLS?
 
   .. code-block:: console
 
-     $lcg-infosites --vo lsgrid se 
+     $lcg-infosites --vo lsgrid se
 
 
 
@@ -315,8 +315,8 @@ How can I find all the available Compute Elements and use in my JDL?
 
   .. code-block:: console
 
-     $lcg-infosites --vo lsgrid ce 
-	
+     $lcg-infosites --vo lsgrid ce
+
 Note here that the Total, Running and Waiting numbers are per queue, and the CPU and Free number are per cluster.
 
 * To specify a specific cluster in your :abbr:`JDL (Job Description Language)` file, use the following syntax:
@@ -324,7 +324,7 @@ Note here that the Total, Running and Waiting numbers are per queue, and the CPU
   .. code-block:: cfg
 
      Requirements = (RegExp("rug",other.GlueCEUniqueID)); # this requires the job to land on the "rug" site
-	
+
      # or you can specify the full UI hostname
      Requirements = RegExp("gb-ce-lumc.lumc.nl",other.GlueCEUniqueID); # job lands at lumc
 
@@ -334,16 +334,16 @@ Note here that the Total, Running and Waiting numbers are per queue, and the CPU
 .. Do I need to switch from my local LSG cluster to Grid?
 .. ======================================================
 
-.. If your local cluster is too busy to get a priority or if you want to run hundreds of jobs at the same time, then we advise you to submit through the Grid middleware instead of submitting to the queue directly. There is obviously more capacity when you scale out to multiple clusters and even if there is maintenance on one cluster, your jobs will then be scheduled on other clusters.  
+.. If your local cluster is too busy to get a priority or if you want to run hundreds of jobs at the same time, then we advise you to submit through the Grid middleware instead of submitting to the queue directly. There is obviously more capacity when you scale out to multiple clusters and even if there is maintenance on one cluster, your jobs will then be scheduled on other clusters.
 
 
 .. _pbs-walltime:
 
 How to run PBS jobs with wallclock greater than 36 hours on local clusters?
-=========================================================================== 
+===========================================================================
 
 In order to run :abbr:`PBS (Portable Batch System)` jobs that last more than 36 hours, you need to :ref:`select the proper queue <lsg-specs-queues>` with the ``-q`` flag in your ``qsub`` command when submitting the job:
- 
+
 * If you do *not* use ``-q`` flag and ``lwalltime`` directive, then the medium queue is picked and jobs lasting more than 36 hours will be killed.
 * If you do *not* use ``-q`` flag but specify ``-lwalltime`` directive with value larger than 36 hours, then you request more walltime than the max walltime available in the default medium queue and the job does not start at all.
 * If you use the ``-q`` flag, it is sufficient to get your jobs running for the amount of hours that the specified queue permits.
@@ -355,4 +355,3 @@ How to use the Grid worker node /scratch on Gina?
 =================================================
 
 You should not write data directly under the worker node ``/scratch``, but use your job directory instead. See the instuctions :ref:`here <storage-grid-wn>` to make effiecient use of the local storage on the Grid worker nodes.
-
