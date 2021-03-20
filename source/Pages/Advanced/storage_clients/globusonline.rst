@@ -135,13 +135,19 @@ a Globus Online account. If not, please refer to the previous section.
 
 * Close the browser when finished. You should see a message on the UI shell that the setup completed successfully.
 
-* The non GridFTP-enabled endpoints like Grid user interface machines personal endpoints need to be activated every time prior to usage::
+* The non GridFTP-enabled endpoints like Grid user interface machines personal endpoints need to be activated every time prior to usage with the following command::
 
 .. code-block:: console
 
    $./globusconnect -start
 
-.. note::  The `globusconnect -start` command will keep your session open and the endpoint activated until you stop it with Ctrl+C. You may also run it as background process.
+* The command above will define your home folder on a grid user interface machine as endpoint. If you wish to grant access to other paths that you have access on the same machine, then you can define a comma separated list of full paths that Globus may access as (If no prefix is present, r/w is assumed)::
+
+.. code-block:: console
+
+   $./globusconnect -start -restrict-paths /project/myData/
+
+.. note::  The `globusconnect -start` command will keep your session open and the endpoint activated until you stop it with Ctrl+C. You may also run it as background process in a `screen` session.
 
 * Open a browser in your laptop (the Grid UI Firefox is quite slow) and login to your Globus account to see your new Grid UI Personal endpoint. It should be in status 'ready':
 

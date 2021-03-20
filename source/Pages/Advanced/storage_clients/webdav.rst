@@ -6,9 +6,9 @@
 
 This page describes how to use the webdav protocol. For an overview of storage clients, see :ref:`storage-clients`.
 
-.. contents:: 
+.. contents::
     :depth: 4
- 
+
 
 About WebDAV
 ============
@@ -32,7 +32,7 @@ dCache has the following WebDAV doors:
 
 .. comment: The following is a trick to get non-breaking spaces. See https://stackoverflow.com/questions/11830242/non-breaking-space
 
-.. |nbsp| unicode:: 0xA0 
+.. |nbsp| unicode:: 0xA0
    :trim:
 
 +--------------------------------------+---------------------------+------------------------------------------+
@@ -81,7 +81,7 @@ Disadvantages of redirects:
 * File transfers are sent over HTTP, so they are not encryted. A "man in the middle" might be able to read the data, or even modify it in transit. If privacy is a concern, choose a door that does not redirect.
 * Some WebDAV clients don't handle redirects very well.
 
-If transport security is a requirement, we suggest to use the WebDAV doors on port ``2881`` or ``2884`` for the best transport security. They use only TLSv1.2 or better, and they are configured with encryption ciphers that offer Perfect Forward Secrecy. They have some extra HTTP security headers that may make abuse more difficult. 
+If transport security is a requirement, we suggest to use the WebDAV doors on port ``2881`` or ``2884`` for the best transport security. They use only TLSv1.2 or better, and they are configured with encryption ciphers that offer Perfect Forward Secrecy. They have some extra HTTP security headers that may make abuse more difficult.
 
 There might be some clients that have difficulties connecting to these high security doors. If data security is important to you, we suggest you find clients that do support these improved security settings. In the future, these settings will be applied to ports 2880 and 2883 as well.
 
@@ -185,17 +185,17 @@ Downloading
 To copy a file from dCache to your local machine:
 
 .. code-block:: console
-  
+
    $curl --capath /etc/grid-security/certificates/ --fail --location --user homer \
         https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
         --output zap.tar
-  
+
 Or with ``wget``:
-  
+
 .. code-block:: console
 
    $wget --user=homer --ask-password --ca-directory=/etc/grid-security/certificates \
-        https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+        https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
 The ``--ca-directory`` is probably not necessary anymore. If it is, but you don't have an ``/etc/grid-security/certificates`` directory, you could specify ``--no-check-certificate``, but we don't recommend this.
 
@@ -231,7 +231,7 @@ With Curl you can download only part of a file by specifying `--range`. Example:
         --user homer \
 	https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/myfile \
 	--range 0-4 \
-	--output first-5-bytes 
+	--output first-5-bytes
 
 
 Renaming
@@ -279,20 +279,20 @@ Deleting a file from dCache:
 .. code-block:: console
 
    $curl --capath /etc/grid-security/certificates/ --user homer --location \
-        --request DELETE https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+        --request DELETE https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
 
 Querying file properties
 ------------------------
 
-With curl and a dCache WebDAV door, it's possible to request file properties. This works both with username/password and proxy authentication, provided you use the correct port (``443`` or ``2880`` for username/password, ``2882`` or ``2883`` for proxy authentication). 
+With curl and a dCache WebDAV door, it's possible to request file properties. This works both with username/password and proxy authentication, provided you use the correct port (``443`` or ``2880`` for username/password, ``2882`` or ``2883`` for proxy authentication).
 
 
 --------
 Locality
 --------
 
-This example shows how to query the file locality: whether a file is online or nearline (on tape). This example uses username/password authentication:
+This example shows how to query the file locality: whether a file is online or nearline (on tape). This example uses username/password authentication::
 
 .. code-block:: console
 
@@ -313,7 +313,7 @@ See :ref:`staging` for more information about file locality.
 Adler32 checksums
 -----------------
 
-This example shows how to get the Adler32 checksum of a stored file. dCache uses Adler32 checksums by default, but this can be configured per project. 
+This example shows how to get the Adler32 checksum of a stored file. dCache uses Adler32 checksums by default, but this can be configured per project.
 
 The returned checksum comes from the dCache database, so it is a very efficient way to check your files. dCache does checksum checks on most operations, so you can safely assume the checksum matches the stored file.
 
@@ -331,7 +331,7 @@ Here an example output:
    Digest: adler32=46fd067a
 
 
-Here is an alternative way to query an Adler32 checksum:
+Here is an alternative way to query an Adler32 checksum::
 
 .. code-block:: console
 
@@ -379,7 +379,7 @@ The output should look similar to this:
 
    0f43fa5a262c476393018f7329080fa7
 
-An alternative way to query an MD5 checksum:
+An alternative way to query an MD5 checksum::
 
 .. code-block:: console
 
@@ -397,7 +397,7 @@ An alternative way to query an MD5 checksum:
    | base64 --decode \
    | xxd -p
 
-Queries can be combined to reduce transaction overhead:
+Queries can be combined to reduce transaction overhead::
 
 .. code-block:: console
 
@@ -465,7 +465,7 @@ For your convenience, we've created a script called `get-macaroon <https://githu
 
 .. code-block:: console
 
-    12:12 ui.grid.surfsara.nl:/home/homer 
+    12:12 ui.grid.surfsara.nl:/home/homer
     homer$ get-macaroon --url https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/Shared/ --chroot --user homer --duration PT1H --permissions DOWNLOAD,LIST
     Enter host password for user 'homer':
     https://webdav.grid.surfsara.nl:2880/?authz=MDAxY2xvY2F0aW9uIE9wdGlvbmFsLmVtcHR5CjAwMThpZGVudGlmaWVyIGNOMDBnRHRSCjAwMmVjaWQgaWQ6MzEwMjk7MzEwNDAsNDQ0MzYsNDEzODUsMzAwMTM7b25ubwowMDI4Y2lkIGJlZm9yZToyMDE4LTA3LTA1VDEyOjIxOjM3LjQzMVoKMDAzZGNpZCByb290Oi9wbmZzL2dyaWQuc2FyYS5ubC9kYXRhL3VzZXJzL29ubm8vRGlzay9TaGFyZWQvCjAwMWZjaWQgYWN0aXZpdHk6RE9XTkxPQUQsTElTVAowMDJmc2lnbmF0dXJlIODcyEAeF-oe2VxwSpym6rPP7fNKprXTQEH2qlXwaLKACg
@@ -508,10 +508,10 @@ For more information, see this presentation from the dCache developers: https://
 
 Graphical access with Cyberduck
 ===============================
-  
+
 To work with WebDAV on Windows or Mac OS X, you can install **Cyberduck** from here: https://cyberduck.io/. Please note that the App store package costs money; the download from the website is free, but will ask for a donation.
 
-* Download the .zip file, open it, and drag the .app file into your Applications folder to install it. 
+* Download the .zip file, open it, and drag the .app file into your Applications folder to install it.
 * Open a WebDAV (HTTP/SSL) connection and connect to the server with your :abbr:`UI (User Interface)` account username and password:
 
   .. code-block:: bash
@@ -526,7 +526,7 @@ Cyberduck with a user certificate
 
 Normally, one would authenticate to dCache using a user certificate or proxy. dCache determines your identity based either on your user certificate or proxy DN, or on your VOMS credentials. However, if you authenticate with your CUA username & password, that identity might not be the same and you may not have access to your own data.
 
-To work around this, it may be useful to have Cyberduck authenticate you using your user certificate. 
+To work around this, it may be useful to have Cyberduck authenticate you using your user certificate.
 
 .. note:: Most users are authenticated based on the VOMS credentials of their proxy. Since you will not use a *VOMS* proxy but a certificate, this identity mapping won't work and you may not have access. Instead, we may need to map your *DN* onto the desired identity instead of your VOMS credentials. If you want to use Cyberduck with certificate authentication, contact us so that we can map your DN to the desired identity.
 

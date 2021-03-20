@@ -1,6 +1,6 @@
-====
+=====================
 New code-block syntax
-====
+=====================
 
 
 Code-block bash
@@ -8,7 +8,7 @@ Code-block bash
 
 .. code-block:: console
    :emphasize-lines: 3
-   
+
    # Comment
      # Indented comment
    $test emphasize-lines

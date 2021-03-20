@@ -55,10 +55,7 @@ between files and build indexes.
 Although Sphinx is quite intuitive, we have created a simple Sphinx cheatsheet
 to help you use the Sphinx syntax:
 
-.. toctree::
-   :maxdepth: 1
-
-   documentation/sphinx_cheatsheet
+* :ref:`Sphinx cheatsheet <cheatsheet>`
 
 
 .. _preview-changes:
@@ -96,13 +93,9 @@ Docker image
 This is the preferred option to build and test your changes. It tries to build
 the documentation the same way as readthedocs.org.
 
-.. toctree::
-   :maxdepth: 1
+* :ref:`Install Docker image <docker-install>`
 
-   documentation/docker_install
-
-* Once the Docker image is ready, find the following script inside your Github fork and run it to build your documentation. Provide an output location (default: ./build) and the Docker
-image name (default: readthedocs/build)::
+* Once the Docker image is ready, find the following script inside your Github fork and run it to build your documentation. Provide an output location (default: ./build) and the Docker image name (default: readthedocs/build)::
 
     ./build.sh
 
@@ -113,7 +106,7 @@ image name (default: readthedocs/build)::
 
 Example::
 
-    ./build.sh mybuild readthedocs/build:latest    
+    ./build.sh mybuild readthedocs/build:latest
 
 .. note:: For Mac OS X, use ``./build_mac.sh`` instead.
 
@@ -125,10 +118,7 @@ Sphinx local installation
 
 For the Sphinx documentation setup locally you will need to:
 
-.. toctree::
-   :maxdepth: 1
-
-   documentation/sphinx_install
+* :ref:`Install Sphinx <sphinx_install>` sphinx_install
 
 * To generate HTML documentation, use the command::
 
