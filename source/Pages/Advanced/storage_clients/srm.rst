@@ -7,10 +7,10 @@
 
 This page explains the use of the ``srm`` client. For an overview of storage clients, see :ref:`storage-clients`.
 
-.. contents:: 
+.. contents::
     :depth: 4
-    
- 
+
+
 
 .. sidebar:: SRM basics
 
@@ -24,10 +24,10 @@ The Storage Resource Manager (short SRM) has been designed to be a single interf
 
 The :ref:`srm` is one of the most popular :ref:`storage-clients`. However, srm- commands are using Java which has the tendency to allocate big amounts of memory and sometimes be slow, also because of the SRM protocol overhead. If transfer speed is important, use :ref:`uberftp`, :ref:`globus` or :ref:`gfal` instead.
 
-.. note:: To run the examples below you need to have a valid proxy, see :ref:`startgridsession`. 
+.. note:: To run the examples below you need to have a valid proxy, see :ref:`startgridsession`.
 
 
-Creating/listing 
+Creating/listing
 ================
 
 * Listing directories on dCache:
@@ -35,24 +35,13 @@ Creating/listing
   .. code-block:: console
 
      $srmls srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/
-  
-* Listing directories on DPM:
 
-  .. code-block:: console
-
-     $srmls srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/
 
 * Create a new directory on dCache:
 
   .. code-block:: console
 
-     $srmmkdir srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/newdir/ 
-
-* Create a new directory on DPM:
-
-  .. code-block:: console
-
-     $srmmkdir srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/newdir 
+     $srmmkdir srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/newdir/
 
 
 Transferring data
@@ -67,17 +56,8 @@ Transferring data
      ## note the flag -server_mode=passive!
      $srmcp -server_mode=passive \
      $      srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
-     $      file:///`pwd`/zap.tar 
+     $      file:///`pwd`/zap.tar
 
-
-* Copy file from DPM to local machine:
-
-  .. code-block:: console
-
-    ## note the flag -server_mode=passive!
-    $srmcp -server_mode=passive \
-    $      srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar \
-    $      file:///`pwd`/zap.tar
 
 * Copy file from local machine to dCache:
 
@@ -85,13 +65,6 @@ Transferring data
 
     $srmcp -debug file:///`pwd`/zap.tar \
     $      srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
-
-* Copy file from local machine to DPM:
-
-  .. code-block:: console
-
-    $srmcp -debug file:///`pwd`/zap.tar \
-    $      srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar
 
 
 Recursive transfer
@@ -115,14 +88,7 @@ Removing data
 
      $srmrm srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
-* Remove a file from DPM:
-
-  .. code-block:: console
-
-     $srmrm srm://gb-se-lumc.lumc.nl:8446/dpm/lumc.nl/home/lsgrid/homer/zap.tar
-
 Recursive delete
 ----------------
 
 Recursive deletion of files is not supported with the ``srm-*`` client commands. It is possible to remove a directory as long as it is empty, i.e. content files have been removed.
-

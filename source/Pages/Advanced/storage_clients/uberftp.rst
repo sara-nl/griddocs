@@ -4,23 +4,23 @@
 ****************
 *uberftp* client
 ****************
- 
+
 This page includes the basic commands to use ``uberftp``. For an overview of storage clients, see :ref:`storage-clients`.
 
-.. contents:: 
+.. contents::
     :depth: 4
-    
-    
-=======    
+
+
+=======
 Uberftp
 =======
 
 .. warning:: We have observed that ``uberftp`` deletes a file after it has unsuccessfully tried to overwrite it. If you write data with ``uberftp``, please make sure you never try to overwrite existing files! ::ref:`globus-url-copy <globus>` does not have this bug.
 
-Creating/listing 
+Creating/listing
 ================
 
-.. note:: To run the examples below you need to have a valid proxy, see :ref:`startgridsession`. 
+.. note:: To run the examples below you need to have a valid proxy, see :ref:`startgridsession`.
 
 * Listing directories on dCache:
 
@@ -28,24 +28,11 @@ Creating/listing
 
      $uberftp -ls gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/
 
-* Listing directories on :abbr:`DPM (Disk Pool Manager)`:
-
-  .. code-block:: console
-
-     $uberftp -ls gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid
-
 * Create a new directory on dCache:
 
   .. code-block:: console
 
-     $uberftp -mkdir gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/newdir 
-
-* Create a new directory on :abbr:`DPM (Disk Pool Manager)`:
-
-  .. code-block:: console
-
-     $uberftp -mkdir gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/newdir 
-
+     $uberftp -mkdir gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/newdir
 
 Transferring data
 =================
@@ -54,26 +41,13 @@ Transferring data
 
   .. code-block:: console
 
-    $uberftp gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar file:///home/homer/zap.tar 
-
-* Copy file from :abbr:`DPM (Disk Pool Manager)` to local machine:
-
-  .. code-block:: console
-
-     $uberftp gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar  file:///home/homer/zap.tar
+    $uberftp gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar file:///home/homer/zap.tar
 
 * Copy file from local machine to dCache:
 
   .. code-block:: console
 
-     $uberftp file:///home/homer/zap.tar gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
-
-* Copy file from local machine to :abbr:`DPM (Disk Pool Manager)`:
-
-  .. code-block:: console
-
-     $uberftp file:///home/homer/zap.tar gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar 
-
+     $uberftp file:///home/homer/zap.tar gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
 .. note::  The asterisk “*” wildcard (match all characters) works with uberftp. Please use this option with caution, especially when deleting files.
 
@@ -85,7 +59,7 @@ The GridFTP protocol allows for parallel streaming of data transfers. This makes
 .. code-block:: console
 
    $uberftp -parallel 4 \
-   $     gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar \
+   $     gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
    $     file:zap.tar
 
 Results may vary based on circumstances. We suggest a number of 4 streams as a start.
@@ -100,21 +74,8 @@ Removing data
 
      $uberftp -rm gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
-* Remove a file from :abbr:`DPM (Disk Pool Manager)`:
-
-  .. code-block:: console
-
-     $uberftp -rm gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/zap.tar
-
 * Remove whole (non-empty) directory with all content from dCache:
 
   .. code-block:: console
 
      $uberftp -rm -r gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/testdir/
-
-
-* Remove whole (non-empty) directory with all content from :abbr:`DPM (Disk Pool Manager)`:
-
-  .. code-block:: console
-
-     $uberftp -rm -r gsiftp://gb-se-lumc.lumc.nl:2811/dpm/lumc.nl/home/lsgrid/homer/testdir/	
