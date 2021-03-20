@@ -7,7 +7,7 @@ Grid storage
 
 In this page we will talk about the Grid storage facilities, the tools to interact with it and the method to handle data that is stored on tape.
 
-.. contents:: 
+.. contents::
     :depth: 4
 
 
@@ -20,7 +20,7 @@ Each cluster on the Grid is equipped with a Storage Element or SE where data is 
 You can interact with the Grid storage from the :abbr:`UI (User Interface)` or from a Worker Node, within your running job. The scripts that can access the Grid storage can be submitted from:
 
 * :ref:`The UI <get-ui-account>`
-* :ref:`The Dutch Grid <dutch-grid>` 
+* :ref:`The Dutch Grid <dutch-grid>`
 
 To use the Grid storage you must:
 
@@ -53,7 +53,7 @@ The storage element located at SURFsara is accessible from *any* Grid cluster or
 Grid file identifiers
 =====================
 
-You can refer to your files on the Grid with different ways depending on which of the available :ref:`storage-clients` you use to manage your files: 
+You can refer to your files on the Grid with different ways depending on which of the available :ref:`storage-clients` you use to manage your files:
 
 Transport URL or TURL
 =====================
@@ -64,7 +64,7 @@ Examples:
 
 	# lsgrid user homer stores the file zap.tar on dCache storage
 	gsiftp://gridftp.grid.surfsara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
-	
+
 	# same, but with a Webdav TURL
 	https://webdav.grid.surfsara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
@@ -84,9 +84,9 @@ Example:
 .. code-block:: bash
 
 	# lsgrid user homer stores the file zap.tar on dCache storage
-	srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar 
+	srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
-	
+
 .. topic:: Clients for SURLs
 
 	* srm
@@ -136,9 +136,9 @@ The last one, ipv4.grid.sara.nl, is a single VM that supports only IPv4 and no I
 Storage clients
 ===============
 
-The ``InputSandbox`` and ``OutputSandbox`` attributes in the :ref:`JDL <JDL>` file are the basic way to move files to and from the User Interface (UI) and the Worker Node (WN). However, when you have large files (from about 100 MB and larger) then you should not use these sandboxes to move data around. Instead you should use the :ref:`storage-types` and work with several :ref:`storage-clients`. 
+The ``InputSandbox`` and ``OutputSandbox`` attributes in the :ref:`JDL <JDL>` file are the basic way to move files to and from the User Interface (UI) and the Worker Node (WN). However, when you have large files (from about 100 MB and larger) then you should not use these sandboxes to move data around. Instead you should use the :ref:`storage-types` and work with several :ref:`storage-clients`.
 
-In this section we will show the common commands to use the various storage clients. 
+In this section we will show the common commands to use the various storage clients.
 
 .. note:: From the many Grid storage clients, we recommend you to use the : :ref:`globus` or :ref:`gfal`. These tools have a clean interface, and their speed is much better on our systems compared with their srm-* equivalents.
 
@@ -175,7 +175,7 @@ In this section we will show the common commands to use the various storage clie
 
 .. toctree::
    :hidden:
-   
+
    storage_clients/uberftp
    storage_clients/globus
    storage_clients/srm
@@ -246,8 +246,8 @@ The example below shows how to stage a list of files with known :abbr:`SURLs (St
 * Create a proxy on the :abbr:`UI (User Interface)`:
 
   .. code-block:: console
-  
-	$startGridSession lsgrid  
+
+	$startGridSession lsgrid
 
 * The file paths should be listed in a file called ``files`` with the following format:
 
@@ -255,8 +255,8 @@ The example below shows how to stage a list of files with known :abbr:`SURLs (St
 
 	/pnfs/grid.sara.nl/data/...
 
-  Let's say that you have a list of :abbr:`SURLs (Storage URLs)` that you want to stage. Convert the list of 
-  :abbr:`SURLs (Storage URLs)` in the ``datasets/example.txt`` file to the desired ``/pnfs`` format: 
+  Let's say that you have a list of :abbr:`SURLs (Storage URLs)` that you want to stage. Convert the list of
+  :abbr:`SURLs (Storage URLs)` in the ``datasets/example.txt`` file to the desired ``/pnfs`` format:
 
   .. code-block:: console
 
@@ -269,7 +269,7 @@ The example below shows how to stage a list of files with known :abbr:`SURLs (St
 	$python state.py
 
 
-* Stage the files:  
+* Stage the files:
 
   .. code-block:: console
 
@@ -337,7 +337,7 @@ Checksums can be listed with `srmls -l`:
 
 	$srmls -l srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test | grep locality
 
-Also through :ref:`webdav` you can retrieve a file's checksum. The checksum value comes from the database so it performs well.
+Also through :ref:`webdav` and :ref:`gfal` you can retrieve a file's checksum. The checksum value comes from the database so it performs well.
 
 
 .. _SRM-interaction-diagram:
