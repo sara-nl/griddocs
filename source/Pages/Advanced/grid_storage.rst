@@ -228,8 +228,107 @@ We support the following clients:
 
 The preferred method for bulk staging is the gfal2 practice below.
 
+.. _gfal2-python:
+
+`gfal2` python API
+===================
+
+The ``gfal2`` API provides a set of functions to support staging operations. Given a SURL or TURL list of files, the following gfal2 scripts can be used:
+
+* `state.py <https://raw.githubusercontent.com/sara-nl/griddocs/master/source/Scripts/staging/state.py>`_: display the locality (state) of the files
+* `stage.py <https://raw.githubusercontent.com/sara-nl/griddocs/master/source/Scripts/staging/stage.py>`_: stage (bring online) the files and return a token
+* `release.py <https://raw.githubusercontent.com/sara-nl/griddocs/master/source/Scripts/staging/release.py>`_: release the files based on the token
+
+The following section gives an example of usage of the gfal2 scripts.
+
+Preparation
+-----------
+
+* Download the scripts on the UI and inspect the usage instructions inside each of `state.py`, `stage.py`, `release.py`.
+
+* Create a file that includes a list with SURLS (`srm://srm.grid.sara.nl/..`) of the files you want to stage from tape, e.g. the file called `mysurls` inside the folder `datasets`:
+
+.. code-block:: bash
+
+	 $cat datasets/mysurls
+   #srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/file1
+   #srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/file2
+   #srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/file3
+
+* In case that you plan to stage a big bulk of data, split the filelist in chunks of 1000 files:
+
+.. code-block:: bash
+
+	 $split -l 1000 --numeric-suffixes [datasets/mysurls] [output_prefix]
+
+State operations
+----------------
+
+* Check the state of the files with:
+
+.. code-block:: bash
+
+	 $python state.py --file [datasets/mysurls]
+   #srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/file1 ONLINE_AND_NEARLINE
+   #srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/file2 NEARLINE
+   #srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/file3 NEARLINE
+
+If your surls filelist is too long it is better to redirect the output of this command in a file.
+
+* Display the total number of files on tape and/or disk:
+
+.. code-block:: bash
+
+   $python state.py --file [datasets/mysurls] | awk '{print $2}' | sort | uniq --count
+   #1 ONLINE_AND_NEARLINE
+   #2 NEARLINE
+
+* If your surls filelist is too long, please use the token returned by the `stage.py` (see section below) to retrieve the state of your files. It improves performance significantly! Given a token id [5d43ee2e:-1992583391] the equivalent commands would be:
+
+.. code-block:: bash
+
+	 $python state.py --file [datasets/mysurls] --token [5d43ee2e:-1992583391]
+   $python state.py --file [datasets/mysurls] --token [5d43ee2e:-1992583391] | awk '{print $2}' | sort | uniq --count
 
 
+Stage operations
+----------------
+
+* Submit a staging request for your surls filelist. The command returns a token that you can use to check the state of the files:
+
+.. code-block:: bash
+
+   $python stage.py --file [datasets/mysurls]
+   #Got token 5d43ee2e:-1992583391
+
+You can store the output in a file stage.log to make sure that you keep safe the token IDs of your stage requests.
+This is required to state/release the files later on.
+
+.. note:: The token always corresponds to the given surls file list. You need to use the exact same surls file in your state/release commands. If you add/remove any file in your surls filelist and use the old token, you will get an error.
+
+.. note:: In case that you plan to stage a big bulk of data, then **submit each chunk of 1000 files with 1 minute interval time** to prevent overloading the staging namespace server.
+
+* The pin lifetime is set in seconds, the default pin time in the script is set to two weeks (or 1209600 sec). You can request the desired pin time with the argument [--pintime pintime]:
+
+.. code-block:: bash
+
+   $python stage.py --file [datasets/mysurls] --pintime [pintime in seconds]
+   #Got token 5d43ee2e:-1992583393
+
+The pin lifetime counts from the moment you submit the request independent to the actual time that the files are on disk.
+
+Unpinning operations
+--------------------
+
+*  Release the pin of your bulk of files with:
+
+.. code-block:: bash
+
+	 $python release.py --file [datasets/mysurls] --token [5d43ee2e:-1992583391]
+
+After submitting the unpinning command above, the files will remain cached but purgeable until new requests will claim the available space.
+
+If your surls filelist is too long it is better to redirect the output of this command in a file.
 
 .. _monitor-staging:
 
@@ -267,7 +366,7 @@ It is an optional action, but helps a lot with the effective system usage.
 
 This command will initiate unpinning of files in ``mysulrs`` list. If your surls filelist is too long it is better to redirect the output of this command in a file.
 
-.. warning:: At the moment neither the ``srm-bring-online`` nor the python ``gfal`` scripts can effectively release a file if there are multiple pin requests. Please use ``srm-release-files`` if you want to release all the pins set to a file.
+.. warning:: At the moment neither the ``srm-bring-online`` nor the python ``gfal release.py`` scripts can effectively release a file if there are multiple pin requests. Please use ``srm-release-files`` if you want to release all the pins set to a file.
 
 
 
