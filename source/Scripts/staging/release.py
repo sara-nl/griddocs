@@ -57,11 +57,11 @@ try:
     errors=context.release(surls, args.token)
     for surl, error in zip(surls, errors):
         if error:
-             print "%s => FAILED to UNPIN : %s" % (surl, error.message)
+             print(("%s => FAILED to UNPIN : %s" % (surl, error.message)))
         else:
-             print "%s UNPINNED " % surl
+             print(("%s UNPINNED " % surl))
 except gfal2.GError as e:
     print("Could not release the files:")
-    print("\t", e.message)
-    print("\t Code", e.code)
+    print(("\t", e.message))
+    print(("\t Code", e.code))
     sys.exit(2)

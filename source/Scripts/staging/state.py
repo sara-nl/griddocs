@@ -64,7 +64,7 @@ if args.token is None:
 
     for surl in surls:
         status = context.getxattr(surl, 'user.status')
-        print surl, status
+        print((surl, status))
 
 else:
 
@@ -75,15 +75,15 @@ else:
         for surl, error in zip(surls, errors):
             if error:
                 if error.code != errno.EAGAIN:
-                    print "%s FAILED : %s" % (surl, error.message)
+                    print(("%s FAILED : %s" % (surl, error.message)))
                     n_terminal += 1
                 else:
-                    print "%s QUEUED" % surl
+                    print(("%s QUEUED" % surl))
             elif not polling:
-                print "%s QUEUED" % surl
+                print(("%s QUEUED" % surl))
             else:
                 n_terminal += 1
-                print "%s READY" % surl
+                print(("%s READY" % surl))
         return n_terminal
 
     sleep_time = 1
