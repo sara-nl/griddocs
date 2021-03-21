@@ -3,7 +3,7 @@
 # Authors:
 #    Written by Ron Trompert.
 #    Some small modifications by Onno Zweers, inspired by Cern scripts https://gitlab.cern.ch/dmc/gfal2-bindings/tree/develop/example/python.
-#    Modifictions to accept any SURL by Natalie Danezi.
+#    Modifictions to accept any SURL and Python3 support by Natalie Danezi.
 # Support:
 #    Contact <helpdesk@surfsara.nl>
 
