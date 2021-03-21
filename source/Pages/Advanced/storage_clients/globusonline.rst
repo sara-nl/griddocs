@@ -135,13 +135,13 @@ a Globus Online account. If not, please refer to the previous section.
 
 * Close the browser when finished. You should see a message on the UI shell that the setup completed successfully.
 
-* The non GridFTP-enabled endpoints like Grid user interface machines personal endpoints need to be activated every time prior to usage with the following command::
+* The non GridFTP-enabled endpoints like Grid user interface machines personal endpoints need to be activated every time prior to usage with the following command:
 
 .. code-block:: console
 
    $./globusconnect -start
 
-* The command above will define your home folder on a grid user interface machine as endpoint. If you wish to grant access to other paths that you have access on the same machine, then you can define a comma separated list of full paths that Globus may access as (If no prefix is present, r/w is assumed)::
+* The command above will define your home folder on a grid user interface machine as endpoint. If you wish to grant access to other paths that you have access on the same machine, then you can define a comma separated list of full paths that Globus may access as (If no prefix is present, r/w is assumed):
 
 .. code-block:: console
 
@@ -179,7 +179,7 @@ when using GlobusOnline together with dCache:
 Activate dCache endpoint
 ------------------------
 
-* To activate a GridFTP-enabled endpoint the user needs to provide the service with a Grid proxy. Login to the grid UI, start a Grid session and create a Grid proxy on the proxy server::
+* To activate a GridFTP-enabled endpoint the user needs to provide the service with a Grid proxy. Login to the grid UI, start a Grid session and create a Grid proxy on the proxy server:
 
 .. code-block:: console
 

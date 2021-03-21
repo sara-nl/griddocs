@@ -190,7 +190,9 @@ In this section we will show the common commands to use the various storage clie
 Staging files
 =============
 
-The :ref:`dCache` storage at SURFsara consists of magnetic tape storage and hard disk storage. If your :ref:`quota allocation <quotas>` includes tape storage, then the data stored on magnetic tape has to be copied to a hard drive before it can be used. This action is called :ref:`staging` or 'bringing a file online'.
+The :ref:`dCache` storage at SURFsara consists of magnetic tape storage and hard disk storage.
+If your :ref:`quota allocation <quotas>` includes tape storage, then the data stored on magnetic tape
+has to be copied to a hard drive before it can be used. This action is called :ref:`staging` or 'bringing a file online'.
 
 .. note:: Staging is important. If your job reads a file that is on tape but not online, your job will wait until dCache brings the file online (or reaches a timeout). This may take minutes when it's quiet, but it may take days when multiple users are staging large datasets. That would be a waste of CPU cycles. But that's not all: the number of concurrent transfers is limited per pool, so it would also be a waste of transfers slots.
 
@@ -209,73 +211,23 @@ The :ref:`dCache` storage at SURFsara consists of magnetic tape storage and hard
 
 There are some more file statuses. See the `SRMv2 specifications <https://sdm.lbl.gov/srm-wg/doc/SRM.v2.2.html#_Toc241633052>`_ for a full list.
 
-.. _staging-single-file:
+The Grid storage files remain online as long as there is free space on the disk pools. When a pool group is full
+(maximum of assigned quota on staging area) and free space is needed, dCache will purge the least recently used
+cached files. The tape replica will remain on tape.
 
-Staging a single file
-=====================
+The amount of time that a file is requested to stay on disk is called ``pin lifetime``. The file will not be purged until
+the ``pin lifetime`` has expired.
 
-.. note:: For the staging examples below, you need a valid proxy, see :ref:`startgridsession`.
+There are different ways to stage your files on dCache. For running the staging commands, it is required to authenticate
+to dCache either with a valid proxy certificate or username/password or a macaroon depending on the client.
+We support the following clients:
 
-Here is an example of how to stage a single file:
+* `gfal2 <https://dmc-docs.web.cern.ch/dmc-docs/gfal2-python.html>`_ supported by Cern. It allows proxy authentication only.
+* `ada <https://github.com/sara-nl/SpiderScripts/tree/master/ada>`_ supported by SURF. It allows proxy or username/password or macaroon authentication.
+* :ref:`srmbringonline <srm-staging>`. It supports proxy authentication only.
 
-.. code-block:: console
+The preferred method for bulk staging is the gfal2 practice below.
 
-	$srm-bring-online srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test
-	srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test brought online, use request id 424966221 to release
-
-Don't use this method to stage multiple files. Use the ``stage.py`` example below instead, because it is much more efficient.
-
-How to display the locality:
-
-.. code-block:: console
-
-	$srmls -l srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/test | grep locality
-	  locality:ONLINE_AND_NEARLINE
-
-
-
-.. _staging-group-of-files:
-
-Staging groups of files
-=======================
-
-The example below shows how to stage a list of files with known :abbr:`SURLs (Storage URLs)`.
-
-* Copy and untar the tarball :download:`staging scripts </Scripts/staging.tar>` to your :abbr:`UI (User Interface)` home directory.
-
-* Create a proxy on the :abbr:`UI (User Interface)`:
-
-  .. code-block:: console
-
-	$startGridSession lsgrid
-
-* The file paths should be listed in a file called ``files`` with the following format:
-
-  .. code-block:: console
-
-	/pnfs/grid.sara.nl/data/...
-
-  Let's say that you have a list of :abbr:`SURLs (Storage URLs)` that you want to stage. Convert the list of
-  :abbr:`SURLs (Storage URLs)` in the ``datasets/example.txt`` file to the desired ``/pnfs`` format:
-
-  .. code-block:: console
-
-	$grep --only-matching '/pnfs/grid.sara.nl.*' datasets/example.txt > files
-
-* Display the locality of the files with:
-
-  .. code-block:: console
-
-	$python state.py
-
-
-* Stage the files:
-
-  .. code-block:: console
-
-	$python stage.py
-
-This script stages a number of files from tape. You can change the pin lifetime in the ``stage.py`` script by changing the ``srmv2_desiredpintime`` attribute in seconds.
 
 
 
@@ -294,21 +246,29 @@ Once you submit your stage requests, you can use the gfal scripts to monitor the
 Unpin a file
 ============
 
-Your files may remain *online* as long as there is free space on the disk pools. When a pool group is full and free space is needed, dCache will purge the least recently used cached files. The tape replica will remain on tape.
+The disk pool where your files are staged has limited capacity and is only meant for data that a user wants to process.
+When you stage a file you set a ``pin lifetime``. The pin lifetime here is set to 1 week, but note that this counts from
+the moment you submit the request independent to the actual time that the files are on disk. The file will not be purged
+until the pin lifetime has expired. Then the data may be purged from disk, as soon as the space is required for new stage
+requests. When the disk copy has been purged, it has to be staged again in order to be processed on a Worker Node.
 
-The disk pool where your files are staged has limited capacity and is only meant for data that a user wants to process on a Grid site. When you :ref:`pin a file <staging-single-file>` you set a `pin lifetime`. The file will not be purged until the pin lifetime has expired. Then the data may be purged from disk, as soon as the space is required for new stage requests. When the disk copy has been purged, it has to be staged again in order to be processed on a Worker Node.
+When a pool group is full with pinned files, staging is paused. Stage requests will just wait until pin lifetimes for
+other files expire. dCache will then use the released space to stage more files until the pool group is full again.
+When this takes too long, stage requests will time out. So pinning should be used moderately.
 
-When a pool group is full with pinned files, staging is paused. Stage requests will just wait until pin lifetimes for other files expire. dCache will then use the released space to stage more files until the pool group is full again. When this takes too long, stage requests will time out. So pinning should be used moderately.
+When you are done with your processing, we recommend you release (or unpin) all the files that you don't need any more.
+It is an optional action, but helps a lot with the effective system usage.
 
-When you are done with your processing, we recommend you release (or unpin) all the files that you don't need any more. In order to unpin a file, run from the UI:
+* Release the pin of your bulk of files with::
 
 .. code-block:: console
 
-	$srm-release-files srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar # replace with your SURL
+	$python release.py --file [datasets/mysurls] --token [5d43ee2e:-1992583391]
 
-This command will initiate unpinning of file ``zap.tar`` (even if you submitted multiple pin requests) and the file will remain cached but purgeable until new requests will claim the available space. It is an optional action, but helps a lot with the effective system usage.
+This command will initiate unpinning of files in ``mysulrs`` list. If your surls filelist is too long it is better to redirect the output of this command in a file.
 
-.. warning:: At the moment neither the ``srm-bring-online`` nor the python ``gfal`` scripts can effectively release a file if there are multiple pin requests. Please use ``srm-release-files``.
+.. warning:: At the moment neither the ``srm-bring-online`` nor the python ``gfal`` scripts can effectively release a file if there are multiple pin requests. Please use ``srm-release-files`` if you want to release all the pins set to a file.
+
 
 
 .. Links:

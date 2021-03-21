@@ -292,7 +292,7 @@ With curl and a dCache WebDAV door, it's possible to request file properties. Th
 Locality
 --------
 
-This example shows how to query the file locality: whether a file is online or nearline (on tape). This example uses username/password authentication::
+This example shows how to query the file locality: whether a file is online or nearline (on tape). This example uses username/password authentication:
 
 .. code-block:: console
 
@@ -331,7 +331,7 @@ Here an example output:
    Digest: adler32=46fd067a
 
 
-Here is an alternative way to query an Adler32 checksum::
+Here is an alternative way to query an Adler32 checksum:
 
 .. code-block:: console
 
@@ -379,7 +379,7 @@ The output should look similar to this:
 
    0f43fa5a262c476393018f7329080fa7
 
-An alternative way to query an MD5 checksum::
+An alternative way to query an MD5 checksum:
 
 .. code-block:: console
 
@@ -397,7 +397,7 @@ An alternative way to query an MD5 checksum::
    | base64 --decode \
    | xxd -p
 
-Queries can be combined to reduce transaction overhead::
+Queries can be combined to reduce transaction overhead:
 
 .. code-block:: console
 

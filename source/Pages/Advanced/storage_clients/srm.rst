@@ -51,20 +51,20 @@ Transferring data
 
 * Copy file from dCache to local machine:
 
-  .. code-block:: console
+.. code-block:: console
 
-     ## note the flag -server_mode=passive!
-     $srmcp -server_mode=passive \
-     $      srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
-     $      file:///`pwd`/zap.tar
+   ## note the flag -server_mode=passive!
+   $srmcp -server_mode=passive \
+   $srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
+   $file:///`pwd`/zap.tar
 
 
 * Copy file from local machine to dCache:
 
-  .. code-block:: console
+.. code-block:: console
 
-    $srmcp -debug file:///`pwd`/zap.tar \
-    $      srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+   $srmcp -debug file:///`pwd`/zap.tar \
+   $srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
 
 Recursive transfer
@@ -84,11 +84,100 @@ Removing data
 
 * Remove a file from dCache:
 
-  .. code-block:: console
+.. code-block:: console
 
-     $srmrm srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+   $srmrm srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
 
 Recursive delete
 ----------------
 
 Recursive deletion of files is not supported with the ``srm-*`` client commands. It is possible to remove a directory as long as it is empty, i.e. content files have been removed.
+
+.. _srm-staging:
+
+Staging
+=======
+
+Staging a single file
+---------------------
+
+* Check the locality status of a file:
+
+.. code-block:: bash
+
+   $srmls -l srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar | grep locality
+   #locality:ONLINE_AND_NEARLINE
+
+
+* Submit a staging request for a single file. After submitting the staging command below, the prompt is waiting for the file to get online. Once the file gets online, a unique request id is returned. The pin lifetime is set in seconds, in this examples the requested pin time is a day (or 86400 sec):
+
+.. code-block:: bash
+
+   $srm-bring-online -request_lifetime=86400 srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+   #srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar brought online, use request id 897617461 to release
+
+
+* Unpin a file:
+
+After submitting the unpinning command below, the file will remain cached but purgeable until new requests will claim the available space:
+
+.. code-block:: bash
+
+   $srm-release-files srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar  -request_tokens=[tokenID] #replace tokenID with 897617461 retrieved above
+
+* Release all pins of a file:
+
+.. code-block:: bash
+
+   $srm-release-files srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar
+
+
+Staging a list of files
+-----------------------
+
+Here is an example to stage a list of files. Let's say that you want to stage all the `.tgz` files in a certain
+dCache directory like `/pnfs/grid.sara.nl/data/lsgrid/homer/`. We will use the command `srm-bring-online`.
+However, when you run this command the prompt will hang until the file is actually staged.
+So you can start first a `screen` shell to make sure your copying process continues when you accidentally
+loose connection to the server.
+
+* Start screen on the UI:
+
+.. code-block:: bash
+
+   $screen
+
+* Create the file list and note that you need to use a SURL for your filepaths:
+
+.. code-block:: bash
+
+   $FILES=`srmls srm://srm.grid.sara.nl/pnfs/grid.sara.nl/data/lsgrid/homer/ | egrep 'tgz' | awk '{print "srm://srm.grid.sara.nl:8443"$2}'`
+
+
+* Check if the list looks OK. All filenames should be split with spaces in one line:
+
+.. code-block:: bash
+
+   $echo $FILES
+   #srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/file1.tgz srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/file2.tgz srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/file3.tgz srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/file4.tgz
+
+* Check the status of the files to see how many are online (Disk) and how many are nearline (Tape):
+
+.. code-block:: bash
+
+   $srmls -l $FILES | grep locality | awk '/ONLINE/{i++};/:NEARLINE/{j++}; END{print "Disk:", i, ", Tape:",  j}'
+   #Disk:  , Tape: 4
+
+
+* Submit the stage command to request staging the bulk of files. You can store the output in a file `stage.log` to save the request IDs. The pin lifetime here is set to 1 week, but note that this counts from the moment you submit the request independent to the actual time that the files are on disk:
+
+.. code-block:: bash
+
+   $srm-bring-online $FILES -request_lifetime=604800 > stage.log
+   # prompt will hang until operation is complete for all the files
+
+* Once processing of the requested files is done, you can release the bulk of files so that the pin is removed and the staging read-pool is free for other data:
+
+.. code-block:: bash
+
+   $srm-release-files $FILES
