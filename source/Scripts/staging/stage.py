@@ -24,7 +24,7 @@ parser=argparse.ArgumentParser(
         srm://...
 
         Usage:
-        $ python stage.py --file [srmlist]
+        $ python stage.py --file [srmlist] [--pintime pintime]
 
         Script output:
         "Got token [token_id]" ==>
@@ -35,6 +35,9 @@ parser=argparse.ArgumentParser(
 
 parser.add_argument('--file', action="store", dest="file", required=True,
     help='File containing file names to be staged starting with: srm://...')
+parser.add_argument('--pintime', action="store", dest="pintime", required=False,
+    type=int, default=1209600,
+    help='Pintime in seconds (how long should the file stay pinned), default 1209600 (= two weeks)')
 
 args=parser.parse_args()
 
@@ -52,13 +55,13 @@ try:
     #   pintime in seconds (how long should the file stay PINNED), e.g. value 1209600 will pin files for two weeks
     #   timeout of request in seconds, e.g. value 604800 will timeout the requests after a week
     #   async is asynchronous request (does not block if != 0)
-    (status, token) = context.bring_online(surls, 1209600, 604800, True)
+    (status, token) = context.bring_online(surls, args.pintime, 604800, True)
     if token:
-        print("Got token %s" % token)
+        print(("Got token %s" % token))
     else:
         print("No token was returned. Are all files online? Check with state.py")
 except gfal2.GError as e:
     print("Could not bring the files online:")
-    print("\t", e.message)
-    print("\t Code", e.code)
+    print(("\t", e.message))
+    print(("\t Code", e.code))
     sys.exit(1)
