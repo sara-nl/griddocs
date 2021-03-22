@@ -62,7 +62,12 @@ fts command at least once every 12h to renew the delegation, e.g. by checking th
 ``fts-transfer-status`` command. When the remaining lifetime of the stored proxy passes under 4 hours,
 fts-transfer-submit will automatically delegate a new one as long as there is a valid *local proxy*.
 
+In our FTS instance that can be found at: `SURFsara FTS UI`_ we limit the access to only some VOs, upon request.
+You will need a proxy with a voms extension before you can use the rest interface.
+
 .. note:: To run the examples in this page you need to have a valid local proxy.  The ``voms-proxy-init`` tool can be used to generate a proxy with :abbr:`VOMS (Virtual Organization Membership Service)` attributes from the personal certificate. Alternatively, you can use the startGridSession tool available on the SURFsara UIs. See also :ref:`startgridsession-explained`.
+
+
 
 First, create a proxy with your VO attributes on the UI:
 
@@ -162,7 +167,7 @@ An example:
    srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/file1 srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/penelope/file1
    srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/homer/file2 srm://srm.grid.sara.nl:8443/pnfs/grid.sara.nl/data/lsgrid/penelope/zap.tar/file2
 
-More information and examples of bulk transfers and FTS in general can be found at `CERN FTS documentation`_.
+More information and examples of bulk transfers and FTS in general can be found at `CERN FTS documentation`_ and `Cern FTS Git repo`_.
 
 
 Monitor Status
@@ -213,11 +218,44 @@ Submit the failed transfers with:
    $fts-transfer-submit -s https://fts.grid.surfsara.nl:8446 --retry 2 --retry-delay 300 --nostreams 4 --timeout 14400 -f srm_fts_retry1.txt >> fts_jobids
 
 
+Using the API with curl
+=======================
+
+* Get user information:
+
+.. code-block:: console
+
+   $curl --capath /etc/grid-security/certificates --cacert /tmp/x509up_uXXXX --cert /tmp/x509up_uXXX  https://fts.grid.surfsara.nl:8446/whoami
+   ##replace x509up_uXXXX with your proxy location and name
+
+* Get your delegation ID:
+
+.. code-block:: console
+
+   $curl --capath /etc/grid-security/certificates --cacert /tmp/x509up_uXXXX --cert /tmp/x509up_uXXX  https://fts.grid.surfsara.nl:8446/whoami | jq '.delegation_id'
+   ##3d3ce1e83def1abc
+
+* Check the expiration time of our delegated credentials
+
+.. code-block:: console
+
+   $curl --capath /etc/grid-security/certificates --cacert /tmp/x509up_uXXXX --cert /tmp/x509up_uXXXX  https://fts.grid.surfsara.nl:8446/delegation/3d3ce1e83def1abc
+   ##{"voms_attrs": ["/lsgrid/Role=NULL/Capability=NULL]"", "termination_time": "2021-03-23T09:31:33"}
+   ##replace 3d3ce1e83def1abc with your delegation ID
+
+* Get job information:
+
+.. code-block:: console
+
+   $curl --capath /etc/grid-security/certificates --cacert /tmp/x509up_uXXXX --cert /tmp/x509up_uXXXX  https://fts.grid.surfsara.nl:8446/jobs/207773b6-8af8-11eb-90ed-fa163e7fa8c6
+   ##replace 207773b6-8af8-11eb-90ed-fa163e7fa8c6 with your job ID
+
 
 .. Links:
 .. _`FTS Cern`: https://fts.web.cern.ch/fts/
 .. _`FTS wiki`: http://fts3-docs.web.cern.ch/fts3-docs/
 .. _`CERN FTS documentation`: http://fts3-docs.web.cern.ch/fts3-docs/docs/cli/cli.html
+.. _`Cern FTS Git repo`: https://gitlab.cern.ch/fts/fts-rest/-/tree/develop/docs/easy/examples
 .. _`SURFsara FTS UI`: https://fts.grid.surfsara.nl:8449/
 .. _`SURFsara WebFTS`: https://webfts.grid.sara.nl:8446/
 .. _`FTS Easy Bindings`: http://fts3-docs.web.cern.ch/fts3-docs/fts-rest/docs/easy/index.html
