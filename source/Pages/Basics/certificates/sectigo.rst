@@ -25,6 +25,6 @@ The following guide will help you:
 * install a Sectigo certificate in your browser
 
 Instructions on acquiring and setting up a Sectigo certificate can be found in the step by step guide here:
-https://ca.dutchgrid.nl/tcs/TCS-enduser-request-guide-NL-2020-04.pdf
+https://ca.dutchgrid.nl/tcs/TCS-enduser-request-guide-NL-2021-06.pdf
 
 .. warning:: If you saved the certificate files on your laptop, please make sure that you copy it from your local machine to your ``.globus`` directory on the :abbr:`UI (User Interface)`.
