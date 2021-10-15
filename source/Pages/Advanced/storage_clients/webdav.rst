@@ -421,15 +421,17 @@ Rclone is a command line tool that you can download from https://rclone.org/down
 Advantages of Rclone are:
 
 * It can sync directories, like rsync does
-* It uses parallel transfers, 4 by default, to get a better performance
+* For directories, it uses parallel transfers, 4 by default, to get a better performance
 
-There is also a disadvantage: it uses only username/password authentication; not X509 certificate/proxy authentication. You'll have to use your CUA credentials and write to a directory where you are permitted to write.
+For authentication, Rclone can use username/password (from the :abbr:`CUA (SURFsara's Central User Administration)`) or token based (macaroon, see below) authentication, but not X509 certificate/proxy authentication. If you have a Grid certificate and want to use Rclone, you can use get-macaroon with your Grid certificate or proxy to create an Rclone config file with a macaroon for authentication; see the chapter below.
 
-Because of this, Rclone is best suited for uploading or downloading large datasets; lacking X509 client authentication, it's not suited for batch processing.
+.. note:: New versions of Rclone will use multiple streams for files that are larger than 200 MB, but dCache may not support that. Please use Rclone with ``--multi-thread-streams 1``. Rclone will then only use one stream per file, but it will still do 4 files in parallel when copying directories.
+
+.. note:: The default idle timeout in Rclone is 5 minutes. This may be too short for the checksum calculation phase when uploading large files. You can increase it with ``--timeout=120m``.
 
 The first time you use rclone, you need to make a profile with ``rclone config``.
 
-You can use for example ``https://webdav.grid.surfsara.nl:443/pnfs/grid.sara.nl/data/lsgrid/homer`` (for performance) or ``https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer`` (with encrypted transport).
+As the remote URL, you can use for example ``https://webdav.grid.surfsara.nl:443/pnfs/grid.sara.nl/data/lsgrid/homer`` (for performance) or ``https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer`` (with encrypted transport).
 
 An example of a profile:
 
@@ -445,7 +447,7 @@ An example of using rclone to copy a directory:
 
 .. code-block:: console
 
-   $rclone copy mydir dcache:rclone-test
+   $rclone --multi-thread-streams 1 --timeout=30m copy mydir dcache:rclone-test
 
 More information on how to use ``rclone`` with WebDAV is here: https://rclone.org/webdav/. There are also graphical user interfaces to ``rclone``; one is `RcloneBrowser <https://github.com/mmozeiko/RcloneBrowser>`_.
 
@@ -455,11 +457,11 @@ More information on how to use ``rclone`` with WebDAV is here: https://rclone.or
 Sharing data with Macaroons
 ===========================
 
-.. warning:: Macaroons are a new feature in dCache and have not been fully tested. There may be some risks involved. Always add sufficient caveats to your Macaroons to avoid abuse. Please contact us if you want to use them.
-
 Macaroons are bearer tokens that authorize someone to access certain directories or files. With this technique, you can share (some of) your data with anyone else. The other person does not need to have a user account or a certificate; only a WebDAV client that supports bearer tokens. Clients that support this are Curl, Rclone and (read only) ordinary browsers such as Firefox. Cyberduck does not support it (`yet <https://trac.cyberduck.io/ticket/10378>`_).
 
 A Macaroon may contain caveats that limit access. Such caveats can be based on the data path, the activities that may be performed with the data (list, download, upload, etc.), the IP address of the client, or a maximum validity period.
+
+.. warning:: Always add sufficient caveats to your Macaroons to avoid theft and abuse!
 
 For your convenience, we've created a script called `get-macaroon <https://github.com/sara-nl/GridScripts/blob/master/get-macaroon>`_ that makes it easy to obtain a Macaroon. It's installed on the :abbr:`UI (User Interface)`. Example:
 
