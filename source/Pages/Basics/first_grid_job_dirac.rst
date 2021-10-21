@@ -190,7 +190,7 @@ To check the current job status from the command line, apply the following comma
 
      $dirac-wms-job-status -f jobid
 
-* Finally, a third (optional) way to check the job status is with the web browser in which you installed your certificate. In this browser open the link:
+* Finally, a third (optional) way to check the job status is with the web browser. The browser you use must have your grid certificate installed. In this browser open the link:
 
 	https://nl-dirac01.grid.surfsara.nl/DIRAC/
 
@@ -233,7 +233,7 @@ output sandbox can be downloaded for approximately one week after the job finish
 
   .. code-block:: console
 
-     $glite-wms-job-output -f jobid
+     $dirac-wms-job-get-output -f jobid
 
 where you should substitute ``jobid`` with the file that you used to store the
 job ids. Please bear in mind the size of your home directory on the :abbr:`UI (User Interface)` when downloading large output files. When dealing with large input and/or output files it is recommended to download the input data directly to the worker node, and upload the output data to a suitable storage space within the job itself. Please check out the :ref:`grid_storage` section for details on various clients supported on the worker nodes and best practices.
