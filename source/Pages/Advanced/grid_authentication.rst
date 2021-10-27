@@ -266,6 +266,20 @@ Here is an example of the displayed output::
 
 	==========================================================================
 
+.. _dirac-authentication:
+
+=======================================
+Authentication for Dirac job submission
+=======================================
+
+When you wish to submit jobs with Dirac, a similar process is followed. The concepts discussed above about proxy creation, adding VO extension information and credential delegation are all also relevant here. Dirac has its own proxy server and these three steps are performed with a single command as described below:
+
+.. code-block:: console
+
+     $source /etc/dirac/pro/bashrc
+     $dirac-proxy-init -g pvier_user -M pvier --valid 168:00
+
+For full details, you can refer to the :ref:`Dirac proxy creation <dirac_proxy>` section.
 
 .. _proxy-info-commands:
 
@@ -302,6 +316,20 @@ Commands for viewing your proxy information
   .. code-block:: console
 
 	$voms-proxy-destroy
+
+
+* To review information of your local Dirac proxy:
+
+  .. code-block:: console
+
+	$dirac-proxy-info
+
+* To remove your local Dirac ``/tmp/x509up_uXXX`` proxy as well as from Dirac proxy server:
+
+  .. code-block:: console
+
+	$dirac-proxy-destroy -a
+
 
 .. note:: ``myproxy-destroy`` will not terminate any job. Jobs will continue
   to run and will fail when the the proxy certificate that was used at the
