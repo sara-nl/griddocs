@@ -267,7 +267,7 @@ Here is an example of the displayed output::
 	==========================================================================
 
 .. _dirac-authentication:
-
+ 
 =======================================
 Authentication for Dirac job submission
 =======================================
