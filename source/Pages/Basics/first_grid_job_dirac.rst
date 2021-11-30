@@ -190,11 +190,11 @@ To check the current job status from the command line, apply the following comma
 
      $dirac-wms-job-status -f jobid
 
-* Finally, a third (optional) way to check the job status is with the web browser. The browser you use must have your grid certificate installed. In this browser open the link:
+.. * Finally, a third (optional) way to check the job status is with the web browser. The browser you use must have your grid certificate installed. In this browser open the link:
 
-	https://nl-dirac01.grid.surfsara.nl/DIRAC/
+..	https://nl-dirac01.grid.surfsara.nl/DIRAC/
 
-You can find the status of your job by clicking on the Job Monitor (in Applications). Note that the URL can only be accessed by you as you are authenticated to the server with the certificate installed in this browser. If your certificate is not installed in this browser, you will get an authentication error.
+.. You can find the status of your job by clicking on the Job Monitor (in Applications). Note that the URL can only be accessed by you as you are authenticated to  the server with the certificate installed in this browser. If your certificate is not installed in this browser, you will get an authentication error.
 
 
 .. _job-cancel:
