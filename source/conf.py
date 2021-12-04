@@ -23,6 +23,7 @@ import os
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
+# Default is Sphinx v1.8.5
 #needs_sphinx = '1.0'
 
 # Add any Sphinx extension module names here, as strings. They can be
