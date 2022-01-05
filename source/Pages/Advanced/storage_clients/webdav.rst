@@ -15,7 +15,7 @@ About WebDAV
 
 The WebDAV protocol has the following advantages:
 
-* It supports not only x509 authentication, but also username & password authentication and :ref:`macaroon <macaroons>` authentication
+* It supports not only x509 (user certificate or proxy) authentication, but also username & password authentication and :ref:`macaroon <macaroons>` authentication
 * It uses the common port 443. Some overly strict firewalls may block outgoing traffic, but port 443 is so common that it is seldom blocked. However, using WebDAV to bypass firewalls should be seen as a temporary solution; it would be better to open up your institute's firewall to allow access to the dCache subnet.
 * It can transfer data over a secure channel; other protocols like GridFTP do authentication over a secure channel but transfer data unencrypted.
 
@@ -35,25 +35,25 @@ dCache has the following WebDAV doors:
 .. |nbsp| unicode:: 0xA0
    :trim:
 
-+--------------------------------------+---------------------------+------------------------------------------+
-| URL including port                   | Authentication method     | Remarks                                  |
-+======================================+===========================+==========================================+
-| https://webdav.grid.surfsara.nl:443  | Username/password         | Redirects on read                        |
-+--------------------------------------+---------------------------+------------------------------------------+
-| https://webdav.grid.surfsara.nl:2880 | Username/password         | No redirects                             |
-+--------------------------------------+---------------------------+------------------------------------------+
-| https://webdav.grid.surfsara.nl:2881 | Username/password         | No redirects; maximum transport security |
-+--------------------------------------+---------------------------+------------------------------------------+
-| https://webdav.grid.surfsara.nl:2882 | User certificate or proxy | Redirects on read and write              |
-+--------------------------------------+---------------------------+------------------------------------------+
-| https://webdav.grid.surfsara.nl:2883 | User certificate or proxy | No redirects                             |
-+--------------------------------------+---------------------------+------------------------------------------+
-| https://webdav.grid.surfsara.nl:2884 | User certificate or proxy | No redirects; maximum transport security |
-+--------------------------------------+---------------------------+------------------------------------------+
-| https://webdav-cert.grid.sara.nl:443 | User certificate or proxy | No redirects; maximum transport security |
-+--------------------------------------+---------------------------+------------------------------------------+
-| https://ipv4.grid.surfsara.nl:*      | Same as webdav.grid.surfsara.nl, but IPv4 only                       |
-+--------------------------------------+---------------------------+------------------------------------------+
++--------------------------------------+-------------------------------+------------------------------------------+
+| URL including port                   | Authentication method         | Remarks                                  |
++======================================+===============================+==========================================+
+| https://webdav.grid.surfsara.nl:443  | User/password, macaroon       | Redirects on read                        |
++--------------------------------------+-------------------------------+------------------------------------------+
+| https://webdav.grid.surfsara.nl:2880 | User/password, macaroon, X509 | No redirects                             |
++--------------------------------------+-------------------------------+------------------------------------------+
+| https://webdav.grid.surfsara.nl:2881 | User/password, macaroon       | No redirects; maximum transport security |
++--------------------------------------+-------------------------------+------------------------------------------+
+| https://webdav.grid.surfsara.nl:2882 | X509, macaroon                | Redirects on read and write              |
++--------------------------------------+-------------------------------+------------------------------------------+
+| https://webdav.grid.surfsara.nl:2883 | X509, macaroon                | No redirects                             |
++--------------------------------------+-------------------------------+------------------------------------------+
+| https://webdav.grid.surfsara.nl:2884 | X509, macaroon                | No redirects; maximum transport security |
++--------------------------------------+-------------------------------+------------------------------------------+
+| https://webdav-cert.grid.sara.nl:443 | X509, macaroon                | No redirects; maximum transport security |
++--------------------------------------+-------------------------------+------------------------------------------+
+| https://ipv4.grid.surfsara.nl:*      | Same as webdav.grid.surfsara.nl, but IPv4 only                           |
++--------------------------------------+-------------------------------+------------------------------------------+
 
 
 Choosing a WebDAV door
