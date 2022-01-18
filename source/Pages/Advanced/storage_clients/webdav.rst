@@ -427,7 +427,7 @@ For authentication, Rclone can use username/password (from the :abbr:`CUA (SURFs
 
 .. note:: New versions of Rclone will use multiple streams for files that are larger than 200 MB, but dCache may not support that. Please use Rclone with ``--multi-thread-streams 1``. Rclone will then only use one stream per file, but it will still do 4 files in parallel when copying directories.
 
-.. note:: The default idle timeout in Rclone is 5 minutes. This may be too short for the checksum calculation phase when uploading large files. You can increase it with ``--timeout=120m``.
+.. note:: The default idle timeout in Rclone is 5 minutes. This may be too short for the checksum calculation phase when uploading large files (>10GB). You can increase it with ``--timeout=240m``.
 
 The first time you use rclone, you need to make a profile with ``rclone config``.
 
