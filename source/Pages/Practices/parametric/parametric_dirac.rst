@@ -21,7 +21,7 @@ Pilot jobs are submitted to the Grid with a specific :ref:`Job Description Langu
 Example
 =======
 
-In the example below, the parametric job will create 3 child jobs (see line 4) that will all run the same executable (see line 6). The value ``_PARAM_`` will be replaced by the actual value of Parameters during the :abbr:`JDL (Job Description Language)` expansion.
+In the example below, the parametric job will create 3 child jobs that will all run the same executable. The value ``%j`` will be replaced by the actual value of Parameters during the :abbr:`JDL (Job Description Language)` expansion.
 
 ``ParameterStart`` defines the starting value for the variation, ``ParameterStep`` the step for each variation and ``Parameters`` defines the value where the submission of jobs will stop (that value itself is not used) . The number of jobs is: 
 (Parameters – ParameterStart) / ParameterStep 
@@ -32,17 +32,24 @@ In the example below, the parametric job will create 3 child jobs (see line 4) t
   .. code-block:: cfg
 	:linenos:
 	
-	JobType = "Parametric";
-	ParameterStart=0;
-	ParameterStep=1;
-	Parameters=3;
-	
-	Executable = "/bin/hostname";
-	Arguments = "-f";
-	StdOutput = "std_PARAM_.out";
-	StdError = "std_PARAM_.err";
-	OutputSandbox = {"std_PARAM_.out","std_PARAM_.err"}; 
+	[
+ 	 Type = "Job";
+ 	 JobName = "Parametric";
+ 	 ParameterStart = 0;
+ 	 ParameterStep = 1;
+ 	 Parameters = 3;
 
+ 	 Executable = "/bin/hostname";
+ 	 Arguments = "-f";
+ 	 StdOutput = "StdOut_%j";			#Name of the file to get the standard output stream
+ 	 StdError = "StdErr_%j";			#Name of the file to get the standard error stream
+ 	 OutputSandbox = {"StdOut_%j","StdErr_%j"};	#j placeholder replaced by Dirac job ID
+ 
+	 Site = "GRID.SURF.nl";         		#Job destination site
+ 	 NumberOfProcessors = 1;       			#Number of cores on a single node, options: 1,2,4,or 8
+ 	 Tags = {"long"};              			#Queue name, long default walltime is 96 hours
+	 #CPUTime = 1000;              			#Max CPU time required by the job in seconds 
+        ]
 
 * You can submit the parametric job as any Grid job:
 
@@ -50,7 +57,7 @@ In the example below, the parametric job will create 3 child jobs (see line 4) t
 
      $dirac-wms-job-submit parametric.jdl -f jobIds 
 	
-In this case, 3 child jobs will be generated. Each job will generate two files: ``std0.out`` and ``std0.err``, ``std1.out`` and ``std1.err``, ``std2.out`` and ``std2.err``.	
+In this case, 3 child jobs will be generated. Each job will generate two files: ``StdOut_0`` and ``StdErr_0``, ``StdOut_1`` and ``StdErr_1``, ``StdOut_2`` and ``StdErr_2``.	
 
 * Monitor the job status to see the the parent job and the 3 child jobs with their status:
 
