@@ -54,7 +54,7 @@ Specifying CPU Time
 
 You may also choose to specify a CPU Time, but at SURF site all jobs will land on the long queue (96 hours) irrespective of the CPU Time specified. But specifying this attribute may offer flexibility for you to use the same JDL for different grid sites where a CPU Time attribute is used to match the job to the correct queue. You can specify this attribute as follows::
 
-    CPUTime = "345600";   #this is in seconds for the long queue
+    CPUTime = 345600;   #this is in seconds for the long queue
 
 
 .. warning:: If a job is not actively using CPU for  
