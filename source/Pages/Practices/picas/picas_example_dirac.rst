@@ -1,4 +1,4 @@
-.. _picas-example:
+.. _picas-example-dirac:
 
 *************
 Picas Example
@@ -6,7 +6,7 @@ Picas Example
 
 This page presents a PiCaS pilot job example:
 
-.. contents:: 
+.. contents::
     :depth: 4
 
 
@@ -19,7 +19,7 @@ Problem description
 		.. seealso:: Check out our mooc videos Picas examples :ref:`Part I <mooc-picas-example1>` and :ref:`Part II <mooc-picas-example2>`.
 
 In this example we will implement the following pilot job workflow:
- 
+
 * First we define and generate the application tokens with all the necessary parameters.
 * Then we define and create a shell script to process one task (*process_task.sh*) that will be sent with the job using the input sandbox. This contains some boiler plate code to e.g. setup the environment, download software or data from the Grid storage, run the application etc. This doesn’t have to be a shell script, however, setting up environment variables is easiest when using a shell script, and this way setup scripts are separated from the application code.
 * We also define and create a Python script to handle all the communication with the token pool server, call the process_task,sh script, catch errors and do the reporting.
@@ -30,7 +30,7 @@ Prerequisites
 =============
 To be able to run the example you must have:
 
-* All the three Grid :ref:`prerequisites` (User Interface machine, Grid certificate, VO membership) 
+* All the three Grid :ref:`prerequisites` (User Interface machine, Grid certificate, VO membership)
 * An account on PiCaS server (send your request to <helpdesk@surfsara.nl>)
 
 
@@ -84,7 +84,7 @@ This example includes a bash script (``./createTokens``) that generates a sensib
 
 .. code-block:: console
 
-    $./createTokens 
+    $./createTokens
     /tmp/tmp.fZ33Kd8wXK
     $cat /tmp/tmp.fZ33Kd8wXK
 
@@ -113,17 +113,17 @@ Now we will start using PiCaS. For this we need the downloaded CouchDB and PiCaS
 .. code-block:: console
 
    $python createTokens.py /tmp/tmp.fZ33Kd8wXK
-	
+
 * Check your database in this link:
 
     https://picas.surfsara.nl:6984/_utils/database.html?homerdb
-    
+
     replace homerdb with your Picas database name
 
-* Create the Views (pools) - independent to the tokens (should be created only once): 
+* Create the Views (pools) - independent to the tokens (should be created only once):
 
 .. code-block:: console
- 
+
    $python createViews.py
 
 
@@ -136,7 +136,7 @@ Run the example locally
 
     $cd sandbox/
     $./startpilot.sh
-    
+
     Connected to the database homerdb sucessfully. Now starting work...
     -----------------------
     Working on token: token_2
@@ -156,17 +156,17 @@ Run the example locally
     Working on token: token_6
     lock 1453570589
     ...
-    
+
 You can monitor the progress for the Tokens that are waiting, running, finished or in error state, from the PiCaS website here:
 
     https://picas.grid.sara.nl:6984/_utils/
-    	
+
 While the :abbr:`UI (User Interface)` has started processing tokens, submit the pilot jobs to the Grid. Continue to the next section ...
-	 
+
 
 Run the example on the Grid
 ---------------------------
-    
+
 * Create a proxy:
 
 .. code-block:: console
@@ -177,8 +177,8 @@ Run the example on the Grid
 
 .. code-block:: console
 
-   $dirac-wms-job-submit fractals.jdl -f jobIDs 
-	
+   $dirac-wms-job-submit fractals.jdl -f jobIDs
+
 
 It will recursively generate an image based on parameters received from PiCas. At this point, some of your tokens are processed on the Grid worker nodes and some of the tokens are already processed on the :abbr:`UI (User Interface)`. Note that the :abbr:`UI (User Interface)` is not meant for production runs, but only for testing few runs before submitting the pilot jobs to the Grid.
 
@@ -187,7 +187,7 @@ It will recursively generate an image based on parameters received from PiCas. A
 .. code-block:: console
 
    $convert output_token_6 output_token_6.png # replace with your output filename
-    
+
 For the tokens that are processed on Grid, you can send the output to the :ref:`Grid Storage <grid-storage>` or some other remote location.
 
 
