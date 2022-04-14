@@ -1,9 +1,9 @@
 .. toctree::
    :hidden:
 
-   parametric/parametric
+   parametric/parametric_dirac
    picas/picas_overview
-   picas/picas_example
+   picas/picas_example_dirac
 
 .. _pilot-jobs:
 
@@ -83,4 +83,4 @@ Pilot Job Frameworks
 There are several pilot frameworks for the Grid. At SURFsara we support ``PiCaS``:
 
  * :ref:`picas-overview`
- * :ref:`picas-example`
+ * :ref:`picas-example-dirac`

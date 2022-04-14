@@ -56,7 +56,6 @@ Advanced topics
    Pages/Advanced/grid_software
    Pages/Advanced/grid_storage
    Pages/Advanced/grid_job_requirements_dirac
-   Pages/Advanced/grid_authentication
    Pages/Advanced/grid_certificates
    Pages/Advanced/host_certificates
 
@@ -72,9 +71,9 @@ Best practices
 .. toctree::
    :maxdepth: 1
 
+   Pages/Practices/parametric/parametric_dirac
    Pages/Practices/bootstrap-dirac
    Pages/Practices/pilot_jobs
-   Pages/Practices/wms2creamce.rst
 
 .. _service-implementation:
 
