@@ -41,7 +41,7 @@ Basics
    :maxdepth: 2
 
    Pages/Basics/prerequisites
-   Pages/Basics/first_grid_job
+   Pages/Basics/first_grid_job_dirac
 
 
 .. _advanced:
@@ -51,15 +51,11 @@ Advanced topics
 ===============
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    Pages/Advanced/grid_software
    Pages/Advanced/grid_storage
-
-.. toctree::
-   :maxdepth: 1
-
-   Pages/Advanced/grid_job_requirements
+   Pages/Advanced/grid_job_requirements_dirac
    Pages/Advanced/grid_authentication
    Pages/Advanced/grid_certificates
    Pages/Advanced/host_certificates
@@ -76,7 +72,7 @@ Best practices
 .. toctree::
    :maxdepth: 1
 
-   Pages/Practices/bootstrap
+   Pages/Practices/bootstrap-dirac
    Pages/Practices/pilot_jobs
    Pages/Practices/wms2creamce.rst
 
