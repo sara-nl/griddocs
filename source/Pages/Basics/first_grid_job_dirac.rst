@@ -4,6 +4,9 @@
 First Grid job with Dirac
 *************************
 
+Our Grid facility is powered by the `DIRAC`_ service. DIRAC provides the workload management system to submit and manage
+user jobs on the Grid. We provide support for the command line tools of DIRAC and access to the DIRAC clients on our Grid :abbr:`UI (User Interface)`.
+
 This section summarises all the steps to submit your first job on the Grid, check its status and retrieve the output:
 
 .. contents::
@@ -11,7 +14,7 @@ This section summarises all the steps to submit your first job on the Grid, chec
 
 .. warning:: You can continue with this guide *only after* you have completed the :ref:`preparations <preparation>` for Grid. If you skipped that, go back to the :ref:`prerequisites` section. Still need help with obtaining or installing your certificate? We can help! Contact us at helpdesk@surfsara.nl.
 
-Once you finish with the :ref:`first-grid-job`, you can continue with more :ref:`advanced topics <advanced>` and also :ref:`best-practices`, the section that contains guidelines for porting real complex simulations on the Grid.
+Once you finish with the :ref:`first-dirac-grid-job`, you can continue with more :ref:`advanced topics <advanced>` and also :ref:`best-practices`, the section that contains guidelines for porting real complex simulations on the Grid.
 
 
 .. _job-lifecycle:
@@ -20,15 +23,15 @@ Once you finish with the :ref:`first-grid-job`, you can continue with more :ref:
 Grid job lifecycle
 ==================
 
-.. sidebar:: Dirac 
+.. sidebar:: Dirac
 
-                .. seealso:: You can find more general details about various functionalities possible with Dirac in their `project documentation`_ 
+                .. seealso:: You can find more general details about various functionalities possible with Dirac in their `project documentation`_
 
 To run your application on the Grid you need to describe its requirements in a specific language called **job description language** (JDL). This is similar to the information that we need to specify when we run jobs using a local batch scheduling system (e.g., with PBS, SLURM), although it is slightly more complex as we are now scheduling jobs across multiple sites.
 
 Except for the application requirements, you also need to specify in the :abbr:`JDL (Job Description Language)` the content of the *input/output sandboxes*. These sandboxes allow you to transfer data to or from the Grid. The input sandbox contains all the files that you want to send with your job to the worker node, like e.g. a script that you want executed. The output sandbox contains all the files that you want to have transferred back to the :abbr:`UI (User Interface)`.
 
-.. note:: The amount of data that you can transfer using the sandboxes is very limited, in the order of a few megabytes (less than **100MB**). This means that you should normally limit the input sandbox to a few script files and the output sandbox to the stderr and stdout files. 
+.. note:: The amount of data that you can transfer using the sandboxes is very limited, in the order of a few megabytes (less than **100MB**). This means that you should normally limit the input sandbox to a few script files and the output sandbox to the stderr and stdout files.
 
 Once you have the :abbr:`JDL (Job Description Language)` file ready, you can submit it to multiple clusters with ``dirac-*`` commands. Dirac will schedule your job on a Grid worker node. The purpose of Dirac is to distribute and manage tasks across computing resources. More specifically, Dirac will accept your job, assign it to the most appropriate Computing Element (CE), record the job status and retrieve the output.
 
@@ -52,7 +55,7 @@ This section will show you how to create a valid proxy:
 
   .. code-block:: console
 
-     $source /etc/dirac/pro/bashrc
+     $source /etc/diracosrc
 
 Please note that you need to run this command every time you login to the :abbr:`UI (User Interface)`. You may also add this command in your configuration file ($HOME/.bashrc).
 
@@ -61,9 +64,9 @@ Please note that you need to run this command every time you login to the :abbr:
 
   .. code-block:: console
 
-     $dirac-proxy-init -g pvier_user -M pvier --valid 168:00
+     $dirac-proxy-init -g lsgrid_user -M lsgrid --valid 168:00
 
-Each VO (e.g., pvier in the above example) is mapped to a group in Dirac (pvier_user in this case) and may have a different name than the VO itself. Please contact helpdesk@surfsara.nl if you are unsure of the group name to use. The above command creates a local proxy with a validity of maximum 7 days.
+Each VO (e.g., lsgrid in the above example) is mapped to a group in Dirac (lsgrid_user in this case) and may have a different name than the VO itself. Please contact helpdesk@surfsara.nl if you are unsure of the group name to use. The above command creates a local proxy with a validity of maximum 7 days.
 
   You should see a similar output displayed in your terminal:
 
@@ -71,20 +74,20 @@ Each VO (e.g., pvier in the above example) is mapped to a group in Dirac (pvier_
 
 
 	 Generating proxy...
-     Enter Certificate password: 
-     Added VOMS attribute /pvier
+     Enter Certificate password:
+     Added VOMS attribute /lsgrid
      Uploading proxy..
      Proxy generated:
      subject      : /DC=org/DC=terena/DC=tcs/C=NL/O=SURF B.V./CN=homer homer@example.com/...
      issuer       : /DC=org/DC=terena/DC=tcs/C=NL/O=SURF B.V./CN=homer homer@example.com/...
      identity     : /DC=org/DC=terena/DC=tcs/C=NL/O=SURF B.V./CN=homer homer@example.com
      timeleft     : 167:53:58
-     DIRAC group  : pvier_user
+     DIRAC group  : lsgrid_user
      path         : /tmp/x509up_uxxxx
      username     : homer
      properties   : NormalUser
      VOMS         : True
-     VOMS fqan    : [u'/pvier']
+     VOMS fqan    : [u'/lsgrid']
 
      Proxies uploaded:
      DN                                                                                   | Group | Until (GMT)
@@ -142,7 +145,7 @@ Before actually submitting the job, you can optionally check the matching Comput
    $dirac-wms-match simple.jdl # replace simple.jdl with your JDL file
 
 
-The job matching functionality is useful for testing purposes only and not intended for usage when submitting hundreds of jobs. 
+The job matching functionality is useful for testing purposes only and not intended for usage when submitting hundreds of jobs.
 
 Your job is now ready. Continue to the next step to submit it to the Grid!
 
@@ -166,7 +169,7 @@ You should have your ``simple.jdl`` file ready in your :abbr:`UI (User Interface
 
      $dirac-wms-job-submit simple.jdl -f jobid
      JobID = 314
-     
+
 
 The option ``-f`` allows you to specify a file (in this case ``jobid``) to store the unique job identifier. Omitting the ``-f`` option means that the jobID is not saved in a file. When you do not save this id you will effectively loose the output of your job!
 
@@ -206,8 +209,13 @@ Cancel job
 
   .. code-block:: console
 
-     $dirac-wms-job-kill 314
+     $dirac-wms-job-delete 314
 
+* Alternatively, if you have saved your jobIds into a file you can use the ``-f`` option and the filename as argument:
+
+  .. code-block:: console
+
+     $dirac-wms-job-delete -f jobid
 
 .. _job-output:
 
@@ -251,7 +259,7 @@ Check job output
 	-rw-rw-r-- 1 homer homer  0 Jan  5 18:06 simple.err
 	-rw-rw-r-- 1 homer homer 20 Jan  5 18:06 simple.out
 
-	$cat /home/homer/314/simple.out 
+	$cat /home/homer/314/simple.out
 
 ==================
 Recap & Next Steps
@@ -271,3 +279,4 @@ You interact with the Grid via the :abbr:`UI (User Interface)` machine ``ui.grid
 .. Links:
 
 .. _`project documentation`: https://dirac.readthedocs.io/en/latest/index.html
+.. _`DIRAC`: http://diracgrid.org/
