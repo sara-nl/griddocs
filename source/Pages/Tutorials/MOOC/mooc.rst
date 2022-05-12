@@ -65,7 +65,7 @@ Introduction to Parallel and Distributed Computing
 
     <iframe
         width="600" height="400"
-        src="https://www.youtube.com/watch?v=Ia-bFZAJ2_g&list=PLxLmEiwjudnxsettwXEj8SeU--sTsoqvz">
+        src="https://www.youtube.com/embed/Ia-bFZAJ2_g?controls=2">
     </iframe>
 
 Intro to Parallel and Distributed Computing :download:`pdf </Pages/Tutorials/MOOC/slides/L2_W1_Intro_to_Parallel_and_Distributed_Computing.pdf>`
@@ -80,7 +80,7 @@ Cluster Computing
 
     <iframe
         width="600" height="400"
-        src="https://www.youtube.com/watch?v=LEYbccvrCb0&list=PLxLmEiwjudnxsettwXEj8SeU--sTsoqvz">
+        src="https://www.youtube.com/embed/LEYbccvrCb0?controls=2">
     </iframe>
 
 Cluster Computing :download:`pdf </Pages/Tutorials/MOOC/slides/L3_W1_Cluster_Computing.pdf>`
@@ -95,7 +95,7 @@ Grid Computing Overview
 
     <iframe
         width="600" height="400"
-        src="https://www.youtube.com/watch?v=-s3FZgaymWc&list=PLxLmEiwjudnxsettwXEj8SeU--sTsoqvz">
+        src="https://www.youtube.com/embed/-s3FZgaymWc?controls=2">
     </iframe>
 
 Grid Computing Overview :download:`pdf </Pages/Tutorials/MOOC/slides/L4_W1_Grid_Computing_Overview.pdf>`
