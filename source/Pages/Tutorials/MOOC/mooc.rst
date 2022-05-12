@@ -50,7 +50,7 @@ Course Overview
 
     <iframe
         width="600" height="400"
-        src="https://www.youtube.com/watch?v=9oyGagr0-Rg&list=PLxLmEiwjudnxsettwXEj8SeU--sTsoqvz">
+        src="https://www.youtube.com/embed/9oyGagr0-Rg?controls=2">
     </iframe>
 
 Course Overview slides :download:`pdf </Pages/Tutorials/MOOC/slides/L1_W1_Course_Overview.pdf>`
