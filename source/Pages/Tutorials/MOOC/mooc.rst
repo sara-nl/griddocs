@@ -209,7 +209,7 @@ Virtual Organisations
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/uqUORgYn648?controls=2">
+        src="http://www.youtube.com/embed/kPpgiRThKGM?controls=2">
     </iframe>
 
 Virtual Organisations :download:`pdf </Pages/Tutorials/MOOC/slides/L11_W2_Virtual_Organizations.pdf>`
@@ -232,7 +232,7 @@ Grid job Lifecycle
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/mpGu7q9WFNQ?controls=2">
+        src="http://www.youtube.com/embed/TuxiyeMRmd4?controls=2">
     </iframe>
 
 Grid job Lifecycle :download:`pdf </Pages/Tutorials/MOOC/slides/L12_W3_Grid_job_Lifecycle.pdf>`
@@ -247,7 +247,7 @@ Start a Grid_Session
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/Fgkhkw8vEkE?controls=2">
+        src="http://www.youtube.com/embed/o-uV5y-BPVA?controls=2">
     </iframe>
 
 Start a Grid Session :download:`pdf </Pages/Tutorials/MOOC/slides/L13_W3_Start_a_Grid_Session.pdf>`
@@ -262,7 +262,7 @@ My First Grid job
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/mHSKB0KCBEc?controls=2">
+        src="http://www.youtube.com/embed/3TF8t4hYIhQ?controls=2">
     </iframe>
 
 My First Grid job :download:`pdf </Pages/Tutorials/MOOC/slides/L14_W3_My_First_Grid_job.pdf>`
@@ -279,7 +279,7 @@ Grid Toolkit
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/usNfdR91LG4?controls=2">
+        src="http://www.youtube.com/embed/Yy-eVejPXiU?controls=2">
     </iframe>
 
 Grid Toolkit :download:`pdf </Pages/Tutorials/MOOC/slides/L15_W3_Grid_Toolkit.pdf>`
@@ -304,7 +304,7 @@ Application_submission to Grid I
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/nJewGFKcVA8?controls=2">
+        src="http://www.youtube.com/embed/vsbrzirq7jk?controls=2">
     </iframe>
 
 Application submission to Grid I script :download:`pdf </Pages/Tutorials/MOOC/slides/L17_W4_Application_submission_to_Grid_I_script.pdf>`
@@ -321,7 +321,7 @@ Application_submission to Grid II
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/T3j-9GPoSx0?controls=2">
+        src="http://www.youtube.com/embed/h8Vsvd-U2Dc?controls=2">
     </iframe>
 
 Application submission to Grid II executable :download:`pdf </Pages/Tutorials/MOOC/slides/L18_W4_Application_submission_to_Grid_II_executable.pdf>`
@@ -338,7 +338,7 @@ Advanced Grid jobs I
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/6d25ayK_YCI?controls=2">
+        src="http://www.youtube.com/embed/AATV9fb2uk8?controls=2">
         </iframe>
 
 Advanced Grid jobs I Collections & Parametric :download:`pdf </Pages/Tutorials/MOOC/slides/L19_W4_Advanced_Grid_jobs_I_Collections_Parametric.pdf>`
@@ -355,7 +355,7 @@ Advanced Grid jobs II
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/Up-OOWYl8qY?controls=2">
+        src="http://www.youtube.com/embed/eMUgnxnV1A0?controls=2">
     </iframe>
 
 Advanced Grid jobs II Multicore :download:`pdf </Pages/Tutorials/MOOC/slides/L20_W4_Advanced_Grid_jobs_II_Multicore.pdf>`
@@ -372,7 +372,7 @@ Data parallel processing Hadoop
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/4pL_CIePhKM?controls=2">
+        src="http://www.youtube.com/embed/t7FnYdpzlMI?controls=2">
     </iframe>
 
 Data parallel processing Hadoop :download:`pdf </Pages/Tutorials/MOOC/slides/L21_W4_Data_parallel_processing_Hadoop.pdf>`
@@ -400,7 +400,7 @@ Data Management on the Grid I
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/Xob0US5fIH4?controls=2">
+        src="http://www.youtube.com/embed/CA5CfzyJMOg?controls=2">
     </iframe>
 
 Data Management on the Grid I :download:`pdf </Pages/Tutorials/MOOC/slides/L22_W5_Data_Management_on_the_Grid.pdf>`
@@ -415,7 +415,7 @@ Data Management on the Grid II
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/yNshGZ4hbD0?controls=2">
+        src="http://www.youtube.com/embed/v55MTUI0TpY?controls=2">
     </iframe>
 
 Data Management on the Grid II :download:`pdf </Pages/Tutorials/MOOC/slides/L23_W5_Data_Management_on_the_Grid_II.pdf>`
@@ -430,7 +430,7 @@ Data Management on the Grid III
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/Jl33o6pAgeE?controls=2">
+        src="http://www.youtube.com/embed/0CEBP1Qvkxc?controls=2">
     </iframe>
 
 Data Management on the Grid III :download:`pdf </Pages/Tutorials/MOOC/slides/L24_W5_Data_Management_on_the_Grid_III.pdf>`
@@ -447,7 +447,7 @@ Storage Resource Manager
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/ls5bHq0eq_M?controls=2">
+        src="http://www.youtube.com/embed/M1uMJarozdo?controls=2">
     </iframe>
 
 Storage Resource manager :download:`pdf </Pages/Tutorials/MOOC/slides/L25_W5_Storage_Resource_manager.pdf>`
@@ -472,7 +472,7 @@ Introduction to Workflows I
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/lTz2DzITrKw?controls=2">
+        src="http://www.youtube.com/embed/O7RAGuqZouA?controls=2">
     </iframe>
 
 Introduction to Workflows I :download:`pdf </Pages/Tutorials/MOOC/slides/L26_W6_Introduction_to_Workflows_I.pdf>`
@@ -487,7 +487,7 @@ Introduction to Workflows II
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/JLXF_H6J7kI?controls=2">
+        src="http://www.youtube.com/embed/XS-ru7sJ0xw?controls=2">
     </iframe>
 
 Introduction to Workflows II :download:`pdf </Pages/Tutorials/MOOC/slides/L27_W6_Introduction_to_Workflows_II.pdf>`
@@ -502,7 +502,7 @@ WS-Pgrade I
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/vilSO4ruETo?controls=2">
+        src="http://www.youtube.com/embed/4KeURbVL6n0?controls=2">
     </iframe>
 
 WSpgrade I :download:`pdf </Pages/Tutorials/MOOC/slides/L28_W6_WSpgrade_I.pdf>`
@@ -517,7 +517,7 @@ WS-Pgrade II
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/nN5H8vmkpZs?controls=2">
+        src="http://www.youtube.com/embed/7HjbU0J-oE8?controls=2">
     </iframe>
 
 WSpgrade II :download:`pdf </Pages/Tutorials/MOOC/slides/L29_W6_WSpgrade_II.pdf>`
@@ -532,7 +532,7 @@ Science Gateways
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/1kBZ9HdWPVU?controls=2">
+        src="http://www.youtube.com/embed/ONAhpSuVhJU?controls=2">
     </iframe>
 
 Science Gateways :download:`pdf </Pages/Tutorials/MOOC/slides/L30_W6_Science_Gateways.pdf>`
@@ -559,7 +559,7 @@ Pilot Job Frameworks
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/uHSsKJ6xPcs?controls=2">
+        src="http://www.youtube.com/embed/xlkZFXqmrR0?controls=2">
     </iframe>
 
 Pilot job frameworks :download:`pdf </Pages/Tutorials/MOOC/slides/L31_W7_Pilot_job_frameworks.pdf>`
@@ -574,7 +574,7 @@ Picas Server side I
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/PDRe7i0SGlE?controls=2">
+        src="http://www.youtube.com/embed/sGyXb_NPA2Q?controls=2">
     </iframe>
 
 Picas server side I :download:`pdf </Pages/Tutorials/MOOC/slides/L32_W7_Picas_server_side_I.pdf>`
@@ -589,7 +589,7 @@ Picas Server side II
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/uiHTG3Cr0zM?controls=2">
+        src="http://www.youtube.com/embed/54kduAAIYH0?controls=2">
     </iframe>
 
 Picas server side II :download:`pdf </Pages/Tutorials/MOOC/slides/L33_W7_Picas_server_side_II.pdf>`
@@ -604,7 +604,7 @@ Picas client side
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/c6ETyoKWjw4?controls=2">
+        src="http://www.youtube.com/embed/Wa-uk9gsbks?controls=2">
     </iframe>
 
 Picas client side :download:`pdf </Pages/Tutorials/MOOC/slides/L34_W7_Picas_client_side.pdf>`
@@ -619,7 +619,7 @@ Picas practise I
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/PwDpplql9EA?controls=2">
+        src="http://www.youtube.com/embed/nKQ9yHXZias?controls=2">
     </iframe>
 
 Code Picas :download:`tar </Pages/Tutorials/MOOC/scripts/W7_L35_picas.tar>`
@@ -634,7 +634,7 @@ Picas practise II
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/DJ6vHERy-qY?controls=2">
+        src="http://www.youtube.com/embed/z3L-Xls3qgw?controls=2">
     </iframe>
 
 Code Picas :download:`tar </Pages/Tutorials/MOOC/scripts/W7_L36_picas.tar>`
@@ -647,7 +647,7 @@ Course Summary
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/fhY4V7Rj5Vw?controls=2">
+        src="http://www.youtube.com/embed/CumssC9dDe8?controls=2">
     </iframe>
 
 Course summary :download:`pdf </Pages/Tutorials/MOOC/slides/L37_W9_Course_summary.pdf>`
@@ -664,7 +664,7 @@ Use case: EGI overview
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/RoSPOQwd_x8?controls=2">
+        src="http://www.youtube.com/embed/r5rMNze_GaE?controls=2">
     </iframe>
 
 EGI overview :download:`pdf </Pages/Tutorials/MOOC/slides/Use_case1_EGI_overview.pdf>`
@@ -677,7 +677,7 @@ Use case: LOFAR
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/jIgiAmtBN58?controls=2">
+        src="http://www.youtube.com/embed/ByijhEEN794?controls=2">
     </iframe>
 
 Extreme physics in space :download:`pdf </Pages/Tutorials/MOOC/slides/Use_case2_Extreme_physics_in_space.pdf>`
@@ -690,7 +690,7 @@ Use case: Climate change over Europe
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/KoIt3nRP4g0?controls=2">
+        src="http://www.youtube.com/embed/iF8HpMe1jjQ?controls=2">
     </iframe>
 
 Climate change :download:`pdf </Pages/Tutorials/MOOC/slides/Use_case3_Climate_change.pdf>`
@@ -703,7 +703,7 @@ Use case: VisIVO Science Gateway
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/KoIt3nRP4g0?controls=2">
+        src="http://www.youtube.com/embed/b6gJd-cjIoM?controls=2">
     </iframe>
 
 VisIVO Science Gateway :download:`pdf </Pages/Tutorials/MOOC/slides/Use_case4_VisIVO_astrophysics.pdf>`
@@ -716,7 +716,7 @@ Use case: Picas
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/ozsCqEHLzAI?controls=2">
+        src="http://www.youtube.com/embed/IlvEItrv_XA?controls=2">
     </iframe>
 
 Picas :download:`pdf </Pages/Tutorials/MOOC/slides/Use_case5_Picas.pdf>`
@@ -729,21 +729,21 @@ Use case: Molecular Biology
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/CMshKWmQ3eQ?controls=2">
+        src="http://www.youtube.com/embed/VZchdiM155Y?controls=2">
     </iframe>
 
 .. raw:: html
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/eBVkSox-5JM?controls=2">
+        src="http://www.youtube.com/embed/v3enZ0feJSg?controls=2">
     </iframe>
 
 .. raw:: html
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/PcCJ7aXlGYg?controls=2">
+        src="http://www.youtube.com/embed/JU3Wvv538kc?controls=2">
     </iframe>
 
 Molecular Biology :download:`pdf </Pages/Tutorials/MOOC/slides/Use_case6_Molecular_Biology.pdf>`
@@ -762,10 +762,3 @@ EGI-InSPIRE
 .. _`User Guide`: https://ca.dutchgrid.nl/tcs/TCS-enduser-request-guide-NL-2020-04.pdf
 .. _`DigiCert portal`: https://digicert.com/sso
 .. _`Sectigo portal`: https://cert-manager.com/customer/surfnet/idp/clientgeant
-.. _`W6 screencast1`: https://www.youtube.com/watch?v=QH90-cdgSTw&list=PLvgGDb8k0n2fH1KPLMRG53oVvIl_iR7sU&index=2
-.. _`W6 screencast2`: https://www.youtube.com/watch?v=5EDkcOQmisA&list=PLvgGDb8k0n2fH1KPLMRG53oVvIl_iR7sU&index=7
-.. _`W6 screencast3`: https://www.youtube.com/watch?v=muh5MJLQuE4&list=PLvgGDb8k0n2fH1KPLMRG53oVvIl_iR7sU&index=6
-.. _`W6 screencast4`: https://www.youtube.com/watch?v=XIT9tOIm0Y4&index=3&list=PLvgGDb8k0n2fH1KPLMRG53oVvIl_iR7sU
-.. _`W6 screencast5`: https://www.youtube.com/watch?v=qArAFXB8CI4&index=4&list=PLvgGDb8k0n2fH1KPLMRG53oVvIl_iR7sU
-.. _`W6 screencast6`: https://www.youtube.com/watch?v=b0HT1rGs8Ic&index=5&list=PLvgGDb8k0n2fH1KPLMRG53oVvIl_iR7sU
-.. _`W6 screencast7`: https://www.youtube.com/watch?v=DqV8zTsmGYg&list=PLvgGDb8k0n2fH1KPLMRG53oVvIl_iR7sU
