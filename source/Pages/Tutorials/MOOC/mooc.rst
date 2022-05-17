@@ -126,7 +126,7 @@ Working Environment - Grid prerequisites
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/SGHgjIuc0lU?controls=2">
+        src="http://www.youtube.com/embed/9zIPVMvc-mM?controls=2">
     </iframe>
 
 Working Environment_I Grid prerequisites :download:`pdf </Pages/Tutorials/MOOC/slides/L6_W2_Working_Environment_I_Grid_prerequisites.pdf>`
@@ -141,7 +141,7 @@ Working Environment - Remote access
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/L0tqno4du9Q?controls=2">
+        src="http://www.youtube.com/embed/CGqloDlwcns?controls=2">
     </iframe>
 
 Working Environment II Remote access :download:`pdf </Pages/Tutorials/MOOC/slides/L7_W2_Working_Environment_II_Remote_access.pdf>`
@@ -158,7 +158,7 @@ Grid Certificate - Security
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/8EiO42caAcE?controls=2">
+        src="http://www.youtube.com/embed/LVDkITj-IOY?controls=2">
     </iframe>
 
 Grid Certificate I (security) :download:`pdf </Pages/Tutorials/MOOC/slides/L8_W2_Grid_Certificate_I_Security.pdf>`
@@ -179,7 +179,7 @@ Obtain a Grid Certificate
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/HJRJp02pi_g?controls=2">
+        src="http://www.youtube.com/embed/_zQOfSBPddA?controls=2">
     </iframe>
 
 Grid Certificate II (Obtaining a certificate) :download:`pdf </Pages/Tutorials/MOOC/slides/L9_W2_Grid_Certificate_II_Obtaining_a_certificate.pdf>`
@@ -194,7 +194,7 @@ User Interface machine
 
     <iframe
         width="600" height="400"
-        src="http://www.youtube.com/embed/68vQIl6OCE0?controls=2">
+        src="http://www.youtube.com/embed/yeoVL3ycn_s?controls=2">
     </iframe>
 
 User Interface machine :download:`pdf </Pages/Tutorials/MOOC/slides/L10_W2_User_Interface_machine.pdf>`
