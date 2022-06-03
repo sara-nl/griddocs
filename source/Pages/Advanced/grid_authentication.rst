@@ -277,7 +277,7 @@ When you wish to submit jobs with Dirac, a similar process is followed. The conc
 .. code-block:: console
 
      $source /etc/dirac/pro/bashrc
-     $dirac-proxy-init -g pvier_user -M pvier --valid 168:00
+     $dirac-proxy-init -b 2048 -g pvier_user -M pvier --valid 168:00
 
 For full details, you can refer to the :ref:`Dirac proxy creation <dirac_proxy>` section.
 
