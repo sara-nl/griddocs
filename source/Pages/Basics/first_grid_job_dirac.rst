@@ -64,7 +64,7 @@ Please note that you need to run this command every time you login to the :abbr:
 
   .. code-block:: console
 
-     $dirac-proxy-init -g lsgrid_user -M --valid 168:00
+     $dirac-proxy-init -b 2048 -g lsgrid_user -M --valid 168:00
 
 Each VO (e.g., lsgrid in the above example) is mapped to a group in Dirac (lsgrid_user in this case) and may have a different name than the VO itself. Please contact helpdesk@surfsara.nl if you are unsure of the group name to use. The above command creates a local proxy with a validity of maximum 7 days.
 
