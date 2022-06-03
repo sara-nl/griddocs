@@ -93,7 +93,7 @@ Run on the Grid
   .. code-block:: console
 
      $source /etc/dirac/pro/bashrc #enable the software environment to use Dirac tools
-     $dirac-proxy-init -g pvier_user -M pvier --valid 168:00 # replace pvier with your VO
+     $dirac-proxy-init -b 2048 -g pvier_user -M pvier --valid 168:00 # replace pvier with your VO
 
 * Inspect the :abbr:`JDL (Job Description Language)` file ``fractals.jdl``:
 
