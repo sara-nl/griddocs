@@ -171,7 +171,7 @@ Run the example on the Grid
 
 .. code-block:: console
 
-   $dirac-proxy-init -g lsgrid_user -M lsgrid --valid 168:00 # replace lsgrid with your VO
+   $dirac-proxy-init -b 2048 -g lsgrid_user -M lsgrid --valid 168:00 # replace lsgrid with your VO
 
 * Submit the pilot jobs:
 
