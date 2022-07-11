@@ -22,11 +22,19 @@ In case that your institute does not support SURFconext and is not possible to g
 Request a DutchGrid certificate
 ===============================
 
+.. note::  If you are on macOS, ensure that `xquartz <https://www.xquartz.org/>`_ is installed with homebrew.
+
 * Log in to your :ref:`UI account <get-ui-account>` with X forward enabled, e.g.:
 
   .. code-block:: console
 
      $ssh -Y homer@ui.grid.sara.nl   # replace "homer" with your username!
+
+  In the case of running on macOS, it may be necessary to specify the path of XAuth in ``~/.ssh/config`` with:
+
+  .. code-block:: console
+
+     XAuthLocation /opt/X11/bin/xauth
 
 * Download the the ``jGridstart`` tool:
 
