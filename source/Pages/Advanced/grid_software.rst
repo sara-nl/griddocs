@@ -160,7 +160,7 @@ That was it! You can now publish the software that is installed in your ``/cvmfs
 
     $publish-my-softdrive
 
-Then check after 1-2 hours from the :abbr:`UI (User Interface)` if the ``/cvmfs/softdrive.nl/homer/anaconda-2-5.1.0` exists.
+Then check after 1-2 hours from the :abbr:`UI (User Interface)` if the ``/cvmfs/softdrive.nl/homer/anaconda-2-5.1.0`` exists.
 
 Finally, remember to include the installation path in your scripts as:
 
