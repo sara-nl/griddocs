@@ -129,7 +129,7 @@ When copying is done, please check your data on Cartesius before deleting the da
 
 If you want to validate the integrity of the data that you have migrated on Cartesius then we recommend you the following options:
 
-* On the LSG UI, apply once again the rsync command that you used to copy your data to Cartesius. If all the files have been trasnferred correctly you should receive an empty list, e.g.:
+* On the LSG UI, apply once again the rsync command that you used to copy your data to Cartesius. If all the files have been transferred correctly you should receive an empty list, e.g.:
 
  .. code-block:: console
  

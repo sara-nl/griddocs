@@ -14,7 +14,7 @@ This section explains the concepts and operations regarding Grid authentication 
 Introduction: delegation of authentication
 ==========================================
 
-Grid, by its very nature, is decentralized. This means that users must
+Grid, by its very nature, is decentralised. This means that users must
 authenticate themselves to the Grid services they want to use. This is accomplished
 by means of a personal certificate and accompanying private key that
 every Grid user must have. The combination of a certificate and private key
@@ -48,7 +48,7 @@ The ``startGridSession`` command:
 * delegates this local proxy to the *Myproxy server*;
 * delegates this local proxy to the :abbr:`WMS (Workload Management System)` with your user name as the *delegation ID* (DID).
 
-Your jobs will now be able to run for week. The :abbr:`WMS (Workload Management System)` that is responsible for
+Your jobs will now be able to run for a week. The :abbr:`WMS (Workload Management System)` that is responsible for
 scheduling your jobs, will renew the proxy certificate of running
 jobs *every 12 hours* automatically, for one week. This means that your
 jobs must finish within a week from starting the Grid session . However,
@@ -199,7 +199,7 @@ You should get something like this::
 	Your proxy is valid until: Wed Jan 13 14:25:06 2016
 	A proxy valid for 168 hours (7.0 days) for user /O=dutchgrid/O=users/O=sara/CN=Homer Simpson now exists on px.grid.sara.nl.
 
-The delegated proxy can be received locally from other authorized Grid machines.
+The delegated proxy can be received locally from other authorised Grid machines.
 
 MyProxy tools rely on the environment variable ``MYPROXY_SERVER`` to determine the
 MyProxy server to be used. This variable is set to ``px.grid.sara.nl`` for the SURFsara

@@ -68,7 +68,7 @@ Please enter your own full name as 'Common Name' and the institutional email add
 
      $cat grid.csr
 
-* After you fill in the CSR and click on *request certificate*, the certificate will be sent to you by email and it can also be dowloaded from the DigiCert portal.
+* After you fill in the CSR and click on *request certificate*, the certificate will be sent to you by email and it can also be downloaded from the DigiCert portal.
 
 .. note::  If you cannot access the `DigiCert portal`_ with your institutional account, please have a look to the section "No access to the TCS service in NL" in the `TCS document`_ or contact us at helpdesk@surfsara.nl.
 

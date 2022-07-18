@@ -228,7 +228,7 @@ Note that the URL can only be accessed by you as you are authenticated to the se
 Cancel job
 ==========
 
-* If you realize that you need to cancel a submitted job, use the following command:
+* If you realise that you need to cancel a submitted job, use the following command:
 
   .. code-block:: console
 
@@ -270,7 +270,7 @@ output sandbox can be downloaded for approximately one week after the job finish
 where you should substitute ``jobIds`` with the file that you used to store the
 job ids.
 
-If you omitted the ``--dir`` option, your output stored on the
+If you omitted the ``--dir`` option, your output is stored on the
 ``/scratch`` directory on the :abbr:`UI (User Interface)`. Please remove your files from the
 ``/scratch`` directory when they are no longer necessary. Also keep in
 mind that if the ``/scratch`` directory becomes too full, the

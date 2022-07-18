@@ -10,7 +10,7 @@ Documentation how-to
      * edit the docs with Sphinx language
      * build the docs on your laptop
 
-Our documentation is hosted on Github and is written in `Sphinx`_ *restructed text*.
+Our documentation is hosted on Github and is written in `Sphinx`_ *restructured text*.
 Behind the scenes we use `ReadTheDocs`_ to publish it automatically. You can contribute
 either directly to our `Grid Github repo`_ or send an email to
 :ref:`our helpdesk <helpdesk>` with your remarks and we will change the documentation

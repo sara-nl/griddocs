@@ -61,7 +61,7 @@ In order for us to make a suitable allocation for a project, we need to know wha
 
 	Contact us at helpdesk@surfsara.nl and we can work together on estimating the resources for running your computation.
 
-For a proper estimation of resources requirements it is best to start with a few test runs of the code (if existing) on another system (e.g.: your laptop). The outcome of such tests will in many cases be sufficient to derive a total requirement for your larger-scale production runs. Sometimes a more elaborate process is needed to come to an estime, for example if the code does not exist yet of if changes to the existing code are still pending. Ideally you have been running a few representative samples of your runs before you file a resource request, in order to have some concrete information ready about the resources needed by your jobs, such as:
+For a proper estimation of resources requirements it is best to start with a few test runs of the code (if existing) on another system (e.g.: your laptop). The outcome of such tests will in many cases be sufficient to derive a total requirement for your larger-scale production runs. Sometimes a more elaborate process is needed to come to an estimate, for example if the code does not exist yet of if changes to the existing code are still pending. Ideally you have been running a few representative samples of your runs before you file a resource request, in order to have some concrete information ready about the resources needed by your jobs, such as:
 
 * how long it takes to run a representative input scenario
 * how much space you need to store input, output and intermediate data

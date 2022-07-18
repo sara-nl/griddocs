@@ -64,7 +64,7 @@ If you get the following error:
    unable to load certificate 17714:error:0906D064:PEM routines:PEM_read_bio:bad base64
    decode:pem_lib.c:781:
 
-when you use the command ``openssl x509 -text -noout -in usercert.pem``, it means that the email with the certificate wasn't saved properly as plain text (it included the Mime type for formatting). Repeat carerefully the steps as described in :ref:`Retrieve your DutchGrid certificate <retrieve-dutchgrid>` section.
+when you use the command ``openssl x509 -text -noout -in usercert.pem``, it means that the email with the certificate wasn't saved properly as plain text (it included the Mime type for formatting). Repeat carefully the steps as described in :ref:`Retrieve your DutchGrid certificate <retrieve-dutchgrid>` section.
 
 
 .. _grid-cert-permissions:
@@ -354,4 +354,4 @@ In order to run :abbr:`PBS (Portable Batch System)` jobs that last more than 36 
 How to use the Grid worker node /scratch on Gina?
 =================================================
 
-You should not write data directly under the worker node ``/scratch``, but use your job directory instead. See the instuctions :ref:`here <storage-grid-wn>` to make effiecient use of the local storage on the Grid worker nodes.
+You should not write data directly under the worker node ``/scratch``, but use your job directory instead. See the instuctions :ref:`here <storage-grid-wn>` to make efficient use of the local storage on the Grid worker nodes.

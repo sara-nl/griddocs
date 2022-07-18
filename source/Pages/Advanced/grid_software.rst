@@ -26,7 +26,7 @@ This page is about using Softdrive on the grid infrastructure. The use of Softdr
 CVMFS
 =====
 
-Softdrive is using the `CVMFS service`_ (short for CernVM File System) on the background. CVMFS is a network file system based on HTTP and optimized to deliver experiment software in a fast, scalable, and reliable way. 
+Softdrive is using the `CVMFS service`_ (short for CernVM File System) on the background. CVMFS is a network file system based on HTTP and optimised to deliver experiment software in a fast, scalable, and reliable way. 
 
 
 Quickstart
@@ -160,7 +160,7 @@ That was it! You can now publish the software that is installed in your ``/cvmfs
 
     $publish-my-softdrive
 
-Then check after 1-2 hours from the :abbr:`UI (User Interface)` if the ``/cvmfs/softdrive.nl/homer/anaconda-2-5.1.0` exists.
+Then check after 1-2 hours from the :abbr:`UI (User Interface)` if the ``/cvmfs/softdrive.nl/homer/anaconda-2-5.1.0`` exists.
 
 Finally, remember to include the installation path in your scripts as:
 
