@@ -228,7 +228,7 @@ Note that the URL can only be accessed by you as you are authenticated to the se
 Cancel job
 ==========
 
-* If you realize that you need to cancel a submitted job, use the following command:
+* If you realise that you need to cancel a submitted job, use the following command:
 
   .. code-block:: console
 

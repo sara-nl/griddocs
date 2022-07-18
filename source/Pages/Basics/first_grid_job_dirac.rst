@@ -205,7 +205,7 @@ To check the current job status from the command line, apply the following comma
 Cancel job
 ==========
 
-* If you realize that you need to cancel a submitted job, use the following command:
+* If you realise that you need to cancel a submitted job, use the following command:
 
   .. code-block:: console
 

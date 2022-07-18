@@ -244,7 +244,7 @@ Mac OS, Centos, Ubuntu
 
 	$ service squid restart
 
-* Mount the SoftDrive diretory :
+* Mount the SoftDrive directory :
 
 .. code-block:: bash
 

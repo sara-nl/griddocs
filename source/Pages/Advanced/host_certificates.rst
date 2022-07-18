@@ -9,7 +9,7 @@ Grid host certificates
 
 Apart from Grid user certificates, there are also Grid host certificates. Host certificates are used to establish trust between hosts on the grid. If you use our user interfaces or Grid compute clusters, you don't have to worry about these; we'll make sure they contain the right host certificates and their dependencies.
 
-If you configure your own user interface, or if you intend to run GridFTP or Webdav clients on your own machines, you will need to install the Grid Certificate Authrority (CA) root certificates. Your client software needs CA root certificates to know whether to trust the host certificate of the server they're talking to.
+If you configure your own user interface, or if you intend to run GridFTP or Webdav clients on your own machines, you will need to install the Grid Certificate Authority (CA) root certificates. Your client software needs CA root certificates to know whether to trust the host certificate of the server they're talking to.
 
 If you want to install the Grid CA root certificates, please follow the instructions here: https://wiki.egi.eu/wiki/EGI_IGTF_Release
 

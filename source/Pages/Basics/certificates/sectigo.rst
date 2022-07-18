@@ -15,7 +15,7 @@ This section describes how to obtain and install a Sectigo Grid certificate. Thi
 Obtain a *Sectigo* certificate
 ===============================
 
-Sectigo allows you to get your Grid certificate *instantly* from the GEANT Trusted Certificate Service (former was the Terena portal and then Digicert), by using your institutional login (SURFconext).
+Sectigo allows you to get your Grid certificate *instantly* from the GEANT Trusted Certificate Service (former was the Terena portal and then Digicert), by using your institutional login (SURFcontext).
 
 The following guide will help you:
 

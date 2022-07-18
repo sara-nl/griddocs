@@ -27,7 +27,7 @@ To use the Grid storage you must:
 * Have :ref:`a personal Grid certificate <get-grid-certificate>` [1]_
 * Be member of :ref:`a VO <join-vo>` for which we have allocated storage space.
 
-You can access the Grid storage with Grid :ref:`storage-clients`, through interfaces that speak protocols like :abbr:`SRM (Storage Resource Management)`, :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`, :abbr:`GSIdCap (dCache Access Protocol with Grid auhthentication)` or :abbr:`Webdav (Web Distributed Authoring and Versioning)`. With these storage clients you can:
+You can access the Grid storage with Grid :ref:`storage-clients`, through interfaces that speak protocols like :abbr:`SRM (Storage Resource Management)`, :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`, :abbr:`GSIdCap (dCache Access Protocol with Grid authentication)` or :abbr:`Webdav (Web Distributed Authoring and Versioning)`. With these storage clients you can:
 
 * list directories and files
 * read (download) files
@@ -222,7 +222,7 @@ There are different ways to stage your files on dCache. For running the staging 
 to dCache either with a valid proxy certificate or username/password or a macaroon depending on the client.
 We support the following clients:
 
-* `gfal2 <https://dmc-docs.web.cern.ch/dmc-docs/gfal2-python.html>`_ supported by Cern. It allows proxy authentication only.
+* `gfal2 <https://dmc-docs.web.cern.ch/dmc-docs/gfal2-python.html>`_ supported by CERN. It allows proxy authentication only.
 * `ada <https://github.com/sara-nl/SpiderScripts/tree/master/ada>`_ supported by SURF. It allows proxy or username/password or macaroon authentication.
 * :ref:`srmbringonline <srm-staging>`. It supports proxy authentication only.
 
@@ -420,7 +420,7 @@ NO data channel encryption:
 * WebDAV over port 443
 * WebDAV over port 2882
 * SRM
-* GridFTP (dCache does not support GridFTP data encryption. Please be warned that ``globus-url-copy -dcpriv`` does not warn you about this and tranfers your data in plain text.)
+* GridFTP (dCache does not support GridFTP data encryption. Please be warned that ``globus-url-copy -dcpriv`` does not warn you about this and transfers your data in plain text.)
 * GSIdCap, dCap
 * Xroot
 
@@ -445,4 +445,4 @@ As you can see from this diagram, there can be a lot of overhead per file. For t
 Importing large amounts of data
 ===============================
 
-The `Data Ingest Service <https://www.surf.nl/en/services-and-products/data-ingest-service/index.html>`_ is a SURFsara service for researchers who want to store or analyze large amounts of data at SURFsara. The service is convenient for users who lack sufficient bandwidth or who have stored their data on a number of external hard disks.
+The `Data Ingest Service <https://www.surf.nl/en/services-and-products/data-ingest-service/index.html>`_ is a SURFsara service for researchers who want to store or analyse large amounts of data at SURFsara. The service is convenient for users who lack sufficient bandwidth or who have stored their data on a number of external hard disks.

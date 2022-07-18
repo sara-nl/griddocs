@@ -26,7 +26,7 @@ This page is about using Softdrive on the grid infrastructure. The use of Softdr
 CVMFS
 =====
 
-Softdrive is using the `CVMFS service`_ (short for CernVM File System) on the background. CVMFS is a network file system based on HTTP and optimized to deliver experiment software in a fast, scalable, and reliable way. 
+Softdrive is using the `CVMFS service`_ (short for CernVM File System) on the background. CVMFS is a network file system based on HTTP and optimised to deliver experiment software in a fast, scalable, and reliable way. 
 
 
 Quickstart

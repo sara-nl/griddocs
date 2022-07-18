@@ -24,7 +24,7 @@ The Grid is a cooperation of many different clusters and research organisations,
 
 Your digital identity starts with a private key. **Only you** are allowed to know the contents of this key. Next, you need a Grid certificate, which is issued by a Certificate Authority (CA). The Grid certificate contains your name and your organisation, and it says that the person who owns the private key is really the person mentioned, and that this is certified by the Certificate Authority.
 
-Now this is your identity. Big international cooperations do not want to deal with every user individually. Instead, users become part of Virtual Organisations. To give an analogy, the Grid certificate provides authentication (identitiy, e.g., like a passport) and the VO provides authorization (approval, e.g., like a visa). Individual clusters give access and compute time to certain VOs, and if you are a member of a :abbr:`VO (Virtual Organisation)`, you can run your jobs on that cluster.
+Now this is your identity. Big international cooperations do not want to deal with every user individually. Instead, users become part of Virtual Organisations. To give an analogy, the Grid certificate provides authentication (identity, e.g., like a passport) and the VO provides authorisation (approval, e.g., like a visa). Individual clusters give access and compute time to certain VOs, and if you are a member of a :abbr:`VO (Virtual Organisation)`, you can run your jobs on that cluster.
 
 
 .. sidebar:: More about Grid Security?
@@ -37,7 +37,7 @@ In order to run your work on the Grid, you have to make three essential steps:
 2. :ref:`get-grid-certificate`, so that you can be identified on the Grid.
 3. :ref:`join-vo`, so that you can run your jobs on the Grid.
 
-The UI account will provide you with the proper environment to submit your jobs to the Grid. The Grid certificate is required to authorize you for using the Grid. Finally, the :abbr:`VO (Virtual Organisation)` membership is based on your research domain (e.g. ``lsgrid`` for Life Scientists) and determines which resources you can use.
+The UI account will provide you with the proper environment to submit your jobs to the Grid. The Grid certificate is required to authorise you for using the Grid. Finally, the :abbr:`VO (Virtual Organisation)` membership is based on your research domain (e.g. ``lsgrid`` for Life Scientists) and determines which resources you can use.
 
 These steps are described in this chapter.
 
