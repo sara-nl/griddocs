@@ -133,33 +133,17 @@ To submit a Grid job you must describe this in a plain text file, called :abbr:`
 
 This job involves no large input or output files. It will copy the ``jobscript.sh`` on the Worker Node that the job will land on and execute it. The Standard output and Standard error will be directed to the files ``simple.out`` and ``simple.err``, respectively, and retrieved when the Job Output is retrieved.
 
-.. _job-match:
+.. _job-submit:
 
-Job list match
-==============
-
-Before actually submitting the job, you can optionally check the matching Computing Elements that satisfy your job description. It does not guarantee anything about the :abbr:`CE (Compute Element)` load, just matches your :abbr:`JDL (Job Description Language)` criteria with the available VO resources:
-
-.. code-block:: console
-
-   $dirac-wms-match simple.jdl # replace simple.jdl with your JDL file
-
-
-The job matching functionality is useful for testing purposes only and not intended for usage when submitting hundreds of jobs.
-
-Your job is now ready. Continue to the next step to submit it to the Grid!
+==========================
+Submit the job to the Grid
+==========================
 
 To submit your first Grid job and get an understanding of the job lifecycle, we will perform these steps:
 
 * :ref:`Job submission <job-submit>`
 * :ref:`Status tracking <job-status>`
 * :ref:`Output retrieval <job-output>`
-
-.. _job-submit:
-
-==========================
-Submit the job to the Grid
-==========================
 
 You should have your ``simple.jdl`` file ready in your :abbr:`UI (User Interface)` up to this point. When you submit this simple Grid job to the Dirac, a job will be created and sent to a remote Worker Node. There it will execute the script ``jobscript.sh`` and write its standard output and its standard error in the ``simple.out`` and ``simple.err`` respectively.
 
