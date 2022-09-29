@@ -106,4 +106,4 @@ This section describes how to get a :abbr:`VO (Virtual Organisation)` membership
 * You will receive an approval email titled “Your vo membership request for VO lsgrid has been approved” when the :abbr:`VO (Virtual Organisation)` administrator finally sings your request.
 * As soon as your VO membership is approved, the final step is to be added to the Dirac VO user group. For this, please contact us at helpdesk@surfsara.nl.
 
-Once you finish this page instructions successfully, you are set to go and run your :ref:`first-grid-job`!
+Once you finish this page instructions successfully, you are set to go and run your :ref:`first-dirac-grid-job`!
