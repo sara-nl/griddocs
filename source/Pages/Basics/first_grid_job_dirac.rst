@@ -12,7 +12,7 @@ This section summarises all the steps to submit your first job on the Grid, chec
 .. contents::
     :depth: 4
 
-.. warning:: You can continue with this guide *only after* you have completed the :ref:`preparations <preparation>` for Grid. If you skipped that, go back to the :ref:`prerequisites` section. Still need help with obtaining or installing your certificate? We can help! Contact us at helpdesk@surfsara.nl.
+.. warning:: You can continue with this guide *only after* you have completed the :ref:`preparations <preparation>` for Grid. At this point your certificate should be installed on the UI and your VO membership should be approved and registered to the Dirac user group. Still need help with any of these steps? We can help! Contact us at helpdesk@surfsara.nl.
 
 Once you finish with the :ref:`first-dirac-grid-job`, you can continue with more :ref:`advanced topics <advanced>` and also :ref:`best-practices`, the section that contains guidelines for porting real complex simulations on the Grid.
 
