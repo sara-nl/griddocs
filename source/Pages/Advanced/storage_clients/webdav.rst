@@ -447,7 +447,7 @@ An example of using rclone to copy a directory:
 
 .. code-block:: console
 
-   $rclone --multi-thread-streams 1 --timeout=30m copy mydir dcache:rclone-test
+   $rclone --multi-thread-streams 1 --timeout=240m copy mydir dcache:rclone-test
 
 More information on how to use ``rclone`` with WebDAV is here: https://rclone.org/webdav/. There are also graphical user interfaces to ``rclone``; one is `RcloneBrowser <https://github.com/mmozeiko/RcloneBrowser>`_.
 
