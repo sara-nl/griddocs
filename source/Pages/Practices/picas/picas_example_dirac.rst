@@ -106,7 +106,7 @@ Now we will start using PiCaS. For this we need the downloaded CouchDB and PiCaS
 
 .. code-block:: console
 
-   $tar -zxf sandbox/couchdb.tgz
+   $tar -xvf sandbox/couchdb.tgz
 
 * Upload the tokens:
 
