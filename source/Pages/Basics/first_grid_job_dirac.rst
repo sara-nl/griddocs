@@ -116,7 +116,7 @@ To submit a Grid job you must describe this in a plain text file, called :abbr:`
 * Create a file with the following content describing the job requirements. Save it as ``simple.jdl``:
 
   .. code-block:: cfg
-	  :linenos:
+	:linenos:
 
       [
       Type = "Job";
