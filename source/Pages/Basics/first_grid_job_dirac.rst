@@ -118,17 +118,17 @@ To submit a Grid job you must describe this in a plain text file, called :abbr:`
   .. code-block:: cfg
 	:linenos:
 
-      [
-      Type = "Job";
-      JobName = "my_first_job";
-      Type = "Job";
-      Executable = "/bin/sh";
-      Arguments = "jobscript.sh";
-      StdOutput = "simple.out";
-      StdError = "simple.err";
-      InputSandbox = {"jobscript.sh"};
-      OutputSandbox = {"simple.out","simple.err"};
-      ]
+	[
+ 	 Type = "Job";
+         JobName = "my_first_job";
+         Type = "Job";
+         Executable = "/bin/sh";
+         Arguments = "jobscript.sh";
+         StdOutput = "simple.out";
+         StdError = "simple.err";
+         InputSandbox = {"jobscript.sh"};
+         OutputSandbox = {"simple.out","simple.err"};
+        ]
 
 
 This job involves no large input or output files. It will copy the ``jobscript.sh`` on the Worker Node that the job will land on and execute it. The Standard output and Standard error will be directed to the files ``simple.out`` and ``simple.err``, respectively, and retrieved when the Job Output is retrieved.
