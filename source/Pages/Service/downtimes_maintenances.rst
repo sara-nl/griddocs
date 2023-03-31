@@ -14,7 +14,7 @@ Here you will find details to keep informed for the ongoing and upcoming downtim
 Ongoing maintenances
 ====================
 
-You can lookup announcements for the current status of the Grid systems, including all ``ongoing`` downtimes and maintenances on `our website user info <https://userinfo.surfsara.nl/>`_ under:
+You can lookup announcements for the current status of the Grid systems, including all ``ongoing`` downtimes and maintenances on `our website <https://servicedesk.surf.nl/wiki/display/WIKI/Service+status/>`_ under:
 
     ``Systems > System status > National e-Infrastructure Grid Maintenances``
 
