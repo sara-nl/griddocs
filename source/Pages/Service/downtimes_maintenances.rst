@@ -29,6 +29,7 @@ If you use want to receive notifications and be prepared for upcoming downtimes 
 
 * Login to the portal here: https://operations-portal.egi.eu/ (click on EGI button)
 * Select your academic or social account and login
+* If your academic or social account does not work go to 'EGI SSO' for and select 'forgot password' to create a new account
 * The first time you login you will be asked to "Sign Up EGI user community"
     * Click and review the terms & conditions. Once you agree you will receive an email. Click on the link to verify address
     * Accept the invitation and verify again
@@ -42,6 +43,6 @@ If you use want to receive notifications and be prepared for upcoming downtimes 
     * VO: All VOs
     * Comm. channels: click on 'Add comm'. Then '+Add new' -> Type: Email(HTML), Value: put your email address and click 'Enter' in the same field box -> click 'Close'
 * Click on `Save rules specifications` to take effect. From now on you should receive notifications when the Gina cluster or SURFsara dCache has a downtime 
-
+NOTE: for dCache only select webdav and srm only notifications.
 
 If you need help creating your subscription(s) we are of course willing to assist at helpdesk@surfsara.nl.
