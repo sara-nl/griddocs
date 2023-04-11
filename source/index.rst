@@ -74,6 +74,7 @@ Best practices
    Pages/Practices/parametric/parametric_dirac
    Pages/Practices/bootstrap-dirac
    Pages/Practices/pilot_jobs
+   Pages/Practices/gpu_jobs
 
 .. _service-implementation:
 

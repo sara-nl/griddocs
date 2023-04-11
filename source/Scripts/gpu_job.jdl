@@ -1,0 +1,11 @@
+[
+  JobName = "my_gpu_job";
+  Executable = "gpu_job.sh";
+  StdOutput = "StdOut";
+  StdError = "StdErr";
+  InputSandbox = {"gpu_job.sh"};
+  OutputSandbox = {"StdOut","StdErr"};
+  Site = "GRID.SURF.nl";
+  Tags = {"gpu"};
+  CPUTime = 600;
+]
