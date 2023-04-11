@@ -29,7 +29,7 @@ If you use want to receive notifications and be prepared for upcoming downtimes 
 
 * Login to the portal here: https://operations-portal.egi.eu/ (click on EGI button)
 * Select your academic or social account and login
-* If your academic or social account does not work go to 'EGI SSO' for and select 'forgot password' to create a new account
+* If your academic or social account _does not work_ go to 'EGI SSO' for and select 'forgot password' to create a new account
 * The first time you login you will be asked to "Sign Up EGI user community"
     * Click and review the terms & conditions. Once you agree you will receive an email. Click on the link to verify address
     * Accept the invitation and verify again
