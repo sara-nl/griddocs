@@ -111,43 +111,35 @@ a Globus Online account. If not, please refer to the previous section.
 
    $wget https://downloads.globus.org/globus-connect-personal/linux/stable/globusconnectpersonal-latest.tgz
    $tar xzf globusconnectpersonal-latest.tgz
-   $cd globusconnectpersonal-3.1.3/
+   $cd globusconnectpersonal-x.y.z/ # replace x.y.z with the version number
 
-* Start the installation and follow the steps interactively. You will be asked to login to your Globus account:
-
-.. code-block:: console
-
-   $./globusconnectpersonal
-
-.. image:: /Images/globusonline-ui-login.png
-
-* A Firefox browser will open and ask you to login with your Globus account:
-
-.. image:: /Images/globusonline-ui-login2.png
-
-.. image:: /Images/globusonline-ui-login3.png
-
-* Finish the Globus Connect Personal setup and give a name to your Grid UI collection:
-
-.. image:: /Images/globusonline-ui-setup.png
-
-.. image:: /Images/globusonline-ui-setup2.png
-
-* Close the browser when finished. You should see a message on the UI shell that the setup completed successfully.
-
-* The non GridFTP-enabled endpoints like Grid user interface machines personal endpoints need to be activated every time prior to usage with the following command:
+* Start the installation and follow the steps. Execute the globus client on non graphical mode:
 
 .. code-block:: console
 
-   $./globusconnect -start
+   $./globusconnectpersonal -setup --no-gui
+
+* A login url will be displayed. Copy and paste it in your browser
+
+* Assuming that you already have a Globus account, login to globus using the displayed url 
+
+* Provide a label for future reference and click next. An authorization code will be displayed in your browser. Copy it and paste it on the Grid UI next to the prompt `Enter the auth code:`. Then provide a name for this collection as "Input a value for the Endpoint Name:"
+
+* If everything went well then you should get a message "setup completed successfully" 
+
+* From now on you can use the Grid UI home account to transfer data via Globus. Everytime you use Globus, you need to start the client on the UI in order to activate it as an endpoint:
+
+.. code-block:: console
+
+   $./globusconnectpersonal -start
 
 * The command above will define your home folder on a grid user interface machine as endpoint. If you wish to grant access to other paths that you have access on the same machine, then you can define a comma separated list of full paths that Globus may access as (If no prefix is present, r/w is assumed):
 
 .. code-block:: console
 
-   $./globusconnect -start -restrict-paths /project/myData/
+   $././globusconnectpersonal -start -restrict-paths /project/myData/
 
-.. note::  The `globusconnect -start` command will keep your session open and the endpoint activated until you stop it with Ctrl+C. You may also run it as background process in a `screen` session.
+.. note::  The `./globusconnectpersonal -start` command will keep your session open and the endpoint activated until you stop it with Ctrl+C
 
 * Open a browser in your laptop (the Grid UI Firefox is quite slow) and login to your Globus account to see your new Grid UI Personal endpoint. It should be in status 'ready':
 
