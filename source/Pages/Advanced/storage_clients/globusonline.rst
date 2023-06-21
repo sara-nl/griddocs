@@ -152,6 +152,9 @@ a Globus Online account. If not, please refer to the previous section.
 .. image:: /Images/globusonline-ui-endpoint3.png
 
 
+.. note:: To transfer data between two Globus Connect Personal endpoints, you must be a member of a Globus Plus Group or at least one of the endpoints must be managed under a Globus subscription (i.e Globus server endpoints).
+
+
 .. _server-endpoints:
 
 Server endpoints
