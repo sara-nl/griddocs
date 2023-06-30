@@ -199,7 +199,7 @@ cannot use that combination to identify yourself.
 .. _expiry-date:
 
 What is the expiry date of my certificate?
-===========================================
+==========================================
 
 To find out when your certificate is valid, use:
 
@@ -210,6 +210,15 @@ To find out when your certificate is valid, use:
 This will tell you when your certificate is valid.
 
 Note that a key does not have a validity period.
+
+.. _expiry-VO:
+
+What is the expiry date of my VO membership?
+============================================
+
+Your VO membership needs to be renewed every year, which includes signing of the (possibly updated) Acceptable Use Policy for the VO.
+
+Please take care to renew your membership within a month after expiry This prevents you from having to rejoin the VO, as all expired memberships will be automatically removed by the system after a month.
 
 
 .. _cert-subject:
