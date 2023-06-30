@@ -38,7 +38,7 @@ To be able to run the example you must have:
 Picas sample example
 ====================
 
-* Log in to the :abbr:`UI (User Interface)` and download the :download:`pilot_picas_fractals.tgz </Scripts/pilot_picas_fractals.tgz>` example, the couchdb package for Python :download:`couchdb.tgz </Scripts/couchdb.tgz>` and the fractals source code :download:`fractals.c </Scripts/fractals.c>`.
+* Log in to the :abbr:`UI (User Interface)` and download the :download:`pilot_picas_fractals.tgz </Scripts/picas-python3/pilot_picas_fractals.tgz>` example, the couchdb package for Python :download:`couchdb.tgz </Scripts/couchdb.tgz>` and the fractals source code :download:`fractals.c </Scripts/fractals.c>`.
 
 * Untar ``pilot_picas_fractals.tgz`` and inspect the content:
 
@@ -55,12 +55,13 @@ Picas sample example
 
 Detailed information regarding the operations performed in each of the scripts below is embedded to the comments inside each of the scripts individually.
 
-* Also download the current PiCaS version :download:`picas.tar </Scripts/picas.tar>` and put both PiCaS and the couchdb.tgz file in the ``sandbox`` directory:
+* Also download the current PiCaS version :download:`picas.tar </Scripts/picas-python3/picas.tar>` and put both PiCaS and the couchdb.tgz file in the ``sandbox`` directory:
 
 .. code-block:: console
 
     $cd sandbox
     $mv ../../couchdb.tgz ./
+    $mv ../../picas.tgz ./
 
 * And finally compile the fractals program (and put it in the sandbox directory) and move one directory up again:
 
