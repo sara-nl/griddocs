@@ -16,7 +16,7 @@ credentials with the following steps:
     username=USERNAME
     password=PASSWORD
     newpassword=NEWPASSWORD
-    $curl --silent --user "$username:$password" -X GET https://picas.surfsara.nl:6984/_users/org.couchdb.user:$username | jq '._rev' |  curl --user "$username:$password" -X PUT https://picas.surfsara.nl:6984/_users/org.couchdb.user:$username -H "Accept: application/json" -H "Content-Type: application/json" -H "If-Match:$(</dev/stdin)" -d '{"name":"'$username'", "roles":[], "type":"user", "password":"'$newpassword'"}'
+    curl --silent --user "$username:$password" -X GET https://picas.surfsara.nl:6984/_users/org.couchdb.user:$username | jq '._rev' |  curl --user "$username:$password" -X PUT https://picas.surfsara.nl:6984/_users/org.couchdb.user:$username -H "Accept: application/json" -H "Content-Type: application/json" -H "If-Match:$(</dev/stdin)" -d '{"name":"'$username'", "roles":[], "type":"user", "password":"'$newpassword'"}'
 
 Upon success you should receive an output like the following:
 
