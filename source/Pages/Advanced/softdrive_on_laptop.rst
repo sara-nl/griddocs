@@ -9,7 +9,7 @@ Using :ref:`Softdrive <softdrive>` is possible from various locations, such as t
 
 The instructions below have been tested in three different OS distributions: 
 
-* Mac OS X El Capitan
+* Mac OS Ventura 13.5
 * Centos 6.8 Desktop  
 * Ubuntu 16.04 Desktop 
  
@@ -36,19 +36,26 @@ Mac OS
 
 .. code-block:: bash
 
-	e.g. https://github.com/osxfuse/osxfuse/releases/download/osxfuse-3.5.2/osxfuse-3.5.2.dmg
+	e.g. https://github.com/osxfuse/osxfuse/releases/download/macfuse-4.5.0/macfuse-4.5.0.dmg
+
+.. warning:: As of macOS 11 Big Sur, kernel extensions need to be enabled to install macFUSE:
+
+        * Open the Security & Privacy System Preferences pane, go to the General preferences and allow loading system software from developer "Benjamin Fleischer"
+        * Restart to allow for the system extension to be loaded
 
 * Install the CernVM-FS package from: https://cernvm.cern.ch/portal/filesystem/downloads/
 
 .. code-block:: bash
 
-	e.g. https://ecsft.cern.ch/dist/cvmfs/cvmfs-2.3.2/cvmfs-2.3.2.pkg
+	e.g. curl -o ~/Downloads/cvmfs-2.11.0.pkg https://ecsft.cern.ch/dist/cvmfs/cvmfs-2.11.0/cvmfs-2.11.0.pkg
+
+.. warning:: As of macOS 10.15 "Catalina", a reboot is required after the CernVM-FS package installation.
   
 * Install a "personal" proxy server from: http://squidman.net/squidman/
 
 .. code-block:: bash
 
-	e.g. squidman.net/resources/downloads/SquidMan3.8.dmg
+	e.g. http://squidman.net/resources/downloads/SquidMan4.2.dmg
 
 * Check your own http proxy port and keep it for later steps. By default it is ``8080``. 
 
@@ -195,31 +202,9 @@ Mac OS, Centos, Ubuntu
 .. code-block:: bash
 
 	 $ cvmfs_config chksetup
+         # OK
 
 If you don't get any errors, then CernVM-FS was successfully installed on your computer. Ignore the warnings for now.
-
-
-.. warning:: **Note (for Mac OS only):** There is a bug in cvmfs pkg for Mac that will give you similar error to this:
-
-	.. code-block:: bash
-	
-		$ sudo cvmfs_config chksetup	
-		# /usr/local/bin/cvmfs_config: line 1553: /Library/Filesystems/osxfuse.fs/Support/load_osxfuse: No such file or directory
-		# Error: character device /dev/osxfuse0 does not exist
-
-	To correct this, edit file /usr/local/bin/cvmfs_config and replace line 1553 with: 
-
-	.. code-block:: bash
-	
-		/Library/Filesystems/osxfuse.fs/Contents/Resources/load_osxfuse
-
-	Try again:
-
-	.. code-block:: bash
-
-		$ sudo cvmfs_config chksetup
-		# OK
-
 
 .. _mount-softdrive:
 
@@ -238,11 +223,7 @@ Mac OS, Centos, Ubuntu
 
 	$ mkdir /cvmfs/softdrive.nl /var/lib/cvmfs
 
-* Make sure that Squid is running:
-
-.. code-block:: bash
-
-	$ service squid restart
+* Make sure that Squid is running
 
 * Mount the SoftDrive directory :
 
