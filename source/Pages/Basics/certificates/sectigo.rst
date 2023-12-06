@@ -24,7 +24,7 @@ The following guide will help you:
 * install a Sectigo certificate on your own computer or :abbr:`UI (User Interface)`
 * install a Sectigo certificate in your browser
 
-Instructions on acquiring and setting up a Sectigo certificate can be found in the step by step guide below. For Grid, make sure you select the type *GÉANT IGTF-MICS Personal* certificate as explained in the guide:
+Instructions on acquiring and setting up a Sectigo certificate can be found in the step by step guide below. For Grid, make sure you select the type *GÉANT Personal Authentication* certificate as explained in the guide:
 https://ca.dutchgrid.nl/tcs/TCS-enduser-request-guide-NL.pdf
 
 .. warning:: If you saved the certificate files on your laptop, please make sure that you copy it from your local machine to your ``.globus`` directory on the :abbr:`UI (User Interface)`.
