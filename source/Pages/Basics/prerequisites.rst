@@ -41,6 +41,9 @@ The UI account will provide you with the proper environment to submit your jobs 
 
 These steps are described in this chapter.
 
+.. warning:: Several of the steps below require to be performed on your web browser. We strongly advice you to use **Firefox** because other browsers may give you errors in the certificate procedure.
+
+
 
 .. _get-ui-account:
 
