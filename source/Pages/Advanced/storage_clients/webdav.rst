@@ -429,6 +429,8 @@ For authentication, Rclone can use username/password (from the :abbr:`CUA (SURFs
 
 .. note:: The default idle timeout in Rclone is 5 minutes. This may be too short for the checksum calculation phase when uploading large files (>10GB). You can increase it with ``--timeout=240m``.
 
+.. note:: When uploading files from multiple Rclone clients in parallel, please add ``--no-traverse`` as argument. Rclone by default does a directory listing before upload. When this is done in parallel for large directories, it can be bad for performance.
+
 The first time you use rclone, you need to make a profile with ``rclone config``.
 
 As the remote URL, you can use for example ``https://webdav.grid.surfsara.nl:443/pnfs/grid.sara.nl/data/lsgrid/homer`` (for performance) or ``https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer`` (with encrypted transport).
