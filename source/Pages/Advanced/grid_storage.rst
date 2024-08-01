@@ -120,14 +120,16 @@ Default ports
 +            +----------------------------------------+                                      +
 |            | https://webdav-cert.grid.sara.nl:443   |                                      |
 +------------+----------------------------------------+--------------------------------------+
-| GSIdCap    | gsidcap://gsidcap.grid.sara.nl:22128   |                                      |
+| xroot      | xrootd.grid.surfsara.nl:1094               | Used by CERN only                    |
 +------------+----------------------------------------+--------------------------------------+
-| xroot      | xrootd.grid.sara.nl:1094               | Used by CERN only                    |
+| all        | ipv4.grid.surfsara.nl                  | For clients that don't speak IPv6    |
 +------------+----------------------------------------+--------------------------------------+
-| all        | ipv4.grid.sara.nl                      | For clients that don't speak IPv6    |
+| dCacheView | https://dcacheview.grid.surfsara.nl    | User-friendly web interface          |
++------------+----------------------------------------+--------------------------------------+
+| API        | https://dcacheview.grid.surfsara.nl    | Application programming interface    |
 +------------+----------------------------------------+--------------------------------------+
 
-The last one, ipv4.grid.sara.nl, is a single VM that supports only IPv4 and no IPv6. It can be used for small scale access through GridFTP, Webdav, Xroot or GSIdCap where IPv6 causes problems. Don't use it for batch processing.
+ipv4.grid.surfsara.nl is a single VM that supports only IPv4 and no IPv6. It can be used for small scale access through GridFTP, Webdav or Xroot where IPv6 causes problems. Don't use it for batch processing.
 
 
 .. _storage-clients:
