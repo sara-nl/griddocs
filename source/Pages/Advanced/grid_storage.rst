@@ -131,6 +131,8 @@ Default ports
 
 ipv4.grid.surfsara.nl is a single VM that supports only IPv4 and no IPv6. It can be used for small scale access through GridFTP, Webdav or Xroot where IPv6 causes problems. Don't use it for batch processing.
 
+https://dcacheview.grid.surfsara.nl is a landing page that shows all flavors of dCacheView and API. Visit the page to see the port numbers.
+
 
 .. _storage-clients:
 
