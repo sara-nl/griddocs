@@ -61,7 +61,7 @@ Detailed information regarding the operations performed in each of the scripts b
 
     $cd sandbox
     $mv ../../couchdb.tgz ./
-    $mv ../../picas.tgz ./
+    $mv ../../picas.tar ./
 
 * And finally compile the fractals program (and put it in the sandbox directory) and move one directory up again:
 
@@ -101,7 +101,7 @@ Now we will start using PiCaS. For this we need the downloaded CouchDB and PiCaS
 
 .. code-block:: console
 
-   $ln sandbox/picasconfig.py
+   $ln -s sandbox/picasconfig.py
 
 * Make the CouchDB package locally available:
 
@@ -117,7 +117,7 @@ Now we will start using PiCaS. For this we need the downloaded CouchDB and PiCaS
 
 * Check your database in this link:
 
-    https://picas.surfsara.nl:6984/_utils/database.html?homerdb
+    https://picas.surfsara.nl:6984/_utils/#/database/homerdb/_all_docs
 
     replace homerdb with your Picas database name
 
