@@ -168,6 +168,12 @@ While the :abbr:`UI (User Interface)` has started processing tokens, submit the 
 Run the example on the Grid
 ---------------------------
 
+To make use of the dirac tool, first source the dirac env
+
+.. code-block:: console
+
+   $source /etc/diracosrc
+
 * Create a proxy:
 
 .. code-block:: console
