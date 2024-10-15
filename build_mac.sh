@@ -12,7 +12,7 @@ fi
 if [[ "xx" != "x${2}x" ]]; then
   DOCKER_IMAGE="${2}"
 else
-  DOCKER_IMAGE="readthedocs/build:latest"
+  DOCKER_IMAGE="readthedocs/build:ubuntu-24.04-2024.06.17"
 fi
 
 # Create the output directory
@@ -31,7 +31,8 @@ chmod 2777 ${TEMP_BUILD_DIR}
 # Build the documentation in a docker container
 SCRIPT=$(cat <<EOF
 umask 0002
-virtualenv ~/venv
+apt install -y python3.12-venv
+python3 -m venv ~/venv
 source ~/venv/bin/activate
 pip install sphinx
 sphinx-build -b html /source/source/ /target/
