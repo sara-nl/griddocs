@@ -80,7 +80,7 @@ To be able to submit multiple pilot jobs at once, they are submitted to the Grid
 Pilot Job Frameworks
 ====================
 
-There are several pilot frameworks for the Grid. At SURFsara we support ``PiCaS``:
+There are several pilot frameworks for the Grid. At SURF we support ``PiCaS``:
 
  * :ref:`picas-overview`
 
