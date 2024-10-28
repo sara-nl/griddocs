@@ -86,11 +86,11 @@ There are several pilot frameworks for the Grid. At SURF we support ``PiCaS``:
 
 For using PiCaS on Spider, please refer to:
 
- * :ref:`PiCas on Spider`_
+ * `PiCas on Spider`_
 
 To learn how to use PiCas on any systems, follow examples:
 
  * :ref:`picas-example-dirac`
 
 
-.. _`PiCas on Spider`:https://doc.spider.surfsara.nl/en/latest/Pages/pilotjob_picas.html
+.. _`PiCas on Spider`: https://doc.spider.surfsara.nl/en/latest/Pages/pilotjob_picas.html
