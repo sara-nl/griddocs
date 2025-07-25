@@ -66,19 +66,20 @@ Please note that the :abbr:`UI (User Interface)` is simply a Linux machine and w
 Get a Grid certificate
 ======================
 
-Grid certificates are supplied by a Certificate Authority (CA). Users affiliated with Dutch institutes can request a digital certificate either by ``Sectigo`` or ``DutchGrid`` CA.
+Grid certificates are supplied by a Certificate Authority (CA). Users affiliated with Dutch institutes can request a digital certificate either by ``Harica`` or ``DutchGrid`` CA. From 2025, our certificates will be provided by "Harica", instead of "Sectigo".
 
 .. sidebar:: How to obtain a Grid certificate?
 
 		.. seealso:: Find detailed info in our mooc video :ref:`mooc-get-certificate`.
 
-If you are a researcher in the Netherlands we recommended you to request a certificate via ``Sectigo``, by using your institutional login. This is the easiest and fastest way to get a Grid certificate. In cases that the Sectigo option is not applicable, you can request a DutchGrid CA certificate.
+If you are a researcher in the Netherlands we recommended you to request a certificate via ``Harica``, by using your institutional login. This is the easiest and fastest way to get a Grid certificate. In cases that the Harica option is not applicable, you can request a DutchGrid CA certificate.
 
 Here you can find details for obtaining and installing a Grid certificate:
 
 .. toctree::
    :maxdepth: 1
 
+   certificates/harica
    certificates/sectigo
    certificates/dutchgrid
 
