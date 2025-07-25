@@ -36,7 +36,7 @@ Follow the step-by-step guide below:
    * GEANT Personal Automated Authentication - credentials for automated processes and software agents that are running under your personal control
      
    * For email signing certificates, use the "Email" menu and select either a simple mailbox-validated one (without a name)
-     
+    
    .. image:: /Images/harica_type.png
 
 4. After slecting the type of your certificate, click next. Review the application and check the validity terms. For IGTF certificates this is always 395 days. For email certificates, you can also also select 730 days (2 years). Check the box and submit request.
@@ -84,15 +84,11 @@ For Firefox users,
 
 4. In the dialog box, click on "Import..."
 
-5. Select the file (.p12 or .pfx) using the file selection box and click "Open"
-
-6. "Please enter the password that was used to encrypt this certificate backup:", do that and click OK
-You're done!
+5. Select the file (.p12 or .pfx) using the file selection box and click "Open". Enter the password that was used to encrypt this certificate backup and click OK.
 
 
-For Safari users,
 
-On Apple MacOS, opening a p12 file will open it in Keychain; follow the `Apple Import guide from DigiCert`_.
+For Safari users opening a p12 file will open it in Keychain, please follow the `Apple Import guide from DigiCert`_.
 
 
 For other browser users, please check `Generation 5 GEANT Trusted Certificate Service TCS`_.
