@@ -112,7 +112,7 @@ The following commands will download the "tcsg4-install-credential.sh" script, a
 Upon successful completion, you will see several new files generated.
 
 
-* On GIRD UI, you can test by creating VOMS proxy
+* On Grid UI, you can test by creating VOMS proxy
 
   .. code-block:: console                                                                                                                                                                                                                              voms-proxy-init -voms <put VO name here>
 
