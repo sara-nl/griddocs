@@ -21,7 +21,7 @@ You can get your e-Science and personal certificates instantly from the GEANT Tr
 
 Follow the step-by-step guide below:
 
-1. Request a new certificate via the link `HARICA <https://cm.harica.gr/Login>`_ and select "Academic login". 
+1. Request a new certificate via the `HARICA portal <https://cm.harica.gr/Login>`_ and select "Academic login". 
 
    .. image:: /Images/harica_website.png
 
