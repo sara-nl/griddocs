@@ -21,7 +21,7 @@ You can get your e-Science and personal certificates instantly from the GEANT Tr
 
 Follow the step-by-step guide below:
 
-1. Request a new certificate via the link `HARICA`_ and select "Academic login". 
+1. Request a new certificate via the link HARICA_ and select "Academic login". 
 
    .. image:: /Images/harica_website.png
 
@@ -119,6 +119,6 @@ Upon successful completion, you will see several new files generated.
 
 .. Links:
 
-.. _`HARICA`: https://cm.harica.gr/Login
+.. _HARICA: https://cm.harica.gr/Login
 .. _`Apple Import guide from DigiCert`: https://knowledge.digicert.com/tutorials/keychain-access-import-digicert-id
 .. _`Generation 5 GEANT Trusted Certificate Service TCS`: https://ca.dutchgrid.nl/tcs/
