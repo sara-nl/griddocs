@@ -107,7 +107,9 @@ The following commands will download the "tcsg4-install-credential.sh" script, a
 
 * Convert the file
 
-   .. code-block:: console                                                                                                                                                                                                                              sh ./tcsg4-install-credential.sh -R Certificate.p12
+   .. code-block:: console            
+
+        sh ./tcsg4-install-credential.sh -R Certificate.p12
 
 Upon successful completion, you will see several new files generated.
 
