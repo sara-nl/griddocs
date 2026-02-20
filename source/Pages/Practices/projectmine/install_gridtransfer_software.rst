@@ -26,7 +26,7 @@ Network
 -------
 
 
-Our storage servers are located at ip 145.100.32.0/22 and needs for gridftp port 2811 and the port range 20000-25000 and for SRM protocol port 8443
+Our storage servers are located at ip 145.100.32.0/22 and needs for gridftp port 2811 and the port range 20000-25000. 
 
 --------
 Software
@@ -59,7 +59,7 @@ CentOS specific
 
 
 
-Installing the SRM client
+Installing the SRM client (deprecated)
 
   .. code-block:: bash
 
@@ -95,7 +95,7 @@ Ubuntu specific
 
 
 
-Please also install the SRM client software 
+Please do not install the SRM client software as it is deprecated.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -171,7 +171,7 @@ Installing the software is done via Homebrew, a software manager for MacOS X. Mo
 ^^^^^^^^^^^^^^^
 SRM tools
 ^^^^^^^^^^^^^^^
-
+**Deprecated as of 2026-02.**
 
 
 The SRM tools are needed to communicate with the storage management system and used for querying information about files and bring files online from the tape archive.

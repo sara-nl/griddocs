@@ -27,7 +27,7 @@ To use the Grid storage you must:
 * Have :ref:`a personal Grid certificate <get-grid-certificate>` [1]_
 * Be member of :ref:`a VO <join-vo>` for which we have allocated storage space.
 
-You can access the Grid storage with Grid :ref:`storage-clients`, through interfaces that speak protocols like :abbr:`SRM (Storage Resource Management)`, :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`, :abbr:`GSIdCap (dCache Access Protocol with Grid authentication)` or :abbr:`Webdav (Web Distributed Authoring and Versioning)`. With these storage clients you can:
+You can access the Grid storage with Grid :ref:`storage-clients`, through interfaces that speak protocols like :abbr:`GridFTP (File Transfer Protocol with Grid authentication)`, :abbr:`GSIdCap (dCache Access Protocol with Grid authentication)` or :abbr:`Webdav (Web Distributed Authoring and Versioning)` (deprecated: :abbr:`SRM (Storage Resource Management)`). With these storage clients you can:
 
 * list directories and files
 * read (download) files
@@ -99,35 +99,35 @@ Example:
 Default ports
 =============
 
-+------------+----------------------------------------+--------------------------------------+
-| Protocol   | Host(s) and port(s)                    | Remark                               |
-+============+========================================+======================================+
-| SRM        | srm://srm.grid.sara.nl:8443            |                                      |
-+------------+----------------------------------------+--------------------------------------+
-| GridFTP    | gsiftp://gridftp.grid.surfsara.nl:2811 | Data channel port range: 20000-25000 |
-+------------+----------------------------------------+--------------------------------------+
-|            | https://webdav.grid.surfsara.nl:443    |                                      |
-+            +----------------------------------------+                                      +
-| Webdav     | https://webdav.grid.surfsara.nl:2880   | See :ref:`webdav` for details        |
-+            +----------------------------------------+                                      +
-|            | https://webdav.grid.surfsara.nl:2881   |                                      |
-+            +----------------------------------------+                                      +
-|            | https://webdav.grid.surfsara.nl:2882   |                                      |
-+            +----------------------------------------+                                      +
-|            | https://webdav.grid.surfsara.nl:2883   |                                      |
-+            +----------------------------------------+                                      +
-|            | https://webdav.grid.surfsara.nl:2884   |                                      |
-+            +----------------------------------------+                                      +
-|            | https://webdav-cert.grid.sara.nl:443   |                                      |
-+------------+----------------------------------------+--------------------------------------+
-| xroot      | xrootd.grid.surfsara.nl:1094           | Used by CERN only                    |
-+------------+----------------------------------------+--------------------------------------+
-| all        | ipv4.grid.surfsara.nl                  | For clients that don't speak IPv6    |
-+------------+----------------------------------------+--------------------------------------+
-| dCacheView | https://dcacheview.grid.surfsara.nl    | User-friendly web interface          |
-+------------+----------------------------------------+--------------------------------------+
-| API        | https://dcacheview.grid.surfsara.nl    | Application programming interface    |
-+------------+----------------------------------------+--------------------------------------+
++------------------+----------------------------------------+--------------------------------------+
+| Protocol         | Host(s) and port(s)                    | Remark                               |
++==================+========================================+======================================+
+| SRM (deprecated) | srm://srm.grid.sara.nl:8443            | Protocol is DEPRECATED               |
++------------------+----------------------------------------+--------------------------------------+
+| GridFTP          | gsiftp://gridftp.grid.surfsara.nl:2811 | Data channel port range: 20000-25000 |
++------------------+----------------------------------------+--------------------------------------+
+|                  | https://webdav.grid.surfsara.nl:443    |                                      |
++                  +----------------------------------------+                                      +
+| Webdav           | https://webdav.grid.surfsara.nl:2880   | See :ref:`webdav` for details        |
++                  +----------------------------------------+                                      +
+|                  | https://webdav.grid.surfsara.nl:2881   |                                      |
++                  +----------------------------------------+                                      +
+|                  | https://webdav.grid.surfsara.nl:2882   |                                      |
++                  +----------------------------------------+                                      +
+|                  | https://webdav.grid.surfsara.nl:2883   |                                      |
++                  +----------------------------------------+                                      +
+|                  | https://webdav.grid.surfsara.nl:2884   |                                      |
++                  +----------------------------------------+                                      +
+|                  | https://webdav-cert.grid.sara.nl:443   |                                      |
++------------------+----------------------------------------+--------------------------------------+
+| xroot            | xrootd.grid.surfsara.nl:1094           | Used by CERN only                    |
++------------------+----------------------------------------+--------------------------------------+
+| all              | ipv4.grid.surfsara.nl                  | For clients that don't speak IPv6    |
++------------------+----------------------------------------+--------------------------------------+
+| dCacheView       | https://dcacheview.grid.surfsara.nl    | User-friendly web interface          |
++------------------+----------------------------------------+--------------------------------------+
+| API              | https://dcacheview.grid.surfsara.nl    | Application programming interface    |
++------------------+----------------------------------------+--------------------------------------+
 
 ipv4.grid.surfsara.nl is a single VM that supports only IPv4 and no IPv6. It can be used for small scale access through GridFTP, Webdav or Xroot where IPv6 causes problems. Don't use it for batch processing.
 
@@ -148,26 +148,26 @@ In this section we will show the common commands to use the various storage clie
 
 .. table:: Storage clients
 
-  +---------------------+-----+--------------+---------+--------+-----------+-------------------+
-  |                     |               protocols               |                               |
-  +---------------------+-----+--------------+---------+--------+-----------+-------------------+
-  | Client              | SRM | GridFTP [2]_ | GSIdCap | Webdav | 3rd party | Tape control [3]_ |
+  +---------------------+------------------+--------------+---------+--------+-----------+-------------------+
+  |                     |               protocols                            |                               |
+  +---------------------+------------------+--------------+---------+--------+-----------+-------------------+
+  | Client              | SRM (deprecated) | GridFTP [2]_ | GSIdCap | Webdav | 3rd party | Tape control [3]_ |
   +=====================+=====+==============+=========+========+===========+===================+
-  | :ref:`globus`       | --  | yes          | --      | --     | --        | --                |
-  +---------------------+-----+--------------+---------+--------+-----------+-------------------+
-  | :ref:`srm`          | yes | [4]_         | [4]_    | [4]_   | yes       | yes               |
-  +---------------------+-----+--------------+---------+--------+-----------+-------------------+
-  | :ref:`gfal`         | yes | yes          | --      | --     | yes       | yes               |
-  +---------------------+-----+--------------+---------+--------+-----------+-------------------+
-  | :ref:`webdav`       | --  | --           | --      | yes    | --        | --                |
-  +---------------------+-----+--------------+---------+--------+-----------+-------------------+
-  | :ref:`fts`          | yes | yes          | --      | yes    | yes       | yes               |
-  +---------------------+-----+--------------+---------+--------+-----------+-------------------+
-  | :ref:`globusonline` | --  | yes          | --      | --     | yes       | --                |
-  +---------------------+-----+--------------+---------+--------+-----------+-------------------+
-  | :ref:`uberftp` [5]_ | --  | yes          | --      | --     | --        | --                |
-  | (not recommended)   |     |              |         |        |           |                   |
-  +---------------------+-----+--------------+---------+--------+-----------+-------------------+
+  | :ref:`globus`       | --               | yes          | --      | --     | --        | --                |
+  +---------------------+------------------+--------------+---------+--------+-----------+-------------------+
+  | :ref:`srm`          | yes              | [4]_         | [4]_    | [4]_   | yes       | yes               |
+  +---------------------+------------------+--------------+---------+--------+-----------+-------------------+
+  | :ref:`gfal`         | yes              | yes          | --      | --     | yes       | yes               |
+  +---------------------+------------------+--------------+---------+--------+-----------+-------------------+
+  | :ref:`webdav`       | --               | --           | --      | yes    | --        | --                |
+  +---------------------+------------------+--------------+---------+--------+-----------+-------------------+
+  | :ref:`fts`          | yes              | yes          | --      | yes    | yes       | yes               |
+  +---------------------+------------------+--------------+---------+--------+-----------+-------------------+
+  | :ref:`globusonline` | --               | yes          | --      | --     | yes       | --                |
+  +---------------------+------------------+--------------+---------+--------+-----------+-------------------+
+  | :ref:`uberftp` [5]_ | --               | yes          | --      | --     | --        | --                |
+  | (not recommended)   |                  |              |         |        |           |                   |
+  +---------------------+------------------+--------------+---------+--------+-----------+-------------------+
 
 .. [2] The GridFTP protocol offers the best network performance.
 
@@ -213,7 +213,7 @@ has to be copied to a hard drive before it can be used. This action is called :r
   | ONLINE_AND_NEARLINE | The file is both on disk and on tape                            |
   +---------------------+-----------------------------------------------------------------+
 
-There are some more file statuses. See the `SRMv2 specifications <https://sdm.lbl.gov/srm-wg/doc/SRM.v2.2.html#_Toc241633052>`_ for a full list.
+There are some more file statuses. See the `SRMv2 specifications <https://sdm.lbl.gov/srm-wg/doc/SRM.v2.2.html#_Toc241633052>`_ for a full list, note that SRM is deprecated.
 
 The Grid storage files remain online as long as there is free space on the disk pools. When a pool group is full
 (maximum of assigned quota on staging area) and free space is needed, dCache will purge the least recently used
@@ -423,7 +423,7 @@ NO data channel encryption:
 
 * WebDAV over port 443
 * WebDAV over port 2882
-* SRM
+* SRM - deprecated
 * GridFTP (dCache does not support GridFTP data encryption. Please be warned that ``globus-url-copy -dcpriv`` does not warn you about this and transfers your data in plain text.)
 * GSIdCap, dCap
 * Xroot
@@ -436,6 +436,8 @@ The conclusion: if your data is personal, safely upload it to and download it fr
 ===============================
 SRM interaction example diagram
 ===============================
+
+Note: SRM is deprecated.
 
 Here is a sequence diagram that illustrates how the :abbr:`SRM (Storage Resource Manager)` commands interact with the Grid storage.
 

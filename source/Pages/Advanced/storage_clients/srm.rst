@@ -5,6 +5,8 @@
 *srm* client
 ************
 
+**Note: SRM has been deprecated. The server is offline and the doors do not work as of 2026-02.**
+
 This page explains the use of the ``srm`` client. For an overview of storage clients, see :ref:`storage-clients`.
 
 .. contents::

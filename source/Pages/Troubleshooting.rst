@@ -22,7 +22,6 @@ In order to assist you better, we have a few troubleshooting steps that may alre
   .. code-block:: console
 
      $glite-wms-job-submit --debug ...
-     $srmcp -debug ...
      $gfal-copy --verbose ...
      $globus-url-copy -debugftp -verbose-perf -verbose ...
      $curl --verbose ...
@@ -34,10 +33,10 @@ In order to assist you better, we have a few troubleshooting steps that may alre
   .. code-block:: console
 
      ## A basic firewall check: can you connect to the port?
-     $telnet srm.grid.sara.nl 8443
+     $telnet webdav.grid.sara.nl 2880
 
-     ## Testing the SSL layer of a connection to the dCache SRM door
-     $echo 'QUIT' | openssl s_client -connect srm.grid.sara.nl:8443 \
+     ## Testing the SSL layer of a connection to the dCache WebDAV door
+     $echo 'QUIT' | openssl s_client -connect webdav.grid.sara.nl:2880 \
                          -CApath /etc/grid-security/certificates
      ## One of the last lines should be: 'Verify return code: 0 (ok)'
 
@@ -79,7 +78,7 @@ File transfers are stuck
 
 Occasionally, transfers are stuck when 0 bytes have been transferred. There are some common causes for stalled transfers.
 
-* A firewall blocks the ports for the data channel. If you use ``srmcp``, specify ``--server_mode=passive``. If that doesn't help, check whether your firewall allows outgoing traffic to ports 20000 to 25000 (GridFTP data channel range).
+* A firewall blocks the ports for the data channel. Check whether your firewall allows outgoing traffic to ports 20000 to 25000 (GridFTP data channel range) or other relevant ports for the protocol you use.
 
 * You've reached the maximum number of transfers for the storage pools that have been allocated to you. All transfers beyond the maximum will be queued, until previous transfers finish to make 'transfer slots' available, or until they time out. Besides the failing transfers, there is another downside: some of your jobs might be wasting CPU time while they wait for input files. This is not efficient. It's better to reduce the number of concurrent transfers so that you don't reach the maximum, or ask us whether the maximum can be increased.
 

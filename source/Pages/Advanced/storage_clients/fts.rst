@@ -30,7 +30,7 @@ The wisdom of FTS is the *Optimiser* which decides whether to increase or decrea
 at a time. It evaluates any symptoms of saturation and decreases the number of parallel transfers when there is an
 increase of recoverable errors, or the throughput worsens.
 
-FTS has a REST API and supports several transfer protocols, such as: GridFTP, SRM, Webdav/HTTPS, xroot.
+FTS has a REST API and supports several transfer protocols, such as: GridFTP, Webdav/HTTPS, xroot.
 It also supports several clients, such as: standard clients (e.g. curl), Python bindings, FTS CLI.
 
 
@@ -84,8 +84,7 @@ Submit a transfer
 
 The ``fts-transfer-submit`` command submits transfer-jobs by specifying the source and destination file location.
 The file location can be a :abbr:`SURL (Storage URL)`, :abbr:`TURL (Transport URL)` or HTTPS link. For efficient
-usage of the service, it is preferred that the source and destination endpoints are GridFTP or
-:abbr:`SRM (Storage Resource Manager)` servers.
+usage of the service, it is preferred that the source and destination endpoints are GridFTP servers.
 
 The output of the submit command is a *unique ID* that can be used for tracing the transfer status.
 
@@ -140,7 +139,7 @@ File transfer - SURL to TURL
    $    gsiftp://gridftp.grid.sara.nl:2811/pnfs/grid.sara.nl/data/lsgrid/penelope/zap.tar
 
 
-.. note:: Combinations between TURLS, SURLS, HTTPS and SRMv2 are possible.
+.. note:: Combinations between TURLS, SURLS and HTTPS are possible.
 
 
 Bulk transfers
