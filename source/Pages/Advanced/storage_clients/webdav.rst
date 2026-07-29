@@ -260,13 +260,13 @@ With username/password authentication
    $curl --capath /etc/grid-security/certificates/  --fail --location-trusted \
         --user homer \
         --request MOVE \
-        https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/oldfile \
-        --header "Destination:https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/newfile"
+        https://webdav.grid.surfsara.nl:443/pnfs/grid.sara.nl/data/lsgrid/homer/oldfile \
+        --header "Destination:https://webdav.grid.surfsara.nl:443/pnfs/grid.sara.nl/data/lsgrid/homer/newfile"
 
 Please note the differences with the previous example:
 
 * ``--location-trusted`` will send the username and password also to the destination server.
-* Port ``2880`` is used for username/password authentication.
+* Port ``443`` is used for username/password authentication.
 
 
 Removing data
@@ -300,7 +300,7 @@ This example shows how to query the file locality: whether a file is online or n
             </a:propfind>' \
    | curl --silent --fail --capath /etc/grid-security/certificates/ \
           --user homer --request PROPFIND \
-          https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
+          https://webdav.grid.surfsara.nl:443/pnfs/grid.sara.nl/data/lsgrid/homer/zap.tar \
           --header "Content-Type: text/xml" --upload - \
    | xmllint -format -
 
@@ -365,7 +365,7 @@ You can use WebDAV to retrieve the MD5 checksum of a file, when it is in dCache'
 
    $curl --head --header 'Want-Digest: MD5' --silent --fail --capath /etc/grid-security/certificates/ \
         --user homer \
-        https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/lsgrid/homer/myfile \
+        https://webdav.grid.surfsara.nl:443/pnfs/grid.sara.nl/lsgrid/homer/myfile \
    | grep -o 'md5=.*' \
    | sed -e 's/md5=//' -e 's/[\r\n]*$//' \
    | base64 --decode \
@@ -387,7 +387,7 @@ An alternative way to query an MD5 checksum:
             </a:propfind>' \
    | curl --silent --fail --capath /etc/grid-security/certificates/ \
           --user homer --request PROPFIND \
-          https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/lsgrid/homer/myfile \
+          https://webdav.grid.surfsara.nl:443/pnfs/grid.sara.nl/lsgrid/homer/myfile \
           --header "Content-Type: text/xml" --upload - \
    | xmllint -format - \
    | egrep -o '<ns1:Checksums>md5=.*</ns1:Checksums>' \
@@ -431,14 +431,14 @@ For authentication, Rclone can use username/password (from the :abbr:`CUA (SURFs
 
 The first time you use rclone, you need to make a profile with ``rclone config``.
 
-As the remote URL, you can use for example ``https://webdav.grid.surfsara.nl:443/pnfs/grid.sara.nl/data/lsgrid/homer`` (for performance) or ``https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer`` (with encrypted transport).
+As the remote URL, you can use for example ``https://webdav.grid.surfsara.nl:443/pnfs/grid.sara.nl/data/lsgrid/homer``.
 
 An example of a profile:
 
 .. code-block:: console
 
    [dcache]
-   url = https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer
+   url = https://webdav.grid.surfsara.nl:443/pnfs/grid.sara.nl/data/lsgrid/homer
    vendor = other
    user = homer
    pass = *** ENCRYPTED ***
@@ -468,9 +468,9 @@ For your convenience, we've created a script called `get-macaroon <https://githu
 .. code-block:: console
 
     12:12 ui.grid.surfsara.nl:/home/homer
-    homer$ get-macaroon --url https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/Shared/ --chroot --user homer --duration PT1H --permissions DOWNLOAD,LIST
+    homer$ get-macaroon --url https://webdav.grid.surfsara.nl:443/pnfs/grid.sara.nl/data/lsgrid/homer/Shared/ --chroot --user homer --duration PT1H --permissions DOWNLOAD,LIST
     Enter host password for user 'homer':
-    https://webdav.grid.surfsara.nl:2880/?authz=MDAxY2xvY2F0aW9uIE9wdGlvbmFsLmVtcHR5CjAwMThpZGVudGlmaWVyIGNOMDBnRHRSCjAwMmVjaWQgaWQ6MzEwMjk7MzEwNDAsNDQ0MzYsNDEzODUsMzAwMTM7b25ubwowMDI4Y2lkIGJlZm9yZToyMDE4LTA3LTA1VDEyOjIxOjM3LjQzMVoKMDAzZGNpZCByb290Oi9wbmZzL2dyaWQuc2FyYS5ubC9kYXRhL3VzZXJzL29ubm8vRGlzay9TaGFyZWQvCjAwMWZjaWQgYWN0aXZpdHk6RE9XTkxPQUQsTElTVAowMDJmc2lnbmF0dXJlIODcyEAeF-oe2VxwSpym6rPP7fNKprXTQEH2qlXwaLKACg
+    https://webdav.grid.surfsara.nl:443/?authz=MDAxY2xvY2F0aW9uIE9wdGlvbmFsLmVtcHR5CjAwMThpZGVudGlmaWVyIGNOMDBnRHRSCjAwMmVjaWQgaWQ6MzEwMjk7MzEwNDAsNDQ0MzYsNDEzODUsMzAwMTM7b25ubwowMDI4Y2lkIGJlZm9yZToyMDE4LTA3LTA1VDEyOjIxOjM3LjQzMVoKMDAzZGNpZCByb290Oi9wbmZzL2dyaWQuc2FyYS5ubC9kYXRhL3VzZXJzL29ubm8vRGlzay9TaGFyZWQvCjAwMWZjaWQgYWN0aXZpdHk6RE9XTkxPQUQsTElTVAowMDJmc2lnbmF0dXJlIODcyEAeF-oe2VxwSpym6rPP7fNKprXTQEH2qlXwaLKACg
 
 The printed link can be pasted into a browser's address bar, or provided as an argument to curl for download.
 
@@ -478,13 +478,13 @@ When uploading (or downloading) with curl, the token can be provided in a custom
 
 .. code-block:: console
 
-    $curl --header 'Authorization: BEARER <token>' --upload-file myfile https://webdav.grid.surfsara.nl:2880/
+    $curl --header 'Authorization: BEARER <token>' --upload-file myfile https://webdav.grid.surfsara.nl:443/
 
 The script can also create an Rclone config file:
 
 .. code-block:: console
 
-    $get-macaroon --url https://webdav.grid.surfsara.nl:2880/pnfs/grid.sara.nl/data/lsgrid/homer/Shared/ --chroot --user homer --duration PT1H --permissions DOWNLOAD,LIST --output rclone homers-share
+    $get-macaroon --url https://webdav.grid.surfsara.nl:443/pnfs/grid.sara.nl/data/lsgrid/homer/Shared/ --chroot --user homer --duration PT1H --permissions DOWNLOAD,LIST --output rclone homers-share
     Enter host password for user 'homer':
     Creating rclone config file homers-share.conf:
     ....
