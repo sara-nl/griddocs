@@ -71,15 +71,13 @@ Transport security
 
 Another important consideration is whether a WebDAV door should redirect or not; this affects transport security and throughput.
 
-Advantages of redirects:
+Advantage of redirects:
 
-* It's a form of load balancing, which improves the speed.
-* Redirecting WebDAV doors do the authentication over HTTPS, but they redirect your client to an HTTP port. So the data transfer is unencrypted. This too improves speed.
+* It's a form of load balancing, which improves the throughput.
 
-Disadvantages of redirects:
+Disadvantage of redirects:
 
-* File transfers are sent over HTTP, so they are not encryted. A "man in the middle" might be able to read the data, or even modify it in transit. If privacy is a concern, choose a door that does not redirect.
-* Some WebDAV clients don't handle redirects very well.
+* Some (older) WebDAV clients might not handle redirects very well.
 
 If transport security is a requirement, we suggest to use the WebDAV doors on port ``2881`` or ``2884`` for the best transport security. They use only TLSv1.2 or better, and they are configured with encryption ciphers that offer Perfect Forward Secrecy. They have some extra HTTP security headers that may make abuse more difficult.
 
