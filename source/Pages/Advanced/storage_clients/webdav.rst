@@ -38,7 +38,7 @@ dCache has the following WebDAV doors:
 +--------------------------------------+-------------------------------+------------------------------------------+
 | URL including port                   | Authentication method         | Remarks                                  |
 +======================================+===============================+==========================================+
-| https://webdav.grid.surfsara.nl:443  | User/password, macaroon       | Redirects on read                        |
+| https://webdav.grid.surfsara.nl:443  | User/password, macaroon       | Redirects on read and write              |
 +--------------------------------------+-------------------------------+------------------------------------------+
 | https://webdav.grid.surfsara.nl:2880 | User/password, macaroon, X509 | No redirects                             |
 +--------------------------------------+-------------------------------+------------------------------------------+
